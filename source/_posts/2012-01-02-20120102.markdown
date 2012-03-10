@@ -1,0 +1,19 @@
+---
+layout: post
+title: "20120102"
+date: 2012-01-02 21:56
+comments: true
+categories: 
+---
+
+A test post ..
+
+It's also a test.
+
+A bug still unsolve
+ok?
+not ok???
+A bug with git or me ?
+tomorrow  exam
+
+why so many conflict!!!!!!
