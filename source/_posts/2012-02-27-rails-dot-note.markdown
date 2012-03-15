@@ -78,5 +78,7 @@ sudo gem install pg
 #貌似跟之前那个mysql的问题有点像
 {% endcodeblock %}
 
->除了系统的ruby文件可以用相对路径，自己编写的ruby文件如果要require的话需要用绝对路径。否则会报错no such file to load .
-而load则无论什么rub文件都可以用相对路径加载
+{% codeblock %}
+除了系统的ruby文件可以用相对路径，自己编写的ruby文件如果要require的话需要用绝对路径。否则会报错no such file to load .
+而load则无论什么ruby文件都可以用相对路径加载
+{% endcodeblock %}
