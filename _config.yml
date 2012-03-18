@@ -45,7 +45,7 @@ titlecase: true       # Converts page and post titles to titlecase
 
 # list each of the sidebar modules you want to include, in the order you want them to appear.
 # To add custom asides, create files in /source/_includes/custom/asides/ and add them to the list like 'custom/asides/custom_aside_name.html'
-default_asides: [asides/recent_posts.html,  asides/googleplus.html, asides/flickr.html, asides/sina.html, asides/frilink.html, asides/github.html, asides/twitter.html]
+default_asides: [asides/categories_tag.html, asides/googleplus.html, asides/flickr.html, asides/sina.html, asides/frilink.html, asides/recent_posts.html, asides/github.html, asides/twitter.html]
 
 # Each layout uses the default asides, but they can have their own asides instead. Simply uncomment the lines below
 # and add an array with the asides you want to use.
@@ -56,6 +56,22 @@ default_asides: [asides/recent_posts.html,  asides/googleplus.html, asides/flick
 # ----------------------- #
 #   3rd Party Settings    #
 # ----------------------- #
+
+# ----------------------- #
+#    Categories           #
+# ----------------------- #
+# create categories page
+category_list: true
+# use counter after categories
+category_counter: false
+# category title
+category_title: Category
+# create an include categories list in @source/_includes/asides/categories_sidebar.html
+# and don't forget to add 'asides/categories_sidebar.html' into @default_asides if you want to enable it.
+category_sidebar: false
+# create an include categories tag cloud page in @source/_includes/asides/categories_tag.html
+# and don't forget to add 'asides/categories_tag.html' to @default_asides if you want to enable it.
+category_tag_cloud: true
 
 # Github repositories
 github_user:
@@ -99,7 +115,7 @@ google_analytics_tracking_id:
 facebook_like: false
 
 flickr_user: 69090391%40N07
-flicke_count: 9
+flickr_count: 9
 
 sina_user: jevvloou
 sina_hidden: false
