@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "About XguoX.L"
-date: 2012-03-10 10:07
 comments: true
 sharing: true
 footer: true
