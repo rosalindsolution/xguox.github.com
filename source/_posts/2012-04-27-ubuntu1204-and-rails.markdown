@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "ubuntu1204 and rails"
+title: "ubuntu12.04 and rails"
 date: 2012-04-27 23:51
 comments: true
 categories: Ubuntu Rails
