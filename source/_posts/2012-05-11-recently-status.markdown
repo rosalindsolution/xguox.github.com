@@ -3,7 +3,7 @@ layout: post
 title: "Recently小记"
 date: 2012-05-11 23:17
 comments: true
-categories: Mylife
+categories: MyLife
 ---
 最近各种没状态，我的Rails学习落下了不少，主要是胃病来袭外加一些校内的揪心事。哎，说到底，还是我还不会调整状态。一有什么较为棘手的外部因素就立马各种没状态，定不下来学习！
 
