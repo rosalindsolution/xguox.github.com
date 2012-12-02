@@ -3,7 +3,7 @@ layout: post
 title: "Rails中try的用法"
 date: 2012-04-20 23:17
 comments: true
-categories: Ruby Rails
+categories: Script
 ---
 
 居然今晚才发现Rails中try的用法，初一看，怎么那么像印象中某些语言的异常处理？不对啊，ruby中的异常处理不是长这个样子的。
@@ -11,7 +11,7 @@ categories: Ruby Rails
 
 API：
 
-不使用try的时候是
+不使用try的时候是<!-- more -->
 {% codeblock %}
 @person && @person.name
 {% endcodeblock %}

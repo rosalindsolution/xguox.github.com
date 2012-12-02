@@ -3,7 +3,7 @@ layout: post
 title: "the last year in ..."
 date: 2012-06-21 11:24
 comments: true
-categories: 
+categories: Jabber
 ---
 
 
@@ -16,7 +16,7 @@ categories:
 我想，我从大一到现在的成长，一起的你们是看得到的，就像我也看得到你们的成长那样。
 
 现在的感觉是有很多很多要写，比往前的两年都要多，却不知道从哪里开始。
-
+<!-- more -->
 ….
 
 貌似这个大三，相比以往我放的心思少了些。更多是在搞我的code。不过，谢谢他们三赞我是大三几个中做的最好的。

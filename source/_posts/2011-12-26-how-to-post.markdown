@@ -3,7 +3,7 @@ layout: post
 title: "About major,About code"
 date: 2011-12-26 12:23
 comments: true
-categories: MyLife
+categories: Jabber
 ---
 
 我的专业是电子商务，隶属于学校的管理学院。

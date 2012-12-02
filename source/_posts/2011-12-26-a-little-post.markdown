@@ -3,7 +3,7 @@ layout: post
 title: "A little post"
 date: 2011-12-26 14:17
 comments: true
-categories: MyLife
+categories: Jabber
 ---
 
 >The UML Curriculum design		,going slowly...

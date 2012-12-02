@@ -3,13 +3,13 @@ layout: post
 title: "DRY"
 date: 2012-03-04 10:07
 comments: true
-categories: Rails
+categories: Script
 ---
 
 从刚接触Rails开始就被灌输三种观念-----DRY、COC、REST。虽然这三种思想还没完全的领悟透彻，但是，已经感受到了它们的强大之处。
 
 目前印象最深刻的则是DRY。最近在跟着Ruby on Rails Tutorial学写一点Rspec测试。这种感觉又更强烈了。看着下面代码一步步的减少，感慨DRY的思想无处不在啊。这里只是一个Example可能感觉不到什么，但是当Example多了而且几乎都在测试同一样东西的时候，优点不言而喻。
-
+<!-- more -->
 {% codeblock %}
 describe "Home page" do
     it "should have the h1 'Sample App'" do

@@ -3,10 +3,10 @@ layout: post
 title: "写在Maleskine上线前夕"
 date: 2012-08-25 11:30
 comments: true
-categories: 
+categories: Jabber
 ---
 **首先**，我木有想到的是linux居然比我还早写了一篇Maleskine相关的，不过我应该要猜到的。不过我写的可能与他写的不太相同（废话，相同的话你还写！！！）。他写的更多是Maleskine的相关起源历史，而我要写的则是对Maleskine的概述，以及开发过程的感想。
-
+<!-- more -->
 据不科学统计，Maleskine应该是我作为一名Coder或者说准Coder所开发的第一个产品。我应该庆幸当初我所接收的任务不是我们的另外一个产品[Instatrip](http://instatripapp.com/)。虽然我对照片很感兴趣，但是对于像我这样从未用过、短期内也未必会使用到Instagram的人来说，那不是个好选择。相反，尽管平时写东西的积极性不高，但也隔三差五的会在这写点东西，而且Octopress本身也是直接使用Markdown作为写作模板（这有两毛钱关系吗？）。
 
 另外，取这个标题的灵感，来源即将到来的MOP。玻璃渣每发布一个新的资料片都会有一段前夕用以过渡。比如风暴前夕，冰封前夕，灾变前夕… 好吧，关于wow咱暂时不在这扯多了。

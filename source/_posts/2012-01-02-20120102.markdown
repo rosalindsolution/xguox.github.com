@@ -3,7 +3,7 @@ layout: post
 title: "20120102"
 date: 2012-01-02 21:56
 comments: true
-categories: 
+categories: Jabber
 ---
 
 A test post ..

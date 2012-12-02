@@ -3,13 +3,13 @@ layout: post
 title: "My VIM Config"
 date: 2012-04-14 00:20
 comments: true
-categories: VIM
+categories: Script
 ---
 
 其实前不久就要写挺多东西的，只是忽然间事情就集中的涌了过来，状态没调整好，也就耽搁了些。之前是直接使用网上高人的vim配置以及插件，发现有很多自己也用不上，而且自己东添西改了之后就变得更臃肿了。于是，杠杠的重新整理.vim&.vimrc
 
 首先是配色方案，可能是我的屏幕分辨率比较低的缘故，感觉好几个自带的配色方案挺不错的，但是相对却比较模糊。最后发现，fruity的那个配色比较好一些（主要是没有那种模糊感），不过配色方面不咋滴，于是自己在fruity.vim里头东改西改，最终个人感觉还不错。{% img http://farm8.staticflickr.com/7136/6930980336_f2bc94c7c3_b.jpg %}
-
+<!-- more -->
 and then就是一些插件了。目前主要是做Rails开发，以下几个插件是我较常使用到的: [NERD tree](http://www.vim.org/scripts/script.php?script_id=1658)、[snipMate](https://github.com/scrooloose/snipmate-snippets) 、[ctrlp](http://www.vim.org/scripts/script.php?script_id=3736)、 [ctags](http://www.vim.org/scripts/script.php?script_id=610) 
 
 NERD tree主要提供的是树型目录结构(如上图左)，它的功能不仅这一点，丰富的多了，不过我感觉最强大最常使用的还是书签功能。简单的一个:Bookmark 命令，以后就不用一直在目录下跳转啊跳转

@@ -3,14 +3,14 @@ layout: post
 title: "Rails 3 Remote Links and Forms Part 2: Data-type (With jQuery)"
 date: 2012-07-12 11:28
 comments: true
-categories: 
+categories: Script
 ---
 自从写了[Rails 3 Remote Links & Forms Definitive Guide](http://www.alfajango.com/blog/rails-3-remote-links-and-forms/)有一个问题也接踵而至：
 
 ####我们该如何使远程链接或者表单取回 js.erb而不是一个html的partial？
 
 在上一篇中，我们请求一个html partial并通过ajax回调插入到页面中。但如果我们想要javascript被执行？或者XML、JSON被解析？又或者显示出纯文本呢？
-
+<!-- more -->
 ##Equal parts Rails & jQuery
 
 首先，我们需要明白rails3中 :remote => true 的过程。 It’s equal parts Rails and jQuery magic.但表担心，这只是一个小魔术，捆绑成4个步骤的过程： 1. rails告诉jQuery，”哥们，把你的ajax绑定到这霸气的表单/链接”,通过 :remote => true 这个选项。 2. jQuery劫持？元素的click/submit事件并绑定到.ajax()方法。现在，元素提交通过使用ajax取代在浏览器中加载一个新页面。 3. 当这个元素被click/submit时，rails接收到ajax网页请求并响应以一些内容。 4. jQuery接收到响应的内容有.ajax()方法hi-jacked在我们的的元素中，并为我们提供回调用以在页面中处理这个响应。

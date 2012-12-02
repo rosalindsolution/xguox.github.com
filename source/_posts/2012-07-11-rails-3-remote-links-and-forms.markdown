@@ -3,7 +3,7 @@ layout: post
 title: "Rails 3 Remote Links and Forms: A Definitive Guide"
 date: 2012-07-11 11:28
 comments: true
-categories: 
+categories: Script
 ---
 ##楼主物语：
 >
@@ -11,6 +11,7 @@ categories:
 
 >原文：[Rails 3 Remote Links and Forms: A Definitive Guide](http://www.alfajango.com/blog/rails-3-remote-links-and-forms/)
 
+<!-- more -->
 Spoiler Alert:如果你喜欢魔法，请停止阅读这篇文章。因为，让rails的表单、连接、输入等如此强大的Rails 3 UJS驱动—-rails.js,当你知道它的工作原理后，你就知道其实它没有多么的神奇。
 
 ##rails.js做什么

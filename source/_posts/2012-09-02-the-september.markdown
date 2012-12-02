@@ -3,14 +3,14 @@ layout: post
 title: "The September"
 date: 2012-09-02 11:31
 comments: true
-categories: 
+categories: Jabber
 ---
 地铁、火车、公交、小车、大巴、地铁、灰机、地铁  
 上海 => 上海  
 这个9月的开始就充满各种不安静。家里的搬家，学校的开学，还有Maleskine的即将上线。  
 不安静的还有这次的往返。尤其是这趟从广州飞往上海的航班。突遇个暴雨，接踵而来的是各种蛋疼。  
 我承认当初generate这篇post不是要写这个的。看标题就知道啦。不过现在看来这个好像比我装文艺有趣一些。  
-
+<!-- more -->
 ----
 9月3
 

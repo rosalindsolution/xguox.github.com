@@ -3,7 +3,7 @@ layout: post
 title: "诠释家"
 date: 2012-01-05 19:55
 comments: true
-categories: MyLife
+categories: Jabber
 ---
 
 家，是一个让人听了、看了会有有很多想法的概念。
