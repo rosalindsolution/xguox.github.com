@@ -3,7 +3,7 @@ layout: post
 title: "《黑客与画家》语录---我的那些价值观"
 date: 2012-01-17 13:34
 comments: true
-categories: Jabber
+categories: Jabber Books
 ---
 
 
