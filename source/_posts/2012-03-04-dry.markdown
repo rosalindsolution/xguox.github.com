@@ -3,7 +3,7 @@ layout: post
 title: "DRY"
 date: 2012-03-04 10:07
 comments: true
-categories: Script
+categories: Ruby Rails
 ---
 
 从刚接触Rails开始就被灌输三种观念-----DRY、COC、REST。虽然这三种思想还没完全的领悟透彻，但是，已经感受到了它们的强大之处。

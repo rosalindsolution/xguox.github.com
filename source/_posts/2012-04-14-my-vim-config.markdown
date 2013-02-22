@@ -3,7 +3,7 @@ layout: post
 title: "My VIM Config"
 date: 2012-04-14 00:20
 comments: true
-categories: Script
+categories: 
 ---
 
 其实前不久就要写挺多东西的，只是忽然间事情就集中的涌了过来，状态没调整好，也就耽搁了些。之前是直接使用网上高人的vim配置以及插件，发现有很多自己也用不上，而且自己东添西改了之后就变得更臃肿了。于是，杠杠的重新整理.vim&.vimrc

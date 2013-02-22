@@ -3,7 +3,7 @@ layout: post
 title: "最后一晚在曾厝垵"
 date: 2012-02-25 01:02
 comments: true
-categories: Jabber
+categories: Jabber Travel
 ---
 
 这是最后一晚了，一直都有记流水帐日记的习惯，包括从来到厦门的那一天起，只是，前段时间的那个悲剧让我之前的记录都泡汤了。但是，今晚让我感觉，那些流水帐没了也没啥，或许更好些。

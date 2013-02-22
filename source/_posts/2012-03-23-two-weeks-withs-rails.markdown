@@ -3,7 +3,7 @@ layout: post
 title: "two weeks withs rails"
 date: 2012-03-23 20:07
 comments: true
-categories: Script
+categories: Ruby Rails
 ---
 
 并不是我刚开始接触Rails两周，而是这两周我才能真正的算个入门吧。虽然学校有教C与Java，但就像我之前所说那般，其实Ruby才是我的first&major。

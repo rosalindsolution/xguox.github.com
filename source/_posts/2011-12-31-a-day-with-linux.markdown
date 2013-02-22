@@ -3,7 +3,7 @@ layout: post
 title: "one day with Linux"
 date: 2011-12-31 02:20
 comments: true
-categories: Script
+categories: Ruby Rails
 ---
 为了不影响其他人的网速，我只好选择了通宵下载VMware和Ubuntu.今早上老早就起来安装，看网上好多人安装Ubuntu各种各样的出错，而我却很幸运的一路顺风。不过中途有个“看电影”环节，估计单是那就花了半个钟，刚好那时候到了吃饭时间，于是就出去吃了个饭，回来基本搞掂。
 

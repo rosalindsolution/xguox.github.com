@@ -122,11 +122,9 @@ body.sidebar-footer {
 }
 
 @media only screen and (min-width: 550px) {
-  body {margin: 5px}
   body > header { font-size: $header-font-size; }
 }
 @media only screen and (min-width: 750px) {
-  body {margin: 5px}
   aside.sidebar { @include collapse-sidebar; }
 }
 #main, #content, .sidebar {
@@ -135,7 +133,6 @@ body.sidebar-footer {
 @media only screen and (min-width: 768px) {
   body { -webkit-text-size-adjust: auto; }
   body > header { font-size: $header-font-size * 1.2; }
-  body {margin: 5px}
   #main {
     padding: 0;
     margin: 0 auto;
@@ -170,7 +167,6 @@ body.sidebar-footer {
 }
 
 @media only screen and (min-width: 992px) {
-  body {margin: auto}
   body > header { font-size: $header-font-size * 1.3; }
   #content { margin-right: $sidebar-width-wide; }
   #content {

@@ -3,7 +3,7 @@ layout: post
 title: "rails小记两则"
 date: 2012-05-27 11:15
 comments: true
-categories: Script
+categories: Ruby Rails
 ---
 
 最近在做个课程设计，好吧，俺老师是要求用JSP的，可惜我那弱爆了的水平是不可能完成的。于是顶着各种压力自己用rails来做。

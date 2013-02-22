@@ -3,7 +3,7 @@ layout: post
 title: "你应该在生产环境下使用JavaScript的严格模式（strict mode）吗？"
 date: 2013-02-08 09:32
 comments: true
-categories: Script Translation
+categories: JavaScript Translation
 ---
 EcmaScript 5 中引入了一种定义可以切换让你的JavaScript代码是否在所谓的 **严格模式(strict mode)**下执行。因为在strict mode下，当浏览器遇到一些脚本包含有不好的代码做法时，即使没有语法上的错误也会抛出runtime错误，因而常常被吹捧为一种显著有益于捕获程序员错误的方式。
 ###**在strict mode下运行被认为可以更少的出错**

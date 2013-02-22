@@ -3,7 +3,7 @@ layout: post
 title: "ubuntu12.04 and rails"
 date: 2012-04-27 23:51
 comments: true
-categories: Script
+categories: Ruby Rails
 ---
 
 昨晚，把ubuntu升级到了12.04，其实，对我目前的使用来说，系统是否升级几乎没影响。不过看着更新管理器冒出了新版本，反正也就按几个下的功夫，于是就升上去了。

@@ -3,7 +3,7 @@ layout: post
 title: "travel photo code"
 date: 2012-02-25 11:48
 comments: true
-categories: Jabber
+categories: Jabber Travel
 ---
 原本这是一篇记录我从第一天开始这次厦门义工行的流水帐文章。然后，前几天的一次重大失误导致我的硬盘全部东西都没了。没错，全部...
 

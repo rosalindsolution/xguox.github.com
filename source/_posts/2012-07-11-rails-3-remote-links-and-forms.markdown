@@ -3,7 +3,7 @@ layout: post
 title: "Rails 3 Remote Links and Forms: A Definitive Guide"
 date: 2012-07-11 11:28
 comments: true
-categories: Script
+categories: Ruby Rails Translation
 ---
 ##楼主物语：
 >

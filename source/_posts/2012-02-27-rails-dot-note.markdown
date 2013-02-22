@@ -3,7 +3,7 @@ layout: post
 title: "Ruby/Rails.note"
 date: 2012-02-27 17:55
 comments: true
-categories: Script
+categories: Ruby Rails
 ---
 把平常中一些开发出错以及解决方法记录了下来，其实，基本上都是Google或者StackOverflow得到的答案。然后有些都不知道问题的根源，只知道个解决方法
 

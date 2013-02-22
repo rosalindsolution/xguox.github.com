@@ -3,7 +3,7 @@ layout: post
 title: "Rails 3 Remote Links and Forms Part 2: Data-type (With jQuery)"
 date: 2012-07-12 11:28
 comments: true
-categories: Script
+categories: Ruby Rails Translation
 ---
 自从写了[Rails 3 Remote Links & Forms Definitive Guide](http://www.alfajango.com/blog/rails-3-remote-links-and-forms/)有一个问题也接踵而至：
 

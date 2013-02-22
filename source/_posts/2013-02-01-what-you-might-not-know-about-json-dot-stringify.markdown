@@ -3,7 +3,7 @@ layout: post
 title: "你可能不知道的JSON.stingify()"
 date: 2013-02-01 18:06
 comments: true
-categories: Script Translation
+categories: JSON Translation
 ---
 几乎所有开发人员都会花一些时间在JavaScript上，有些时候是在使用JSON.stingify（以及与之相对应的，JSON.parse）。JSON - Javascript Object Notation - 已经成为许多开发人员理想的数据交换格式（the go-to data-interchange format）- 并且有许多语言支持序列化为JSON,而不仅仅只有JavaScript本身。如果哪天你半夜起来又无法入睡了，可以查一查关于[JSON](http://en.wikipedia.org/wiki/JSON#History)的历史（tl;dr – Douglas Crockford is the brain behind it）
 <!--more-->
