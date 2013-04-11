@@ -3,9 +3,9 @@
 # ----------------------- #
 
 url: http://xguox.github.com
-title: XguoX.L
+title: XguoX_L
 subtitle: No weapon formed against me shall prosper;and every tongue that shall rise against thee in judgment thou shalt condemn——Isaian 54:17
-author: XguoX.L
+author: XguoX_L
 simple_search: http://google.com/search
 description:
 
@@ -45,7 +45,7 @@ titlecase: true       # Converts page and post titles to titlecase
 
 # list each of the sidebar modules you want to include, in the order you want them to appear.
 # To add custom asides, create files in /source/_includes/custom/asides/ and add them to the list like 'custom/asides/custom_aside_name.html'
-default_asides: [ asides/nav.html, asides/categories_tag.html, asides/recent_posts.html, asides/weibo.html, asides/flickr.html]
+default_asides: [ asides/nav.html, asides/categories_tag.html, asides/weibo.html, asides/flickr.html, asides/recent_posts.html]
 
 # Each layout uses the default asides, but they can have their own asides instead. Simply uncomment the lines below
 # and add an array with the asides you want to use.
@@ -105,18 +105,23 @@ delicious_user:
 delicious_count: 3
 
 # Disqus Comments
-disqus_short_name: XguoX
+disqus_short_name: xguox
 disqus_show_comment_count: true
 
 # Google Analytics
-google_analytics_tracking_id:
+google_analytics_tracking_id: UA-39166710-1
 
 # Facebook Like
 facebook_like: false
 
-flickr_userid: 69090391%40N07
-flickr_nickname: XguoX
-flickr_apikey: f7bb4075d361b97895bb91f2b086cb5e
-flickr_count: 7
+# App.net
+adn_user: xguox
+adn_post_count: 5
+adn_cache_path: "/blog/data/adn.xml"
+
+flickr_userid: 94631627@N04
+flickr_nickname: GroverLu
+flickr_apikey: d286c7fecaa39173da37f6e681c443f6
+flickr_count: 15
 
 weibo_uid: 1660802261

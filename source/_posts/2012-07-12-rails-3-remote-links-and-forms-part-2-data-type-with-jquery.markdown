@@ -59,6 +59,7 @@ jQuery的.ajax()方法提供一个可选的dataType参数用以指定我们所�
     <td>返回一个纯文本字符串</td>
   </tr>
 </tbody></table>
+
 ##Rails.js设置dataType参数
 
 Rails UJS驱动通过我们在远程链接/表单中指定的data-type属性来设置我们的ajax dataType参数。如果我们不明确地指定data-type，那默认的data-type将使用公有的$.ajaxSettings.如果我们没有提前设置它，那么一个通用的请求发送出后将会收到任意类型的响应。
@@ -66,6 +67,7 @@ Rails UJS驱动通过我们在远程链接/表单中指定的data-type属性来�
 ```javascript
 dataType = element.attr('data-type') || ($.ajaxSettings && $.ajaxSettings.dataType);
 ```
+
 老版本的UJS驱动会默认一个在script 中的data-type，而不是发送一个通用的请求。看上去，这像是一个明智的做法，但如果在我们controller的action中没有定义format.js的话， Rails将会抛出一个异常。 而在较新版本的UJS驱动中则简单地使用jQuery的’/‘默认dataType.这会告诉服务器，”不管你收到什么都给我”。然而，这会让controller响应以在Responder中所列出的第一种格式(见下一节)。这样的话，如果 format.html 列在 format.js 前面的话，app会响应以HTML格式(这意味着将会尝试跳转到POST或DELETE方法的ajax请求)。这并不是我们想要的。
 
 所以在最新版本的UJS驱动中，我们找到如何设置默认情况，比如说，当它告诉服务器，”尽管我更希望得到JS格式，但我会得到所有你得到的.”这样，如果所有可用的响应格式包括format.js都被定义，那么返回的将会是JS格式。当然，如果format.js没有被定义，那controller将会继续按照列表顺序返回第一个。
@@ -115,7 +117,8 @@ $('#i-want-html')  .bind('ajax:success', function(evt, data, status, xhr){
 同样的，我们能很轻易的修改上面的代码来处理JSON响应：
 
 处理JSON请求：
-```
+
+```javascript
 $('#i-want-json')  .bind('ajax:success', function(evt, data, status, xhr){
     var $this = $(this);
 
@@ -144,7 +147,7 @@ $('#i-want-json')  .bind('ajax:success', function(evt, data, status, xhr){
 ```
 如果 我们的响应没有自动为我们执行，那我们的处理方式可能是像下面这样:
 
-```
+```javascript
 $('#i-want-js').bind('ajax:complete', function(evt, xhr, status){  eval(xhr.responseText);
 });
 ```
@@ -175,7 +178,7 @@ end
 ```
 如果你对rails3的Responder不熟悉，下面的代码效果是一样的:
 
-```
+```ruby
 class TestCommentsController < ApplicationController ...
   def create
     @comment = Comment.new( params[:comment] )
@@ -196,7 +199,7 @@ end
 
 index.html.erb
 
-```
+```html
 <div id="comments"></div>
 <%= form_for :comment, :remote => true, :html => { :id => 'new-comment-form' } do |f| %>
   <%= f.text_area(:body) %>

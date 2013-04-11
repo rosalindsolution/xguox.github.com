@@ -8,6 +8,7 @@ categories: JSON Translation
 几乎所有开发人员都会花一些时间在JavaScript上，有些时候是在使用JSON.stingify（以及与之相对应的，JSON.parse）。JSON - Javascript Object Notation - 已经成为许多开发人员理想的数据交换格式（the go-to data-interchange format）- 并且有许多语言支持序列化为JSON,而不仅仅只有JavaScript本身。如果哪天你半夜起来又无法入睡了，可以查一查关于[JSON](http://en.wikipedia.org/wiki/JSON#History)的历史（tl;dr – Douglas Crockford is the brain behind it）
 <!--more-->
 在写JavaScript的时候，我们用```JSON.stringify```将某个值序列化为一个字符串值来表示一个对象。
+
 ```javascript
 JSON.stringify({
     name: "Jim Cowart",
@@ -27,6 +28,7 @@ JSON.stringify([1,2,3,4,"open","the","door"]);
 - 如果你的数组当中含有 ```undefined```值，函数或XML值，该数组中的这些值将会被当成 ```null```
 
 Let’s see about that:
+
 ```javascript
 JSON.stringify({
     doStuff: function() { },
@@ -39,7 +41,8 @@ JSON.stringify({
 
 这个我知道，但是有一些实用的技巧迟早我们会需要用上的。Many of the larger applications I’ve worked on recently have had debug flags that can be flipped to enable various console logging from different components active on the page.
 而我们明显不希望总是通过无数行```console.log```来筛选信息 - 但当这变得有需要的时候，让它的可读性更高是不是更nice呢？
-```
+
+```javascript
 // what if this:
 '{"name":"Jim Cowart","location":{"city":{"name":"Chattanooga","population":167674},"state":{"name":"Tennessee","abbreviation":"TN","population":6403000}},"company":"appendTo"}'
 
@@ -61,7 +64,8 @@ JSON.stringify({
 }"
 ```
 事实上，JSON.stringify可以传入3个参数（JSON.stringify(value [, replacer [, space]])。其中，第三个参数 - “space” - 允许你指定一个字符串字符、或者使用缩进、或是一个数字。如果你传的是一个数字，那相应的空格数（最大为10）会被作为缩进量
-```
+
+```javascript
 var person = {
     name: "Jim Cowart",
     location: {
@@ -120,7 +124,8 @@ JSON.stringify(person, null, "\t");
 */
 ```
 那么-第二个参数呢？在上面的例子中简单地传了一个```null```。关于 “replacer” 参数-它可以是一个数组或者是一个函数。如果是一个数组，它将只输出你在该数组中所想要包含的keys。
-```
+
+```javascript
 // 假定 person对象是上一例子中的那个，
 JSON.stringify(person, ["name", "company"], 4);
 /* 输出结果:
@@ -131,7 +136,8 @@ JSON.stringify(person, ["name", "company"], 4);
 */
 ```
 如果这 “replacer” 参数传入的是一个函数，那么这个函数需要有两个参数：key 和 value ：
-```
+
+```javascript
 // a bit contrived, but it shows what's possible
 // FYI - 被序列化的值是第一个传给replacerFn的东西, 也即是这个对象的每一个key，因此需要检查key的真假。
 var replacerFn = function(key, value) {
@@ -152,7 +158,7 @@ JSON.stringify(person, replacerFn, 4);
 
 当然，另一个得到自定义某个对象的JSON序列化的选择是在对象中使用“toJSON”方法
 
-```
+```javascript
 var person = {
     name: "Jim Cowart",
     location: {

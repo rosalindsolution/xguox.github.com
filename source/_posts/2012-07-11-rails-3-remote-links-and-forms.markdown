@@ -66,7 +66,7 @@ ajax:error
 ```
 这样，在你的页面中，你将会像下面这样绑定这些事件到一个函数中：
 
-```
+```javascript
 $('.button-link').bind('ajax:success', function(){  alert("Success!");
 });
 ```
@@ -83,7 +83,7 @@ Binding is good，因为它不是引人注目的。javascript功能和html标记
 >接着的Part2将通过一个更production-appropriate的例子叙述了如何请求一个JS（xml,json,文本或其他）的响应。
 
 ##View
-```
+```ruby
 <%= form_for @comment, :remote => true, :html => { :'data-type' => 'html', :id => 'create_comment_form' } do |f| %>  <%= f.text_area(:content) %>
   <div class="validation-error"></div>
   <%= f.submit %>
@@ -92,7 +92,7 @@ Binding is good，因为它不是引人注目的。javascript功能和html标记
 <div id="comments"></div>
 ```
 ##Controller
-```
+```ruby
 respond_to :html, :xml, :json...
 
 def create
@@ -132,7 +132,8 @@ end
 >Update:
 
 >下面这段已经更新以绑定到最新版本的rails.js所允许的回调。
-```
+
+```javascript
 $(document).ready(function(){
   $('#create_comment_form')
     .bind("ajax:beforeSend", function(evt, xhr, settings){
