@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Ruby | XguoX_L]]></title>
   <link href="http://xguox.github.com/blog/categories/ruby/atom.xml" rel="self"/>
   <link href="http://xguox.github.com/"/>
-  <updated>2013-04-12T19:00:29+08:00</updated>
+  <updated>2013-04-12T20:02:49+08:00</updated>
   <id>http://xguox.github.com/</id>
   <author>
     <name><![CDATA[XguoX_L]]></name>
@@ -545,7 +545,13 @@ $(document).ready(function(){
 
 
 <p>另外个是，用了will_paginate这个gem做分页，不过默认显示的是“previous”和“next”，改为中文的“前一页”和“后一页”需要先在config/initializers/ 下新建一个will_paginate.rb,  and then在里头加入
-Liquid error: undefined method `join' for #<String:0x007fc29dbd0a80></p>
+{% codeblock %}</p>
+
+<h1>coding: utf-8</h1>
+
+<p>WillPaginate::ViewHelpers.pagination_options[:previous_label ] =  "前一页"
+WillPaginate::ViewHelpers.pagination_options[:next_label ] =  "后一页"
+{% endcodeblock %}</p>
 ]]></content>
   </entry>
   
@@ -566,7 +572,10 @@ Liquid error: undefined method `join' for #<String:0x007fc29dbd0a80></p>
 <p>好吧，其实，我对这些改进啊有的没的还不怎么敏感。所以与其要看我介绍新功能新特性还不如直接搜索。</p>
 
 <p>我敏感的只是，我的一些rails项目都跑不动了。passenger报错
-Liquid error: undefined method `join' for #<String:0x007fc29dbd0530>
+{% codeblock %}
+Error message:
+libmysqlclient_r.so.16: cannot open shared object file: No such file or directory - /home/xguox/.rvm/gems/ruby-1.9.2-p290@rails/gems/mysql2-0.3.11/lib/mysql2/mysql2.so
+{% endcodeblock %}
 我还以为是我缺少了libmysqlclient_r.so.16这个文件，自己下载了之后也还是不行。期间尝试重装mysql，也试过之前说的那个，安装各种组建的命令还是无果。最终在ruby-china得到大神指点，居然只需卸了重装mysql2这个gem就可以了。貌似是因为/usr/lib 下的mysql2.so没有link到gem里边的mysql2.so
 过后，还是跟往常没有多大差别的继续Rails...</p>
 ]]></content>
@@ -583,15 +592,24 @@ Liquid error: undefined method `join' for #<String:0x007fc29dbd0530>
 <p>API：</p>
 
 <p>不使用try的时候是<!-- more -->
-Liquid error: undefined method `join' for "\n@person &amp;&amp; @person.name\n":String
+{% codeblock %}
+@person &amp;&amp; @person.name
+{% endcodeblock %}
 需确保@person不是nil，否则会报错
-Liquid error: undefined method `join' for "\nNoMethodError: undefined method `name' for nil:NilClass\n":String
+{% codeblock %}
+NoMethodError: undefined method `name' for nil:NilClass
+{% endcodeblock %}
 如果用try的话
-Liquid error: undefined method `join' for "\n@person.try(:name)\n":String
+{% codeblock %}
+@person.try(:name)
+{% endcodeblock %}
 如果@person为nil则返回nil而不是报错</p>
 
 <p>另外，try还可以接收block作为参数，
-Liquid error: undefined method `join' for "\nPerson.try(:find, 1)\n@people.try(:collect) {|p| p.name}\n":String
+{% codeblock %}
+Person.try(:find, 1)
+@people.try(:collect) {|p| p.name}
+{% endcodeblock %}
 漏了一句，API开头就说了，像常规的ruby的Object#send 那样工作
 看了下源码，貌似是利用了<strong>send</strong>实现的。最近在研究ruby的元编程。</p>
 ]]></content>
