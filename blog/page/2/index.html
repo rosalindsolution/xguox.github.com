@@ -1,0 +1,622 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>XguoX_L</title>
+  <meta name="author" content="XguoX_L">
+
+  
+  <meta name="description" content="最近,有许多关于 Derby.js的激动人心的讨论涌现在了我的Twitter Timeline. 我从未使用过能够帮你做这么多&#8211;实时同步客户端和服务端 的框架. 从本质上讲, 这使得我们可以自己编写一个代码量很少的应用可以让两个人编写同一个 text field–live. 而 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://xguox.github.com/blog/page/2/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+   <link href="/stylesheets/data-table.css" media="screen, projection" rel="stylesheet" type="text/css" />
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="XguoX_L" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-39166710-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+</hgroup>
+
+</header>
+  <!-- <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:xguox.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav> -->
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/03/10/introduction-to-realtime-web-with-meteor-dot-js-and-node-dot-js/">Introduction to Realtime Web With Meteor and Node.js</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-10T23:16:00+08:00" pubdate data-updated="true">Mar 10<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/03/10/introduction-to-realtime-web-with-meteor-dot-js-and-node-dot-js/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>最近,有许多关于 <a href="http://derbyjs.com/">Derby.js</a>的激动人心的讨论涌现在了我的Twitter Timeline. 我从未使用过能够帮你做这么多&#8211;实时同步客户端和服务端 的框架. 从本质上讲, 这使得我们可以自己编写一个代码量很少的应用可以让两个人编写同一个 text field–live. 而 Derby帮你处理了在 models 和 views 之间所有的同步. 就如 Google Docs 的协作编辑那样.</p>
+
+<p>这非常的伟大, 但经过深入的研究, 发现 Derby.js 并没有我想象中的那么成熟&#8211;目前还没有到1.0版本. 当然, Node.js 和 Meteor 也同样没有. 但相比起来, 似乎Derby缺少的更多一些. 比如, 据我目前知道的, 还没有一个好使的方法来处理sessions. 或许是因为缺乏文档的原因吧, 但是, 据说Derby的团队目前正在开发authentication. 如果有谁有一些关于Derby.js 处理sessions的新手指引, 我会很乐意去研究的.</p>
+
+<p>另外一个我经常见到被拿来与Derby.js做比较的框架是<a href="http://Meteor.com/">Meteor</a>. 与Derby相似的是,它也能在多个客户端下实时更新views, 尽管做法上可能跟Derby有点不同. Derby可以较容易的使用多种数据库, 而Meteor则只亲近于<a href="http://mongodb.org/">MongoDB</a>. 事实上, 通过如<a href="http://mongoosejs.com/">Mongoose</a>客户端接入数据库的API与你在服务端所期望的已经非常接近了.</p>
+
+<p>比起现在node的一些缺点和<a href="http://bjouhier.wordpress.com/2012/03/11/fibers-and-threads-in-node-js-what-for/">争议</a>, Meteor看起来是非常有趣的选择用来建立有实时需求的应用. 个人觉得还是Derby基于传统回调的编程形式更吸引我, 但在Derby的强大背后,却缺乏健壮的文档和一个大的开发者社区, 这无疑是个很大的打击. 或许这会随着时间推移而有所改变吧, 但比起Meteor来说还是会慢很多, 因为后者最近获得了1100万美元的资金. 这笔财政资金确保了Meteor的存在以及得到持续的支持. 对于那些需要财政与发展稳定的框架的开发者而言, 这笔资金只会让Meteor更加优胜.</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/03/10/introduction-to-realtime-web-with-meteor-dot-js-and-node-dot-js/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/03/08/learn-meteor-fundamentals-and-best-practices/">Meteor基础与最佳实践</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-08T17:42:00+08:00" pubdate data-updated="true">Mar 8<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/03/08/learn-meteor-fundamentals-and-best-practices/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>引言</h2>
+
+<p>想知道这个新奇又好玩的东西&#8212;Meteor是如何工作的?那就太好了,你来对地方了. 我会向你展示一个Meteor项目的方方面面 并会给你一些最好的提示让你应用在未来自己的Meteor项目当中.</p>
+
+<h2>What is Meteor</h2>
+
+<p>Meteor能让你打造非常动态的的网页同时代码量出乎意料之少. 记住一点,Meteor目前还在一个超级测试的版本(原文发布时候为 preview 0.3.8, 翻译时为 preview 0.5.7). 所以, 请不要因为工作的不够完美而感到意外.<br/>
+Meteor是基于<a href="http://nodejs.org/">Node.js</a>, 因此, 你所写的大部分代码也将会是JavaScript. 这没什么好惊奇的. 如果你想要一些好的资源来快递提高你的JavaScript, 可以看一看 <a href="http://bonsaiden.github.com/JavaScript-Garden/">JavaScript Garden</a>.  <br/>
+Meteor存储数据所使用的是MongoDB. 尽管如此, 实际上,Meteor使用的是minimongo作为接口.  它只是拥有相对完整的功能而非标准MongoDB的所有功能. 你并不需要确切地知道MongoDB是如何工作的, 但我还是建议你看一看Meteor 的<a href="http://docs.Meteor.com/#collections">Collections文档</a>以便知道你能做些什么.<br/>
+Meteor目前使用的模板引擎只能是 <a href="http://handlebarsjs.com/">handlebars</a>. 但在未来支持使用别的模板引擎也是很有可能的.(翻译该文章时已经支持使用其他的如 Jade )<br/>
+最后, 只要你开发网站, 了解 HTML 和 CSS 都是必须的.</p>
+
+<h2>基础</h2>
+
+<p>一个Meteor项目包含的大多都是JavaScript文件. 如果你放置任意一个 <code>*.js</code>文件在你的项目的任何位置, Meteor会自动帮你加载并运行之. 你在Meteor项目中写的每一个JavaScript文件都会被部署到服务端和客户端(额&#8230;也不完全是这样的,继续往下看吧!). 之所以Meteor这么,这么的cool,原因之一就是:当你写了一个JavaScript函数,在客户端和服务端都可以使用之!  <br/>
+更cool的是, 比如,你在项目的任意一个地方放置<code>*.less</code>, 那么这些文件都会自动被编译并发送至客户端以及从而包含进页面当中.<br/>
+有时候,可能你希望分离开服务端和客户端的代码. 幸运地是,</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/03/08/learn-meteor-fundamentals-and-best-practices/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/03/06/a-look-at-a-meteor-template/">A Look at a Meteor Template</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-06T14:40:00+08:00" pubdate data-updated="true">Mar 6<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/03/06/a-look-at-a-meteor-template/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h5>LEVEL: BEGINNER</h5>
+
+<p>学习一门语言或框架的最好方法之一是从零开始开发一个应用程序.</p>
+
+<p>但是,当你开发了N次的To-do list应用之后, 或许你会想要一些稍微新鲜的玩意. 所以这一次, 让我们来看看一些实际的应用的代码, 这里我们用的是 <a href="http://telesc.pe/">Telescope</a></p>
+
+<p>Telescope是一个基于Meteor的开源社交新闻网站. <a href="http://reddit.com/">Reddit</a> or <a href="http://news.ycombinator.com/">Hacker News</a>的实时版本.</p>
+
+<p>我们即将看到的代码是简化版的<code>post_edit</code><a href="https://github.com/SachaG/Telescope/blob/master/client/views/posts/post_edit.html">模板</a>及其<a href="https://github.com/SachaG/Telescope/blob/master/client/views/posts/post_edit.js">控制器(controller)</a>. 听名字你应该就知道, 这个模板的作用是提供一个简单的表单来编辑一篇已经存在的post. post有标题(title), 链接(URl), 主体(body), 以及一个或多个的类别(categories). 该程序实际的表单中还会有一些额外的东西, 但我们现在不需要关心那些.<br/>
+<img src="http://theMeteorbook.com/images/telescope-post-edit.png" alt="" /></p>
+
+<p>这篇文章的目的是让你对Meteor的模板有个大概的认识. 如果你在其他的环境下使用过模板系统就会感到很熟悉, 如果没的话,那就现在开始学习吧.</p>
+
+<h2>Basic Organization</h2>
+
+<p>Meteor模板系统有两个部分组成,分别是: HTML模板和JavaScript控制器. HTML部分只是纯粹的有变量占位符的哑巴模板, 所有的实际动作都是通过JavaScript产生的.</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/03/06/a-look-at-a-meteor-template/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/03/05/getting-started-with-meteor/">Getting Started With Meteor</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-05T23:02:00+08:00" pubdate data-updated="true">Mar 5<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/03/05/getting-started-with-meteor/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h5>LEVEL: BEGINNER</h5>
+
+<p>当你看到这,也就说明你听说了<a href="http://Meteor.com/">Meteor</a>这东西, 并对它产生一些好奇.<br/>
+那就让我们创建一个最基本的应用来耍一耍吧. 希望能以此学习到一两样东西.</p>
+
+<h2>准备工作: 安装Meteor</h2>
+
+<p>要安装Meteor那就再简单不过了. 只需要执行下面这条命令<br/>
+<code>curl https://install.Meteor.com | /bin/sh</code></p>
+
+<p>只要你是在<a href="https://github.com/Meteor/Meteor/wiki/Supported-Platforms">支持的平台</a>上运行,跟着步骤来就基本没什么问题.</p>
+
+<p>接下来让我们创建一个简单的app来确定是否安装成功.<br/>
+<code>Meteor create forum</code>
+如果安装成功, 那执行下面的步骤就可以把这个app跑起来了</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>cd forum
+</span><span class='line'>Meteor</span></code></pre></td></tr></table></div></figure>
+
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/03/05/getting-started-with-meteor/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/02/08/should-you-use-strict-in-your-production-javascript/">你应该在生产环境下使用JavaScript的严格模式（strict Mode）吗？</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-08T09:32:00+08:00" pubdate data-updated="true">Feb 8<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/02/08/should-you-use-strict-in-your-production-javascript/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>ECMAScript 5 中引入了一种定义,可以切换让你的JavaScript代码是否在所谓的 <strong>严格模式(strict mode)</strong>下执行。因为在strict mode下，当浏览器遇到一些脚本中包含有不好的代码做法时，即使没有语法上的错误也会抛出runtime错误，因而常常被吹捧为一种显著有益于捕获程序员错误的方式。</p>
+
+<h2><strong>在strict mode下运行被认为可以更少的出错</strong></h2>
+
+<p>举个栗子，在定义一个变量时，缺少关键字“var”，如果在non-strict mode下会默认为该变量为全局变量，而在 strict mode下则会抛出一个runtime错误。</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/02/08/should-you-use-strict-in-your-production-javascript/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/02/07/about-translation/">About My Translation</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-07T18:05:00+08:00" pubdate data-updated="true">Feb 7<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/02/07/about-translation/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><strong>First off</strong>，以俺目前的各种水平，想写出一些好的 technical articles 是有点难度的啦。于是乎，我选择了翻译国外一些好的文章。不管多么新鲜的技术，就算找不着中文资料，也一定没少英文文档。比如最近发现的几个挺不错<a href="https://cooperpress.com/">weekly</a>（其实也不是最近才发现，也订阅了有大半年吧，不过其实是只订不阅，或者阅的比较少。惰性心理啊。）以及一些国外牛人BLOG。Share下我的文章的主要来源吧.</p>
+
+<ul>
+<li><a href="http://www.smashingmagazine.com/">Smashing Magazine</a></li>
+<li><a href="http://www.html5rocks.com/en/">HTML5ROCKS</a></li>
+<li><a href="http://css-tricks.com/">CSS-Tricks</a></li>
+<li><a href="http://javascriptweekly.com/">JavaScript Weekly</a></li>
+<li><a href="http://rubyweekly.com/">Ruby Weekly</a>(最近几乎没怎么研究Ruby了)</li>
+<li><a href="http://dailyjs.com/">DailyJS</a></li>
+<li><a href="http://net.tutsplus.com/">nettus+</a></li>
+<li><a href="http://paulirish.com/">Paul Irish</a></li>
+<li><a href="http://blog.reybango.com/">Rey Bango</a></li>
+<li><a href="http://javascriptissexy.com/">JavaScript.is(Sexy)</a></li>
+</ul>
+
+
+<p>Obviously, 不可能有一篇新的我就翻译一篇. 要是那样的话我精尽人亡都搞不过来. 而且, 尴尬 + 惭愧的是, 本身我自己的Google Reader里也是常年1000+ unread =. =</p>
+
+<p>其实以前初初学Rails也是跟着全英文的<a href="http://ruby.railstutorial.org/ruby-on-rails-tutorial-book">Ruby on Rails Tutorial</a>，另外也尝试翻译过<a href="http://rubymonk.com/">rubymonk</a>以及近段时间翻的一些，本人的英文水平实在很渣，CET6不上300分的成绩也曾经考过。于是，都翻比较蹩脚。就好比之前那几篇，好些地方原本读原文还明白了, 翻译过后反而看不懂在讲什么。有些则是只会半句。好吧，的确尴尬！不过，会好起来的。</p>
+
+<p>说到英文水平，尽管老早的就知道重要性，却从未好好学习过，只能现在硬着头皮自愿加强迫自己上，看英文的电视剧（尽量不跟着字幕），用英文的社交网站（圈多些国外的），阅读外文的文章（好吧，几乎也就是一些科技类的）, 听英文podcast(各种听不懂)&#8230;</p>
+
+<p>PS，最近看<a href="http://linlis.me/">@linux</a>也经常翻译一些文章，不过他翻译的更多比较文学性的。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/02/01/what-you-might-not-know-about-json-dot-stringify/">你可能不知道的JSON.stingify()</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-01T18:06:00+08:00" pubdate data-updated="true">Feb 1<span>st</span>, 2013</time>
+        
+         | <a href="/blog/2013/02/01/what-you-might-not-know-about-json-dot-stringify/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>几乎所有开发人员都会花一些时间在JavaScript上，有些时候是在使用JSON.stingify（以及与之相对应的，JSON.parse）。JSON - Javascript Object Notation - 已经成为许多开发人员理想的数据交换格式（the go-to data-interchange format）- 并且有许多语言支持序列化为JSON,而不仅仅只有JavaScript本身。如果哪天你半夜起来又无法入睡了，可以查一查关于<a href="http://en.wikipedia.org/wiki/JSON#History">JSON</a>的历史（tl;dr – Douglas Crockford is the brain behind it）</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/02/01/what-you-might-not-know-about-json-dot-stringify/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/blog/page/3/">&larr; Older</a>
+    
+    <a href="archives">Blog Archives</a>
+    
+    <a class="next" href="/">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <ul id="recent_posts">
+      <li class="post">
+      <a href="/" alt="Home"><img src="/images/Home.png"></a>
+      <a href="/archives/" alt="Archives"><img src="/images/Calendar.png"></a>
+      <a href="mailto:golvinlu@gmail.com" alt="E-Mail"><img src="/images/Envelope.png"></a>
+      <a href="/about/" alt="About XguoX"><img src="/images/User.png"></a>
+      <a href="http://gplus.to/xguox" alt="XguoX" target="_blank"><img src="/images/googleplus.png"></a>
+      <a href="https://twitter.com/XguoX_L" alt="XguoX" target="_blank"><img src="/images/tw.png"></a>
+      <a href="http://cn.linkedin.com/pub/grover-lu/65/8ba/4a5" alt="XguoX" target="_blank"><img src="/images/linkedin.png"></a>
+      <a href="/atom.xml" alt="subscribe feed"><img src="/images/rss_big1.png"></a>
+      </li>
+  </ul>
+</section>
+
+<section>
+<h1>Category</h1>
+<span class='categories_tag'> <a href='/blog/categories/books' style='font-size: 102.0%'>Books</a>  <a href='/blog/categories/css' style='font-size: 102.0%'>Css</a>  <a href='/blog/categories/hexo' style='font-size: 102.0%'>Hexo</a>  <a href='/blog/categories/jabber' style='font-size: 160.0%'>Jabber</a>  <a href='/blog/categories/javascript' style='font-size: 102.0%'>Javascript</a>  <a href='/blog/categories/json' style='font-size: 102.0%'>Json</a>  <a href='/blog/categories/meteor' style='font-size: 114.0%'>Meteor</a>  <a href='/blog/categories/performance' style='font-size: 102.0%'>Performance</a>  <a href='/blog/categories/rails' style='font-size: 118.0%'>Rails</a>  <a href='/blog/categories/ruby' style='font-size: 118.0%'>Ruby</a>  <a href='/blog/categories/sublime' style='font-size: 102.0%'>Sublime</a>  <a href='/blog/categories/translation' style='font-size: 124.0%'>Translation</a>  <a href='/blog/categories/travel' style='font-size: 104.0%'>Travel</a> </span>
+</section>
+
+
+<section class="even">
+<iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=1&isTitle=0&noborder=0&isWeibo=1&isFans=0&uid=1660802261&verifier=0594649b&dpc=1"></iframe>
+</section>
+
+
+
+<section class="last odd">
+<h1>My <span style="color: #0063dc;">Flick<span style="color: #ff0084;">r</h1>
+<style type="text/css">
+	#flickrList li { text-align: left; display:inline; margin: 0 2px 0 2px;}
+</style>
+<ul id="flickrList"></ul>
+<script lang="Javascript">
+var flickrNickname = "GroverLu";
+function jsonFlickrApi(rsp) {
+	if (rsp.stat != "ok"){
+  		return;
+ 	}
+ 	var list = "";
+ 	for (var i=0; i < rsp.photos.photo.length; i++) {
+  		var photo    = rsp.photos.photo[i];
+  		var imgUrl   = 'http://farm'+ photo.farm +'.static.flickr.com/'+ photo.server +'/'+ photo.id +'_'+ photo.secret +'_s.jpg';
+  		var photoUrl = 'http://www.flickr.com/photos/'+ flickrNickname +'/'+ photo.id;
+  		list += '<li id="flickrItem_'+i+'"><a href="'+ photoUrl +'" title="'+ photo.title +'"><img alt="'+ photo.title +'" src="'+ imgUrl +'" /></a></li>';
+ 	}
+ 	document.getElementById('flickrList').innerHTML = list;
+}
+</script>
+<script lang="Javascript" src="http://api.flickr.com/services/rest/?format=json&method=flickr.photos.search&user_id=94631627@N04&per_page=15&api_key=d286c7fecaa39173da37f6e681c443f6"></script>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/04/11/jabber-sublime/">扯点Sublime</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/04/10/understanding-publications-and-subscriptions/">Understanding Publications and Subscriptions</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/04/08/hexo-blog-node-octopress/">继续折腾 &#8211; Hexo版Blog</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/04/06/deploy-meteor-on-heroku/">最近在折腾 &#8211; deploy Meteor on heroku</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/25/5-use-cases-for-icon-fonts/">5 Use Cases for Icon Fonts</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/20/improving-ux-through-front-end-performance/">Improving UX Through Front-End Performance</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/14/5-meteor-misconceptions/">5 Meteor Misconceptions</a>
+      </li>
+    
+  </ul>
+</section>
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - XguoX_L -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+<!-- 
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-39166710-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+  --></footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'xguox';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

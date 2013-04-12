@@ -1,0 +1,354 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>two weeks withs rails - XguoX_L</title>
+  <meta name="author" content="XguoX_L">
+
+  
+  <meta name="description" content="并不是我刚开始接触Rails两周，而是这两周我才能真正的算个入门吧。虽然学校有教C与Java，但就像我之前所说那般，其实Ruby才是我的first&amp;major。 为嘛说这两周才算真正的入门呢？自认为自己不是什么学习能力超常的人。但是我觉得，一般人能做到的，我也能做到，一般人难以做到的， &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://xguox.github.com/blog/2012/03/23/two-weeks-withs-rails/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+   <link href="/stylesheets/data-table.css" media="screen, projection" rel="stylesheet" type="text/css" />
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="XguoX_L" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-39166710-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+</hgroup>
+
+</header>
+  <!-- <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:xguox.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav> -->
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Two Weeks Withs Rails</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-03-23T20:07:00+08:00" pubdate data-updated="true">Mar 23<span>rd</span>, 2012</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>并不是我刚开始接触Rails两周，而是这两周我才能真正的算个入门吧。虽然学校有教C与Java，但就像我之前所说那般，其实Ruby才是我的first&amp;major。</p>
+
+<p>为嘛说这两周才算真正的入门呢？自认为自己不是什么学习能力超常的人。但是我觉得，一般人能做到的，我也能做到，一般人难以做到的，maybe我加多几把油也能做到。</p>
+
+<!-- more -->
+
+
+<p>从去年10月开始接触ruby，看完《Ruby编程语言》就开始《Ruby on Rails Tutorail Learn Rails by Example》期间也交替翻翻AWDWR中文第三版和英文第四版。前不久的Github被爆事件，那会让我郁闷了好一会，看着社区上好多人在议论纷纷我却什么都不懂。仲使我再关注又如何。直到好久之后才通过各种奋力查资料知道Mass Assignment究竟是怎么回事。</p>
+
+<p>在这两周之前，我的Rails知识点很杂乱，大概是因为我的学习习惯吧。通常都是一般般懂的把整体过一遍，再回头逐个细细推敲。但是，这个整体过一遍的度把握的不太好，于是&#8230;在此之前，我能不用对着官网那个guide搭出同样的博客，但是我之所以能搭出来只是因为我把那些步骤很纯粹的记住了，这一步做完大概下一步要做啥死记了。呃，有时候发觉自己的记忆能力还不错下。</p>
+
+<p>这两周，我想很大原因是有大牛指导着吧。前一周，我做好各种被拒绝的心理准备决定出去找一些用rails的公司实习，但是很幸运的是，我的第一次面试就成功了。（PS：其实很疑惑为什么会招我，很明显的我并不是个牛X的Railser，当时的笔试题目貌似我答出来的也就一半那样吧；并且，在某网站上我发现我们的头头回复一名求职的实习生时说只招全职之类的。）</p>
+
+<p>相较之以往，如今，我的学习也比较系统一些。虽然在多表关联那一块运用还不太熟练，但Rails的MVC结构算是基本搞明白了。以及很多helper，route，也基本懂了。另外，我们的头头总喜欢问我们一句，有没更好的方法。每次我都只把这个更好的方法了解一半，彻底钻研的精神还不够啊。结果每次都不是最好的方法。泪奔啊&#8230;让头儿失望了。</p>
+
+<p>不过有点小悲催的是，公司的VCS一直都是用SVN，而我只熟悉Git，呃，也不叫熟悉吧，要是我真的了如指掌了一定力劝公司改用Rails。</p>
+
+<p>这两周固然很多以前模模糊糊的都理解了。不过我想，要是没有以前的缓慢前进，也不会有这两周的成果呢？</p>
+
+<p>记得那次面试时候我发现我最大的缺点并不是基础不牢什么的，而是我的学习时间的分配以及计划没有安排好。我每天除了睡觉吃饭等等几乎就是学习Ruby/Rails相关，但其实我的效率可以说是比较低。</p>
+
+<p>哦，还有一个应该算是进步吧，编码的规范。以往只是自己练习写的代码各种凹凹凸凸&#8230;现在都会注意那些空格换行等等格式了。</p>
+
+<p>虽说是进步了不少，但是，公司的代码看起来还是挺吃力的。能不吃力嘛，动不动一个model类或者view页面就5~600行。也不知道几个月的实习下来我能熟悉几成。</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">XguoX_L</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-03-23T20:07:00+08:00" pubdate data-updated="true">Mar 23<span>rd</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/rails/'>Rails</a>, <a class='category' href='/blog/categories/ruby/'>Ruby</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://xguox.github.com/blog/2012/03/23/two-weeks-withs-rails/" data-via="" data-counturl="http://xguox.github.com/blog/2012/03/23/two-weeks-withs-rails/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/03/12/something-in-google-plus/" title="Previous Post: something in google plus">&laquo; something in google plus</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/04/14/my-vim-config/" title="Next Post: My VIM Config">My VIM Config &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <ul id="recent_posts">
+      <li class="post">
+      <a href="/" alt="Home"><img src="/images/Home.png"></a>
+      <a href="/archives/" alt="Archives"><img src="/images/Calendar.png"></a>
+      <a href="mailto:golvinlu@gmail.com" alt="E-Mail"><img src="/images/Envelope.png"></a>
+      <a href="/about/" alt="About XguoX"><img src="/images/User.png"></a>
+      <a href="http://gplus.to/xguox" alt="XguoX" target="_blank"><img src="/images/googleplus.png"></a>
+      <a href="https://twitter.com/XguoX_L" alt="XguoX" target="_blank"><img src="/images/tw.png"></a>
+      <a href="http://cn.linkedin.com/pub/grover-lu/65/8ba/4a5" alt="XguoX" target="_blank"><img src="/images/linkedin.png"></a>
+      <a href="/atom.xml" alt="subscribe feed"><img src="/images/rss_big1.png"></a>
+      </li>
+  </ul>
+</section>
+
+<section>
+<h1>Category</h1>
+<span class='categories_tag'> <a href='/blog/categories/books' style='font-size: 102.0%'>Books</a>  <a href='/blog/categories/css' style='font-size: 102.0%'>Css</a>  <a href='/blog/categories/hexo' style='font-size: 102.0%'>Hexo</a>  <a href='/blog/categories/jabber' style='font-size: 160.0%'>Jabber</a>  <a href='/blog/categories/javascript' style='font-size: 102.0%'>Javascript</a>  <a href='/blog/categories/json' style='font-size: 102.0%'>Json</a>  <a href='/blog/categories/meteor' style='font-size: 114.0%'>Meteor</a>  <a href='/blog/categories/performance' style='font-size: 102.0%'>Performance</a>  <a href='/blog/categories/rails' style='font-size: 118.0%'>Rails</a>  <a href='/blog/categories/ruby' style='font-size: 118.0%'>Ruby</a>  <a href='/blog/categories/sublime' style='font-size: 102.0%'>Sublime</a>  <a href='/blog/categories/translation' style='font-size: 124.0%'>Translation</a>  <a href='/blog/categories/travel' style='font-size: 104.0%'>Travel</a> </span>
+</section>
+
+
+<section class="even">
+<iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=1&isTitle=0&noborder=0&isWeibo=1&isFans=0&uid=1660802261&verifier=0594649b&dpc=1"></iframe>
+</section>
+
+
+
+<section class="last odd">
+<h1>My <span style="color: #0063dc;">Flick<span style="color: #ff0084;">r</h1>
+<style type="text/css">
+	#flickrList li { text-align: left; display:inline; margin: 0 2px 0 2px;}
+</style>
+<ul id="flickrList"></ul>
+<script lang="Javascript">
+var flickrNickname = "GroverLu";
+function jsonFlickrApi(rsp) {
+	if (rsp.stat != "ok"){
+  		return;
+ 	}
+ 	var list = "";
+ 	for (var i=0; i < rsp.photos.photo.length; i++) {
+  		var photo    = rsp.photos.photo[i];
+  		var imgUrl   = 'http://farm'+ photo.farm +'.static.flickr.com/'+ photo.server +'/'+ photo.id +'_'+ photo.secret +'_s.jpg';
+  		var photoUrl = 'http://www.flickr.com/photos/'+ flickrNickname +'/'+ photo.id;
+  		list += '<li id="flickrItem_'+i+'"><a href="'+ photoUrl +'" title="'+ photo.title +'"><img alt="'+ photo.title +'" src="'+ imgUrl +'" /></a></li>';
+ 	}
+ 	document.getElementById('flickrList').innerHTML = list;
+}
+</script>
+<script lang="Javascript" src="http://api.flickr.com/services/rest/?format=json&method=flickr.photos.search&user_id=94631627@N04&per_page=15&api_key=d286c7fecaa39173da37f6e681c443f6"></script>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/04/11/jabber-sublime/">扯点Sublime</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/04/10/understanding-publications-and-subscriptions/">Understanding Publications and Subscriptions</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/04/08/hexo-blog-node-octopress/">继续折腾 -- Hexo版Blog</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/04/06/deploy-meteor-on-heroku/">最近在折腾 -- deploy Meteor on heroku</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/25/5-use-cases-for-icon-fonts/">5 Use Cases for Icon Fonts</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/20/improving-ux-through-front-end-performance/">Improving UX Through Front-End Performance</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/14/5-meteor-misconceptions/">5 Meteor Misconceptions</a>
+      </li>
+    
+  </ul>
+</section>
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - XguoX_L -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+<!-- 
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-39166710-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+  --></footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'xguox';
+      
+        
+        // var disqus_developer = 1;
+	    var disqus_identifier = 'http://xguox.github.com/blog/2012/03/23/two-weeks-withs-rails/';
+	    var disqus_url = 'http://xguox.github.com/blog/2012/03/23/two-weeks-withs-rails/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

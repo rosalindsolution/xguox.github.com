@@ -1,0 +1,412 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>最近在折腾 -- deploy Meteor on heroku - XguoX_L</title>
+  <meta name="author" content="XguoX_L">
+
+  
+  <meta name="description" content="貌似有好一段时间没有在这儿小发一些闷骚或者情感泛滥什么的, 都是用自己蹩脚的英语水平翻译些英文post. 这些天想部署个Meteor app玩一玩, 结果一玩就各种出事了. vps退货, godaddy的莫名失单, 部署各种卡壳&#8230; 因为最近比较多的关注前端的东西, &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://xguox.github.com/blog/2013/04/06/deploy-meteor-on-heroku/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+   <link href="/stylesheets/data-table.css" media="screen, projection" rel="stylesheet" type="text/css" />
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="XguoX_L" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-39166710-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+</hgroup>
+
+</header>
+  <!-- <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:xguox.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav> -->
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">最近在折腾 -- Deploy Meteor on Heroku</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-06T23:42:00+08:00" pubdate data-updated="true">Apr 6<span>th</span>, 2013</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>貌似有好一段时间没有在这儿小发一些闷骚或者情感泛滥什么的, 都是用自己蹩脚的英语水平翻译些英文post. 这些天想部署个Meteor app玩一玩, 结果一玩就各种出事了.</p>
+
+<p>vps退货, godaddy的莫名失单, 部署各种卡壳&#8230;</p>
+
+<p>因为最近比较多的关注前端的东西,  同时在自己local耍着<a href="https://github.com/SachaG/Telescope">SachaG / Telescope</a>这个基于Meteor的项目. 于是也就顺手搭了<a href="http://frontn.com">FrontN</a>这么个类似HN, Reddit的玩意. 原本是准备直接把HN,Reddit clone 成中文版的, 不过<a href="http://news.dbanotes.net/">Fenng</a>貌似已经这么干了, 所以, 我也就不再造这个轮子了.另外原本也想专门作为<a href="http://jianshu.io">简书</a>的评论系统. 不过想想也不是很妥, 就&#8230;</p>
+
+<p>Meteor的系统是超级alpha的, 所以很多问题遇上了也没人帮忙, 解决. 比如之前在<a href="http://stackoverflow.com/questions/15654637/same-helper-for-different-template">Stack Overflow</a>. 而部署这一块, 是我比较陌生的. 包括以前搞rails那会, 也没真正意义的整一整部署. 绝大部分时间都在本地跑啊跑. 所以, 在Meteor, 也是这一块最让我头疼.</p>
+
+<!--more -->
+
+
+<p>从vps到appfog到heroku, 各种转了一圈, 最终还是选定了heroku.  原因之一就是资料相对多, 出错情况也较少.</p>
+
+<p>秉承流水帐作风, 待我慢慢道来.</p>
+
+<p>幸得以前一直搞得是ruby/rails. 所以装heroku的时候没啥压力, 不然可能这又得搞上一会. 直接下载了官方的<a href="https://toolbelt.heroku.com/">heroku toolbelt</a>无压力安装, login, clone&#8230;</p>
+
+<p>and then 跟着 <a href="https://github.com/oortcloud/heroku-buildpack-Meteorite">Heroku buildpack for Meteorite</a> 这个buildpack完成接下来的:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>heroku create --stack cedar --buildpack https://github.com/oortcloud/heroku-buildpack-Meteorite.git</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>Please note: 在这如果你想把你的项目名改成想要的比如我改成了<a href="frontn.herokuapp.com">frontn.herokuapp.com</a>, 在heroku的项目页面上修改名字的同时, 记得把repo的git remote 也相应的更改</strong></p>
+
+<p>否则就会报错</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>heroku !  Resource not found</span></code></pre></td></tr></table></div></figure>
+
+
+<p>好吧, 很明显我自己傻13了才会知道要这么做的.</p>
+
+<p>接着到了最关键的push了.  当我<code>git push heroku master</code>的时候, bla,blah blah&#8230;下来还以为这次会真的很顺畅. 结果oops的一嘣</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>...
+</span><span class='line'>...
+</span><span class='line'>-----&gt; Launching... !     Heroku push rejected, Please verify your account to install this add-on
+</span><span class='line'>For more information, see http://devcenter.heroku.com/categories/billing
+</span><span class='line'>Verify now at https://heroku.com/verify</span></code></pre></td></tr></table></div></figure>
+
+
+<p>纳尼,  原来这货还要用到一个mongo的数据库插件, 在这里是Mongohq, 原本没注意看以为直接
+<code>heroku addons:add mongohq:sandbox</code>就OK
+(sandbox是免费餐)</p>
+
+<p>结果毫无疑问的继续嘣&#8230;</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Adding mongohq:sandbox on frontn... failed
+</span><span class='line'> !    Please verify your account to install this add-on
+</span><span class='line'> !    For more information, see http://devcenter.heroku.com/categories/billing
+</span><span class='line'> !    Verify now at https://heroku.com/verify</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Google之才知道原来Heroku在装插件前得通过传说中的credit card卡认证, 我辣时就更嘣了. 对于我等无产阶级而言, credit card仿佛就跟神一般滴遥不可及. 你想买3刀的godaddy域名?不好意思, 请出示credit card; 你想用name.com买域名? 不好意思, 请出示credit card; 你想买linode的vps?有credit card吗? 亲&#8230;正当我开始准备放弃heroku这条路时, 忽然无意中发现了虚拟信用卡这货, 顺藤摸瓜发现, 柳暗花明又一村.</p>
+
+<p><strong>工行国际e卡 + entropay</strong>(怎么觉得我像在拍广告的)</p>
+
+<p>虽然门路是找着了, 不过弄得我好不蛋疼.<br/>
+因为mac上工行网银不支持插U盾, 于是又启动了以前的那台老爷机, 一卡一顿的, 唉, 为了搞到手就忍忍吧&#8230;结果成功申请后唬弄半晌才知道原来要先用软妹b买美刀才能花, 而且至少买50刀. 我现在要50刀搞毛线撒&#8230;没法子, 只得照办了. 然后是entropay的虚拟卡>>><br/>
+OOXX一轮下来总算是把heroku的验证给通过了, 感动啊&#8230;</p>
+
+<p><code>heroku addons:add mongohq:sandbox</code></p>
+
+<p><code>git push heroku master</code></p>
+
+<p>好吧, 总算是成功了. 我容易吗&#8230;</p>
+
+<p>最后总结, heroku相对的来说除了出错情况较少, 可用资料多之外, 管理上也比自己搭vps要方便些, feel了一下MongoHQ的那个插件还不错&#8230;这样, 也就可以花更多的时间的app的开发上. 而不是折腾这出错那无解.  好吧, 尽管咱都爱折腾, 不过, 往你想的地方折腾不更好吗? 其实这些也就都是Paas的优势啦, 专注核心开发, 减少运维成本&#8230;</p>
+
+<p>其他的待续吧, 相比rails, 或许底层它怎么干还没搞透, 但起码的知道它干了什么, 可Meteor我还真不知道它都干了些什么, 比rails更magic.</p>
+
+<p>不管是否热爱前端的亲, 欢迎做客<a href="http://frontn.com">FrontN</a>. 有Bug那是必然的啦, 欢迎Feedback.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">XguoX_L</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-06T23:42:00+08:00" pubdate data-updated="true">Apr 6<span>th</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/jabber/'>Jabber</a>, <a class='category' href='/blog/categories/meteor/'>Meteor</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://xguox.github.com/blog/2013/04/06/deploy-meteor-on-heroku/" data-via="" data-counturl="http://xguox.github.com/blog/2013/04/06/deploy-meteor-on-heroku/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/03/25/5-use-cases-for-icon-fonts/" title="Previous Post: 5 Use Cases for Icon Fonts">&laquo; 5 Use Cases for Icon Fonts</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/04/08/hexo-blog-node-octopress/" title="Next Post: 继续折腾 -- Hexo版Blog">继续折腾 -- Hexo版Blog &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <ul id="recent_posts">
+      <li class="post">
+      <a href="/" alt="Home"><img src="/images/Home.png"></a>
+      <a href="/archives/" alt="Archives"><img src="/images/Calendar.png"></a>
+      <a href="mailto:golvinlu@gmail.com" alt="E-Mail"><img src="/images/Envelope.png"></a>
+      <a href="/about/" alt="About XguoX"><img src="/images/User.png"></a>
+      <a href="http://gplus.to/xguox" alt="XguoX" target="_blank"><img src="/images/googleplus.png"></a>
+      <a href="https://twitter.com/XguoX_L" alt="XguoX" target="_blank"><img src="/images/tw.png"></a>
+      <a href="http://cn.linkedin.com/pub/grover-lu/65/8ba/4a5" alt="XguoX" target="_blank"><img src="/images/linkedin.png"></a>
+      <a href="/atom.xml" alt="subscribe feed"><img src="/images/rss_big1.png"></a>
+      </li>
+  </ul>
+</section>
+
+<section>
+<h1>Category</h1>
+<span class='categories_tag'> <a href='/blog/categories/books' style='font-size: 102.0%'>Books</a>  <a href='/blog/categories/css' style='font-size: 102.0%'>Css</a>  <a href='/blog/categories/hexo' style='font-size: 102.0%'>Hexo</a>  <a href='/blog/categories/jabber' style='font-size: 160.0%'>Jabber</a>  <a href='/blog/categories/javascript' style='font-size: 102.0%'>Javascript</a>  <a href='/blog/categories/json' style='font-size: 102.0%'>Json</a>  <a href='/blog/categories/meteor' style='font-size: 114.0%'>Meteor</a>  <a href='/blog/categories/performance' style='font-size: 102.0%'>Performance</a>  <a href='/blog/categories/rails' style='font-size: 118.0%'>Rails</a>  <a href='/blog/categories/ruby' style='font-size: 118.0%'>Ruby</a>  <a href='/blog/categories/sublime' style='font-size: 102.0%'>Sublime</a>  <a href='/blog/categories/translation' style='font-size: 124.0%'>Translation</a>  <a href='/blog/categories/travel' style='font-size: 104.0%'>Travel</a> </span>
+</section>
+
+
+<section class="even">
+<iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=1&isTitle=0&noborder=0&isWeibo=1&isFans=0&uid=1660802261&verifier=0594649b&dpc=1"></iframe>
+</section>
+
+
+
+<section class="last odd">
+<h1>My <span style="color: #0063dc;">Flick<span style="color: #ff0084;">r</h1>
+<style type="text/css">
+	#flickrList li { text-align: left; display:inline; margin: 0 2px 0 2px;}
+</style>
+<ul id="flickrList"></ul>
+<script lang="Javascript">
+var flickrNickname = "GroverLu";
+function jsonFlickrApi(rsp) {
+	if (rsp.stat != "ok"){
+  		return;
+ 	}
+ 	var list = "";
+ 	for (var i=0; i < rsp.photos.photo.length; i++) {
+  		var photo    = rsp.photos.photo[i];
+  		var imgUrl   = 'http://farm'+ photo.farm +'.static.flickr.com/'+ photo.server +'/'+ photo.id +'_'+ photo.secret +'_s.jpg';
+  		var photoUrl = 'http://www.flickr.com/photos/'+ flickrNickname +'/'+ photo.id;
+  		list += '<li id="flickrItem_'+i+'"><a href="'+ photoUrl +'" title="'+ photo.title +'"><img alt="'+ photo.title +'" src="'+ imgUrl +'" /></a></li>';
+ 	}
+ 	document.getElementById('flickrList').innerHTML = list;
+}
+</script>
+<script lang="Javascript" src="http://api.flickr.com/services/rest/?format=json&method=flickr.photos.search&user_id=94631627@N04&per_page=15&api_key=d286c7fecaa39173da37f6e681c443f6"></script>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/04/11/jabber-sublime/">扯点Sublime</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/04/10/understanding-publications-and-subscriptions/">Understanding Publications and Subscriptions</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/04/08/hexo-blog-node-octopress/">继续折腾 -- Hexo版Blog</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/04/06/deploy-meteor-on-heroku/">最近在折腾 -- deploy Meteor on heroku</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/25/5-use-cases-for-icon-fonts/">5 Use Cases for Icon Fonts</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/20/improving-ux-through-front-end-performance/">Improving UX Through Front-End Performance</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/14/5-meteor-misconceptions/">5 Meteor Misconceptions</a>
+      </li>
+    
+  </ul>
+</section>
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - XguoX_L -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+<!-- 
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-39166710-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+  --></footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'xguox';
+      
+        
+        // var disqus_developer = 1;
+	    var disqus_identifier = 'http://xguox.github.com/blog/2013/04/06/deploy-meteor-on-heroku/';
+	    var disqus_url = 'http://xguox.github.com/blog/2013/04/06/deploy-meteor-on-heroku/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

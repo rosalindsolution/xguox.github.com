@@ -1,0 +1,1661 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Translation | XguoX_L]]></title>
+  <link href="http://xguox.github.com/blog/categories/translation/atom.xml" rel="self"/>
+  <link href="http://xguox.github.com/"/>
+  <updated>2013-04-12T17:57:04+08:00</updated>
+  <id>http://xguox.github.com/</id>
+  <author>
+    <name><![CDATA[XguoX_L]]></name>
+    <email><![CDATA[golvinlu@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Understanding Publications and Subscriptions]]></title>
+    <link href="http://xguox.github.com/blog/2013/04/10/understanding-publications-and-subscriptions/"/>
+    <updated>2013-04-10T14:22:00+08:00</updated>
+    <id>http://xguox.github.com/blog/2013/04/10/understanding-publications-and-subscriptions</id>
+    <content type="html"><![CDATA[<h5>LEVEL: INTERMEDIATE</h5>
+
+<p>Publications &amp; subscriptions 是在Meteor里最基本也是最重要的概念之一, 但同时也是最难理解的. 很大程度上是由于这其中跟传统的构建web的方式有很大的不同.<br/>
+过去, 我们习惯思考,定义API用在客户端和服务器之间进行数据传递, 而在Meteor中, 客户端和服务端的数据是同步的. 我们使用publications来精确地控制如何同步. <br/>
+最初人们觉得这个概念有一些难以理解的部分原因是由于Meteor像"魔术"那样为我们做了这一切. 这些"魔术"都非常有用, 而具体发生了什么则都被掩盖封装起来了(就如魔术为何如此奇幻一样). 那么, 现在就让我们拨开这些魔术表层的面纱一探究竟. 在此, 我们将会学习到一到两个窍门.</p>
+
+<h2>Defining Publications</h2>
+
+<p>从本质上讲, <strong>publication</strong>(使用<strong>subscription</strong>与之相连)是从服务端(源)collection到客户端(目标)collection的传递数据方法. 同时, 把subscription想象成一个漏斗连接着标准的数据存储(与mongodb数据库交互的源集合)与客户端缓存(目标集合, 相应数据的备份或者子集).</p>
+
+<p><strong>subscription</strong>精确地控制着哪些数据该通过这个漏斗, 同时负责同步两端的数据. 通过添加多个<strong>subscription</strong>到服务端数据存储, 我们就可以实时地, 有效地, 安全地保持各个客户端的数据同步.</p>
+
+<!-- more -->
+
+
+<p>这里头所用的隧道协议叫作 <strong>DDP</strong>(Distributed Data Protocol). 想要了解更多关于DDP可以观看Matt DeBergalis(Meteor的founder之一)在(<a href="http://2012.realtimeconf.com/video/matt-debergalis">The Realtime Conference</a>上的演讲. 又或者是 Chris Mather的<a href="http://www.eventedmind.com/posts/meteor-subscriptions-and-ddp">这个视频</a>更详细的为你介绍DDP的概念.</p>
+
+<p>现在, 我们了解了基础部分, 让我们往更深层探个究竟吧.</p>
+
+<h2>Autopublish</h2>
+
+<p>当你创建了一个最基本的Meteor应用之后(比如使用 <code>meteor create</code>), 它会自动的启用 <strong>autopublish</strong>这个package. 首先的, 我们先来看看它究竟为干了些什么.</p>
+
+<p><strong>autopublish</strong>是移除了对subscriptions的需要还是只为你保管subscriptions 这取决于你如何看待它. <strong>autopublish</strong>所做的是自动地把服务端的所有数据镜像到客户端.
+<img src="http://www.themeteorbook.com/images/book/autopublish@2x.png" alt="" /></p>
+
+<p>这是怎么做到的呢? 假设你在服务端有个<code>posts</code>的集合. 那么 <strong>autopublish</strong>会自动把在Mongo 的posts 集合所找到的每一个post发送到客户端给一个也同样叫posts 的集合.</p>
+
+<p>所以, 如果你使用<code>autopublish</code>, 你就不用再去管subscriptions了. 数据在哪都可以访问, 所有事情变得各种简单. 当然, 很明显这是有问题的, 你不可能在每一个用户的机器上都缓存有你的整个app的数据库备份.</p>
+
+<p>出于这个原因, <strong>autopublish</strong>只适合用在你的app刚起步还没考虑到subscriptions的时候.</p>
+
+<h2>Publishing Full Collections</h2>
+
+<p>当你移除掉autopublish以后, 很快你就会发现你的数据都会在客户端消失不见. 有一种方法可以很简单地取回这些数据, 那就是简单的复刻<code>autopublish</code>, 并把一个collection全部publish. 例如:</p>
+
+<p><code>javascript
+Meteor.publish('allPosts',function(){
+  return Posts.find();
+});
+</code>
+<img src="http://www.themeteorbook.com/images/book/fullcollection@2x.png" alt="" /></p>
+
+<p>同样地, 我们也还是把整个collection都publish了, 所不同的是, 现在对哪个collection进行publish是可控的. 在上边这个例子, 我们publish了<code>posts</code> collection, 而<code>comments</code> collection没有被publish.</p>
+
+<h2>Publishing Partial Collections</h2>
+
+<p>更高一级的粒度控制是只publish某个collection的一部分. 比如, 只作用于属于某个author的posts:</p>
+
+<p><code>javascript
+Meteor.publish('somePosts',function(){
+  return Posts.find({'author':'Tom'});
+});
+</code></p>
+
+<p><img src="http://www.themeteorbook.com/images/book/partialcollection@2x.png" alt="" /></p>
+
+<p>代码都很简单, 但是究竟在底层发生了些什么呢?</p>
+
+<p>如果你有读过<a href="http://docs.meteor.com/#publishandsubscribe">Meteor的文档</a>, 可能会对<code>added()</code>和<code>ready()</code>在客户端设置记录的属性感到惊讶,  and struggled to square that with the Meteor apps that you've seen that never use those methods.(I am so sorry 这句没想着怎么翻译好)</p>
+
+<p>这其中的原因是, Meteor提供了一个非常重要的便利 - <code>_publishCursor()</code>方法. 可能你从没见过它的使用? 因为有可能不是直接的调用，但如果你在调用一个publish函数并返回一个<strong>游标(cursor)</strong>(例如: <code>Posts.find({'author':'Tom'})</code>), 那么这就是<code>_publishCursor</code>.</p>
+
+<p>当Meteor看到<code>somePosts</code>这个publication返回来一个游标(cursor), 则表明它自动调用了<code>_publishCursor()</code>publish这个cursor. 下面这是<code>_publishCursor()</code>所做的事情:</p>
+
+<ul>
+<li>在服务端查找这个名字的collection</li>
+<li>从cursor中取得所有匹配的documents并发送到客户端的同名集合(在这用到的是<code>added()</code>)</li>
+<li>只要某个document被增删改, 都会被同步到客户端(在cursor上使用<code>.observe()</code>, 并使用<code>.added()</code> <code>.updated()</code> <code>.removed()</code>来完成)</li>
+</ul>
+
+
+<p>那么,在上边的例子, 我们就可以很简便地确保只有用户感兴趣的posts(written by Tom)会出现在他们的客户端缓存之中.</p>
+
+<h2>Publishing Partial Properties</h2>
+
+<p>在上边我们已经看到了如何publish我们的一部分posts, 但是我们还可以做的更精确一些. 下面看看如何publish特定的记录吧. <br/>
+<img src="http://www.themeteorbook.com/images/book/partialproperties@2x.png" alt="" /></p>
+
+<p>跟前边的一样, 我们先用<code>find()</code>得到一个cursor, 不过这一次我们会排除掉一些</p>
+
+<p>```javascript
+Meteor.publish('allPosts',function(){
+  return Posts.find({}, {fields: {</p>
+
+<pre><code>author: false
+</code></pre>
+
+<p>  }});
+});
+```</p>
+
+<p>当然的, 我们还能够结合这两种技巧. 比如我们想要返回所有来自Tom的posts同时, 可以这么写</p>
+
+<p>```javascript
+Meteor.publish('allPosts',function(){
+  return Posts.find({'author':'Tom'}, {fields: {</p>
+
+<pre><code>author: false
+</code></pre>
+
+<p>  }});
+});
+```</p>
+
+<h2>总结</h2>
+
+<p>现在, 我们已经知道了如何publish从所有collections的所有documents的所有属性(通过<code>autopublish</code>)到特定collections的特定documents的特定记录.</p>
+
+<p>这包括了你能用Meteor的subscription所能做的所有基本东西, 而这些简单的技巧应该</p>
+
+<p>有时候, 你可能会需要更深层的组合, 联接, 合并 publication, 而这些我们将会再找个时间详谈.</p>
+
+<p>原文来自Tom Coleman <a href="http://www.themeteorbook.com/2013/04/05/publications-and-subscriptions/">Understanding Publications and Subscriptions</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[5 Use Cases for Icon Fonts]]></title>
+    <link href="http://xguox.github.com/blog/2013/03/25/5-use-cases-for-icon-fonts/"/>
+    <updated>2013-03-25T15:48:00+08:00</updated>
+    <id>http://xguox.github.com/blog/2013/03/25/5-use-cases-for-icon-fonts</id>
+    <content type="html"><![CDATA[<p>Icon fonts非常的强大:</p>
+
+<ul>
+<li>You can CSS the crap out of them and they don’t mind.</li>
+<li>在任何的显示器和分辨率上看起来都很不错</li>
+<li>无论多大的icons集都只需要一次HTTP请求</li>
+</ul>
+
+
+<p>下面来看看5个典型的icon fonts用例.</p>
+
+<h2>在开始之前</h2>
+
+<p>为了让代码保持整洁和高可读性, 我们将不会用到浏览器前缀. 我们会用到的东西诸如animations, transitions, and transforms, 所有的这些为了确保更好的浏览器支持一般都需要添加hack前缀. 在这里你想如何处理浏览器前缀问题<a href="http://css-tricks.com/how-to-deal-with-vendor-prefixes/">由你自己决定</a>.</p>
+
+<!-- more -->
+
+
+<p>正如你在例子中可以看到的, 我使用的是icon fonts托管服务<a href="http://weloveiconfonts.com/">weloveiconfonts.com</a>. 这是一个我自己的项目--原本想写一篇文章关于icon-fonts, 搜索发现没有免费的icon fonts托管服务, 于是就新建了这么个项目来完成这篇文章.</p>
+
+<h2>1. CSS Loader</h2>
+
+<p>现今有许多<a href="http://codepen.io/stuffit/pen/vlfyA">很棒的</a>, <a href="http://codepen.io/FWeinb/pen/BeJLo">纯</a>CSS Loader, 你也可以在<a href="http://cssload.net/">cssload.net</a>上创建你自己的Loader. 而除此之外我们还可以使用<a href="http://css-tricks.com/flat-icons-icon-fonts/">icon fonts</a>来完成. 你可以使用一个看起来像Loading的符号,然后用CSS让其<a href="http://docs.webplatform.org/wiki/css/properties/animation/animation">动起来</a>.</p>
+
+<p>以下这是基本的HTML. 开始是三个loader, 他们都是<code>div.wrapper</code>的子元素. 第四个(<code>div.complex</code>)是由两个icons组成.</p>
+
+<p>```html</p>
+
+<div class="wrapper">
+  <span class="fontelico-spin1"></span>
+  <span class="fontelico-spin3"></span>
+  <span class="fontelico-spin5"></span>
+</div>
+
+
+
+
+<div class="complex">
+  <span class="fontelico-emo-devil"></span>
+  <span class="fontelico-spin4"></span>
+</div>
+
+
+<p>```
+导入icon font <a href="https://github.com/fontello/fontelico.font">Fontelico</a>到你的CSS之中.</p>
+
+<p><code>css
+@import url(http://weloveiconfonts.com/api/?family=fontelico);
+  font-family: 'fontelico', sans-serif;
+}
+</code>
+给元素添加名为<code>load</code>的动画, 使得这些元素360度旋转, 可适当做一些调整或者更改颜色.</p>
+
+<p>```css
+/<em> Normal (left) </em>/
+span {
+  float: left;
+  text-align: center;
+  margin: 0 5em;
+  animation: load 1.337s infinite ease-out reverse;
+}
+/<em> Fast (center) </em>/
+.wrapper span:nth-child(2) {
+  animation: load .5s infinite linear;
+}
+/<em> Steps (right) </em>/
+.wrapper span:nth-child(3) {
+  animation: load 1.25s infinite steps(18, end) forwards;
+}
+@keyframes load {
+  0% {</p>
+
+<pre><code>transform: rotate(0) scale(1, 1);
+color: rgba(0, 0, 0, .5);
+</code></pre>
+
+<p>  }
+  10% { color: rgba(0, 120, 0, .5); }
+  20% { color: rgba(0, 120, 120, .5); }
+  30% { color: rgba(120, 120, 0, .5); }
+  40% { color: rgba(0, 0, 120, .5); }
+  50% {</p>
+
+<pre><code>transform: rotate(180deg) scale(1.85, 1.85);
+color: rgba(120, 0, 0, .5);
+</code></pre>
+
+<p>  }
+  100% {</p>
+
+<pre><code>transform: rotate(360deg) scale(1, 1);
+color: rgba(0, 0, 0, .5);
+</code></pre>
+
+<p>  }
+}
+<code>``
+将最后的那个loader(</code>div.complex<code>) 的两个icons堆叠在最上层. 第一个子元素为devil形状的icon(用的是名为</code>rotate<code>的动画), 第二个子元素为spin icon(使用名为</code>scale`的动画).</p>
+
+<p>```css
+.complex span:nth-child(1),
+.complex span:nth-child(2) {
+  position: absolute;
+  margin: 0;<br/>
+  width: 1em;
+  height: 1em;
+}
+/<em> Devil icon  </em>/
+.complex span:nth-child(1) {
+  animation: load 1.25s infinite steps(18, end) forwards;
+}
+/<em> Spin icon </em>/
+.complex span:nth-child(2) {
+  font-size: 3em;
+  left: -.35em;
+  top: -.35em;
+  color: rgba(0, 0, 0, .3);
+  animation: devil 3s infinite linear reverse forwards;
+}
+@keyframes devil {
+  0% {</p>
+
+<pre><code>transform: scale(-1.85, 1.85);
+</code></pre>
+
+<p>  }
+  50% {</p>
+
+<pre><code>transform: scale(1.85, -1.85);
+</code></pre>
+
+<p>  }
+  100% {</p>
+
+<pre><code>transform: scale(-1.85, 1.85);
+</code></pre>
+
+<p>  }
+}
+```
+{% codepen FCsHe TimPietrusky %}</p>
+
+<h2>SocialCount meets Style</h2>
+
+<p>人们都喜欢在他们的网站上使用一些社交分享按钮, 从而使得访问者可以轻易的传播他们的内容. 但是当你如果添加Facebook, Twitter, Google+, 那么你将要面临的是大约309KB的空缓存负载量. 这就是<a href="https://github.com/filamentgroup/SocialCount">SocialCount jQuery plugin</a>所存在的原因. SocialCount是渐进增强的, 并且可以lazy loaded以及对移动设备比较友好.</p>
+
+<p>它的默认样式很简单且在iframe中包含的buttons也很少. 下面, 让我们为这些buttons添加一些CSS花样.</p>
+
+<p>以下的HTML是由<a href="SocialCount%20markup%20generator">SocialCount markup generator</a>所创建. 其实也就是一些包含着链接和icons的无序列表.</p>
+
+<p>```html</p>
+
+<ul
+  class="socialcount"
+  data-url="http://www.google.com/"
+  data-counts="true"
+  data-share-text="Google is a search engine">
+ 
+  <li class="facebook">
+    <a href="https://www.facebook.com/sharer/sharer.php?u=http://www.google.com/" title="Share on Facebook">
+      <span class="count entypo-thumbs-up"></span>
+    </a>
+  </li>
+
+  <li class="twitter">
+    <a href="https://twitter.com/intent/tweet?text=http://www.google.com/" title="Share on Twitter">
+      <span class="count entypo-twitter"></span>
+    </a>
+  </li>
+
+  <li class="googleplus">
+    <a href="https://plus.google.com/share?url=http://www.google.com/" title="Share on Google Plus">
+        <span class="count entypo-gplus"></span>
+    </a>
+  </li>
+
+</ul>
+
+
+<p>```
+接着在CSS中导入icon font(Entypo)</p>
+
+<p><code>css
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+  font: 2.5em/1.9em 'entypo', sans-serif;
+}
+</code>
+然后是重写SocialCount提供的默认样式:</p>
+
+<ul>
+<li>加入transition</li>
+<li>缩放iframe</li>
+<li>给buttons设定自定义的背景</li>
+</ul>
+
+
+<blockquote><p>Editor's note: 以下的CSS所使用的是SASS的一种格式SCSS.  包括后边的也是. 如果你想要使用标准的CSS, 可以跳转到下边的CodePen 演示链接,  在CSS编辑框头部点击"SCSS", 然后就可以看到经过编译后的标准CSS</p></blockquote>
+
+<p>```sass
+.socialcount {</p>
+
+<blockquote><p>li {</p>
+
+<pre><code>width: 33%;
+border-radius: 0;
+transition: all .3s ease-in-out;
+cursor: pointer;
+</code></pre></blockquote>
+
+<pre><code>&amp;:hover [class*="entypo-"]:before {
+  opacity: 0;  
+}
+</code></pre>
+
+<p>  }</p>
+
+<p>  iframe {</p>
+
+<pre><code>transform: scale(1.65, 1.65);    
+</code></pre>
+
+<p>  }</p>
+
+<p>  .button {</p>
+
+<pre><code>top: 50%;
+margin: -.75em 0 0 0;
+height: 2em;
+</code></pre>
+
+<p>  }</p>
+
+<p>  .facebook {</p>
+
+<pre><code>background: rgba(59, 89, 152, .7);
+</code></pre>
+
+<p>  }</p>
+
+<p>  &amp;.like .facebook iframe {</p>
+
+<pre><code>width: 8em;
+</code></pre>
+
+<p>  }</p>
+
+<p>  .twitter {</p>
+
+<pre><code>background: rgba(0, 172, 237, .7);  
+</code></pre>
+
+<p>  }</p>
+
+<p>  .googleplus {</p>
+
+<pre><code>background: rgba(172, 0, 0, .7);  
+</code></pre>
+
+<p>  }
+}
+```
+{% codepen Czfyu TimPietrusky %}</p>
+
+<h2>3.Enhanced lists</h2>
+
+<p>下边的三个例子都基于下边这个简单的HTML</p>
+
+<p>```html</p>
+
+<div>
+  <h2>Title</h2>
+  <ul class="style">
+    <li data-text="">Text</li>
+    <li data-text="">Text</li>
+    <li data-text="">Text</li>
+  </ul>
+</div>
+
+
+<p>```
+导入 icon font (Font Awesome)到你的CSS</p>
+
+<p><code>css
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+  font-family: 'FontAwesome', sans-serif;
+}
+</code>
+为列表, 列表元素, <a href="http://css-tricks.com/almanac/selectors/a/after/">伪元素</a>以及button添加默认样式. 在这里我们不使用class来设定列表元素下的icon的样式, 取而代之是我们改变元素的<code>content</code>属性来创建一个伪元素.</p>
+
+<p>```css
+ul {
+  list-style: none;
+  padding: 0;</p>
+
+<p>  li {</p>
+
+<pre><code>position: relative;
+min-height: 2em;
+padding: .3em .3em .3em 1.5em;
+transition:
+  background .3s ease-in-out,
+  color .3s ease-in-out,
+  box-shadow .1s ease-in-out,
+  height .25s ease-in-out
+</code></pre>
+
+<p>   ;</p>
+
+<pre><code>button {
+  position: absolute;
+  left: 1.45em;
+  bottom: .35em;
+  opacity: 0;
+  height: 0;
+  border: none;
+  font-size: .8em;
+  cursor: pointer;
+  transition: all .4s ease-in-out;
+}
+
+&amp;:before {
+  position: absolute;
+  top: .425em;
+  font-family: 'FontAwesome', sans-serif;
+  margin: 0 .35em 0 -1.35em;
+  vertical-align: bottom;
+}
+&amp;:hover {
+  button {
+    opacity: 1;
+    height: 2em;
+  }
+
+  &amp;:before {
+    color: rgba(255, 255, 255, 1);
+    right: 0;
+    transform: scale(2.5, 2.5) translate(-.25em, .15em);
+  }
+  &amp;:after {
+    position: absolute;
+    content: attr(data-text);
+  }
+}
+</code></pre>
+
+<p>  }
+}
+```</p>
+
+<h3>3.1 Stuff You Love</h3>
+
+<p>第一个示例很简单. 使用的是一个心形而不是默认的列表样式加特定的hover: icon会被移到右侧, 另外<code>::after</code>伪元素得到data-text这个<a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/elements.html#embedding-custom-non-visible-data-with-the-data-*-attributes">data-attribute</a>的文本</p>
+
+<p>```css
+.love {
+  li {</p>
+
+<pre><code>&amp;:before {
+  /* fontawesome-heart */
+  content: "\f004";
+}
+&amp;:before,
+&amp;:after {
+  color: rgba(220, 20, 20, .6);
+}
+&amp;:hover {
+  background: rgba(220, 20, 20, .6);
+
+  &amp;:after {
+    width: 2em;
+    right: .445em;
+  }
+}
+</code></pre>
+
+<p>  }
+}
+```</p>
+
+<h3>3.2 Downloads</h3>
+
+<p>这是一个自定义列表下载扩展标记: 每个列表元素有一个链接和一个icon. 按钮被隐藏了, 只有当hover的时候才显示.</p>
+
+<p>```css
+.downloads {
+  li {</p>
+
+<pre><code>border-bottom: .15em solid rgba(0, 0, 0, .3);
+
+&amp;:before {
+  /* fontawesome-download-alt */
+  content: "\f019";
+  color: rgba(50, 50, 50, .5);
+}
+&amp;:hover {
+  background: rgba(0, 140, 0, .7);
+  height: 4em;
+
+  &amp;:after {
+    right: .35em;
+  }
+
+  &amp;:before {
+    color: rgba(255, 255, 255, .2);
+  }
+}
+</code></pre>
+
+<p>  }
+}
+```</p>
+
+<h3>3.3 Your account</h3>
+
+<p>用户菜单的UI. 当你hover在一个列表元素上的时候, icon移动到右侧并且box-shadow填满整个背景. 基于<code>:nth-child</code>选择器和<code>content</code>属性, 每个列表元素都有一个自己的icon.</p>
+
+<p>```css
+.account {
+  padding: .75em;
+  border: .15em solid rgba(0, 0, 0, .2);
+  background-color: rgba(0, 0, 0, .7);
+  background-image: radial-gradient(center, ellipse cover, rgba(104,104,104,0.6) 0%,rgba(23,23,23,0.7) 100%);
+  box-shadow: inset 0 0 .35em 0 rgba(0, 0, 0, .2);
+  color: rgba(255, 255, 255, .6);
+  backface-visibility: hidden;</p>
+
+<p>  li {</p>
+
+<pre><code>cursor: pointer;
+
+&amp;:nth-child(1):before {
+  /* fontawesome-heart-empty */
+  content: "\f08a";
+}
+&amp;:nth-child(2):before {
+  /* fontawesome-glass */
+  content: "\f000";
+}
+&amp;:nth-child(3) {
+  margin-bottom: 1em;
+
+  &amp;:before {
+  /* fontawesome-comment */
+    content: "\f075";
+  }
+}
+&amp;:nth-child(4) {
+  margin-bottom: .5em;
+
+  &amp;:before {
+  /* fontawesome-cog */
+     content: "\f013";
+  }
+}
+&amp;:nth-child(5):before {
+  /* fontawesome-signout */
+  content: "\f08b";
+}
+&amp;:hover {
+  color: rgba(255, 255, 255, 1);
+  padding-left: 1.5em;
+  box-shadow: inset 0 0 0 10em rgba(255, 255, 255, .5);
+
+  &amp;:before {
+    color: rgba(255, 255, 255, 1);
+    transform: none;
+  }  
+}
+</code></pre>
+
+<p>  }
+}
+```
+{% codepen tcklJ TimPietrusky %}</p>
+
+<h2>4. Emocons.js jQuery Plugin</h2>
+
+<p><a href="https://github.com/TimPietrusky/emocons">Emojons.js</a>是一个搜索元素里特定字符序列内容的jQuery插件. 所有匹配上的都会用一个<code>span</code>和相应的icon HTML class来替换.<br/>
+例如, 一个聊天app:</p>
+
+<p>```html</p>
+
+<div class="chat">
+    :D :) ;) :'( :o :/ :( B) :P :|
+    :beer: :devil: :shoot: :coffee: :thumbsup: :angry: :ueber-happy:
+</div>
+
+
+<p>```
+接着在你的元素上调用 Emocons.js 插件的方法</p>
+
+<p><code>javascript
+$('.chat').emocons();
+</code>
+现在, 所有在聊天时候的元素都会被转换成这样:</p>
+
+<p><code>html
+&lt;span class="fontelico-emo-grin go" title=":D"&gt;&lt;/span&gt;
+</code>
+在CSS中导入icon font(Fontelico):</p>
+
+<p><code>css
+@import url(http://weloveiconfonts.com/api/?family=fontelico);
+  font-family: 'fontelico', sans-serif;
+}
+</code>
+当 Emocons.js 把一个字符串转换成表情符号时, 会给<code>span</code>元素增加一个<code>go</code>类(添加一个动画效果).</p>
+
+<p>```css
+.go {
+  animation: hey .55s 1 linear;
+}
+@keyframes hey {
+  0% {</p>
+
+<pre><code>transform: scale(1, 1);
+</code></pre>
+
+<p>  }
+  50% {</p>
+
+<pre><code>transform: scale(1.85, -1.85);
+</code></pre>
+
+<p>  }
+  100% {</p>
+
+<pre><code>transform: scale(1, 1);
+</code></pre>
+
+<p>  }
+}
+<code>``
+一些表情符号会有特殊的样式(如颜色的改变)或者通过</code>::after`伪元素添加一些东西</p>
+
+<p>```css
+.fontelico-emo-devil {
+  color:rgba(180, 0, 0, .9);
+}
+.fontelico-emo-beer:after {
+  box-shadow:</p>
+
+<pre><code>-.475em .75em 0 .275em rgba(220, 220, 0, 1),
+-.185em .675em 0 .175em rgba(220, 220, 0, 1)
+</code></pre>
+
+<p>  ;  <br/>
+}
+.fontelico-emo-coffee:after {
+  box-shadow:</p>
+
+<pre><code>-.475em .78em 0 .235em rgba(222, 184, 135, 1),
+-.215em .715em 0 .155em rgba(222, 184, 135, 1)
+</code></pre>
+
+<p>  ;  <br/>
+}
+.fontelico-emo-shoot:after {
+  border-radius: .15em;
+  box-shadow: .315em .525em 0 .1em rgba(0, 0, 0, 1);  <br/>
+}
+.fontelico-emo-angry:after {
+  border-radius: .15em;
+  box-shadow: -.695em .455em 0 .085em rgba(0, 220, 0, .6);
+  z-index: 2;
+}
+```
+{% codepen KloGD TimPietrusky %}</p>
+
+<h2>5. Parallax Movie #1337</h2>
+
+<p>最后的这个例子只是为了好玩吧. 它只是一个试验, 使用一个icon font来创建一个无穷的parallax movie. 创建场景的HTML包含有许多的元素.</p>
+
+<ul>
+<li>The setting: sky, ground, night and sun</li>
+<li>Fixed element: bicycle</li>
+<li>Animated elements: Trees, giraffe, shopping cart, buildings and heliport</li>
+</ul>
+
+
+<p>```html</p>
+
+<div class="night"></div>
+
+
+<div class="wrapper">
+  <div class="sun">
+    <div class="maki-fast-food"></div>
+  </div>
+ 
+  <div class="sky"></div>
+  <span class="maki-bicycle"></span>
+   
+  <span class="maki-tree-1" data-child="1"></span>
+  <span class="maki-tree-1" data-child="2"></span>
+  <span class="maki-tree-1" data-child="3"></span>
+   
+  <span class="maki-giraffe"></span>
+  <span class="maki-grocery-store"></span>
+   
+  <span class="maki-commerical-building" data-child="1"></span>
+  <span class="maki-commerical-building" data-child="2"></span>
+   
+  <span class="maki-heliport"></span>
+   
+  <div class="ground"></div>
+</div>
+
+
+<p>```
+在CSS中导入 icon font(Maki):</p>
+
+<p><code>css
+@import url(http://weloveiconfonts.com/api/?family=maki);
+[class*="maki-"] {
+  position: absolute;
+  margin: 0;  
+  color: #fff;
+  font-size: 2em;
+}
+  font-family: 'maki', sans-serif;
+}
+*:after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  content: '';
+  z-index: -1;
+  width: 0;
+  height: 0;
+}
+</code>
+整个场景旋转 "-3度".</p>
+
+<p><code>css
+.wrapper {
+  height: 140%;
+  width: 120%;
+  transform: rotate(-3deg) translate(-10%, -15%);    
+}
+</code>
+当日落西山后, 场景变换为夜晚</p>
+
+<p><code>css
+.night {
+  position: absolute;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  animation: night 45s infinite forwards;
+}
+@keyframes night {
+  0%, 30%, 100% {background:rgba(0, 0, 0, 0);}  
+  55% {background: rgba(0, 0, 0, .6);}
+}
+</code>
+sky与ground都用的是同样的<code>background-position</code>动画, 只是速度有所不同.</p>
+
+<p><code>css
+.sky {
+  position: relative;
+  z-index: 0;
+  background: url(http://subtlepatterns.subtlepatterns.netdna-cdn.com/patterns/bedge_grunge.png);
+  height: 50%;    
+  width: 100%;
+  animation: rollin-bg 25s linear infinite forwards;
+}
+.ground {
+  position: absolute;
+  z-index: 1;
+  background: url(http://subtlepatterns.subtlepatterns.netdna-cdn.com/patterns/blackorchid.png);
+  height: 50%;    
+  width: 100%;
+  animation: rollin-bg 7s linear infinite forwards;
+}
+@keyframes rollin-bg {
+  0% { background-position: 100%; }  
+  100% { background-position: 0; }
+}
+</code>
+<a href="http://lea.verou.me/2012/02/moving-an-element-along-a-circle/">沿着圆周移动一个元素</a>(the burger-sun)</p>
+
+<p><code>css
+.sun {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  top: 10%;
+  width: 2em;
+  height: 2em;
+  font-size: 4em;
+  line-height: 1;
+  animation: circle 45s linear infinite;
+  transform-origin: 50% 3.85em;
+}
+.sun [class*="maki-"] {
+  color: rgba(240, 180, 0, .2);
+  text-shadow: 0 0 .35em rgba(240, 240, 0, .7);
+}
+.sun &gt; div {
+  animation: inner-circle 45s linear infinite;
+}
+@keyframes circle {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+@keyframes inner-circle {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+</code></p>
+
+<p>以下这个是唯一一个没有使用动画效果的元素, 但它看起来还是在移动.</p>
+
+<p><code>css
+.maki-bicycle {
+  left: 50%;
+  z-index: 4;
+  margin: -.85em 0 0 -.5em;
+  color: rgba(30, 30, 140, .95);
+}
+</code>
+这里全都是使用同样的滚动动画, 但速度不一的元素.</p>
+
+<p>```css
+.maki-tree-1[data-child="1"] {
+  margin: -1em 0 0 5%;
+  z-index: 5;
+  animation: rollin 5s linear infinite;
+  font-size: 2.4em;
+  color: rgba(0, 110, 0, .8);
+}
+.maki-tree-1[data-child="2"] {
+  margin: -1em 0 0 85%;<br/>
+  z-index: 2;
+  animation: rollin 12s linear infinite;
+  font-size: 1.6em;
+  color: rgba(0, 110, 0, .5);
+}
+.maki-tree-1[data-child="3"] {
+  margin: -1em 0 0 25%;<br/>
+  z-index: 2;
+  animation: rollin 17s linear infinite;
+  font-size: 1.2em;
+  color: rgba(0, 110, 0, .3);
+}
+.maki-giraffe {
+  margin: .25em 0 0 5%;<br/>
+  z-index: 6;
+  animation: rollin 12s linear infinite reverse;
+  font-size: 10em;
+  color: rgba(255, 255, 10, .9);
+}
+.maki-giraffe:after {
+  right: -3em;
+  content: '\e82a \e82a \e82a \e82a \e82a';
+  font: .2em 'Maki', sans-serif;
+  letter-spacing: .2em;
+  width: 3em;
+  color: rgba(0, 0, 0, .6);
+  box-shadow:</p>
+
+<pre><code>0 .45em 0 .75em rgba(255, 255, 255, .4),
+1em .35em 0 .75em rgba(255, 255, 255, .4),
+2.25em .25em 0 1.05em rgba(255, 255, 255, .4)  
+</code></pre>
+
+<p>  ;
+  border-radius: 50%;
+  transform: translate(2.3em, .55em) rotateY(-180deg);
+}
+.maki-grocery-store {
+  margin: -.35em 0 0 5%;
+  z-index: 5;
+  animation: rollin 22s linear infinite;
+  font-size: 4em;
+  color: rgba(220, 0, 10, .7);
+}
+.maki-commerical-building[data-child="1"] {
+  margin: -1em 0 0 5%;
+  z-index: 3;
+  animation: rollin 6s linear infinite;
+  font-size: 7em;
+  color: rgba(120, 0, 120, .8);
+}
+.maki-commerical-building[data-child="2"] {
+  margin: -1em 0 0 5%;
+  z-index: 2;
+  animation: rollin 14s linear infinite;
+  font-size: 4em;
+  color: rgba(0, 120, 120, .4);
+}
+.maki-heliport {
+  margin: -3.5em 0 0 2em;<br/>
+  z-index: 1;
+  color: rgba(30, 30, 30, .45);
+  font-size: 1.25em;
+  animation: rollin 26s linear infinite reverse 2s;
+}
+@keyframes rollin {
+  0% {margin-left:105%}<br/>
+  100% {margin-left:-15%;}
+}
+```
+{% codepen ELuiG TimPietrusky %}</p>
+
+<p>原文来自 Tim Pietrusky <a href="http://css-tricks.com/five-use-cases-for-icon-fonts/">5 Use Cases for Icon Fonts</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[5 Meteor Misconceptions]]></title>
+    <link href="http://xguox.github.com/blog/2013/03/14/5-meteor-misconceptions/"/>
+    <updated>2013-03-14T16:52:00+08:00</updated>
+    <id>http://xguox.github.com/blog/2013/03/14/5-meteor-misconceptions</id>
+    <content type="html"><![CDATA[<p>由于某些原因，关于Meteor一直都有着各种各样的误解。或许是因为Meteor刚正式推出的时候， 缺失很多重要的功能。而很多不知道的是，这些缺陷在后来早就被修复了。</p>
+
+<p>为了给Meteor正名，下面列举的是5个最常见的误解。</p>
+
+<h2>误解#1：“Meteor的数据不安全”</h2>
+
+<p>在Meteor的第一个Demo推出之时， 数据安全和用户权限这些东西是没有的。任何客户端的用户都能够访问，修改数据库的数据然后发送返回到服务端。</p>
+
+<p>但这第一个版本只是作为一个提示告诉大家Meteor来了， 并不意味着它可以被用来打造一个真实的应用产品。 打那之后， 现在的Meteor已经有了一个内置的身份认证包（authentication package）。</p>
+
+<!-- more -->
+
+
+<p><strong>造成误解的另一个原因是， 许多新手为了更容易地快速上手常常在创建Meteor应用的时候， 遵循默认的把所有的数据发布给客户端。</strong></p>
+
+<p>正如Meteor的开发者之一 <strong>Avital Oliver</strong>在<a href="http://stackoverflow.com/questions/10099843/how-secure-is-Meteor">StackOverflow上的回答</a>那样</p>
+
+<blockquote><p>当你使用Meteor的命令行工具创建一个应用的时候， 默认的会包含有两个packages：<strong>AUTOPUBLISH</strong>和<strong>INSECURE</strong>. 这两个packages能使得每个客户端都拥有所有的服务器数据库读写权限效果。这是非常好的原型工具（目的只为了开发），但通常这不适合用于应用的生产环境。当你需要发布到生产环境的时候，请去掉这两个packages</p></blockquote>
+
+<p>类似地，也因为Meteor可以共享服务端和客户端的代码，但实际上，这并不意味着所有的代码都可用于客户端.</p>
+
+<p>所有放在<code>server/</code>目录下的东西都是只能在<a href="http://docs.Meteor.com/#structuringyourapp">服务端</a>执行使用的, 同时Meteor也让你可以定义<a href="http://docs.Meteor.com/#methods_header">服务端安全方法</a>，这些方法可以在客户端调用。</p>
+
+<h2>误解#2：“Meteor对SEO不友好”</h2>
+
+<p>与传统的网页应用不一样，Meteor不会在服务端搭建HTML页面。取而代之， 服务端只发送数据， 然后在客户端决定如何渲染之（这就是Meteor的“data on the wire”原则）</p>
+
+<p>这种做法的缺点就是， 当JavaScript被禁用的话， 你的网站几乎跟一个空白页面无异。</p>
+
+<p>你或许会觉得这会迷惑搜索引擎。但幸运地是， Meteor有解决的方案，那就是使用<a href="http://docs.Meteor.com/#spiderable">Spiderable</a> Package.</p>
+
+<p><img src="http://theMeteorbook.com/images/phantomjs.png" alt="" /></p>
+
+<p>这个package使用的是<a href="http://phantomjs.org/">PhantomJS </a>在服务端预渲染后提供给网络爬虫。实际上网络爬虫得到的网页跟你看到的是一样的。</p>
+
+<h2>误解#3：“Meteor不支持第三方packages”</h2>
+
+<p>有很多的讨论是关于Meteor所用的不是Node的标准包管理--NPM. 而事实上， Meteor压根就没有不允许使用第三方程序包.</p>
+
+<p>And it’s true that the vanilla install of Meteor does not come with a package manager. 但庆幸的是， <a href="http://theMeteorbook.com/">本书</a>的合著者之一Tom Coleman， 同时也是Meteor包管理器<a href="https://github.com/oortcloud/Meteorite">Meteorite</a>和packages资源库<a href="http://atmosphere.Meteor.com/">Atmosphere</a>的开发者。</p>
+
+<p>尽管当下Meteorite 和 Atmosphere还不是Meteor的官方部分， 但它们已经得到广泛的使用并将会在未来被合并到Meteor的核心部分。事实上，这方面的工作已经在Meteor的核心代码的<a href="https://github.com/Meteor/Meteor/tree/engine">engine</a>分支中开展，预期会被很快解决。</p>
+
+<h2>误解#4：“Meteor是完全封闭的(walled garden)”</h2>
+
+<p>一个密切相关的异议是,Meteor可以支持第三方packages,但这些第三方packages却严格地限制于流星的生态系统。</p>
+
+<p>为什么有成千上万的Node packages 在那还要使用自定义的package呢？这又是否与开源精神相悖呢？</p>
+
+<p>首先，需要意识到一点很重要的就是， 在Meteor中可以任意的使用node packages。尽管在当下这么做可能还会有一些棱角使得接口不那么顺利，但这种情况在<code>engine</code>分支添加<a href="https://groups.google.com/forum/?fromgroups=#!topic/Meteor-talk/b6zQrgk8lYo">Node support</a>
+并发布后将得到很大改善。</p>
+
+<p><img src="http://theMeteorbook.com/images/npm.png" alt="" />
+其次，Meteor不仅仅是Node.js的一个框架， 更是一种全新的网站应用开发方式和构想.</p>
+
+<p>换句话说，想知道为什么Meteor不使用NPM无异于问为什么它不能使用Ruby Gems. 有很多人建议所有的JavaScript代码应该都用NPM来管理， 但这么做的话会有一些细节上的问题， 正如核心开发者<a href="https://github.com/Meteor/Meteor/pull/516#issuecomment-12919473">解释说</a>.</p>
+
+<h2>误解#5：“Meteor只适用于原型”</h2>
+
+<p>“Meteor非常适用于小规模快速原型的项目，但它不适合用于大规模的应用.”</p>
+
+<p>在某种程度上， 这很难争个谁对谁错。毕竟Meteor的主页的版本号还是以<code>0</code>开头.</p>
+
+<p>但事实是Meteor还没准备到一个黄金时间，比起内在的局限性，在如此青涩的时期(不到一岁)Meteor还有许多需要做的。</p>
+
+<p>再说， 即使是现在， 有时牺牲一点稳定性来做交换得到Meteor带来的轻松且快速的开发还是值得的。如果你希望看到一些具体的Meteor案例，我可以推荐看看<a href="http://telesc.pe/">Telescope</a>吗？</p>
+
+<p>So，我坚信，在Meteor这样快速发展之下，今天的技术原型将会是明天thousand-user 的应用.</p>
+
+<h3>总结</h3>
+
+<p>现在，即使我们正在写这本关于Meteor的书， 但我们首先依旧会承认一点， 如同其他的技术那样，Meteor同样也有着自己的缺陷。</p>
+
+<p>But I do believe Meteor has enough potential to make it worth evaluating it on its own merits. 所以如果你犹豫不决是否使用Meteor， 希望我的建议能说服你你选择它.</p>
+
+<p>原文来自 Sacha Greif  <a href="http://theMeteorbook.com/2013/03/12/5-Meteor-misconceptions/">5 Meteor Misconceptions</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Introduction to Realtime Web with Meteor and Node.js]]></title>
+    <link href="http://xguox.github.com/blog/2013/03/10/introduction-to-realtime-web-with-meteor-dot-js-and-node-dot-js/"/>
+    <updated>2013-03-10T23:16:00+08:00</updated>
+    <id>http://xguox.github.com/blog/2013/03/10/introduction-to-realtime-web-with-meteor-dot-js-and-node-dot-js</id>
+    <content type="html"><![CDATA[<p>最近,有许多关于 <a href="http://derbyjs.com/">Derby.js</a>的激动人心的讨论涌现在了我的Twitter Timeline. 我从未使用过能够帮你做这么多--实时同步客户端和服务端 的框架. 从本质上讲, 这使得我们可以自己编写一个代码量很少的应用可以让两个人编写同一个 text field–live. 而 Derby帮你处理了在 models 和 views 之间所有的同步. 就如 Google Docs 的协作编辑那样.</p>
+
+<p>这非常的伟大, 但经过深入的研究, 发现 Derby.js 并没有我想象中的那么成熟--目前还没有到1.0版本. 当然, Node.js 和 Meteor 也同样没有. 但相比起来, 似乎Derby缺少的更多一些. 比如, 据我目前知道的, 还没有一个好使的方法来处理sessions. 或许是因为缺乏文档的原因吧, 但是, 据说Derby的团队目前正在开发authentication. 如果有谁有一些关于Derby.js 处理sessions的新手指引, 我会很乐意去研究的.</p>
+
+<p>另外一个我经常见到被拿来与Derby.js做比较的框架是<a href="http://Meteor.com/">Meteor</a>. 与Derby相似的是,它也能在多个客户端下实时更新views, 尽管做法上可能跟Derby有点不同. Derby可以较容易的使用多种数据库, 而Meteor则只亲近于<a href="http://mongodb.org/">MongoDB</a>. 事实上, 通过如<a href="http://mongoosejs.com/">Mongoose</a>客户端接入数据库的API与你在服务端所期望的已经非常接近了.</p>
+
+<p>比起现在node的一些缺点和<a href="http://bjouhier.wordpress.com/2012/03/11/fibers-and-threads-in-node-js-what-for/">争议</a>, Meteor看起来是非常有趣的选择用来建立有实时需求的应用. 个人觉得还是Derby基于传统回调的编程形式更吸引我, 但在Derby的强大背后,却缺乏健壮的文档和一个大的开发者社区, 这无疑是个很大的打击. 或许这会随着时间推移而有所改变吧, 但比起Meteor来说还是会慢很多, 因为后者最近获得了1100万美元的资金. 这笔财政资金确保了Meteor的存在以及得到持续的支持. 对于那些需要财政与发展稳定的框架的开发者而言, 这笔资金只会让Meteor更加优胜.</p>
+
+<!-- more -->
+
+
+<p>今天,让我们一起来看看如何新建一个真实的但又简单的Meteor应用. 本质上说, 这是基于<a href="http://vimeo.com/40300075">Tom的 Vimeo screencast</a>的一个新手指引. 与Tom的 Vimeo screencast最大的不同是处理事件的方式. 比起复制粘贴一个Meteor示例的代码, 我会一步一步的通过自己的方式来处理使用Enter键来提交一则讯息. 让我们开始吧.</p>
+
+<h3>Creating a Meteor App</h3>
+
+<p>Derby和Meteor 他们共有的一个大加分是他们各自的命令行工具. 与Derby使用Node的内置的 npm 工具所不同的是, Meteor使用的是它自己的.</p>
+
+<p>在终端(Mac OS X 和 Linux),执行如下的命令. (在这之前请确保你已经安装了Node)</p>
+
+<p><code>
+$ curl https://install.Meteor.com | /bin/sh
+</code>
+接下来的事Meteor会自己搞定了.</p>
+
+<p>要新建一个项目, 先转到你的工作目录然后运行下边的代码. 这会创建一个目录, 里边包括有Meteor和一个最基本模板程序.</p>
+
+<p><code>
+$ Meteor create chat
+</code>
+现在, 你可以转到该目录并运行下面的代码让它跑起来</p>
+
+<p><code>
+$ cd chat
+$ Meteor
+Running on: http://localhost:3000/
+</code>
+想要看到这个最基础的应用程序, 你只需要在任意一款不过时的浏览器下打开<code>http://localhost:3000/</code></p>
+
+<p>只要你想, 你可以使用Meteor内置的<code>Meteor deploy</code>命令来部署你的应用到Meteor自己的服务器上</p>
+
+<p><code>
+$ Meteor deploy my-app-name.Meteor.com
+</code>
+只要你更新保存了你的代码, 所有连接上的浏览器都会实时更新其页面.</p>
+
+<h3>Developing the Chat App</h3>
+
+<p>通过<code>Meteor create</code>命令生成的文件夹里, 你可以看到几个不同的文件. 如果你的系统设置了显示隐藏文件, 那还可以看到一个<code>.Meteor</code>文件夹. 这个文件夹包括的Meteor本身, 以及MongoDB数据库的文件.</p>
+
+<p>在你的项目的根目录, 你可以看到的还有<code>chat.html</code> <code>chat.js</code> <code>chat.css</code>. 这三个文件自解释?的. HTML包含了这个应用的模板和视图, 并都通过<code>chat.css</code>来添加样式. 而这个JavaScript文件则包含了在客户端和服务端执行的代码. 这非常的重要--请不要把任何东西比如配置数据和密码都放在这里, 因为任何人都能通过查看你的应用程序的源文件看到.</p>
+
+<p>用你最喜欢的文本编辑器打开<code>chat.js</code>. 我个人使用的是<a href="http://sublimetext.com/">Sublime Text 2</a>, 因为它很简洁并且有多光标功能.
+你可以在<code>chat.js</code>看到下面这些代码</p>
+
+<p>```javascript
+if (Meteor.is_client) {
+  Template.hello.greeting = function () {</p>
+
+<pre><code>return "Welcome to chat.";
+</code></pre>
+
+<p>  };</p>
+
+<p>  Template.hello.events = {</p>
+
+<pre><code>'click input' : function () {
+  // template data, if any, is available in 'this'
+  if (typeof console !== 'undefined')
+    console.log("You pressed the button");
+}
+</code></pre>
+
+<p>  };
+}</p>
+
+<p>if (Meteor.is_server) {
+  Meteor.startup(function () {</p>
+
+<pre><code>// code to run on server at startup
+</code></pre>
+
+<p>  });
+}
+<code>``
+分别注意到</code>if<code>语句里的</code>Meteor.is_client<code>和</code>Meteor.is_server`部分. 在这里边的代码分别只在客户端和服务端下执行. 这就是Meteor共用代码的能力了.</p>
+
+<p>删除掉<code>Meteor.is_server</code>这段代码并把<code>if (Meteor.is_client)</code>里边的代码删除了,只留如下部分:</p>
+
+<p>```
+if (Meteor.is_client) {</p>
+
+<p>}
+```
+注意到, 当你保存了你的脚本之后, 浏览器会马上重新加载这个新脚本.</p>
+
+<h3>Creating the View</h3>
+
+<p>在我们正式对这个脚本文件动工之前, 我们需要先新建一个视图用来展示聊天记录.
+在编辑器里打开<code>chat.html</code>并删除<code>body</code>标签里边的代码. 包括名为hello的<code>template</code>标签.只留如下部分</p>
+
+<p>```html
+<head>
+  <title>chat</title>
+</head></p>
+
+<p><body></p>
+
+<p></body>
+<code>``
+接着在</code>body`标签里添加下面这句</p>
+
+<p><code>html
+{% raw %}{{&gt; entryfield}}{% endraw %}
+</code></p>
+
+<p>Meteor使用的模板系统与<a href="http://mustache.github.com/">Mustache</a>很相似.大括号<code>{% raw %}{{}}{% endraw %}</code>表示要呈现的内容. 通过简单地在两对大括号里添加内容如<code>{% raw %}{{hello}}{% endraw %}</code>, 模板系统会用<code>hello</code>这个变量的值来替换它. 后面会更详细的介绍.</p>
+
+<p>注意到了在<code>entryfield</code>这个词前面有个大于号<code>&gt;</code>了吗? 使用该符号来指定渲染哪一个模板.</p>
+
+<p>接下来使用下面这段代码来新建一个名叫<code>entryfield</code>的模板</p>
+
+<p>```html
+<template name="entryfield"></p>
+
+<pre><code>&lt;input type="text" id="name" placeholder="Name" /&gt; &lt;input type="text" id="message" placeholder="Your Message" /&gt;
+</code></pre>
+
+<p></template>
+<code>``
+在这个例子中,</code>template`标签只有一个属性--用来表示这个template的名字. 也就是当我们渲染的时候需要用来指定的名字.</p>
+
+<p>查看浏览器, 你会发现页面已经刷新了, 输入框已经呈现出来了.</p>
+
+<p>接下来, 在body里边添加另外的一个mutache标签用以渲染讯息列表</p>
+
+<p><code>html
+{% raw %}{{&gt; message}}{% endraw %}
+</code></p>
+
+<p>最后, 我们还需要新建一个名叫<code>messages</code>的模板. 在<code>entryfield</code>模板下面添加下面这段代码</p>
+
+<p>```html
+<template name="messages"></p>
+
+<pre><code>&lt;p&gt;
+    {% raw %}{{#each messages}}
+        &lt;strong&gt;{{name}}&lt;/strong&gt;- {{message}}
+   {{/each}}{% endraw %}
+&lt;/p&gt;
+</code></pre>
+
+<p></template></p>
+
+<p><code>``
+注意到</code>each`子句. 在Meteor中你可以使用如下的语法来遍历一个数组模板</p>
+
+<p><code>html
+{% raw %}
+{{#each [name of array]}}
+{{/each}}
+{% endraw %}
+</code></p>
+
+<p>使用each循环时,上下文会有所改变. 当引用变量的时候, 实际上你引用的是每一个数组元素的值.
+例如,在我们的chat应用中, 我们遍历了数组模板"messages"里边的每个元素, 该数组可以像下面这样,</p>
+
+<p>```javascript
+[</p>
+
+<pre><code>{
+    "name": "Andrew",
+    "message": "Hello world!"
+},
+{
+    "name": "Bob",
+    "message": "Hey, Andrew!"
+}
+</code></pre>
+
+<p>]
+<code>``
+然后, 在each循环中, 你可以看到</code>{% raw %}{{message}}{% endraw %}<code></code>{% raw %}{{name}}{% endraw %}`, 这会引用 每一个数组元素的值来替代(Andrew 和 Bob 替换 name, 以及各自的问候信息.)</p>
+
+<p>当返回到你的浏览器, 你还看不到任何的改变. 因为讯息数组还没被传送到模板, 所以Meteor遍历不到任何东西来呈现.</p>
+
+<p>你的<code>chat.html</code>最后应该是这样的</p>
+
+<p>```html
+<head>
+  <title>chat</title>
+</head>
+{% raw %}
+<body>
+  {{> entryfield}}
+  {{> messages}}
+</body>
+{% endraw %}
+<template name="entryfield"></p>
+
+<pre><code>&lt;input type="text" id="name" placeholder="Name" /&gt; &lt;input type="text" id="message" placeholder="Your Message" /&gt;
+</code></pre>
+
+<p></template></p>
+
+<p><template name="messages"></p>
+
+<pre><code>{% raw %}
+&lt;p&gt;
+    {{#each messages}}
+        &lt;strong&gt;{{name}}&lt;/strong&gt;- {{message}}&lt;br/&gt;
+    {{/each}}
+&lt;/p&gt;
+</code></pre>
+
+<p></template>
+{% endraw %}
+```</p>
+
+<h3>The Javascript</h3>
+
+<p>从现在开始, 我们处理的大部分代码都是客户端代码, 所以, 除非特别说明, 以下的代码都是在<code>if (Meteor.is_client)</code>代码块中.</p>
+
+<p>在我们编写展示讯息的代码之前,让我们先新建一个<code>Collection</code>. 从本质上讲, 这是一组Models. 换句话说, 在这个chat应用的环境下, Messages collection保存着整个聊天记录, 而每条讯息记录是一个Model.</p>
+
+<p>在if语句前, 添加如下代码来初始化Collection:</p>
+
+<p><code>javascript
+Messages = new Meteor.Collection('messages');
+</code>
+因为我们希望这个Collection可以在客户端和服务端被创建, 所以我们把它写在了客户端代码块之外.</p>
+
+<p>由于Meteor为我们做了大部分的工作, 要展示聊天记录是非常容易的. 只需要把下面的代码添加进if语句里边.</p>
+
+<p>```javascript
+Template.messages.messages = function(){</p>
+
+<pre><code>return Messages.find({}, { sort: { time: -1 }});
+</code></pre>
+
+<p>}
+<code>``
+让我们拆开来分析这段代码:  
+**Template**.messages.messages = function(){ … }  
+第一部分</code>Template<code>表示我们正在修改一个模板的行为.  
+Template.**messages**.messages = function(){ … }  
+第二部分</code>messages<code>是模板的名字, 表示是在修改哪一个模板. 例如,如果我们想要对"entryfield"模板做些什么,   只需把代码改成</code>Template.entryfields.variable = function(){ … }<code>(在这里, 请别这么做)  
+Template.messages.**messages** = function(){ … }  
+第三部分的这个</code>messages<code>代表的是一个这个模板里的一个变量. 还记得我们的each循环遍历</code>messages`吗? 这就是那个mesaages.</p>
+
+<p>当你打开浏览器时, 页面还是没有什么改变. 这是意料之中的事, 因为我们只抓取的讯息, 而没有展示出来.</p>
+
+<p>此时,你的<code>chat.js</code>应该是这样的. 是否很惊讶就只需在服务器写这么些代码我们就能展示一个实时的聊天记录应用.</p>
+
+<p>```javascript
+Messages = new Meteor.Collection('messages');</p>
+
+<p>if (Meteor.is_client) {
+  Template.messages.messages = function(){</p>
+
+<pre><code>return Messages.find({}, { sort: { time: -1 }});
+</code></pre>
+
+<p>  }
+}
+```</p>
+
+<h3>Adding a Message through the Console</h3>
+
+<p>这部分的内容是可选的, 当然它有助于你调试程序. 你可以直接跳过往下学习建立form来响应key press.</p>
+
+<p>如果你想要测试你的讯息显示代码, 你可以手动插入一条记录到数据库. 打开你的浏览器控制台, 并输入如下:
+<code>
+Messages.insert({ name: 'Andrew', message: 'Hello world!', time: 0 })
+</code>
+这将会在数据库中新建一条记录, 如果正确的操作了的话,那浏览器就会即刻更新这条讯息在页面上.</p>
+
+<h3>The Message Entry Form</h3>
+
+<p>返回到<code>chat.js</code>, 我们即将要完成的是允许用户在输入框中提交聊天讯息到数据库. <br/>
+在if语句里头最下面添加下面这段代码</p>
+
+<p>```javascript
+Template.entryfield.events = {
+  "keydown #message": function(event){</p>
+
+<pre><code>if(event.which == 13){
+  // Submit the form
+  var name = document.getElementById('name');
+  var message = document.getElementById('message');
+
+  if(name.value != '' &amp;&amp; message.value != ''){
+    Messages.insert({
+      name: name.value,
+      message: message.value,
+      time: Date.now()
+    });
+
+    name.value = '';
+    message.value = '';
+  }
+}
+</code></pre>
+
+<p>  }
+}</p>
+
+<p><code>``
+这段代码比较多, 让我们一步步分析. 你应该还有印象, 紧跟</code>Template<code>之后的词表示我们即将要修改的template的名字. 跟前面修改的模板是</code>messages<code>不一样的是, 这里我们要修改的是</code>entryfield<code>.  
+template的</code>event`属性会包含有一个对象, 这个对象的keys的格式如下:</p>
+
+<p><code>
+"[eventname] [selector]"
+</code>
+比如, 如果我们想绑定了一个<code>click</code>事件给了ID为<code>hello</code>的按钮. 则需要像下面这样添加一个<code>events</code>对象</p>
+
+<p><code>
+"click #hello": function(event){ … }
+</code></p>
+
+<p>在我们这个例子中,我们绑定了一个<code>keydown</code>事件给了ID为<code>message</code>的输入框. 这个输入框在我们一开始的<code>chat.html</code>已经建好.</p>
+
+<p>在<code>events</code>对象里, 每一个key都有一个函数作为它的值. 当事件被触发的时候, 这个<code>event</code>对象会被作为第一个参数传给这个函数.在我们的chat应用, 每一次在输入框中按下一个按键(<code>keydown</code>), 这个函数都会被调用.</p>
+
+<p>在函数里的代码非常简单. 首先, 我们先要检测按下的是否"enter"键("enter"的keycode 是13). 接着,通过ID来得到两个输入框中的DOM元素. 最后, 我们检查确保输入框中的值不为空, 用户不允许发送空的名字和讯息.</p>
+
+<p>下面的代码需要注意了, 它会被直接插入到数据库中</p>
+
+<p><code>javascript
+Messages.insert({
+  name: name.value,
+  message: message.value,
+  time: Date.now()
+});
+</code>
+你会发现,这其实跟我们直接在浏览器控制台中输入的代码很相似, 只是我们用DOM元素的值来替换固定值. 另外, 欧文木讷添加了时间值来确保是按照时间来排序.</p>
+
+<p>最后,我们把两个输入框设置为空<code>''</code></p>
+
+<p>现在, 你可以打开浏览器尝试在输入框输入名字和讯息. 按下"enter"后,输入框会被被清空, 而且这则讯息会立马出现在你的输入框下边. 使用另外一个浏览器窗口或者其他浏览器打开同样的链接(<code>http://127.0.0.1:3000</code>).    尝试输入一则新的讯息, 此时你就会看到Meteor的强大之处.无须单独写一行代码来更新讯息记录, 就可以实时同步在不同的客户端浏览器中.</p>
+
+<h3>Conclusion</h3>
+
+<p>While Meteor is pretty cool to work with and there are some pretty useful applications for it, like Derby.js, it is immature. For examples of this, just browse through the documentation and look for the red quotations. For example, the documentation states the following about MongoDB collections:</p>
+
+<blockquote><p>Currently the client is given full write access to the collection. They can execute arbitrary Mongo update commands. Once we build authentication, you will be able to limit the client’s direct access to insert, update, and remove. We are also considering validators and other ORM-like functionality.</p></blockquote>
+
+<p>对于任何一个产品而言, 用户拥有数据库的所有读写权限都是非常大的问题, 非常危险.</p>
+
+<p>原文来自Andrew Munsell <a href="http://www.andrewmunsell.com/blog/introduction-to-realtime-web-Meteor-and-nodejs/#.UTyJZtHN-tv">Introduction to Realtime Web with Meteor and Node.js</a></p>
+
+<p>另附上Tom的 Vimeo screencast(需FanQiang)<br/>
+{% video http://av.vimeo.com/31624/419/93304834.mp4?aksessionid=d86b5b612c86d70bd2022ae1050aa1be&amp;token=1362992353_ce10e413b18fa6f2d0e3483ef6b82894 640 320 http://b.vimeocdn.com/ts/278/431/278431171_960.jpg %}</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Meteor基础与最佳实践]]></title>
+    <link href="http://xguox.github.com/blog/2013/03/08/learn-meteor-fundamentals-and-best-practices/"/>
+    <updated>2013-03-08T17:42:00+08:00</updated>
+    <id>http://xguox.github.com/blog/2013/03/08/learn-meteor-fundamentals-and-best-practices</id>
+    <content type="html"><![CDATA[<h2>引言</h2>
+
+<p>想知道这个新奇又好玩的东西---Meteor是如何工作的?那就太好了,你来对地方了. 我会向你展示一个Meteor项目的方方面面 并会给你一些最好的提示让你应用在未来自己的Meteor项目当中.</p>
+
+<h2>What is Meteor</h2>
+
+<p>Meteor能让你打造非常动态的的网页同时代码量出乎意料之少. 记住一点,Meteor目前还在一个超级测试的版本(原文发布时候为 preview 0.3.8, 翻译时为 preview 0.5.7). 所以, 请不要因为工作的不够完美而感到意外.<br/>
+Meteor是基于<a href="http://nodejs.org/">Node.js</a>, 因此, 你所写的大部分代码也将会是JavaScript. 这没什么好惊奇的. 如果你想要一些好的资源来快递提高你的JavaScript, 可以看一看 <a href="http://bonsaiden.github.com/JavaScript-Garden/">JavaScript Garden</a>.  <br/>
+Meteor存储数据所使用的是MongoDB. 尽管如此, 实际上,Meteor使用的是minimongo作为接口.  它只是拥有相对完整的功能而非标准MongoDB的所有功能. 你并不需要确切地知道MongoDB是如何工作的, 但我还是建议你看一看Meteor 的<a href="http://docs.Meteor.com/#collections">Collections文档</a>以便知道你能做些什么.<br/>
+Meteor目前使用的模板引擎只能是 <a href="http://handlebarsjs.com/">handlebars</a>. 但在未来支持使用别的模板引擎也是很有可能的.(翻译该文章时已经支持使用其他的如 Jade )<br/>
+最后, 只要你开发网站, 了解 HTML 和 CSS 都是必须的.</p>
+
+<h2>基础</h2>
+
+<p>一个Meteor项目包含的大多都是JavaScript文件. 如果你放置任意一个 <code>*.js</code>文件在你的项目的任何位置, Meteor会自动帮你加载并运行之. 你在Meteor项目中写的每一个JavaScript文件都会被部署到服务端和客户端(额...也不完全是这样的,继续往下看吧!). 之所以Meteor这么,这么的cool,原因之一就是:当你写了一个JavaScript函数,在客户端和服务端都可以使用之!  <br/>
+更cool的是, 比如,你在项目的任意一个地方放置<code>*.less</code>, 那么这些文件都会自动被编译并发送至客户端以及从而包含进页面当中.<br/>
+有时候,可能你希望分离开服务端和客户端的代码. 幸运地是,<!-- more --> Meteor有这么一对标识可以帮你:<code>Meteor.is_server</code>和<code>Meteor.is_client</code> <br/>
+下面的例子在浏览器的JavaScript控制台中会输出<code>Hi. I’m CLIENT</code>,而在服务端中则会输出 <code>Hi. I’m SERVER</code></p>
+
+<p>```javascript
+// This function is available on both the client and the server.
+var greet = function(name) {</p>
+
+<pre><code>console.log("Hi. I'm " + name);
+</code></pre>
+
+<p>}</p>
+
+<p>// Everything in here is only run on the server.
+if(Meteor.is_server) {</p>
+
+<pre><code>greet("SERVER");
+</code></pre>
+
+<p>}</p>
+
+<p>// Everything in here is only run on the client.
+if(Meteor.is_client) {</p>
+
+<pre><code>greet("CLIENT");
+</code></pre>
+
+<p>}
+```
+这非常的简单. 在客户端和服务端共用代码使你能够做到最大化的代码复用,这大大地减少了开发时间.</p>
+
+<h2>项目文档结构</h2>
+
+<p>可能, 你无数次地希望不再服务端和客户端之间共享所有的一切. 比如你有一些私密的算法在服务端执行,而你绝不希望Meteor把这些算法发送至客户端让全世界都看得见. Meteor提供了两个"特殊"的目录来帮助分离客户端和服务端的代码:<code>[project_root]/client/</code>和<code>[project_root]/server/</code>. 在server目录的JavaScript只会在服务端执行而不会发送至客户端, 反之亦然. 这就使得我们无须在各个地方都使用<code>Meteor.is_client</code>  和 <code>Meteor.is_server</code>.取而代之, 对应的放置你的代码就OK了.</p>
+
+<p>项目的文件结构非常重要, 尤其在考虑到文件的先后加载顺序的时候. 假定有两个文件, 其中一个依赖于另外一个, 你知道你的JavaScript的加载顺序吗?  其规则如下:</p>
+
+<ol>
+<li> <code>[project_root]/lib</code>里的文件会最先被加载. 显而易见的,  库需要放在这个文件</li>
+<li>文件会根据目录的深度来进行加载排序,放在深一层的文件会先加载</li>
+<li>同一级的文件会按照字母顺序来排序加载.</li>
+<li> <code>main.*</code> 会最后加载, 当有代码需要在其他所有的库或脚本之后执行这会很有用.</li>
+</ol>
+
+
+<p>Meteor有一些特殊的目录来帮助你解决分离 <code>client/server</code>的代码以及加载的顺序:</p>
+
+<ul>
+<li><code>[project_root]/lib/</code>  该目录下的代码会在你的 client/server 代码执行之前加载</li>
+<li><code>[project_root]/client/</code> 这个目录下的代码只会在浏览器端而不会在服务端执行</li>
+<li><code>[project_root]/server/</code> 这个目录下的代码只会在服务端而不会客户端执行</li>
+<li><code>[project_root]/public/</code> 静态文件放在这个目录下, 并且你可以很轻松地在你的html中指向 image.jpg</li>
+<li><code>[project_root]/.Meteor/</code> 一些特殊的,和项目相关的的信息放在这里,  比如你安装的某些模块. 你几乎可以不用关心这里边的东西</li>
+</ul>
+
+
+<h2>响应(Reactivity)</h2>
+
+<p>Meteor 通过 响应数据源(“reactive” data sources) 和 上下文(context) 帮你省去了当数据改变时手动替换页面的麻烦. 当响应数据源被更新后,响应上下文会重新运行(A reactive context is just a function that will get re-run if it contains a reactive data source that gets updated.) 刚开始的时候要把思维转换过来可能有些难, 下面的例子将为你解释清楚. <br/>
+下面是一个html页面和一个叫<code>cool_dude</code>Meteor<a href="http://docs.Meteor.com/#templates">模板</a>, 以及一个在客户端运行的JavaScript函数---传一个<code>username</code>的值给模板用以渲染.
+{% codeblock %}
+<html>
+  <head>
+  </head>
+  <body></p>
+
+<pre><code>{% raw %}{{&gt; cool_dude }}{% endraw %}
+</code></pre>
+
+<p>  </body>
+</html>
+{% endcodeblock %}</p>
+
+<p><code>html
+&lt;template name="cool_dude"&gt;
+  &lt;p class="important"&gt;{% raw %}{{ username }}{% endraw %} sure is one cool dude!&lt;/p&gt;
+&lt;/template&gt;
+</code></p>
+
+<p>```javascript
+// On the client:
+Template.cool_dude.username = function() {</p>
+
+<pre><code>return "Andrew Scala";
+</code></pre>
+
+<p>};
+<code>``
+当页面被渲染的时候会输出</code>“Andrew Scala sure is one cool dude!” `</p>
+
+<p>模板即是响应的上下文: 如果它依赖于响应数据源, 那么当数据源改变时它会重渲染自身. 客户端的<code>session</code>一种响应数据源. 它只会在客户端存储一些键值对, 且当页面刷新的时候被擦除.</p>
+
+<p>让我们把上面的例子模板上下文改为响应数据源:</p>
+
+<p>```javascript
+// When the app starts,
+// associate the key "username" with the string "Andrew Scala"
+Meteor.startup(function() {</p>
+
+<pre><code>Session.set("username", "Andrew Scala");
+</code></pre>
+
+<p>});</p>
+
+<p>Template.cool_dude.name = function() {</p>
+
+<pre><code>return Session.get("username");
+</code></pre>
+
+<p>};
+<code>
+现在,模板将会在</code>Session<code>里取到</code>username<code>的值. 在响应上下文我们有一个响应数据源. 如果存储在</code>Session<code>的</code>username<code>的值更改了, 模板会重新渲染新的值到页面上. 如给</code>username```设置一个新的值:</p>
+
+<p><code>javascript
+Session.set("username", "Bill Murray");
+</code>
+只要执行了这行代码,不管在哪, 页面都会立马输出<code>Bill Murray sure is one cool dude!</code><br/>
+在这里, 我会列出其他的响应上下文和数据源,你也可以到 Meteor的<a href="http://docs.Meteor.com/#reactivity">Reactivity文档</a>自行阅读.</p>
+
+<h2>发布/订阅</h2>
+
+<p><strong>Note: 在每一个项目的根目录下执行<code>$ Meteor remove autopublish</code>, 否则它会默认发布你的所有数据到客户端, 这显然不是个好的做法</strong></p>
+
+<p>服务端发布数据给客户端使用, 同时,客户端向服务端订阅已发布的数据. 在刚开始, 想要明白服务端发布数据和客户端订阅数据的关系会有些困难. 常规的经验是这样的: <strong>客户端只能访问当前时间点需要操作的数据, 除此之外的均不能访问</strong>. 举个例子, 如果你有一个聊天应用, 客户端不能够接收你的网站上每一个频道的所有信息, 而只能是当前所访问的频道的信息. 同样的也不能够知道别的频道的用户.</p>
+
+<p>下面这是一个关于 发布/订阅 的方面教材,  客户端可以看到数据库中的每一条信息:</p>
+
+<p>```javascript
+var Messages = new Meteor.Collection("messages");</p>
+
+<p>if(Meteor.is_server) {</p>
+
+<pre><code>Meteor.publish("messages", function() {
+    return Messages.find({});
+});
+</code></pre>
+
+<p>}</p>
+
+<p>if(Meteor.is_client) {</p>
+
+<pre><code>Meteor.subscribe("messages");
+</code></pre>
+
+<p>}
+<code>
+当在客户端</code>Messages.find({})<code>,可以得到数据库里的每一条信息.  
+我们可以指定一个参数使得在订阅的时候缩小范围只获取实际需要的信息(如在</code>"cool_people_channel"```频道中的信息)</p>
+
+<p>```javascript
+var Messages = new Meteor.Collection("messages");</p>
+
+<p>if(Meteor.is_server) {</p>
+
+<pre><code>Meteor.publish("messages", function(channel_name) {
+    return Messages.find({channel: channel_name});
+});
+</code></pre>
+
+<p>}</p>
+
+<p>if(Meteor.is_client) {</p>
+
+<pre><code>Session.set("current_channel", "cool_people_channel");
+
+Meteor.autosubscribe(function() {
+    Meteor.subscribe("messages", Session.get("current_channel"));
+});
+</code></pre>
+
+<p>}
+```</p>
+
+<p><a href="http://docs.Meteor.com/#Meteor_autosubscribe">Meteor.autosubscribe</a>是一个响应上下文, 意思是只要有响应数据源更新,所有在里头的东西都会重运行. 我们把当前所在的频道存储在Session的<code>"current_channel"</code>. 如果这个session值改变, 那么订阅(subscription)也就更新,
+这样我们就能够访问其他的信息了. 如果用户想要加入<code>“breakfast talk”</code>这个频道. 我们可以运行<code>Session.set("current_channel", "breakfast_talk")</code>, 这会触发autosubscribe, 让我们可以且仅可访问<code>"breakfast_talk"</code>频道下的信息.</p>
+
+<p>或许,你很多次都希望发布所有的collection到客户端. 仔细思考客户端实际需要的是什么. 比起发送所有的文档, 只发送特定领域会来得明智些.</p>
+
+<h2>服务端方法</h2>
+
+<p>由于客户端不允许查看数据库中有什么东西, 你一对会好奇客户端又是如何存储信息的. 解决办法是使用Meteor的<a href="http://docs.Meteor.com/#methods_header">服务端方法(Server Methods)</a>. 你在服务端定义了所有的函数用以一些危险的做法比如修改和更新数据, 然后让客户端像调用常规方法那样call这些函数并返回值. 客户端永远也不会看到具体的实现,也不会自己修改数据. 这些都是服务端做的事.<br/>
+想要添加一个用户到数据库中, 假定有一个叫<code>create_user</code> 的方法--传入一个username并让服务端插入一条记录. 它会返回给客户端一个<code>ObjectID</code>这样客户端可以抓取到这个用户的信息并做任何接下来要做的事.</p>
+
+<p>```javascript
+if(Meteor.is_server) {</p>
+
+<pre><code>Meteor.methods({
+    create_user: function(username) {
+        console.log("CREATING USER");
+        var USER_id = Users.insert({name: username});
+        return user_id;
+    },
+});
+</code></pre>
+
+<p>}</p>
+
+<p>// Remember, the client's browser only ever sees the code below:
+if(Meteor.is_client) {</p>
+
+<pre><code>var username = "Andrew Scala";
+
+Meteor.call("create_user", username, function(error, user_id) {
+    Session.set("user_id", user_id);
+});
+</code></pre>
+
+<p>}
+```
+在这个例子中我的 user_id被设置到客户端session中, 当任意模板使用到我的user_id
+ 的时候均立马可以得到更新.</p>
+
+<h2>保护你的数据</h2>
+
+<p>默认的, 你可以在客户端打开一个JavaScript 控制台并<strong>运行数据库查询</strong>.这非常的不安全.最糟糕的情况是, 当我们在访问你这么cool的Meteor应用时可以运行<code>Users.remove({})</code>来擦除你的所有数据.</p>
+
+<p>Meteor即将会做一些措施来更好的保护你的数据, 但截至目前为止这是唯一的方法可以做到保护的. 这些代码被包含在了基于 Meteor的 <a href="http://madewith.Meteor.com/">madewith</a>网站中.这个代码片段阻止了从客户端进行insert/update/remove等操作. 把下面这段代码放在你的服务端代码中的任意位置:</p>
+
+<p>```javascript
+// Relies on underscore.js. In your project directory:
+// $ Meteor add underscore
+Meteor.startup(function() {</p>
+
+<pre><code>var collections = ['collection_name_1', 'collection_name_2'];
+
+_.each(collections, function(collection) {
+    _.each(['insert', 'update', 'remove'], function(method) {
+        Meteor.default_server.method_handlers['/' + collection + '/' + method] = function() {};
+    });
+});
+</code></pre>
+
+<p>});
+```</p>
+
+<h2>敬请关注</h2>
+
+<p>准备好开发一个真实的Meteor项目了吗?一起期待吧, Part 2 就在路上了.届时将引导你完成一个完整的app!</p>
+
+<p>原文来自Andrew Scala <a href="http://andrewscala.com/Meteor/">Learn Meteor Fundamentals and Best Practices</a>  <br/>
+Ps:文章有点老,XD...不过就像该篇文章的作者所说, Meteor 现在还是处于一个 super-beta 阶段, 版本更新自然会相对来得快些. 据说1.0版本将会在不到一年的时间内发布.</p>
+]]></content>
+  </entry>
+  
+</feed>

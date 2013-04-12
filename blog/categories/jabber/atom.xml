@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Jabber | XguoX_L]]></title>
+  <link href="http://xguox.github.com/blog/categories/jabber/atom.xml" rel="self"/>
+  <link href="http://xguox.github.com/"/>
+  <updated>2013-04-12T17:57:04+08:00</updated>
+  <id>http://xguox.github.com/</id>
+  <author>
+    <name><![CDATA[XguoX_L]]></name>
+    <email><![CDATA[golvinlu@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[最近在折腾 -- deploy Meteor on heroku]]></title>
+    <link href="http://xguox.github.com/blog/2013/04/06/deploy-meteor-on-heroku/"/>
+    <updated>2013-04-06T23:42:00+08:00</updated>
+    <id>http://xguox.github.com/blog/2013/04/06/deploy-meteor-on-heroku</id>
+    <content type="html"><![CDATA[<p>貌似有好一段时间没有在这儿小发一些闷骚或者情感泛滥什么的, 都是用自己蹩脚的英语水平翻译些英文post. 这些天想部署个Meteor app玩一玩, 结果一玩就各种出事了.</p>
+
+<p>vps退货, godaddy的莫名失单, 部署各种卡壳...</p>
+
+<p>因为最近比较多的关注前端的东西,  同时在自己local耍着<a href="https://github.com/SachaG/Telescope">SachaG / Telescope</a>这个基于Meteor的项目. 于是也就顺手搭了<a href="http://frontn.com">FrontN</a>这么个类似HN, Reddit的玩意. 原本是准备直接把HN,Reddit clone 成中文版的, 不过<a href="http://news.dbanotes.net/">Fenng</a>貌似已经这么干了, 所以, 我也就不再造这个轮子了.另外原本也想专门作为<a href="http://jianshu.io">简书</a>的评论系统. 不过想想也不是很妥, 就...</p>
+
+<p>Meteor的系统是超级alpha的, 所以很多问题遇上了也没人帮忙, 解决. 比如之前在<a href="http://stackoverflow.com/questions/15654637/same-helper-for-different-template">Stack Overflow</a>. 而部署这一块, 是我比较陌生的. 包括以前搞rails那会, 也没真正意义的整一整部署. 绝大部分时间都在本地跑啊跑. 所以, 在Meteor, 也是这一块最让我头疼.</p>
+
+<!--more -->
+
+
+<p>从vps到appfog到heroku, 各种转了一圈, 最终还是选定了heroku.  原因之一就是资料相对多, 出错情况也较少.</p>
+
+<p>秉承流水帐作风, 待我慢慢道来.</p>
+
+<p>幸得以前一直搞得是ruby/rails. 所以装heroku的时候没啥压力, 不然可能这又得搞上一会. 直接下载了官方的<a href="https://toolbelt.heroku.com/">heroku toolbelt</a>无压力安装, login, clone...</p>
+
+<p>and then 跟着 <a href="https://github.com/oortcloud/heroku-buildpack-Meteorite">Heroku buildpack for Meteorite</a> 这个buildpack完成接下来的:</p>
+
+<p><code>
+heroku create --stack cedar --buildpack https://github.com/oortcloud/heroku-buildpack-Meteorite.git
+</code>
+<strong>Please note: 在这如果你想把你的项目名改成想要的比如我改成了<a href="frontn.herokuapp.com">frontn.herokuapp.com</a>, 在heroku的项目页面上修改名字的同时, 记得把repo的git remote 也相应的更改</strong></p>
+
+<p>否则就会报错</p>
+
+<p><code>
+heroku !  Resource not found
+</code>
+好吧, 很明显我自己傻13了才会知道要这么做的.</p>
+
+<p>接着到了最关键的push了.  当我<code>git push heroku master</code>的时候, bla,blah blah...下来还以为这次会真的很顺畅. 结果oops的一嘣</p>
+
+<p><code>
+...
+...
+-----&gt; Launching... !     Heroku push rejected, Please verify your account to install this add-on
+For more information, see http://devcenter.heroku.com/categories/billing
+Verify now at https://heroku.com/verify
+</code>
+纳尼,  原来这货还要用到一个mongo的数据库插件, 在这里是Mongohq, 原本没注意看以为直接
+<code>heroku addons:add mongohq:sandbox</code>就OK
+(sandbox是免费餐)</p>
+
+<p>结果毫无疑问的继续嘣...</p>
+
+<p><code>
+Adding mongohq:sandbox on frontn... failed
+ !    Please verify your account to install this add-on
+ !    For more information, see http://devcenter.heroku.com/categories/billing
+ !    Verify now at https://heroku.com/verify
+</code></p>
+
+<p>Google之才知道原来Heroku在装插件前得通过传说中的credit card卡认证, 我辣时就更嘣了. 对于我等无产阶级而言, credit card仿佛就跟神一般滴遥不可及. 你想买3刀的godaddy域名?不好意思, 请出示credit card; 你想用name.com买域名? 不好意思, 请出示credit card; 你想买linode的vps?有credit card吗? 亲...正当我开始准备放弃heroku这条路时, 忽然无意中发现了虚拟信用卡这货, 顺藤摸瓜发现, 柳暗花明又一村.</p>
+
+<p><strong>工行国际e卡 + entropay</strong>(怎么觉得我像在拍广告的)</p>
+
+<p>虽然门路是找着了, 不过弄得我好不蛋疼.<br/>
+因为mac上工行网银不支持插U盾, 于是又启动了以前的那台老爷机, 一卡一顿的, 唉, 为了搞到手就忍忍吧...结果成功申请后唬弄半晌才知道原来要先用软妹b买美刀才能花, 而且至少买50刀. 我现在要50刀搞毛线撒...没法子, 只得照办了. 然后是entropay的虚拟卡>>><br/>
+OOXX一轮下来总算是把heroku的验证给通过了, 感动啊...</p>
+
+<p><code>heroku addons:add mongohq:sandbox</code></p>
+
+<p><code>git push heroku master</code></p>
+
+<p>好吧, 总算是成功了. 我容易吗...</p>
+
+<p>最后总结, heroku相对的来说除了出错情况较少, 可用资料多之外, 管理上也比自己搭vps要方便些, feel了一下MongoHQ的那个插件还不错...这样, 也就可以花更多的时间的app的开发上. 而不是折腾这出错那无解.  好吧, 尽管咱都爱折腾, 不过, 往你想的地方折腾不更好吗? 其实这些也就都是Paas的优势啦, 专注核心开发, 减少运维成本...</p>
+
+<p>其他的待续吧, 相比rails, 或许底层它怎么干还没搞透, 但起码的知道它干了什么, 可Meteor我还真不知道它都干了些什么, 比rails更magic.</p>
+
+<p>不管是否热爱前端的亲, 欢迎做客<a href="http://frontn.com">FrontN</a>. 有Bug那是必然的啦, 欢迎Feedback.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[About My Translation]]></title>
+    <link href="http://xguox.github.com/blog/2013/02/07/about-translation/"/>
+    <updated>2013-02-07T18:05:00+08:00</updated>
+    <id>http://xguox.github.com/blog/2013/02/07/about-translation</id>
+    <content type="html"><![CDATA[<p><strong>First off</strong>，以俺目前的各种水平，想写出一些好的 technical articles 是有点难度的啦。于是乎，我选择了翻译国外一些好的文章。不管多么新鲜的技术，就算找不着中文资料，也一定没少英文文档。比如最近发现的几个挺不错<a href="https://cooperpress.com/">weekly</a>（其实也不是最近才发现，也订阅了有大半年吧，不过其实是只订不阅，或者阅的比较少。惰性心理啊。）以及一些国外牛人BLOG。Share下我的文章的主要来源吧.</p>
+
+<ul>
+<li><a href="http://www.smashingmagazine.com/">Smashing Magazine</a></li>
+<li><a href="http://www.html5rocks.com/en/">HTML5ROCKS</a></li>
+<li><a href="http://css-tricks.com/">CSS-Tricks</a></li>
+<li><a href="http://javascriptweekly.com/">JavaScript Weekly</a></li>
+<li><a href="http://rubyweekly.com/">Ruby Weekly</a>(最近几乎没怎么研究Ruby了)</li>
+<li><a href="http://dailyjs.com/">DailyJS</a></li>
+<li><a href="http://net.tutsplus.com/">nettus+</a></li>
+<li><a href="http://paulirish.com/">Paul Irish</a></li>
+<li><a href="http://blog.reybango.com/">Rey Bango</a></li>
+<li><a href="http://javascriptissexy.com/">JavaScript.is(Sexy)</a></li>
+</ul>
+
+
+<p>Obviously, 不可能有一篇新的我就翻译一篇. 要是那样的话我精尽人亡都搞不过来. 而且, 尴尬 + 惭愧的是, 本身我自己的Google Reader里也是常年1000+ unread =. =</p>
+
+<p>其实以前初初学Rails也是跟着全英文的<a href="http://ruby.railstutorial.org/ruby-on-rails-tutorial-book">Ruby on Rails Tutorial</a>，另外也尝试翻译过<a href="http://rubymonk.com/">rubymonk</a>以及近段时间翻的一些，本人的英文水平实在很渣，CET6不上300分的成绩也曾经考过。于是，都翻比较蹩脚。就好比之前那几篇，好些地方原本读原文还明白了, 翻译过后反而看不懂在讲什么。有些则是只会半句。好吧，的确尴尬！不过，会好起来的。</p>
+
+<p>说到英文水平，尽管老早的就知道重要性，却从未好好学习过，只能现在硬着头皮自愿加强迫自己上，看英文的电视剧（尽量不跟着字幕），用英文的社交网站（圈多些国外的），阅读外文的文章（好吧，几乎也就是一些科技类的）, 听英文podcast(各种听不懂)...</p>
+
+<p>PS，最近看<a href="http://linlis.me/">@linux</a>也经常翻译一些文章，不过他翻译的更多比较文学性的。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Microsoft?Win8?WP8?死忠Nokia]]></title>
+    <link href="http://xguox.github.com/blog/2013/01/27/nokia-microsoft-win8-wp8/"/>
+    <updated>2013-01-27T19:48:00+08:00</updated>
+    <id>http://xguox.github.com/blog/2013/01/27/nokia-microsoft-win8-wp8</id>
+    <content type="html"><![CDATA[<p>打从开始用手机就是NOKIA，初初的<strong>7360</strong> -> <strong>5700</strong> -> <strong>N85</strong>。还行吧，这么多年来一直坚持着，也算个NOKIA死忠粉丝瓜。从85换到现今的撸妹820期间，用过一台塞班的c6和iOS的3GS，以及短暂的耍过一些低端android。最后选择了Windows Phone 8，有出于对其的看好，对metro的喜爱，还有他们说的，90后就是要个性，与众不同。</p>
+
+<p>首先，简单说说<strong>撸妹820</strong>吧，系统运行的流畅程度的挺满意的。其实CPU、RAM的配置跟撸妹920一样的。尽管800 x 480在现今主流配置来说拖了后腿，尽管整台机器我最不喜欢的是这块屏幕，不过暂时对我来说已经很不错下，毕竟木有用过720P，更没用过传说中的1080P，所以理解不来分辨率倒退的落差。<!-- more -->拍照性能其实算的上挺强的吧。除了没有撸妹920的PureView外，但毕竟这也是蔡司认证滴。而且，花哨的拍摄功能也不少，不过如果是Instagram的粉丝可能就要失望了。貌似WP8的Instagram还不知道在不在娘胎里。但据说有个叫Lomogram的很不错下。（好像有5毛之嫌啊）因为自己有a77，所以，其实一直都对手机的拍摄性能不太关注，这也是促使我买了撸妹820而不是920的一大原因(我会告诉你其实真正原因是本屌丝缺钱买不起贵了千把块的920)。外观上，4.3的屏幕目前感觉良好，毕竟我的手也不是很大，再大到跟Note II 那样估计我就得每次掏手机都使双手了。比较欢乐的是这个后壳，各种颜色，满足了我一向colorful的style。好吧，偶不是专业硬件测评的，就扯这一点好了。</p>
+
+<p>接下来看看WP8</p>
+
+<p><img src="https://deivxa.dm1.livefilestore.com/y1pUR7NOwfw5jvpoQe2P98N2xpeRJpq-C11fPmZs9CqfptYzxkGe6dP-QuZYlBGtgoEQl1iPgprpNPRtgeoUhv1PhUYd0aOyuBB/wp_ss_20130127_0004.png?psid=1" alt="" /><br/>
+很多人诟病WP8的app很少?这个个人真心不觉得。当然，比另外两大巨头要少那是必然的。不过鸽不算什么重度app玩家，手机基本都只装自己用的，游戏基本不装。目前的话我需要的都能找到，其实也就无非一些sns，rss，map，note，支付宝之类的app。好吧，最痛心还是没有Chrome(只有一个非官方版的)。尽管IE10进步不少，但依旧替代不了Chrome在我心中的地位。毕竟好多书签的说，只能靠一个叫Chrync的app同步书签了。</p>
+
+<p>看看IE10下的简书<br/>
+<img src="https://degncq.dm1.livefilestore.com/y1pN2VJhTzGZ0V_EWJ6JufFeIP2fUztsk1sH1Q1PQTQUGCsXcveg_VSO2ESbV-ciS9TnZsgQ24eE-XL2-LUNg8YMaHm9EU2i_kh/wp_ss_20130127_0003.png?psid=1" alt="" /></p>
+
+<p>支付宝<br/>
+<img src="https://dehd8g.dm1.livefilestore.com/y1p7L6VkMxxixDYU4HgVzgxnWudd6Amrtkt0exs4myItPQitoX3d0Spethc6oldwiE71Yj1XVQ6ckoAelnxe-Zl5h9Y82Pe_eEy/wp_ss_20130127_0001.png?psid=1" alt="" /></p>
+
+<p>另一个比较关心的app是Google Reader。刚开始用一个叫RSS READER的，后来出现比较多的bug，也就果断卸了，目前正在试用一个 <strong>NEXTGEN READER</strong>，感觉挺不错下，12块也算比较值。<img src="https://deguua.dm1.livefilestore.com/y1prTYlFSVDtOv2e0zVS8Mm47mh8XYP3NsTp8LySQ8sg9wMHj-I7NWmBI5HOwY9LAAgpy3N2L9DwsHMgZe6ItkO_ViJQnrmFqEy/wp_ss_20130127_0002.png?psid=1" alt="" /></p>
+
+<p><img src="https://dehyla.dm1.livefilestore.com/y1pwayuSgGoPFBpqWAUhgy2HYZCwgnkIVfCONgbq2sIgCdb-QEHGIGnqHvIG1ZsuF6iC6YmsAmoU_ryWEpptpK8BuG_B2ip26-y/wp_ss_20130126_0003.png?psid=1" alt="" /></p>
+
+<p>当然，同样的某些也就只是某些app啦相较于iOS版本的来说没那么细腻这也是事实。不过这也只是取决于开发者所花的心思吧。现在的app开发者都一股脑热的涌向了iOS和Android。</p>
+
+<p>说完WP8就转着说说Win8，据前些天看到的报道，Win8的份额正逼近ml。哎，虽然满大街都说Microsoft在走下坡路，但垄断地位还是不可撼动啊！关于Win8，其实，最近也有准备更换电脑，一直在Win8的触屏超级本和Air之间犹豫徘徊。考虑到开发的需要，所以目前还是更偏向于Air。Win8目前许多应用还不甚稳定，闪退现象比较多出现。</p>
+
+<p>其实关于这个metro还有一个不得不说说的就是<strong>so.cl</strong> 。 其实早在11年刚推出微软那会我是不怎么看好并且也不怎么感兴趣的，在这个社交网站遍地跑的互联网再插一只脚进来，还是老样子的话也就没啥意思了。不过最近偶然间回去耍了耍，感觉还是有点看头的，偶尔也还上去耍耍，跟国际友人多些交流（貌似不用翻越那啥就可以上去的说）</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[2013 new year]]></title>
+    <link href="http://xguox.github.com/blog/2013/01/01/2013-new-year/"/>
+    <updated>2013-01-01T17:42:00+08:00</updated>
+    <id>http://xguox.github.com/blog/2013/01/01/2013-new-year</id>
+    <content type="html"><![CDATA[<p>回看2011的最后一篇，2012的那个元旦，上一次的夜游白云山看那看不到的日出，想来，我的这两元旦都”不平淡“呀。只是这次的不平淡不太妙。<br/>
+老规矩，跟上次那般先回顾一下这个2012。首先，庆幸一下这个世界还没到走到末日；接着，热烈祝贺中共18大胜利召开...(扯远了好伐)</p>
+
+<p>看上那篇写着的，其实2011那会也就那么点东西而已，没多疯狂的，比起2012的简直小巫见大巫。这其实，2012，也没什么疯狂的，学会蛋定地看事情。<br/>
+简单来个大小事件回顾：厦门义工旅，瑞卡初实习，奔赴大上海，参与简书，各种进医院，升大四...</p>
+
+<!-- more -->
+
+
+<p>我常说自己最大的缺点不是XX性格 || XX知识之类的，而是我的身体状况弱爆了。似乎，以前遇到的所有困难都不算什么，这一次却狠狠地阻挠了我一番。以至于我的所有计划都随之暂停。不过我的心态也算是得到一场小锻炼吧。就像前面所说，蛋定地看事情。</p>
+
+<p>出600D入a77想来是个错误的决断，只怪那次东栅行太纠结折腾了以至于小冲动了。否则，差价上再存点小钱把linux的35L败过来也不错下。后来本是想入xpro1的(说实话现在也还想)奈何银子不甚充裕......</p>
+
+<p>不幸地还有在这患病的节骨眼撞上了大学毕业季，学校各种蛋疼的事有，据说各个校园正开展着各种招聘会啥的，话说到现在我一个都没去过，简历也没份像样的，正装也没一件。想来还没正正规规的为自己的毕业工作筹划一番。换句话说是不是在大上海过得太安逸了叻，又还能安逸多久呢？</p>
+
+<p>大方向呢还是这么走着。还y大方向，说的很正经似的，说白了还不是写代码的。这一年，比较纠结的是linux方面没什么大进步，还是那么不入流。rails有些进步但不甚明显，最近在医院换口味玩儿sinatra，这方面的中文资料那就杠杠的比Rails的还少。JS写了不少，不过也只是仗着jQuery的易上手。前端设计很大程度是在依赖Bootstrap。</p>
+
+<p>还有不足的就是阅读的不够多，包括书，和RSS。尤其RSS，也就订阅那么几个，好经常就爆了。</p>
+
+<p>前面说的，蛋定地看事情。其实自己也不确定是否做到了，初初住院几天我甚至怀疑自己有间歇性的狂燥症。</p>
+
+<p>曾经有某一天的某一刻，我脑海中忽然疑惑是否有“带”这个字，以至于我当时还不自觉的就在虚空种比划着。这些天恰巧在看KK的《失控》，其中，关于<strong>black patch psychosis（黑盲性精神错乱）</strong>的描述让我感觉自己搭上了（当然，其实我当时的条件并没有书中的实验来的残酷）。据传，一些人在极度无聊的时候出现了诡异的幻觉。没有互联网的世界的确失色很多，至少对我来说。</p>
+
+<p>从昨晚到现在，好多人纷纷改签名发微博2012怎么滴2013怎么滴（也是今天1月1扣月租才上看到的，手机老早没流量了）。</p>
+
+<p>2013，想有一些改变。<strong>首要的，当然是身体好起来。其次，希望自己的文字功夫有所提高，一直很欣赏那些写出语言平时而却寓意深远蕴味深刻的作家，虽然我也写了不少，但都是些流水帐，如果哪一天我不写代码，我希望自己会是摄影师&amp;作家，最平凡的文字最平凡的视角去刻画这一切。最后，Javascript至少要能实在地说自己熟悉。</strong></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Positive Energy]]></title>
+    <link href="http://xguox.github.com/blog/2012/12/02/positive-energy/"/>
+    <updated>2012-12-02T14:42:00+08:00</updated>
+    <id>http://xguox.github.com/blog/2012/12/02/positive-energy</id>
+    <content type="html"><![CDATA[<p>前天，新装了win8，还是因为技术各种不到位，结果原本的ubuntu活生生的被干掉了。于是乎，我就总安慰自己，哎，毕竟不是计算机专业的，是菜的啦。想来这是我第二次栽在了系统安装。不过这次ubuntu的丢失远不及上一次来的壮烈。目测这次最大的损失也就Octopress里的一些post。因为后来写的好几篇都没有push到github，于是，只好用最2的方式去还原了。</p>
+
+<!--more-->
+
+
+<p>也因此，才发觉距离写上一篇的时间都有两个多月了。以往一头半个月也能写上一两篇的。只是，这两个月也过得太...(压抑？好像不是。抑郁？也不算吧。总而言之，就是糟糕吧)因为这糟糕的身子。直到现在，看着自己不过百斤的体重，瘦削的身板。另一方面，<a href="http://jianshu.io">简书</a>正值冲刺时刻。再一方面，临近期末，临近毕业...总之，一切因为这场突如其来的恶疾而似乎变得糟糕了。<br/>
+最大的可惜应该要数没能去RubyConf。门票开始发售的第一天就果断买了门票，接着，坐等11月17。接着...<br/>
+再看着上一篇，还想着怎么怎么地计划，结果都变成了浮云...</p>
+
+<p>尽管这么一切，但是近些天却也relax的一些。<br/>
+似乎是因为去尝试了一些新东西，比如买了几本新书，当然了，不是技术类的。又或者，在学javascript，好吧，其实JS对我包括很多人一定不是什么新东西，但是，对我包括很多人，个中的一些、很多知识一定还是新鲜的。另外Larry说的，看一看Spine.js，还是很有兴趣的。还有Sinatra呀。  甚至乎，如这换了个主题，看着多了份舒适。（想来是不是之前那个配色有点不着调了）
+尝试一些新鲜的事物，总会把一些喜悦感激发出来的。</p>
+
+<p>Anyway，最近，有句话在我脑海闪过很多次。
+如果若干年后事情对你已经不重要，现在何必为其不堪而难过。So，我回来写博客了。看着页面多了一篇新的post，舒服不少，尽管一如既往的流水。</p>
+
+<blockquote><p>As The last ship sailed towards the distant horizon <br/>
+I sat there watching on a rock 　　<br/>
+My mind slowly drifting away 　　<br/>
+Forming into my… Dreamtale</p></blockquote>
+]]></content>
+  </entry>
+  
+</feed>

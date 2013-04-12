@@ -1,0 +1,406 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>5 Meteor Misconceptions - XguoX_L</title>
+  <meta name="author" content="XguoX_L">
+
+  
+  <meta name="description" content="由于某些原因，关于Meteor一直都有着各种各样的误解。或许是因为Meteor刚正式推出的时候， 缺失很多重要的功能。而很多不知道的是，这些缺陷在后来早就被修复了。 为了给Meteor正名，下面列举的是5个最常见的误解。 误解#1：“Meteor的数据不安全” &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://xguox.github.com/blog/2013/03/14/5-meteor-misconceptions/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+   <link href="/stylesheets/data-table.css" media="screen, projection" rel="stylesheet" type="text/css" />
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="XguoX_L" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-39166710-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+</hgroup>
+
+</header>
+  <!-- <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:xguox.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav> -->
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">5 Meteor Misconceptions</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-14T16:52:00+08:00" pubdate data-updated="true">Mar 14<span>th</span>, 2013</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>由于某些原因，关于Meteor一直都有着各种各样的误解。或许是因为Meteor刚正式推出的时候， 缺失很多重要的功能。而很多不知道的是，这些缺陷在后来早就被修复了。</p>
+
+<p>为了给Meteor正名，下面列举的是5个最常见的误解。</p>
+
+<h2>误解#1：“Meteor的数据不安全”</h2>
+
+<p>在Meteor的第一个Demo推出之时， 数据安全和用户权限这些东西是没有的。任何客户端的用户都能够访问，修改数据库的数据然后发送返回到服务端。</p>
+
+<p>但这第一个版本只是作为一个提示告诉大家Meteor来了， 并不意味着它可以被用来打造一个真实的应用产品。 打那之后， 现在的Meteor已经有了一个内置的身份认证包（authentication package）。</p>
+
+<!-- more -->
+
+
+<p><strong>造成误解的另一个原因是， 许多新手为了更容易地快速上手常常在创建Meteor应用的时候， 遵循默认的把所有的数据发布给客户端。</strong></p>
+
+<p>正如Meteor的开发者之一 <strong>Avital Oliver</strong>在<a href="http://stackoverflow.com/questions/10099843/how-secure-is-Meteor">StackOverflow上的回答</a>那样</p>
+
+<blockquote><p>当你使用Meteor的命令行工具创建一个应用的时候， 默认的会包含有两个packages：<strong>AUTOPUBLISH</strong>和<strong>INSECURE</strong>. 这两个packages能使得每个客户端都拥有所有的服务器数据库读写权限效果。这是非常好的原型工具（目的只为了开发），但通常这不适合用于应用的生产环境。当你需要发布到生产环境的时候，请去掉这两个packages</p></blockquote>
+
+<p>类似地，也因为Meteor可以共享服务端和客户端的代码，但实际上，这并不意味着所有的代码都可用于客户端.</p>
+
+<p>所有放在<code>server/</code>目录下的东西都是只能在<a href="http://docs.Meteor.com/#structuringyourapp">服务端</a>执行使用的, 同时Meteor也让你可以定义<a href="http://docs.Meteor.com/#methods_header">服务端安全方法</a>，这些方法可以在客户端调用。</p>
+
+<h2>误解#2：“Meteor对SEO不友好”</h2>
+
+<p>与传统的网页应用不一样，Meteor不会在服务端搭建HTML页面。取而代之， 服务端只发送数据， 然后在客户端决定如何渲染之（这就是Meteor的“data on the wire”原则）</p>
+
+<p>这种做法的缺点就是， 当JavaScript被禁用的话， 你的网站几乎跟一个空白页面无异。</p>
+
+<p>你或许会觉得这会迷惑搜索引擎。但幸运地是， Meteor有解决的方案，那就是使用<a href="http://docs.Meteor.com/#spiderable">Spiderable</a> Package.</p>
+
+<p><img src="http://theMeteorbook.com/images/phantomjs.png" alt="" /></p>
+
+<p>这个package使用的是<a href="http://phantomjs.org/">PhantomJS </a>在服务端预渲染后提供给网络爬虫。实际上网络爬虫得到的网页跟你看到的是一样的。</p>
+
+<h2>误解#3：“Meteor不支持第三方packages”</h2>
+
+<p>有很多的讨论是关于Meteor所用的不是Node的标准包管理&#8211;NPM. 而事实上， Meteor压根就没有不允许使用第三方程序包.</p>
+
+<p>And it’s true that the vanilla install of Meteor does not come with a package manager. 但庆幸的是， <a href="http://theMeteorbook.com/">本书</a>的合著者之一Tom Coleman， 同时也是Meteor包管理器<a href="https://github.com/oortcloud/Meteorite">Meteorite</a>和packages资源库<a href="http://atmosphere.Meteor.com/">Atmosphere</a>的开发者。</p>
+
+<p>尽管当下Meteorite 和 Atmosphere还不是Meteor的官方部分， 但它们已经得到广泛的使用并将会在未来被合并到Meteor的核心部分。事实上，这方面的工作已经在Meteor的核心代码的<a href="https://github.com/Meteor/Meteor/tree/engine">engine</a>分支中开展，预期会被很快解决。</p>
+
+<h2>误解#4：“Meteor是完全封闭的(walled garden)”</h2>
+
+<p>一个密切相关的异议是,Meteor可以支持第三方packages,但这些第三方packages却严格地限制于流星的生态系统。</p>
+
+<p>为什么有成千上万的Node packages 在那还要使用自定义的package呢？这又是否与开源精神相悖呢？</p>
+
+<p>首先，需要意识到一点很重要的就是， 在Meteor中可以任意的使用node packages。尽管在当下这么做可能还会有一些棱角使得接口不那么顺利，但这种情况在<code>engine</code>分支添加<a href="https://groups.google.com/forum/?fromgroups=#!topic/Meteor-talk/b6zQrgk8lYo">Node support</a>
+并发布后将得到很大改善。</p>
+
+<p><img src="http://theMeteorbook.com/images/npm.png" alt="" />
+其次，Meteor不仅仅是Node.js的一个框架， 更是一种全新的网站应用开发方式和构想.</p>
+
+<p>换句话说，想知道为什么Meteor不使用NPM无异于问为什么它不能使用Ruby Gems. 有很多人建议所有的JavaScript代码应该都用NPM来管理， 但这么做的话会有一些细节上的问题， 正如核心开发者<a href="https://github.com/Meteor/Meteor/pull/516#issuecomment-12919473">解释说</a>.</p>
+
+<h2>误解#5：“Meteor只适用于原型”</h2>
+
+<p>“Meteor非常适用于小规模快速原型的项目，但它不适合用于大规模的应用.”</p>
+
+<p>在某种程度上， 这很难争个谁对谁错。毕竟Meteor的主页的版本号还是以<code>0</code>开头.</p>
+
+<p>但事实是Meteor还没准备到一个黄金时间，比起内在的局限性，在如此青涩的时期(不到一岁)Meteor还有许多需要做的。</p>
+
+<p>再说， 即使是现在， 有时牺牲一点稳定性来做交换得到Meteor带来的轻松且快速的开发还是值得的。如果你希望看到一些具体的Meteor案例，我可以推荐看看<a href="http://telesc.pe/">Telescope</a>吗？</p>
+
+<p>So，我坚信，在Meteor这样快速发展之下，今天的技术原型将会是明天thousand-user 的应用.</p>
+
+<h3>总结</h3>
+
+<p>现在，即使我们正在写这本关于Meteor的书， 但我们首先依旧会承认一点， 如同其他的技术那样，Meteor同样也有着自己的缺陷。</p>
+
+<p>But I do believe Meteor has enough potential to make it worth evaluating it on its own merits. 所以如果你犹豫不决是否使用Meteor， 希望我的建议能说服你你选择它.</p>
+
+<p>原文来自 Sacha Greif  <a href="http://theMeteorbook.com/2013/03/12/5-Meteor-misconceptions/">5 Meteor Misconceptions</a></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">XguoX_L</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-14T16:52:00+08:00" pubdate data-updated="true">Mar 14<span>th</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/meteor/'>Meteor</a>, <a class='category' href='/blog/categories/translation/'>Translation</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://xguox.github.com/blog/2013/03/14/5-meteor-misconceptions/" data-via="" data-counturl="http://xguox.github.com/blog/2013/03/14/5-meteor-misconceptions/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/03/10/introduction-to-realtime-web-with-meteor-dot-js-and-node-dot-js/" title="Previous Post: Introduction to Realtime Web with Meteor and Node.js">&laquo; Introduction to Realtime Web with Meteor and Node.js</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/03/20/improving-ux-through-front-end-performance/" title="Next Post: Improving UX Through Front-End Performance">Improving UX Through Front-End Performance &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <ul id="recent_posts">
+      <li class="post">
+      <a href="/" alt="Home"><img src="/images/Home.png"></a>
+      <a href="/archives/" alt="Archives"><img src="/images/Calendar.png"></a>
+      <a href="mailto:golvinlu@gmail.com" alt="E-Mail"><img src="/images/Envelope.png"></a>
+      <a href="/about/" alt="About XguoX"><img src="/images/User.png"></a>
+      <a href="http://gplus.to/xguox" alt="XguoX" target="_blank"><img src="/images/googleplus.png"></a>
+      <a href="https://twitter.com/XguoX_L" alt="XguoX" target="_blank"><img src="/images/tw.png"></a>
+      <a href="http://cn.linkedin.com/pub/grover-lu/65/8ba/4a5" alt="XguoX" target="_blank"><img src="/images/linkedin.png"></a>
+      <a href="/atom.xml" alt="subscribe feed"><img src="/images/rss_big1.png"></a>
+      </li>
+  </ul>
+</section>
+
+<section>
+<h1>Category</h1>
+<span class='categories_tag'> <a href='/blog/categories/books' style='font-size: 102.0%'>Books</a>  <a href='/blog/categories/css' style='font-size: 102.0%'>Css</a>  <a href='/blog/categories/hexo' style='font-size: 102.0%'>Hexo</a>  <a href='/blog/categories/jabber' style='font-size: 160.0%'>Jabber</a>  <a href='/blog/categories/javascript' style='font-size: 102.0%'>Javascript</a>  <a href='/blog/categories/json' style='font-size: 102.0%'>Json</a>  <a href='/blog/categories/meteor' style='font-size: 114.0%'>Meteor</a>  <a href='/blog/categories/performance' style='font-size: 102.0%'>Performance</a>  <a href='/blog/categories/rails' style='font-size: 118.0%'>Rails</a>  <a href='/blog/categories/ruby' style='font-size: 118.0%'>Ruby</a>  <a href='/blog/categories/sublime' style='font-size: 102.0%'>Sublime</a>  <a href='/blog/categories/translation' style='font-size: 124.0%'>Translation</a>  <a href='/blog/categories/travel' style='font-size: 104.0%'>Travel</a> </span>
+</section>
+
+
+<section class="even">
+<iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=1&isTitle=0&noborder=0&isWeibo=1&isFans=0&uid=1660802261&verifier=0594649b&dpc=1"></iframe>
+</section>
+
+
+
+<section class="last odd">
+<h1>My <span style="color: #0063dc;">Flick<span style="color: #ff0084;">r</h1>
+<style type="text/css">
+	#flickrList li { text-align: left; display:inline; margin: 0 2px 0 2px;}
+</style>
+<ul id="flickrList"></ul>
+<script lang="Javascript">
+var flickrNickname = "GroverLu";
+function jsonFlickrApi(rsp) {
+	if (rsp.stat != "ok"){
+  		return;
+ 	}
+ 	var list = "";
+ 	for (var i=0; i < rsp.photos.photo.length; i++) {
+  		var photo    = rsp.photos.photo[i];
+  		var imgUrl   = 'http://farm'+ photo.farm +'.static.flickr.com/'+ photo.server +'/'+ photo.id +'_'+ photo.secret +'_s.jpg';
+  		var photoUrl = 'http://www.flickr.com/photos/'+ flickrNickname +'/'+ photo.id;
+  		list += '<li id="flickrItem_'+i+'"><a href="'+ photoUrl +'" title="'+ photo.title +'"><img alt="'+ photo.title +'" src="'+ imgUrl +'" /></a></li>';
+ 	}
+ 	document.getElementById('flickrList').innerHTML = list;
+}
+</script>
+<script lang="Javascript" src="http://api.flickr.com/services/rest/?format=json&method=flickr.photos.search&user_id=94631627@N04&per_page=15&api_key=d286c7fecaa39173da37f6e681c443f6"></script>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/04/11/jabber-sublime/">扯点Sublime</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/04/10/understanding-publications-and-subscriptions/">Understanding Publications and Subscriptions</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/04/08/hexo-blog-node-octopress/">继续折腾 -- Hexo版Blog</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/04/06/deploy-meteor-on-heroku/">最近在折腾 -- deploy Meteor on heroku</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/25/5-use-cases-for-icon-fonts/">5 Use Cases for Icon Fonts</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/20/improving-ux-through-front-end-performance/">Improving UX Through Front-End Performance</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/14/5-meteor-misconceptions/">5 Meteor Misconceptions</a>
+      </li>
+    
+  </ul>
+</section>
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - XguoX_L -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+<!-- 
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-39166710-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+  --></footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'xguox';
+      
+        
+        // var disqus_developer = 1;
+	    var disqus_identifier = 'http://xguox.github.com/blog/2013/03/14/5-meteor-misconceptions/';
+	    var disqus_url = 'http://xguox.github.com/blog/2013/03/14/5-meteor-misconceptions/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

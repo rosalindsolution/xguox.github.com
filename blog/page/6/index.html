@@ -1,0 +1,566 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>XguoX_L</title>
+  <meta name="author" content="XguoX_L">
+
+  
+  <meta name="description" content="居然今晚才发现Rails中try的用法，初一看，怎么那么像印象中某些语言的异常处理？不对啊，ruby中的异常处理不是长这个样子的。
+查了下rails的API才了解了大致用法。 API： 不使用try的时候是">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://xguox.github.com/blog/page/6/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+   <link href="/stylesheets/data-table.css" media="screen, projection" rel="stylesheet" type="text/css" />
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="XguoX_L" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-39166710-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+</hgroup>
+
+</header>
+  <!-- <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:xguox.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav> -->
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/04/20/usage-of-try/">Rails中try的用法</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-04-20T23:17:00+08:00" pubdate data-updated="true">Apr 20<span>th</span>, 2012</time>
+        
+         | <a href="/blog/2012/04/20/usage-of-try/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>居然今晚才发现Rails中try的用法，初一看，怎么那么像印象中某些语言的异常处理？不对啊，ruby中的异常处理不是长这个样子的。
+查了下rails的API才了解了大致用法。</p>
+
+<p>API：</p>
+
+<p>不使用try的时候是</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/04/20/usage-of-try/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/04/14/my-vim-config/">My VIM Config</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-04-14T00:20:00+08:00" pubdate data-updated="true">Apr 14<span>th</span>, 2012</time>
+        
+         | <a href="/blog/2012/04/14/my-vim-config/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>其实前不久就要写挺多东西的，只是忽然间事情就集中的涌了过来，状态没调整好，也就耽搁了些。之前是直接使用网上高人的vim配置以及插件，发现有很多自己也用不上，而且自己东添西改了之后就变得更臃肿了。于是，杠杠的重新整理.vim&amp;.vimrc</p>
+
+<p>首先是配色方案，可能是我的屏幕分辨率比较低的缘故，感觉好几个自带的配色方案挺不错的，但是相对却比较模糊。最后发现，fruity的那个配色比较好一些（主要是没有那种模糊感），不过配色方面不咋滴，于是自己在fruity.vim里头东改西改，最终个人感觉还不错。<img src="http://farm8.staticflickr.com/7136/6930980336_f2bc94c7c3_b.jpg"></p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/04/14/my-vim-config/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/03/23/two-weeks-withs-rails/">Two Weeks Withs Rails</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-03-23T20:07:00+08:00" pubdate data-updated="true">Mar 23<span>rd</span>, 2012</time>
+        
+         | <a href="/blog/2012/03/23/two-weeks-withs-rails/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>并不是我刚开始接触Rails两周，而是这两周我才能真正的算个入门吧。虽然学校有教C与Java，但就像我之前所说那般，其实Ruby才是我的first&amp;major。</p>
+
+<p>为嘛说这两周才算真正的入门呢？自认为自己不是什么学习能力超常的人。但是我觉得，一般人能做到的，我也能做到，一般人难以做到的，maybe我加多几把油也能做到。</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/03/23/two-weeks-withs-rails/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/03/12/something-in-google-plus/">Something in Google Plus</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-03-12T21:09:00+08:00" pubdate data-updated="true">Mar 12<span>th</span>, 2012</time>
+        
+         | <a href="/blog/2012/03/12/something-in-google-plus/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>忘了从什么时候开始g+貌似不用翻墙就能上（貌似我一直都要开着VPN才能上），也逐渐的有了不少的国人开始登陆到这片“新土地”。其实不管g+上的国人多了少了怎么的，都跟我没一毛钱关系。但是，当我发现奥巴马的g+页面下的那某一些无聊，幼稚，低级的中文评论时&#8230;呃，好吧，其实也跟我也没啥关系。但是，那种侵占式地发垃圾评论，别说是外国人。即使是作为中国人的我都真看不下去了。</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/03/12/something-in-google-plus/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/03/04/dry/">DRY</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-03-04T10:07:00+08:00" pubdate data-updated="true">Mar 4<span>th</span>, 2012</time>
+        
+         | <a href="/blog/2012/03/04/dry/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>从刚接触Rails开始就被灌输三种观念&#8212;&#8211;DRY、COC、REST。虽然这三种思想还没完全的领悟透彻，但是，已经感受到了它们的强大之处。</p>
+
+<p>目前印象最深刻的则是DRY。最近在跟着Ruby on Rails Tutorial学写一点Rspec测试。这种感觉又更强烈了。看着下面代码一步步的减少，感慨DRY的思想无处不在啊。这里只是一个Example可能感觉不到什么，但是当Example多了而且几乎都在测试同一样东西的时候，优点不言而喻。</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/03/04/dry/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/02/27/rails-dot-note/">Ruby/Rails.note</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-02-27T17:55:00+08:00" pubdate data-updated="true">Feb 27<span>th</span>, 2012</time>
+        
+         | <a href="/blog/2012/02/27/rails-dot-note/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>把平常中一些开发出错以及解决方法记录了下来，其实，基本上都是Google或者StackOverflow得到的答案。然后有些都不知道问题的根源，只知道个解决方法</p>
+
+<p>*
+Liquid error: undefined method <code>join' for #&lt;String:0x007fe86cea6080&gt;
+Liquid error: undefined method</code>join&#8217; for #&lt;String:0x007fe86cea5a40></p>
+
+<p>*</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/02/27/rails-dot-note/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/02/25/travel-photo-code/">Travel Photo Code</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-02-25T11:48:00+08:00" pubdate data-updated="true">Feb 25<span>th</span>, 2012</time>
+        
+         | <a href="/blog/2012/02/25/travel-photo-code/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>原本这是一篇记录我从第一天开始这次厦门义工行的流水帐文章。然后，前几天的一次重大失误导致我的硬盘全部东西都没了。没错，全部&#8230;</p>
+
+<p>于是，就这样变成了现在这篇。</p>
+
+<p>1月29号，一张让人蛋疼的硬座票，一台还未完全驾驭的单反，一颗不知道是喜欢宅还是不宅的心，一个人，从妖都来到陌生的厦门。</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/02/25/travel-photo-code/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/blog/page/7/">&larr; Older</a>
+    
+    <a href="archives">Blog Archives</a>
+    
+    <a class="next" href="/blog/page/5/">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <ul id="recent_posts">
+      <li class="post">
+      <a href="/" alt="Home"><img src="/images/Home.png"></a>
+      <a href="/archives/" alt="Archives"><img src="/images/Calendar.png"></a>
+      <a href="mailto:golvinlu@gmail.com" alt="E-Mail"><img src="/images/Envelope.png"></a>
+      <a href="/about/" alt="About XguoX"><img src="/images/User.png"></a>
+      <a href="http://gplus.to/xguox" alt="XguoX" target="_blank"><img src="/images/googleplus.png"></a>
+      <a href="https://twitter.com/XguoX_L" alt="XguoX" target="_blank"><img src="/images/tw.png"></a>
+      <a href="http://cn.linkedin.com/pub/grover-lu/65/8ba/4a5" alt="XguoX" target="_blank"><img src="/images/linkedin.png"></a>
+      <a href="/atom.xml" alt="subscribe feed"><img src="/images/rss_big1.png"></a>
+      </li>
+  </ul>
+</section>
+
+<section>
+<h1>Category</h1>
+<span class='categories_tag'> <a href='/blog/categories/books' style='font-size: 102.0%'>Books</a>  <a href='/blog/categories/css' style='font-size: 102.0%'>Css</a>  <a href='/blog/categories/hexo' style='font-size: 102.0%'>Hexo</a>  <a href='/blog/categories/jabber' style='font-size: 160.0%'>Jabber</a>  <a href='/blog/categories/javascript' style='font-size: 102.0%'>Javascript</a>  <a href='/blog/categories/json' style='font-size: 102.0%'>Json</a>  <a href='/blog/categories/meteor' style='font-size: 114.0%'>Meteor</a>  <a href='/blog/categories/performance' style='font-size: 102.0%'>Performance</a>  <a href='/blog/categories/rails' style='font-size: 118.0%'>Rails</a>  <a href='/blog/categories/ruby' style='font-size: 118.0%'>Ruby</a>  <a href='/blog/categories/sublime' style='font-size: 102.0%'>Sublime</a>  <a href='/blog/categories/translation' style='font-size: 124.0%'>Translation</a>  <a href='/blog/categories/travel' style='font-size: 104.0%'>Travel</a> </span>
+</section>
+
+
+<section class="even">
+<iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=1&isTitle=0&noborder=0&isWeibo=1&isFans=0&uid=1660802261&verifier=0594649b&dpc=1"></iframe>
+</section>
+
+
+
+<section class="last odd">
+<h1>My <span style="color: #0063dc;">Flick<span style="color: #ff0084;">r</h1>
+<style type="text/css">
+	#flickrList li { text-align: left; display:inline; margin: 0 2px 0 2px;}
+</style>
+<ul id="flickrList"></ul>
+<script lang="Javascript">
+var flickrNickname = "GroverLu";
+function jsonFlickrApi(rsp) {
+	if (rsp.stat != "ok"){
+  		return;
+ 	}
+ 	var list = "";
+ 	for (var i=0; i < rsp.photos.photo.length; i++) {
+  		var photo    = rsp.photos.photo[i];
+  		var imgUrl   = 'http://farm'+ photo.farm +'.static.flickr.com/'+ photo.server +'/'+ photo.id +'_'+ photo.secret +'_s.jpg';
+  		var photoUrl = 'http://www.flickr.com/photos/'+ flickrNickname +'/'+ photo.id;
+  		list += '<li id="flickrItem_'+i+'"><a href="'+ photoUrl +'" title="'+ photo.title +'"><img alt="'+ photo.title +'" src="'+ imgUrl +'" /></a></li>';
+ 	}
+ 	document.getElementById('flickrList').innerHTML = list;
+}
+</script>
+<script lang="Javascript" src="http://api.flickr.com/services/rest/?format=json&method=flickr.photos.search&user_id=94631627@N04&per_page=15&api_key=d286c7fecaa39173da37f6e681c443f6"></script>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/04/11/jabber-sublime/">扯点Sublime</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/04/10/understanding-publications-and-subscriptions/">Understanding Publications and Subscriptions</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/04/08/hexo-blog-node-octopress/">继续折腾 &#8211; Hexo版Blog</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/04/06/deploy-meteor-on-heroku/">最近在折腾 &#8211; deploy Meteor on heroku</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/25/5-use-cases-for-icon-fonts/">5 Use Cases for Icon Fonts</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/20/improving-ux-through-front-end-performance/">Improving UX Through Front-End Performance</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/14/5-meteor-misconceptions/">5 Meteor Misconceptions</a>
+      </li>
+    
+  </ul>
+</section>
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - XguoX_L -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+<!-- 
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-39166710-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+  --></footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'xguox';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

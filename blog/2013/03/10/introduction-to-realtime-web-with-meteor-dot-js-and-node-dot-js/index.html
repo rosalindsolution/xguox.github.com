@@ -1,0 +1,782 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Introduction to Realtime Web with Meteor and Node.js - XguoX_L</title>
+  <meta name="author" content="XguoX_L">
+
+  
+  <meta name="description" content="最近,有许多关于 Derby.js的激动人心的讨论涌现在了我的Twitter Timeline. 我从未使用过能够帮你做这么多&#8211;实时同步客户端和服务端 的框架. 从本质上讲, 这使得我们可以自己编写一个代码量很少的应用可以让两个人编写同一个 text field–live. 而 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://xguox.github.com/blog/2013/03/10/introduction-to-realtime-web-with-meteor-dot-js-and-node-dot-js/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+   <link href="/stylesheets/data-table.css" media="screen, projection" rel="stylesheet" type="text/css" />
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="XguoX_L" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-39166710-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+</hgroup>
+
+</header>
+  <!-- <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:xguox.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav> -->
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Introduction to Realtime Web With Meteor and Node.js</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-10T23:16:00+08:00" pubdate data-updated="true">Mar 10<span>th</span>, 2013</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>最近,有许多关于 <a href="http://derbyjs.com/">Derby.js</a>的激动人心的讨论涌现在了我的Twitter Timeline. 我从未使用过能够帮你做这么多&#8211;实时同步客户端和服务端 的框架. 从本质上讲, 这使得我们可以自己编写一个代码量很少的应用可以让两个人编写同一个 text field–live. 而 Derby帮你处理了在 models 和 views 之间所有的同步. 就如 Google Docs 的协作编辑那样.</p>
+
+<p>这非常的伟大, 但经过深入的研究, 发现 Derby.js 并没有我想象中的那么成熟&#8211;目前还没有到1.0版本. 当然, Node.js 和 Meteor 也同样没有. 但相比起来, 似乎Derby缺少的更多一些. 比如, 据我目前知道的, 还没有一个好使的方法来处理sessions. 或许是因为缺乏文档的原因吧, 但是, 据说Derby的团队目前正在开发authentication. 如果有谁有一些关于Derby.js 处理sessions的新手指引, 我会很乐意去研究的.</p>
+
+<p>另外一个我经常见到被拿来与Derby.js做比较的框架是<a href="http://Meteor.com/">Meteor</a>. 与Derby相似的是,它也能在多个客户端下实时更新views, 尽管做法上可能跟Derby有点不同. Derby可以较容易的使用多种数据库, 而Meteor则只亲近于<a href="http://mongodb.org/">MongoDB</a>. 事实上, 通过如<a href="http://mongoosejs.com/">Mongoose</a>客户端接入数据库的API与你在服务端所期望的已经非常接近了.</p>
+
+<p>比起现在node的一些缺点和<a href="http://bjouhier.wordpress.com/2012/03/11/fibers-and-threads-in-node-js-what-for/">争议</a>, Meteor看起来是非常有趣的选择用来建立有实时需求的应用. 个人觉得还是Derby基于传统回调的编程形式更吸引我, 但在Derby的强大背后,却缺乏健壮的文档和一个大的开发者社区, 这无疑是个很大的打击. 或许这会随着时间推移而有所改变吧, 但比起Meteor来说还是会慢很多, 因为后者最近获得了1100万美元的资金. 这笔财政资金确保了Meteor的存在以及得到持续的支持. 对于那些需要财政与发展稳定的框架的开发者而言, 这笔资金只会让Meteor更加优胜.</p>
+
+<!-- more -->
+
+
+<p>今天,让我们一起来看看如何新建一个真实的但又简单的Meteor应用. 本质上说, 这是基于<a href="http://vimeo.com/40300075">Tom的 Vimeo screencast</a>的一个新手指引. 与Tom的 Vimeo screencast最大的不同是处理事件的方式. 比起复制粘贴一个Meteor示例的代码, 我会一步一步的通过自己的方式来处理使用Enter键来提交一则讯息. 让我们开始吧.</p>
+
+<h3>Creating a Meteor App</h3>
+
+<p>Derby和Meteor 他们共有的一个大加分是他们各自的命令行工具. 与Derby使用Node的内置的 npm 工具所不同的是, Meteor使用的是它自己的.</p>
+
+<p>在终端(Mac OS X 和 Linux),执行如下的命令. (在这之前请确保你已经安装了Node)</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ curl https://install.Meteor.com | /bin/sh</span></code></pre></td></tr></table></div></figure>
+
+
+<p>接下来的事Meteor会自己搞定了.</p>
+
+<p>要新建一个项目, 先转到你的工作目录然后运行下边的代码. 这会创建一个目录, 里边包括有Meteor和一个最基本模板程序.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ Meteor create chat</span></code></pre></td></tr></table></div></figure>
+
+
+<p>现在, 你可以转到该目录并运行下面的代码让它跑起来</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ cd chat
+</span><span class='line'>$ Meteor
+</span><span class='line'>Running on: http://localhost:3000/</span></code></pre></td></tr></table></div></figure>
+
+
+<p>想要看到这个最基础的应用程序, 你只需要在任意一款不过时的浏览器下打开<code>http://localhost:3000/</code></p>
+
+<p>只要你想, 你可以使用Meteor内置的<code>Meteor deploy</code>命令来部署你的应用到Meteor自己的服务器上</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ Meteor deploy my-app-name.Meteor.com</span></code></pre></td></tr></table></div></figure>
+
+
+<p>只要你更新保存了你的代码, 所有连接上的浏览器都会实时更新其页面.</p>
+
+<h3>Developing the Chat App</h3>
+
+<p>通过<code>Meteor create</code>命令生成的文件夹里, 你可以看到几个不同的文件. 如果你的系统设置了显示隐藏文件, 那还可以看到一个<code>.Meteor</code>文件夹. 这个文件夹包括的Meteor本身, 以及MongoDB数据库的文件.</p>
+
+<p>在你的项目的根目录, 你可以看到的还有<code>chat.html</code> <code>chat.js</code> <code>chat.css</code>. 这三个文件自解释?的. HTML包含了这个应用的模板和视图, 并都通过<code>chat.css</code>来添加样式. 而这个JavaScript文件则包含了在客户端和服务端执行的代码. 这非常的重要&#8211;请不要把任何东西比如配置数据和密码都放在这里, 因为任何人都能通过查看你的应用程序的源文件看到.</p>
+
+<p>用你最喜欢的文本编辑器打开<code>chat.js</code>. 我个人使用的是<a href="http://sublimetext.com/">Sublime Text 2</a>, 因为它很简洁并且有多光标功能.
+你可以在<code>chat.js</code>看到下面这些代码</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="k">if</span> <span class="p">(</span><span class="nx">Meteor</span><span class="p">.</span><span class="nx">is_client</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">Template</span><span class="p">.</span><span class="nx">hello</span><span class="p">.</span><span class="nx">greeting</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>    <span class="k">return</span> <span class="s2">&quot;Welcome to chat.&quot;</span><span class="p">;</span>
+</span><span class='line'>  <span class="p">};</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nx">Template</span><span class="p">.</span><span class="nx">hello</span><span class="p">.</span><span class="nx">events</span> <span class="o">=</span> <span class="p">{</span>
+</span><span class='line'>    <span class="s1">&#39;click input&#39;</span> <span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>      <span class="c1">// template data, if any, is available in &#39;this&#39;</span>
+</span><span class='line'>      <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">console</span> <span class="o">!==</span> <span class="s1">&#39;undefined&#39;</span><span class="p">)</span>
+</span><span class='line'>        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;You pressed the button&quot;</span><span class="p">);</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>  <span class="p">};</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">if</span> <span class="p">(</span><span class="nx">Meteor</span><span class="p">.</span><span class="nx">is_server</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">Meteor</span><span class="p">.</span><span class="nx">startup</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+</span><span class='line'>    <span class="c1">// code to run on server at startup</span>
+</span><span class='line'>  <span class="p">});</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>分别注意到<code>if</code>语句里的<code>Meteor.is_client</code>和<code>Meteor.is_server</code>部分. 在这里边的代码分别只在客户端和服务端下执行. 这就是Meteor共用代码的能力了.</p>
+
+<p>删除掉<code>Meteor.is_server</code>这段代码并把<code>if (Meteor.is_client)</code>里边的代码删除了,只留如下部分:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="k">if</span> <span class="p">(</span><span class="nx">Meteor</span><span class="p">.</span><span class="nx">is_client</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>注意到, 当你保存了你的脚本之后, 浏览器会马上重新加载这个新脚本.</p>
+
+<h3>Creating the View</h3>
+
+<p>在我们正式对这个脚本文件动工之前, 我们需要先新建一个视图用来展示聊天记录.
+在编辑器里打开<code>chat.html</code>并删除<code>body</code>标签里边的代码. 包括名为hello的<code>template</code>标签.只留如下部分</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;head&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;title&gt;</span>chat<span class="nt">&lt;/title&gt;</span>
+</span><span class='line'><span class="nt">&lt;/head&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;body&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;/body&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>接着在<code>body</code>标签里添加下面这句</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'>{{&gt; entryfield}}
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Meteor使用的模板系统与<a href="http://mustache.github.com/">Mustache</a>很相似.大括号<code>{{}}</code>表示要呈现的内容. 通过简单地在两对大括号里添加内容如<code>{{hello}}</code>, 模板系统会用<code>hello</code>这个变量的值来替换它. 后面会更详细的介绍.</p>
+
+<p>注意到了在<code>entryfield</code>这个词前面有个大于号<code>&gt;</code>了吗? 使用该符号来指定渲染哪一个模板.</p>
+
+<p>接下来使用下面这段代码来新建一个名叫<code>entryfield</code>的模板</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;template</span> <span class="na">name=</span><span class="s">&quot;entryfield&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">id=</span><span class="s">&quot;name&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Name&quot;</span> <span class="nt">/&gt;</span> <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">id=</span><span class="s">&quot;message&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Your Message&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'><span class="nt">&lt;/template&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>在这个例子中,<code>template</code>标签只有一个属性&#8211;用来表示这个template的名字. 也就是当我们渲染的时候需要用来指定的名字.</p>
+
+<p>查看浏览器, 你会发现页面已经刷新了, 输入框已经呈现出来了.</p>
+
+<p>接下来, 在body里边添加另外的一个mutache标签用以渲染讯息列表</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'>{{&gt; message}}
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>最后, 我们还需要新建一个名叫<code>messages</code>的模板. 在<code>entryfield</code>模板下面添加下面这段代码</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;template</span> <span class="na">name=</span><span class="s">&quot;messages&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;p&gt;</span>
+</span><span class='line'>        {{#each messages}}
+</span><span class='line'>            <span class="nt">&lt;strong&gt;</span>{{name}}<span class="nt">&lt;/strong&gt;</span>- {{message}}
+</span><span class='line'>       {{/each}}
+</span><span class='line'>  <span class="nt">&lt;/p&gt;</span>
+</span><span class='line'><span class="nt">&lt;/template&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>注意到<code>each</code>子句. 在Meteor中你可以使用如下的语法来遍历一个数组模板</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'>
+</span><span class='line'>{{#each [name of array]}}
+</span><span class='line'>{{/each}}
+</span><span class='line'>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>使用each循环时,上下文会有所改变. 当引用变量的时候, 实际上你引用的是每一个数组元素的值.
+例如,在我们的chat应用中, 我们遍历了数组模板&#8221;messages&#8221;里边的每个元素, 该数组可以像下面这样,</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="p">[</span>
+</span><span class='line'>    <span class="p">{</span>
+</span><span class='line'>        <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;Andrew&quot;</span><span class="p">,</span>
+</span><span class='line'>        <span class="s2">&quot;message&quot;</span><span class="o">:</span> <span class="s2">&quot;Hello world!&quot;</span>
+</span><span class='line'>    <span class="p">},</span>
+</span><span class='line'>    <span class="p">{</span>
+</span><span class='line'>        <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;Bob&quot;</span><span class="p">,</span>
+</span><span class='line'>        <span class="s2">&quot;message&quot;</span><span class="o">:</span> <span class="s2">&quot;Hey, Andrew!&quot;</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'><span class="p">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>然后, 在each循环中, 你可以看到<code>{{message}}</code> <code>{{name}}</code>, 这会引用 每一个数组元素的值来替代(Andrew 和 Bob 替换 name, 以及各自的问候信息.)</p>
+
+<p>当返回到你的浏览器, 你还看不到任何的改变. 因为讯息数组还没被传送到模板, 所以Meteor遍历不到任何东西来呈现.</p>
+
+<p>你的<code>chat.html</code>最后应该是这样的</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;head&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;title&gt;</span>chat<span class="nt">&lt;/title&gt;</span>
+</span><span class='line'><span class="nt">&lt;/head&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;body&gt;</span>
+</span><span class='line'>  {{&gt; entryfield}}
+</span><span class='line'>  {{&gt; messages}}
+</span><span class='line'><span class="nt">&lt;/body&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;template</span> <span class="na">name=</span><span class="s">&quot;entryfield&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">id=</span><span class="s">&quot;name&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Name&quot;</span> <span class="nt">/&gt;</span> <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">id=</span><span class="s">&quot;message&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Your Message&quot;</span> <span class="nt">/&gt;</span>
+</span><span class='line'><span class="nt">&lt;/template&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;template</span> <span class="na">name=</span><span class="s">&quot;messages&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>  
+</span><span class='line'>    <span class="nt">&lt;p&gt;</span>
+</span><span class='line'>      {{#each messages}}
+</span><span class='line'>            <span class="nt">&lt;strong&gt;</span>{{name}}<span class="nt">&lt;/strong&gt;</span>- {{message}}<span class="nt">&lt;br/&gt;</span>
+</span><span class='line'>        {{/each}}
+</span><span class='line'>    <span class="nt">&lt;/p&gt;</span>
+</span><span class='line'><span class="nt">&lt;/template&gt;</span>
+</span><span class='line'>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>The Javascript</h3>
+
+<p>从现在开始, 我们处理的大部分代码都是客户端代码, 所以, 除非特别说明, 以下的代码都是在<code>if (Meteor.is_client)</code>代码块中.</p>
+
+<p>在我们编写展示讯息的代码之前,让我们先新建一个<code>Collection</code>. 从本质上讲, 这是一组Models. 换句话说, 在这个chat应用的环境下, Messages collection保存着整个聊天记录, 而每条讯息记录是一个Model.</p>
+
+<p>在if语句前, 添加如下代码来初始化Collection:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">Messages</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Meteor</span><span class="p">.</span><span class="nx">Collection</span><span class="p">(</span><span class="s1">&#39;messages&#39;</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>因为我们希望这个Collection可以在客户端和服务端被创建, 所以我们把它写在了客户端代码块之外.</p>
+
+<p>由于Meteor为我们做了大部分的工作, 要展示聊天记录是非常容易的. 只需要把下面的代码添加进if语句里边.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">Template</span><span class="p">.</span><span class="nx">messages</span><span class="p">.</span><span class="nx">messages</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+</span><span class='line'>    <span class="k">return</span> <span class="nx">Messages</span><span class="p">.</span><span class="nx">find</span><span class="p">({},</span> <span class="p">{</span> <span class="nx">sort</span><span class="o">:</span> <span class="p">{</span> <span class="nx">time</span><span class="o">:</span> <span class="o">-</span><span class="mi">1</span> <span class="p">}});</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>让我们拆开来分析这段代码:<br/>
+<strong>Template</strong>.messages.messages = function(){ … }<br/>
+第一部分<code>Template</code>表示我们正在修改一个模板的行为.<br/>
+Template.<strong>messages</strong>.messages = function(){ … }<br/>
+第二部分<code>messages</code>是模板的名字, 表示是在修改哪一个模板. 例如,如果我们想要对&#8221;entryfield&#8221;模板做些什么,   只需把代码改成<code>Template.entryfields.variable = function(){ … }</code>(在这里, 请别这么做)<br/>
+Template.messages.<strong>messages</strong> = function(){ … }<br/>
+第三部分的这个<code>messages</code>代表的是一个这个模板里的一个变量. 还记得我们的each循环遍历<code>messages</code>吗? 这就是那个mesaages.</p>
+
+<p>当你打开浏览器时, 页面还是没有什么改变. 这是意料之中的事, 因为我们只抓取的讯息, 而没有展示出来.</p>
+
+<p>此时,你的<code>chat.js</code>应该是这样的. 是否很惊讶就只需在服务器写这么些代码我们就能展示一个实时的聊天记录应用.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">Messages</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Meteor</span><span class="p">.</span><span class="nx">Collection</span><span class="p">(</span><span class="s1">&#39;messages&#39;</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">if</span> <span class="p">(</span><span class="nx">Meteor</span><span class="p">.</span><span class="nx">is_client</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">Template</span><span class="p">.</span><span class="nx">messages</span><span class="p">.</span><span class="nx">messages</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+</span><span class='line'>    <span class="k">return</span> <span class="nx">Messages</span><span class="p">.</span><span class="nx">find</span><span class="p">({},</span> <span class="p">{</span> <span class="nx">sort</span><span class="o">:</span> <span class="p">{</span> <span class="nx">time</span><span class="o">:</span> <span class="o">-</span><span class="mi">1</span> <span class="p">}});</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>Adding a Message through the Console</h3>
+
+<p>这部分的内容是可选的, 当然它有助于你调试程序. 你可以直接跳过往下学习建立form来响应key press.</p>
+
+<p>如果你想要测试你的讯息显示代码, 你可以手动插入一条记录到数据库. 打开你的浏览器控制台, 并输入如下:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">Messages</span><span class="p">.</span><span class="nx">insert</span><span class="p">({</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Andrew&#39;</span><span class="p">,</span> <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;Hello world!&#39;</span><span class="p">,</span> <span class="nx">time</span><span class="o">:</span> <span class="mi">0</span> <span class="p">})</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>这将会在数据库中新建一条记录, 如果正确的操作了的话,那浏览器就会即刻更新这条讯息在页面上.</p>
+
+<h3>The Message Entry Form</h3>
+
+<p>返回到<code>chat.js</code>, 我们即将要完成的是允许用户在输入框中提交聊天讯息到数据库. <br/>
+在if语句里头最下面添加下面这段代码</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">Template</span><span class="p">.</span><span class="nx">entryfield</span><span class="p">.</span><span class="nx">events</span> <span class="o">=</span> <span class="p">{</span>
+</span><span class='line'>  <span class="s2">&quot;keydown #message&quot;</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">){</span>
+</span><span class='line'>    <span class="k">if</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">which</span> <span class="o">==</span> <span class="mi">13</span><span class="p">){</span>
+</span><span class='line'>      <span class="c1">// Submit the form</span>
+</span><span class='line'>      <span class="kd">var</span> <span class="nx">name</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">);</span>
+</span><span class='line'>      <span class="kd">var</span> <span class="nx">message</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;message&#39;</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="k">if</span><span class="p">(</span><span class="nx">name</span><span class="p">.</span><span class="nx">value</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span> <span class="o">&amp;&amp;</span> <span class="nx">message</span><span class="p">.</span><span class="nx">value</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">){</span>
+</span><span class='line'>        <span class="nx">Messages</span><span class="p">.</span><span class="nx">insert</span><span class="p">({</span>
+</span><span class='line'>          <span class="nx">name</span><span class="o">:</span> <span class="nx">name</span><span class="p">.</span><span class="nx">value</span><span class="p">,</span>
+</span><span class='line'>          <span class="nx">message</span><span class="o">:</span> <span class="nx">message</span><span class="p">.</span><span class="nx">value</span><span class="p">,</span>
+</span><span class='line'>          <span class="nx">time</span><span class="o">:</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span>
+</span><span class='line'>        <span class="p">});</span>
+</span><span class='line'>
+</span><span class='line'>        <span class="nx">name</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+</span><span class='line'>        <span class="nx">message</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+</span><span class='line'>      <span class="p">}</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>这段代码比较多, 让我们一步步分析. 你应该还有印象, 紧跟<code>Template</code>之后的词表示我们即将要修改的template的名字. 跟前面修改的模板是<code>messages</code>不一样的是, 这里我们要修改的是<code>entryfield</code>.<br/>
+template的<code>event</code>属性会包含有一个对象, 这个对象的keys的格式如下:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="s2">&quot;[eventname] [selector]&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>比如, 如果我们想绑定了一个<code>click</code>事件给了ID为<code>hello</code>的按钮. 则需要像下面这样添加一个<code>events</code>对象</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="s2">&quot;click #hello&quot;</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">){</span> <span class="err">…</span> <span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>在我们这个例子中,我们绑定了一个<code>keydown</code>事件给了ID为<code>message</code>的输入框. 这个输入框在我们一开始的<code>chat.html</code>已经建好.</p>
+
+<p>在<code>events</code>对象里, 每一个key都有一个函数作为它的值. 当事件被触发的时候, 这个<code>event</code>对象会被作为第一个参数传给这个函数.在我们的chat应用, 每一次在输入框中按下一个按键(<code>keydown</code>), 这个函数都会被调用.</p>
+
+<p>在函数里的代码非常简单. 首先, 我们先要检测按下的是否&#8221;enter&#8221;键(&#8220;enter&#8221;的keycode 是13). 接着,通过ID来得到两个输入框中的DOM元素. 最后, 我们检查确保输入框中的值不为空, 用户不允许发送空的名字和讯息.</p>
+
+<p>下面的代码需要注意了, 它会被直接插入到数据库中</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">Messages</span><span class="p">.</span><span class="nx">insert</span><span class="p">({</span>
+</span><span class='line'>  <span class="nx">name</span><span class="o">:</span> <span class="nx">name</span><span class="p">.</span><span class="nx">value</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">message</span><span class="o">:</span> <span class="nx">message</span><span class="p">.</span><span class="nx">value</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">time</span><span class="o">:</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span>
+</span><span class='line'><span class="p">});</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>你会发现,这其实跟我们直接在浏览器控制台中输入的代码很相似, 只是我们用DOM元素的值来替换固定值. 另外, 欧文木讷添加了时间值来确保是按照时间来排序.</p>
+
+<p>最后,我们把两个输入框设置为空<code>''</code></p>
+
+<p>现在, 你可以打开浏览器尝试在输入框输入名字和讯息. 按下&#8221;enter&#8221;后,输入框会被被清空, 而且这则讯息会立马出现在你的输入框下边. 使用另外一个浏览器窗口或者其他浏览器打开同样的链接(<code>http://127.0.0.1:3000</code>).    尝试输入一则新的讯息, 此时你就会看到Meteor的强大之处.无须单独写一行代码来更新讯息记录, 就可以实时同步在不同的客户端浏览器中.</p>
+
+<h3>Conclusion</h3>
+
+<p>While Meteor is pretty cool to work with and there are some pretty useful applications for it, like Derby.js, it is immature. For examples of this, just browse through the documentation and look for the red quotations. For example, the documentation states the following about MongoDB collections:</p>
+
+<blockquote><p>Currently the client is given full write access to the collection. They can execute arbitrary Mongo update commands. Once we build authentication, you will be able to limit the client’s direct access to insert, update, and remove. We are also considering validators and other ORM-like functionality.</p></blockquote>
+
+<p>对于任何一个产品而言, 用户拥有数据库的所有读写权限都是非常大的问题, 非常危险.</p>
+
+<p>原文来自Andrew Munsell <a href="http://www.andrewmunsell.com/blog/introduction-to-realtime-web-Meteor-and-nodejs/#.UTyJZtHN-tv">Introduction to Realtime Web with Meteor and Node.js</a></p>
+
+<p>另附上Tom的 Vimeo screencast(需FanQiang)<br/>
+<video width='640' height='320' preload='none' controls poster=' http://b.vimeocdn.com/ts/278/431/278431171_960.jpg'><source src='http://av.vimeo.com/31624/419/93304834.mp4?aksessionid=d86b5b612c86d70bd2022ae1050aa1be&token=1362992353_ce10e413b18fa6f2d0e3483ef6b82894' type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'/></video></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">XguoX_L</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-10T23:16:00+08:00" pubdate data-updated="true">Mar 10<span>th</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/meteor/'>Meteor</a>, <a class='category' href='/blog/categories/translation/'>Translation</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://xguox.github.com/blog/2013/03/10/introduction-to-realtime-web-with-meteor-dot-js-and-node-dot-js/" data-via="" data-counturl="http://xguox.github.com/blog/2013/03/10/introduction-to-realtime-web-with-meteor-dot-js-and-node-dot-js/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/03/08/learn-meteor-fundamentals-and-best-practices/" title="Previous Post: Meteor基础与最佳实践">&laquo; Meteor基础与最佳实践</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2013/03/14/5-meteor-misconceptions/" title="Next Post: 5 Meteor Misconceptions">5 Meteor Misconceptions &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <ul id="recent_posts">
+      <li class="post">
+      <a href="/" alt="Home"><img src="/images/Home.png"></a>
+      <a href="/archives/" alt="Archives"><img src="/images/Calendar.png"></a>
+      <a href="mailto:golvinlu@gmail.com" alt="E-Mail"><img src="/images/Envelope.png"></a>
+      <a href="/about/" alt="About XguoX"><img src="/images/User.png"></a>
+      <a href="http://gplus.to/xguox" alt="XguoX" target="_blank"><img src="/images/googleplus.png"></a>
+      <a href="https://twitter.com/XguoX_L" alt="XguoX" target="_blank"><img src="/images/tw.png"></a>
+      <a href="http://cn.linkedin.com/pub/grover-lu/65/8ba/4a5" alt="XguoX" target="_blank"><img src="/images/linkedin.png"></a>
+      <a href="/atom.xml" alt="subscribe feed"><img src="/images/rss_big1.png"></a>
+      </li>
+  </ul>
+</section>
+
+<section>
+<h1>Category</h1>
+<span class='categories_tag'> <a href='/blog/categories/books' style='font-size: 102.0%'>Books</a>  <a href='/blog/categories/css' style='font-size: 102.0%'>Css</a>  <a href='/blog/categories/hexo' style='font-size: 102.0%'>Hexo</a>  <a href='/blog/categories/jabber' style='font-size: 160.0%'>Jabber</a>  <a href='/blog/categories/javascript' style='font-size: 102.0%'>Javascript</a>  <a href='/blog/categories/json' style='font-size: 102.0%'>Json</a>  <a href='/blog/categories/meteor' style='font-size: 114.0%'>Meteor</a>  <a href='/blog/categories/performance' style='font-size: 102.0%'>Performance</a>  <a href='/blog/categories/rails' style='font-size: 118.0%'>Rails</a>  <a href='/blog/categories/ruby' style='font-size: 118.0%'>Ruby</a>  <a href='/blog/categories/sublime' style='font-size: 102.0%'>Sublime</a>  <a href='/blog/categories/translation' style='font-size: 124.0%'>Translation</a>  <a href='/blog/categories/travel' style='font-size: 104.0%'>Travel</a> </span>
+</section>
+
+
+<section class="even">
+<iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=1&isTitle=0&noborder=0&isWeibo=1&isFans=0&uid=1660802261&verifier=0594649b&dpc=1"></iframe>
+</section>
+
+
+
+<section class="last odd">
+<h1>My <span style="color: #0063dc;">Flick<span style="color: #ff0084;">r</h1>
+<style type="text/css">
+	#flickrList li { text-align: left; display:inline; margin: 0 2px 0 2px;}
+</style>
+<ul id="flickrList"></ul>
+<script lang="Javascript">
+var flickrNickname = "GroverLu";
+function jsonFlickrApi(rsp) {
+	if (rsp.stat != "ok"){
+  		return;
+ 	}
+ 	var list = "";
+ 	for (var i=0; i < rsp.photos.photo.length; i++) {
+  		var photo    = rsp.photos.photo[i];
+  		var imgUrl   = 'http://farm'+ photo.farm +'.static.flickr.com/'+ photo.server +'/'+ photo.id +'_'+ photo.secret +'_s.jpg';
+  		var photoUrl = 'http://www.flickr.com/photos/'+ flickrNickname +'/'+ photo.id;
+  		list += '<li id="flickrItem_'+i+'"><a href="'+ photoUrl +'" title="'+ photo.title +'"><img alt="'+ photo.title +'" src="'+ imgUrl +'" /></a></li>';
+ 	}
+ 	document.getElementById('flickrList').innerHTML = list;
+}
+</script>
+<script lang="Javascript" src="http://api.flickr.com/services/rest/?format=json&method=flickr.photos.search&user_id=94631627@N04&per_page=15&api_key=d286c7fecaa39173da37f6e681c443f6"></script>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/04/11/jabber-sublime/">扯点Sublime</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/04/10/understanding-publications-and-subscriptions/">Understanding Publications and Subscriptions</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/04/08/hexo-blog-node-octopress/">继续折腾 -- Hexo版Blog</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/04/06/deploy-meteor-on-heroku/">最近在折腾 -- deploy Meteor on heroku</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/25/5-use-cases-for-icon-fonts/">5 Use Cases for Icon Fonts</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/20/improving-ux-through-front-end-performance/">Improving UX Through Front-End Performance</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/14/5-meteor-misconceptions/">5 Meteor Misconceptions</a>
+      </li>
+    
+  </ul>
+</section>
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - XguoX_L -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+<!-- 
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-39166710-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+  --></footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'xguox';
+      
+        
+        // var disqus_developer = 1;
+	    var disqus_identifier = 'http://xguox.github.com/blog/2013/03/10/introduction-to-realtime-web-with-meteor-dot-js-and-node-dot-js/';
+	    var disqus_url = 'http://xguox.github.com/blog/2013/03/10/introduction-to-realtime-web-with-meteor-dot-js-and-node-dot-js/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

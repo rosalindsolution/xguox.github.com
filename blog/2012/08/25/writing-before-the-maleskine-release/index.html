@@ -1,0 +1,361 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>写在Maleskine上线前夕 - XguoX_L</title>
+  <meta name="author" content="XguoX_L">
+
+  
+  <meta name="description" content="首先，我木有想到的是linux居然比我还早写了一篇Maleskine相关的，不过我应该要猜到的。不过我写的可能与他写的不太相同（废话，相同的话你还写！！！）。他写的更多是Maleskine的相关起源历史，而我要写的则是对Maleskine的概述，以及开发过程的感想。 据不科学统计， &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://xguox.github.com/blog/2012/08/25/writing-before-the-maleskine-release/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+   <link href="/stylesheets/data-table.css" media="screen, projection" rel="stylesheet" type="text/css" />
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="XguoX_L" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-39166710-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+</hgroup>
+
+</header>
+  <!-- <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:xguox.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav> -->
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">写在Maleskine上线前夕</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-25T11:30:00+08:00" pubdate data-updated="true">Aug 25<span>th</span>, 2012</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><strong>首先</strong>，我木有想到的是linux居然比我还早写了一篇Maleskine相关的，不过我应该要猜到的。不过我写的可能与他写的不太相同（废话，相同的话你还写！！！）。他写的更多是Maleskine的相关起源历史，而我要写的则是对Maleskine的概述，以及开发过程的感想。</p>
+
+<!-- more -->
+
+
+<p>据不科学统计，Maleskine应该是我作为一名Coder或者说准Coder所开发的第一个产品。我应该庆幸当初我所接收的任务不是我们的另外一个产品<a href="http://instatripapp.com/">Instatrip</a>。虽然我对照片很感兴趣，但是对于像我这样从未用过、短期内也未必会使用到Instagram的人来说，那不是个好选择。相反，尽管平时写东西的积极性不高，但也隔三差五的会在这写点东西，而且Octopress本身也是直接使用Markdown作为写作模板（这有两毛钱关系吗？）。</p>
+
+<p>另外，取这个标题的灵感，来源即将到来的MOP。玻璃渣每发布一个新的资料片都会有一段前夕用以过渡。比如风暴前夕，冰封前夕，灾变前夕… 好吧，关于wow咱暂时不在这扯多了。</p>
+
+<p>既然linux也发文吊大家胃口，那我就来解解吧。</p>
+
+<blockquote><p>这是一个约两人月的产品。<br/>
+这是一个还在beta版的产品。<br/>
+这是一个使我的CSS从0到1的产品。 <br/>
+这是一个使我的Javascript从0到1的产品。 <br/>
+这是一个我远离家乡实习上海所写的产品。 <br/>
+这是一个我还木有掌握ajax就使用到了pjax的产品。 <br/>
+最重要的，这是一个我自己也经常需要使用的产品。</p></blockquote>
+
+<p>(￣ε(#￣)表喷我呀，这些绝对都是真的好伐=。= 在这以前，我可是从未写过CSS ， Javascript的，顶多就翻翻文档，copy别人的有个认识了解罢了。记得第一次参加上海RubyTuesday时候Daniel 说他现在不管是写什么项目，几乎花的最多的时间还是在Javascript上。其实，不单只像他那样的高玩是这样，反正我自己开发这个项目下来感觉花的更多的时间是在Javascript而不是Ruby/Rails。关于js，又不得不提到coffee，打自我进来没多久，larry就倡导+要求我们用coffee写js，相比较过后我也更倾向coffee的语法。但是，惭愧的是一直都没学，原因嘛…就不为自己找那么多借口啦！咔咔，B的larry很蛋疼的把所有JS改用coffee，现在我可就不管叻！得学啦！！！
+另外，要知道，对于Web开发者来说，浏览器是不亚于用户的一个存在！我也总算是体会到了调各种各样的浏览器的蛋疼了。尤其是IE，尤其是IE9- 。最近发现firefox上也来问题。我怎么觉得chrome各种蛋定的…</p>
+
+<p>一路过来，问题肯定是遇上不少的啦。但我自己印象较深的还属一个：命名。这是一件有学问，很重要，伤脑筋的事情。我记得我来到上海就分别从两个人口中听到这么一句：</p>
+
+<blockquote><p>There are only two hard things in Computer Science: cache invalidation and naming things.</p></blockquote>
+
+<p>缓存无效化表示没什么概念，但是命名却体会上了。尽管这只是一个小项目，但毫无疑问，命名的好坏很大程度的决定代码的可读性，从而决定了开发的效率。好多次，我自己写的一些方法、变量或者CSS类等等自己都忘记它在哪定义的，要干什么的。当其他人问起时，更是各种囧！！！</p>
+
+<p>关于Maleskine，我想到一句比较那个的，”Write your word，I will handle the other things!” 好吧，我的确正在努力handle着other things 关于记录东西，笔记本，记事本什么的，很多人会想起evernote。我自己也是。其实evernote也是个杠杠的产品。很可惜的是它不支持markdown，并且我感觉evernote功能灰常丰富，但是却很多华丽却不实用，又或者说是复杂晦涩。当然啦，我并不是要踩evernote。只是它并不是我想要的。（写在后话：本文写的时间断断续续，octopress的一大好处，写了也不急着部署发布上去。某天无意中看到linux的写的那篇default note，发现关于evernote的看法还挺相似的）</p>
+
+<p>这段时间下来，我感觉更多的是在执行开发任务，各种todo，接下来，我自然希望更多的是加入自己的想法、元素进去。当然也希望各位使用或喜欢的朋友提出你们宝贵的意见与建议ლ◕ิ‿◕ิლ （怎么感觉这句话好官方呀）</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">XguoX_L</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-08-25T11:30:00+08:00" pubdate data-updated="true">Aug 25<span>th</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/jabber/'>Jabber</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://xguox.github.com/blog/2012/08/25/writing-before-the-maleskine-release/" data-via="" data-counturl="http://xguox.github.com/blog/2012/08/25/writing-before-the-maleskine-release/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/08/11/the-past/" title="Previous Post: ....sickness">&laquo; ....sickness</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/09/02/the-september/" title="Next Post: The September">The September &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <ul id="recent_posts">
+      <li class="post">
+      <a href="/" alt="Home"><img src="/images/Home.png"></a>
+      <a href="/archives/" alt="Archives"><img src="/images/Calendar.png"></a>
+      <a href="mailto:golvinlu@gmail.com" alt="E-Mail"><img src="/images/Envelope.png"></a>
+      <a href="/about/" alt="About XguoX"><img src="/images/User.png"></a>
+      <a href="http://gplus.to/xguox" alt="XguoX" target="_blank"><img src="/images/googleplus.png"></a>
+      <a href="https://twitter.com/XguoX_L" alt="XguoX" target="_blank"><img src="/images/tw.png"></a>
+      <a href="http://cn.linkedin.com/pub/grover-lu/65/8ba/4a5" alt="XguoX" target="_blank"><img src="/images/linkedin.png"></a>
+      <a href="/atom.xml" alt="subscribe feed"><img src="/images/rss_big1.png"></a>
+      </li>
+  </ul>
+</section>
+
+<section>
+<h1>Category</h1>
+<span class='categories_tag'> <a href='/blog/categories/books' style='font-size: 102.0%'>Books</a>  <a href='/blog/categories/css' style='font-size: 102.0%'>Css</a>  <a href='/blog/categories/hexo' style='font-size: 102.0%'>Hexo</a>  <a href='/blog/categories/jabber' style='font-size: 160.0%'>Jabber</a>  <a href='/blog/categories/javascript' style='font-size: 102.0%'>Javascript</a>  <a href='/blog/categories/json' style='font-size: 102.0%'>Json</a>  <a href='/blog/categories/meteor' style='font-size: 114.0%'>Meteor</a>  <a href='/blog/categories/performance' style='font-size: 102.0%'>Performance</a>  <a href='/blog/categories/rails' style='font-size: 118.0%'>Rails</a>  <a href='/blog/categories/ruby' style='font-size: 118.0%'>Ruby</a>  <a href='/blog/categories/sublime' style='font-size: 102.0%'>Sublime</a>  <a href='/blog/categories/translation' style='font-size: 124.0%'>Translation</a>  <a href='/blog/categories/travel' style='font-size: 104.0%'>Travel</a> </span>
+</section>
+
+
+<section class="even">
+<iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=1&isTitle=0&noborder=0&isWeibo=1&isFans=0&uid=1660802261&verifier=0594649b&dpc=1"></iframe>
+</section>
+
+
+
+<section class="last odd">
+<h1>My <span style="color: #0063dc;">Flick<span style="color: #ff0084;">r</h1>
+<style type="text/css">
+	#flickrList li { text-align: left; display:inline; margin: 0 2px 0 2px;}
+</style>
+<ul id="flickrList"></ul>
+<script lang="Javascript">
+var flickrNickname = "GroverLu";
+function jsonFlickrApi(rsp) {
+	if (rsp.stat != "ok"){
+  		return;
+ 	}
+ 	var list = "";
+ 	for (var i=0; i < rsp.photos.photo.length; i++) {
+  		var photo    = rsp.photos.photo[i];
+  		var imgUrl   = 'http://farm'+ photo.farm +'.static.flickr.com/'+ photo.server +'/'+ photo.id +'_'+ photo.secret +'_s.jpg';
+  		var photoUrl = 'http://www.flickr.com/photos/'+ flickrNickname +'/'+ photo.id;
+  		list += '<li id="flickrItem_'+i+'"><a href="'+ photoUrl +'" title="'+ photo.title +'"><img alt="'+ photo.title +'" src="'+ imgUrl +'" /></a></li>';
+ 	}
+ 	document.getElementById('flickrList').innerHTML = list;
+}
+</script>
+<script lang="Javascript" src="http://api.flickr.com/services/rest/?format=json&method=flickr.photos.search&user_id=94631627@N04&per_page=15&api_key=d286c7fecaa39173da37f6e681c443f6"></script>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/04/11/jabber-sublime/">扯点Sublime</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/04/10/understanding-publications-and-subscriptions/">Understanding Publications and Subscriptions</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/04/08/hexo-blog-node-octopress/">继续折腾 -- Hexo版Blog</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/04/06/deploy-meteor-on-heroku/">最近在折腾 -- deploy Meteor on heroku</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/25/5-use-cases-for-icon-fonts/">5 Use Cases for Icon Fonts</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/20/improving-ux-through-front-end-performance/">Improving UX Through Front-End Performance</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/14/5-meteor-misconceptions/">5 Meteor Misconceptions</a>
+      </li>
+    
+  </ul>
+</section>
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - XguoX_L -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+<!-- 
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-39166710-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+  --></footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'xguox';
+      
+        
+        // var disqus_developer = 1;
+	    var disqus_identifier = 'http://xguox.github.com/blog/2012/08/25/writing-before-the-maleskine-release/';
+	    var disqus_url = 'http://xguox.github.com/blog/2012/08/25/writing-before-the-maleskine-release/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
