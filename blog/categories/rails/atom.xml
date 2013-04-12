@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Rails | XguoX_L]]></title>
   <link href="http://xguox.github.com/blog/categories/rails/atom.xml" rel="self"/>
   <link href="http://xguox.github.com/"/>
-  <updated>2013-04-12T20:04:32+08:00</updated>
+  <updated>2013-04-12T20:10:03+08:00</updated>
   <id>http://xguox.github.com/</id>
   <author>
     <name><![CDATA[XguoX_L]]></name>
@@ -545,7 +545,7 @@ $(document).ready(function(){
 
 
 <p>另外个是，用了will_paginate这个gem做分页，不过默认显示的是“previous”和“next”，改为中文的“前一页”和“后一页”需要先在config/initializers/ 下新建一个will_paginate.rb,  and then在里头加入
-Liquid error: undefined method `join' for #<String:0x007f8b33a00f80></p>
+Liquid error: undefined method `join' for #<String:0x007f932521f5d8></p>
 ]]></content>
   </entry>
   
@@ -566,7 +566,7 @@ Liquid error: undefined method `join' for #<String:0x007f8b33a00f80></p>
 <p>好吧，其实，我对这些改进啊有的没的还不怎么敏感。所以与其要看我介绍新功能新特性还不如直接搜索。</p>
 
 <p>我敏感的只是，我的一些rails项目都跑不动了。passenger报错
-Liquid error: undefined method `join' for #<String:0x007f8b33a00a30>
+Liquid error: undefined method `join' for #<String:0x007f932521f088>
 我还以为是我缺少了libmysqlclient_r.so.16这个文件，自己下载了之后也还是不行。期间尝试重装mysql，也试过之前说的那个，安装各种组建的命令还是无果。最终在ruby-china得到大神指点，居然只需卸了重装mysql2这个gem就可以了。貌似是因为/usr/lib 下的mysql2.so没有link到gem里边的mysql2.so
 过后，还是跟往常没有多大差别的继续Rails...</p>
 ]]></content>
