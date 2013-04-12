@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Translation | XguoX_L]]></title>
   <link href="http://xguox.github.com/blog/categories/translation/atom.xml" rel="self"/>
   <link href="http://xguox.github.com/"/>
-  <updated>2013-04-12T20:02:49+08:00</updated>
+  <updated>2013-04-12T20:04:32+08:00</updated>
   <id>http://xguox.github.com/</id>
   <author>
     <name><![CDATA[XguoX_L]]></name>
@@ -280,7 +280,8 @@ color: rgba(0, 0, 0, .5);
 <p>  }
 }
 ```
-{% codepen FCsHe TimPietrusky %}</p>
+<pre class="codepen" data-height="300" data-type="result" data-href="FCsHe" data-user="TimPietrusky"><code></code></pre>
+<script async src="http://codepen.io:/assets/embed/ei.js"></script></p>
 
 <h2>SocialCount meets Style</h2>
 
@@ -401,7 +402,8 @@ height: 2em;
 <p>  }
 }
 ```
-{% codepen Czfyu TimPietrusky %}</p>
+<pre class="codepen" data-height="300" data-type="result" data-href="Czfyu" data-user="TimPietrusky"><code></code></pre>
+<script async src="http://codepen.io:/assets/embed/ei.js"></script></p>
 
 <h2>3.Enhanced lists</h2>
 
@@ -613,7 +615,8 @@ transition:
 <p>  }
 }
 ```
-{% codepen tcklJ TimPietrusky %}</p>
+<pre class="codepen" data-height="300" data-type="result" data-href="tcklJ" data-user="TimPietrusky"><code></code></pre>
+<script async src="http://codepen.io:/assets/embed/ei.js"></script></p>
 
 <h2>4. Emocons.js jQuery Plugin</h2>
 
@@ -707,7 +710,8 @@ $('.chat').emocons();
   z-index: 2;
 }
 ```
-{% codepen KloGD TimPietrusky %}</p>
+<pre class="codepen" data-height="300" data-type="result" data-href="KloGD" data-user="TimPietrusky"><code></code></pre>
+<script async src="http://codepen.io:/assets/embed/ei.js"></script></p>
 
 <h2>5. Parallax Movie #1337</h2>
 
@@ -944,7 +948,8 @@ sky与ground都用的是同样的<code>background-position</code>动画, 只是�
   100% {margin-left:-15%;}
 }
 ```
-{% codepen ELuiG TimPietrusky %}</p>
+<pre class="codepen" data-height="300" data-type="result" data-href="ELuiG" data-user="TimPietrusky"><code></code></pre>
+<script async src="http://codepen.io:/assets/embed/ei.js"></script></p>
 
 <p>原文来自 Tim Pietrusky <a href="http://css-tricks.com/five-use-cases-for-icon-fonts/">5 Use Cases for Icon Fonts</a></p>
 ]]></content>
@@ -1151,10 +1156,10 @@ if (Meteor.is_client) {</p>
 接着在</code>body`标签里添加下面这句</p>
 
 <p><code>html
-{% raw %}{{&gt; entryfield}}{% endraw %}
+{{&gt; entryfield}}
 </code></p>
 
-<p>Meteor使用的模板系统与<a href="http://mustache.github.com/">Mustache</a>很相似.大括号<code>{% raw %}{{}}{% endraw %}</code>表示要呈现的内容. 通过简单地在两对大括号里添加内容如<code>{% raw %}{{hello}}{% endraw %}</code>, 模板系统会用<code>hello</code>这个变量的值来替换它. 后面会更详细的介绍.</p>
+<p>Meteor使用的模板系统与<a href="http://mustache.github.com/">Mustache</a>很相似.大括号<code>{{}}</code>表示要呈现的内容. 通过简单地在两对大括号里添加内容如<code>{{hello}}</code>, 模板系统会用<code>hello</code>这个变量的值来替换它. 后面会更详细的介绍.</p>
 
 <p>注意到了在<code>entryfield</code>这个词前面有个大于号<code>&gt;</code>了吗? 使用该符号来指定渲染哪一个模板.</p>
 
@@ -1175,7 +1180,7 @@ if (Meteor.is_client) {</p>
 <p>接下来, 在body里边添加另外的一个mutache标签用以渲染讯息列表</p>
 
 <p><code>html
-{% raw %}{{&gt; message}}{% endraw %}
+{{&gt; message}}
 </code></p>
 
 <p>最后, 我们还需要新建一个名叫<code>messages</code>的模板. 在<code>entryfield</code>模板下面添加下面这段代码</p>
@@ -1184,9 +1189,9 @@ if (Meteor.is_client) {</p>
 <template name="messages"></p>
 
 <pre><code>&lt;p&gt;
-    {% raw %}{{#each messages}}
+    {{#each messages}}
         &lt;strong&gt;{{name}}&lt;/strong&gt;- {{message}}
-   {{/each}}{% endraw %}
+   {{/each}}
 &lt;/p&gt;
 </code></pre>
 
@@ -1196,10 +1201,10 @@ if (Meteor.is_client) {</p>
 注意到</code>each`子句. 在Meteor中你可以使用如下的语法来遍历一个数组模板</p>
 
 <p><code>html
-{% raw %}
+
 {{#each [name of array]}}
 {{/each}}
-{% endraw %}
+
 </code></p>
 
 <p>使用each循环时,上下文会有所改变. 当引用变量的时候, 实际上你引用的是每一个数组元素的值.
@@ -1220,7 +1225,7 @@ if (Meteor.is_client) {</p>
 
 <p>]
 <code>``
-然后, 在each循环中, 你可以看到</code>{% raw %}{{message}}{% endraw %}<code></code>{% raw %}{{name}}{% endraw %}`, 这会引用 每一个数组元素的值来替代(Andrew 和 Bob 替换 name, 以及各自的问候信息.)</p>
+然后, 在each循环中, 你可以看到</code>{{message}}<code></code>{{name}}`, 这会引用 每一个数组元素的值来替代(Andrew 和 Bob 替换 name, 以及各自的问候信息.)</p>
 
 <p>当返回到你的浏览器, 你还看不到任何的改变. 因为讯息数组还没被传送到模板, 所以Meteor遍历不到任何东西来呈现.</p>
 
@@ -1230,12 +1235,12 @@ if (Meteor.is_client) {</p>
 <head>
   <title>chat</title>
 </head>
-{% raw %}
+
 <body>
   {{> entryfield}}
   {{> messages}}
 </body>
-{% endraw %}
+
 <template name="entryfield"></p>
 
 <pre><code>&lt;input type="text" id="name" placeholder="Name" /&gt; &lt;input type="text" id="message" placeholder="Your Message" /&gt;
@@ -1245,7 +1250,7 @@ if (Meteor.is_client) {</p>
 
 <p><template name="messages"></p>
 
-<pre><code>{% raw %}
+<pre><code>
 &lt;p&gt;
     {{#each messages}}
         &lt;strong&gt;{{name}}&lt;/strong&gt;- {{message}}&lt;br/&gt;
@@ -1254,7 +1259,7 @@ if (Meteor.is_client) {</p>
 </code></pre>
 
 <p></template>
-{% endraw %}
+
 ```</p>
 
 <h3>The Javascript</h3>
@@ -1390,7 +1395,7 @@ Messages.insert({
 <p>原文来自Andrew Munsell <a href="http://www.andrewmunsell.com/blog/introduction-to-realtime-web-Meteor-and-nodejs/#.UTyJZtHN-tv">Introduction to Realtime Web with Meteor and Node.js</a></p>
 
 <p>另附上Tom的 Vimeo screencast(需FanQiang)<br/>
-{% video http://av.vimeo.com/31624/419/93304834.mp4?aksessionid=d86b5b612c86d70bd2022ae1050aa1be&amp;token=1362992353_ce10e413b18fa6f2d0e3483ef6b82894 640 320 http://b.vimeocdn.com/ts/278/431/278431171_960.jpg %}</p>
+<video width='640' height='320' preload='none' controls poster=' http://b.vimeocdn.com/ts/278/431/278431171_960.jpg'><source src='http://av.vimeo.com/31624/419/93304834.mp4?aksessionid=d86b5b612c86d70bd2022ae1050aa1be&amp;token=1362992353_ce10e413b18fa6f2d0e3483ef6b82894' type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'/></video></p>
 ]]></content>
   </entry>
   
@@ -1474,22 +1479,11 @@ if(Meteor.is_client) {</p>
 
 <p>Meteor 通过 响应数据源(“reactive” data sources) 和 上下文(context) 帮你省去了当数据改变时手动替换页面的麻烦. 当响应数据源被更新后,响应上下文会重新运行(A reactive context is just a function that will get re-run if it contains a reactive data source that gets updated.) 刚开始的时候要把思维转换过来可能有些难, 下面的例子将为你解释清楚. <br/>
 下面是一个html页面和一个叫<code>cool_dude</code>Meteor<a href="http://docs.Meteor.com/#templates">模板</a>, 以及一个在客户端运行的JavaScript函数---传一个<code>username</code>的值给模板用以渲染.
-{% codeblock %}
-<html>
-  <head>
-  </head>
-  <body></p>
-
-<pre><code>{% raw %}{{&gt; cool_dude }}{% endraw %}
-</code></pre>
-
-<p>  </body>
-</html>
-{% endcodeblock %}</p>
+Liquid error: undefined method `join' for #<String:0x007f8b352e89a8></p>
 
 <p><code>html
 &lt;template name="cool_dude"&gt;
-  &lt;p class="important"&gt;{% raw %}{{ username }}{% endraw %} sure is one cool dude!&lt;/p&gt;
+  &lt;p class="important"&gt;{{ username }} sure is one cool dude!&lt;/p&gt;
 &lt;/template&gt;
 </code></p>
 
