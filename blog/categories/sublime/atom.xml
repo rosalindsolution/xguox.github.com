@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Sublime | XguoX_L]]></title>
+  <title><![CDATA[Category: Sublime | XguoX]]></title>
   <link href="http://xguox.github.com/blog/categories/sublime/atom.xml" rel="self"/>
   <link href="http://xguox.github.com/"/>
-  <updated>2013-04-12T20:17:55+08:00</updated>
+  <updated>2013-04-13T22:21:30+08:00</updated>
   <id>http://xguox.github.com/</id>
   <author>
-    <name><![CDATA[XguoX_L]]></name>
+    <name><![CDATA[XguoX]]></name>
     <email><![CDATA[golvinlu@gmail.com]]></email>
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
@@ -58,6 +58,7 @@ Actually, 想装啥插件可以直接在里头搜, 或者网页版搜索, 一般
 <li><a href="https://github.com/sokolovstas/SublimeWebInspector">Web Inspector</a> 纯属贪新鲜装上耍耍, 取代浏览器的inspector不太可能.</li>
 <li><a href="https://github.com/eddorre/SublimeERB">ERB Insert and Toggle Commands</a> 快速输入<code>&lt;%= %&gt;</code>或者<code>&lt;% %&gt;</code></li>
 <li><a href="https://github.com/dotty/HackerNews-SublimeTextPlugin">Hacker News</a> 不常用, 而且要自己改改shortcut, 否则会占用了显隐侧边栏的快捷键.</li>
+<li><a href="https://github.com/aziz/PlainTasks">PlainTasks</a> TODO插件一枚. 配合Sublime的各种快捷键各种操控很nice</li>
 </ul>
 
 
@@ -117,6 +118,22 @@ Command + Option + .：闭合 HTML 标签。(说常用也不常用, 但又貌似
 按住option 拖拽多列
 按下 Control + Shift + 方向键，可以选中矩形区域的文本。
 选择数行文本末端，选中区域然后按下 Shift + Command + L。</p>
+
+<p>```</p>
+
+<h2>PS:</h2>
+
+<p>官方的symlink貌似有点不妥,</p>
+
+<p>```
+ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" ~/bin/subl</p>
+
+<p>```</p>
+
+<p>稍作修改为:</p>
+
+<p>```
+ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl</p>
 
 <p>```</p>
 ]]></content>
