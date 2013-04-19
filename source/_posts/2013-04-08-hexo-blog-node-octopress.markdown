@@ -29,7 +29,8 @@ SyntaxError: Unexpected token >
     at process.startup.processNextTick.process._tickCallback (node.js:244:9)
 ```
 
-用尽各种蛋疼的办法才发现原来是有一篇文章里头的一段underscore代码块解析出了问题   
+用尽各种蛋疼的办法才发现原来是有一篇文章里头的一段underscore代码块解析出了问题 
+
 ```
  {% raw %} 
 {{ > posts}}

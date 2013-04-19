@@ -14,7 +14,7 @@
 
     html { background: #262C33 url("../images/background.jpg"); background-attachment: fixed; }
 
-    body { font-size: 1em; }
+    body { font-size: 1em; font-weight:bold; }
 
     body > div { background-image: none; }
 
@@ -63,11 +63,11 @@
 
 	#content .blog-index article h1 {
 	  font-size: 1.8em;
-	    font-weight: normal;
+	    font-weight: bold;
 	    }
 
 	    #content .blog-index article h1, #content .blog-index article h1 a, article header h1, article header h1 a{
-	      color: #555555 !important;
+	      color: #F2583E !important;
 	      }
 
 	      h1 { font-size: 1.8em; }
@@ -81,7 +81,7 @@
 	    font-weight: normal;
 	    }
 
-	    .blog-index article h1 a:hover{ text-decoration: none; }
+	    .blog-index article h1 a:hover{ text-decoration: none;}
 
 	    article p {
 	      text-align:justify;

@@ -10,6 +10,6 @@ footer: true
 #####Screen name -> XguoX 
 #####GDUT
 #####Born before 1992
-#####Tag:Web; Front-end; Ruby; Javascript; Meteor.js; Sinatra; Rails; Google; One Piece; Eason;  A Death Knight in Azeroth but AFK for a long time; Amateur Photograph Enthusiast,actually I just a camera player.
+#####Code Writer, Amateur Photograph Enthusiast, Actually I Just A Camera Player. Wanna Be A Writer, Wanna Write A Book
 
 ####Lok'tar Ogar

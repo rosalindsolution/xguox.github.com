@@ -38,6 +38,7 @@ Actually, 想装啥插件可以直接在里头搜, 或者网页版搜索, 一般
 - [Web Inspector](https://github.com/sokolovstas/SublimeWebInspector) 纯属贪新鲜装上耍耍, 取代浏览器的inspector不太可能. 
 - [ERB Insert and Toggle Commands](https://github.com/eddorre/SublimeERB) 快速输入`<%= %>`或者`<% %>`
 - [Hacker News](https://github.com/dotty/HackerNews-SublimeTextPlugin) 不常用, 而且要自己改改shortcut, 否则会占用了显隐侧边栏的快捷键.
+- [PlainTasks](https://github.com/aziz/PlainTasks) TODO插件一枚. 配合Sublime的各种快捷键各种操控很nice
 
 ##Settings-User
 先把custom的show一下, 也没啥的, 都是些无关痛痒的修改. 个人爱好吧. 有个必须有的就是`"scroll_past_end": true,` 经常写了一大车页面布满了, 下面的就滚不起来, 眼睛老要往下瞄很不爽. 设置以后就可以自由控制底部显示.  
@@ -57,7 +58,7 @@ Actually, 想装啥插件可以直接在里头搜, 或者网页版搜索, 一般
     "bold_folder_labels": true,
     "hot_exit": false,
     "open_files_in_new_window": false,
-    "remember_open_files": false,
+    "create_window_at_startup": false,
     "scroll_past_end": true,
     "wide_caret": true
 }
@@ -91,4 +92,18 @@ Command + Option + .：闭合 HTML 标签。(说常用也不常用, 但又貌似
 选择数行文本末端，选中区域然后按下 Shift + Command + L。
 
 ```
- 
+
+##PS:
+官方的symlink貌似有点不妥, 
+
+```
+ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" ~/bin/subl
+
+```
+
+稍作修改为:
+
+```
+ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl
+
+```

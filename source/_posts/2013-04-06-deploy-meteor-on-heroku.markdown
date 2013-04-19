@@ -35,7 +35,7 @@ heroku !  Resource not found
 
 接着到了最关键的push了.  当我`git push heroku master`的时候, bla,blah blah...下来还以为这次会真的很顺畅. 结果oops的一嘣
 
-```
+```javascript
 ...
 ...
 -----> Launching... !     Heroku push rejected, Please verify your account to install this add-on
@@ -48,7 +48,7 @@ Verify now at https://heroku.com/verify
 
 结果毫无疑问的继续嘣...
 
-```
+```javascript
 Adding mongohq:sandbox on frontn... failed
  !    Please verify your account to install this add-on
  !    For more information, see http://devcenter.heroku.com/categories/billing
