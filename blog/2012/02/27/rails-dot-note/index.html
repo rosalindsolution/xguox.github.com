@@ -9,8 +9,9 @@
   <meta name="author" content="XguoX">
 
   
-  <meta name="description" content="把平常中一些开发出错以及解决方法记录了下来，其实，基本上都是Google或者StackOverflow得到的答案。然后有些都不知道问题的根源，只知道个解决方法 *
-Liquid error: undefined method join' for #&lt;String: &hellip;">
+  <meta name="description" content="把平常中一些开发出错以及解决方法记录了下来，其实，基本上都是Google或者StackOverflow得到的答案。然后有些都不知道问题的根源，只知道个解决方法 * 1
+2
+Issue-- RVM is not a function, selecting rubies with 'rvm use &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -106,31 +107,154 @@ Liquid error: undefined method join' for #&lt;String: &hellip;">
 
 <div class="entry-content"><p>把平常中一些开发出错以及解决方法记录了下来，其实，基本上都是Google或者StackOverflow得到的答案。然后有些都不知道问题的根源，只知道个解决方法</p>
 
-<p>*
-Liquid error: undefined method <code>join' for #&lt;String:0x007f8884e8e1d0&gt;
-Liquid error: undefined method</code>join&#8217; for #&lt;String:0x007f8884e8d8c0></p>
+<p>*</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Issue--
+</span><span class='line'>  RVM is not a function, selecting rubies with 'rvm use ...' will not work.</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Solution--
+</span><span class='line'>  添加下面这句到  ~/.bashrc
+</span><span class='line'>  [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"重启终端</span></code></pre></td></tr></table></div></figure>
+
 
 <p>*</p>
 
 <!-- more -->
 
 
-<p>Liquid error: undefined method <code>join' for #&lt;String:0x007f8884e8d140&gt;
-Liquid error: undefined method</code>join&#8217; for #&lt;String:0x007f8884e8ca10></p>
 
-<p>*
-Liquid error: undefined method <code>join' for #&lt;String:0x007f8884e8c330&gt;
-Liquid error: undefined method</code>join&#8217; for #&lt;String:0x007f8884e8b930></p>
 
-<p>*
-Liquid error: undefined method <code>join' for #&lt;String:0x007f8884e8b0c0&gt;
-Liquid error: undefined method</code>join&#8217; for &#8220;\nSolution&#8211;\nhost：127.0.0.1（diff？？localhost）\n&#8221;:String</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Issue--
+</span><span class='line'>  Gem::Installer::ExtensionBuildError: ERROR: Failed to build gem native extension.
+</span><span class='line'>  .
+</span><span class='line'>  .
+</span><span class='line'>  An error occured while installing mysql2 (0.3.11), and Bundler cannot continue.
+</span><span class='line'>
+</span><span class='line'>  Make sure that `gem install mysql2 -v '0.3.11'` succeeds before bundling.</span></code></pre></td></tr></table></div></figure>
 
-<p>*
-Liquid error: undefined method <code>join' for #&lt;String:0x007f8884e89d38&gt;
-Liquid error: undefined method</code>join&#8217; for #&lt;String:0x007f8884e895e0></p>
 
-<p>Liquid error: undefined method `join&#8217; for #&lt;String:0x007f8884e88eb0></p>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Solution--
+</span><span class='line'>sudo apt-get install libmysql-ruby libmysqlclient-dev （Ubuntu）</span></code></pre></td></tr></table></div></figure>
+
+
+<p>*</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Issue--
+</span><span class='line'>Could not find a JavaScript runtime. See https://github.com/sstephenson/execjs for a list of available runtimes.</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Solution--
+</span><span class='line'>Just install execjs and the rubyracer in your gemfile and run bundle after.
+</span><span class='line'>gem 'execjs'
+</span><span class='line'>gem 'therubyracer'</span></code></pre></td></tr></table></div></figure>
+
+
+<p>*</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Issue--
+</span><span class='line'>>Can't connect to local MySQL server through socket '/tmp/mysql.sock' (2)
+</span><span class='line'>Couldn't create database for {"adapter"=>"mysql2", "encoding"=>"utf8", "database"=>"o_p_", "pool"=>5, "username"=>"root", "password"=>nil, "socket"=>"/tmp/mysql.sock"}, charset: , collation:</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Solution--
+</span><span class='line'>host：127.0.0.1（diff？？localhost）</span></code></pre></td></tr></table></div></figure>
+
+
+<p>*</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Issue--
+</span><span class='line'>Gem::Installer::ExtensionBuildError: ERROR: Failed to build gem native extension.
+</span><span class='line'>
+</span><span class='line'>/usr/bin/ruby1.9.1 extconf.rb 
+</span><span class='line'>checking for pg_config... no
+</span><span class='line'>No pg_config... trying anyway. If building fails, please try again with
+</span><span class='line'>--with-pg-config=/path/to/pg_config
+</span><span class='line'>checking for libpq-fe.h... no
+</span><span class='line'>Can't find the 'libpq-fe.h header
+</span><span class='line'>* extconf.rb failed *
+</span><span class='line'>Could not create Makefile due to some reason, probably lack of
+</span><span class='line'>necessary libraries and/or headers. Check the mkmf.log file for more
+</span><span class='line'>details. You may need configuration options.
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>sudo apt-get install libpq-dev
+</span><span class='line'>
+</span><span class='line'>sudo gem install pg</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Solution--
+</span><span class='line'>sudo apt-get install libpq-dev
+</span><span class='line'>sudo gem install pg
+</span><span class='line'>
+</span><span class='line'>#貌似跟之前那个mysql的问题有点像</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>除了系统的ruby文件可以用相对路径，自己编写的ruby文件如果要require的话需要用绝对路径。否则会报错no such file to load .
+</span><span class='line'>而load则无论什么ruby文件都可以用相对路径加载</span></code></pre></td></tr></table></div></figure>
+
 </div>
 
 

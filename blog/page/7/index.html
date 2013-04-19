@@ -9,8 +9,9 @@
   <meta name="author" content="XguoX">
 
   
-  <meta name="description" content="把平常中一些开发出错以及解决方法记录了下来，其实，基本上都是Google或者StackOverflow得到的答案。然后有些都不知道问题的根源，只知道个解决方法 *
-Liquid error: undefined method join' for #&lt;String: &hellip;">
+  <meta name="description" content="把平常中一些开发出错以及解决方法记录了下来，其实，基本上都是Google或者StackOverflow得到的答案。然后有些都不知道问题的根源，只知道个解决方法 * 1
+2
+Issue-- RVM is not a function, selecting rubies with 'rvm use &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -109,9 +110,23 @@ Liquid error: undefined method join' for #&lt;String: &hellip;">
 
   <div class="entry-content"><p>把平常中一些开发出错以及解决方法记录了下来，其实，基本上都是Google或者StackOverflow得到的答案。然后有些都不知道问题的根源，只知道个解决方法</p>
 
-<p>*
-Liquid error: undefined method <code>join' for #&lt;String:0x007f8884e8e1d0&gt;
-Liquid error: undefined method</code>join&#8217; for #&lt;String:0x007f8884e8d8c0></p>
+<p>*</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Issue--
+</span><span class='line'>  RVM is not a function, selecting rubies with 'rvm use ...' will not work.</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Solution--
+</span><span class='line'>  添加下面这句到  ~/.bashrc
+</span><span class='line'>  [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"重启终端</span></code></pre></td></tr></table></div></figure>
+
 
 <p>*</p>
 

@@ -162,10 +162,10 @@ Meteor目前使用的模板引擎只能是 <a href="http://handlebarsjs.com/">ha
 <p>项目的文件结构非常重要, 尤其在考虑到文件的先后加载顺序的时候. 假定有两个文件, 其中一个依赖于另外一个, 你知道你的JavaScript的加载顺序吗?  其规则如下:</p>
 
 <ol>
-<li> <code>[project_root]/lib</code>里的文件会最先被加载. 显而易见的,  库需要放在这个文件</li>
+<li><code>[project_root]/lib</code>里的文件会最先被加载. 显而易见的,  库需要放在这个文件</li>
 <li>文件会根据目录的深度来进行加载排序,放在深一层的文件会先加载</li>
 <li>同一级的文件会按照字母顺序来排序加载.</li>
-<li> <code>main.*</code> 会最后加载, 当有代码需要在其他所有的库或脚本之后执行这会很有用.</li>
+<li><code>main.*</code> 会最后加载, 当有代码需要在其他所有的库或脚本之后执行这会很有用.</li>
 </ol>
 
 
@@ -183,8 +183,25 @@ Meteor目前使用的模板引擎只能是 <a href="http://handlebarsjs.com/">ha
 <h2>响应(Reactivity)</h2>
 
 <p>Meteor 通过 响应数据源(“reactive” data sources) 和 上下文(context) 帮你省去了当数据改变时手动替换页面的麻烦. 当响应数据源被更新后,响应上下文会重新运行(A reactive context is just a function that will get re-run if it contains a reactive data source that gets updated.) 刚开始的时候要把思维转换过来可能有些难, 下面的例子将为你解释清楚. <br/>
-下面是一个html页面和一个叫<code>cool_dude</code>Meteor<a href="http://docs.Meteor.com/#templates">模板</a>, 以及一个在客户端运行的JavaScript函数&#8212;传一个<code>username</code>的值给模板用以渲染.
-Liquid error: undefined method `join&#8217; for #&lt;String:0x007f8884ad18a8></p>
+下面是一个html页面和一个叫<code>cool_dude</code>Meteor<a href="http://docs.Meteor.com/#templates">模板</a>, 以及一个在客户端运行的JavaScript函数&#8212;传一个<code>username</code>的值给模板用以渲染.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;html>
+</span><span class='line'>  &lt;head>
+</span><span class='line'>  &lt;/head>
+</span><span class='line'>  &lt;body>
+</span><span class='line'>    {{> cool_dude }}
+</span><span class='line'>  &lt;/body>
+</span><span class='line'>&lt;/html></span></code></pre></td></tr></table></div></figure>
+
+
+
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>

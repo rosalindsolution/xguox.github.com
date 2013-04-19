@@ -110,17 +110,34 @@
 <!-- more -->
 
 
-<p>我用Ubuntu无非就是体验在Linux下开发ruby/rails。于是基本配置搞掂之后就开始安装Ruby开发环境。我是用RVM来安装的，一开始的步骤都没什么问题，到了安装rails的时候就出事了。
-Liquid error: undefined method `join&#8217; for &#8220;\r\n$ gem install rails \r\n&#8221;:String</p>
+<p>我用Ubuntu无非就是体验在Linux下开发ruby/rails。于是基本配置搞掂之后就开始安装Ruby开发环境。我是用RVM来安装的，一开始的步骤都没什么问题，到了安装rails的时候就出事了。</p>
 
-<p>当执行这行命令的时候，一直报错
-Liquid error: undefined method <code>join' for #&lt;String:0x007f88848f45d0&gt;
-接着各种百度谷歌也没找着解决方法。到最后，我自己也忘记看哪里，然后突发奇想的就用了下面这行命令
-Liquid error: undefined method</code>join&#8217; for &#8220;\r\n$ rvm gemset install rails -v=3.1.3 \r\n&#8221;:String
-结果就很神奇的装上了。据说是GEM被GFW了的原因。不过淘宝最近推出了Rubygems 镜像。于是果断把Gemfile和Gem source改了。
-然后是Git的配置，在SSH Key上除了点问题，不过跟着gthub的官方说明走也OK了。最近学到比较多的是Git的一些知识，比如就是，通过git clone获取的远端git库，只包含了远端git库的当前工作分支。其他分支都不见鸟。如果想获取其它分支，则要使用命令
-Liquid error: undefined method `join&#8217; for &#8220;\r\ngit checkout -b 本地分支名 远程分支名\r\n&#8221;:String
-折腾了OS，VCS，最近我的rails却停滞不前。还要受到最近期末考的一些干扰，心思难以投入rails&#8230;悲剧。</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ gem install rails</span></code></pre></td></tr></table></div></figure>
+
+
+<p>当执行这行命令的时候，一直报错</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>ERROR: While executing gem ... (Gem::DependencyError) 
+</span><span class='line'>Unable to resolve dependencies: rails requires activesupport (= 3.1.3), actionpack (= 3.1.3), activerecord (= 3.1.3), activeresource (= 3.1.3), actionmailer (= 3.1.3), railties (= 3.1.3)</span></code></pre></td></tr></table></div></figure>
+
+
+<p>接着各种百度谷歌也没找着解决方法。到最后，我自己也忘记看哪里，然后突发奇想的就用了下面这行命令</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ rvm gemset install rails -v=3.1.3</span></code></pre></td></tr></table></div></figure>
+
+
+<p>结果就很神奇的装上了。据说是GEM被GFW了的原因。不过淘宝最近推出了Rubygems 镜像。于是果断把Gemfile和Gem source改了。
+然后是Git的配置，在SSH Key上除了点问题，不过跟着gthub的官方说明走也OK了。最近学到比较多的是Git的一些知识，比如就是，通过git clone获取的远端git库，只包含了远端git库的当前工作分支。其他分支都不见鸟。如果想获取其它分支，则要使用命令</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git checkout -b 本地分支名 远程分支名</span></code></pre></td></tr></table></div></figure>
+
+
+<p>折腾了OS，VCS，最近我的rails却停滞不前。还要受到最近期末考的一些干扰，心思难以投入rails&#8230;悲剧。</p>
 
 <p>昨天又划分了40G的空间给Ubuntu,原本硬盘就没剩几个G了。以后会更多的在Ubuntu下作业。比起windows,这里还多了一份宁静，可以让我更专注于开发与学习。</p>
 </div>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Hexo | XguoX]]></title>
   <link href="http://xguox.github.com/blog/categories/hexo/atom.xml" rel="self"/>
   <link href="http://xguox.github.com/"/>
-  <updated>2013-04-19T14:57:38+08:00</updated>
+  <updated>2013-04-19T22:23:49+08:00</updated>
   <id>http://xguox.github.com/</id>
   <author>
     <name><![CDATA[XguoX]]></name>
@@ -51,9 +51,9 @@ at process.startup.processNextTick.process._tickCallback (node.js:244:9)
 <p>用尽各种蛋疼的办法才发现原来是有一篇文章里头的一段underscore代码块解析出了问题</p>
 
 <p><code>
- 
+ {% raw %}
 {{ &gt; posts}}
- 
+ {% endraw %}
 </code><br/>
 吐血啊, 找了我老久.  原来是这个东西忘了套上 "{ % raw % }" "{ % endraw % }"<br/>
 在Octopress(Liquid)里没套上的话则直接无视掉, 而Hexo(Marked)则直接嘣掉.</p>
