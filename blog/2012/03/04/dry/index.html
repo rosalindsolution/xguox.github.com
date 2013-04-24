@@ -110,161 +110,18 @@
 <!-- more -->
 
 
+<p>Liquid error: undefined method `join&#8217; for #&lt;String:0x007fde52ce1ed0></p>
 
+<p>Liquid error: undefined method `join&#8217; for #&lt;String:0x007fde52ce1890></p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>describe "Home page" do
-</span><span class='line'>    it "should have the h1 'Sample App'" do
-</span><span class='line'>      visit '/static_pages/home'
-</span><span class='line'>      page.should have_selector('h1', text: 'Sample App')
-</span><span class='line'>    end
-</span><span class='line'>
-</span><span class='line'>    it "should have the title 'Home'" do
-</span><span class='line'>      visit '/static_pages/home'
-</span><span class='line'>      page.should have_selector('title',
-</span><span class='line'>                        text: "Ruby on Rails Tutorial Sample App | Home")
-</span><span class='line'>    end
-</span><span class='line'>  end</span></code></pre></td></tr></table></div></figure>
+<p>Liquid error: undefined method `join&#8217; for #&lt;String:0x007fde52ce1250></p>
 
+<p>Liquid error: undefined method `join&#8217; for #&lt;String:0x007fde52ce0c10></p>
 
+<p>Liquid error: undefined method `join&#8217; for #&lt;String:0x007fde52ce05d0></p>
 
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>describe "Home page" do
-</span><span class='line'>  it "should have the h1 'Sample App'" do
-</span><span class='line'>    visit root_path
-</span><span class='line'>    page.should have_selector('h1', text: 'Sample App')
-</span><span class='line'>  end
-</span><span class='line'>
-</span><span class='line'>  it "should have the title 'Home'" do
-</span><span class='line'>    visit root_path
-</span><span class='line'>    page.should have_selector('title',
-</span><span class='line'>                      text: "Ruby on Rails Tutorial Sample App | Home")
-</span><span class='line'>  end
-</span><span class='line'>end</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>describe "Home page" do
-</span><span class='line'>  before { visit root_path } 
-</span><span class='line'>
-</span><span class='line'>  it "should have the h1 'Sample App'" do
-</span><span class='line'>    page.should have_selector('h1', text: 'Sample App')
-</span><span class='line'>  end
-</span><span class='line'>
-</span><span class='line'>  it "should have the title 'Home'" do
-</span><span class='line'>    page.should have_selector('title',
-</span><span class='line'>                      text: "Ruby on Rails Tutorial Sample App | Home")
-</span><span class='line'>  end
-</span><span class='line'>end</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>subject { page }
-</span><span class='line'>
-</span><span class='line'>  describe "Home page" do
-</span><span class='line'>    before { visit root_path } 
-</span><span class='line'>
-</span><span class='line'>    it { should have_selector('h1', text: 'Sample App') }
-</span><span class='line'>    it { should have_selector 'title',
-</span><span class='line'>                        text: "Ruby on Rails Tutorial Sample App | Home" }
-</span><span class='line'>  end</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>subject { page }
-</span><span class='line'>
-</span><span class='line'>  describe "Home page" do
-</span><span class='line'>    before { visit root_path }
-</span><span class='line'>
-</span><span class='line'>    it { should have_selector('h1',    text: 'Sample App') }
-</span><span class='line'>    it { should have_selector('title', text: full_title('Home')) }
-</span><span class='line'>  end</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>shared_examples_for "all static pages" do
-</span><span class='line'>    it { should have_selector('h1',    text: heading) }
-</span><span class='line'>    it { should have_selector('title', text: full_title(page_title)) }
-</span><span class='line'>  end
-</span><span class='line'>
-</span><span class='line'>  describe "Home page" do
-</span><span class='line'>    before { visit root_path }
-</span><span class='line'>    let(:heading)    { 'Sample App' }
-</span><span class='line'>    let(:page_title) { 'Home' }
-</span><span class='line'>
-</span><span class='line'>    it_should_behave_like "all static pages"
-</span><span class='line'>  end</span></code></pre></td></tr></table></div></figure>
-
-
-<p>其实，Rspec只是Ruby写的测试框架。但是，目前rails程序上写测试用的最多的还是Rspec吧。而在Rails中，最直观的运用到这思想的应该是helper、partial了吧。把好几个view的重复代码。整合在一个partial下。代码量的减少不言而喻。减少了出错的几率。修改重构起来方便很多。</p>
+<p>Liquid error: undefined method `join&#8217; for #&lt;String:0x007fde52cdff90>
+其实，Rspec只是Ruby写的测试框架。但是，目前rails程序上写测试用的最多的还是Rspec吧。而在Rails中，最直观的运用到这思想的应该是helper、partial了吧。把好几个view的重复代码。整合在一个partial下。代码量的减少不言而喻。减少了出错的几率。修改重构起来方便很多。</p>
 
 <p>当然DRY的思想绝不仅仅在于这一点点。不然国外也没那么名著专门描述它。</p>
 
@@ -307,32 +164,11 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://xguox.github.com/blog/2012/03/04/dry/" data-via="" data-counturl="http://xguox.github.com/blog/2012/03/04/dry/" >Tweet</a>  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://xguox.github.com/blog/2012/03/04/dry/" data-via="" data-counturl="http://xguox.github.com/blog/2012/03/04/dry/" >Tweet</a>
   
   
+  <div class="g-plusone" data-size="medium"></div>
   
-  
-  <script type="text/javascript" charset="utf-8">
-  (function(){
-    var _w = 72 , _h = 16;
-    var param = {
-      url:location.href,
-      type:'3',
-      count:'1', /**是否显示分享数，1显示(可选)*/
-      appkey:'', /**您申请的应用appkey,显示分享来源(可选)*/
-      title:"DRY ",/**分享的文字内容(可选，默认为所在页面的title)*/
-      pic:'', /**分享图片的路径(可选)*/
-      ralateUid:"1660802261 ", /**关联用户的UID，分享微博会@该用户(可选)*/
-  	language:'zh_cn', /**设置语言，zh_cn|zh_tw(可选)*/
-      rnd:new Date().valueOf()
-    }
-    var temp = [];
-    for( var p in param ){
-      temp.push(p + '=' + encodeURIComponent( param[p] || '' ) )
-    }
-    document.write('<iframe allowTransparency="true" frameborder="0" scrolling="no" src="http://hits.sinajs.cn/A1/weiboshare.html?' + temp.join('&') + '" width="'+ _w+'" height="'+_h+'"></iframe>')
-  })()
-  </script>
   
 </div>
 
@@ -361,14 +197,14 @@
     <section>
   <ul id="recent_posts">
       <li class="post">
-      <a href="/" alt="Home" title="Home"><img src="/images/Home.png"></a>
-      <a href="/archives/" alt="Archives" title="Archives"><img src="/images/Calendar.png"></a>
-      <a href="mailto:golvinlu@gmail.com" alt="E-Mail" title="E-Mail Me"><img src="/images/Envelope.png"></a>
-      <a href="/about/" alt="About XguoX" title="About XguoX"><img src="/images/User.png"></a>
-      <a href="http://gplus.to/xguox" alt="XguoX" target="_blank" title="Google+"><img src="/images/googleplus.png"></a>
-      <a href="https://twitter.com/XguoX_L" alt="XguoX" target="_blank" title="Twitter"><img src="/images/tw.png"></a>
-      <a href="http://cn.linkedin.com/pub/grover-lu/65/8ba/4a5" alt="XguoX" target="_blank" title="LinkedIn"><img src="/images/linkedin.png"></a>
-      <a href="/atom.xml" alt="subscribe feed" title="Subscribe Feed"><img src="/images/rss_big1.png"></a>
+      <a href="/" alt="Home"><img src="/images/Home.png"></a>
+      <a href="/archives/" alt="Archives"><img src="/images/Calendar.png"></a>
+      <a href="mailto:golvinlu@gmail.com" alt="E-Mail"><img src="/images/Envelope.png"></a>
+      <a href="/about/" alt="About XguoX"><img src="/images/User.png"></a>
+      <a href="http://gplus.to/xguox" alt="XguoX" target="_blank"><img src="/images/googleplus.png"></a>
+      <a href="https://twitter.com/XguoX_L" alt="XguoX" target="_blank"><img src="/images/tw.png"></a>
+      <a href="http://cn.linkedin.com/pub/grover-lu/65/8ba/4a5" alt="XguoX" target="_blank"><img src="/images/linkedin.png"></a>
+      <a href="/atom.xml" alt="subscribe feed"><img src="/images/rss_big1.png"></a>
       </li>
   </ul>
 </section>
@@ -490,6 +326,14 @@ function jsonFlickrApi(rsp) {
 
 
 
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
 
 
 

@@ -9,9 +9,8 @@
   <meta name="author" content="XguoX">
 
   
-  <meta name="description" content="把平常中一些开发出错以及解决方法记录了下来，其实，基本上都是Google或者StackOverflow得到的答案。然后有些都不知道问题的根源，只知道个解决方法 * 1
-2
-Issue-- RVM is not a function, selecting rubies with 'rvm use &hellip;">
+  <meta name="description" content="把平常中一些开发出错以及解决方法记录了下来，其实，基本上都是Google或者StackOverflow得到的答案。然后有些都不知道问题的根源，只知道个解决方法 *
+Liquid error: undefined method join' for #&lt;String: &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -107,154 +106,31 @@ Issue-- RVM is not a function, selecting rubies with 'rvm use &hellip;">
 
 <div class="entry-content"><p>把平常中一些开发出错以及解决方法记录了下来，其实，基本上都是Google或者StackOverflow得到的答案。然后有些都不知道问题的根源，只知道个解决方法</p>
 
-<p>*</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Issue--
-</span><span class='line'>  RVM is not a function, selecting rubies with 'rvm use ...' will not work.</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Solution--
-</span><span class='line'>  添加下面这句到  ~/.bashrc
-</span><span class='line'>  [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"重启终端</span></code></pre></td></tr></table></div></figure>
-
+<p>*
+Liquid error: undefined method <code>join' for #&lt;String:0x007fde53b343e8&gt;
+Liquid error: undefined method</code>join&#8217; for #&lt;String:0x007fde53b33da8></p>
 
 <p>*</p>
 
 <!-- more -->
 
 
+<p>Liquid error: undefined method <code>join' for #&lt;String:0x007fde53b33768&gt;
+Liquid error: undefined method</code>join&#8217; for #&lt;String:0x007fde53b33128></p>
 
+<p>*
+Liquid error: undefined method <code>join' for #&lt;String:0x007fde53b32ae8&gt;
+Liquid error: undefined method</code>join&#8217; for #&lt;String:0x007fde53b324a8></p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Issue--
-</span><span class='line'>  Gem::Installer::ExtensionBuildError: ERROR: Failed to build gem native extension.
-</span><span class='line'>  .
-</span><span class='line'>  .
-</span><span class='line'>  An error occured while installing mysql2 (0.3.11), and Bundler cannot continue.
-</span><span class='line'>
-</span><span class='line'>  Make sure that `gem install mysql2 -v '0.3.11'` succeeds before bundling.</span></code></pre></td></tr></table></div></figure>
+<p>*
+Liquid error: undefined method <code>join' for #&lt;String:0x007fde53b31e68&gt;
+Liquid error: undefined method</code>join&#8217; for &#8220;\nSolution&#8211;\nhost：127.0.0.1（diff？？localhost）\n&#8221;:String</p>
 
+<p>*
+Liquid error: undefined method <code>join' for #&lt;String:0x007fde53b31170&gt;
+Liquid error: undefined method</code>join&#8217; for #&lt;String:0x007fde53b30b30></p>
 
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Solution--
-</span><span class='line'>sudo apt-get install libmysql-ruby libmysqlclient-dev （Ubuntu）</span></code></pre></td></tr></table></div></figure>
-
-
-<p>*</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Issue--
-</span><span class='line'>Could not find a JavaScript runtime. See https://github.com/sstephenson/execjs for a list of available runtimes.</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Solution--
-</span><span class='line'>Just install execjs and the rubyracer in your gemfile and run bundle after.
-</span><span class='line'>gem 'execjs'
-</span><span class='line'>gem 'therubyracer'</span></code></pre></td></tr></table></div></figure>
-
-
-<p>*</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Issue--
-</span><span class='line'>>Can't connect to local MySQL server through socket '/tmp/mysql.sock' (2)
-</span><span class='line'>Couldn't create database for {"adapter"=>"mysql2", "encoding"=>"utf8", "database"=>"o_p_", "pool"=>5, "username"=>"root", "password"=>nil, "socket"=>"/tmp/mysql.sock"}, charset: , collation:</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Solution--
-</span><span class='line'>host：127.0.0.1（diff？？localhost）</span></code></pre></td></tr></table></div></figure>
-
-
-<p>*</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Issue--
-</span><span class='line'>Gem::Installer::ExtensionBuildError: ERROR: Failed to build gem native extension.
-</span><span class='line'>
-</span><span class='line'>/usr/bin/ruby1.9.1 extconf.rb 
-</span><span class='line'>checking for pg_config... no
-</span><span class='line'>No pg_config... trying anyway. If building fails, please try again with
-</span><span class='line'>--with-pg-config=/path/to/pg_config
-</span><span class='line'>checking for libpq-fe.h... no
-</span><span class='line'>Can't find the 'libpq-fe.h header
-</span><span class='line'>* extconf.rb failed *
-</span><span class='line'>Could not create Makefile due to some reason, probably lack of
-</span><span class='line'>necessary libraries and/or headers. Check the mkmf.log file for more
-</span><span class='line'>details. You may need configuration options.
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'>sudo apt-get install libpq-dev
-</span><span class='line'>
-</span><span class='line'>sudo gem install pg</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Solution--
-</span><span class='line'>sudo apt-get install libpq-dev
-</span><span class='line'>sudo gem install pg
-</span><span class='line'>
-</span><span class='line'>#貌似跟之前那个mysql的问题有点像</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>除了系统的ruby文件可以用相对路径，自己编写的ruby文件如果要require的话需要用绝对路径。否则会报错no such file to load .
-</span><span class='line'>而load则无论什么ruby文件都可以用相对路径加载</span></code></pre></td></tr></table></div></figure>
-
+<p>Liquid error: undefined method `join&#8217; for #&lt;String:0x007fde53b304c8></p>
 </div>
 
 
@@ -291,32 +167,11 @@ Issue-- RVM is not a function, selecting rubies with 'rvm use &hellip;">
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://xguox.github.com/blog/2012/02/27/rails-dot-note/" data-via="" data-counturl="http://xguox.github.com/blog/2012/02/27/rails-dot-note/" >Tweet</a>  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://xguox.github.com/blog/2012/02/27/rails-dot-note/" data-via="" data-counturl="http://xguox.github.com/blog/2012/02/27/rails-dot-note/" >Tweet</a>
   
   
+  <div class="g-plusone" data-size="medium"></div>
   
-  
-  <script type="text/javascript" charset="utf-8">
-  (function(){
-    var _w = 72 , _h = 16;
-    var param = {
-      url:location.href,
-      type:'3',
-      count:'1', /**是否显示分享数，1显示(可选)*/
-      appkey:'', /**您申请的应用appkey,显示分享来源(可选)*/
-      title:"Ruby/Rails.note ",/**分享的文字内容(可选，默认为所在页面的title)*/
-      pic:'', /**分享图片的路径(可选)*/
-      ralateUid:"1660802261 ", /**关联用户的UID，分享微博会@该用户(可选)*/
-  	language:'zh_cn', /**设置语言，zh_cn|zh_tw(可选)*/
-      rnd:new Date().valueOf()
-    }
-    var temp = [];
-    for( var p in param ){
-      temp.push(p + '=' + encodeURIComponent( param[p] || '' ) )
-    }
-    document.write('<iframe allowTransparency="true" frameborder="0" scrolling="no" src="http://hits.sinajs.cn/A1/weiboshare.html?' + temp.join('&') + '" width="'+ _w+'" height="'+_h+'"></iframe>')
-  })()
-  </script>
   
 </div>
 
@@ -345,14 +200,14 @@ Issue-- RVM is not a function, selecting rubies with 'rvm use &hellip;">
     <section>
   <ul id="recent_posts">
       <li class="post">
-      <a href="/" alt="Home" title="Home"><img src="/images/Home.png"></a>
-      <a href="/archives/" alt="Archives" title="Archives"><img src="/images/Calendar.png"></a>
-      <a href="mailto:golvinlu@gmail.com" alt="E-Mail" title="E-Mail Me"><img src="/images/Envelope.png"></a>
-      <a href="/about/" alt="About XguoX" title="About XguoX"><img src="/images/User.png"></a>
-      <a href="http://gplus.to/xguox" alt="XguoX" target="_blank" title="Google+"><img src="/images/googleplus.png"></a>
-      <a href="https://twitter.com/XguoX_L" alt="XguoX" target="_blank" title="Twitter"><img src="/images/tw.png"></a>
-      <a href="http://cn.linkedin.com/pub/grover-lu/65/8ba/4a5" alt="XguoX" target="_blank" title="LinkedIn"><img src="/images/linkedin.png"></a>
-      <a href="/atom.xml" alt="subscribe feed" title="Subscribe Feed"><img src="/images/rss_big1.png"></a>
+      <a href="/" alt="Home"><img src="/images/Home.png"></a>
+      <a href="/archives/" alt="Archives"><img src="/images/Calendar.png"></a>
+      <a href="mailto:golvinlu@gmail.com" alt="E-Mail"><img src="/images/Envelope.png"></a>
+      <a href="/about/" alt="About XguoX"><img src="/images/User.png"></a>
+      <a href="http://gplus.to/xguox" alt="XguoX" target="_blank"><img src="/images/googleplus.png"></a>
+      <a href="https://twitter.com/XguoX_L" alt="XguoX" target="_blank"><img src="/images/tw.png"></a>
+      <a href="http://cn.linkedin.com/pub/grover-lu/65/8ba/4a5" alt="XguoX" target="_blank"><img src="/images/linkedin.png"></a>
+      <a href="/atom.xml" alt="subscribe feed"><img src="/images/rss_big1.png"></a>
       </li>
   </ul>
 </section>
@@ -474,6 +329,14 @@ function jsonFlickrApi(rsp) {
 
 
 
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
 
 
 

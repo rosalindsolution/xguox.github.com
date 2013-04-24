@@ -9,9 +9,8 @@
   <meta name="author" content="XguoX">
 
   
-  <meta name="description" content="把平常中一些开发出错以及解决方法记录了下来，其实，基本上都是Google或者StackOverflow得到的答案。然后有些都不知道问题的根源，只知道个解决方法 * 1
-2
-Issue-- RVM is not a function, selecting rubies with 'rvm use &hellip;">
+  <meta name="description" content="把平常中一些开发出错以及解决方法记录了下来，其实，基本上都是Google或者StackOverflow得到的答案。然后有些都不知道问题的根源，只知道个解决方法 *
+Liquid error: undefined method join' for #&lt;String: &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -110,23 +109,9 @@ Issue-- RVM is not a function, selecting rubies with 'rvm use &hellip;">
 
   <div class="entry-content"><p>把平常中一些开发出错以及解决方法记录了下来，其实，基本上都是Google或者StackOverflow得到的答案。然后有些都不知道问题的根源，只知道个解决方法</p>
 
-<p>*</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Issue--
-</span><span class='line'>  RVM is not a function, selecting rubies with 'rvm use ...' will not work.</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Solution--
-</span><span class='line'>  添加下面这句到  ~/.bashrc
-</span><span class='line'>  [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"重启终端</span></code></pre></td></tr></table></div></figure>
-
+<p>*
+Liquid error: undefined method <code>join' for #&lt;String:0x007fde53b343e8&gt;
+Liquid error: undefined method</code>join&#8217; for #&lt;String:0x007fde53b33da8></p>
 
 <p>*</p>
 
@@ -440,14 +425,14 @@ tomorrow  exam</p>
     <section>
   <ul id="recent_posts">
       <li class="post">
-      <a href="/" alt="Home" title="Home"><img src="/images/Home.png"></a>
-      <a href="/archives/" alt="Archives" title="Archives"><img src="/images/Calendar.png"></a>
-      <a href="mailto:golvinlu@gmail.com" alt="E-Mail" title="E-Mail Me"><img src="/images/Envelope.png"></a>
-      <a href="/about/" alt="About XguoX" title="About XguoX"><img src="/images/User.png"></a>
-      <a href="http://gplus.to/xguox" alt="XguoX" target="_blank" title="Google+"><img src="/images/googleplus.png"></a>
-      <a href="https://twitter.com/XguoX_L" alt="XguoX" target="_blank" title="Twitter"><img src="/images/tw.png"></a>
-      <a href="http://cn.linkedin.com/pub/grover-lu/65/8ba/4a5" alt="XguoX" target="_blank" title="LinkedIn"><img src="/images/linkedin.png"></a>
-      <a href="/atom.xml" alt="subscribe feed" title="Subscribe Feed"><img src="/images/rss_big1.png"></a>
+      <a href="/" alt="Home"><img src="/images/Home.png"></a>
+      <a href="/archives/" alt="Archives"><img src="/images/Calendar.png"></a>
+      <a href="mailto:golvinlu@gmail.com" alt="E-Mail"><img src="/images/Envelope.png"></a>
+      <a href="/about/" alt="About XguoX"><img src="/images/User.png"></a>
+      <a href="http://gplus.to/xguox" alt="XguoX" target="_blank"><img src="/images/googleplus.png"></a>
+      <a href="https://twitter.com/XguoX_L" alt="XguoX" target="_blank"><img src="/images/tw.png"></a>
+      <a href="http://cn.linkedin.com/pub/grover-lu/65/8ba/4a5" alt="XguoX" target="_blank"><img src="/images/linkedin.png"></a>
+      <a href="/atom.xml" alt="subscribe feed"><img src="/images/rss_big1.png"></a>
       </li>
   </ul>
 </section>
@@ -565,6 +550,14 @@ function jsonFlickrApi(rsp) {
 
 
 
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
 
 
 

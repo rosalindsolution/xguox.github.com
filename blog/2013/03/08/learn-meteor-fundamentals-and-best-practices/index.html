@@ -162,10 +162,10 @@ Meteor目前使用的模板引擎只能是 <a href="http://handlebarsjs.com/">ha
 <p>项目的文件结构非常重要, 尤其在考虑到文件的先后加载顺序的时候. 假定有两个文件, 其中一个依赖于另外一个, 你知道你的JavaScript的加载顺序吗?  其规则如下:</p>
 
 <ol>
-<li><code>[project_root]/lib</code>里的文件会最先被加载. 显而易见的,  库需要放在这个文件</li>
+<li> <code>[project_root]/lib</code>里的文件会最先被加载. 显而易见的,  库需要放在这个文件</li>
 <li>文件会根据目录的深度来进行加载排序,放在深一层的文件会先加载</li>
 <li>同一级的文件会按照字母顺序来排序加载.</li>
-<li><code>main.*</code> 会最后加载, 当有代码需要在其他所有的库或脚本之后执行这会很有用.</li>
+<li> <code>main.*</code> 会最后加载, 当有代码需要在其他所有的库或脚本之后执行这会很有用.</li>
 </ol>
 
 
@@ -183,25 +183,8 @@ Meteor目前使用的模板引擎只能是 <a href="http://handlebarsjs.com/">ha
 <h2>响应(Reactivity)</h2>
 
 <p>Meteor 通过 响应数据源(“reactive” data sources) 和 上下文(context) 帮你省去了当数据改变时手动替换页面的麻烦. 当响应数据源被更新后,响应上下文会重新运行(A reactive context is just a function that will get re-run if it contains a reactive data source that gets updated.) 刚开始的时候要把思维转换过来可能有些难, 下面的例子将为你解释清楚. <br/>
-下面是一个html页面和一个叫<code>cool_dude</code>Meteor<a href="http://docs.Meteor.com/#templates">模板</a>, 以及一个在客户端运行的JavaScript函数&#8212;传一个<code>username</code>的值给模板用以渲染.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;html>
-</span><span class='line'>  &lt;head>
-</span><span class='line'>  &lt;/head>
-</span><span class='line'>  &lt;body>
-</span><span class='line'>    {{> cool_dude }}
-</span><span class='line'>  &lt;/body>
-</span><span class='line'>&lt;/html></span></code></pre></td></tr></table></div></figure>
-
-
-
+下面是一个html页面和一个叫<code>cool_dude</code>Meteor<a href="http://docs.Meteor.com/#templates">模板</a>, 以及一个在客户端运行的JavaScript函数&#8212;传一个<code>username</code>的值给模板用以渲染.
+Liquid error: undefined method `join&#8217; for #&lt;String:0x007fde541b0028></p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -456,32 +439,11 @@ Ps:文章有点老,XD&#8230;不过就像该篇文章的作者所说, Meteor 现�
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://xguox.github.com/blog/2013/03/08/learn-meteor-fundamentals-and-best-practices/" data-via="" data-counturl="http://xguox.github.com/blog/2013/03/08/learn-meteor-fundamentals-and-best-practices/" >Tweet</a>  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://xguox.github.com/blog/2013/03/08/learn-meteor-fundamentals-and-best-practices/" data-via="" data-counturl="http://xguox.github.com/blog/2013/03/08/learn-meteor-fundamentals-and-best-practices/" >Tweet</a>
   
   
+  <div class="g-plusone" data-size="medium"></div>
   
-  
-  <script type="text/javascript" charset="utf-8">
-  (function(){
-    var _w = 72 , _h = 16;
-    var param = {
-      url:location.href,
-      type:'3',
-      count:'1', /**是否显示分享数，1显示(可选)*/
-      appkey:'', /**您申请的应用appkey,显示分享来源(可选)*/
-      title:"Meteor基础与最佳实践 ",/**分享的文字内容(可选，默认为所在页面的title)*/
-      pic:'', /**分享图片的路径(可选)*/
-      ralateUid:"1660802261 ", /**关联用户的UID，分享微博会@该用户(可选)*/
-  	language:'zh_cn', /**设置语言，zh_cn|zh_tw(可选)*/
-      rnd:new Date().valueOf()
-    }
-    var temp = [];
-    for( var p in param ){
-      temp.push(p + '=' + encodeURIComponent( param[p] || '' ) )
-    }
-    document.write('<iframe allowTransparency="true" frameborder="0" scrolling="no" src="http://hits.sinajs.cn/A1/weiboshare.html?' + temp.join('&') + '" width="'+ _w+'" height="'+_h+'"></iframe>')
-  })()
-  </script>
   
 </div>
 
@@ -510,14 +472,14 @@ Ps:文章有点老,XD&#8230;不过就像该篇文章的作者所说, Meteor 现�
     <section>
   <ul id="recent_posts">
       <li class="post">
-      <a href="/" alt="Home" title="Home"><img src="/images/Home.png"></a>
-      <a href="/archives/" alt="Archives" title="Archives"><img src="/images/Calendar.png"></a>
-      <a href="mailto:golvinlu@gmail.com" alt="E-Mail" title="E-Mail Me"><img src="/images/Envelope.png"></a>
-      <a href="/about/" alt="About XguoX" title="About XguoX"><img src="/images/User.png"></a>
-      <a href="http://gplus.to/xguox" alt="XguoX" target="_blank" title="Google+"><img src="/images/googleplus.png"></a>
-      <a href="https://twitter.com/XguoX_L" alt="XguoX" target="_blank" title="Twitter"><img src="/images/tw.png"></a>
-      <a href="http://cn.linkedin.com/pub/grover-lu/65/8ba/4a5" alt="XguoX" target="_blank" title="LinkedIn"><img src="/images/linkedin.png"></a>
-      <a href="/atom.xml" alt="subscribe feed" title="Subscribe Feed"><img src="/images/rss_big1.png"></a>
+      <a href="/" alt="Home"><img src="/images/Home.png"></a>
+      <a href="/archives/" alt="Archives"><img src="/images/Calendar.png"></a>
+      <a href="mailto:golvinlu@gmail.com" alt="E-Mail"><img src="/images/Envelope.png"></a>
+      <a href="/about/" alt="About XguoX"><img src="/images/User.png"></a>
+      <a href="http://gplus.to/xguox" alt="XguoX" target="_blank"><img src="/images/googleplus.png"></a>
+      <a href="https://twitter.com/XguoX_L" alt="XguoX" target="_blank"><img src="/images/tw.png"></a>
+      <a href="http://cn.linkedin.com/pub/grover-lu/65/8ba/4a5" alt="XguoX" target="_blank"><img src="/images/linkedin.png"></a>
+      <a href="/atom.xml" alt="subscribe feed"><img src="/images/rss_big1.png"></a>
       </li>
   </ul>
 </section>
@@ -639,6 +601,14 @@ function jsonFlickrApi(rsp) {
 
 
 
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
 
 
 

@@ -10,8 +10,8 @@
 
   
   <meta name="description" content="居然今晚才发现Rails中try的用法，初一看，怎么那么像印象中某些语言的异常处理？不对啊，ruby中的异常处理不是长这个样子的。
-查了下rails的API才了解了大致用法。 API： 不使用try的时候是 1
-@person && @person.name 需确保@person不是nil， &hellip;">
+查了下rails的API才了解了大致用法。 API： 不使用try的时候是
+Liquid error: undefined method join' for "\n@ &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -110,35 +110,17 @@
 
 <p>API：</p>
 
-<p>不使用try的时候是<!-- more --></p>
+<p>不使用try的时候是<!-- more -->
+Liquid error: undefined method <code>join' for "\n@person &amp;&amp; @person.name\n":String
+需确保@person不是nil，否则会报错
+Liquid error: undefined method</code>join&#8217; for &#8220;\nNoMethodError: undefined method <code>name' for nil:NilClass\n":String
+如果用try的话
+Liquid error: undefined method</code>join&#8217; for &#8220;\n@person.try(:name)\n&#8221;:String
+如果@person为nil则返回nil而不是报错</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>@person && @person.name</span></code></pre></td></tr></table></div></figure>
-
-
-<p>需确保@person不是nil，否则会报错</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>NoMethodError: undefined method `name' for nil:NilClass</span></code></pre></td></tr></table></div></figure>
-
-
-<p>如果用try的话</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>@person.try(:name)</span></code></pre></td></tr></table></div></figure>
-
-
-<p>如果@person为nil则返回nil而不是报错</p>
-
-<p>另外，try还可以接收block作为参数，</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Person.try(:find, 1)
-</span><span class='line'>@people.try(:collect) {|p| p.name}</span></code></pre></td></tr></table></div></figure>
-
-
-<p>漏了一句，API开头就说了，像常规的ruby的Object#send 那样工作
+<p>另外，try还可以接收block作为参数，
+Liquid error: undefined method `join&#8217; for &#8220;\nPerson.try(:find, 1)\n@people.try(:collect) {|p| p.name}\n&#8221;:String
+漏了一句，API开头就说了，像常规的ruby的Object#send 那样工作
 看了下源码，貌似是利用了<strong>send</strong>实现的。最近在研究ruby的元编程。</p>
 </div>
 
@@ -176,32 +158,11 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://xguox.github.com/blog/2012/04/20/usage-of-try/" data-via="" data-counturl="http://xguox.github.com/blog/2012/04/20/usage-of-try/" >Tweet</a>  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://xguox.github.com/blog/2012/04/20/usage-of-try/" data-via="" data-counturl="http://xguox.github.com/blog/2012/04/20/usage-of-try/" >Tweet</a>
   
   
+  <div class="g-plusone" data-size="medium"></div>
   
-  
-  <script type="text/javascript" charset="utf-8">
-  (function(){
-    var _w = 72 , _h = 16;
-    var param = {
-      url:location.href,
-      type:'3',
-      count:'1', /**是否显示分享数，1显示(可选)*/
-      appkey:'', /**您申请的应用appkey,显示分享来源(可选)*/
-      title:"Rails中try的用法 ",/**分享的文字内容(可选，默认为所在页面的title)*/
-      pic:'', /**分享图片的路径(可选)*/
-      ralateUid:"1660802261 ", /**关联用户的UID，分享微博会@该用户(可选)*/
-  	language:'zh_cn', /**设置语言，zh_cn|zh_tw(可选)*/
-      rnd:new Date().valueOf()
-    }
-    var temp = [];
-    for( var p in param ){
-      temp.push(p + '=' + encodeURIComponent( param[p] || '' ) )
-    }
-    document.write('<iframe allowTransparency="true" frameborder="0" scrolling="no" src="http://hits.sinajs.cn/A1/weiboshare.html?' + temp.join('&') + '" width="'+ _w+'" height="'+_h+'"></iframe>')
-  })()
-  </script>
   
 </div>
 
@@ -230,14 +191,14 @@
     <section>
   <ul id="recent_posts">
       <li class="post">
-      <a href="/" alt="Home" title="Home"><img src="/images/Home.png"></a>
-      <a href="/archives/" alt="Archives" title="Archives"><img src="/images/Calendar.png"></a>
-      <a href="mailto:golvinlu@gmail.com" alt="E-Mail" title="E-Mail Me"><img src="/images/Envelope.png"></a>
-      <a href="/about/" alt="About XguoX" title="About XguoX"><img src="/images/User.png"></a>
-      <a href="http://gplus.to/xguox" alt="XguoX" target="_blank" title="Google+"><img src="/images/googleplus.png"></a>
-      <a href="https://twitter.com/XguoX_L" alt="XguoX" target="_blank" title="Twitter"><img src="/images/tw.png"></a>
-      <a href="http://cn.linkedin.com/pub/grover-lu/65/8ba/4a5" alt="XguoX" target="_blank" title="LinkedIn"><img src="/images/linkedin.png"></a>
-      <a href="/atom.xml" alt="subscribe feed" title="Subscribe Feed"><img src="/images/rss_big1.png"></a>
+      <a href="/" alt="Home"><img src="/images/Home.png"></a>
+      <a href="/archives/" alt="Archives"><img src="/images/Calendar.png"></a>
+      <a href="mailto:golvinlu@gmail.com" alt="E-Mail"><img src="/images/Envelope.png"></a>
+      <a href="/about/" alt="About XguoX"><img src="/images/User.png"></a>
+      <a href="http://gplus.to/xguox" alt="XguoX" target="_blank"><img src="/images/googleplus.png"></a>
+      <a href="https://twitter.com/XguoX_L" alt="XguoX" target="_blank"><img src="/images/tw.png"></a>
+      <a href="http://cn.linkedin.com/pub/grover-lu/65/8ba/4a5" alt="XguoX" target="_blank"><img src="/images/linkedin.png"></a>
+      <a href="/atom.xml" alt="subscribe feed"><img src="/images/rss_big1.png"></a>
       </li>
   </ul>
 </section>
@@ -359,6 +320,14 @@ function jsonFlickrApi(rsp) {
 
 
 
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
 
 
 
