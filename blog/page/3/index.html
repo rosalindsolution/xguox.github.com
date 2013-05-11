@@ -9,7 +9,7 @@
   <meta name="author" content="XguoX">
 
   
-  <meta name="description" content="First off，以俺目前的各种水平，想写出一些好的 technical articles 是有点难度的啦。于是乎，我选择了翻译国外一些好的文章。不管多么新鲜的技术，就算找不着中文资料，也一定没少英文文档。比如最近发现的几个挺不错weekly（其实也不是最近才发现，也订阅了有大半年吧， &hellip;">
+  <meta name="description" content="ECMAScript 5 中引入了一种定义,可以切换让你的JavaScript代码是否在所谓的 严格模式(strict mode)下执行。因为在strict mode下，当浏览器遇到一些脚本中包含有不好的代码做法时，即使没有语法上的错误也会抛出runtime错误， &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -75,6 +75,53 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/02/08/should-you-use-strict-in-your-production-javascript/">你应该在生产环境下使用JavaScript的严格模式（strict Mode）吗？</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-08T09:32:00+08:00" pubdate data-updated="true">Feb 8<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/02/08/should-you-use-strict-in-your-production-javascript/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>ECMAScript 5 中引入了一种定义,可以切换让你的JavaScript代码是否在所谓的 <strong>严格模式(strict mode)</strong>下执行。因为在strict mode下，当浏览器遇到一些脚本中包含有不好的代码做法时，即使没有语法上的错误也会抛出runtime错误，因而常常被吹捧为一种显著有益于捕获程序员错误的方式。</p>
+
+<h2><strong>在strict mode下运行被认为可以更少的出错</strong></h2>
+
+<p>举个栗子，在定义一个变量时，缺少关键字“var”，如果在non-strict mode下会默认为该变量为全局变量，而在 strict mode下则会抛出一个runtime错误。</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/02/08/should-you-use-strict-in-your-production-javascript/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -361,47 +408,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/09/26/recently-feeling/">最近有感，关于玩</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-09-26T11:32:00+08:00" pubdate data-updated="true">Sep 26<span>th</span>, 2012</time>
-        
-         | <a href="/blog/2012/09/26/recently-feeling/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>101假期临近了，前不久，Larry刚去了张家界回来，Linux也准备去青海，好是羡慕呀。时间再往前推一些，班级刚组织了一趟毕业旅游，是去阳朔的（小吐槽下，Y的身边的朋友的毕业旅游居然80%都是去阳朔漓江的，小数一下至少上10个个不同的班级。那边有这么的霸气么？），因为在上海这边不方便回去了，我也就错过了。 </div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2012/09/26/recently-feeling/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/4/">&larr; Older</a>
@@ -431,7 +437,7 @@
 
 <section>
 <h1>Category</h1>
-<span class='categories_tag'> <a href='/blog/categories/books' style='font-size: 102.0%'>Books</a>  <a href='/blog/categories/css' style='font-size: 102.0%'>Css</a>  <a href='/blog/categories/hexo' style='font-size: 102.0%'>Hexo</a>  <a href='/blog/categories/jabber' style='font-size: 160.0%'>Jabber</a>  <a href='/blog/categories/javascript' style='font-size: 102.0%'>Javascript</a>  <a href='/blog/categories/json' style='font-size: 102.0%'>Json</a>  <a href='/blog/categories/meteor' style='font-size: 114.0%'>Meteor</a>  <a href='/blog/categories/performance' style='font-size: 102.0%'>Performance</a>  <a href='/blog/categories/rails' style='font-size: 118.0%'>Rails</a>  <a href='/blog/categories/repost' style='font-size: 102.0%'>Repost</a>  <a href='/blog/categories/ruby' style='font-size: 118.0%'>Ruby</a>  <a href='/blog/categories/sublime' style='font-size: 102.0%'>Sublime</a>  <a href='/blog/categories/translation' style='font-size: 128.0%'>Translation</a>  <a href='/blog/categories/travel' style='font-size: 108.0%'>Travel</a> </span>
+<span class='categories_tag'> <a href='/blog/categories/books' style='font-size: 102.0%'>Books</a>  <a href='/blog/categories/css' style='font-size: 102.0%'>Css</a>  <a href='/blog/categories/hexo' style='font-size: 102.0%'>Hexo</a>  <a href='/blog/categories/jabber' style='font-size: 160.0%'>Jabber</a>  <a href='/blog/categories/javascript' style='font-size: 102.0%'>Javascript</a>  <a href='/blog/categories/json' style='font-size: 102.0%'>Json</a>  <a href='/blog/categories/meteor' style='font-size: 114.0%'>Meteor</a>  <a href='/blog/categories/performance' style='font-size: 102.0%'>Performance</a>  <a href='/blog/categories/rails' style='font-size: 118.0%'>Rails</a>  <a href='/blog/categories/repost' style='font-size: 104.0%'>Repost</a>  <a href='/blog/categories/ruby' style='font-size: 118.0%'>Ruby</a>  <a href='/blog/categories/sublime' style='font-size: 102.0%'>Sublime</a>  <a href='/blog/categories/translation' style='font-size: 128.0%'>Translation</a>  <a href='/blog/categories/travel' style='font-size: 108.0%'>Travel</a> </span>
 </section>
 
 
@@ -470,11 +476,15 @@ function jsonFlickrApi(rsp) {
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/05/11/repost-days-with-my-father/">[Repost]与父亲在一起的日子 (组图)</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/04/13/how-to-travel-around-the-world-for-a-year/">如何在一年里周游世界</a>
       </li>
     
       <li class="post">
-        <a href="/blog/2013/04/13/traveling-writing-programming/">旅行，写作，编程</a>
+        <a href="/blog/2013/04/13/traveling-writing-programming/">[Repost]旅行，写作，编程</a>
       </li>
     
       <li class="post">
@@ -491,10 +501,6 @@ function jsonFlickrApi(rsp) {
     
       <li class="post">
         <a href="/blog/2013/04/06/deploy-meteor-on-heroku/">最近在折腾 &#8211; deploy Meteor on heroku</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/03/25/5-use-cases-for-icon-fonts/">5 Use Cases for Icon Fonts</a>
       </li>
     
   </ul>
