@@ -9,9 +9,7 @@
   <meta name="author" content="XguoX">
 
   
-  <meta name="description" content="LEVEL: BEGINNER 当你看到这,也就说明你听说了Meteor这东西, 并对它产生一些好奇.
-那就让我们创建一个最基本的应用来耍一耍吧. 希望能以此学习到一两样东西. 准备工作: 安装Meteor 要安装Meteor那就再简单不过了. 只需要执行下面这条命令
-curl https:// &hellip;">
+  <meta name="description" content="LEVEL: BEGINNER 学习一门语言或框架的最好方法之一是从零开始开发一个应用程序. 但是,当你开发了N次的To-do list应用之后, 或许你会想要一些稍微新鲜的玩意. 所以这一次, 让我们来看看一些实际的应用的代码, 这里我们用的是 Telescope &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -77,6 +75,64 @@ curl https:// &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/03/06/a-look-at-a-meteor-template/">A Look at a Meteor Template</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-06T14:40:00+08:00" pubdate data-updated="true">Mar 6<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/03/06/a-look-at-a-meteor-template/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h5>LEVEL: BEGINNER</h5>
+
+<p>学习一门语言或框架的最好方法之一是从零开始开发一个应用程序.</p>
+
+<p>但是,当你开发了N次的To-do list应用之后, 或许你会想要一些稍微新鲜的玩意. 所以这一次, 让我们来看看一些实际的应用的代码, 这里我们用的是 <a href="http://telesc.pe/">Telescope</a></p>
+
+<p>Telescope是一个基于Meteor的开源社交新闻网站. <a href="http://reddit.com/">Reddit</a> or <a href="http://news.ycombinator.com/">Hacker News</a>的实时版本.</p>
+
+<p>我们即将看到的代码是简化版的<code>post_edit</code><a href="https://github.com/SachaG/Telescope/blob/master/client/views/posts/post_edit.html">模板</a>及其<a href="https://github.com/SachaG/Telescope/blob/master/client/views/posts/post_edit.js">控制器(controller)</a>. 听名字你应该就知道, 这个模板的作用是提供一个简单的表单来编辑一篇已经存在的post. post有标题(title), 链接(URl), 主体(body), 以及一个或多个的类别(categories). 该程序实际的表单中还会有一些额外的东西, 但我们现在不需要关心那些.<br/>
+<img src="http://theMeteorbook.com/images/telescope-post-edit.png" alt="" /></p>
+
+<p>这篇文章的目的是让你对Meteor的模板有个大概的认识. 如果你在其他的环境下使用过模板系统就会感到很熟悉, 如果没的话,那就现在开始学习吧.</p>
+
+<h2>Basic Organization</h2>
+
+<p>Meteor模板系统有两个部分组成,分别是: HTML模板和JavaScript控制器. HTML部分只是纯粹的有变量占位符的哑巴模板, 所有的实际动作都是通过JavaScript产生的.</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/03/06/a-look-at-a-meteor-template/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -383,53 +439,6 @@ curl https:// &hellip;">
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/01/01/2013-new-year/">2013 New Year</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-01-01T17:42:00+08:00" pubdate data-updated="true">Jan 1<span>st</span>, 2013</time>
-        
-         | <a href="/blog/2013/01/01/2013-new-year/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>回看2011的最后一篇，2012的那个元旦，上一次的夜游白云山看那看不到的日出，想来，我的这两元旦都”不平淡“呀。只是这次的不平淡不太妙。<br/>
-老规矩，跟上次那般先回顾一下这个2012。首先，庆幸一下这个世界还没到走到末日；接着，热烈祝贺中共18大胜利召开&#8230;(扯远了好伐)</p>
-
-<p>看上那篇写着的，其实2011那会也就那么点东西而已，没多疯狂的，比起2012的简直小巫见大巫。这其实，2012，也没什么疯狂的，学会蛋定地看事情。<br/>
-简单来个大小事件回顾：厦门义工旅，瑞卡初实习，奔赴大上海，参与简书，各种进医院，升大四&#8230;</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2013/01/01/2013-new-year/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/4/">&larr; Older</a>
@@ -459,7 +468,7 @@ curl https:// &hellip;">
 
 <section>
 <h1>Category</h1>
-<span class='categories_tag'> <a href='/blog/categories/books' style='font-size: 102.0%'>Books</a>  <a href='/blog/categories/css' style='font-size: 102.0%'>Css</a>  <a href='/blog/categories/hexo' style='font-size: 102.0%'>Hexo</a>  <a href='/blog/categories/jabber' style='font-size: 160.0%'>Jabber</a>  <a href='/blog/categories/javascript' style='font-size: 102.0%'>Javascript</a>  <a href='/blog/categories/json' style='font-size: 102.0%'>Json</a>  <a href='/blog/categories/meteor' style='font-size: 114.0%'>Meteor</a>  <a href='/blog/categories/onepiece' style='font-size: 102.0%'>Onepiece</a>  <a href='/blog/categories/performance' style='font-size: 102.0%'>Performance</a>  <a href='/blog/categories/rails' style='font-size: 118.0%'>Rails</a>  <a href='/blog/categories/repost' style='font-size: 106.0%'>Repost</a>  <a href='/blog/categories/ruby' style='font-size: 118.0%'>Ruby</a>  <a href='/blog/categories/sublime' style='font-size: 102.0%'>Sublime</a>  <a href='/blog/categories/translation' style='font-size: 128.0%'>Translation</a>  <a href='/blog/categories/travel' style='font-size: 108.0%'>Travel</a> </span>
+<span class='categories_tag'> <a href='/blog/categories/books' style='font-size: 101.93548387096774%'>Books</a>  <a href='/blog/categories/css' style='font-size: 101.93548387096774%'>Css</a>  <a href='/blog/categories/hexo' style='font-size: 101.93548387096774%'>Hexo</a>  <a href='/blog/categories/jabber' style='font-size: 160.0%'>Jabber</a>  <a href='/blog/categories/javascript' style='font-size: 101.93548387096774%'>Javascript</a>  <a href='/blog/categories/json' style='font-size: 101.93548387096774%'>Json</a>  <a href='/blog/categories/meteor' style='font-size: 113.54838709677419%'>Meteor</a>  <a href='/blog/categories/onepiece' style='font-size: 101.93548387096774%'>Onepiece</a>  <a href='/blog/categories/performance' style='font-size: 101.93548387096774%'>Performance</a>  <a href='/blog/categories/rails' style='font-size: 117.41935483870968%'>Rails</a>  <a href='/blog/categories/repost' style='font-size: 105.80645161290323%'>Repost</a>  <a href='/blog/categories/ruby' style='font-size: 117.41935483870968%'>Ruby</a>  <a href='/blog/categories/sublime' style='font-size: 101.93548387096774%'>Sublime</a>  <a href='/blog/categories/translation' style='font-size: 127.09677419354838%'>Translation</a>  <a href='/blog/categories/travel' style='font-size: 107.74193548387098%'>Travel</a> </span>
 </section>
 
 
@@ -498,6 +507,10 @@ function jsonFlickrApi(rsp) {
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/05/14/negative-energy/">负能量 - 从支纤镜说起 - 正能量</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/05/12/record-of-the-void-century-and-d/">[Repost]关于D一族的真相以及历史文本的分析</a>
       </li>
     
@@ -519,10 +532,6 @@ function jsonFlickrApi(rsp) {
     
       <li class="post">
         <a href="/blog/2013/04/10/understanding-publications-and-subscriptions/">Understanding Publications and Subscriptions</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/04/08/hexo-blog-node-octopress/">继续折腾 &#8211; Hexo版Blog</a>
       </li>
     
   </ul>
