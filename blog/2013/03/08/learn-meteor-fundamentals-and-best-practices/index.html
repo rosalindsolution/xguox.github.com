@@ -184,7 +184,7 @@ Meteor目前使用的模板引擎只能是 <a href="http://handlebarsjs.com/">ha
 
 <p>Meteor 通过 响应数据源(“reactive” data sources) 和 上下文(context) 帮你省去了当数据改变时手动替换页面的麻烦. 当响应数据源被更新后,响应上下文会重新运行(A reactive context is just a function that will get re-run if it contains a reactive data source that gets updated.) 刚开始的时候要把思维转换过来可能有些难, 下面的例子将为你解释清楚. <br/>
 下面是一个html页面和一个叫<code>cool_dude</code>Meteor<a href="http://docs.Meteor.com/#templates">模板</a>, 以及一个在客户端运行的JavaScript函数&#8212;传一个<code>username</code>的值给模板用以渲染.
-Liquid error: undefined method `join&#8217; for #&lt;String:0x007faf515ad248></p>
+Liquid error: undefined method `join&#8217; for #&lt;String:0x007fe6d2296060></p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -314,7 +314,7 @@ Liquid error: undefined method `join&#8217; for #&lt;String:0x007faf515ad248></p
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p><a href="http://docs.Meteor.com/#Meteor_autosubscribe">Meteor.autosubscribe</a>是一个响应上下文, 意思是只要有响应数据源更新,所有在里头的东西都会重运行. 我们把当前所在的频道存储在Session的<code>"current_channel"</code>. 如果这个session值改变, 那么订阅(subscription)也就更新,
+<p><a href="http://docs.meteor.com/#deps_autorun">Meteor.autorun</a>是一个响应上下文, 意思是只要有响应数据源更新,所有在里头的东西都会重运行. 我们把当前所在的频道存储在Session的<code>"current_channel"</code>. 如果这个session值改变, 那么订阅(subscription)也就更新,
 这样我们就能够访问其他的信息了. 如果用户想要加入<code>“breakfast talk”</code>这个频道. 我们可以运行<code>Session.set("current_channel", "breakfast_talk")</code>, 这会触发autosubscribe, 让我们可以且仅可访问<code>"breakfast_talk"</code>频道下的信息.</p>
 
 <p>或许,你很多次都希望发布所有的collection到客户端. 仔细思考客户端实际需要的是什么. 比起发送所有的文档, 只发送特定领域会来得明智些.</p>
@@ -401,7 +401,7 @@ Liquid error: undefined method `join&#8217; for #&lt;String:0x007faf515ad248></p
 
 <p>准备好开发一个真实的Meteor项目了吗?一起期待吧, Part 2 就在路上了.届时将引导你完成一个完整的app!</p>
 
-<p>原文来自Andrew Scala <a href="http://andrewscala.com/Meteor/">Learn Meteor Fundamentals and Best Practices</a>  <br/>
+<p>原文来自Andrew Scala <a href="http://andrewscala.com/meteor/">Learn Meteor Fundamentals and Best Practices</a>  <br/>
 Ps:文章有点老,XD&#8230;不过就像该篇文章的作者所说, Meteor 现在还是处于一个 super-beta 阶段, 版本更新自然会相对来得快些. 据说1.0版本将会在不到一年的时间内发布.</p>
 </div>
 
@@ -486,7 +486,7 @@ Ps:文章有点老,XD&#8230;不过就像该篇文章的作者所说, Meteor 现�
 
 <section>
 <h1>Category</h1>
-<span class='categories_tag'> <a href='/blog/categories/books' style='font-size: 101.93548387096774%'>Books</a>  <a href='/blog/categories/css' style='font-size: 101.93548387096774%'>Css</a>  <a href='/blog/categories/hexo' style='font-size: 101.93548387096774%'>Hexo</a>  <a href='/blog/categories/jabber' style='font-size: 160.0%'>Jabber</a>  <a href='/blog/categories/javascript' style='font-size: 101.93548387096774%'>Javascript</a>  <a href='/blog/categories/json' style='font-size: 101.93548387096774%'>Json</a>  <a href='/blog/categories/meteor' style='font-size: 113.54838709677419%'>Meteor</a>  <a href='/blog/categories/onepiece' style='font-size: 101.93548387096774%'>Onepiece</a>  <a href='/blog/categories/performance' style='font-size: 101.93548387096774%'>Performance</a>  <a href='/blog/categories/rails' style='font-size: 117.41935483870968%'>Rails</a>  <a href='/blog/categories/repost' style='font-size: 105.80645161290323%'>Repost</a>  <a href='/blog/categories/ruby' style='font-size: 117.41935483870968%'>Ruby</a>  <a href='/blog/categories/sublime' style='font-size: 101.93548387096774%'>Sublime</a>  <a href='/blog/categories/translation' style='font-size: 127.09677419354838%'>Translation</a>  <a href='/blog/categories/travel' style='font-size: 107.74193548387098%'>Travel</a> </span>
+<span class='categories_tag'> <a href='/blog/categories/books' style='font-size: 101.875%'>Books</a>  <a href='/blog/categories/css' style='font-size: 101.875%'>Css</a>  <a href='/blog/categories/hexo' style='font-size: 101.875%'>Hexo</a>  <a href='/blog/categories/jabber' style='font-size: 160.0%'>Jabber</a>  <a href='/blog/categories/javascript' style='font-size: 101.875%'>Javascript</a>  <a href='/blog/categories/json' style='font-size: 101.875%'>Json</a>  <a href='/blog/categories/meteor' style='font-size: 113.125%'>Meteor</a>  <a href='/blog/categories/onepiece' style='font-size: 101.875%'>Onepiece</a>  <a href='/blog/categories/performance' style='font-size: 101.875%'>Performance</a>  <a href='/blog/categories/rails' style='font-size: 116.875%'>Rails</a>  <a href='/blog/categories/repost' style='font-size: 105.625%'>Repost</a>  <a href='/blog/categories/ruby' style='font-size: 116.875%'>Ruby</a>  <a href='/blog/categories/sublime' style='font-size: 101.875%'>Sublime</a>  <a href='/blog/categories/translation' style='font-size: 126.25%'>Translation</a>  <a href='/blog/categories/travel' style='font-size: 107.5%'>Travel</a> </span>
 </section>
 
 
@@ -525,6 +525,10 @@ function jsonFlickrApi(rsp) {
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/06/03/photos-and-stories/">照片的故事</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/05/14/negative-energy/">负能量 - 从支纤镜说起 - 正能量</a>
       </li>
     
@@ -546,10 +550,6 @@ function jsonFlickrApi(rsp) {
     
       <li class="post">
         <a href="/blog/2013/04/11/jabber-sublime/">扯点Sublime</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/04/10/understanding-publications-and-subscriptions/">Understanding Publications and Subscriptions</a>
       </li>
     
   </ul>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Meteor | XguoX]]></title>
   <link href="http://xguox.github.com/blog/categories/meteor/atom.xml" rel="self"/>
   <link href="http://xguox.github.com/"/>
-  <updated>2013-05-14T23:18:30+08:00</updated>
+  <updated>2013-06-05T16:35:25+08:00</updated>
   <id>http://xguox.github.com/</id>
   <author>
     <name><![CDATA[XguoX]]></name>
@@ -416,10 +416,10 @@ if (Meteor.is_client) {</p>
 接着在</code>body`标签里添加下面这句</p>
 
 <p><code>html
-{{&gt; entryfield}}
+{% raw %}{{&gt; entryfield}}{% endraw %}
 </code></p>
 
-<p>Meteor使用的模板系统与<a href="http://mustache.github.com/">Mustache</a>很相似.大括号<code>{{}}</code>表示要呈现的内容. 通过简单地在两对大括号里添加内容如<code>{{hello}}</code>, 模板系统会用<code>hello</code>这个变量的值来替换它. 后面会更详细的介绍.</p>
+<p>Meteor使用的模板系统与<a href="http://mustache.github.com/">Mustache</a>很相似.大括号<code>{% raw %}{{}}{% endraw %}</code>表示要呈现的内容. 通过简单地在两对大括号里添加内容如<code>{% raw %}{{hello}}{% endraw %}</code>, 模板系统会用<code>hello</code>这个变量的值来替换它. 后面会更详细的介绍.</p>
 
 <p>注意到了在<code>entryfield</code>这个词前面有个大于号<code>&gt;</code>了吗? 使用该符号来指定渲染哪一个模板.</p>
 
@@ -440,7 +440,7 @@ if (Meteor.is_client) {</p>
 <p>接下来, 在body里边添加另外的一个mutache标签用以渲染讯息列表</p>
 
 <p><code>html
-{{&gt; message}}
+{% raw %}{{&gt; message}}{% endraw %}
 </code></p>
 
 <p>最后, 我们还需要新建一个名叫<code>messages</code>的模板. 在<code>entryfield</code>模板下面添加下面这段代码</p>
@@ -449,9 +449,9 @@ if (Meteor.is_client) {</p>
 <template name="messages"></p>
 
 <pre><code>&lt;p&gt;
-    {{#each messages}}
+    {% raw %}{{#each messages}}
         &lt;strong&gt;{{name}}&lt;/strong&gt;- {{message}}
-   {{/each}}
+   {{/each}}{% endraw %}
 &lt;/p&gt;
 </code></pre>
 
@@ -461,10 +461,10 @@ if (Meteor.is_client) {</p>
 注意到</code>each`子句. 在Meteor中你可以使用如下的语法来遍历一个数组模板</p>
 
 <p><code>html
-
+{% raw %}
 {{#each [name of array]}}
 {{/each}}
-
+{% endraw %}
 </code></p>
 
 <p>使用each循环时,上下文会有所改变. 当引用变量的时候, 实际上你引用的是每一个数组元素的值.
@@ -485,7 +485,7 @@ if (Meteor.is_client) {</p>
 
 <p>]
 <code>``
-然后, 在each循环中, 你可以看到</code>{{message}}<code></code>{{name}}`, 这会引用 每一个数组元素的值来替代(Andrew 和 Bob 替换 name, 以及各自的问候信息.)</p>
+然后, 在each循环中, 你可以看到</code>{% raw %}{{message}}{% endraw %}<code></code>{% raw %}{{name}}{% endraw %}`, 这会引用 每一个数组元素的值来替代(Andrew 和 Bob 替换 name, 以及各自的问候信息.)</p>
 
 <p>当返回到你的浏览器, 你还看不到任何的改变. 因为讯息数组还没被传送到模板, 所以Meteor遍历不到任何东西来呈现.</p>
 
@@ -495,12 +495,12 @@ if (Meteor.is_client) {</p>
 <head>
   <title>chat</title>
 </head>
-
+{% raw %}
 <body>
   {{> entryfield}}
   {{> messages}}
 </body>
-
+{% endraw %}
 <template name="entryfield"></p>
 
 <pre><code>&lt;input type="text" id="name" placeholder="Name" /&gt; &lt;input type="text" id="message" placeholder="Your Message" /&gt;
@@ -510,7 +510,7 @@ if (Meteor.is_client) {</p>
 
 <p><template name="messages"></p>
 
-<pre><code>
+<pre><code>{% raw %}
 &lt;p&gt;
     {{#each messages}}
         &lt;strong&gt;{{name}}&lt;/strong&gt;- {{message}}&lt;br/&gt;
@@ -519,7 +519,7 @@ if (Meteor.is_client) {</p>
 </code></pre>
 
 <p></template>
-
+{% endraw %}
 ```</p>
 
 <h3>The Javascript</h3>
@@ -655,7 +655,7 @@ Messages.insert({
 <p>原文来自Andrew Munsell <a href="http://www.andrewmunsell.com/blog/introduction-to-realtime-web-Meteor-and-nodejs/#.UTyJZtHN-tv">Introduction to Realtime Web with Meteor and Node.js</a></p>
 
 <p>另附上Tom的 Vimeo screencast(需FanQiang)<br/>
-<video width='640' height='320' preload='none' controls poster=' http://b.vimeocdn.com/ts/278/431/278431171_960.jpg'><source src='http://av.vimeo.com/31624/419/93304834.mp4?aksessionid=d86b5b612c86d70bd2022ae1050aa1be&amp;token=1362992353_ce10e413b18fa6f2d0e3483ef6b82894' type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'/></video></p>
+{% video http://av.vimeo.com/31624/419/93304834.mp4?aksessionid=d86b5b612c86d70bd2022ae1050aa1be&amp;token=1362992353_ce10e413b18fa6f2d0e3483ef6b82894 640 320 http://b.vimeocdn.com/ts/278/431/278431171_960.jpg %}</p>
 ]]></content>
   </entry>
   
@@ -739,11 +739,22 @@ if(Meteor.is_client) {</p>
 
 <p>Meteor 通过 响应数据源(“reactive” data sources) 和 上下文(context) 帮你省去了当数据改变时手动替换页面的麻烦. 当响应数据源被更新后,响应上下文会重新运行(A reactive context is just a function that will get re-run if it contains a reactive data source that gets updated.) 刚开始的时候要把思维转换过来可能有些难, 下面的例子将为你解释清楚. <br/>
 下面是一个html页面和一个叫<code>cool_dude</code>Meteor<a href="http://docs.Meteor.com/#templates">模板</a>, 以及一个在客户端运行的JavaScript函数---传一个<code>username</code>的值给模板用以渲染.
-Liquid error: undefined method `join' for #<String:0x007faf519e02c0></p>
+{% codeblock %}
+<html>
+  <head>
+  </head>
+  <body></p>
+
+<pre><code>{% raw %}{{&gt; cool_dude }}{% endraw %}
+</code></pre>
+
+<p>  </body>
+</html>
+{% endcodeblock %}</p>
 
 <p><code>html
 &lt;template name="cool_dude"&gt;
-  &lt;p class="important"&gt;{{ username }} sure is one cool dude!&lt;/p&gt;
+  &lt;p class="important"&gt;{% raw %}{{ username }}{% endraw %} sure is one cool dude!&lt;/p&gt;
 &lt;/template&gt;
 </code></p>
 
@@ -841,7 +852,7 @@ Meteor.autosubscribe(function() {
 <p>}
 ```</p>
 
-<p><a href="http://docs.Meteor.com/#Meteor_autosubscribe">Meteor.autosubscribe</a>是一个响应上下文, 意思是只要有响应数据源更新,所有在里头的东西都会重运行. 我们把当前所在的频道存储在Session的<code>"current_channel"</code>. 如果这个session值改变, 那么订阅(subscription)也就更新,
+<p><a href="http://docs.meteor.com/#deps_autorun">Meteor.autorun</a>是一个响应上下文, 意思是只要有响应数据源更新,所有在里头的东西都会重运行. 我们把当前所在的频道存储在Session的<code>"current_channel"</code>. 如果这个session值改变, 那么订阅(subscription)也就更新,
 这样我们就能够访问其他的信息了. 如果用户想要加入<code>“breakfast talk”</code>这个频道. 我们可以运行<code>Session.set("current_channel", "breakfast_talk")</code>, 这会触发autosubscribe, 让我们可以且仅可访问<code>"breakfast_talk"</code>频道下的信息.</p>
 
 <p>或许,你很多次都希望发布所有的collection到客户端. 仔细思考客户端实际需要的是什么. 比起发送所有的文档, 只发送特定领域会来得明智些.</p>
@@ -907,7 +918,7 @@ _.each(collections, function(collection) {
 
 <p>准备好开发一个真实的Meteor项目了吗?一起期待吧, Part 2 就在路上了.届时将引导你完成一个完整的app!</p>
 
-<p>原文来自Andrew Scala <a href="http://andrewscala.com/Meteor/">Learn Meteor Fundamentals and Best Practices</a>  <br/>
+<p>原文来自Andrew Scala <a href="http://andrewscala.com/meteor/">Learn Meteor Fundamentals and Best Practices</a>  <br/>
 Ps:文章有点老,XD...不过就像该篇文章的作者所说, Meteor 现在还是处于一个 super-beta 阶段, 版本更新自然会相对来得快些. 据说1.0版本将会在不到一年的时间内发布.</p>
 ]]></content>
   </entry>
