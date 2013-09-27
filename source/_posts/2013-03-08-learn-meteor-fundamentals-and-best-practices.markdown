@@ -146,7 +146,7 @@ if(Meteor.is_client) {
 }
 ```
 
-[Meteor.autosubscribe](http://docs.Meteor.com/#Meteor_autosubscribe)是一个响应上下文, 意思是只要有响应数据源更新,所有在里头的东西都会重运行. 我们把当前所在的频道存储在Session的```"current_channel"```. 如果这个session值改变, 那么订阅(subscription)也就更新,
+[Meteor.autorun](http://docs.meteor.com/#deps_autorun)是一个响应上下文, 意思是只要有响应数据源更新,所有在里头的东西都会重运行. 我们把当前所在的频道存储在Session的```"current_channel"```. 如果这个session值改变, 那么订阅(subscription)也就更新,
 这样我们就能够访问其他的信息了. 如果用户想要加入```“breakfast talk”```这个频道. 我们可以运行```Session.set("current_channel", "breakfast_talk")```, 这会触发autosubscribe, 让我们可以且仅可访问```"breakfast_talk"```频道下的信息.
 
 或许,你很多次都希望发布所有的collection到客户端. 仔细思考客户端实际需要的是什么. 比起发送所有的文档, 只发送特定领域会来得明智些.
@@ -199,7 +199,7 @@ Meteor.startup(function() {
 ##敬请关注
 准备好开发一个真实的Meteor项目了吗?一起期待吧, Part 2 就在路上了.届时将引导你完成一个完整的app!
 
-原文来自Andrew Scala [Learn Meteor Fundamentals and Best Practices](http://andrewscala.com/Meteor/)    
+原文来自Andrew Scala [Learn Meteor Fundamentals and Best Practices](http://andrewscala.com/meteor/)    
 Ps:文章有点老,XD...不过就像该篇文章的作者所说, Meteor 现在还是处于一个 super-beta 阶段, 版本更新自然会相对来得快些. 据说1.0版本将会在不到一年的时间内发布.
 
 

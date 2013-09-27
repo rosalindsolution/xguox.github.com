@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "旅行，写作，编程"
+title: "[Repost]旅行，写作，编程"
 date: 2013-04-13 21:53
 comments: true
 categories: Travel Repost Translation
