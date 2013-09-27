@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-
   <title><![CDATA[XguoX]]></title>
   <link href="http://xguox.github.com/atom.xml" rel="self"/>
   <link href="http://xguox.github.com/"/>
-  <updated>2013-06-05T16:41:20+08:00</updated>
+  <updated>2013-09-27T16:07:41+08:00</updated>
   <id>http://xguox.github.com/</id>
   <author>
     <name><![CDATA[XguoX]]></name>
@@ -12,6 +11,55 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Back to Code]]></title>
+    <link href="http://xguox.github.com/blog/2013/09/27/back-to-code/"/>
+    <updated>2013-09-27T14:12:00+08:00</updated>
+    <id>http://xguox.github.com/blog/2013/09/27/back-to-code</id>
+    <content type="html"><![CDATA[<p>好多年以前，在「街头篮球」这款游戏看到过的一句，「一天不碰球，就一天没长进」。<br/>
+而今，我是好几个月没真正意义的code，所以，这状态，想不roll back都难，更何求长进。</p>
+
+<p>真心，重头来过也忽然无从下手。</p>
+
+<p>打开Octopress准备更新，发觉连Git的一些命令的想了好久才想起来。</p>
+
+<p>看到Git的提示里冒出有
+ <code>
+git bisect reset
+</code>
+这货功能很强大呀，昏了，之前怎么完全没印象有过着玩意的？又是学艺不精啊！</p>
+
+<p>想把Octopress更新到2.1，一直略期待着，却一直在preview状态，今儿却才发现，2.1的branch挂了，倒是多了个 3.0的branch。</p>
+
+<p>好吧，老规矩的话，那就换个新面孔好了。这不流行Flat-UI嘛。发现一个还不错的&#8212;<a href="https://github.com/alexharris/octopress-flat/">octopress-flat</a>。加上自己做一些些个修改。</p>
+
+<p>and then 准备new_post的时候报了这玩意，奇葩了，之前zsh貌似不见报这错的啊？难道几个月不碰就变的面目全非了。
+<code>
+zsh: no matches found: new_post
+</code></p>
+
+<p>搜之，在~/.zshrc 里添加
+<code>
+alias rake="noglob rake"
+</code></p>
+
+<p>前些时间落下了好多东西，包括刚着手的翻译行当还有初尝Meteor。</p>
+
+<p>在写简书那会，虽远远称不上精通全端、一锅端，但也绝不至于像现在这样什么都端不起来。
+现在想再端起来，还要各种瞻前顾后的，连端啥都决定不好。</p>
+
+<p>想来，回上海或者北漂几乎没啥可能，尽管我很enjoy上海那段日子。so，目测往后也是在珠三角荡悠。要是能找到一份remote job，那就更好不过了。说起来，一直很想去佛山那家创业公司。前年还是他家boss指引我才开始知道并用上Github。现在是更想去了，因为他们支持远程工作 XD</p>
+
+<p>but,现在的我比起11年那会还不行。这情何以堪。</p>
+
+<p>好吧。Anyway，一切都只能等痊愈再说！</p>
+
+<p>消沉够了就要回到正轨奋斗了。好好利用这几个月。</p>
+
+<p>接下来&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;..要不要，从HTML重新开始呢呢呢,不知道俺的Ruby/Rails 还剩几多斤两呢&#8230;&#8230;&#8230;&#8230;&#8230;..</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[照片的故事]]></title>
@@ -142,7 +190,7 @@
 
 <p>忽而发现我真的不知道如何去安慰一个人，因为我满脑充斥的都是负能量。</p>
 
-<p>于是，决定解放自己，摆脱负能量，从自己开始。至少不能再带上的还像今天这般负面，尽管咱俩不会有太多的碰头，但至少不希望在我这出的岔子，而且这毕竟也有益于我塑造积极的心态。</p>
+<p>于是，决定解放自己，摆脱负能量，从自己开始。</p>
 
 <p>祝福</p>
 ]]></content>
@@ -3163,7 +3211,7 @@ Meteor目前使用的模板引擎只能是 <a href="http://handlebarsjs.com/">ha
 
 <p>Meteor 通过 响应数据源(“reactive” data sources) 和 上下文(context) 帮你省去了当数据改变时手动替换页面的麻烦. 当响应数据源被更新后,响应上下文会重新运行(A reactive context is just a function that will get re-run if it contains a reactive data source that gets updated.) 刚开始的时候要把思维转换过来可能有些难, 下面的例子将为你解释清楚. <br/>
 下面是一个html页面和一个叫<code>cool_dude</code>Meteor<a href="http://docs.Meteor.com/#templates">模板</a>, 以及一个在客户端运行的JavaScript函数&#8212;传一个<code>username</code>的值给模板用以渲染.
-Liquid error: undefined method `join&#8217; for #&lt;String:0x007fe6d20d4038></p>
+Liquid error: undefined method `join&#8217; for #&lt;String:0x007fea0bec55c0></p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -4211,361 +4259,6 @@ Non-strict Mode:</p>
 <p>说到英文水平，尽管老早的就知道重要性，却从未好好学习过，只能现在硬着头皮自愿加强迫自己上，看英文的电视剧（尽量不跟着字幕），用英文的社交网站（圈多些国外的），阅读外文的文章（好吧，几乎也就是一些科技类的）, 听英文podcast(各种听不懂)&#8230;</p>
 
 <p>PS，最近看<a href="http://linlis.me/">@linux</a>也经常翻译一些文章，不过他翻译的更多比较文学性的。</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[你可能不知道的JSON.stingify()]]></title>
-    <link href="http://xguox.github.com/blog/2013/02/01/what-you-might-not-know-about-json-dot-stringify/"/>
-    <updated>2013-02-01T18:06:00+08:00</updated>
-    <id>http://xguox.github.com/blog/2013/02/01/what-you-might-not-know-about-json-dot-stringify</id>
-    <content type="html"><![CDATA[<p>几乎所有开发人员都会花一些时间在JavaScript上，有些时候是在使用JSON.stingify（以及与之相对应的，JSON.parse）。JSON - Javascript Object Notation - 已经成为许多开发人员理想的数据交换格式（the go-to data-interchange format）- 并且有许多语言支持序列化为JSON,而不仅仅只有JavaScript本身。如果哪天你半夜起来又无法入睡了，可以查一查关于<a href="http://en.wikipedia.org/wiki/JSON#History">JSON</a>的历史（tl;dr – Douglas Crockford is the brain behind it）</p>
-
-<!--more-->
-
-
-<p>在写JavaScript的时候，我们用<code>JSON.stringify</code>将某个值序列化为一个字符串值来表示一个对象。</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
-</span><span class='line'>    <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;Jim Cowart&quot;</span><span class="p">,</span>
-</span><span class='line'>    <span class="nx">country</span><span class="o">:</span> <span class="s2">&quot;Jimbabwe&quot;</span>
-</span><span class='line'><span class="p">});</span>
-</span><span class='line'><span class="c1">// 输出结果:  &quot;{&quot;name&quot;:&quot;Jim Cowart&quot;,&quot;country&quot;:&quot;Jimbabwe&quot;}&quot;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="s2">&quot;Oh look, a string!&quot;</span><span class="p">);</span>
-</span><span class='line'><span class="c1">// 输出结果： &quot;&quot;Oh look, a string!&quot;&quot;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="s2">&quot;open&quot;</span><span class="p">,</span><span class="s2">&quot;the&quot;</span><span class="p">,</span><span class="s2">&quot;door&quot;</span><span class="p">]);</span>
-</span><span class='line'><span class="c1">// 输出结果： &quot;[1,2,3,4,&quot;open&quot;,&quot;the&quot;,&quot;door&quot;]&quot;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>我不会反复地讨论关于序列化的规则，在<a href="https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/JSON/stringify">这里</a>你可以读到更多相关的。但最基本的，你需要知道下面这些：</p>
-
-<ul>
-<li><code>undefined</code> 值、函数或者XML值会被忽略，除非当&#8230;</li>
-<li>如果你的数组当中含有 <code>undefined</code>值，函数或XML值，该数组中的这些值将会被当成 <code>null</code></li>
-</ul>
-
-
-<p>Let’s see about that:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
-</span><span class='line'>    <span class="nx">doStuff</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="p">},</span>
-</span><span class='line'>    <span class="nx">doThings</span><span class="o">:</span> <span class="p">[</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{},</span> <span class="kc">undefined</span> <span class="p">]</span>
-</span><span class='line'><span class="p">});</span>
-</span><span class='line'><span class="c1">// 输出结果:  &quot;{&quot;doThings&quot;:[null,null]}&quot;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<blockquote><p>“太棒了，Jim。我知道了。它是一种数据交换格式。而行为是不会被序列化的。这些天我使用的大多数库都是在底层为我处理序列化(Most of the libraries I use these days handle serializing for me under the hood.)。那为什么要专门写一篇post关于 JSON.stringify 呢？”</p></blockquote>
-
-<p>这个我知道，但是有一些实用的技巧迟早我们会需要用上的。Many of the larger applications I’ve worked on recently have had debug flags that can be flipped to enable various console logging from different components active on the page.
-而我们明显不希望总是通过无数行<code>console.log</code>来筛选信息 - 但当这变得有需要的时候，让它的可读性更高是不是更nice呢？</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="c1">// what if this:</span>
-</span><span class='line'><span class="s1">&#39;{&quot;name&quot;:&quot;Jim Cowart&quot;,&quot;location&quot;:{&quot;city&quot;:{&quot;name&quot;:&quot;Chattanooga&quot;,&quot;population&quot;:167674},&quot;state&quot;:{&quot;name&quot;:&quot;Tennessee&quot;,&quot;abbreviation&quot;:&quot;TN&quot;,&quot;population&quot;:6403000}},&quot;company&quot;:&quot;appendTo&quot;}&#39;</span>
-</span><span class='line'>
-</span><span class='line'><span class="c1">// could be formatted like this, automagically?</span>
-</span><span class='line'><span class="s2">&quot;{</span>
-</span><span class='line'><span class="s2">    &quot;</span><span class="nx">name</span><span class="s2">&quot;: &quot;</span><span class="nx">Jim</span> <span class="nx">Cowart</span><span class="s2">&quot;,</span>
-</span><span class='line'><span class="s2">    &quot;</span><span class="nx">location</span><span class="s2">&quot;: {</span>
-</span><span class='line'><span class="s2">        &quot;</span><span class="nx">city</span><span class="s2">&quot;: {</span>
-</span><span class='line'><span class="s2">            &quot;</span><span class="nx">name</span><span class="s2">&quot;: &quot;</span><span class="nx">Chattanooga</span><span class="s2">&quot;,</span>
-</span><span class='line'><span class="s2">            &quot;</span><span class="nx">population</span><span class="s2">&quot;: 167674</span>
-</span><span class='line'><span class="s2">        },</span>
-</span><span class='line'><span class="s2">        &quot;</span><span class="nx">state</span><span class="s2">&quot;: {</span>
-</span><span class='line'><span class="s2">            &quot;</span><span class="nx">name</span><span class="s2">&quot;: &quot;</span><span class="nx">Tennessee</span><span class="s2">&quot;,</span>
-</span><span class='line'><span class="s2">            &quot;</span><span class="nx">abbreviation</span><span class="s2">&quot;: &quot;</span><span class="nx">TN</span><span class="s2">&quot;,</span>
-</span><span class='line'><span class="s2">            &quot;</span><span class="nx">population</span><span class="s2">&quot;: 6403000</span>
-</span><span class='line'><span class="s2">        }</span>
-</span><span class='line'><span class="s2">    },</span>
-</span><span class='line'><span class="s2">    &quot;</span><span class="nx">company</span><span class="s2">&quot;: &quot;</span><span class="nx">appendTo</span><span class="s2">&quot;</span>
-</span><span class='line'><span class="s2">}&quot;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>事实上，JSON.stringify可以传入3个参数（JSON.stringify(value [, replacer [, space]])。其中，第三个参数 - “space” - 允许你指定一个字符串字符、或者使用缩进、或是一个数字。如果你传的是一个数字，那相应的空格数（最大为10）会被作为缩进量</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-<span class='line-number'>50</span>
-<span class='line-number'>51</span>
-<span class='line-number'>52</span>
-<span class='line-number'>53</span>
-<span class='line-number'>54</span>
-<span class='line-number'>55</span>
-<span class='line-number'>56</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">person</span> <span class="o">=</span> <span class="p">{</span>
-</span><span class='line'>    <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;Jim Cowart&quot;</span><span class="p">,</span>
-</span><span class='line'>    <span class="nx">location</span><span class="o">:</span> <span class="p">{</span>
-</span><span class='line'>        <span class="nx">city</span><span class="o">:</span> <span class="p">{</span>
-</span><span class='line'>            <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;Chattanooga&quot;</span><span class="p">,</span>
-</span><span class='line'>            <span class="nx">population</span><span class="o">:</span> <span class="mi">167674</span>
-</span><span class='line'>        <span class="p">},</span>
-</span><span class='line'>        <span class="nx">state</span><span class="o">:</span> <span class="p">{</span>
-</span><span class='line'>            <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;Tennessee&quot;</span><span class="p">,</span>
-</span><span class='line'>            <span class="nx">abbreviation</span><span class="o">:</span> <span class="s2">&quot;TN&quot;</span><span class="p">,</span>
-</span><span class='line'>            <span class="nx">population</span><span class="o">:</span> <span class="mi">6403000</span>
-</span><span class='line'>        <span class="p">}</span>
-</span><span class='line'>    <span class="p">},</span>
-</span><span class='line'>    <span class="nx">company</span><span class="o">:</span> <span class="s2">&quot;appendTo&quot;</span>
-</span><span class='line'><span class="p">};</span>
-</span><span class='line'><span class="c1">//如果你希望缩进量为2 个空格，</span>
-</span><span class='line'><span class="c1">// 你可以这么干：</span>
-</span><span class='line'><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">person</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
-</span><span class='line'><span class="cm">/* produces:</span>
-</span><span class='line'><span class="cm">&quot;{</span>
-</span><span class='line'><span class="cm">  &quot;name&quot;: &quot;Jim Cowart&quot;,</span>
-</span><span class='line'><span class="cm">  &quot;location&quot;: {</span>
-</span><span class='line'><span class="cm">    &quot;city&quot;: {</span>
-</span><span class='line'><span class="cm">      &quot;name&quot;: &quot;Chattanooga&quot;,</span>
-</span><span class='line'><span class="cm">      &quot;population&quot;: 167674</span>
-</span><span class='line'><span class="cm">    },</span>
-</span><span class='line'><span class="cm">    &quot;state&quot;: {</span>
-</span><span class='line'><span class="cm">      &quot;name&quot;: &quot;Tennessee&quot;,</span>
-</span><span class='line'><span class="cm">      &quot;abbreviation&quot;: &quot;TN&quot;,</span>
-</span><span class='line'><span class="cm">      &quot;population&quot;: 6403000</span>
-</span><span class='line'><span class="cm">    }</span>
-</span><span class='line'><span class="cm">  },</span>
-</span><span class='line'><span class="cm">  &quot;company&quot;: &quot;appendTo&quot;</span>
-</span><span class='line'><span class="cm">}&quot;</span>
-</span><span class='line'><span class="cm">*/</span>
-</span><span class='line'><span class="c1">// 如果你希望使用 tab 缩进，那么</span>
-</span><span class='line'><span class="c1">// 你可以传入 \t 作为第三个参数</span>
-</span><span class='line'><span class="c1">// 以此来告别空格缩进</span>
-</span><span class='line'><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">person</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="s2">&quot;\t&quot;</span><span class="p">);</span>
-</span><span class='line'><span class="cm">/*输出结果:</span>
-</span><span class='line'><span class="cm">&quot;{</span>
-</span><span class='line'><span class="cm">    &quot;name&quot;: &quot;Jim Cowart&quot;,</span>
-</span><span class='line'><span class="cm">    &quot;location&quot;: {</span>
-</span><span class='line'><span class="cm">        &quot;city&quot;: {</span>
-</span><span class='line'><span class="cm">            &quot;name&quot;: &quot;Chattanooga&quot;,</span>
-</span><span class='line'><span class="cm">            &quot;population&quot;: 167674</span>
-</span><span class='line'><span class="cm">        },</span>
-</span><span class='line'><span class="cm">        &quot;state&quot;: {</span>
-</span><span class='line'><span class="cm">            &quot;name&quot;: &quot;Tennessee&quot;,</span>
-</span><span class='line'><span class="cm">            &quot;abbreviation&quot;: &quot;TN&quot;,</span>
-</span><span class='line'><span class="cm">            &quot;population&quot;: 6403000</span>
-</span><span class='line'><span class="cm">        }</span>
-</span><span class='line'><span class="cm">    },</span>
-</span><span class='line'><span class="cm">    &quot;company&quot;: &quot;appendTo&quot;</span>
-</span><span class='line'><span class="cm">}&quot;</span>
-</span><span class='line'><span class="cm">*/</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>那么-第二个参数呢？在上面的例子中简单地传了一个<code>null</code>。关于 “replacer” 参数-它可以是一个数组或者是一个函数。如果是一个数组，它将只输出你在该数组中所想要包含的keys。</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="c1">// 假定 person对象是上一例子中的那个，</span>
-</span><span class='line'><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">person</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">,</span> <span class="s2">&quot;company&quot;</span><span class="p">],</span> <span class="mi">4</span><span class="p">);</span>
-</span><span class='line'><span class="cm">/* 输出结果:</span>
-</span><span class='line'><span class="cm">&quot;{</span>
-</span><span class='line'><span class="cm">    &quot;name&quot;: &quot;Jim Cowart&quot;,</span>
-</span><span class='line'><span class="cm">    &quot;company&quot;: &quot;appendTo&quot;</span>
-</span><span class='line'><span class="cm">}&quot;</span>
-</span><span class='line'><span class="cm">*/</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>如果这 “replacer” 参数传入的是一个函数，那么这个函数需要有两个参数：key 和 value ：</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="c1">// a bit contrived, but it shows what&#39;s possible</span>
-</span><span class='line'><span class="c1">// FYI - 被序列化的值是第一个传给replacerFn的东西, 也即是这个对象的每一个key，因此需要检查key的真假。</span>
-</span><span class='line'><span class="kd">var</span> <span class="nx">replacerFn</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">key</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">key</span> <span class="o">||</span> <span class="nx">key</span> <span class="o">===</span> <span class="s1">&#39;name&#39;</span> <span class="o">||</span> <span class="nx">key</span> <span class="o">===</span> <span class="s1">&#39;company&#39;</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>        <span class="k">return</span> <span class="nx">value</span><span class="p">;</span>
-</span><span class='line'>    <span class="p">}</span>
-</span><span class='line'>    <span class="k">return</span><span class="p">;</span> <span class="c1">//返回 undefined 并忽略 </span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">person</span><span class="p">,</span> <span class="nx">replacerFn</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
-</span><span class='line'><span class="cm">/* produces:</span>
-</span><span class='line'><span class="cm">&quot;{</span>
-</span><span class='line'><span class="cm">    &quot;name&quot;: &quot;Jim Cowart&quot;,</span>
-</span><span class='line'><span class="cm">    &quot;company&quot;: &quot;appendTo&quot;</span>
-</span><span class='line'><span class="cm">}&quot;</span>
-</span><span class='line'><span class="cm">*/</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>你可以使用替换方法来处理得到 <strong><em>黑名单</em></strong>成员的姓名（与此相对应的是，使用<strong><em>白名单</em></strong>数组作为“replacer” 参数）。我发现这种方法是有用的，尤其当我需要迅速并且有针对性的得到一个DOM元素的值，但我希望阻止一个序列化循环引用的异常（当我drank some antifreeze 或是试图做些荒谬的做法如JSON.stringify(document.body)的时候）。Feel free to browse <a href="http://jsfiddle.net/ifandelse/6Yj5h/">this fiddle</a> for a simple example of using a replacer function to blacklist based on member name(s).</p>
-
-<p>当然，另一个得到自定义某个对象的JSON序列化的选择是在对象中使用“toJSON”方法</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="kd">var</span> <span class="nx">person</span> <span class="o">=</span> <span class="p">{</span>
-</span><span class='line'>    <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;Jim Cowart&quot;</span><span class="p">,</span>
-</span><span class='line'>    <span class="nx">location</span><span class="o">:</span> <span class="p">{</span>
-</span><span class='line'>        <span class="nx">city</span><span class="o">:</span> <span class="p">{</span>
-</span><span class='line'>            <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;Chattanooga&quot;</span><span class="p">,</span>
-</span><span class='line'>            <span class="nx">population</span><span class="o">:</span> <span class="mi">167674</span>
-</span><span class='line'>        <span class="p">},</span>
-</span><span class='line'>        <span class="nx">state</span><span class="o">:</span> <span class="p">{</span>
-</span><span class='line'>            <span class="nx">name</span><span class="o">:</span> <span class="s2">&quot;Tennessee&quot;</span><span class="p">,</span>
-</span><span class='line'>            <span class="nx">abbreviation</span><span class="o">:</span> <span class="s2">&quot;TN&quot;</span><span class="p">,</span>
-</span><span class='line'>            <span class="nx">population</span><span class="o">:</span> <span class="mi">6403000</span>
-</span><span class='line'>        <span class="p">}</span>
-</span><span class='line'>    <span class="p">},</span>
-</span><span class='line'>    <span class="nx">company</span><span class="o">:</span> <span class="s2">&quot;appendTo&quot;</span><span class="p">,</span>
-</span><span class='line'>    <span class="nx">toJSON</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>        <span class="k">return</span> <span class="p">{</span>
-</span><span class='line'>            <span class="nx">booyah</span> <span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span> <span class="s1">&#39; , employer: &#39;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">company</span>
-</span><span class='line'>        <span class="p">};</span>
-</span><span class='line'>    <span class="p">}</span>
-</span><span class='line'><span class="p">};</span>
-</span><span class='line'>
-</span><span class='line'><span class="c1">// 上面的toJSON返回的值</span>
-</span><span class='line'><span class="c1">// 实际上被字符串化的:</span>
-</span><span class='line'><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">person</span><span class="p">,</span> <span class="kc">null</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
-</span><span class='line'><span class="cm">/* produces:</span>
-</span><span class='line'><span class="cm">&quot;{</span>
-</span><span class='line'><span class="cm">    &quot;booyah&quot;: &quot;Jim Cowart , employer: appendTo&quot;</span>
-</span><span class='line'><span class="cm">}&quot;</span>
-</span><span class='line'><span class="cm">*/</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<blockquote><p>“说真的，Jim。比起在控制台写更漂亮的JSON我们有更重要的事情要做。”</p></blockquote>
-
-<p>You don’t have to convince me, I’m with you 110%. 但我会说，当你为了调试已发布的信息的可视性或者logging websocket payloads而 wire-tapping a message bus 的时候更好看的JSON格式化会让一切都不同。（囧 、o(╯□╰)o）能够通过白名单替换数组（或者黑名单替换函数）来有选择的序列化对象，可以很方便地在DOM元素/事件上帮助你跟踪问题，或者简单地让你在复杂的交互上有更好的可视化，without de-railing you with serialization exceptions.</p>
-
-<p>原文来自 Jim Cowart ，<a href="http://freshbrewedcode.com/jimcowart/2013/01/29/what-you-might-not-know-about-json-stringify/?utm_source=javascriptweekly&amp;utm_medium=email">What You Might Not Know About JSON.stringify()</a></p>
-
-<p>XguoX<br/>
-- Actually，其实这个在Nicholas C.Zakas的《JavaScript高级程序设计》第20章关于JSON的介绍讲的也很详细。比我这蹩脚翻译要好得多。</p>
 ]]></content>
   </entry>
   

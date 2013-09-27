@@ -9,7 +9,7 @@
   <meta name="author" content="XguoX">
 
   
-  <meta name="description" content="引言 想知道这个新奇又好玩的东西&#8212;Meteor是如何工作的?那就太好了,你来对地方了. 我会向你展示一个Meteor项目的方方面面 并会给你一些最好的提示让你应用在未来自己的Meteor项目当中. What is Meteor &hellip;">
+  <meta name="description" content="最近,有许多关于 Derby.js的激动人心的讨论涌现在了我的Twitter Timeline. 我从未使用过能够帮你做这么多&#8211;实时同步客户端和服务端 的框架. 从本质上讲, 这使得我们可以自己编写一个代码量很少的应用可以让两个人编写同一个 text field–live. 而 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -21,16 +21,13 @@
   <link rel="canonical" href="http://xguox.github.com/blog/page/3/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-   <link href="/stylesheets/data-table.css" media="screen, projection" rel="stylesheet" type="text/css" />
   <script src="/javascripts/modernizr-2.0.js"></script>
   <script src="/javascripts/ender.js"></script>
   <script src="/javascripts/octopress.js" type="text/javascript"></script>
   <link href="/atom.xml" rel="alternate" title="XguoX" type="application/atom+xml">
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-
+<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic' rel='stylesheet' type='text/css'>
 
   
   <script type="text/javascript">
@@ -50,27 +47,11 @@
 
 <body   >
   <header role="banner"><hgroup>
+  <!-- <img src="/images/ah_frame_transparent.png" /> -->
+  <h1><a href="/">XguoX</a></h1>
 </hgroup>
 
 </header>
-  <!-- <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
-</ul>
-  
-<form action="http://google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:xguox.github.com" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul class="main-navigation">
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
-</ul>
-
-</nav> -->
   <div id="main">
     <div id="content">
       <div class="blog-index">
@@ -81,11 +62,72 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2013/03/10/introduction-to-realtime-web-with-meteor-dot-js-and-node-dot-js/">Introduction to Realtime Web With Meteor and Node.js</a></h1>
+    
+  </header>
+
+
+  
+    <p class="meta">
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-10T23:16:00+08:00" pubdate data-updated="true">Mar 10<span>th</span>, 2013</time>
+      
+       | <a href="/blog/2013/03/10/introduction-to-realtime-web-with-meteor-dot-js-and-node-dot-js/#disqus_thread">Comments</a>
+      
+    </p>
+  
+  
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/meteor/'>Meteor</a>, <a class='category' href='/blog/categories/translation/'>Translation</a>
+  
+</span>
+
+
+  <div class="entry-content"><p>最近,有许多关于 <a href="http://derbyjs.com/">Derby.js</a>的激动人心的讨论涌现在了我的Twitter Timeline. 我从未使用过能够帮你做这么多&#8211;实时同步客户端和服务端 的框架. 从本质上讲, 这使得我们可以自己编写一个代码量很少的应用可以让两个人编写同一个 text field–live. 而 Derby帮你处理了在 models 和 views 之间所有的同步. 就如 Google Docs 的协作编辑那样.</p>
+
+<p>这非常的伟大, 但经过深入的研究, 发现 Derby.js 并没有我想象中的那么成熟&#8211;目前还没有到1.0版本. 当然, Node.js 和 Meteor 也同样没有. 但相比起来, 似乎Derby缺少的更多一些. 比如, 据我目前知道的, 还没有一个好使的方法来处理sessions. 或许是因为缺乏文档的原因吧, 但是, 据说Derby的团队目前正在开发authentication. 如果有谁有一些关于Derby.js 处理sessions的新手指引, 我会很乐意去研究的.</p>
+
+<p>另外一个我经常见到被拿来与Derby.js做比较的框架是<a href="http://Meteor.com/">Meteor</a>. 与Derby相似的是,它也能在多个客户端下实时更新views, 尽管做法上可能跟Derby有点不同. Derby可以较容易的使用多种数据库, 而Meteor则只亲近于<a href="http://mongodb.org/">MongoDB</a>. 事实上, 通过如<a href="http://mongoosejs.com/">Mongoose</a>客户端接入数据库的API与你在服务端所期望的已经非常接近了.</p>
+
+<p>比起现在node的一些缺点和<a href="http://bjouhier.wordpress.com/2012/03/11/fibers-and-threads-in-node-js-what-for/">争议</a>, Meteor看起来是非常有趣的选择用来建立有实时需求的应用. 个人觉得还是Derby基于传统回调的编程形式更吸引我, 但在Derby的强大背后,却缺乏健壮的文档和一个大的开发者社区, 这无疑是个很大的打击. 或许这会随着时间推移而有所改变吧, 但比起Meteor来说还是会慢很多, 因为后者最近获得了1100万美元的资金. 这笔财政资金确保了Meteor的存在以及得到持续的支持. 对于那些需要财政与发展稳定的框架的开发者而言, 这笔资金只会让Meteor更加优胜.</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/03/10/introduction-to-realtime-web-with-meteor-dot-js-and-node-dot-js/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2013/03/08/learn-meteor-fundamentals-and-best-practices/">Meteor基础与最佳实践</a></h1>
     
-    
-      <p class="meta">
-        
+  </header>
+
+
+  
+    <p class="meta">
+      
 
 
 
@@ -98,12 +140,18 @@
 
 
 <time datetime="2013-03-08T17:42:00+08:00" pubdate data-updated="true">Mar 8<span>th</span>, 2013</time>
-        
-         | <a href="/blog/2013/03/08/learn-meteor-fundamentals-and-best-practices/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
+      
+       | <a href="/blog/2013/03/08/learn-meteor-fundamentals-and-best-practices/#disqus_thread">Comments</a>
+      
+    </p>
+  
+  
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/meteor/'>Meteor</a>, <a class='category' href='/blog/categories/translation/'>Translation</a>
+  
+</span>
 
 
   <div class="entry-content"><h2>引言</h2>
@@ -140,9 +188,12 @@ Meteor目前使用的模板引擎只能是 <a href="http://handlebarsjs.com/">ha
     
       <h1 class="entry-title"><a href="/blog/2013/03/06/a-look-at-a-meteor-template/">A Look at a Meteor Template</a></h1>
     
-    
-      <p class="meta">
-        
+  </header>
+
+
+  
+    <p class="meta">
+      
 
 
 
@@ -155,12 +206,18 @@ Meteor目前使用的模板引擎只能是 <a href="http://handlebarsjs.com/">ha
 
 
 <time datetime="2013-03-06T14:40:00+08:00" pubdate data-updated="true">Mar 6<span>th</span>, 2013</time>
-        
-         | <a href="/blog/2013/03/06/a-look-at-a-meteor-template/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
+      
+       | <a href="/blog/2013/03/06/a-look-at-a-meteor-template/#disqus_thread">Comments</a>
+      
+    </p>
+  
+  
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/meteor/'>Meteor</a>, <a class='category' href='/blog/categories/translation/'>Translation</a>
+  
+</span>
 
 
   <div class="entry-content"><h5>LEVEL: BEGINNER</h5>
@@ -198,9 +255,12 @@ Meteor目前使用的模板引擎只能是 <a href="http://handlebarsjs.com/">ha
     
       <h1 class="entry-title"><a href="/blog/2013/03/05/getting-started-with-meteor/">Getting Started With Meteor</a></h1>
     
-    
-      <p class="meta">
-        
+  </header>
+
+
+  
+    <p class="meta">
+      
 
 
 
@@ -213,12 +273,18 @@ Meteor目前使用的模板引擎只能是 <a href="http://handlebarsjs.com/">ha
 
 
 <time datetime="2013-03-05T23:02:00+08:00" pubdate data-updated="true">Mar 5<span>th</span>, 2013</time>
-        
-         | <a href="/blog/2013/03/05/getting-started-with-meteor/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
+      
+       | <a href="/blog/2013/03/05/getting-started-with-meteor/#disqus_thread">Comments</a>
+      
+    </p>
+  
+  
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/meteor/'>Meteor</a>, <a class='category' href='/blog/categories/translation/'>Translation</a>
+  
+</span>
 
 
   <div class="entry-content"><h5>LEVEL: BEGINNER</h5>
@@ -261,9 +327,12 @@ Meteor目前使用的模板引擎只能是 <a href="http://handlebarsjs.com/">ha
     
       <h1 class="entry-title"><a href="/blog/2013/02/08/should-you-use-strict-in-your-production-javascript/">你应该在生产环境下使用JavaScript的严格模式（strict Mode）吗？</a></h1>
     
-    
-      <p class="meta">
-        
+  </header>
+
+
+  
+    <p class="meta">
+      
 
 
 
@@ -276,12 +345,18 @@ Meteor目前使用的模板引擎只能是 <a href="http://handlebarsjs.com/">ha
 
 
 <time datetime="2013-02-08T09:32:00+08:00" pubdate data-updated="true">Feb 8<span>th</span>, 2013</time>
-        
-         | <a href="/blog/2013/02/08/should-you-use-strict-in-your-production-javascript/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
+      
+       | <a href="/blog/2013/02/08/should-you-use-strict-in-your-production-javascript/#disqus_thread">Comments</a>
+      
+    </p>
+  
+  
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/javascript/'>JavaScript</a>, <a class='category' href='/blog/categories/translation/'>Translation</a>
+  
+</span>
 
 
   <div class="entry-content"><p>ECMAScript 5 中引入了一种定义,可以切换让你的JavaScript代码是否在所谓的 <strong>严格模式(strict mode)</strong>下执行。因为在strict mode下，当浏览器遇到一些脚本中包含有不好的代码做法时，即使没有语法上的错误也会抛出runtime错误，因而常常被吹捧为一种显著有益于捕获程序员错误的方式。</p>
@@ -308,9 +383,12 @@ Meteor目前使用的模板引擎只能是 <a href="http://handlebarsjs.com/">ha
     
       <h1 class="entry-title"><a href="/blog/2013/02/07/about-translation/">About My Translation</a></h1>
     
-    
-      <p class="meta">
-        
+  </header>
+
+
+  
+    <p class="meta">
+      
 
 
 
@@ -323,12 +401,18 @@ Meteor目前使用的模板引擎只能是 <a href="http://handlebarsjs.com/">ha
 
 
 <time datetime="2013-02-07T18:05:00+08:00" pubdate data-updated="true">Feb 7<span>th</span>, 2013</time>
-        
-         | <a href="/blog/2013/02/07/about-translation/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
+      
+       | <a href="/blog/2013/02/07/about-translation/#disqus_thread">Comments</a>
+      
+    </p>
+  
+  
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/jabber/'>Jabber</a>, <a class='category' href='/blog/categories/translation/'>Translation</a>
+  
+</span>
 
 
   <div class="entry-content"><p><strong>First off</strong>，以俺目前的各种水平，想写出一些好的 technical articles 是有点难度的啦。于是乎，我选择了翻译国外一些好的文章。不管多么新鲜的技术，就算找不着中文资料，也一定没少英文文档。比如最近发现的几个挺不错<a href="https://cooperpress.com/">weekly</a>（其实也不是最近才发现，也订阅了有大半年吧，不过其实是只订不阅，或者阅的比较少。惰性心理啊。）以及一些国外牛人BLOG。Share下我的文章的主要来源吧.</p>
@@ -368,9 +452,12 @@ Meteor目前使用的模板引擎只能是 <a href="http://handlebarsjs.com/">ha
     
       <h1 class="entry-title"><a href="/blog/2013/02/01/what-you-might-not-know-about-json-dot-stringify/">你可能不知道的JSON.stingify()</a></h1>
     
-    
-      <p class="meta">
-        
+  </header>
+
+
+  
+    <p class="meta">
+      
 
 
 
@@ -383,12 +470,18 @@ Meteor目前使用的模板引擎只能是 <a href="http://handlebarsjs.com/">ha
 
 
 <time datetime="2013-02-01T18:06:00+08:00" pubdate data-updated="true">Feb 1<span>st</span>, 2013</time>
-        
-         | <a href="/blog/2013/02/01/what-you-might-not-know-about-json-dot-stringify/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
+      
+       | <a href="/blog/2013/02/01/what-you-might-not-know-about-json-dot-stringify/#disqus_thread">Comments</a>
+      
+    </p>
+  
+  
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/json/'>JSON</a>, <a class='category' href='/blog/categories/translation/'>Translation</a>
+  
+</span>
 
 
   <div class="entry-content"><p>几乎所有开发人员都会花一些时间在JavaScript上，有些时候是在使用JSON.stingify（以及与之相对应的，JSON.parse）。JSON - Javascript Object Notation - 已经成为许多开发人员理想的数据交换格式（the go-to data-interchange format）- 并且有许多语言支持序列化为JSON,而不仅仅只有JavaScript本身。如果哪天你半夜起来又无法入睡了，可以查一查关于<a href="http://en.wikipedia.org/wiki/JSON#History">JSON</a>的历史（tl;dr – Douglas Crockford is the brain behind it）</p>
@@ -404,60 +497,25 @@ Meteor目前使用的模板引擎只能是 <a href="http://handlebarsjs.com/">ha
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/01/27/nokia-microsoft-win8-wp8/">Microsoft?Win8?WP8?死忠Nokia</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-01-27T19:48:00+08:00" pubdate data-updated="true">Jan 27<span>th</span>, 2013</time>
-        
-         | <a href="/blog/2013/01/27/nokia-microsoft-win8-wp8/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>打从开始用手机就是NOKIA，初初的<strong>7360</strong> -> <strong>5700</strong> -> <strong>N85</strong>。还行吧，这么多年来一直坚持着，也算个NOKIA死忠粉丝瓜。从85换到现今的撸妹820期间，用过一台塞班的c6和iOS的3GS，以及短暂的耍过一些低端android。最后选择了Windows Phone 8，有出于对其的看好，对metro的喜爱，还有他们说的，90后就是要个性，与众不同。</p>
-
-<p>首先，简单说说<strong>撸妹820</strong>吧，系统运行的流畅程度的挺满意的。其实CPU、RAM的配置跟撸妹920一样的。尽管800 x 480在现今主流配置来说拖了后腿，尽管整台机器我最不喜欢的是这块屏幕，不过暂时对我来说已经很不错下，毕竟木有用过720P，更没用过传说中的1080P，所以理解不来分辨率倒退的落差。</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2013/01/27/nokia-microsoft-win8-wp8/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/4/">&larr; Older</a>
     
-    <a href="archives">Blog Archives</a>
+    <a href="/blog/archives">Blog Archives</a>
     
     <a class="next" href="/blog/page/2/">Newer &rarr;</a>
     
   </div>
 </div>
 <aside class="sidebar">
+  
+    <form action="http://google.com/search" method="get">
+      <fieldset role="search">
+        <input type="hidden" name="q" value="site:xguox.github.com" />
+        <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+      </fieldset>
+    </form>
+  
   
     <section>
   <ul id="recent_posts">
@@ -466,22 +524,19 @@ Meteor目前使用的模板引擎只能是 <a href="http://handlebarsjs.com/">ha
       <a href="/archives/" alt="Archives"><img src="/images/Calendar.png"></a>
       <a href="mailto:golvinlu@gmail.com" alt="E-Mail"><img src="/images/Envelope.png"></a>
       <a href="/about/" alt="About XguoX"><img src="/images/User.png"></a>
-      <a href="http://gplus.to/xguox" alt="XguoX" target="_blank"><img src="/images/googleplus.png"></a>
-      <a href="https://twitter.com/XguoX_L" alt="XguoX" target="_blank"><img src="/images/tw.png"></a>
-      <a href="http://cn.linkedin.com/pub/grover-lu/65/8ba/4a5" alt="XguoX" target="_blank"><img src="/images/linkedin.png"></a>
-      <a href="/atom.xml" alt="subscribe feed"><img src="/images/rss_big1.png"></a>
+      <a href="/atom.xml" alt="subscribe feed"><img src="/images/rss_big.png"></a>
       </li>
   </ul>
 </section>
 
 <section>
 <h1>Category</h1>
-<span class='categories_tag'> <a href='/blog/categories/books' style='font-size: 101.875%'>Books</a>  <a href='/blog/categories/css' style='font-size: 101.875%'>Css</a>  <a href='/blog/categories/hexo' style='font-size: 101.875%'>Hexo</a>  <a href='/blog/categories/jabber' style='font-size: 160.0%'>Jabber</a>  <a href='/blog/categories/javascript' style='font-size: 101.875%'>Javascript</a>  <a href='/blog/categories/json' style='font-size: 101.875%'>Json</a>  <a href='/blog/categories/meteor' style='font-size: 113.125%'>Meteor</a>  <a href='/blog/categories/onepiece' style='font-size: 101.875%'>Onepiece</a>  <a href='/blog/categories/performance' style='font-size: 101.875%'>Performance</a>  <a href='/blog/categories/rails' style='font-size: 116.875%'>Rails</a>  <a href='/blog/categories/repost' style='font-size: 105.625%'>Repost</a>  <a href='/blog/categories/ruby' style='font-size: 116.875%'>Ruby</a>  <a href='/blog/categories/sublime' style='font-size: 101.875%'>Sublime</a>  <a href='/blog/categories/translation' style='font-size: 126.25%'>Translation</a>  <a href='/blog/categories/travel' style='font-size: 107.5%'>Travel</a> </span>
+<span class='categories_tag'> <a href='/blog/categories/books' style='font-size: 101.81818181818181%'>Books</a>  <a href='/blog/categories/css' style='font-size: 101.81818181818181%'>Css</a>  <a href='/blog/categories/hexo' style='font-size: 101.81818181818181%'>Hexo</a>  <a href='/blog/categories/jabber' style='font-size: 160.0%'>Jabber</a>  <a href='/blog/categories/javascript' style='font-size: 101.81818181818181%'>Javascript</a>  <a href='/blog/categories/json' style='font-size: 101.81818181818181%'>Json</a>  <a href='/blog/categories/meteor' style='font-size: 112.72727272727272%'>Meteor</a>  <a href='/blog/categories/onepiece' style='font-size: 101.81818181818181%'>Onepiece</a>  <a href='/blog/categories/performance' style='font-size: 101.81818181818181%'>Performance</a>  <a href='/blog/categories/rails' style='font-size: 116.36363636363636%'>Rails</a>  <a href='/blog/categories/repost' style='font-size: 105.45454545454545%'>Repost</a>  <a href='/blog/categories/ruby' style='font-size: 116.36363636363636%'>Ruby</a>  <a href='/blog/categories/sublime' style='font-size: 101.81818181818181%'>Sublime</a>  <a href='/blog/categories/translation' style='font-size: 125.45454545454545%'>Translation</a>  <a href='/blog/categories/travel' style='font-size: 107.27272727272727%'>Travel</a> </span>
 </section>
 
 
 <section class="even">
-<iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=1&isTitle=0&noborder=0&isWeibo=1&isFans=0&uid=1660802261&verifier=0594649b&dpc=1"></iframe>
+	<iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=zh_cn&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=4&isTitle=0&noborder=0&isWeibo=1&isFans=0&uid=1660802261&verifier=0594649b&colors=d04e38,d04e38,ffffff,0082cb,f08456&dpc=1"></iframe>
 </section>
 
 
@@ -489,7 +544,7 @@ Meteor目前使用的模板引擎只能是 <a href="http://handlebarsjs.com/">ha
 <section class="last odd">
 <h1>My <span style="color: #0063dc;">Flick<span style="color: #ff0084;">r</h1>
 <style type="text/css">
-	#flickrList li { text-align: left; display:inline; margin: 0 2px 0 2px;}
+	#flickrList li { text-align: left; display:inline; margin: 0 2px;}
 </style>
 <ul id="flickrList"></ul>
 <script lang="Javascript">
@@ -515,6 +570,10 @@ function jsonFlickrApi(rsp) {
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/09/27/back-to-code/">Back to Code</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/06/03/photos-and-stories/">照片的故事</a>
       </li>
     
@@ -538,10 +597,6 @@ function jsonFlickrApi(rsp) {
         <a href="/blog/2013/04/13/traveling-writing-programming/">[Repost]旅行，写作，编程</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2013/04/11/jabber-sublime/">扯点Sublime</a>
-      </li>
-    
   </ul>
 </section>
 
@@ -555,20 +610,7 @@ function jsonFlickrApi(rsp) {
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 
-<!-- 
-  <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-39166710-1']);
-    _gaq.push(['_trackPageview']);
-
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
-
-  --></footer>
+</footer>
   
 
 <script type="text/javascript">
@@ -611,6 +653,9 @@ function jsonFlickrApi(rsp) {
 
 
 
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="/javascripts/aharris.js"></script>
 
 </body>
 </html>
