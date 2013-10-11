@@ -85,7 +85,7 @@
 <p>好吧，其实，我对这些改进啊有的没的还不怎么敏感。所以与其要看我介绍新功能新特性还不如直接搜索。</p>
 
 <p>我敏感的只是，我的一些rails项目都跑不动了。passenger报错
-Liquid error: undefined method `join&#8217; for #&lt;String:0x007fc7095457e0>
+Liquid error: undefined method `join&#8217; for #&lt;String:0x007fc41ac12088>
 我还以为是我缺少了libmysqlclient_r.so.16这个文件，自己下载了之后也还是不行。期间尝试重装mysql，也试过之前说的那个，安装各种组建的命令还是无果。最终在ruby-china得到大神指点，居然只需卸了重装mysql2这个gem就可以了。貌似是因为/usr/lib 下的mysql2.so没有link到gem里边的mysql2.so
 过后，还是跟往常没有多大差别的继续Rails&#8230;</p>
 </div>
