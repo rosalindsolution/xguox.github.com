@@ -5,12 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Back to Code - XguoX</title>
+  <title>简书，Safari(Mac)，Bug? - XguoX</title>
   <meta name="author" content="XguoX">
 
   
-  <meta name="description" content="好多年以前，在「街头篮球」这款游戏看到过的一句，「一天不碰球，就一天没长进」。
-而今，我是好几个月没真正意义的code，所以，这状态，想不roll back都难，更何求长进。 真心，重头来过也忽然无从下手。 打开Octopress准备更新，发觉连Git的一些命令的想了好久才想起来。 &hellip;">
+  <meta name="description" content="前不久在twitter跟@larry 反馈了的Bug，但是当时很快耍着耍着就没了，又正常了，于是撒手结帖了。然则，比较奇葩，刚刚又不小心再现了，虽然只是很微小的一处不妥，但影响到UX的话， 我表示有点轻微的强迫症，外加Twitter上 140 字符配以我的文字水平不足以表述清楚。所以还是写作文好了 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://xguox.github.com/blog/2013/09/27/back-to-code/">
+  <link rel="canonical" href="http://xguox.github.com/blog/2013/10/13/jianshu-tiny-bug/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -60,64 +59,41 @@
   
   <header>
     
-      <h1 class="entry-title">Back to Code</h1>
+      <h1 class="entry-title">简书，Safari(Mac)，Bug?</h1>
     
   </header>
 
 
 
 
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/jabber/'>Jabber</a>
-  
-</span>
 
+<div class="entry-content"><p>前不久在<a href="https://twitter.com/XguoX_L/statuses/388577622990389248">twitter</a>跟@larry 反馈了的Bug，但是当时很快耍着耍着就没了，又正常了，于是撒手结帖了。然则，比较奇葩，刚刚又不小心再现了，虽然只是很微小的一处不妥，但影响到UX的话， 我表示有点轻微的强迫症，外加Twitter上 140 字符配以我的文字水平不足以表述清楚。所以还是写作文好了。</p>
 
-<div class="entry-content"><p>好多年以前，在「街头篮球」这款游戏看到过的一句，「一天不碰球，就一天没长进」。<br/>
-而今，我是好几个月没真正意义的code，所以，这状态，想不roll back都难，更何求长进。</p>
+<p>鉴于上一次滚动条受Thunder插件的影响，所以这次我把Safari的插件全关了。(同样方式，其他浏览器无任何异常)</p>
 
-<p>真心，重头来过也忽然无从下手。</p>
+<p>这个Bug是这样的:</p>
 
-<p>打开Octopress准备更新，发觉连Git的一些命令的想了好久才想起来。</p>
+<blockquote><p>删除文章的垃圾桶icon在Safari下hover在中间和右边表示不能点选(如图，鼠标未改变)，只有hover在偏向左侧的地方才work，其他浏览器正常。</p></blockquote>
 
-<p>看到Git的提示里冒出有
- <code>
-git bisect reset
-</code>
-这货功能很强大呀，昏了，之前怎么完全没印象有过着玩意的？又是学艺不精啊！</p>
+<p><img src="https://7nmnbw.dm2302.livefilestore.com/y2pMd9Hqqq8zcLNm4HmC2VAXY0If8JNgrxOQ_YyS5esT5C65NGiPyPXRGBas-Ggdk13KnyUpKqHmk7maKNQ2A29iNMWEjSIoPGIErQmhg0Akzo/tu1.jpg?psid=1" alt="" /></p>
 
-<!-- more -->
+<p>正常情况下(鼠标的形状)应该是</p>
 
+<p><img src="https://7nomkg.dm1.livefilestore.com/y2pnQSLb70jLri1R75fAlctMv9tStL7PtnGGP3-9mbRg3ncEeEmRaKOTcxCzdUxpjxXlxMBvtFfQzeR39oxhEFQLiojchvoAQj1RUHvqOvOda0/tu2.jpg?psid=1" alt="" /></p>
 
-<p>想把Octopress更新到2.1，一直略期待着，却一直在preview状态，今儿却才发现，2.1的branch挂了，倒是多了个 3.0的branch。</p>
+<p><strong>为什么偶尔会正常，偶尔抽风？</strong></p>
 
-<p>好吧，老规矩的话，那就换个新面孔好了。这不流行Flat-UI嘛。发现一个还不错的&#8212;<a href="https://github.com/alexharris/octopress-flat/">octopress-flat</a>。加上自己做一些些个修改。</p>
+<p>请看下面两图，看看有啥不同</p>
 
-<p>and then 准备new_post的时候报了这玩意，奇葩了，之前zsh貌似不见报这错的啊？难道几个月不碰就变的面目全非了。
-<code>
-zsh: no matches found: new_post
-</code></p>
+<p><img src="https://h0hcka.dm1.livefilestore.com/y2pA5ROBtWFdo3kL875emP4XeTT-N7OzbNPXLq1AmqEx1XYSHM40ObSCBL5lkCK1GXPKC1BxSDd8EUsKiyjNWP8ZbC75vhdLewfOKOBLrSd_j4/tu3.jpg?psid=1" alt="" /></p>
 
-<p>搜之，在~/.zshrc 里添加
-<code>
-alias rake="noglob rake"
-</code></p>
+<p><img src="https://h0j3ba.dm2302.livefilestore.com/y2pibC_etDmFwTYabbHWr8bXvV4USwL-NF922Ax2NkXzIH6kOYg4uxNoVs-AKL5c0qJH74vJssJxcziLn2TMu43YVVuIZ81IDDOqhzP0d-iA_o/tu4.jpg?psid=1" alt="" /></p>
 
-<p>前些时间落下了好多东西，包括刚着手的翻译行当还有初尝Meteor。</p>
+<p>经反复的、<strong>不严格的</strong>控制变量法实验，目前我的解释是，当一个文集里边的文章数量足够多到出现中间栏的滚动条之后, 就会出现这个删除icon不正常的状况。</p>
 
-<p>在写简书那会，虽远远称不上精通全端、一锅端，但也绝不至于像现在这样什么都端不起来。
-现在想再端起来，还要各种瞻前顾后的，连端啥都决定不好。</p>
+<p>至于，为嘛出现这种情况，留给简书的小伙伴们吧。</p>
 
-<p>想来，回上海或者北漂几乎没啥可能，尽管我很enjoy上海那段日子。so，目测往后也是在珠三角荡悠。要是能找到一份remote job，那就更好不过了。说起来，一直很想去佛山那家创业公司。前年还是他家boss指引我才开始知道并用上Github。现在是更想去了，因为他们支持远程工作 XD</p>
-
-<p>but,现在的我比起11年那会还不行。这情何以堪。</p>
-
-<p>好吧。Anyway，一切都只能等痊愈再说！</p>
-
-<p>消沉够了就要回到正轨奋斗了。好好利用这几个月。</p>
-
-<p>接下来&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;..要不要，从HTML重新开始呢呢呢,不知道俺的Ruby/Rails 还剩几多斤两呢, 好吧,都不是, 从工具开始, 回归使用Vim好了&#8230;&#8230;&#8230;&#8230;&#8230;.</p>
+<p>请使用Mac的用户帮忙测试看看，看是通病还是我个人机器、软件等出了问题。</p>
 </div>
 
 
@@ -140,12 +116,12 @@ alias rake="noglob rake"
   
 
 
-<time datetime="2013-09-27T14:12:00+08:00" pubdate data-updated="true">Sep 27<span>th</span>, 2013</time>
+<time datetime="2013-10-13T22:26:00+08:00" pubdate data-updated="true">Oct 13<span>th</span>, 2013</time>
     </p>
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://xguox.github.com/blog/2013/09/27/back-to-code/" data-via="" data-counturl="http://xguox.github.com/blog/2013/09/27/back-to-code/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://xguox.github.com/blog/2013/10/13/jianshu-tiny-bug/" data-via="" data-counturl="http://xguox.github.com/blog/2013/10/13/jianshu-tiny-bug/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -156,10 +132,8 @@ alias rake="noglob rake"
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2013/06/03/photos-and-stories/" title="Previous Post: 照片的故事">&laquo; 照片的故事</a>
+        <a class="basic-alignment left" href="/blog/2013/10/11/one-piece-recently/" title="Previous Post: 由OP最近的拖剧情说起">&laquo; 由OP最近的拖剧情说起</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2013/10/11/one-piece-recently/" title="Next Post: 由OP最近的拖剧情说起">由OP最近的拖剧情说起 &raquo;</a>
       
     </p>
   </footer>
@@ -277,8 +251,8 @@ function jsonFlickrApi(rsp) {
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://xguox.github.com/blog/2013/09/27/back-to-code/';
-        var disqus_url = 'http://xguox.github.com/blog/2013/09/27/back-to-code/';
+        var disqus_identifier = 'http://xguox.github.com/blog/2013/10/13/jianshu-tiny-bug/';
+        var disqus_url = 'http://xguox.github.com/blog/2013/10/13/jianshu-tiny-bug/';
         var disqus_script = 'embed.js';
       
     (function () {
