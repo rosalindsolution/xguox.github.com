@@ -4,7 +4,7 @@
   <title><![CDATA[XguoX]]></title>
   <link href="http://xguox.github.com/atom.xml" rel="self"/>
   <link href="http://xguox.github.com/"/>
-  <updated>2013-10-14T15:19:06+08:00</updated>
+  <updated>2013-10-14T16:01:52+08:00</updated>
   <id>http://xguox.github.com/</id>
   <author>
     <name><![CDATA[XguoX]]></name>
@@ -66,7 +66,7 @@
 
 <p>表示理解动画要拖拖剧情等漫画，但这拖得略不靠谱了吧。如果只是为了等漫画，那我觉得偶尔直接来个停播会好点呢？完全可以理解啊，就像漫画前不久也停刊好几回，当然那是照顾到尾田大神的身体状况，不管怎样，完全可以理解。又或者跟以往那样来些个什么番外篇打酱油，也都总比这样把一集的剧情拖沓成这样要好。</p>
 
-<p>相比之下，漫画的剧情引导显得顺多了。  以「顶上战争」作为分界的两年后的新世界篇，在漫画里头与两年前的剧情相比有过之而无不及。但在动画里头，给我的感觉却是，比之两年前的剧情，那是相去甚远，之所以产生这种心理，应该是缘由这剧情拖沓。反正1 - 570+的动画重看了N次，没有一次说是强烈地觉得剧情拖沓跳过哪一集。而今，好几集好几次我都想按快进 =。=  但还是没有按下去。 难道，是因为时间的作用使之沉淀下来，难道现在的剧情也要等过上些时间沉淀才会打消这些感觉？</p>
+<p>相比之下，漫画的剧情引导显得顺多了。  以「顶上战争」作为分界的两年后的新世界篇，在漫画里头与两年前的剧情相比有过之而无不及。但在动画里头，给我的感觉却是，比之两年前的剧情，那是相去甚远，之所以产生这种心理，应该是缘由这剧情拖沓。反正1 &ndash; 570+的动画重看了N次，没有一次说是强烈地觉得剧情拖沓跳过哪一集。而今，好几集好几次我都想按快进 =。=  但还是没有按下去。 难道，是因为时间的作用使之沉淀下来，难道现在的剧情也要等过上些时间沉淀才会打消这些感觉？</p>
 
 <p>最后，我发觉并深感OP里最喜欢的不是Luffy君，说不上谁是最喜欢的角色，但，可以肯定，对 罗宾酱&amp;索大 的喜欢更多一些。</p>
 
@@ -98,7 +98,7 @@ git bisect reset
 
 <p>想把Octopress更新到2.1，一直略期待着，却一直在preview状态，今儿却才发现，2.1的branch挂了，倒是多了个 3.0的branch。</p>
 
-<p>好吧，老规矩的话，那就换个新面孔好了。这不流行Flat-UI嘛。发现一个还不错的&#8212;<a href="https://github.com/alexharris/octopress-flat/">octopress-flat</a>。加上自己做一些些个修改。</p>
+<p>好吧，老规矩的话，那就换个新面孔好了。这不流行Flat-UI嘛。发现一个还不错的&mdash;&ndash;<a href="https://github.com/alexharris/octopress-flat/">octopress-flat</a>。加上自己做一些些个修改。</p>
 
 <p>and then 准备new_post的时候报了这玩意，奇葩了，之前zsh貌似不见报这错的啊？难道几个月不碰就变的面目全非了。
 <code>
@@ -123,7 +123,7 @@ alias rake="noglob rake"
 
 <p>消沉够了就要回到正轨奋斗了。好好利用这几个月。</p>
 
-<p>接下来&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;..要不要，从HTML重新开始呢呢呢,不知道俺的Ruby/Rails 还剩几多斤两呢, 好吧,都不是, 从工具开始, 回归使用Vim好了&#8230;&#8230;&#8230;&#8230;&#8230;.</p>
+<p>接下来&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;..要不要，从HTML重新开始呢呢呢,不知道俺的Ruby/Rails 还剩几多斤两呢, 好吧,都不是, 从工具开始, 回归使用Vim好了&hellip;&hellip;&hellip;&hellip;&hellip;.</p>
 ]]></content>
   </entry>
   
@@ -156,7 +156,7 @@ alias rake="noglob rake"
 <img src="http://farm6.staticflickr.com/5328/8942627264_17b43443fa.jpg" alt="" />
 <img src="http://farm9.staticflickr.com/8272/8942004051_e1ee9b1655.jpg" alt="" />
 <img src="http://farm8.staticflickr.com/7387/8942626614_68f3ce0409.jpg" alt="" /><br/>
-路，一个人走，两个人走&#8230;回头，总能望见你</p>
+路，一个人走，两个人走&hellip;回头，总能望见你</p>
 
 <p><img src="http://farm4.staticflickr.com/3722/8942006795_499d3efaf2.jpg" alt="" />
 <img src="http://farm9.staticflickr.com/8136/8942630138_91654db5d7.jpg" alt="" />
@@ -173,7 +173,7 @@ alias rake="noglob rake"
 <p><img src="http://farm8.staticflickr.com/7348/8941980615_d394b6f30f.jpg" alt="" />
 <img src="http://farm3.staticflickr.com/2850/8941978751_2d21c5ec0b.jpg" alt="" /><br/>
 你说，车站总给人有一种说不出的感觉。<br/>
-我说，等，等待，等车，等人&#8230;</p>
+我说，等，等待，等车，等人&hellip;</p>
 
 <p><img src="http://farm8.staticflickr.com/7359/8941984311_fd5057e945.jpg" alt="" />
 <img src="http://farm8.staticflickr.com/7385/8942620208_e60bb022e2.jpg" alt="" /> <br/>
@@ -184,7 +184,7 @@ alias rake="noglob rake"
 无力的文字已经不足以描述我有多爱这两张照片</p>
 
 <p><img src="http://farm4.staticflickr.com/3665/8941981741_85e92f11b2.jpg" alt="" /><br/>
-多谢路过的小师妹，一开始，因为我之前把ISO设置到了6400，还开着闪光灯，闪瞎了&#8230;折腾了几下才发现问题。<br/>
+多谢路过的小师妹，一开始，因为我之前把ISO设置到了6400，还开着闪光灯，闪瞎了&hellip;折腾了几下才发现问题。<br/>
 小师妹问，你们是大四的师兄吧？<br/>
 我可以这么回答吗？我们还在读高中！</p>
 
@@ -197,7 +197,7 @@ alias rake="noglob rake"
     <link href="http://xguox.github.com/blog/2013/05/14/negative-energy/"/>
     <updated>2013-05-14T23:05:00+08:00</updated>
     <id>http://xguox.github.com/blog/2013/05/14/negative-energy</id>
-    <content type="html"><![CDATA[<p>尽管日期标的是May，但是写的时候，是在April 27th - 并刚做完支纤镜 - 耳边塞着耳机，麻醉也还在，全身如喝醉酒那般，浑坨坨，当然只是轻度的，不然我也不可能写的出这些。<br/>
+    <content type="html"><![CDATA[<p>尽管日期标的是May，但是写的时候，是在April 27th &ndash; 并刚做完支纤镜 &ndash; 耳边塞着耳机，麻醉也还在，全身如喝醉酒那般，浑坨坨，当然只是轻度的，不然我也不可能写的出这些。<br/>
 被病魔缠着也有半年了，目测还得继续治疗休养多半年。<br/>
 说说这个支纤镜吧。第二次做。比起第一次，尽管有了些许经验(也正因为有经验)，做之前还是有些小紧张，表现主要有心跳略有加速。很重要的一点上次的医生没说而这次的医生教了，&#8221;(粤语)吞口水，无口水就做吞口水噶动作&#8221;。难受是必须的，在某个point我一个没忍着，口中就吐了一堆我自己也看不着啥，anyway，死不了。</p>
 
@@ -210,7 +210,7 @@ alias rake="noglob rake"
 好吧，其实我觉得不单这个我也要去找找心理医生。患病的这些日子以来，已被打磨的没有任何锐气了。<br/>
 身上多了一道大疤痕，尽管日常情况下几乎看不到。但是要是裸身照着镜子还是会被吓呆。再加上，看着自己瘦得这副排骨身板，哎，同样的那么大的痕，在Luffy和Zoro身上怎么能那么酷！<br/>
 身体的不堪，也让我辞去了工作的机会，好吧，实习。我坦然接受了，毕竟，我认识了 @linlis 他们，我的技术、认识也得到提高，好吧，我承认好久没碰过ruby/rails了。尴尬，连语法都生疏了。<br/>
-所有的这些，比较尴尬的是工作吧，看着身边认识不认识的同学拿到好的坏的offer，而我…即使再过些时日痊愈了…赶脚被拉开距离了&#8230;</p>
+所有的这些，比较尴尬的是工作吧，看着身边认识不认识的同学拿到好的坏的offer，而我…即使再过些时日痊愈了…赶脚被拉开距离了&hellip;</p>
 
 <p>大四，大四下，是个奇葩的学期，各种琐事，课程重修，毕业体检，毕业照，毕业论文，外加这最麻烦的肺。心里头压根没法真正静下来学习（Front-End）。so，其实这些时间我只是在翻译一些国外的技术文，以meteor为主。</p>
 
@@ -226,9 +226,9 @@ alias rake="noglob rake"
 
 <p>某一个晚上，石头酱开导我说，你不要辣嚒大的报复心(抱负)啦!  这个引发了我想了关于抱负好久。有很大的抱负吗？我没要去改变世界，撬动世界啊，就想安安乐乐的enjoy着写代码而已。 我原本是这么以为的。</p>
 
-<p>写到这，麻醉也去了7788了，不过手上还是插着吊瓶的针。耳机里播放着《数码暴龙1 主题曲》，LOL，略脑残是伐？不单这首，还有，《One Piece》的所有OP，《龙珠》的某一部OP，还有几首以前翡翠台播的动画的主题曲。Anyway，Don&#8217;t u think they are fucking awesome and memorable？</p>
+<p>写到这，麻醉也去了7788了，不过手上还是插着吊瓶的针。耳机里播放着《数码暴龙1 主题曲》，LOL，略脑残是伐？不单这首，还有，《One Piece》的所有OP，《龙珠》的某一部OP，还有几首以前翡翠台播的动画的主题曲。Anyway，Don&rsquo;t u think they are fucking awesome and memorable？</p>
 
-<p>在医院呆着其实也没什么不好的，至少的，我的作息正常的多，早睡早起，杠杠的，偶尔还能瞄瞄护士(看口罩是伐?) ，写到这我想起刚刚做完支纤镜荡回来的路上很巧的遇上，几个月前同一病房的病友的老婆，然后就混混沌沌的跟她扯了一会，尽管她戴着口罩(我居然还能认出来)，不过看得出比之前那会憔悴了许多，正如我家的两老也是。想来他老公会比我要承受稍大一些的心理压力，上有老，下有小&#8230;所以，横看竖看，我还是得跟自己说，不是什么大事。</p>
+<p>在医院呆着其实也没什么不好的，至少的，我的作息正常的多，早睡早起，杠杠的，偶尔还能瞄瞄护士(看口罩是伐?) ，写到这我想起刚刚做完支纤镜荡回来的路上很巧的遇上，几个月前同一病房的病友的老婆，然后就混混沌沌的跟她扯了一会，尽管她戴着口罩(我居然还能认出来)，不过看得出比之前那会憔悴了许多，正如我家的两老也是。想来他老公会比我要承受稍大一些的心理压力，上有老，下有小&hellip;所以，横看竖看，我还是得跟自己说，不是什么大事。</p>
 
 <p>写到这，换针水，鸽的血倒流出来了。a~ a~ a~ a~ 护士妹纸，快来啊！！！<br/>
 写到这，耳机播放《其实我介意》<br/>
@@ -392,7 +392,7 @@ alias rake="noglob rake"
 <p>与父亲在一起的日子<br/>
 作者：Phillip Toledano<br/>
 译者：<a href="http://www.ruanyifeng.com/blog/2011/06/days_with_my_father.html">阮一峰</a> <br/>
-原文网址：http://www.dayswithmyfather.com</p>
+原文网址：<a href="http://www.dayswithmyfather.com">http://www.dayswithmyfather.com</a></p>
 
 <p>1
 <img src="http://image.beekka.com/blog/201106/bg2011062001.jpg" alt="" />  <br/>
@@ -405,7 +405,7 @@ alias rake="noglob rake"
 <p>3
 <img src="http://image.beekka.com/blog/201106/bg2011062003.jpg" alt="" />  <br/>
 2006年9月4日，母亲突然过世，将照顾父亲的重担一下子留给了我。父亲患有健忘症，经常不记得几分钟前发生的事。<br/>
-我带着父亲参加了母亲的葬礼。但是回家后，每隔15分钟，父亲就问我母亲去了哪里。我不得不一遍遍地解释，她死了。父亲震惊极了，问我为什么没人告诉他？为什么不让他参加葬礼？为什么他从没去医院探望她？&#8230;&#8230;他全忘了。<br/>
+我带着父亲参加了母亲的葬礼。但是回家后，每隔15分钟，父亲就问我母亲去了哪里。我不得不一遍遍地解释，她死了。父亲震惊极了，问我为什么没人告诉他？为什么不让他参加葬礼？为什么他从没去医院探望她？&hellip;&hellip;他全忘了。<br/>
 于是，我改口说，母亲去巴黎照顾生病的舅舅了，暂时不回来。</p>
 
 <p>4
@@ -416,7 +416,7 @@ alias rake="noglob rake"
 
 <p>5
 <img src="http://image.beekka.com/blog/201106/bg2011062005.jpg" alt="" /><br/>
-屋子里到处都是他留下的小纸条，上面写着&#8221;人都到哪里去了？&#8221;、&#8221;发生什么事了？&#8221;&#8230;&#8230;这显示了他内心深处的恐慌，他从不对我说这些。</p>
+屋子里到处都是他留下的小纸条，上面写着&#8221;人都到哪里去了？&#8221;、&#8221;发生什么事了？&#8221;&hellip;&hellip;这显示了他内心深处的恐慌，他从不对我说这些。</p>
 
 <p>6
 <img src="http://image.beekka.com/blog/201106/bg2011062006.jpg" alt="" /><br/>
@@ -544,7 +544,7 @@ alias rake="noglob rake"
     <id>http://xguox.github.com/blog/2013/04/13/how-to-travel-around-the-world-for-a-year</id>
     <content type="html"><![CDATA[<p>在我的上一篇文章<a href="http://www.aqee.net/traveling-writing-programming/">traveling, writing and programming</a>中, 涵盖了我前一年的旅行, 写作, 编程. 而在这一篇文章中, 将会具体地对整一个旅程进行规划,  包括航班, 费用, 活动, 住宿等. 我会向你展示一个廉价实惠的计划.</p>
 
-<blockquote><p>Travel is fatal to prejudice, bigotry, and narrow-mindedness. (旅行是克服偏见、自大、狭隘的最好方法.) &#8212;- Mark Twain</p></blockquote>
+<blockquote><p>Travel is fatal to prejudice, bigotry, and narrow-mindedness. (旅行是克服偏见、自大、狭隘的最好方法.) &mdash;&mdash; Mark Twain</p></blockquote>
 
 <p>远途旅行, 开阔视野, 我觉得这对于常年呆在硅谷的人来说尤为重要. 旅行可以让你见识到人们真真切切遇到的一些问题, 并使你有这样的机会去想办法解决掉, 而不是满脑子都是一些在家的琐碎想法. 一个新的视角, 一个新的想法，也或许就在你的旅途之中诞生.</p>
 
@@ -593,9 +593,9 @@ alias rake="noglob rake"
 
 <h2>预算&amp;住宿</h2>
 
-<p>住宿是件简单的事, 尤其当你在一些亚洲很便宜的地方游玩的话. 因为我自己本身有这个预算, 所以一般都住在酒店 - 不包括一些在亚洲或者南非的古怪的酒店. 好的酒店比较难找到, 这需要你专门的在网上做一些调查. <a href="http://hostelworld.com/">Hotel World</a>, <a href="http://www.lonelyplanet.com/">Lonely Planet</a>, <a href="http://wikitravel.org/en/Main_Page">Wikitravel</a>都是不错的选择. 有些地方的设施对旅客非常的友好便利, 例如新西兰, 而有些则相反, 比如夏威夷和日本.</p>
+<p>住宿是件简单的事, 尤其当你在一些亚洲很便宜的地方游玩的话. 因为我自己本身有这个预算, 所以一般都住在酒店 &ndash; 不包括一些在亚洲或者南非的古怪的酒店. 好的酒店比较难找到, 这需要你专门的在网上做一些调查. <a href="http://hostelworld.com/">Hotel World</a>, <a href="http://www.lonelyplanet.com/">Lonely Planet</a>, <a href="http://wikitravel.org/en/Main_Page">Wikitravel</a>都是不错的选择. 有些地方的设施对旅客非常的友好便利, 例如新西兰, 而有些则相反, 比如夏威夷和日本.</p>
 
-<p>酒店也是一个非常好的地方可以结识到朋友, 还可以从他们那得到一些游玩的建议.  另外你也会遇上一些有趣的人. 我曾经遇到过的有半导体芯片设计师，专业潜水员和量子加密专家&#8230;我结识了一些驴友并和他们建立友谊, 这都是旅行所带给我的乐趣.</p>
+<p>酒店也是一个非常好的地方可以结识到朋友, 还可以从他们那得到一些游玩的建议.  另外你也会遇上一些有趣的人. 我曾经遇到过的有半导体芯片设计师，专业潜水员和量子加密专家&hellip;我结识了一些驴友并和他们建立友谊, 这都是旅行所带给我的乐趣.</p>
 
 <p>整一年我的总预算大概是$15K, 包括我的所有食宿.  这个数目对我来说刚刚好, 我不必住在特别的廉价的地方. 当然, 在你的银行卡上有一定的缓冲预算是好的, 因为这样你可以有个更安心的行程.</p>
 
@@ -605,7 +605,7 @@ alias rake="noglob rake"
 
 <p>我去的每一个城市都有ATM, 所以取得现金不是什么大的问题.  但我的卡曾经三次因为被怀疑欺诈行为而被冻结了. 我建议你告诉你的银行你的行程, 以免有什么不必要的麻烦. 出于安全考虑, 把你的一些信用卡分别放在不同的地方. 最好使用一些不会收取国际交易费的卡, 否则这可能会是一比大的支出.  很多地方不支持刷卡, 所以现金在手是必须的.</p>
 
-<p>我已经有将近一年没有使用手机了, 取而代之的是我的iPod和Skype. 这其实并没有你听起来那么疯狂, 跟全世界断开联系一段时间事实上感觉挺好的. 由你来选择人们能否联系上你. 如果你确实需要一台手机, 做好国际长途的计划, 并且随时盯紧 - 否则的话被盗那是瞬间的事.</p>
+<p>我已经有将近一年没有使用手机了, 取而代之的是我的iPod和Skype. 这其实并没有你听起来那么疯狂, 跟全世界断开联系一段时间事实上感觉挺好的. 由你来选择人们能否联系上你. 如果你确实需要一台手机, 做好国际长途的计划, 并且随时盯紧 &ndash; 否则的话被盗那是瞬间的事.</p>
 
 <p>我去哪都随身带着我的Macbook和Nikon单反, 另外还有其他的一堆电子产品. 坦白地说, 这个世界并不是像人们想象的美国西部那般纷乱. 你只需要用平常心去对待就可以了.  或许我是幸运地, 因为在我的旅途中没有一样东西被偷.</p>
 
@@ -635,9 +635,9 @@ alias rake="noglob rake"
 
 <h2>安全保险</h2>
 
-<p>For health insurance I just used World Nomads. They&#8217;ve fairly competitive rates, and are one of the more dependable options.</p>
+<p>For health insurance I just used World Nomads. They&rsquo;ve fairly competitive rates, and are one of the more dependable options.</p>
 
-<p>That said, it&#8217;s often a case of staying lucky and not doing anything stupid. All the insurance in the world won&#8217;t help you if you have an emergency in a remote part of Africa.</p>
+<p>That said, it&rsquo;s often a case of staying lucky and not doing anything stupid. All the insurance in the world won&rsquo;t help you if you have an emergency in a remote part of Africa.</p>
 
 <h2>生活方式</h2>
 
@@ -805,7 +805,7 @@ alias rake="noglob rake"
 
 <h2>Theme</h2>
 
-<p>有时候蛋疼起来可以折腾某个主题某个配色好长的时间, 即使这对我的编程技能木有任何实质性提高.  强推一款theme - <a href="https://github.com/thinkpixellab/flatland">Flatland</a>,  随着Flat UI的兴起, ST的主题肿么能落后啊.  附带的icon更是比Sublime原本的霸气的不是一点两点啊. 貌似在哪见过, 想不起来了.
+<p>有时候蛋疼起来可以折腾某个主题某个配色好长的时间, 即使这对我的编程技能木有任何实质性提高.  强推一款theme &ndash; <a href="https://github.com/thinkpixellab/flatland">Flatland</a>,  随着Flat UI的兴起, ST的主题肿么能落后啊.  附带的icon更是比Sublime原本的霸气的不是一点两点啊. 貌似在哪见过, 想不起来了.
 <img src="http://farm9.staticflickr.com/8392/8636887917_4db9f0f2b7_b.jpg" alt="" /></p>
 
 <p>这UI还行吧? 我自己也懒得再去调了, 额外的把cursor换了个色就是了(原本的灰色真心不够骚啊, 老是眼瞎找不着)</p>
@@ -828,8 +828,8 @@ Actually, 想装啥插件可以直接在里头搜, 或者网页版搜索, 一般
 <ul>
 <li><a href="https://github.com/alienhard/SublimeAllAutocomplete">All Autocomplete</a> 这货是在已打开的文件的基础上拓展匹配的</li>
 <li><a href="https://github.com/aziz/knockdown">knockdown</a></li>
-<li><a href="https://github.com/nathos/sass-textmate-bundle">Sass</a> Sass的高亮, 补全&#8230;</li>
-<li><a href="http://xavura.github.io/CoffeeScript-Sublime-Plugin/">CoffeeScript</a>  CoffeeScript高亮,补全, Compile等&#8230;</li>
+<li><a href="https://github.com/nathos/sass-textmate-bundle">Sass</a> Sass的高亮, 补全&hellip;</li>
+<li><a href="http://xavura.github.io/CoffeeScript-Sublime-Plugin/">CoffeeScript</a>  CoffeeScript高亮,补全, Compile等&hellip;</li>
 <li><a href="https://github.com/dzhibas/SublimePrettyJson">Pretty JSON</a> 经常看到一些个JSON文件一坨坨的, 有了这货看着也舒服多了</li>
 <li><a href="https://github.com/uipoet/sublime-jshint">JSHint</a> 检查Javascript的语法规范, 要先在装了node, 然后<code>npm install -g jshint</code></li>
 <li><a href="http://emmet.io/">Emmet</a> 前身Zen Coding, 貌似所有的packages之中排在最前的. 几乎被吹捧成为神器中的神器了.</li>
@@ -845,7 +845,7 @@ Actually, 想装啥插件可以直接在里头搜, 或者网页版搜索, 一般
 <h2>Settings-User</h2>
 
 <p>先把custom的show一下, 也没啥的, 都是些无关痛痒的修改. 个人爱好吧. 有个必须有的就是<code>"scroll_past_end": true,</code> 经常写了一大车页面布满了, 下面的就滚不起来, 眼睛老要往下瞄很不爽. 设置以后就可以自由控制底部显示.<br/>
-基本上自己看着Settings - Default 还是老规矩按需修改啦.</p>
+基本上自己看着Settings &ndash; Default 还是老规矩按需修改啦.</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -884,7 +884,7 @@ Actually, 想装啥插件可以直接在里头搜, 或者网页版搜索, 一般
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h2>Key Bindings - User</h2>
+<h2>Key Bindings &ndash; User</h2>
 
 <p>快捷键同样跟Settings可以多看Default绝对比看路边3322的像我这些要靠谱, 完整的多. 忘了在哪学到的<code>{ "keys": ["ctrl+command+r"], "command": "reveal_in_side_bar" }</code> 挺实用的, 直接在侧边栏显示当前的文件所在的目录.</p>
 
@@ -1019,9 +1019,9 @@ Actually, 想装啥插件可以直接在里头搜, 或者网页版搜索, 一般
 
 <p>代码都很简单, 但是究竟在底层发生了些什么呢?</p>
 
-<p>如果你有读过<a href="http://docs.meteor.com/#publishandsubscribe">Meteor的文档</a>, 可能会对<code>added()</code>和<code>ready()</code>在客户端设置记录的属性感到惊讶,  and struggled to square that with the Meteor apps that you&#8217;ve seen that never use those methods.(I am so sorry 这句没想着怎么翻译好)</p>
+<p>如果你有读过<a href="http://docs.meteor.com/#publishandsubscribe">Meteor的文档</a>, 可能会对<code>added()</code>和<code>ready()</code>在客户端设置记录的属性感到惊讶,  and struggled to square that with the Meteor apps that you&rsquo;ve seen that never use those methods.(I am so sorry 这句没想着怎么翻译好)</p>
 
-<p>这其中的原因是, Meteor提供了一个非常重要的便利 - <code>_publishCursor()</code>方法. 可能你从没见过它的使用? 因为有可能不是直接的调用，但如果你在调用一个publish函数并返回一个<strong>游标(cursor)</strong>(例如: <code>Posts.find({'author':'Tom'})</code>), 那么这就是<code>_publishCursor</code>.</p>
+<p>这其中的原因是, Meteor提供了一个非常重要的便利 &ndash; <code>_publishCursor()</code>方法. 可能你从没见过它的使用? 因为有可能不是直接的调用，但如果你在调用一个publish函数并返回一个<strong>游标(cursor)</strong>(例如: <code>Posts.find({'author':'Tom'})</code>), 那么这就是<code>_publishCursor</code>.</p>
 
 <p>当Meteor看到<code>somePosts</code>这个publication返回来一个游标(cursor), 则表明它自动调用了<code>_publishCursor()</code>publish这个cursor. 下面这是<code>_publishCursor()</code>所做的事情:</p>
 
@@ -1133,12 +1133,12 @@ Actually, 想装啥插件可以直接在里头搜, 或者网页版搜索, 一般
 
 
 <p>
-吐血啊, 找了我老久.  原来是这个东西忘了套上 &#8220;{ % raw % }&#8221; &#8220;{ % endraw % }&#8221;<br/>
+吐血啊, 找了我老久.  原来是这个东西忘了套上 &ldquo;{ % raw % }&rdquo; &ldquo;{ % endraw % }&#8221;<br/>
 在Octopress(Liquid)里没套上的话则直接无视掉, 而Hexo(Marked)则直接嘣掉.</p>
 
-<p>现阶段的plugins自然还是跟Octopress有些差距的,  不过挺看好的. 虽然暂时不撤往Hexo. 但还是弄了个<a href="http://xguoxlu.github.io/">github pages</a>, 喜欢折腾吧&#8230;</p>
+<p>现阶段的plugins自然还是跟Octopress有些差距的,  不过挺看好的. 虽然暂时不撤往Hexo. 但还是弄了个<a href="http://xguoxlu.github.io/">github pages</a>, 喜欢折腾吧&hellip;</p>
 
-<p>另外也顺带把404页面改成扣扣的公益页面了. 尽管知道不太可能起到什么作用&#8230;</p>
+<p>另外也顺带把404页面改成扣扣的公益页面了. 尽管知道不太可能起到什么作用&hellip;</p>
 ]]></content>
   </entry>
   
@@ -1149,9 +1149,9 @@ Actually, 想装啥插件可以直接在里头搜, 或者网页版搜索, 一般
     <id>http://xguox.github.com/blog/2013/04/06/deploy-meteor-on-heroku</id>
     <content type="html"><![CDATA[<p>貌似有好一段时间没有在这儿小发一些闷骚或者情感泛滥什么的, 都是用自己蹩脚的英语水平翻译些英文post. 这些天想部署个Meteor app玩一玩, 结果一玩就各种出事了.</p>
 
-<p>vps退货, godaddy的莫名失单, 部署各种卡壳&#8230;</p>
+<p>vps退货, godaddy的莫名失单, 部署各种卡壳&hellip;</p>
 
-<p>因为最近比较多的关注前端的东西,  同时在自己local耍着<a href="https://github.com/SachaG/Telescope">SachaG / Telescope</a>这个基于Meteor的项目. 于是也就顺手搭了<a href="http://frontn.com">FrontN</a>这么个类似HN, Reddit的玩意. 原本是准备直接把HN,Reddit clone 成中文版的, 不过<a href="http://news.dbanotes.net/">Fenng</a>貌似已经这么干了, 所以, 我也就不再造这个轮子了.另外原本也想专门作为<a href="http://jianshu.io">简书</a>的评论系统. 不过想想也不是很妥, 就&#8230;</p>
+<p>因为最近比较多的关注前端的东西,  同时在自己local耍着<a href="https://github.com/SachaG/Telescope">SachaG / Telescope</a>这个基于Meteor的项目. 于是也就顺手搭了<a href="http://frontn.com">FrontN</a>这么个类似HN, Reddit的玩意. 原本是准备直接把HN,Reddit clone 成中文版的, 不过<a href="http://news.dbanotes.net/">Fenng</a>貌似已经这么干了, 所以, 我也就不再造这个轮子了.另外原本也想专门作为<a href="http://jianshu.io">简书</a>的评论系统. 不过想想也不是很妥, 就&hellip;</p>
 
 <p>Meteor的系统是超级alpha的, 所以很多问题遇上了也没人帮忙, 解决. 比如之前在<a href="http://stackoverflow.com/questions/15654637/same-helper-for-different-template">Stack Overflow</a>. 而部署这一块, 是我比较陌生的. 包括以前搞rails那会, 也没真正意义的整一整部署. 绝大部分时间都在本地跑啊跑. 所以, 在Meteor, 也是这一块最让我头疼.</p>
 
@@ -1162,7 +1162,7 @@ Actually, 想装啥插件可以直接在里头搜, 或者网页版搜索, 一般
 
 <p>秉承流水帐作风, 待我慢慢道来.</p>
 
-<p>幸得以前一直搞得是ruby/rails. 所以装heroku的时候没啥压力, 不然可能这又得搞上一会. 直接下载了官方的<a href="https://toolbelt.heroku.com/">heroku toolbelt</a>无压力安装, login, clone&#8230;</p>
+<p>幸得以前一直搞得是ruby/rails. 所以装heroku的时候没啥压力, 不然可能这又得搞上一会. 直接下载了官方的<a href="https://toolbelt.heroku.com/">heroku toolbelt</a>无压力安装, login, clone&hellip;</p>
 
 <p>and then 跟着 <a href="https://github.com/oortcloud/heroku-buildpack-Meteorite">Heroku buildpack for Meteorite</a> 这个buildpack完成接下来的:</p>
 
@@ -1180,7 +1180,7 @@ Actually, 想装啥插件可以直接在里头搜, 或者网页版搜索, 一般
 
 <p>好吧, 很明显我自己傻13了才会知道要这么做的.</p>
 
-<p>接着到了最关键的push了.  当我<code>git push heroku master</code>的时候, bla,blah blah&#8230;下来还以为这次会真的很顺畅. 结果oops的一嘣</p>
+<p>接着到了最关键的push了.  当我<code>git push heroku master</code>的时候, bla,blah blah&hellip;下来还以为这次会真的很顺畅. 结果oops的一嘣</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -1199,7 +1199,7 @@ Actually, 想装啥插件可以直接在里头搜, 或者网页版搜索, 一般
 <code>heroku addons:add mongohq:sandbox</code>就OK
 (sandbox是免费餐)</p>
 
-<p>结果毫无疑问的继续嘣&#8230;</p>
+<p>结果毫无疑问的继续嘣&hellip;</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -1212,21 +1212,21 @@ Actually, 想装啥插件可以直接在里头搜, 或者网页版搜索, 一般
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>Google之才知道原来Heroku在装插件前得通过传说中的credit card卡认证, 我辣时就更嘣了. 对于我等无产阶级而言, credit card仿佛就跟神一般滴遥不可及. 你想买3刀的godaddy域名?不好意思, 请出示credit card; 你想用name.com买域名? 不好意思, 请出示credit card; 你想买linode的vps?有credit card吗? 亲&#8230;正当我开始准备放弃heroku这条路时, 忽然无意中发现了虚拟信用卡这货, 顺藤摸瓜发现, 柳暗花明又一村.</p>
+<p>Google之才知道原来Heroku在装插件前得通过传说中的credit card卡认证, 我辣时就更嘣了. 对于我等无产阶级而言, credit card仿佛就跟神一般滴遥不可及. 你想买3刀的godaddy域名?不好意思, 请出示credit card; 你想用name.com买域名? 不好意思, 请出示credit card; 你想买linode的vps?有credit card吗? 亲&hellip;正当我开始准备放弃heroku这条路时, 忽然无意中发现了虚拟信用卡这货, 顺藤摸瓜发现, 柳暗花明又一村.</p>
 
 <p><strong>工行国际e卡 + entropay</strong>(怎么觉得我像在拍广告的)</p>
 
 <p>虽然门路是找着了, 不过弄得我好不蛋疼.<br/>
-因为mac上工行网银不支持插U盾, 于是又启动了以前的那台老爷机, 一卡一顿的, 唉, 为了搞到手就忍忍吧&#8230;结果成功申请后唬弄半晌才知道原来要先用软妹b买美刀才能花, 而且至少买50刀. 我现在要50刀搞毛线撒&#8230;没法子, 只得照办了. 然后是entropay的虚拟卡>>><br/>
-OOXX一轮下来总算是把heroku的验证给通过了, 感动啊&#8230;</p>
+因为mac上工行网银不支持插U盾, 于是又启动了以前的那台老爷机, 一卡一顿的, 唉, 为了搞到手就忍忍吧&hellip;结果成功申请后唬弄半晌才知道原来要先用软妹b买美刀才能花, 而且至少买50刀. 我现在要50刀搞毛线撒&hellip;没法子, 只得照办了. 然后是entropay的虚拟卡>>><br/>
+OOXX一轮下来总算是把heroku的验证给通过了, 感动啊&hellip;</p>
 
 <p><code>heroku addons:add mongohq:sandbox</code></p>
 
 <p><code>git push heroku master</code></p>
 
-<p>好吧, 总算是成功了. 我容易吗&#8230;</p>
+<p>好吧, 总算是成功了. 我容易吗&hellip;</p>
 
-<p>最后总结, heroku相对的来说除了出错情况较少, 可用资料多之外, 管理上也比自己搭vps要方便些, feel了一下MongoHQ的那个插件还不错&#8230;这样, 也就可以花更多的时间的app的开发上. 而不是折腾这出错那无解.  好吧, 尽管咱都爱折腾, 不过, 往你想的地方折腾不更好吗? 其实这些也就都是Paas的优势啦, 专注核心开发, 减少运维成本&#8230;</p>
+<p>最后总结, heroku相对的来说除了出错情况较少, 可用资料多之外, 管理上也比自己搭vps要方便些, feel了一下MongoHQ的那个插件还不错&hellip;这样, 也就可以花更多的时间的app的开发上. 而不是折腾这出错那无解.  好吧, 尽管咱都爱折腾, 不过, 往你想的地方折腾不更好吗? 其实这些也就都是Paas的优势啦, 专注核心开发, 减少运维成本&hellip;</p>
 
 <p>其他的待续吧, 相比rails, 或许底层它怎么干还没搞透, 但起码的知道它干了什么, 可Meteor我还真不知道它都干了些什么, 比rails更magic.</p>
 
@@ -1257,7 +1257,7 @@ OOXX一轮下来总算是把heroku的验证给通过了, 感动啊&#8230;</p>
 <!-- more -->
 
 
-<p>正如你在例子中可以看到的, 我使用的是icon fonts托管服务<a href="http://weloveiconfonts.com/">weloveiconfonts.com</a>. 这是一个我自己的项目&#8211;原本想写一篇文章关于icon-fonts, 搜索发现没有免费的icon fonts托管服务, 于是就新建了这么个项目来完成这篇文章.</p>
+<p>正如你在例子中可以看到的, 我使用的是icon fonts托管服务<a href="http://weloveiconfonts.com/">weloveiconfonts.com</a>. 这是一个我自己的项目&mdash;原本想写一篇文章关于icon-fonts, 搜索发现没有免费的icon fonts托管服务, 于是就新建了这么个项目来完成这篇文章.</p>
 
 <h2>1. CSS Loader</h2>
 
@@ -1526,7 +1526,7 @@ OOXX一轮下来总算是把heroku的验证给通过了, 感动啊&#8230;</p>
 </ul>
 
 
-<blockquote><p>Editor&#8217;s note: 以下的CSS所使用的是SASS的一种格式SCSS.  包括后边的也是. 如果你想要使用标准的CSS, 可以跳转到下边的CodePen 演示链接,  在CSS编辑框头部点击&#8221;SCSS&#8221;, 然后就可以看到经过编译后的标准CSS</p></blockquote>
+<blockquote><p>Editor&rsquo;s note: 以下的CSS所使用的是SASS的一种格式SCSS.  包括后边的也是. 如果你想要使用标准的CSS, 可以跳转到下边的CodePen 演示链接,  在CSS编辑框头部点击&#8221;SCSS&#8221;, 然后就可以看到经过编译后的标准CSS</p></blockquote>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -2213,7 +2213,7 @@ OOXX一轮下来总算是把heroku的验证给通过了, 感动啊&#8230;</p>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>整个场景旋转 &#8220;-3度&#8221;.</p>
+<p>整个场景旋转 &ldquo;-3度&rdquo;.</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -2552,7 +2552,7 @@ OOXX一轮下来总算是把heroku的验证给通过了, 感动啊&#8230;</p>
 
 <p>据Google的一项研究, 用户的搜索结果页面每增加半秒会致使营业额和广告收入减少20%. 另外一篇来自Amazon的<a href="http://www.websiteoptimization.com/speed/tweak/psychology-web-performance/">类似报道</a>发现, 每增加额外的100毫秒加载时间, 销售额则会减少1%. 用户期望在两秒以内加载完整个页面, 否则第三秒后,高达40%的用户会<a href="http://www.gomez.com/pdfs/wp_why_web_performance_matters.pdf">选择离开</a>.</p>
 
-<p>你能保持这样的速度? 如果你的网站包含有丰富的内容, 许多动态元素, 更大的JavaScript文件和复杂的图形, 那么我们当中的很多人的回答可能会是 &#8220;no&#8221;.</p>
+<p>你能保持这样的速度? 如果你的网站包含有丰富的内容, 许多动态元素, 更大的JavaScript文件和复杂的图形, 那么我们当中的很多人的回答可能会是 &ldquo;no&rdquo;.</p>
 
 <p>现在,是时候让我们把性能优化作为如何为各种设备设计, 搭建, 测试每一个我们创建的网站的基本组成部分了.</p>
 
@@ -2565,7 +2565,7 @@ OOXX一轮下来总算是把heroku的验证给通过了, 感动啊&#8230;</p>
 
 <p>并非所有的设计决策都是有利于性能的. 我发现一个略微减慢了页面速度的button样式可以提高转化(conversions), 对于仅需要牺牲小小的页面速度来说, 这是值得的.</p>
 
-<p>但有时候, 我们更需要关注的是性能. 我曾经重新设计一个登录页面, 需要在上边为其添加大量的图片, 我不确定性能上变差了是否会对转化带来负面影响, 于是我在一个 <a href="http://alistapart.com/article/a-primer-on-a-b-testing">A/B test</a> 上为一小部分的用户推出了这个新的设计来看看会有什么样的反响. 新的设计加载时间是之前的两倍, 我看到了一个很高的 exit rate 和更低的转化率, 于是我们沿用了之前的轻量级设计. 犯错了没关系 &#8211; 它能给你一个参考的基准.</p>
+<p>但有时候, 我们更需要关注的是性能. 我曾经重新设计一个登录页面, 需要在上边为其添加大量的图片, 我不确定性能上变差了是否会对转化带来负面影响, 于是我在一个 <a href="http://alistapart.com/article/a-primer-on-a-b-testing">A/B test</a> 上为一小部分的用户推出了这个新的设计来看看会有什么样的反响. 新的设计加载时间是之前的两倍, 我看到了一个很高的 exit rate 和更低的转化率, 于是我们沿用了之前的轻量级设计. 犯错了没关系 &mdash; 它能给你一个参考的基准.</p>
 
 <p>在另外一次试验, <a href="http://dyn.com/">dyn.com</a>主页上着重介绍的一个缩略图部分, 需要在10个图槽内交替显示26张图片.</p>
 
@@ -2598,7 +2598,7 @@ OOXX一轮下来总算是把heroku的验证给通过了, 感动啊&#8230;</p>
 
 <p>请求是指浏览器获取某样东西比如一个文件或者一个DNS记录. 你的标记越简洁, 浏览器也就更少的发出请求, 同时用户花在等待数据在客户端和服务端来回的时间就更少.</p>
 
-<p>除了简洁的标记外, 还要做的是最小化JavaScript请求 &#8211; 只在确实需要的时候才加载之. 如果某一文件不是确实需要, 则不必在每一个页面都加载之. 不要在响应式设计中加载某一个只在大屏幕下才需要用到的JavaScript文件. 例如, 使用<a href="http://www.zurb.com/article/883/small-painful-buttons-why-social-media-bu">简单的链接来取代使用社交脚本</a>. 你也可以异步加载JavaScript从而不会导致所有的内容都被JavaScript给屏蔽掉.</p>
+<p>除了简洁的标记外, 还要做的是最小化JavaScript请求 &mdash; 只在确实需要的时候才加载之. 如果某一文件不是确实需要, 则不必在每一个页面都加载之. 不要在响应式设计中加载某一个只在大屏幕下才需要用到的JavaScript文件. 例如, 使用<a href="http://www.zurb.com/article/883/small-painful-buttons-why-social-media-bu">简单的链接来取代使用社交脚本</a>. 你也可以异步加载JavaScript从而不会导致所有的内容都被JavaScript给屏蔽掉.</p>
 
 <p>尽管, 通常情况下响应式设计需要更多的CSS和图片(页面更重), 但还是可以通过减少请求来得到更快的页面加载速度.</p>
 
@@ -2639,9 +2639,9 @@ OOXX一轮下来总算是把heroku的验证给通过了, 感动啊&#8230;</p>
 
 <h2>The impact of web performance</h2>
 
-<p>网页的性能影响着你的用户&#8211;这意味着了解, 测量,提高性能问题是每个人的工作. 所有的这些技术都可以提高页面的加载速度. 进而可以显著的提高你的网站的用户体验.</p>
+<p>网页的性能影响着你的用户&mdash;这意味着了解, 测量,提高性能问题是每个人的工作. 所有的这些技术都可以提高页面的加载速度. 进而可以显著的提高你的网站的用户体验.</p>
 
-<p>用户更高兴了也就意味着更高的转化率, 无论你是按照什么来衡量, 或是收入, 注册数, 回访数, 还是下载数. 在更快的页面速度下, 用户可以使用你的网站在短时间内完成他们想要做的事&#8211;即使可能只是在等待红绿灯.</p>
+<p>用户更高兴了也就意味着更高的转化率, 无论你是按照什么来衡量, 或是收入, 注册数, 回访数, 还是下载数. 在更快的页面速度下, 用户可以使用你的网站在短时间内完成他们想要做的事&mdash;即使可能只是在等待红绿灯.</p>
 
 <p>原文来自Lara Swanson <a href="http://alistapart.com/article/improving-ux-through-front-end-performance">Improving UX Through Front-End Performance</a></p>
 ]]></content>
@@ -2689,7 +2689,7 @@ OOXX一轮下来总算是把heroku的验证给通过了, 感动啊&#8230;</p>
 
 <h2>误解#3：“Meteor不支持第三方packages”</h2>
 
-<p>有很多的讨论是关于Meteor所用的不是Node的标准包管理&#8211;NPM. 而事实上， Meteor压根就没有不允许使用第三方程序包.</p>
+<p>有很多的讨论是关于Meteor所用的不是Node的标准包管理&mdash;NPM. 而事实上， Meteor压根就没有不允许使用第三方程序包.</p>
 
 <p>And it’s true that the vanilla install of Meteor does not come with a package manager. 但庆幸的是， <a href="http://theMeteorbook.com/">本书</a>的合著者之一Tom Coleman， 同时也是Meteor包管理器<a href="https://github.com/oortcloud/Meteorite">Meteorite</a>和packages资源库<a href="http://atmosphere.Meteor.com/">Atmosphere</a>的开发者。</p>
 
@@ -2736,9 +2736,9 @@ OOXX一轮下来总算是把heroku的验证给通过了, 感动啊&#8230;</p>
     <link href="http://xguox.github.com/blog/2013/03/10/introduction-to-realtime-web-with-meteor-dot-js-and-node-dot-js/"/>
     <updated>2013-03-10T23:16:00+08:00</updated>
     <id>http://xguox.github.com/blog/2013/03/10/introduction-to-realtime-web-with-meteor-dot-js-and-node-dot-js</id>
-    <content type="html"><![CDATA[<p>最近,有许多关于 <a href="http://derbyjs.com/">Derby.js</a>的激动人心的讨论涌现在了我的Twitter Timeline. 我从未使用过能够帮你做这么多&#8211;实时同步客户端和服务端 的框架. 从本质上讲, 这使得我们可以自己编写一个代码量很少的应用可以让两个人编写同一个 text field–live. 而 Derby帮你处理了在 models 和 views 之间所有的同步. 就如 Google Docs 的协作编辑那样.</p>
+    <content type="html"><![CDATA[<p>最近,有许多关于 <a href="http://derbyjs.com/">Derby.js</a>的激动人心的讨论涌现在了我的Twitter Timeline. 我从未使用过能够帮你做这么多&mdash;实时同步客户端和服务端 的框架. 从本质上讲, 这使得我们可以自己编写一个代码量很少的应用可以让两个人编写同一个 text field–live. 而 Derby帮你处理了在 models 和 views 之间所有的同步. 就如 Google Docs 的协作编辑那样.</p>
 
-<p>这非常的伟大, 但经过深入的研究, 发现 Derby.js 并没有我想象中的那么成熟&#8211;目前还没有到1.0版本. 当然, Node.js 和 Meteor 也同样没有. 但相比起来, 似乎Derby缺少的更多一些. 比如, 据我目前知道的, 还没有一个好使的方法来处理sessions. 或许是因为缺乏文档的原因吧, 但是, 据说Derby的团队目前正在开发authentication. 如果有谁有一些关于Derby.js 处理sessions的新手指引, 我会很乐意去研究的.</p>
+<p>这非常的伟大, 但经过深入的研究, 发现 Derby.js 并没有我想象中的那么成熟&mdash;目前还没有到1.0版本. 当然, Node.js 和 Meteor 也同样没有. 但相比起来, 似乎Derby缺少的更多一些. 比如, 据我目前知道的, 还没有一个好使的方法来处理sessions. 或许是因为缺乏文档的原因吧, 但是, 据说Derby的团队目前正在开发authentication. 如果有谁有一些关于Derby.js 处理sessions的新手指引, 我会很乐意去研究的.</p>
 
 <p>另外一个我经常见到被拿来与Derby.js做比较的框架是<a href="http://Meteor.com/">Meteor</a>. 与Derby相似的是,它也能在多个客户端下实时更新views, 尽管做法上可能跟Derby有点不同. Derby可以较容易的使用多种数据库, 而Meteor则只亲近于<a href="http://mongodb.org/">MongoDB</a>. 事实上, 通过如<a href="http://mongoosejs.com/">Mongoose</a>客户端接入数据库的API与你在服务端所期望的已经非常接近了.</p>
 
@@ -2791,7 +2791,7 @@ OOXX一轮下来总算是把heroku的验证给通过了, 感动啊&#8230;</p>
 
 <p>通过<code>Meteor create</code>命令生成的文件夹里, 你可以看到几个不同的文件. 如果你的系统设置了显示隐藏文件, 那还可以看到一个<code>.Meteor</code>文件夹. 这个文件夹包括的Meteor本身, 以及MongoDB数据库的文件.</p>
 
-<p>在你的项目的根目录, 你可以看到的还有<code>chat.html</code> <code>chat.js</code> <code>chat.css</code>. 这三个文件自解释?的. HTML包含了这个应用的模板和视图, 并都通过<code>chat.css</code>来添加样式. 而这个JavaScript文件则包含了在客户端和服务端执行的代码. 这非常的重要&#8211;请不要把任何东西比如配置数据和密码都放在这里, 因为任何人都能通过查看你的应用程序的源文件看到.</p>
+<p>在你的项目的根目录, 你可以看到的还有<code>chat.html</code> <code>chat.js</code> <code>chat.css</code>. 这三个文件自解释?的. HTML包含了这个应用的模板和视图, 并都通过<code>chat.css</code>来添加样式. 而这个JavaScript文件则包含了在客户端和服务端执行的代码. 这非常的重要&mdash;请不要把任何东西比如配置数据和密码都放在这里, 因为任何人都能通过查看你的应用程序的源文件看到.</p>
 
 <p>用你最喜欢的文本编辑器打开<code>chat.js</code>. 我个人使用的是<a href="http://sublimetext.com/">Sublime Text 2</a>, 因为它很简洁并且有多光标功能.
 你可以在<code>chat.js</code>看到下面这些代码</p>
@@ -2896,7 +2896,7 @@ OOXX一轮下来总算是把heroku的验证给通过了, 感动啊&#8230;</p>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>在这个例子中,<code>template</code>标签只有一个属性&#8211;用来表示这个template的名字. 也就是当我们渲染的时候需要用来指定的名字.</p>
+<p>在这个例子中,<code>template</code>标签只有一个属性&mdash;用来表示这个template的名字. 也就是当我们渲染的时候需要用来指定的名字.</p>
 
 <p>查看浏览器, 你会发现页面已经刷新了, 输入框已经呈现出来了.</p>
 
@@ -3153,7 +3153,7 @@ template的<code>event</code>属性会包含有一个对象, 这个对象的keys
 
 <p>在<code>events</code>对象里, 每一个key都有一个函数作为它的值. 当事件被触发的时候, 这个<code>event</code>对象会被作为第一个参数传给这个函数.在我们的chat应用, 每一次在输入框中按下一个按键(<code>keydown</code>), 这个函数都会被调用.</p>
 
-<p>在函数里的代码非常简单. 首先, 我们先要检测按下的是否&#8221;enter&#8221;键(&#8220;enter&#8221;的keycode 是13). 接着,通过ID来得到两个输入框中的DOM元素. 最后, 我们检查确保输入框中的值不为空, 用户不允许发送空的名字和讯息.</p>
+<p>在函数里的代码非常简单. 首先, 我们先要检测按下的是否&#8221;enter&#8221;键(&ldquo;enter&#8221;的keycode 是13). 接着,通过ID来得到两个输入框中的DOM元素. 最后, 我们检查确保输入框中的值不为空, 用户不允许发送空的名字和讯息.</p>
 
 <p>下面的代码需要注意了, 它会被直接插入到数据库中</p>
 
@@ -3187,7 +3187,7 @@ template的<code>event</code>属性会包含有一个对象, 这个对象的keys
 <p>原文来自Andrew Munsell <a href="http://www.andrewmunsell.com/blog/introduction-to-realtime-web-Meteor-and-nodejs/#.UTyJZtHN-tv">Introduction to Realtime Web with Meteor and Node.js</a></p>
 
 <p>另附上Tom的 Vimeo screencast(需FanQiang)<br/>
-<video width='640' height='320' preload='none' controls poster=' http://b.vimeocdn.com/ts/278/431/278431171_960.jpg'><source src='http://av.vimeo.com/31624/419/93304834.mp4?aksessionid=d86b5b612c86d70bd2022ae1050aa1be&token=1362992353_ce10e413b18fa6f2d0e3483ef6b82894' type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'/></video></p>
+<video width='640' height='320' preload='none' controls poster='http://b.vimeocdn.com/ts/278/431/278431171_960.jpg'><source src='http://av.vimeo.com/31624/419/93304834.mp4?aksessionid=d86b5b612c86d70bd2022ae1050aa1be&token=1362992353_ce10e413b18fa6f2d0e3483ef6b82894' ></video></p>
 ]]></content>
   </entry>
   
@@ -3198,7 +3198,7 @@ template的<code>event</code>属性会包含有一个对象, 这个对象的keys
     <id>http://xguox.github.com/blog/2013/03/08/learn-meteor-fundamentals-and-best-practices</id>
     <content type="html"><![CDATA[<h2>引言</h2>
 
-<p>想知道这个新奇又好玩的东西&#8212;Meteor是如何工作的?那就太好了,你来对地方了. 我会向你展示一个Meteor项目的方方面面 并会给你一些最好的提示让你应用在未来自己的Meteor项目当中.</p>
+<p>想知道这个新奇又好玩的东西&mdash;-Meteor是如何工作的?那就太好了,你来对地方了. 我会向你展示一个Meteor项目的方方面面 并会给你一些最好的提示让你应用在未来自己的Meteor项目当中.</p>
 
 <h2>What is Meteor</h2>
 
@@ -3210,7 +3210,7 @@ Meteor目前使用的模板引擎只能是 <a href="http://handlebarsjs.com/">ha
 
 <h2>基础</h2>
 
-<p>一个Meteor项目包含的大多都是JavaScript文件. 如果你放置任意一个 <code>*.js</code>文件在你的项目的任何位置, Meteor会自动帮你加载并运行之. 你在Meteor项目中写的每一个JavaScript文件都会被部署到服务端和客户端(额&#8230;也不完全是这样的,继续往下看吧!). 之所以Meteor这么,这么的cool,原因之一就是:当你写了一个JavaScript函数,在客户端和服务端都可以使用之!  <br/>
+<p>一个Meteor项目包含的大多都是JavaScript文件. 如果你放置任意一个 <code>*.js</code>文件在你的项目的任何位置, Meteor会自动帮你加载并运行之. 你在Meteor项目中写的每一个JavaScript文件都会被部署到服务端和客户端(额&hellip;也不完全是这样的,继续往下看吧!). 之所以Meteor这么,这么的cool,原因之一就是:当你写了一个JavaScript函数,在客户端和服务端都可以使用之!  <br/>
 更cool的是, 比如,你在项目的任意一个地方放置<code>*.less</code>, 那么这些文件都会自动被编译并发送至客户端以及从而包含进页面当中.<br/>
 有时候,可能你希望分离开服务端和客户端的代码. 幸运地是,<!-- more --> Meteor有这么一对标识可以帮你:<code>Meteor.is_server</code>和<code>Meteor.is_client</code> <br/>
 下面的例子在浏览器的JavaScript控制台中会输出<code>Hi. I’m CLIENT</code>,而在服务端中则会输出 <code>Hi. I’m SERVER</code></p>
@@ -3276,8 +3276,25 @@ Meteor目前使用的模板引擎只能是 <a href="http://handlebarsjs.com/">ha
 <h2>响应(Reactivity)</h2>
 
 <p>Meteor 通过 响应数据源(“reactive” data sources) 和 上下文(context) 帮你省去了当数据改变时手动替换页面的麻烦. 当响应数据源被更新后,响应上下文会重新运行(A reactive context is just a function that will get re-run if it contains a reactive data source that gets updated.) 刚开始的时候要把思维转换过来可能有些难, 下面的例子将为你解释清楚. <br/>
-下面是一个html页面和一个叫<code>cool_dude</code>Meteor<a href="http://docs.Meteor.com/#templates">模板</a>, 以及一个在客户端运行的JavaScript函数&#8212;传一个<code>username</code>的值给模板用以渲染.
-Liquid error: undefined method `join&#8217; for #&lt;String:0x007fceeabd6e18></p>
+下面是一个html页面和一个叫<code>cool_dude</code>Meteor<a href="http://docs.Meteor.com/#templates">模板</a>, 以及一个在客户端运行的JavaScript函数&mdash;-传一个<code>username</code>的值给模板用以渲染.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;html>
+</span><span class='line'>  &lt;head>
+</span><span class='line'>  &lt;/head>
+</span><span class='line'>  &lt;body>
+</span><span class='line'>    {{> cool_dude }}
+</span><span class='line'>  &lt;/body>
+</span><span class='line'>&lt;/html></span></code></pre></td></tr></table></div></figure>
+
+
+
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -3415,7 +3432,7 @@ Liquid error: undefined method `join&#8217; for #&lt;String:0x007fceeabd6e18></p
 <h2>服务端方法</h2>
 
 <p>由于客户端不允许查看数据库中有什么东西, 你一对会好奇客户端又是如何存储信息的. 解决办法是使用Meteor的<a href="http://docs.Meteor.com/#methods_header">服务端方法(Server Methods)</a>. 你在服务端定义了所有的函数用以一些危险的做法比如修改和更新数据, 然后让客户端像调用常规方法那样call这些函数并返回值. 客户端永远也不会看到具体的实现,也不会自己修改数据. 这些都是服务端做的事.<br/>
-想要添加一个用户到数据库中, 假定有一个叫<code>create_user</code> 的方法&#8211;传入一个username并让服务端插入一条记录. 它会返回给客户端一个<code>ObjectID</code>这样客户端可以抓取到这个用户的信息并做任何接下来要做的事.</p>
+想要添加一个用户到数据库中, 假定有一个叫<code>create_user</code> 的方法&mdash;传入一个username并让服务端插入一条记录. 它会返回给客户端一个<code>ObjectID</code>这样客户端可以抓取到这个用户的信息并做任何接下来要做的事.</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -3495,7 +3512,7 @@ Liquid error: undefined method `join&#8217; for #&lt;String:0x007fceeabd6e18></p
 <p>准备好开发一个真实的Meteor项目了吗?一起期待吧, Part 2 就在路上了.届时将引导你完成一个完整的app!</p>
 
 <p>原文来自Andrew Scala <a href="http://andrewscala.com/meteor/">Learn Meteor Fundamentals and Best Practices</a>  <br/>
-Ps:文章有点老,XD&#8230;不过就像该篇文章的作者所说, Meteor 现在还是处于一个 super-beta 阶段, 版本更新自然会相对来得快些. 据说1.0版本将会在不到一年的时间内发布.</p>
+Ps:文章有点老,XD&hellip;不过就像该篇文章的作者所说, Meteor 现在还是处于一个 super-beta 阶段, 版本更新自然会相对来得快些. 据说1.0版本将会在不到一年的时间内发布.</p>
 ]]></content>
   </entry>
   

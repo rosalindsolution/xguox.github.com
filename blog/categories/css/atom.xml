@@ -4,7 +4,7 @@
   <title><![CDATA[Category: CSS | XguoX]]></title>
   <link href="http://xguox.github.com/blog/categories/css/atom.xml" rel="self"/>
   <link href="http://xguox.github.com/"/>
-  <updated>2013-10-14T15:19:23+08:00</updated>
+  <updated>2013-10-14T16:02:10+08:00</updated>
   <id>http://xguox.github.com/</id>
   <author>
     <name><![CDATA[XguoX]]></name>
@@ -36,7 +36,7 @@
 <!-- more -->
 
 
-<p>正如你在例子中可以看到的, 我使用的是icon fonts托管服务<a href="http://weloveiconfonts.com/">weloveiconfonts.com</a>. 这是一个我自己的项目--原本想写一篇文章关于icon-fonts, 搜索发现没有免费的icon fonts托管服务, 于是就新建了这么个项目来完成这篇文章.</p>
+<p>正如你在例子中可以看到的, 我使用的是icon fonts托管服务<a href="http://weloveiconfonts.com/">weloveiconfonts.com</a>. 这是一个我自己的项目&mdash;原本想写一篇文章关于icon-fonts, 搜索发现没有免费的icon fonts托管服务, 于是就新建了这么个项目来完成这篇文章.</p>
 
 <h2>1. CSS Loader</h2>
 
@@ -132,8 +132,8 @@ color: rgba(0, 0, 0, .5);
 /<em> Spin icon </em>/
 .complex span:nth-child(2) {
   font-size: 3em;
-  left: -.35em;
-  top: -.35em;
+  left: &ndash;.35em;
+  top: &ndash;.35em;
   color: rgba(0, 0, 0, .3);
   animation: devil 3s infinite linear reverse forwards;
 }
@@ -214,7 +214,7 @@ color: rgba(0, 0, 0, .5);
 </ul>
 
 
-<blockquote><p>Editor's note: 以下的CSS所使用的是SASS的一种格式SCSS.  包括后边的也是. 如果你想要使用标准的CSS, 可以跳转到下边的CodePen 演示链接,  在CSS编辑框头部点击"SCSS", 然后就可以看到经过编译后的标准CSS</p></blockquote>
+<blockquote><p>Editor&rsquo;s note: 以下的CSS所使用的是SASS的一种格式SCSS.  包括后边的也是. 如果你想要使用标准的CSS, 可以跳转到下边的CodePen 演示链接,  在CSS编辑框头部点击"SCSS", 然后就可以看到经过编译后的标准CSS</p></blockquote>
 
 <p>```sass
 .socialcount {</p>
@@ -581,7 +581,7 @@ $('.chat').emocons();
 }
 .fontelico-emo-angry:after {
   border-radius: .15em;
-  box-shadow: -.695em .455em 0 .085em rgba(0, 220, 0, .6);
+  box-shadow: &ndash;.695em .455em 0 .085em rgba(0, 220, 0, .6);
   z-index: 2;
 }
 ```
@@ -650,7 +650,7 @@ $('.chat').emocons();
   height: 0;
 }
 </code>
-整个场景旋转 "-3度".</p>
+整个场景旋转 &ldquo;-3度&rdquo;.</p>
 
 <p><code>css
 .wrapper {
@@ -743,21 +743,21 @@ sky与ground都用的是同样的<code>background-position</code>动画, 只是�
 这里全都是使用同样的滚动动画, 但速度不一的元素.</p>
 
 <p>```css
-.maki-tree-1[data-child="1"] {
+.maki-tree-1[data-child=&ldquo;1&rdquo;] {
   margin: -1em 0 0 5%;
   z-index: 5;
   animation: rollin 5s linear infinite;
   font-size: 2.4em;
   color: rgba(0, 110, 0, .8);
 }
-.maki-tree-1[data-child="2"] {
+.maki-tree-1[data-child=&ldquo;2&rdquo;] {
   margin: -1em 0 0 85%;<br/>
   z-index: 2;
   animation: rollin 12s linear infinite;
   font-size: 1.6em;
   color: rgba(0, 110, 0, .5);
 }
-.maki-tree-1[data-child="3"] {
+.maki-tree-1[data-child=&ldquo;3&rdquo;] {
   margin: -1em 0 0 25%;<br/>
   z-index: 2;
   animation: rollin 17s linear infinite;
@@ -773,8 +773,8 @@ sky与ground都用的是同样的<code>background-position</code>动画, 只是�
 }
 .maki-giraffe:after {
   right: -3em;
-  content: '\e82a \e82a \e82a \e82a \e82a';
-  font: .2em 'Maki', sans-serif;
+  content: &lsquo;\e82a \e82a \e82a \e82a \e82a&rsquo;;
+  font: .2em &lsquo;Maki&rsquo;, sans-serif;
   letter-spacing: .2em;
   width: 3em;
   color: rgba(0, 0, 0, .6);
@@ -790,20 +790,20 @@ sky与ground都用的是同样的<code>background-position</code>动画, 只是�
   transform: translate(2.3em, .55em) rotateY(-180deg);
 }
 .maki-grocery-store {
-  margin: -.35em 0 0 5%;
+  margin: &ndash;.35em 0 0 5%;
   z-index: 5;
   animation: rollin 22s linear infinite;
   font-size: 4em;
   color: rgba(220, 0, 10, .7);
 }
-.maki-commerical-building[data-child="1"] {
+.maki-commerical-building[data-child=&ldquo;1&rdquo;] {
   margin: -1em 0 0 5%;
   z-index: 3;
   animation: rollin 6s linear infinite;
   font-size: 7em;
   color: rgba(120, 0, 120, .8);
 }
-.maki-commerical-building[data-child="2"] {
+.maki-commerical-building[data-child=&ldquo;2&rdquo;] {
   margin: -1em 0 0 5%;
   z-index: 2;
   animation: rollin 14s linear infinite;

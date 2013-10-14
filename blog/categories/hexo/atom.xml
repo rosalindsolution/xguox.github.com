@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Hexo | XguoX]]></title>
   <link href="http://xguox.github.com/blog/categories/hexo/atom.xml" rel="self"/>
   <link href="http://xguox.github.com/"/>
-  <updated>2013-10-14T15:19:23+08:00</updated>
+  <updated>2013-10-14T16:02:10+08:00</updated>
   <id>http://xguox.github.com/</id>
   <author>
     <name><![CDATA[XguoX]]></name>
@@ -28,7 +28,7 @@
 
 <p>```
 undefined:11
-if ((typeof <em>context !== "undefined" &amp;&amp; typeof </em>context.> posts !== "undefined</p>
+if ((typeof <em>context !== &ldquo;undefined&rdquo; &amp;&amp; typeof </em>context.> posts !== &ldquo;undefined</p>
 
 <pre><code>                                                    ^
 </code></pre>
@@ -55,12 +55,12 @@ at process.startup.processNextTick.process._tickCallback (node.js:244:9)
 {{ &gt; posts}}
  {% endraw %}
 </code><br/>
-吐血啊, 找了我老久.  原来是这个东西忘了套上 "{ % raw % }" "{ % endraw % }"<br/>
+吐血啊, 找了我老久.  原来是这个东西忘了套上 &ldquo;{ % raw % }&rdquo; &ldquo;{ % endraw % }"<br/>
 在Octopress(Liquid)里没套上的话则直接无视掉, 而Hexo(Marked)则直接嘣掉.</p>
 
-<p>现阶段的plugins自然还是跟Octopress有些差距的,  不过挺看好的. 虽然暂时不撤往Hexo. 但还是弄了个<a href="http://xguoxlu.github.io/">github pages</a>, 喜欢折腾吧...</p>
+<p>现阶段的plugins自然还是跟Octopress有些差距的,  不过挺看好的. 虽然暂时不撤往Hexo. 但还是弄了个<a href="http://xguoxlu.github.io/">github pages</a>, 喜欢折腾吧&hellip;</p>
 
-<p>另外也顺带把404页面改成扣扣的公益页面了. 尽管知道不太可能起到什么作用...</p>
+<p>另外也顺带把404页面改成扣扣的公益页面了. 尽管知道不太可能起到什么作用&hellip;</p>
 ]]></content>
   </entry>
   

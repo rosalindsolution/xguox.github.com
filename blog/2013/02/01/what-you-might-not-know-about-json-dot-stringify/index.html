@@ -7,7 +7,7 @@
 
 	<meta name="author" content="XguoX">
 
-<meta name="description" content="几乎所有开发人员都会花一些时间在JavaScript上，有些时候是在使用JSON.stingify（以及与之相对应的，JSON.parse）。JSON - Javascript Object Notation - 已经成为许多开发人员理想的数据交换格式（the go-to data- &hellip;"> <meta name="keywords" content="">
+<meta name="description" content="几乎所有开发人员都会花一些时间在JavaScript上，有些时候是在使用JSON.stingify（以及与之相对应的，JSON.parse）。JSON &ndash; Javascript Object Notation &ndash; 已经成为许多开发人员理想的数据交换格式（the go-to &hellip;"> <meta name="keywords" content="">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -64,7 +64,7 @@
 
 <time datetime="2013-02-01T18:06:00+08:00" pubdate data-updated="true">Feb 1<span>st</span>, 2013</time></div>
 	</header>
-	<div class="entry-content"><p>几乎所有开发人员都会花一些时间在JavaScript上，有些时候是在使用JSON.stingify（以及与之相对应的，JSON.parse）。JSON - Javascript Object Notation - 已经成为许多开发人员理想的数据交换格式（the go-to data-interchange format）- 并且有许多语言支持序列化为JSON,而不仅仅只有JavaScript本身。如果哪天你半夜起来又无法入睡了，可以查一查关于<a href="http://en.wikipedia.org/wiki/JSON#History">JSON</a>的历史（tl;dr – Douglas Crockford is the brain behind it）</p>
+	<div class="entry-content"><p>几乎所有开发人员都会花一些时间在JavaScript上，有些时候是在使用JSON.stingify（以及与之相对应的，JSON.parse）。JSON &ndash; Javascript Object Notation &ndash; 已经成为许多开发人员理想的数据交换格式（the go-to data-interchange format）- 并且有许多语言支持序列化为JSON,而不仅仅只有JavaScript本身。如果哪天你半夜起来又无法入睡了，可以查一查关于<a href="http://en.wikipedia.org/wiki/JSON#History">JSON</a>的历史（tl;dr – Douglas Crockford is the brain behind it）</p>
 
 <!--more-->
 
@@ -99,7 +99,7 @@
 <p>我不会反复地讨论关于序列化的规则，在<a href="https://developer.mozilla.org/en-US/docs/JavaScript/Reference/Global_Objects/JSON/stringify">这里</a>你可以读到更多相关的。但最基本的，你需要知道下面这些：</p>
 
 <ul>
-<li><code>undefined</code> 值、函数或者XML值会被忽略，除非当&#8230;</li>
+<li><code>undefined</code> 值、函数或者XML值会被忽略，除非当&hellip;</li>
 <li>如果你的数组当中含有 <code>undefined</code>值，函数或XML值，该数组中的这些值将会被当成 <code>null</code></li>
 </ul>
 
@@ -122,7 +122,7 @@
 <blockquote><p>“太棒了，Jim。我知道了。它是一种数据交换格式。而行为是不会被序列化的。这些天我使用的大多数库都是在底层为我处理序列化(Most of the libraries I use these days handle serializing for me under the hood.)。那为什么要专门写一篇post关于 JSON.stringify 呢？”</p></blockquote>
 
 <p>这个我知道，但是有一些实用的技巧迟早我们会需要用上的。Many of the larger applications I’ve worked on recently have had debug flags that can be flipped to enable various console logging from different components active on the page.
-而我们明显不希望总是通过无数行<code>console.log</code>来筛选信息 - 但当这变得有需要的时候，让它的可读性更高是不是更nice呢？</p>
+而我们明显不希望总是通过无数行<code>console.log</code>来筛选信息 &ndash; 但当这变得有需要的时候，让它的可读性更高是不是更nice呢？</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -165,7 +165,7 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>事实上，JSON.stringify可以传入3个参数（JSON.stringify(value [, replacer [, space]])。其中，第三个参数 - “space” - 允许你指定一个字符串字符、或者使用缩进、或是一个数字。如果你传的是一个数字，那相应的空格数（最大为10）会被作为缩进量</p>
+<p>事实上，JSON.stringify可以传入3个参数（JSON.stringify(value [, replacer [, space]])。其中，第三个参数 &ndash; “space” &ndash; 允许你指定一个字符串字符、或者使用缩进、或是一个数字。如果你传的是一个数字，那相应的空格数（最大为10）会被作为缩进量</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -410,7 +410,7 @@
 <p>原文来自 Jim Cowart ，<a href="http://freshbrewedcode.com/jimcowart/2013/01/29/what-you-might-not-know-about-json-stringify/?utm_source=javascriptweekly&amp;utm_medium=email">What You Might Not Know About JSON.stringify()</a></p>
 
 <p>XguoX<br/>
-- Actually，其实这个在Nicholas C.Zakas的《JavaScript高级程序设计》第20章关于JSON的介绍讲的也很详细。比我这蹩脚翻译要好得多。</p>
+&ndash; Actually，其实这个在Nicholas C.Zakas的《JavaScript高级程序设计》第20章关于JSON的介绍讲的也很详细。比我这蹩脚翻译要好得多。</p>
 </div>
 
 </article>

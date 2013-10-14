@@ -7,7 +7,7 @@
 
 	<meta name="author" content="XguoX">
 
-<meta name="description" content="引言 想知道这个新奇又好玩的东西&#8212;Meteor是如何工作的?那就太好了,你来对地方了. 我会向你展示一个Meteor项目的方方面面 并会给你一些最好的提示让你应用在未来自己的Meteor项目当中. What is Meteor &hellip;"> <meta name="keywords" content="">
+<meta name="description" content="引言 想知道这个新奇又好玩的东西&mdash;-Meteor是如何工作的?那就太好了,你来对地方了. 我会向你展示一个Meteor项目的方方面面 并会给你一些最好的提示让你应用在未来自己的Meteor项目当中. What is Meteor &hellip;"> <meta name="keywords" content="">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -66,7 +66,7 @@
 	</header>
 	<div class="entry-content"><h2>引言</h2>
 
-<p>想知道这个新奇又好玩的东西&#8212;Meteor是如何工作的?那就太好了,你来对地方了. 我会向你展示一个Meteor项目的方方面面 并会给你一些最好的提示让你应用在未来自己的Meteor项目当中.</p>
+<p>想知道这个新奇又好玩的东西&mdash;-Meteor是如何工作的?那就太好了,你来对地方了. 我会向你展示一个Meteor项目的方方面面 并会给你一些最好的提示让你应用在未来自己的Meteor项目当中.</p>
 
 <h2>What is Meteor</h2>
 
@@ -78,7 +78,7 @@ Meteor目前使用的模板引擎只能是 <a href="http://handlebarsjs.com/">ha
 
 <h2>基础</h2>
 
-<p>一个Meteor项目包含的大多都是JavaScript文件. 如果你放置任意一个 <code>*.js</code>文件在你的项目的任何位置, Meteor会自动帮你加载并运行之. 你在Meteor项目中写的每一个JavaScript文件都会被部署到服务端和客户端(额&#8230;也不完全是这样的,继续往下看吧!). 之所以Meteor这么,这么的cool,原因之一就是:当你写了一个JavaScript函数,在客户端和服务端都可以使用之!  <br/>
+<p>一个Meteor项目包含的大多都是JavaScript文件. 如果你放置任意一个 <code>*.js</code>文件在你的项目的任何位置, Meteor会自动帮你加载并运行之. 你在Meteor项目中写的每一个JavaScript文件都会被部署到服务端和客户端(额&hellip;也不完全是这样的,继续往下看吧!). 之所以Meteor这么,这么的cool,原因之一就是:当你写了一个JavaScript函数,在客户端和服务端都可以使用之!  <br/>
 更cool的是, 比如,你在项目的任意一个地方放置<code>*.less</code>, 那么这些文件都会自动被编译并发送至客户端以及从而包含进页面当中.<br/>
 有时候,可能你希望分离开服务端和客户端的代码. 幸运地是,<!-- more --> Meteor有这么一对标识可以帮你:<code>Meteor.is_server</code>和<code>Meteor.is_client</code> <br/>
 下面的例子在浏览器的JavaScript控制台中会输出<code>Hi. I’m CLIENT</code>,而在服务端中则会输出 <code>Hi. I’m SERVER</code></p>
@@ -144,8 +144,25 @@ Meteor目前使用的模板引擎只能是 <a href="http://handlebarsjs.com/">ha
 <h2>响应(Reactivity)</h2>
 
 <p>Meteor 通过 响应数据源(“reactive” data sources) 和 上下文(context) 帮你省去了当数据改变时手动替换页面的麻烦. 当响应数据源被更新后,响应上下文会重新运行(A reactive context is just a function that will get re-run if it contains a reactive data source that gets updated.) 刚开始的时候要把思维转换过来可能有些难, 下面的例子将为你解释清楚. <br/>
-下面是一个html页面和一个叫<code>cool_dude</code>Meteor<a href="http://docs.Meteor.com/#templates">模板</a>, 以及一个在客户端运行的JavaScript函数&#8212;传一个<code>username</code>的值给模板用以渲染.
-Liquid error: undefined method `join&#8217; for #&lt;String:0x007fceeabd6e18></p>
+下面是一个html页面和一个叫<code>cool_dude</code>Meteor<a href="http://docs.Meteor.com/#templates">模板</a>, 以及一个在客户端运行的JavaScript函数&mdash;-传一个<code>username</code>的值给模板用以渲染.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;html>
+</span><span class='line'>  &lt;head>
+</span><span class='line'>  &lt;/head>
+</span><span class='line'>  &lt;body>
+</span><span class='line'>    {{> cool_dude }}
+</span><span class='line'>  &lt;/body>
+</span><span class='line'>&lt;/html></span></code></pre></td></tr></table></div></figure>
+
+
+
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -283,7 +300,7 @@ Liquid error: undefined method `join&#8217; for #&lt;String:0x007fceeabd6e18></p
 <h2>服务端方法</h2>
 
 <p>由于客户端不允许查看数据库中有什么东西, 你一对会好奇客户端又是如何存储信息的. 解决办法是使用Meteor的<a href="http://docs.Meteor.com/#methods_header">服务端方法(Server Methods)</a>. 你在服务端定义了所有的函数用以一些危险的做法比如修改和更新数据, 然后让客户端像调用常规方法那样call这些函数并返回值. 客户端永远也不会看到具体的实现,也不会自己修改数据. 这些都是服务端做的事.<br/>
-想要添加一个用户到数据库中, 假定有一个叫<code>create_user</code> 的方法&#8211;传入一个username并让服务端插入一条记录. 它会返回给客户端一个<code>ObjectID</code>这样客户端可以抓取到这个用户的信息并做任何接下来要做的事.</p>
+想要添加一个用户到数据库中, 假定有一个叫<code>create_user</code> 的方法&mdash;传入一个username并让服务端插入一条记录. 它会返回给客户端一个<code>ObjectID</code>这样客户端可以抓取到这个用户的信息并做任何接下来要做的事.</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -363,7 +380,7 @@ Liquid error: undefined method `join&#8217; for #&lt;String:0x007fceeabd6e18></p
 <p>准备好开发一个真实的Meteor项目了吗?一起期待吧, Part 2 就在路上了.届时将引导你完成一个完整的app!</p>
 
 <p>原文来自Andrew Scala <a href="http://andrewscala.com/meteor/">Learn Meteor Fundamentals and Best Practices</a>  <br/>
-Ps:文章有点老,XD&#8230;不过就像该篇文章的作者所说, Meteor 现在还是处于一个 super-beta 阶段, 版本更新自然会相对来得快些. 据说1.0版本将会在不到一年的时间内发布.</p>
+Ps:文章有点老,XD&hellip;不过就像该篇文章的作者所说, Meteor 现在还是处于一个 super-beta 阶段, 版本更新自然会相对来得快些. 据说1.0版本将会在不到一年的时间内发布.</p>
 </div>
 
 </article>

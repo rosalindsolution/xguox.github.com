@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Meteor | XguoX]]></title>
   <link href="http://xguox.github.com/blog/categories/meteor/atom.xml" rel="self"/>
   <link href="http://xguox.github.com/"/>
-  <updated>2013-10-14T15:19:23+08:00</updated>
+  <updated>2013-10-14T16:02:10+08:00</updated>
   <id>http://xguox.github.com/</id>
   <author>
     <name><![CDATA[XguoX]]></name>
@@ -77,9 +77,9 @@ Meteor.publish('somePosts',function(){
 
 <p>代码都很简单, 但是究竟在底层发生了些什么呢?</p>
 
-<p>如果你有读过<a href="http://docs.meteor.com/#publishandsubscribe">Meteor的文档</a>, 可能会对<code>added()</code>和<code>ready()</code>在客户端设置记录的属性感到惊讶,  and struggled to square that with the Meteor apps that you've seen that never use those methods.(I am so sorry 这句没想着怎么翻译好)</p>
+<p>如果你有读过<a href="http://docs.meteor.com/#publishandsubscribe">Meteor的文档</a>, 可能会对<code>added()</code>和<code>ready()</code>在客户端设置记录的属性感到惊讶,  and struggled to square that with the Meteor apps that you&rsquo;ve seen that never use those methods.(I am so sorry 这句没想着怎么翻译好)</p>
 
-<p>这其中的原因是, Meteor提供了一个非常重要的便利 - <code>_publishCursor()</code>方法. 可能你从没见过它的使用? 因为有可能不是直接的调用，但如果你在调用一个publish函数并返回一个<strong>游标(cursor)</strong>(例如: <code>Posts.find({'author':'Tom'})</code>), 那么这就是<code>_publishCursor</code>.</p>
+<p>这其中的原因是, Meteor提供了一个非常重要的便利 &ndash; <code>_publishCursor()</code>方法. 可能你从没见过它的使用? 因为有可能不是直接的调用，但如果你在调用一个publish函数并返回一个<strong>游标(cursor)</strong>(例如: <code>Posts.find({'author':'Tom'})</code>), 那么这就是<code>_publishCursor</code>.</p>
 
 <p>当Meteor看到<code>somePosts</code>这个publication返回来一个游标(cursor), 则表明它自动调用了<code>_publishCursor()</code>publish这个cursor. 下面这是<code>_publishCursor()</code>所做的事情:</p>
 
@@ -100,7 +100,7 @@ Meteor.publish('somePosts',function(){
 <p>跟前边的一样, 我们先用<code>find()</code>得到一个cursor, 不过这一次我们会排除掉一些</p>
 
 <p>```javascript
-Meteor.publish('allPosts',function(){
+Meteor.publish(&lsquo;allPosts&rsquo;,function(){
   return Posts.find({}, {fields: {</p>
 
 <pre><code>author: false
@@ -113,8 +113,8 @@ Meteor.publish('allPosts',function(){
 <p>当然的, 我们还能够结合这两种技巧. 比如我们想要返回所有来自Tom的posts同时, 可以这么写</p>
 
 <p>```javascript
-Meteor.publish('allPosts',function(){
-  return Posts.find({'author':'Tom'}, {fields: {</p>
+Meteor.publish(&lsquo;allPosts&rsquo;,function(){
+  return Posts.find({&lsquo;author&rsquo;:&lsquo;Tom&rsquo;}, {fields: {</p>
 
 <pre><code>author: false
 </code></pre>
@@ -142,9 +142,9 @@ Meteor.publish('allPosts',function(){
     <id>http://xguox.github.com/blog/2013/04/06/deploy-meteor-on-heroku</id>
     <content type="html"><![CDATA[<p>貌似有好一段时间没有在这儿小发一些闷骚或者情感泛滥什么的, 都是用自己蹩脚的英语水平翻译些英文post. 这些天想部署个Meteor app玩一玩, 结果一玩就各种出事了.</p>
 
-<p>vps退货, godaddy的莫名失单, 部署各种卡壳...</p>
+<p>vps退货, godaddy的莫名失单, 部署各种卡壳&hellip;</p>
 
-<p>因为最近比较多的关注前端的东西,  同时在自己local耍着<a href="https://github.com/SachaG/Telescope">SachaG / Telescope</a>这个基于Meteor的项目. 于是也就顺手搭了<a href="http://frontn.com">FrontN</a>这么个类似HN, Reddit的玩意. 原本是准备直接把HN,Reddit clone 成中文版的, 不过<a href="http://news.dbanotes.net/">Fenng</a>貌似已经这么干了, 所以, 我也就不再造这个轮子了.另外原本也想专门作为<a href="http://jianshu.io">简书</a>的评论系统. 不过想想也不是很妥, 就...</p>
+<p>因为最近比较多的关注前端的东西,  同时在自己local耍着<a href="https://github.com/SachaG/Telescope">SachaG / Telescope</a>这个基于Meteor的项目. 于是也就顺手搭了<a href="http://frontn.com">FrontN</a>这么个类似HN, Reddit的玩意. 原本是准备直接把HN,Reddit clone 成中文版的, 不过<a href="http://news.dbanotes.net/">Fenng</a>貌似已经这么干了, 所以, 我也就不再造这个轮子了.另外原本也想专门作为<a href="http://jianshu.io">简书</a>的评论系统. 不过想想也不是很妥, 就&hellip;</p>
 
 <p>Meteor的系统是超级alpha的, 所以很多问题遇上了也没人帮忙, 解决. 比如之前在<a href="http://stackoverflow.com/questions/15654637/same-helper-for-different-template">Stack Overflow</a>. 而部署这一块, 是我比较陌生的. 包括以前搞rails那会, 也没真正意义的整一整部署. 绝大部分时间都在本地跑啊跑. 所以, 在Meteor, 也是这一块最让我头疼.</p>
 
@@ -155,7 +155,7 @@ Meteor.publish('allPosts',function(){
 
 <p>秉承流水帐作风, 待我慢慢道来.</p>
 
-<p>幸得以前一直搞得是ruby/rails. 所以装heroku的时候没啥压力, 不然可能这又得搞上一会. 直接下载了官方的<a href="https://toolbelt.heroku.com/">heroku toolbelt</a>无压力安装, login, clone...</p>
+<p>幸得以前一直搞得是ruby/rails. 所以装heroku的时候没啥压力, 不然可能这又得搞上一会. 直接下载了官方的<a href="https://toolbelt.heroku.com/">heroku toolbelt</a>无压力安装, login, clone&hellip;</p>
 
 <p>and then 跟着 <a href="https://github.com/oortcloud/heroku-buildpack-Meteorite">Heroku buildpack for Meteorite</a> 这个buildpack完成接下来的:</p>
 
@@ -171,7 +171,7 @@ heroku !  Resource not found
 </code>
 好吧, 很明显我自己傻13了才会知道要这么做的.</p>
 
-<p>接着到了最关键的push了.  当我<code>git push heroku master</code>的时候, bla,blah blah...下来还以为这次会真的很顺畅. 结果oops的一嘣</p>
+<p>接着到了最关键的push了.  当我<code>git push heroku master</code>的时候, bla,blah blah&hellip;下来还以为这次会真的很顺畅. 结果oops的一嘣</p>
 
 <p><code>javascript
 ...
@@ -184,7 +184,7 @@ Verify now at https://heroku.com/verify
 <code>heroku addons:add mongohq:sandbox</code>就OK
 (sandbox是免费餐)</p>
 
-<p>结果毫无疑问的继续嘣...</p>
+<p>结果毫无疑问的继续嘣&hellip;</p>
 
 <p><code>javascript
 Adding mongohq:sandbox on frontn... failed
@@ -193,21 +193,21 @@ Adding mongohq:sandbox on frontn... failed
  !    Verify now at https://heroku.com/verify
 </code></p>
 
-<p>Google之才知道原来Heroku在装插件前得通过传说中的credit card卡认证, 我辣时就更嘣了. 对于我等无产阶级而言, credit card仿佛就跟神一般滴遥不可及. 你想买3刀的godaddy域名?不好意思, 请出示credit card; 你想用name.com买域名? 不好意思, 请出示credit card; 你想买linode的vps?有credit card吗? 亲...正当我开始准备放弃heroku这条路时, 忽然无意中发现了虚拟信用卡这货, 顺藤摸瓜发现, 柳暗花明又一村.</p>
+<p>Google之才知道原来Heroku在装插件前得通过传说中的credit card卡认证, 我辣时就更嘣了. 对于我等无产阶级而言, credit card仿佛就跟神一般滴遥不可及. 你想买3刀的godaddy域名?不好意思, 请出示credit card; 你想用name.com买域名? 不好意思, 请出示credit card; 你想买linode的vps?有credit card吗? 亲&hellip;正当我开始准备放弃heroku这条路时, 忽然无意中发现了虚拟信用卡这货, 顺藤摸瓜发现, 柳暗花明又一村.</p>
 
 <p><strong>工行国际e卡 + entropay</strong>(怎么觉得我像在拍广告的)</p>
 
 <p>虽然门路是找着了, 不过弄得我好不蛋疼.<br/>
-因为mac上工行网银不支持插U盾, 于是又启动了以前的那台老爷机, 一卡一顿的, 唉, 为了搞到手就忍忍吧...结果成功申请后唬弄半晌才知道原来要先用软妹b买美刀才能花, 而且至少买50刀. 我现在要50刀搞毛线撒...没法子, 只得照办了. 然后是entropay的虚拟卡>>><br/>
-OOXX一轮下来总算是把heroku的验证给通过了, 感动啊...</p>
+因为mac上工行网银不支持插U盾, 于是又启动了以前的那台老爷机, 一卡一顿的, 唉, 为了搞到手就忍忍吧&hellip;结果成功申请后唬弄半晌才知道原来要先用软妹b买美刀才能花, 而且至少买50刀. 我现在要50刀搞毛线撒&hellip;没法子, 只得照办了. 然后是entropay的虚拟卡>>><br/>
+OOXX一轮下来总算是把heroku的验证给通过了, 感动啊&hellip;</p>
 
 <p><code>heroku addons:add mongohq:sandbox</code></p>
 
 <p><code>git push heroku master</code></p>
 
-<p>好吧, 总算是成功了. 我容易吗...</p>
+<p>好吧, 总算是成功了. 我容易吗&hellip;</p>
 
-<p>最后总结, heroku相对的来说除了出错情况较少, 可用资料多之外, 管理上也比自己搭vps要方便些, feel了一下MongoHQ的那个插件还不错...这样, 也就可以花更多的时间的app的开发上. 而不是折腾这出错那无解.  好吧, 尽管咱都爱折腾, 不过, 往你想的地方折腾不更好吗? 其实这些也就都是Paas的优势啦, 专注核心开发, 减少运维成本...</p>
+<p>最后总结, heroku相对的来说除了出错情况较少, 可用资料多之外, 管理上也比自己搭vps要方便些, feel了一下MongoHQ的那个插件还不错&hellip;这样, 也就可以花更多的时间的app的开发上. 而不是折腾这出错那无解.  好吧, 尽管咱都爱折腾, 不过, 往你想的地方折腾不更好吗? 其实这些也就都是Paas的优势啦, 专注核心开发, 减少运维成本&hellip;</p>
 
 <p>其他的待续吧, 相比rails, 或许底层它怎么干还没搞透, 但起码的知道它干了什么, 可Meteor我还真不知道它都干了些什么, 比rails更magic.</p>
 
@@ -257,7 +257,7 @@ OOXX一轮下来总算是把heroku的验证给通过了, 感动啊...</p>
 
 <h2>误解#3：“Meteor不支持第三方packages”</h2>
 
-<p>有很多的讨论是关于Meteor所用的不是Node的标准包管理--NPM. 而事实上， Meteor压根就没有不允许使用第三方程序包.</p>
+<p>有很多的讨论是关于Meteor所用的不是Node的标准包管理&mdash;NPM. 而事实上， Meteor压根就没有不允许使用第三方程序包.</p>
 
 <p>And it’s true that the vanilla install of Meteor does not come with a package manager. 但庆幸的是， <a href="http://theMeteorbook.com/">本书</a>的合著者之一Tom Coleman， 同时也是Meteor包管理器<a href="https://github.com/oortcloud/Meteorite">Meteorite</a>和packages资源库<a href="http://atmosphere.Meteor.com/">Atmosphere</a>的开发者。</p>
 
@@ -304,9 +304,9 @@ OOXX一轮下来总算是把heroku的验证给通过了, 感动啊...</p>
     <link href="http://xguox.github.com/blog/2013/03/10/introduction-to-realtime-web-with-meteor-dot-js-and-node-dot-js/"/>
     <updated>2013-03-10T23:16:00+08:00</updated>
     <id>http://xguox.github.com/blog/2013/03/10/introduction-to-realtime-web-with-meteor-dot-js-and-node-dot-js</id>
-    <content type="html"><![CDATA[<p>最近,有许多关于 <a href="http://derbyjs.com/">Derby.js</a>的激动人心的讨论涌现在了我的Twitter Timeline. 我从未使用过能够帮你做这么多--实时同步客户端和服务端 的框架. 从本质上讲, 这使得我们可以自己编写一个代码量很少的应用可以让两个人编写同一个 text field–live. 而 Derby帮你处理了在 models 和 views 之间所有的同步. 就如 Google Docs 的协作编辑那样.</p>
+    <content type="html"><![CDATA[<p>最近,有许多关于 <a href="http://derbyjs.com/">Derby.js</a>的激动人心的讨论涌现在了我的Twitter Timeline. 我从未使用过能够帮你做这么多&mdash;实时同步客户端和服务端 的框架. 从本质上讲, 这使得我们可以自己编写一个代码量很少的应用可以让两个人编写同一个 text field–live. 而 Derby帮你处理了在 models 和 views 之间所有的同步. 就如 Google Docs 的协作编辑那样.</p>
 
-<p>这非常的伟大, 但经过深入的研究, 发现 Derby.js 并没有我想象中的那么成熟--目前还没有到1.0版本. 当然, Node.js 和 Meteor 也同样没有. 但相比起来, 似乎Derby缺少的更多一些. 比如, 据我目前知道的, 还没有一个好使的方法来处理sessions. 或许是因为缺乏文档的原因吧, 但是, 据说Derby的团队目前正在开发authentication. 如果有谁有一些关于Derby.js 处理sessions的新手指引, 我会很乐意去研究的.</p>
+<p>这非常的伟大, 但经过深入的研究, 发现 Derby.js 并没有我想象中的那么成熟&mdash;目前还没有到1.0版本. 当然, Node.js 和 Meteor 也同样没有. 但相比起来, 似乎Derby缺少的更多一些. 比如, 据我目前知道的, 还没有一个好使的方法来处理sessions. 或许是因为缺乏文档的原因吧, 但是, 据说Derby的团队目前正在开发authentication. 如果有谁有一些关于Derby.js 处理sessions的新手指引, 我会很乐意去研究的.</p>
 
 <p>另外一个我经常见到被拿来与Derby.js做比较的框架是<a href="http://Meteor.com/">Meteor</a>. 与Derby相似的是,它也能在多个客户端下实时更新views, 尽管做法上可能跟Derby有点不同. Derby可以较容易的使用多种数据库, 而Meteor则只亲近于<a href="http://mongodb.org/">MongoDB</a>. 事实上, 通过如<a href="http://mongoosejs.com/">Mongoose</a>客户端接入数据库的API与你在服务端所期望的已经非常接近了.</p>
 
@@ -353,7 +353,7 @@ $ Meteor deploy my-app-name.Meteor.com
 
 <p>通过<code>Meteor create</code>命令生成的文件夹里, 你可以看到几个不同的文件. 如果你的系统设置了显示隐藏文件, 那还可以看到一个<code>.Meteor</code>文件夹. 这个文件夹包括的Meteor本身, 以及MongoDB数据库的文件.</p>
 
-<p>在你的项目的根目录, 你可以看到的还有<code>chat.html</code> <code>chat.js</code> <code>chat.css</code>. 这三个文件自解释?的. HTML包含了这个应用的模板和视图, 并都通过<code>chat.css</code>来添加样式. 而这个JavaScript文件则包含了在客户端和服务端执行的代码. 这非常的重要--请不要把任何东西比如配置数据和密码都放在这里, 因为任何人都能通过查看你的应用程序的源文件看到.</p>
+<p>在你的项目的根目录, 你可以看到的还有<code>chat.html</code> <code>chat.js</code> <code>chat.css</code>. 这三个文件自解释?的. HTML包含了这个应用的模板和视图, 并都通过<code>chat.css</code>来添加样式. 而这个JavaScript文件则包含了在客户端和服务端执行的代码. 这非常的重要&mdash;请不要把任何东西比如配置数据和密码都放在这里, 因为任何人都能通过查看你的应用程序的源文件看到.</p>
 
 <p>用你最喜欢的文本编辑器打开<code>chat.js</code>. 我个人使用的是<a href="http://sublimetext.com/">Sublime Text 2</a>, 因为它很简洁并且有多光标功能.
 你可以在<code>chat.js</code>看到下面这些代码</p>
@@ -433,7 +433,7 @@ if (Meteor.is_client) {</p>
 
 <p></template>
 <code>``
-在这个例子中,</code>template`标签只有一个属性--用来表示这个template的名字. 也就是当我们渲染的时候需要用来指定的名字.</p>
+在这个例子中,</code>template`标签只有一个属性&mdash;用来表示这个template的名字. 也就是当我们渲染的时候需要用来指定的名字.</p>
 
 <p>查看浏览器, 你会发现页面已经刷新了, 输入框已经呈现出来了.</p>
 
@@ -558,7 +558,7 @@ Template.messages.**messages** = function(){ … }
 <p>此时,你的<code>chat.js</code>应该是这样的. 是否很惊讶就只需在服务器写这么些代码我们就能展示一个实时的聊天记录应用.</p>
 
 <p>```javascript
-Messages = new Meteor.Collection('messages');</p>
+Messages = new Meteor.Collection(&lsquo;messages&rsquo;);</p>
 
 <p>if (Meteor.is_client) {
   Template.messages.messages = function(){</p>
@@ -587,7 +587,7 @@ Messages.insert({ name: 'Andrew', message: 'Hello world!', time: 0 })
 
 <p>```javascript
 Template.entryfield.events = {
-  "keydown #message": function(event){</p>
+  &ldquo;keydown #message&rdquo;: function(event){</p>
 
 <pre><code>if(event.which == 13){
   // Submit the form
@@ -627,7 +627,7 @@ template的</code>event`属性会包含有一个对象, 这个对象的keys的�
 
 <p>在<code>events</code>对象里, 每一个key都有一个函数作为它的值. 当事件被触发的时候, 这个<code>event</code>对象会被作为第一个参数传给这个函数.在我们的chat应用, 每一次在输入框中按下一个按键(<code>keydown</code>), 这个函数都会被调用.</p>
 
-<p>在函数里的代码非常简单. 首先, 我们先要检测按下的是否"enter"键("enter"的keycode 是13). 接着,通过ID来得到两个输入框中的DOM元素. 最后, 我们检查确保输入框中的值不为空, 用户不允许发送空的名字和讯息.</p>
+<p>在函数里的代码非常简单. 首先, 我们先要检测按下的是否"enter"键(&ldquo;enter"的keycode 是13). 接着,通过ID来得到两个输入框中的DOM元素. 最后, 我们检查确保输入框中的值不为空, 用户不允许发送空的名字和讯息.</p>
 
 <p>下面的代码需要注意了, 它会被直接插入到数据库中</p>
 
@@ -655,7 +655,7 @@ Messages.insert({
 <p>原文来自Andrew Munsell <a href="http://www.andrewmunsell.com/blog/introduction-to-realtime-web-Meteor-and-nodejs/#.UTyJZtHN-tv">Introduction to Realtime Web with Meteor and Node.js</a></p>
 
 <p>另附上Tom的 Vimeo screencast(需FanQiang)<br/>
-{% video http://av.vimeo.com/31624/419/93304834.mp4?aksessionid=d86b5b612c86d70bd2022ae1050aa1be&amp;token=1362992353_ce10e413b18fa6f2d0e3483ef6b82894 640 320 http://b.vimeocdn.com/ts/278/431/278431171_960.jpg %}</p>
+{% video <a href="http://av.vimeo.com/31624/419/93304834.mp4?aksessionid=d86b5b612c86d70bd2022ae1050aa1be&amp;token=1362992353_ce10e413b18fa6f2d0e3483ef6b82894">http://av.vimeo.com/31624/419/93304834.mp4?aksessionid=d86b5b612c86d70bd2022ae1050aa1be&amp;token=1362992353_ce10e413b18fa6f2d0e3483ef6b82894</a> 640 320 <a href="http://b.vimeocdn.com/ts/278/431/278431171_960.jpg">http://b.vimeocdn.com/ts/278/431/278431171_960.jpg</a> %}</p>
 ]]></content>
   </entry>
   
@@ -666,7 +666,7 @@ Messages.insert({
     <id>http://xguox.github.com/blog/2013/03/08/learn-meteor-fundamentals-and-best-practices</id>
     <content type="html"><![CDATA[<h2>引言</h2>
 
-<p>想知道这个新奇又好玩的东西---Meteor是如何工作的?那就太好了,你来对地方了. 我会向你展示一个Meteor项目的方方面面 并会给你一些最好的提示让你应用在未来自己的Meteor项目当中.</p>
+<p>想知道这个新奇又好玩的东西&mdash;-Meteor是如何工作的?那就太好了,你来对地方了. 我会向你展示一个Meteor项目的方方面面 并会给你一些最好的提示让你应用在未来自己的Meteor项目当中.</p>
 
 <h2>What is Meteor</h2>
 
@@ -678,7 +678,7 @@ Meteor目前使用的模板引擎只能是 <a href="http://handlebarsjs.com/">ha
 
 <h2>基础</h2>
 
-<p>一个Meteor项目包含的大多都是JavaScript文件. 如果你放置任意一个 <code>*.js</code>文件在你的项目的任何位置, Meteor会自动帮你加载并运行之. 你在Meteor项目中写的每一个JavaScript文件都会被部署到服务端和客户端(额...也不完全是这样的,继续往下看吧!). 之所以Meteor这么,这么的cool,原因之一就是:当你写了一个JavaScript函数,在客户端和服务端都可以使用之!  <br/>
+<p>一个Meteor项目包含的大多都是JavaScript文件. 如果你放置任意一个 <code>*.js</code>文件在你的项目的任何位置, Meteor会自动帮你加载并运行之. 你在Meteor项目中写的每一个JavaScript文件都会被部署到服务端和客户端(额&hellip;也不完全是这样的,继续往下看吧!). 之所以Meteor这么,这么的cool,原因之一就是:当你写了一个JavaScript函数,在客户端和服务端都可以使用之!  <br/>
 更cool的是, 比如,你在项目的任意一个地方放置<code>*.less</code>, 那么这些文件都会自动被编译并发送至客户端以及从而包含进页面当中.<br/>
 有时候,可能你希望分离开服务端和客户端的代码. 幸运地是,<!-- more --> Meteor有这么一对标识可以帮你:<code>Meteor.is_server</code>和<code>Meteor.is_client</code> <br/>
 下面的例子在浏览器的JavaScript控制台中会输出<code>Hi. I’m CLIENT</code>,而在服务端中则会输出 <code>Hi. I’m SERVER</code></p>
@@ -738,7 +738,7 @@ if(Meteor.is_client) {</p>
 <h2>响应(Reactivity)</h2>
 
 <p>Meteor 通过 响应数据源(“reactive” data sources) 和 上下文(context) 帮你省去了当数据改变时手动替换页面的麻烦. 当响应数据源被更新后,响应上下文会重新运行(A reactive context is just a function that will get re-run if it contains a reactive data source that gets updated.) 刚开始的时候要把思维转换过来可能有些难, 下面的例子将为你解释清楚. <br/>
-下面是一个html页面和一个叫<code>cool_dude</code>Meteor<a href="http://docs.Meteor.com/#templates">模板</a>, 以及一个在客户端运行的JavaScript函数---传一个<code>username</code>的值给模板用以渲染.
+下面是一个html页面和一个叫<code>cool_dude</code>Meteor<a href="http://docs.Meteor.com/#templates">模板</a>, 以及一个在客户端运行的JavaScript函数&mdash;-传一个<code>username</code>的值给模板用以渲染.
 {% codeblock %}
 <html>
   <head>
@@ -775,7 +775,7 @@ Template.cool_dude.username = function() {</p>
 
 <p>```javascript
 // When the app starts,
-// associate the key "username" with the string "Andrew Scala"
+// associate the key &ldquo;username&rdquo; with the string &ldquo;Andrew Scala&rdquo;
 Meteor.startup(function() {</p>
 
 <pre><code>Session.set("username", "Andrew Scala");
@@ -807,7 +807,7 @@ Session.set("username", "Bill Murray");
 <p>下面这是一个关于 发布/订阅 的方面教材,  客户端可以看到数据库中的每一条信息:</p>
 
 <p>```javascript
-var Messages = new Meteor.Collection("messages");</p>
+var Messages = new Meteor.Collection(&ldquo;messages&rdquo;);</p>
 
 <p>if(Meteor.is_server) {</p>
 
@@ -826,10 +826,10 @@ var Messages = new Meteor.Collection("messages");</p>
 <p>}
 <code>
 当在客户端</code>Messages.find({})<code>,可以得到数据库里的每一条信息.  
-我们可以指定一个参数使得在订阅的时候缩小范围只获取实际需要的信息(如在</code>"cool_people_channel"```频道中的信息)</p>
+我们可以指定一个参数使得在订阅的时候缩小范围只获取实际需要的信息(如在</code>&ldquo;cool_people_channel&rdquo;```频道中的信息)</p>
 
 <p>```javascript
-var Messages = new Meteor.Collection("messages");</p>
+var Messages = new Meteor.Collection(&ldquo;messages&rdquo;);</p>
 
 <p>if(Meteor.is_server) {</p>
 
@@ -860,7 +860,7 @@ Meteor.autosubscribe(function() {
 <h2>服务端方法</h2>
 
 <p>由于客户端不允许查看数据库中有什么东西, 你一对会好奇客户端又是如何存储信息的. 解决办法是使用Meteor的<a href="http://docs.Meteor.com/#methods_header">服务端方法(Server Methods)</a>. 你在服务端定义了所有的函数用以一些危险的做法比如修改和更新数据, 然后让客户端像调用常规方法那样call这些函数并返回值. 客户端永远也不会看到具体的实现,也不会自己修改数据. 这些都是服务端做的事.<br/>
-想要添加一个用户到数据库中, 假定有一个叫<code>create_user</code> 的方法--传入一个username并让服务端插入一条记录. 它会返回给客户端一个<code>ObjectID</code>这样客户端可以抓取到这个用户的信息并做任何接下来要做的事.</p>
+想要添加一个用户到数据库中, 假定有一个叫<code>create_user</code> 的方法&mdash;传入一个username并让服务端插入一条记录. 它会返回给客户端一个<code>ObjectID</code>这样客户端可以抓取到这个用户的信息并做任何接下来要做的事.</p>
 
 <p>```javascript
 if(Meteor.is_server) {</p>
@@ -876,7 +876,7 @@ if(Meteor.is_server) {</p>
 
 <p>}</p>
 
-<p>// Remember, the client's browser only ever sees the code below:
+<p>// Remember, the client&rsquo;s browser only ever sees the code below:
 if(Meteor.is_client) {</p>
 
 <pre><code>var username = "Andrew Scala";
@@ -919,7 +919,7 @@ _.each(collections, function(collection) {
 <p>准备好开发一个真实的Meteor项目了吗?一起期待吧, Part 2 就在路上了.届时将引导你完成一个完整的app!</p>
 
 <p>原文来自Andrew Scala <a href="http://andrewscala.com/meteor/">Learn Meteor Fundamentals and Best Practices</a>  <br/>
-Ps:文章有点老,XD...不过就像该篇文章的作者所说, Meteor 现在还是处于一个 super-beta 阶段, 版本更新自然会相对来得快些. 据说1.0版本将会在不到一年的时间内发布.</p>
+Ps:文章有点老,XD&hellip;不过就像该篇文章的作者所说, Meteor 现在还是处于一个 super-beta 阶段, 版本更新自然会相对来得快些. 据说1.0版本将会在不到一年的时间内发布.</p>
 ]]></content>
   </entry>
   

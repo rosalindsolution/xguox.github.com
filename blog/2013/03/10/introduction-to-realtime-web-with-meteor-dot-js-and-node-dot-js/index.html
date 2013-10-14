@@ -7,7 +7,7 @@
 
 	<meta name="author" content="XguoX">
 
-<meta name="description" content="最近,有许多关于 Derby.js的激动人心的讨论涌现在了我的Twitter Timeline. 我从未使用过能够帮你做这么多&#8211;实时同步客户端和服务端 的框架. 从本质上讲, 这使得我们可以自己编写一个代码量很少的应用可以让两个人编写同一个 text field–live. 而 &hellip;"> <meta name="keywords" content="">
+<meta name="description" content="最近,有许多关于 Derby.js的激动人心的讨论涌现在了我的Twitter Timeline. 我从未使用过能够帮你做这么多&mdash;实时同步客户端和服务端 的框架. 从本质上讲, 这使得我们可以自己编写一个代码量很少的应用可以让两个人编写同一个 text field–live. 而 &hellip;"> <meta name="keywords" content="">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -64,9 +64,9 @@
 
 <time datetime="2013-03-10T23:16:00+08:00" pubdate data-updated="true">Mar 10<span>th</span>, 2013</time></div>
 	</header>
-	<div class="entry-content"><p>最近,有许多关于 <a href="http://derbyjs.com/">Derby.js</a>的激动人心的讨论涌现在了我的Twitter Timeline. 我从未使用过能够帮你做这么多&#8211;实时同步客户端和服务端 的框架. 从本质上讲, 这使得我们可以自己编写一个代码量很少的应用可以让两个人编写同一个 text field–live. 而 Derby帮你处理了在 models 和 views 之间所有的同步. 就如 Google Docs 的协作编辑那样.</p>
+	<div class="entry-content"><p>最近,有许多关于 <a href="http://derbyjs.com/">Derby.js</a>的激动人心的讨论涌现在了我的Twitter Timeline. 我从未使用过能够帮你做这么多&mdash;实时同步客户端和服务端 的框架. 从本质上讲, 这使得我们可以自己编写一个代码量很少的应用可以让两个人编写同一个 text field–live. 而 Derby帮你处理了在 models 和 views 之间所有的同步. 就如 Google Docs 的协作编辑那样.</p>
 
-<p>这非常的伟大, 但经过深入的研究, 发现 Derby.js 并没有我想象中的那么成熟&#8211;目前还没有到1.0版本. 当然, Node.js 和 Meteor 也同样没有. 但相比起来, 似乎Derby缺少的更多一些. 比如, 据我目前知道的, 还没有一个好使的方法来处理sessions. 或许是因为缺乏文档的原因吧, 但是, 据说Derby的团队目前正在开发authentication. 如果有谁有一些关于Derby.js 处理sessions的新手指引, 我会很乐意去研究的.</p>
+<p>这非常的伟大, 但经过深入的研究, 发现 Derby.js 并没有我想象中的那么成熟&mdash;目前还没有到1.0版本. 当然, Node.js 和 Meteor 也同样没有. 但相比起来, 似乎Derby缺少的更多一些. 比如, 据我目前知道的, 还没有一个好使的方法来处理sessions. 或许是因为缺乏文档的原因吧, 但是, 据说Derby的团队目前正在开发authentication. 如果有谁有一些关于Derby.js 处理sessions的新手指引, 我会很乐意去研究的.</p>
 
 <p>另外一个我经常见到被拿来与Derby.js做比较的框架是<a href="http://Meteor.com/">Meteor</a>. 与Derby相似的是,它也能在多个客户端下实时更新views, 尽管做法上可能跟Derby有点不同. Derby可以较容易的使用多种数据库, 而Meteor则只亲近于<a href="http://mongodb.org/">MongoDB</a>. 事实上, 通过如<a href="http://mongoosejs.com/">Mongoose</a>客户端接入数据库的API与你在服务端所期望的已经非常接近了.</p>
 
@@ -119,7 +119,7 @@
 
 <p>通过<code>Meteor create</code>命令生成的文件夹里, 你可以看到几个不同的文件. 如果你的系统设置了显示隐藏文件, 那还可以看到一个<code>.Meteor</code>文件夹. 这个文件夹包括的Meteor本身, 以及MongoDB数据库的文件.</p>
 
-<p>在你的项目的根目录, 你可以看到的还有<code>chat.html</code> <code>chat.js</code> <code>chat.css</code>. 这三个文件自解释?的. HTML包含了这个应用的模板和视图, 并都通过<code>chat.css</code>来添加样式. 而这个JavaScript文件则包含了在客户端和服务端执行的代码. 这非常的重要&#8211;请不要把任何东西比如配置数据和密码都放在这里, 因为任何人都能通过查看你的应用程序的源文件看到.</p>
+<p>在你的项目的根目录, 你可以看到的还有<code>chat.html</code> <code>chat.js</code> <code>chat.css</code>. 这三个文件自解释?的. HTML包含了这个应用的模板和视图, 并都通过<code>chat.css</code>来添加样式. 而这个JavaScript文件则包含了在客户端和服务端执行的代码. 这非常的重要&mdash;请不要把任何东西比如配置数据和密码都放在这里, 因为任何人都能通过查看你的应用程序的源文件看到.</p>
 
 <p>用你最喜欢的文本编辑器打开<code>chat.js</code>. 我个人使用的是<a href="http://sublimetext.com/">Sublime Text 2</a>, 因为它很简洁并且有多光标功能.
 你可以在<code>chat.js</code>看到下面这些代码</p>
@@ -224,7 +224,7 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>在这个例子中,<code>template</code>标签只有一个属性&#8211;用来表示这个template的名字. 也就是当我们渲染的时候需要用来指定的名字.</p>
+<p>在这个例子中,<code>template</code>标签只有一个属性&mdash;用来表示这个template的名字. 也就是当我们渲染的时候需要用来指定的名字.</p>
 
 <p>查看浏览器, 你会发现页面已经刷新了, 输入框已经呈现出来了.</p>
 
@@ -481,7 +481,7 @@ template的<code>event</code>属性会包含有一个对象, 这个对象的keys
 
 <p>在<code>events</code>对象里, 每一个key都有一个函数作为它的值. 当事件被触发的时候, 这个<code>event</code>对象会被作为第一个参数传给这个函数.在我们的chat应用, 每一次在输入框中按下一个按键(<code>keydown</code>), 这个函数都会被调用.</p>
 
-<p>在函数里的代码非常简单. 首先, 我们先要检测按下的是否&#8221;enter&#8221;键(&#8220;enter&#8221;的keycode 是13). 接着,通过ID来得到两个输入框中的DOM元素. 最后, 我们检查确保输入框中的值不为空, 用户不允许发送空的名字和讯息.</p>
+<p>在函数里的代码非常简单. 首先, 我们先要检测按下的是否&#8221;enter&#8221;键(&ldquo;enter&#8221;的keycode 是13). 接着,通过ID来得到两个输入框中的DOM元素. 最后, 我们检查确保输入框中的值不为空, 用户不允许发送空的名字和讯息.</p>
 
 <p>下面的代码需要注意了, 它会被直接插入到数据库中</p>
 
@@ -515,7 +515,7 @@ template的<code>event</code>属性会包含有一个对象, 这个对象的keys
 <p>原文来自Andrew Munsell <a href="http://www.andrewmunsell.com/blog/introduction-to-realtime-web-Meteor-and-nodejs/#.UTyJZtHN-tv">Introduction to Realtime Web with Meteor and Node.js</a></p>
 
 <p>另附上Tom的 Vimeo screencast(需FanQiang)<br/>
-<video width='640' height='320' preload='none' controls poster=' http://b.vimeocdn.com/ts/278/431/278431171_960.jpg'><source src='http://av.vimeo.com/31624/419/93304834.mp4?aksessionid=d86b5b612c86d70bd2022ae1050aa1be&token=1362992353_ce10e413b18fa6f2d0e3483ef6b82894' type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'/></video></p>
+<video width='640' height='320' preload='none' controls poster='http://b.vimeocdn.com/ts/278/431/278431171_960.jpg'><source src='http://av.vimeo.com/31624/419/93304834.mp4?aksessionid=d86b5b612c86d70bd2022ae1050aa1be&token=1362992353_ce10e413b18fa6f2d0e3483ef6b82894' ></video></p>
 </div>
 
 </article>

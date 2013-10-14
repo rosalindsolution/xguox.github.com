@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Jabber | XguoX]]></title>
   <link href="http://xguox.github.com/blog/categories/jabber/atom.xml" rel="self"/>
   <link href="http://xguox.github.com/"/>
-  <updated>2013-10-14T15:19:23+08:00</updated>
+  <updated>2013-10-14T16:02:10+08:00</updated>
   <id>http://xguox.github.com/</id>
   <author>
     <name><![CDATA[XguoX]]></name>
@@ -32,12 +32,12 @@
 
 <p>表示理解动画要拖拖剧情等漫画，但这拖得略不靠谱了吧。如果只是为了等漫画，那我觉得偶尔直接来个停播会好点呢？完全可以理解啊，就像漫画前不久也停刊好几回，当然那是照顾到尾田大神的身体状况，不管怎样，完全可以理解。又或者跟以往那样来些个什么番外篇打酱油，也都总比这样把一集的剧情拖沓成这样要好。</p>
 
-<p>相比之下，漫画的剧情引导显得顺多了。  以「顶上战争」作为分界的两年后的新世界篇，在漫画里头与两年前的剧情相比有过之而无不及。但在动画里头，给我的感觉却是，比之两年前的剧情，那是相去甚远，之所以产生这种心理，应该是缘由这剧情拖沓。反正1 - 570+的动画重看了N次，没有一次说是强烈地觉得剧情拖沓跳过哪一集。而今，好几集好几次我都想按快进 =。=  但还是没有按下去。 难道，是因为时间的作用使之沉淀下来，难道现在的剧情也要等过上些时间沉淀才会打消这些感觉？</p>
+<p>相比之下，漫画的剧情引导显得顺多了。  以「顶上战争」作为分界的两年后的新世界篇，在漫画里头与两年前的剧情相比有过之而无不及。但在动画里头，给我的感觉却是，比之两年前的剧情，那是相去甚远，之所以产生这种心理，应该是缘由这剧情拖沓。反正1 &ndash; 570+的动画重看了N次，没有一次说是强烈地觉得剧情拖沓跳过哪一集。而今，好几集好几次我都想按快进 =。=  但还是没有按下去。 难道，是因为时间的作用使之沉淀下来，难道现在的剧情也要等过上些时间沉淀才会打消这些感觉？</p>
 
 <p>最后，我发觉并深感OP里最喜欢的不是Luffy君，说不上谁是最喜欢的角色，但，可以肯定，对 罗宾酱&amp;索大 的喜欢更多一些。</p>
 
-<p>{% img left https://7nmgwa.dm1.livefilestore.com/y2piowWh9rmGFKLaMMZX9p0hjieu0nhXYeJLNicKrqCqu44Ai-nJgUbgIl4ELt5Nty2DCHO6Gd0GHh-GagLaN3XOkefcg5FVZON8l0UQm1yxLE/Nico.Robin.full.1401954.jpg?psid=1 350 600 %}
-{% img right https://7no7na.dm2301.livefilestore.com/y2pyPdpo4WPWPKcGC9nYQoI5vn_BOqO2S31h64Nh-nGZZq4T99T8w3lNT_JVot7o9u9Xeh9g31anmx7mBgY8vnmGza_wDQMYvm9flRIYiUxsVU/7f4996e7jw1e5c2o3526nj20bu0goaar.jpg?psid=1 350 600 %}</p>
+<p>{% img left <a href="https://7nmgwa.dm1.livefilestore.com/y2piowWh9rmGFKLaMMZX9p0hjieu0nhXYeJLNicKrqCqu44Ai-nJgUbgIl4ELt5Nty2DCHO6Gd0GHh-GagLaN3XOkefcg5FVZON8l0UQm1yxLE/Nico.Robin.full.1401954.jpg?psid=1">https://7nmgwa.dm1.livefilestore.com/y2piowWh9rmGFKLaMMZX9p0hjieu0nhXYeJLNicKrqCqu44Ai-nJgUbgIl4ELt5Nty2DCHO6Gd0GHh-GagLaN3XOkefcg5FVZON8l0UQm1yxLE/Nico.Robin.full.1401954.jpg?psid=1</a> 350 600 %}
+{% img right <a href="https://7no7na.dm2301.livefilestore.com/y2pyPdpo4WPWPKcGC9nYQoI5vn_BOqO2S31h64Nh-nGZZq4T99T8w3lNT_JVot7o9u9Xeh9g31anmx7mBgY8vnmGza_wDQMYvm9flRIYiUxsVU/7f4996e7jw1e5c2o3526nj20bu0goaar.jpg?psid=1">https://7no7na.dm2301.livefilestore.com/y2pyPdpo4WPWPKcGC9nYQoI5vn_BOqO2S31h64Nh-nGZZq4T99T8w3lNT_JVot7o9u9Xeh9g31anmx7mBgY8vnmGza_wDQMYvm9flRIYiUxsVU/7f4996e7jw1e5c2o3526nj20bu0goaar.jpg?psid=1</a> 350 600 %}</p>
 ]]></content>
   </entry>
   
@@ -64,7 +64,7 @@ git bisect reset
 
 <p>想把Octopress更新到2.1，一直略期待着，却一直在preview状态，今儿却才发现，2.1的branch挂了，倒是多了个 3.0的branch。</p>
 
-<p>好吧，老规矩的话，那就换个新面孔好了。这不流行Flat-UI嘛。发现一个还不错的---<a href="https://github.com/alexharris/octopress-flat/">octopress-flat</a>。加上自己做一些些个修改。</p>
+<p>好吧，老规矩的话，那就换个新面孔好了。这不流行Flat-UI嘛。发现一个还不错的&mdash;&ndash;<a href="https://github.com/alexharris/octopress-flat/">octopress-flat</a>。加上自己做一些些个修改。</p>
 
 <p>and then 准备new_post的时候报了这玩意，奇葩了，之前zsh貌似不见报这错的啊？难道几个月不碰就变的面目全非了。
 <code>
@@ -89,7 +89,7 @@ alias rake="noglob rake"
 
 <p>消沉够了就要回到正轨奋斗了。好好利用这几个月。</p>
 
-<p>接下来.......................要不要，从HTML重新开始呢呢呢,不知道俺的Ruby/Rails 还剩几多斤两呢, 好吧,都不是, 从工具开始, 回归使用Vim好了................</p>
+<p>接下来&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;..要不要，从HTML重新开始呢呢呢,不知道俺的Ruby/Rails 还剩几多斤两呢, 好吧,都不是, 从工具开始, 回归使用Vim好了&hellip;&hellip;&hellip;&hellip;&hellip;.</p>
 ]]></content>
   </entry>
   
@@ -122,7 +122,7 @@ alias rake="noglob rake"
 <img src="http://farm6.staticflickr.com/5328/8942627264_17b43443fa.jpg" alt="" />
 <img src="http://farm9.staticflickr.com/8272/8942004051_e1ee9b1655.jpg" alt="" />
 <img src="http://farm8.staticflickr.com/7387/8942626614_68f3ce0409.jpg" alt="" /><br/>
-路，一个人走，两个人走...回头，总能望见你</p>
+路，一个人走，两个人走&hellip;回头，总能望见你</p>
 
 <p><img src="http://farm4.staticflickr.com/3722/8942006795_499d3efaf2.jpg" alt="" />
 <img src="http://farm9.staticflickr.com/8136/8942630138_91654db5d7.jpg" alt="" />
@@ -139,7 +139,7 @@ alias rake="noglob rake"
 <p><img src="http://farm8.staticflickr.com/7348/8941980615_d394b6f30f.jpg" alt="" />
 <img src="http://farm3.staticflickr.com/2850/8941978751_2d21c5ec0b.jpg" alt="" /><br/>
 你说，车站总给人有一种说不出的感觉。<br/>
-我说，等，等待，等车，等人...</p>
+我说，等，等待，等车，等人&hellip;</p>
 
 <p><img src="http://farm8.staticflickr.com/7359/8941984311_fd5057e945.jpg" alt="" />
 <img src="http://farm8.staticflickr.com/7385/8942620208_e60bb022e2.jpg" alt="" /> <br/>
@@ -150,7 +150,7 @@ alias rake="noglob rake"
 无力的文字已经不足以描述我有多爱这两张照片</p>
 
 <p><img src="http://farm4.staticflickr.com/3665/8941981741_85e92f11b2.jpg" alt="" /><br/>
-多谢路过的小师妹，一开始，因为我之前把ISO设置到了6400，还开着闪光灯，闪瞎了...折腾了几下才发现问题。<br/>
+多谢路过的小师妹，一开始，因为我之前把ISO设置到了6400，还开着闪光灯，闪瞎了&hellip;折腾了几下才发现问题。<br/>
 小师妹问，你们是大四的师兄吧？<br/>
 我可以这么回答吗？我们还在读高中！</p>
 
@@ -163,7 +163,7 @@ alias rake="noglob rake"
     <link href="http://xguox.github.com/blog/2013/05/14/negative-energy/"/>
     <updated>2013-05-14T23:05:00+08:00</updated>
     <id>http://xguox.github.com/blog/2013/05/14/negative-energy</id>
-    <content type="html"><![CDATA[<p>尽管日期标的是May，但是写的时候，是在April 27th - 并刚做完支纤镜 - 耳边塞着耳机，麻醉也还在，全身如喝醉酒那般，浑坨坨，当然只是轻度的，不然我也不可能写的出这些。<br/>
+    <content type="html"><![CDATA[<p>尽管日期标的是May，但是写的时候，是在April 27th &ndash; 并刚做完支纤镜 &ndash; 耳边塞着耳机，麻醉也还在，全身如喝醉酒那般，浑坨坨，当然只是轻度的，不然我也不可能写的出这些。<br/>
 被病魔缠着也有半年了，目测还得继续治疗休养多半年。<br/>
 说说这个支纤镜吧。第二次做。比起第一次，尽管有了些许经验(也正因为有经验)，做之前还是有些小紧张，表现主要有心跳略有加速。很重要的一点上次的医生没说而这次的医生教了，"(粤语)吞口水，无口水就做吞口水噶动作"。难受是必须的，在某个point我一个没忍着，口中就吐了一堆我自己也看不着啥，anyway，死不了。</p>
 
@@ -176,7 +176,7 @@ alias rake="noglob rake"
 好吧，其实我觉得不单这个我也要去找找心理医生。患病的这些日子以来，已被打磨的没有任何锐气了。<br/>
 身上多了一道大疤痕，尽管日常情况下几乎看不到。但是要是裸身照着镜子还是会被吓呆。再加上，看着自己瘦得这副排骨身板，哎，同样的那么大的痕，在Luffy和Zoro身上怎么能那么酷！<br/>
 身体的不堪，也让我辞去了工作的机会，好吧，实习。我坦然接受了，毕竟，我认识了 @linlis 他们，我的技术、认识也得到提高，好吧，我承认好久没碰过ruby/rails了。尴尬，连语法都生疏了。<br/>
-所有的这些，比较尴尬的是工作吧，看着身边认识不认识的同学拿到好的坏的offer，而我…即使再过些时日痊愈了…赶脚被拉开距离了...</p>
+所有的这些，比较尴尬的是工作吧，看着身边认识不认识的同学拿到好的坏的offer，而我…即使再过些时日痊愈了…赶脚被拉开距离了&hellip;</p>
 
 <p>大四，大四下，是个奇葩的学期，各种琐事，课程重修，毕业体检，毕业照，毕业论文，外加这最麻烦的肺。心里头压根没法真正静下来学习（Front-End）。so，其实这些时间我只是在翻译一些国外的技术文，以meteor为主。</p>
 
@@ -192,9 +192,9 @@ alias rake="noglob rake"
 
 <p>某一个晚上，石头酱开导我说，你不要辣嚒大的报复心(抱负)啦!  这个引发了我想了关于抱负好久。有很大的抱负吗？我没要去改变世界，撬动世界啊，就想安安乐乐的enjoy着写代码而已。 我原本是这么以为的。</p>
 
-<p>写到这，麻醉也去了7788了，不过手上还是插着吊瓶的针。耳机里播放着《数码暴龙1 主题曲》，LOL，略脑残是伐？不单这首，还有，《One Piece》的所有OP，《龙珠》的某一部OP，还有几首以前翡翠台播的动画的主题曲。Anyway，Don't u think they are fucking awesome and memorable？</p>
+<p>写到这，麻醉也去了7788了，不过手上还是插着吊瓶的针。耳机里播放着《数码暴龙1 主题曲》，LOL，略脑残是伐？不单这首，还有，《One Piece》的所有OP，《龙珠》的某一部OP，还有几首以前翡翠台播的动画的主题曲。Anyway，Don&rsquo;t u think they are fucking awesome and memorable？</p>
 
-<p>在医院呆着其实也没什么不好的，至少的，我的作息正常的多，早睡早起，杠杠的，偶尔还能瞄瞄护士(看口罩是伐?) ，写到这我想起刚刚做完支纤镜荡回来的路上很巧的遇上，几个月前同一病房的病友的老婆，然后就混混沌沌的跟她扯了一会，尽管她戴着口罩(我居然还能认出来)，不过看得出比之前那会憔悴了许多，正如我家的两老也是。想来他老公会比我要承受稍大一些的心理压力，上有老，下有小...所以，横看竖看，我还是得跟自己说，不是什么大事。</p>
+<p>在医院呆着其实也没什么不好的，至少的，我的作息正常的多，早睡早起，杠杠的，偶尔还能瞄瞄护士(看口罩是伐?) ，写到这我想起刚刚做完支纤镜荡回来的路上很巧的遇上，几个月前同一病房的病友的老婆，然后就混混沌沌的跟她扯了一会，尽管她戴着口罩(我居然还能认出来)，不过看得出比之前那会憔悴了许多，正如我家的两老也是。想来他老公会比我要承受稍大一些的心理压力，上有老，下有小&hellip;所以，横看竖看，我还是得跟自己说，不是什么大事。</p>
 
 <p>写到这，换针水，鸽的血倒流出来了。a~ a~ a~ a~ 护士妹纸，快来啊！！！<br/>
 写到这，耳机播放《其实我介意》<br/>
@@ -235,9 +235,9 @@ alias rake="noglob rake"
     <id>http://xguox.github.com/blog/2013/04/06/deploy-meteor-on-heroku</id>
     <content type="html"><![CDATA[<p>貌似有好一段时间没有在这儿小发一些闷骚或者情感泛滥什么的, 都是用自己蹩脚的英语水平翻译些英文post. 这些天想部署个Meteor app玩一玩, 结果一玩就各种出事了.</p>
 
-<p>vps退货, godaddy的莫名失单, 部署各种卡壳...</p>
+<p>vps退货, godaddy的莫名失单, 部署各种卡壳&hellip;</p>
 
-<p>因为最近比较多的关注前端的东西,  同时在自己local耍着<a href="https://github.com/SachaG/Telescope">SachaG / Telescope</a>这个基于Meteor的项目. 于是也就顺手搭了<a href="http://frontn.com">FrontN</a>这么个类似HN, Reddit的玩意. 原本是准备直接把HN,Reddit clone 成中文版的, 不过<a href="http://news.dbanotes.net/">Fenng</a>貌似已经这么干了, 所以, 我也就不再造这个轮子了.另外原本也想专门作为<a href="http://jianshu.io">简书</a>的评论系统. 不过想想也不是很妥, 就...</p>
+<p>因为最近比较多的关注前端的东西,  同时在自己local耍着<a href="https://github.com/SachaG/Telescope">SachaG / Telescope</a>这个基于Meteor的项目. 于是也就顺手搭了<a href="http://frontn.com">FrontN</a>这么个类似HN, Reddit的玩意. 原本是准备直接把HN,Reddit clone 成中文版的, 不过<a href="http://news.dbanotes.net/">Fenng</a>貌似已经这么干了, 所以, 我也就不再造这个轮子了.另外原本也想专门作为<a href="http://jianshu.io">简书</a>的评论系统. 不过想想也不是很妥, 就&hellip;</p>
 
 <p>Meteor的系统是超级alpha的, 所以很多问题遇上了也没人帮忙, 解决. 比如之前在<a href="http://stackoverflow.com/questions/15654637/same-helper-for-different-template">Stack Overflow</a>. 而部署这一块, 是我比较陌生的. 包括以前搞rails那会, 也没真正意义的整一整部署. 绝大部分时间都在本地跑啊跑. 所以, 在Meteor, 也是这一块最让我头疼.</p>
 
@@ -248,7 +248,7 @@ alias rake="noglob rake"
 
 <p>秉承流水帐作风, 待我慢慢道来.</p>
 
-<p>幸得以前一直搞得是ruby/rails. 所以装heroku的时候没啥压力, 不然可能这又得搞上一会. 直接下载了官方的<a href="https://toolbelt.heroku.com/">heroku toolbelt</a>无压力安装, login, clone...</p>
+<p>幸得以前一直搞得是ruby/rails. 所以装heroku的时候没啥压力, 不然可能这又得搞上一会. 直接下载了官方的<a href="https://toolbelt.heroku.com/">heroku toolbelt</a>无压力安装, login, clone&hellip;</p>
 
 <p>and then 跟着 <a href="https://github.com/oortcloud/heroku-buildpack-Meteorite">Heroku buildpack for Meteorite</a> 这个buildpack完成接下来的:</p>
 
@@ -264,7 +264,7 @@ heroku !  Resource not found
 </code>
 好吧, 很明显我自己傻13了才会知道要这么做的.</p>
 
-<p>接着到了最关键的push了.  当我<code>git push heroku master</code>的时候, bla,blah blah...下来还以为这次会真的很顺畅. 结果oops的一嘣</p>
+<p>接着到了最关键的push了.  当我<code>git push heroku master</code>的时候, bla,blah blah&hellip;下来还以为这次会真的很顺畅. 结果oops的一嘣</p>
 
 <p><code>javascript
 ...
@@ -277,7 +277,7 @@ Verify now at https://heroku.com/verify
 <code>heroku addons:add mongohq:sandbox</code>就OK
 (sandbox是免费餐)</p>
 
-<p>结果毫无疑问的继续嘣...</p>
+<p>结果毫无疑问的继续嘣&hellip;</p>
 
 <p><code>javascript
 Adding mongohq:sandbox on frontn... failed
@@ -286,21 +286,21 @@ Adding mongohq:sandbox on frontn... failed
  !    Verify now at https://heroku.com/verify
 </code></p>
 
-<p>Google之才知道原来Heroku在装插件前得通过传说中的credit card卡认证, 我辣时就更嘣了. 对于我等无产阶级而言, credit card仿佛就跟神一般滴遥不可及. 你想买3刀的godaddy域名?不好意思, 请出示credit card; 你想用name.com买域名? 不好意思, 请出示credit card; 你想买linode的vps?有credit card吗? 亲...正当我开始准备放弃heroku这条路时, 忽然无意中发现了虚拟信用卡这货, 顺藤摸瓜发现, 柳暗花明又一村.</p>
+<p>Google之才知道原来Heroku在装插件前得通过传说中的credit card卡认证, 我辣时就更嘣了. 对于我等无产阶级而言, credit card仿佛就跟神一般滴遥不可及. 你想买3刀的godaddy域名?不好意思, 请出示credit card; 你想用name.com买域名? 不好意思, 请出示credit card; 你想买linode的vps?有credit card吗? 亲&hellip;正当我开始准备放弃heroku这条路时, 忽然无意中发现了虚拟信用卡这货, 顺藤摸瓜发现, 柳暗花明又一村.</p>
 
 <p><strong>工行国际e卡 + entropay</strong>(怎么觉得我像在拍广告的)</p>
 
 <p>虽然门路是找着了, 不过弄得我好不蛋疼.<br/>
-因为mac上工行网银不支持插U盾, 于是又启动了以前的那台老爷机, 一卡一顿的, 唉, 为了搞到手就忍忍吧...结果成功申请后唬弄半晌才知道原来要先用软妹b买美刀才能花, 而且至少买50刀. 我现在要50刀搞毛线撒...没法子, 只得照办了. 然后是entropay的虚拟卡>>><br/>
-OOXX一轮下来总算是把heroku的验证给通过了, 感动啊...</p>
+因为mac上工行网银不支持插U盾, 于是又启动了以前的那台老爷机, 一卡一顿的, 唉, 为了搞到手就忍忍吧&hellip;结果成功申请后唬弄半晌才知道原来要先用软妹b买美刀才能花, 而且至少买50刀. 我现在要50刀搞毛线撒&hellip;没法子, 只得照办了. 然后是entropay的虚拟卡>>><br/>
+OOXX一轮下来总算是把heroku的验证给通过了, 感动啊&hellip;</p>
 
 <p><code>heroku addons:add mongohq:sandbox</code></p>
 
 <p><code>git push heroku master</code></p>
 
-<p>好吧, 总算是成功了. 我容易吗...</p>
+<p>好吧, 总算是成功了. 我容易吗&hellip;</p>
 
-<p>最后总结, heroku相对的来说除了出错情况较少, 可用资料多之外, 管理上也比自己搭vps要方便些, feel了一下MongoHQ的那个插件还不错...这样, 也就可以花更多的时间的app的开发上. 而不是折腾这出错那无解.  好吧, 尽管咱都爱折腾, 不过, 往你想的地方折腾不更好吗? 其实这些也就都是Paas的优势啦, 专注核心开发, 减少运维成本...</p>
+<p>最后总结, heroku相对的来说除了出错情况较少, 可用资料多之外, 管理上也比自己搭vps要方便些, feel了一下MongoHQ的那个插件还不错&hellip;这样, 也就可以花更多的时间的app的开发上. 而不是折腾这出错那无解.  好吧, 尽管咱都爱折腾, 不过, 往你想的地方折腾不更好吗? 其实这些也就都是Paas的优势啦, 专注核心开发, 减少运维成本&hellip;</p>
 
 <p>其他的待续吧, 相比rails, 或许底层它怎么干还没搞透, 但起码的知道它干了什么, 可Meteor我还真不知道它都干了些什么, 比rails更magic.</p>
 

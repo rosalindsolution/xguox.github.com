@@ -236,15 +236,15 @@ Non-strict Mode:</p>
 
 <p>考虑到在你的代码中的所有可能的变更行为,你可能会认为有明确的理由不去除“use strict&#8221;,毕竟，你也不希望你的做法会改变代码原本的运行方式。对不?但事实上，你确实会遇上这些问题，即使你保留了&#8221;use strict&#8221;。这是因为，你的“use strict&#8221;在一些旧版本的浏览器下会直接被无视，<a href="http://caniuse.com/use-strict">它们不认识这句声明</a>。因此，对于你的其中一些用户，你还不如把“use strict&#8221;去掉更好。这样，他们也将得到同样的而在你想象的现代浏览器中不会得到的不严格行为。如果希望使用严格模式的同时支持旧版本的浏览器，你需要明白所有的严格模式下是否有效的副作用,然后避开对它们的依赖。</p>
 
-<p>你可能会觉得兼容性胜利了以及最好从来都没有出现过什么“use strict&#8221;的效果。又或者，你可能 觉得你了解了所有的副作用影响并坚持使用“use strict&#8221;,但还有另外一个问题需要考虑到的。如果通过连接和压缩你在生产环境下的代码来优化了HTTP请求,你可能会遇到一个与“use strict&#8221;相关的问题。当在函数中声明了 “use strict&#8221; ， 它只适用于该函数的词法作用域(lexical scope )。但如果在函数外声明，则将会作用于整一个文件。How could this come back to bite you?让我举个栗子&#8230;</p>
+<p>你可能会觉得兼容性胜利了以及最好从来都没有出现过什么“use strict&#8221;的效果。又或者，你可能 觉得你了解了所有的副作用影响并坚持使用“use strict&#8221;,但还有另外一个问题需要考虑到的。如果通过连接和压缩你在生产环境下的代码来优化了HTTP请求,你可能会遇到一个与“use strict&#8221;相关的问题。当在函数中声明了 “use strict&#8221; ， 它只适用于该函数的词法作用域(lexical scope )。但如果在函数外声明，则将会作用于整一个文件。How could this come back to bite you?让我举个栗子&hellip;</p>
 
-<p>在我的一些工作项目中，我们有时候会引入第三方的实用工具库到我们的应用程序中。而且很有可能会引入多个。当然，我们自己的代码是 concatenation-friendly ,因为我们只使用了函数范围内的 严格模式,但假设一下如果某一个第三方库在文件顶部&#8211;不在任何函数域内声明了“use strict&#8221;。现在也想象一下另外一个第三方库不是严格的安全。通过串联这两个库你几乎可以肯定会得到不同的行为以及一些以往不会抛出的错误。</p>
+<p>在我的一些工作项目中，我们有时候会引入第三方的实用工具库到我们的应用程序中。而且很有可能会引入多个。当然，我们自己的代码是 concatenation-friendly ,因为我们只使用了函数范围内的 严格模式,但假设一下如果某一个第三方库在文件顶部&mdash;不在任何函数域内声明了“use strict&#8221;。现在也想象一下另外一个第三方库不是严格的安全。通过串联这两个库你几乎可以肯定会得到不同的行为以及一些以往不会抛出的错误。</p>
 
 <p>当然也有一些方法可以缓解这些问题：避免使用任何在函数域外声明“use strict&#8221;的库,或者你可以放弃连接使用这些库并且 take the HTTP request hit to performance.这些个看起来都有些局限性，不那么吸引人。</p>
 
 <p>因此，不顾所有可能的移除严格模式副作用,在特定情况下，你可能会决定选择在生产环境下移除&#8221;use strict&#8221;。</p>
 
-<p>原文来自Michael Mathews,<a href="http://scriptogr.am/micmath/post/should-you-use-strict-in-your-production-javascript?utm_source=javascriptweekly&amp;utm_medium=email">Should You &#8220;Use Strict&#8221; in Your Production JavaScript?</a></p>
+<p>原文来自Michael Mathews,<a href="http://scriptogr.am/micmath/post/should-you-use-strict-in-your-production-javascript?utm_source=javascriptweekly&amp;utm_medium=email">Should You &ldquo;Use Strict&rdquo; in Your Production JavaScript?</a></p>
 </div>
 
 </article>

@@ -75,7 +75,19 @@
 
 <p>NERD tree主要提供的是树型目录结构(如上图左)，它的功能不仅这一点，丰富的多了，不过我感觉最强大最常使用的还是书签功能。简单的一个:Bookmark 命令，以后就不用一直在目录下跳转啊跳转</p>
 
-<p>snipMate则是一个代码补全的插件，比如在controller下输入rp然后按下tab会直接输出Liquid error: undefined method <code>join' for "render :partial =&gt;  \"item\"":String在view里边输入rp然后按下tab的话则会直接输出Liquid error: undefined method</code>join&#8217; for &#8220;&lt;%= render :partial => &#34;file&#34; %>&#8221;:String在view下使用都会智能的为你添加上&lt;% %>或者&lt;%= %></p>
+<p>snipMate则是一个代码补全的插件，比如在controller下输入rp然后按下tab会直接输出</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>render :partial =>  "item"</span></code></pre></td></tr></table></div></figure>
+
+
+<p>在view里边输入rp然后按下tab的话则会直接输出</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;%= render :partial => "file" %></span></code></pre></td></tr></table></div></figure>
+
+
+<p>在view下使用都会智能的为你添加上&lt;% %>或者&lt;%= %></p>
 
 <p>补充一个，delimitMate，这个貌似也是一个补全代码的插件，不过我是作为snipMate的补充来用的，因为snipMate标点符号不会自动补充，比如输入 { 不会自动显示 }</p>
 

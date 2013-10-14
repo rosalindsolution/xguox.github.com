@@ -79,7 +79,7 @@
 
 <p>据Google的一项研究, 用户的搜索结果页面每增加半秒会致使营业额和广告收入减少20%. 另外一篇来自Amazon的<a href="http://www.websiteoptimization.com/speed/tweak/psychology-web-performance/">类似报道</a>发现, 每增加额外的100毫秒加载时间, 销售额则会减少1%. 用户期望在两秒以内加载完整个页面, 否则第三秒后,高达40%的用户会<a href="http://www.gomez.com/pdfs/wp_why_web_performance_matters.pdf">选择离开</a>.</p>
 
-<p>你能保持这样的速度? 如果你的网站包含有丰富的内容, 许多动态元素, 更大的JavaScript文件和复杂的图形, 那么我们当中的很多人的回答可能会是 &#8220;no&#8221;.</p>
+<p>你能保持这样的速度? 如果你的网站包含有丰富的内容, 许多动态元素, 更大的JavaScript文件和复杂的图形, 那么我们当中的很多人的回答可能会是 &ldquo;no&rdquo;.</p>
 
 <p>现在,是时候让我们把性能优化作为如何为各种设备设计, 搭建, 测试每一个我们创建的网站的基本组成部分了.</p>
 
@@ -155,9 +155,9 @@
 <time datetime="2013-03-10T23:16:00+08:00" pubdate data-updated="true">Mar 10<span>th</span>, 2013</time></div>
 	</header>
 	<div class="entry-content">
-		<p>最近,有许多关于 <a href="http://derbyjs.com/">Derby.js</a>的激动人心的讨论涌现在了我的Twitter Timeline. 我从未使用过能够帮你做这么多&#8211;实时同步客户端和服务端 的框架. 从本质上讲, 这使得我们可以自己编写一个代码量很少的应用可以让两个人编写同一个 text field–live. 而 Derby帮你处理了在 models 和 views 之间所有的同步. 就如 Google Docs 的协作编辑那样.</p>
+		<p>最近,有许多关于 <a href="http://derbyjs.com/">Derby.js</a>的激动人心的讨论涌现在了我的Twitter Timeline. 我从未使用过能够帮你做这么多&mdash;实时同步客户端和服务端 的框架. 从本质上讲, 这使得我们可以自己编写一个代码量很少的应用可以让两个人编写同一个 text field–live. 而 Derby帮你处理了在 models 和 views 之间所有的同步. 就如 Google Docs 的协作编辑那样.</p>
 
-<p>这非常的伟大, 但经过深入的研究, 发现 Derby.js 并没有我想象中的那么成熟&#8211;目前还没有到1.0版本. 当然, Node.js 和 Meteor 也同样没有. 但相比起来, 似乎Derby缺少的更多一些. 比如, 据我目前知道的, 还没有一个好使的方法来处理sessions. 或许是因为缺乏文档的原因吧, 但是, 据说Derby的团队目前正在开发authentication. 如果有谁有一些关于Derby.js 处理sessions的新手指引, 我会很乐意去研究的.</p>
+<p>这非常的伟大, 但经过深入的研究, 发现 Derby.js 并没有我想象中的那么成熟&mdash;目前还没有到1.0版本. 当然, Node.js 和 Meteor 也同样没有. 但相比起来, 似乎Derby缺少的更多一些. 比如, 据我目前知道的, 还没有一个好使的方法来处理sessions. 或许是因为缺乏文档的原因吧, 但是, 据说Derby的团队目前正在开发authentication. 如果有谁有一些关于Derby.js 处理sessions的新手指引, 我会很乐意去研究的.</p>
 
 <p>另外一个我经常见到被拿来与Derby.js做比较的框架是<a href="http://Meteor.com/">Meteor</a>. 与Derby相似的是,它也能在多个客户端下实时更新views, 尽管做法上可能跟Derby有点不同. Derby可以较容易的使用多种数据库, 而Meteor则只亲近于<a href="http://mongodb.org/">MongoDB</a>. 事实上, 通过如<a href="http://mongoosejs.com/">Mongoose</a>客户端接入数据库的API与你在服务端所期望的已经非常接近了.</p>
 
@@ -196,7 +196,7 @@
 	<div class="entry-content">
 		<h2>引言</h2>
 
-<p>想知道这个新奇又好玩的东西&#8212;Meteor是如何工作的?那就太好了,你来对地方了. 我会向你展示一个Meteor项目的方方面面 并会给你一些最好的提示让你应用在未来自己的Meteor项目当中.</p>
+<p>想知道这个新奇又好玩的东西&mdash;-Meteor是如何工作的?那就太好了,你来对地方了. 我会向你展示一个Meteor项目的方方面面 并会给你一些最好的提示让你应用在未来自己的Meteor项目当中.</p>
 
 <h2>What is Meteor</h2>
 
@@ -208,7 +208,7 @@ Meteor目前使用的模板引擎只能是 <a href="http://handlebarsjs.com/">ha
 
 <h2>基础</h2>
 
-<p>一个Meteor项目包含的大多都是JavaScript文件. 如果你放置任意一个 <code>*.js</code>文件在你的项目的任何位置, Meteor会自动帮你加载并运行之. 你在Meteor项目中写的每一个JavaScript文件都会被部署到服务端和客户端(额&#8230;也不完全是这样的,继续往下看吧!). 之所以Meteor这么,这么的cool,原因之一就是:当你写了一个JavaScript函数,在客户端和服务端都可以使用之!  <br/>
+<p>一个Meteor项目包含的大多都是JavaScript文件. 如果你放置任意一个 <code>*.js</code>文件在你的项目的任何位置, Meteor会自动帮你加载并运行之. 你在Meteor项目中写的每一个JavaScript文件都会被部署到服务端和客户端(额&hellip;也不完全是这样的,继续往下看吧!). 之所以Meteor这么,这么的cool,原因之一就是:当你写了一个JavaScript函数,在客户端和服务端都可以使用之!  <br/>
 更cool的是, 比如,你在项目的任意一个地方放置<code>*.less</code>, 那么这些文件都会自动被编译并发送至客户端以及从而包含进页面当中.<br/>
 有时候,可能你希望分离开服务端和客户端的代码. 幸运地是,
 		
