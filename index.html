@@ -1,604 +1,1062 @@
 
-<!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<!DOCTYPE HTML>
+<html lang="en-GB">
 <head>
-  <meta charset="utf-8">
-  <title>XguoX</title>
-  <meta name="author" content="XguoX">
+	<meta charset="utf-8">
+	<title>writing.deeeet.com  | XguoX</title>
 
-  
-  <meta name="description" content="前不久在twitter跟@larry 反馈了的Bug，但是当时很快耍着耍着就没了，又正常了，于是撒手结帖了。然则，比较奇葩，刚刚又不小心再现了，虽然只是很微小的一处不妥，但影响到UX的话， 我表示有点轻微的强迫症，外加Twitter上 140 字符配以我的文字水平不足以表述清楚。所以还是写作文好了 &hellip;">
-  
+	<meta name="author" content="XguoX">
 
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="简书，Safari(Mac)，Bug? 2013 Oct 13 由OP最近的拖剧情说起 2013 Oct 11 Jabber, OnePiece Back to Code 2013 Sep 27 Jabber 照片的故事 2013 Jun 3 Jabber 负能量 - 从支纤镜说起 - 正能量 &hellip;"> <meta name="keywords" content="">
 
-  
-  <link rel="canonical" href="http://xguox.github.com/">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="/javascripts/ender.js"></script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <link href="/atom.xml" rel="alternate" title="XguoX" type="application/atom+xml">
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic' rel='stylesheet' type='text/css'>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  
-  <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-39166710-1']);
-    _gaq.push(['_trackPageview']);
-
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
-
+	<link href="/atom.xml" rel="alternate" title="XguoX" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	
 
 </head>
 
-<body   >
-  <header role="banner"><hgroup>
-  <!-- <img src="/images/ah_frame_transparent.png" /> -->
-  <h1><a href="/">XguoX</a></h1>
-</hgroup>
+
+
+<body>
+	<header id="header" class="inner"><h1><a href="/">XguoX</a></h1>
+<span class="tagline">Coder & Jabber</span>
+<!-- <nav id="main-nav"><ul>
+	<li><a href="/about">About</a></li>
+	<li><a href="/archives">Archives</a></li>
+	<li><a href="/contact">Contact</a></li>
+</ul>
+</nav> -->
+<!-- <nav id="mobile-nav"> -->
+<!-- 	<div class="alignleft menu"> -->
+<!-- 		<a class="button">Menu</a> -->
+<!-- 		<div class="container"><ul>
+	<li><a href="/about">About</a></li>
+	<li><a href="/archives">Archives</a></li>
+	<li><a href="/contact">Contact</a></li>
+</ul>
+</div> -->
+<!-- 	</div> -->
+<!-- </nav> -->
+
 
 </header>
-  <div id="main">
-    <div id="content">
-      <div class="blog-index">
-  
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/10/13/jianshu-tiny-bug/">简书，Safari(Mac)，Bug?</a></h1>
-    
-  </header>
 
+	<div id="content" class="inner">
+	
+<article>
+	<h3><a href="/blog/2013/10/13/jianshu-tiny-bug/">简书，Safari(Mac)，Bug?</a></h3>
+	<div class="meta">
+		<span class="date">2013 Oct 13 </span>
+		<span class="tags">
 
-  
-    <p class="meta">
-      
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-10-13T22:26:00+08:00" pubdate data-updated="true">Oct 13<span>th</span>, 2013</time>
-      
-       | <a href="/blog/2013/10/13/jianshu-tiny-bug/#disqus_thread">Comments</a>
-      
-    </p>
-  
-  
-
-
-  <div class="entry-content"><p>前不久在<a href="https://twitter.com/XguoX_L/statuses/388577622990389248">twitter</a>跟@larry 反馈了的Bug，但是当时很快耍着耍着就没了，又正常了，于是撒手结帖了。然则，比较奇葩，刚刚又不小心再现了，虽然只是很微小的一处不妥，但影响到UX的话， 我表示有点轻微的强迫症，外加Twitter上 140 字符配以我的文字水平不足以表述清楚。所以还是写作文好了。</p>
-
-<p>鉴于上一次滚动条受Thunder插件的影响，所以这次我把Safari的插件全关了。(同样方式，其他浏览器无任何异常)</p>
-
-<p>这个Bug是这样的:</p>
-
-<blockquote><p>删除文章的垃圾桶icon在Safari下hover在中间和右边表示不能点选(如图，鼠标未改变)，只有hover在偏向左侧的地方才work，其他浏览器正常。</p></blockquote>
-
-<p><img src="https://7nmnbw.dm2302.livefilestore.com/y2pMd9Hqqq8zcLNm4HmC2VAXY0If8JNgrxOQ_YyS5esT5C65NGiPyPXRGBas-Ggdk13KnyUpKqHmk7maKNQ2A29iNMWEjSIoPGIErQmhg0Akzo/tu1.jpg?psid=1" alt="" /></p>
-
-<p>正常情况下(鼠标的形状)应该是</p>
-
-<p><img src="https://7nomkg.dm1.livefilestore.com/y2pnQSLb70jLri1R75fAlctMv9tStL7PtnGGP3-9mbRg3ncEeEmRaKOTcxCzdUxpjxXlxMBvtFfQzeR39oxhEFQLiojchvoAQj1RUHvqOvOda0/tu2.jpg?psid=1" alt="" /></p>
-
-<p><strong>为什么偶尔会正常，偶尔抽风？</strong></p>
-
-<p>请看下面两图，看看有啥不同</p>
-
-<p><img src="https://h0hcka.dm1.livefilestore.com/y2pA5ROBtWFdo3kL875emP4XeTT-N7OzbNPXLq1AmqEx1XYSHM40ObSCBL5lkCK1GXPKC1BxSDd8EUsKiyjNWP8ZbC75vhdLewfOKOBLrSd_j4/tu3.jpg?psid=1" alt="" /></p>
-
-<p><img src="https://h0j3ba.dm2302.livefilestore.com/y2pibC_etDmFwTYabbHWr8bXvV4USwL-NF922Ax2NkXzIH6kOYg4uxNoVs-AKL5c0qJH74vJssJxcziLn2TMu43YVVuIZ81IDDOqhzP0d-iA_o/tu4.jpg?psid=1" alt="" /></p>
-
-<p>经反复的、<strong>不严格的</strong>控制变量法实验，目前我的解释是，当一个文集里边的文章数量足够多到出现中间栏的滚动条之后, 就会出现这个删除icon不正常的状况。</p>
-
-<p>至于，为嘛出现这种情况，留给简书的小伙伴们吧。</p>
-
-<p>请使用Mac的用户帮忙测试看看，看是通病还是我个人机器、软件等出了问题。</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/10/11/one-piece-recently/">由OP最近的拖剧情说起</a></h1>
-    
-  </header>
-
-
-  
-    <p class="meta">
-      
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-10-11T20:31:00+08:00" pubdate data-updated="true">Oct 11<span>th</span>, 2013</time>
-      
-       | <a href="/blog/2013/10/11/one-piece-recently/#disqus_thread">Comments</a>
-      
-    </p>
-  
-  
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/jabber/'>Jabber</a>, <a class='category' href='/blog/categories/onepiece/'>OnePiece</a>
-  
 </span>
+	</div>
+</article>
 
 
-  <div class="entry-content"><p>尽管在我的个人Tags里边经常标的无非那几个，Code，摄影，One Piece, 也无碍接下来抱怨几句最近的OP(动画)。</p>
-
-<p>追着OP的看官不难发现，最近动画明显是各种拖剧情，某很多些神情，某大量的回忆篇加强插入，某动作刻画的时间，都Y的太太长了。而且还不少不断重复的画面，镜头来回转换加深刻画。</p>
-
-<p>最近几集没有深究，好吧，表示开始习惯了。<br/>
-印象最深的是610话， 标题明明是 两位中将的xxxxxx
-结果整集下来一半的镜头给了 M， <br/>
-剩下的一半当中有四分三是在各个场景之间切换，
-真正看维尔戈跟斯摩格过手不知道有没5招，目测镜头时间不超过3分钟！！！</p>
-
-<p><img src="https://7nnpba.dm2301.livefilestore.com/y2pgFj_q49UBPpAcVG8GOjIkuYoUDgDLbkrcYsFN55uNtMt7jyaTDEs7yPZkRvJ2OK1GdmTBGtbWxoKWTflwela5a7VAH6noYahLwCuXS_V5SE/QQ20131011-2.png?psid=1" alt="" /></p>
-
-<p>表示理解动画要拖拖剧情等漫画，但这拖得略不靠谱了吧。如果只是为了等漫画，那我觉得偶尔直接来个停播会好点呢？完全可以理解啊，就像漫画前不久也停刊好几回，当然那是照顾到尾田大神的身体状况，不管怎样，完全可以理解。又或者跟以往那样来些个什么番外篇打酱油，也都总比这样把一集的剧情拖沓成这样要好。</p>
-
-<p>相比之下，漫画的剧情引导显得顺多了。  以「顶上战争」作为分界的两年后的新世界篇，在漫画里头与两年前的剧情相比有过之而无不及。但在动画里头，给我的感觉却是，比之两年前的剧情，那是相去甚远，之所以产生这种心理，应该是缘由这剧情拖沓。反正1 - 570+的动画重看了N次，没有一次说是强烈地觉得剧情拖沓跳过哪一集。而今，好几集好几次我都想按快进 =。=  但还是没有按下去。 难道，是因为时间的作用使之沉淀下来，难道现在的剧情也要等过上些时间沉淀才会打消这些感觉？</p>
-
-<p>最后，我发觉并深感OP里最喜欢的不是Luffy君，说不上谁是最喜欢的角色，但，可以肯定，对 罗宾酱&amp;索大 的喜欢更多一些。</p>
-
-<p><img class="left" src="https://7nmgwa.dm1.livefilestore.com/y2piowWh9rmGFKLaMMZX9p0hjieu0nhXYeJLNicKrqCqu44Ai-nJgUbgIl4ELt5Nty2DCHO6Gd0GHh-GagLaN3XOkefcg5FVZON8l0UQm1yxLE/Nico.Robin.full.1401954.jpg?psid=1" width="350" height="600">
-<img class="right" src="https://7no7na.dm2301.livefilestore.com/y2pyPdpo4WPWPKcGC9nYQoI5vn_BOqO2S31h64Nh-nGZZq4T99T8w3lNT_JVot7o9u9Xeh9g31anmx7mBgY8vnmGza_wDQMYvm9flRIYiUxsVU/7f4996e7jw1e5c2o3526nj20bu0goaar.jpg?psid=1" width="350" height="600"></p>
-</div>
-  
-  
+	
+<article>
+	<h3><a href="/blog/2013/10/11/one-piece-recently/">由OP最近的拖剧情说起</a></h3>
+	<div class="meta">
+		<span class="date">2013 Oct 11 </span>
+		<span class="tags">
 
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/09/27/back-to-code/">Back to Code</a></h1>
-    
-  </header>
+	<a class='category' href='/blog/categories/jabber/'>Jabber</a>, <a class='category' href='/blog/categories/onepiece/'>OnePiece</a>
 
 
-  
-    <p class="meta">
-      
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-09-27T14:12:00+08:00" pubdate data-updated="true">Sep 27<span>th</span>, 2013</time>
-      
-       | <a href="/blog/2013/09/27/back-to-code/#disqus_thread">Comments</a>
-      
-    </p>
-  
-  
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/jabber/'>Jabber</a>
-  
 </span>
+	</div>
+</article>
 
 
-  <div class="entry-content"><p>好多年以前，在「街头篮球」这款游戏看到过的一句，「一天不碰球，就一天没长进」。<br/>
-而今，我是好几个月没真正意义的code，所以，这状态，想不roll back都难，更何求长进。</p>
-
-<p>真心，重头来过也忽然无从下手。</p>
-
-<p>打开Octopress准备更新，发觉连Git的一些命令的想了好久才想起来。</p>
-
-<p>看到Git的提示里冒出有
- <code>
-git bisect reset
-</code>
-这货功能很强大呀，昏了，之前怎么完全没印象有过着玩意的？又是学艺不精啊！</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2013/09/27/back-to-code/">Read on &rarr;</a>
-    </footer>
-  
+	
+<article>
+	<h3><a href="/blog/2013/09/27/back-to-code/">Back to Code</a></h3>
+	<div class="meta">
+		<span class="date">2013 Sep 27 </span>
+		<span class="tags">
 
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/06/03/photos-and-stories/">照片的故事</a></h1>
-    
-  </header>
+	<a class='category' href='/blog/categories/jabber/'>Jabber</a>
 
 
-  
-    <p class="meta">
-      
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-06-03T16:30:00+08:00" pubdate data-updated="true">Jun 3<span>rd</span>, 2013</time>
-      
-       | <a href="/blog/2013/06/03/photos-and-stories/#disqus_thread">Comments</a>
-      
-    </p>
-  
-  
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/jabber/'>Jabber</a>
-  
 </span>
+	</div>
+</article>
 
 
-  <div class="entry-content"><p><img src="http://farm8.staticflickr.com/7332/8942652946_af9121957f_n.jpg" alt="" />
-<img src="http://farm8.staticflickr.com/7289/8942653776_bdfb3e28a3_n.jpg" alt="" />   <br/>
-那时候，你们在想着什么，仅仅只是摆着姿势那么简单吗？<br/>
-你说我穿的太colorful了，没有你那么忧伤  <br/>
-要是我的最深处也这般colorful那该多好</p>
-
-<p><img src="http://farm8.staticflickr.com/7432/8942651358_e04d1e5d94.jpg" alt="" />
-<img src="http://farm4.staticflickr.com/3732/8942025755_d37f645d5d.jpg" alt="" /><br/>
-不知道你是望着天空还是闭着眼睛，我自己也忘记了<br/>
-草地不很舒服，但给的感觉却让人享受着可以睡去</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2013/06/03/photos-and-stories/">Read on &rarr;</a>
-    </footer>
-  
+	
+<article>
+	<h3><a href="/blog/2013/06/03/photos-and-stories/">照片的故事</a></h3>
+	<div class="meta">
+		<span class="date">2013 Jun  3 </span>
+		<span class="tags">
 
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/05/14/negative-energy/">负能量 - 从支纤镜说起 - 正能量</a></h1>
-    
-  </header>
+	<a class='category' href='/blog/categories/jabber/'>Jabber</a>
 
 
-  
-    <p class="meta">
-      
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-05-14T23:05:00+08:00" pubdate data-updated="true">May 14<span>th</span>, 2013</time>
-      
-       | <a href="/blog/2013/05/14/negative-energy/#disqus_thread">Comments</a>
-      
-    </p>
-  
-  
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/jabber/'>Jabber</a>
-  
 </span>
+	</div>
+</article>
 
 
-  <div class="entry-content"><p>尽管日期标的是May，但是写的时候，是在April 27th - 并刚做完支纤镜 - 耳边塞着耳机，麻醉也还在，全身如喝醉酒那般，浑坨坨，当然只是轻度的，不然我也不可能写的出这些。<br/>
-被病魔缠着也有半年了，目测还得继续治疗休养多半年。<br/>
-说说这个支纤镜吧。第二次做。比起第一次，尽管有了些许经验(也正因为有经验)，做之前还是有些小紧张，表现主要有心跳略有加速。很重要的一点上次的医生没说而这次的医生教了，&#8221;(粤语)吞口水，无口水就做吞口水噶动作&#8221;。难受是必须的，在某个point我一个没忍着，口中就吐了一堆我自己也看不着啥，anyway，死不了。</p>
-
-<p>耳机里播放着《仓颉》</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2013/05/14/negative-energy/">Read on &rarr;</a>
-    </footer>
-  
+	
+<article>
+	<h3><a href="/blog/2013/05/14/negative-energy/">负能量 - 从支纤镜说起 - 正能量</a></h3>
+	<div class="meta">
+		<span class="date">2013 May 14 </span>
+		<span class="tags">
 
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/05/12/record-of-the-void-century-and-d/">[Repost]关于D一族的真相以及历史文本的分析</a></h1>
-    
-  </header>
+	<a class='category' href='/blog/categories/jabber/'>Jabber</a>
 
 
-  
-    <p class="meta">
-      
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-05-12T14:16:00+08:00" pubdate data-updated="true">May 12<span>th</span>, 2013</time>
-      
-       | <a href="/blog/2013/05/12/record-of-the-void-century-and-d/#disqus_thread">Comments</a>
-      
-    </p>
-  
-  
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/onepiece/'>OnePiece</a>, <a class='category' href='/blog/categories/repost/'>Repost</a>
-  
 </span>
+	</div>
+</article>
 
 
-  <div class="entry-content"><h2>关于D一族的真相：</h2>
-
-<p>路飞等人，一出场就有了与众不同的名字，即在名字当中比所有的普通人都多了一个D字，而海贼里不像现实中的美国等国，有MiddleName这个属性，事实上除了D一族的人以外，漫画中还没有出现过三个名字的人物。这真的是D一族自古流传下来的特殊起名方式吗?</p>
-
-<p>我的观点是，是流传下来的，但这个起名方式却是从800年前刚刚突然开始流传的。因为罗宾在读到海底森林的历史文本时，最后的署名是“乔伊波伊”，这个人物很明显与D一族息息相关但却没有D（该人物具体分析见后文）。</p>
-
-<p><img src="https://uvqrqa.dm1.livefilestore.com/y2pfqTNQa7HcK__HqPl6n8RqzkF080dUaO13KHRGdeduPCn-y7geS-x6xcW98_F9QgJFV5HI9qMPiUUef_-3gpCxx8GRC1mKy-BgjZdoUiLP48/838ba61ea8d3fd1f45f53966314e251f94ca5fe9.jpg?psid=1" alt="" /></p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2013/05/12/record-of-the-void-century-and-d/">Read on &rarr;</a>
-    </footer>
-  
+	
+<article>
+	<h3><a href="/blog/2013/05/12/record-of-the-void-century-and-d/">[Repost]关于D一族的真相以及历史文本的分析</a></h3>
+	<div class="meta">
+		<span class="date">2013 May 12 </span>
+		<span class="tags">
 
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/05/11/repost-days-with-my-father/">[Repost]与父亲在一起的日子 (组图)</a></h1>
-    
-  </header>
+	<a class='category' href='/blog/categories/onepiece/'>OnePiece</a>, <a class='category' href='/blog/categories/repost/'>Repost</a>
 
 
-  
-    <p class="meta">
-      
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-05-11T13:52:00+08:00" pubdate data-updated="true">May 11<span>th</span>, 2013</time>
-      
-       | <a href="/blog/2013/05/11/repost-days-with-my-father/#disqus_thread">Comments</a>
-      
-    </p>
-  
-  
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/repost/'>Repost</a>
-  
 </span>
+	</div>
+</article>
 
 
-  <div class="entry-content"><p>昨天是父亲节。</p>
+	
+<article>
+	<h3><a href="/blog/2013/05/11/repost-days-with-my-father/">[Repost]与父亲在一起的日子 (组图)</a></h3>
+	<div class="meta">
+		<span class="date">2013 May 11 </span>
+		<span class="tags">
 
-<p>半夜里，我突然想起来，曾经推荐过一个美国摄影师的作品。母亲去世后，他就拍他的父亲，还写下自己的感想。</p>
 
-<p>这组作品，我看过多次，昨天再看，竟然又一次被感动了。儿子对父亲的关心、对老年人衰老和孤独的感慨，都在其中得到了细腻的体现，非常感人。</p>
+	<a class='category' href='/blog/categories/repost/'>Repost</a>
 
-<p>网上似乎还没有全文翻译，我就把它译了出来，再一次推荐给大家。</p>
+
+</span>
+	</div>
+</article>
+
+
+	
+<article>
+	<h3><a href="/blog/2013/04/13/how-to-travel-around-the-world-for-a-year/">如何在一年里周游世界</a></h3>
+	<div class="meta">
+		<span class="date">2013 Apr 13 </span>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/translation/'>Translation</a>, <a class='category' href='/blog/categories/travel/'>Travel</a>
+
+
+</span>
+	</div>
+</article>
+
+
+	
+<article>
+	<h3><a href="/blog/2013/04/13/traveling-writing-programming/">[Repost]旅行，写作，编程</a></h3>
+	<div class="meta">
+		<span class="date">2013 Apr 13 </span>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/repost/'>Repost</a>, <a class='category' href='/blog/categories/translation/'>Translation</a>, <a class='category' href='/blog/categories/travel/'>Travel</a>
+
+
+</span>
+	</div>
+</article>
+
+
+	
+<article>
+	<h3><a href="/blog/2013/04/11/jabber-sublime/">扯点Sublime</a></h3>
+	<div class="meta">
+		<span class="date">2013 Apr 11 </span>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/sublime/'>Sublime</a>
+
+
+</span>
+	</div>
+</article>
+
+
+	
+<article>
+	<h3><a href="/blog/2013/04/10/understanding-publications-and-subscriptions/">Understanding Publications and Subscriptions</a></h3>
+	<div class="meta">
+		<span class="date">2013 Apr 10 </span>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/meteor/'>Meteor</a>, <a class='category' href='/blog/categories/translation/'>Translation</a>
+
+
+</span>
+	</div>
+</article>
+
+
+	
+<article>
+	<h3><a href="/blog/2013/04/08/hexo-blog-node-octopress/">继续折腾 &#8211; Hexo版Blog</a></h3>
+	<div class="meta">
+		<span class="date">2013 Apr  8 </span>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/hexo/'>Hexo</a>
+
+
+</span>
+	</div>
+</article>
+
+
+	
+<article>
+	<h3><a href="/blog/2013/04/06/deploy-meteor-on-heroku/">最近在折腾 &#8211; deploy Meteor on heroku</a></h3>
+	<div class="meta">
+		<span class="date">2013 Apr  6 </span>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/jabber/'>Jabber</a>, <a class='category' href='/blog/categories/meteor/'>Meteor</a>
+
+
+</span>
+	</div>
+</article>
+
+
+	
+<article>
+	<h3><a href="/blog/2013/03/25/5-use-cases-for-icon-fonts/">5 Use Cases for Icon Fonts</a></h3>
+	<div class="meta">
+		<span class="date">2013 Mar 25 </span>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/css/'>CSS</a>, <a class='category' href='/blog/categories/translation/'>Translation</a>
+
+
+</span>
+	</div>
+</article>
+
+
+	
+<article>
+	<h3><a href="/blog/2013/03/20/improving-ux-through-front-end-performance/">Improving UX Through Front-End Performance</a></h3>
+	<div class="meta">
+		<span class="date">2013 Mar 20 </span>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/performance/'>Performance</a>
+
+
+</span>
+	</div>
+</article>
+
+
+	
+<article>
+	<h3><a href="/blog/2013/03/14/5-meteor-misconceptions/">5 Meteor Misconceptions</a></h3>
+	<div class="meta">
+		<span class="date">2013 Mar 14 </span>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/meteor/'>Meteor</a>, <a class='category' href='/blog/categories/translation/'>Translation</a>
+
+
+</span>
+	</div>
+</article>
+
+
+	
+<article>
+	<h3><a href="/blog/2013/03/10/introduction-to-realtime-web-with-meteor-dot-js-and-node-dot-js/">Introduction to Realtime Web with Meteor and Node.js</a></h3>
+	<div class="meta">
+		<span class="date">2013 Mar 10 </span>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/meteor/'>Meteor</a>, <a class='category' href='/blog/categories/translation/'>Translation</a>
+
+
+</span>
+	</div>
+</article>
+
+
+	
+<article>
+	<h3><a href="/blog/2013/03/08/learn-meteor-fundamentals-and-best-practices/">Meteor基础与最佳实践</a></h3>
+	<div class="meta">
+		<span class="date">2013 Mar  8 </span>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/meteor/'>Meteor</a>, <a class='category' href='/blog/categories/translation/'>Translation</a>
+
+
+</span>
+	</div>
+</article>
+
+
+	
+<article>
+	<h3><a href="/blog/2013/03/06/a-look-at-a-meteor-template/">A Look at a Meteor Template</a></h3>
+	<div class="meta">
+		<span class="date">2013 Mar  6 </span>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/meteor/'>Meteor</a>, <a class='category' href='/blog/categories/translation/'>Translation</a>
+
+
+</span>
+	</div>
+</article>
+
+
+	
+<article>
+	<h3><a href="/blog/2013/03/05/getting-started-with-meteor/">Getting Started with Meteor</a></h3>
+	<div class="meta">
+		<span class="date">2013 Mar  5 </span>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/meteor/'>Meteor</a>, <a class='category' href='/blog/categories/translation/'>Translation</a>
+
+
+</span>
+	</div>
+</article>
+
+
+	
+<article>
+	<h3><a href="/blog/2013/02/08/should-you-use-strict-in-your-production-javascript/">你应该在生产环境下使用JavaScript的严格模式（strict mode）吗？</a></h3>
+	<div class="meta">
+		<span class="date">2013 Feb  8 </span>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/javascript/'>JavaScript</a>, <a class='category' href='/blog/categories/translation/'>Translation</a>
+
+
+</span>
+	</div>
+</article>
+
+
+	
+<article>
+	<h3><a href="/blog/2013/02/07/about-translation/">About My Translation</a></h3>
+	<div class="meta">
+		<span class="date">2013 Feb  7 </span>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/jabber/'>Jabber</a>, <a class='category' href='/blog/categories/translation/'>Translation</a>
+
+
+</span>
+	</div>
+</article>
+
+
+	
+<article>
+	<h3><a href="/blog/2013/02/01/what-you-might-not-know-about-json-dot-stringify/">你可能不知道的JSON.stingify()</a></h3>
+	<div class="meta">
+		<span class="date">2013 Feb  1 </span>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/json/'>JSON</a>, <a class='category' href='/blog/categories/translation/'>Translation</a>
+
+
+</span>
+	</div>
+</article>
+
+
+	
+<article>
+	<h3><a href="/blog/2013/01/27/nokia-microsoft-win8-wp8/">Microsoft?Win8?WP8?死忠Nokia</a></h3>
+	<div class="meta">
+		<span class="date">2013 Jan 27 </span>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/jabber/'>Jabber</a>
+
+
+</span>
+	</div>
+</article>
+
+
+	
+<article>
+	<h3><a href="/blog/2013/01/04/octopress-rake-new-post-doesnt-work-with-zsh/">Octopress&#8217; Rake New_post Doesn&#8217;t Work With Zsh</a></h3>
+	<div class="meta">
+		<span class="date">2013 Jan  4 </span>
+		<span class="tags">
+
+</span>
+	</div>
+</article>
+
+
+	
+<article>
+	<h3><a href="/blog/2013/01/01/2013-new-year/">2013 new year</a></h3>
+	<div class="meta">
+		<span class="date">2013 Jan  1 </span>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/jabber/'>Jabber</a>
+
+
+</span>
+	</div>
+</article>
+
+
+	
+<article>
+	<h3><a href="/blog/2012/12/02/positive-energy/">Positive Energy</a></h3>
+	<div class="meta">
+		<span class="date">2012 Dec  2 </span>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/jabber/'>Jabber</a>
+
+
+</span>
+	</div>
+</article>
+
+
+	
+<article>
+	<h3><a href="/blog/2012/09/26/recently-feeling/">最近有感，关于玩</a></h3>
+	<div class="meta">
+		<span class="date">2012 Sep 26 </span>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/jabber/'>Jabber</a>
+
+
+</span>
+	</div>
+</article>
+
+
+	
+<article>
+	<h3><a href="/blog/2012/09/19/with-the-diaoyudao/">胡扯下钓鱼岛</a></h3>
+	<div class="meta">
+		<span class="date">2012 Sep 19 </span>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/jabber/'>Jabber</a>
+
+
+</span>
+	</div>
+</article>
+
+
+	
+<article>
+	<h3><a href="/blog/2012/09/02/the-september/">The September</a></h3>
+	<div class="meta">
+		<span class="date">2012 Sep  2 </span>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/jabber/'>Jabber</a>
+
+
+</span>
+	</div>
+</article>
+
+
+	
+<article>
+	<h3><a href="/blog/2012/08/25/writing-before-the-maleskine-release/">写在Maleskine上线前夕</a></h3>
+	<div class="meta">
+		<span class="date">2012 Aug 25 </span>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/jabber/'>Jabber</a>
+
+
+</span>
+	</div>
+</article>
+
+
+	
+<article>
+	<h3><a href="/blog/2012/08/11/the-past/">&#8230;.sickness</a></h3>
+	<div class="meta">
+		<span class="date">2012 Aug 11 </span>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/jabber/'>Jabber</a>
+
+
+</span>
+	</div>
+</article>
+
+
+	
+<article>
+	<h3><a href="/blog/2012/07/27/about-a-month/">About a Month</a></h3>
+	<div class="meta">
+		<span class="date">2012 Jul 27 </span>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/jabber/'>Jabber</a>
+
+
+</span>
+	</div>
+</article>
+
+
+	
+<article>
+	<h3><a href="/blog/2012/07/15/an-unusual-trip/">不平坦的魔都路</a></h3>
+	<div class="meta">
+		<span class="date">2012 Jul 15 </span>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/jabber/'>Jabber</a>
+
+
+</span>
+	</div>
+</article>
+
+
+	
+<article>
+	<h3><a href="/blog/2012/07/12/rails-3-remote-links-and-forms-part-2-data-type-with-jquery/">Rails 3 Remote Links and Forms Part 2: Data-type (With jQuery)</a></h3>
+	<div class="meta">
+		<span class="date">2012 Jul 12 </span>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/rails/'>Rails</a>, <a class='category' href='/blog/categories/ruby/'>Ruby</a>, <a class='category' href='/blog/categories/translation/'>Translation</a>
+
+
+</span>
+	</div>
+</article>
+
+
+	
+<article>
+	<h3><a href="/blog/2012/07/11/rails-3-remote-links-and-forms/">Rails 3 Remote Links and Forms: A Definitive Guide</a></h3>
+	<div class="meta">
+		<span class="date">2012 Jul 11 </span>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/rails/'>Rails</a>, <a class='category' href='/blog/categories/ruby/'>Ruby</a>, <a class='category' href='/blog/categories/translation/'>Translation</a>
+
+
+</span>
+	</div>
+</article>
+
+
+	
+<article>
+	<h3><a href="/blog/2012/07/08/the-first-week-in-shanghai/">安顿生活，融入上海</a></h3>
+	<div class="meta">
+		<span class="date">2012 Jul  8 </span>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/jabber/'>Jabber</a>
+
+
+</span>
+	</div>
+</article>
+
+
+	
+<article>
+	<h3><a href="/blog/2012/07/01/rails-intern/">Life`上海</a></h3>
+	<div class="meta">
+		<span class="date">2012 Jul  1 </span>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/jabber/'>Jabber</a>
+
+
+</span>
+	</div>
+</article>
+
+
+	
+<article>
+	<h3><a href="/blog/2012/06/21/the-last-year-in-dot-dot-dot/">the last year in &#8230;</a></h3>
+	<div class="meta">
+		<span class="date">2012 Jun 21 </span>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/jabber/'>Jabber</a>
+
+
+</span>
+	</div>
+</article>
+
+
+	
+<article>
+	<h3><a href="/blog/2012/06/13/3-slash-4-campus/">3/4 campus</a></h3>
+	<div class="meta">
+		<span class="date">2012 Jun 13 </span>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/jabber/'>Jabber</a>
+
+
+</span>
+	</div>
+</article>
+
+
+	
+<article>
+	<h3><a href="/blog/2012/06/04/some-findings/">一些学习，一些发现</a></h3>
+	<div class="meta">
+		<span class="date">2012 Jun  4 </span>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/jabber/'>Jabber</a>
+
+
+</span>
+	</div>
+</article>
+
+
+	
+<article>
+	<h3><a href="/blog/2012/05/27/rails-note/">rails小记两则</a></h3>
+	<div class="meta">
+		<span class="date">2012 May 27 </span>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/rails/'>Rails</a>, <a class='category' href='/blog/categories/ruby/'>Ruby</a>
+
+
+</span>
+	</div>
+</article>
+
+
+	
+<article>
+	<h3><a href="/blog/2012/05/11/recently-status/">Recently小记</a></h3>
+	<div class="meta">
+		<span class="date">2012 May 11 </span>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/jabber/'>Jabber</a>
+
+
+</span>
+	</div>
+</article>
+
+
+	
+<article>
+	<h3><a href="/blog/2012/04/27/ubuntu1204-and-rails/">ubuntu12.04 and rails</a></h3>
+	<div class="meta">
+		<span class="date">2012 Apr 27 </span>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/rails/'>Rails</a>, <a class='category' href='/blog/categories/ruby/'>Ruby</a>
+
+
+</span>
+	</div>
+</article>
+
+
+	
+<article>
+	<h3><a href="/blog/2012/04/20/usage-of-try/">Rails中try的用法</a></h3>
+	<div class="meta">
+		<span class="date">2012 Apr 20 </span>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/rails/'>Rails</a>, <a class='category' href='/blog/categories/ruby/'>Ruby</a>
+
+
+</span>
+	</div>
+</article>
+
+
+	
+<article>
+	<h3><a href="/blog/2012/04/14/my-vim-config/">My VIM Config</a></h3>
+	<div class="meta">
+		<span class="date">2012 Apr 14 </span>
+		<span class="tags">
+
+</span>
+	</div>
+</article>
+
+
+	
+<article>
+	<h3><a href="/blog/2012/03/23/two-weeks-withs-rails/">two weeks withs rails</a></h3>
+	<div class="meta">
+		<span class="date">2012 Mar 23 </span>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/rails/'>Rails</a>, <a class='category' href='/blog/categories/ruby/'>Ruby</a>
+
+
+</span>
+	</div>
+</article>
+
+
+	
+<article>
+	<h3><a href="/blog/2012/03/12/something-in-google-plus/">something in google plus</a></h3>
+	<div class="meta">
+		<span class="date">2012 Mar 12 </span>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/jabber/'>Jabber</a>
+
+
+</span>
+	</div>
+</article>
+
+
+	
+<article>
+	<h3><a href="/blog/2012/03/04/dry/">DRY</a></h3>
+	<div class="meta">
+		<span class="date">2012 Mar  4 </span>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/rails/'>Rails</a>, <a class='category' href='/blog/categories/ruby/'>Ruby</a>
+
+
+</span>
+	</div>
+</article>
+
+
+	
+<article>
+	<h3><a href="/blog/2012/02/27/rails-dot-note/">Ruby/Rails.note</a></h3>
+	<div class="meta">
+		<span class="date">2012 Feb 27 </span>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/rails/'>Rails</a>, <a class='category' href='/blog/categories/ruby/'>Ruby</a>
+
+
+</span>
+	</div>
+</article>
+
+
+	
+<article>
+	<h3><a href="/blog/2012/02/25/travel-photo-code/">travel photo code</a></h3>
+	<div class="meta">
+		<span class="date">2012 Feb 25 </span>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/jabber/'>Jabber</a>, <a class='category' href='/blog/categories/travel/'>Travel</a>
+
+
+</span>
+	</div>
+</article>
+
+
+	
+<article>
+	<h3><a href="/blog/2012/02/25/the-last-night-inxm/">最后一晚在曾厝垵</a></h3>
+	<div class="meta">
+		<span class="date">2012 Feb 25 </span>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/jabber/'>Jabber</a>, <a class='category' href='/blog/categories/travel/'>Travel</a>
+
+
+</span>
+	</div>
+</article>
+
+
+	
+<article>
+	<h3><a href="/blog/2012/01/17/hackers-and-painters/">《黑客与画家》语录&#8212;我的那些价值观</a></h3>
+	<div class="meta">
+		<span class="date">2012 Jan 17 </span>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/books/'>Books</a>
+
+
+</span>
+	</div>
+</article>
+
+
+	
+<article>
+	<h3><a href="/blog/2012/01/05/home/">诠释家</a></h3>
+	<div class="meta">
+		<span class="date">2012 Jan  5 </span>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/jabber/'>Jabber</a>
+
+
+</span>
+	</div>
+</article>
+
+
+	
+<article>
+	<h3><a href="/blog/2012/01/04/go-back-home/">Go Back Home</a></h3>
+	<div class="meta">
+		<span class="date">2012 Jan  4 </span>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/jabber/'>Jabber</a>
+
+
+</span>
+	</div>
+</article>
+
+
+	
+<article>
+	<h3><a href="/blog/2012/01/02/20120102/">20120102</a></h3>
+	<div class="meta">
+		<span class="date">2012 Jan  2 </span>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/jabber/'>Jabber</a>
+
+
+</span>
+	</div>
+</article>
+
+
+	
+<article>
+	<h3><a href="/blog/2012/01/01/20120101/">2012没有日出的1月1</a></h3>
+	<div class="meta">
+		<span class="date">2012 Jan  1 </span>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/jabber/'>Jabber</a>
+
+
+</span>
+	</div>
+</article>
+
+
+	
+<article>
+	<h3><a href="/blog/2011/12/31/a-day-with-linux/">one day with Linux</a></h3>
+	<div class="meta">
+		<span class="date">2011 Dec 31 </span>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/rails/'>Rails</a>, <a class='category' href='/blog/categories/ruby/'>Ruby</a>
+
+
+</span>
+	</div>
+</article>
+
+
+	
+<article>
+	<h3><a href="/blog/2011/12/27/uml-and-ruby/">UML and Ruby</a></h3>
+	<div class="meta">
+		<span class="date">2011 Dec 27 </span>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/jabber/'>Jabber</a>
+
+
+</span>
+	</div>
+</article>
+
+
+	
+<article>
+	<h3><a href="/blog/2011/12/26/a-little-post/">A little post</a></h3>
+	<div class="meta">
+		<span class="date">2011 Dec 26 </span>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/jabber/'>Jabber</a>
+
+
+</span>
+	</div>
+</article>
+
+
+	
+<article>
+	<h3><a href="/blog/2011/12/26/how-to-post/">About major,About code</a></h3>
+	<div class="meta">
+		<span class="date">2011 Dec 26 </span>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/jabber/'>Jabber</a>
+
+
+</span>
+	</div>
+</article>
+
+
+	
+<article>
+	<h3><a href="/blog/2011/12/26/why-i-can-not-rc-a-post/">why i can not rl a post</a></h3>
+	<div class="meta">
+		<span class="date">2011 Dec 26 </span>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/jabber/'>Jabber</a>
+
+
+</span>
+	</div>
+</article>
+
+
+	
+<article>
+	<h3><a href="/blog/2011/12/26/my-first-post-of-octopress/">My first post of Octopress</a></h3>
+	<div class="meta">
+		<span class="date">2011 Dec 26 </span>
+		<span class="tags">
+
+
+	<a class='category' href='/blog/categories/jabber/'>Jabber</a>
+
+
+</span>
+	</div>
+</article>
+
 
 </div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2013/05/11/repost-days-with-my-father/">Read on &rarr;</a>
-    </footer>
-  
+	<footer id="footer" class="inner"><br>
+<br>
+<br>
+<br>
+&copy; 2013
 
-
-    </article>
-  
-  <div class="pagination">
-    
-      <a class="prev" href="/blog/page/2/">&larr; Older</a>
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
-</div>
-<aside class="sidebar">
-  
-    <form action="http://google.com/search" method="get">
-      <fieldset role="search">
-        <input type="hidden" name="q" value="site:xguox.github.com" />
-        <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-      </fieldset>
-    </form>
-  
-  
-    <section>
-  <ul id="recent_posts">
-      <li class="post">
-      <a href="/" alt="Home"><img src="/images/Home.png"></a>
-      <a href="/archives/" alt="Archives"><img src="/images/Calendar.png"></a>
-      <a href="mailto:golvinlu@gmail.com" alt="E-Mail"><img src="/images/Envelope.png"></a>
-      <a href="/about/" alt="About XguoX"><img src="/images/User.png"></a>
-      <a href="/atom.xml" alt="subscribe feed"><img src="/images/rss_big.png"></a>
-      </li>
-  </ul>
-</section>
-
-<section>
-<h1>Category</h1>
-<span class='categories_tag'> <a href='/blog/categories/books' style='font-size: 101.76470588235294%'>Books</a>  <a href='/blog/categories/css' style='font-size: 101.76470588235294%'>Css</a>  <a href='/blog/categories/hexo' style='font-size: 101.76470588235294%'>Hexo</a>  <a href='/blog/categories/jabber' style='font-size: 160.0%'>Jabber</a>  <a href='/blog/categories/javascript' style='font-size: 101.76470588235294%'>Javascript</a>  <a href='/blog/categories/json' style='font-size: 101.76470588235294%'>Json</a>  <a href='/blog/categories/meteor' style='font-size: 112.3529411764706%'>Meteor</a>  <a href='/blog/categories/onepiece' style='font-size: 103.52941176470588%'>Onepiece</a>  <a href='/blog/categories/performance' style='font-size: 101.76470588235294%'>Performance</a>  <a href='/blog/categories/rails' style='font-size: 115.88235294117646%'>Rails</a>  <a href='/blog/categories/repost' style='font-size: 105.29411764705883%'>Repost</a>  <a href='/blog/categories/ruby' style='font-size: 115.88235294117646%'>Ruby</a>  <a href='/blog/categories/sublime' style='font-size: 101.76470588235294%'>Sublime</a>  <a href='/blog/categories/translation' style='font-size: 124.70588235294117%'>Translation</a>  <a href='/blog/categories/travel' style='font-size: 107.05882352941177%'>Travel</a> </span>
-</section>
-
-
-<section class="even">
-	<iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=zh_cn&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=4&isTitle=0&noborder=0&isWeibo=1&isFans=0&uid=1660802261&verifier=0594649b&colors=d04e38,d04e38,ffffff,0082cb,f08456&dpc=1"></iframe>
-</section>
-
-
-
-<section class="last odd">
-<h1>My <span style="color: #0063dc;">Flick<span style="color: #ff0084;">r</h1>
-<style type="text/css">
-	#flickrList li { text-align: left; display:inline; margin: 0 2px;}
-</style>
-<ul id="flickrList"></ul>
-<script lang="Javascript">
-var flickrNickname = "GroverLu";
-function jsonFlickrApi(rsp) {
-	if (rsp.stat != "ok"){
-  		return;
- 	}
- 	var list = "";
- 	for (var i=0; i < rsp.photos.photo.length; i++) {
-  		var photo    = rsp.photos.photo[i];
-  		var imgUrl   = 'http://farm'+ photo.farm +'.static.flickr.com/'+ photo.server +'/'+ photo.id +'_'+ photo.secret +'_s.jpg';
-  		var photoUrl = 'http://www.flickr.com/photos/'+ flickrNickname +'/'+ photo.id;
-  		list += '<li id="flickrItem_'+i+'"><a href="'+ photoUrl +'" title="'+ photo.title +'"><img alt="'+ photo.title +'" src="'+ imgUrl +'" /></a></li>';
- 	}
- 	document.getElementById('flickrList').innerHTML = list;
-}
-</script>
-<script lang="Javascript" src="http://api.flickr.com/services/rest/?format=json&method=flickr.photos.search&user_id=94631627@N04&per_page=15&api_key=d286c7fecaa39173da37f6e681c443f6"></script>
-</section>
-<section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/blog/2013/10/13/jianshu-tiny-bug/">简书，Safari(Mac)，Bug?</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/10/11/one-piece-recently/">由OP最近的拖剧情说起</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/09/27/back-to-code/">Back to Code</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/06/03/photos-and-stories/">照片的故事</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/05/14/negative-energy/">负能量 - 从支纤镜说起 - 正能量</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/05/12/record-of-the-void-century-and-d/">[Repost]关于D一族的真相以及历史文本的分析</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/05/11/repost-days-with-my-father/">[Repost]与父亲在一起的日子 (组图)</a>
-      </li>
-    
-  </ul>
-</section>
-
-  
-</aside>
-
-    </div>
-  </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2013 - XguoX -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</p>
+    XguoX
 
 </footer>
-  
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/hyphenator.js"></script>
+
 
 <script type="text/javascript">
       var disqus_shortname = 'xguox';
@@ -615,34 +1073,26 @@ function jsonFlickrApi(rsp) {
 
 
 
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-39166710-1']);
+		_gaq.push(['_trackPageview']);
 
-
-  <script type="text/javascript">
-    (function() {
-      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
-      script.src = 'https://apis.google.com/js/plusone.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
-    })();
-  </script>
-
-
-
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
 
 
 
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-<script src="/javascripts/aharris.js"></script>
 
 </body>
+<script>
+  $(document).ready(function() {
+  // Make images center
+  $('p:has(img)').css('text-align', 'center');
+  });
+</script>
 </html>

@@ -1,0 +1,419 @@
+
+<!DOCTYPE HTML>
+<html lang="en-GB">
+<head>
+	<meta charset="utf-8">
+	<title>Coder & Jabber  | XguoX</title>
+
+	<meta name="author" content="XguoX">
+
+<meta name="description" content="前不久在twitter跟@larry 反馈了的Bug，但是当时很快耍着耍着就没了，又正常了，于是撒手结帖了。然则，比较奇葩，刚刚又不小心再现了，虽然只是很微小的一处不妥，但影响到UX的话， 我表示有点轻微的强迫症，外加Twitter上 140 字符配以我的文字水平不足以表述清楚。 &hellip;"> <meta name="keywords" content="">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="XguoX" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	
+
+</head>
+
+
+
+<body>
+	<header id="header" class="inner"><h1><a href="/">XguoX</a></h1>
+<span class="tagline">Coder & Jabber</span>
+<!-- <nav id="main-nav"><ul>
+	<li><a href="/about">About</a></li>
+	<li><a href="/archives">Archives</a></li>
+	<li><a href="/contact">Contact</a></li>
+</ul>
+</nav> -->
+<!-- <nav id="mobile-nav"> -->
+<!-- 	<div class="alignleft menu"> -->
+<!-- 		<a class="button">Menu</a> -->
+<!-- 		<div class="container"><ul>
+	<li><a href="/about">About</a></li>
+	<li><a href="/archives">Archives</a></li>
+	<li><a href="/contact">Contact</a></li>
+</ul>
+</div> -->
+<!-- 	</div> -->
+<!-- </nav> -->
+
+
+</header>
+
+	<div id="content" class="inner">
+
+
+    <article class="post">
+	<header>
+		<h2 class="title">
+			
+			<a href="/blog/2013/10/13/jianshu-tiny-bug/">
+			
+				简书，Safari(Mac)，Bug?</a>
+		</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-10-13T22:26:00+08:00" pubdate data-updated="true">Oct 13<span>th</span>, 2013</time></div>
+	</header>
+	<div class="entry-content">
+		<p>前不久在<a href="https://twitter.com/XguoX_L/statuses/388577622990389248">twitter</a>跟@larry 反馈了的Bug，但是当时很快耍着耍着就没了，又正常了，于是撒手结帖了。然则，比较奇葩，刚刚又不小心再现了，虽然只是很微小的一处不妥，但影响到UX的话， 我表示有点轻微的强迫症，外加Twitter上 140 字符配以我的文字水平不足以表述清楚。所以还是写作文好了。</p>
+
+<p>鉴于上一次滚动条受Thunder插件的影响，所以这次我把Safari的插件全关了。(同样方式，其他浏览器无任何异常)</p>
+
+<p>这个Bug是这样的:</p>
+
+<blockquote><p>删除文章的垃圾桶icon在Safari下hover在中间和右边表示不能点选(如图，鼠标未改变)，只有hover在偏向左侧的地方才work，其他浏览器正常。</p></blockquote>
+
+<p><img src="https://7nmnbw.dm2302.livefilestore.com/y2pMd9Hqqq8zcLNm4HmC2VAXY0If8JNgrxOQ_YyS5esT5C65NGiPyPXRGBas-Ggdk13KnyUpKqHmk7maKNQ2A29iNMWEjSIoPGIErQmhg0Akzo/tu1.jpg?psid=1" alt="" /></p>
+
+<p>正常情况下(鼠标的形状)应该是</p>
+
+<p><img src="https://7nomkg.dm1.livefilestore.com/y2pnQSLb70jLri1R75fAlctMv9tStL7PtnGGP3-9mbRg3ncEeEmRaKOTcxCzdUxpjxXlxMBvtFfQzeR39oxhEFQLiojchvoAQj1RUHvqOvOda0/tu2.jpg?psid=1" alt="" /></p>
+
+<p><strong>为什么偶尔会正常，偶尔抽风？</strong></p>
+
+<p>请看下面两图，看看有啥不同</p>
+
+<p><img src="https://h0hcka.dm1.livefilestore.com/y2pA5ROBtWFdo3kL875emP4XeTT-N7OzbNPXLq1AmqEx1XYSHM40ObSCBL5lkCK1GXPKC1BxSDd8EUsKiyjNWP8ZbC75vhdLewfOKOBLrSd_j4/tu3.jpg?psid=1" alt="" /></p>
+
+<p><img src="https://h0j3ba.dm2302.livefilestore.com/y2pibC_etDmFwTYabbHWr8bXvV4USwL-NF922Ax2NkXzIH6kOYg4uxNoVs-AKL5c0qJH74vJssJxcziLn2TMu43YVVuIZ81IDDOqhzP0d-iA_o/tu4.jpg?psid=1" alt="" /></p>
+
+<p>经反复的、<strong>不严格的</strong>控制变量法实验，目前我的解释是，当一个文集里边的文章数量足够多到出现中间栏的滚动条之后, 就会出现这个删除icon不正常的状况。</p>
+
+<p>至于，为嘛出现这种情况，留给简书的小伙伴们吧。</p>
+
+<p>请使用Mac的用户帮忙测试看看，看是通病还是我个人机器、软件等出了问题。</p>
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post">
+	<header>
+		<h2 class="title">
+			
+			<a href="/blog/2013/10/11/one-piece-recently/">
+			
+				由OP最近的拖剧情说起</a>
+		</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-10-11T20:31:00+08:00" pubdate data-updated="true">Oct 11<span>th</span>, 2013</time></div>
+	</header>
+	<div class="entry-content">
+		<p>尽管在我的个人Tags里边经常标的无非那几个，Code，摄影，One Piece, 也无碍接下来抱怨几句最近的OP(动画)。</p>
+
+<p>追着OP的看官不难发现，最近动画明显是各种拖剧情，某很多些神情，某大量的回忆篇加强插入，某动作刻画的时间，都Y的太太长了。而且还不少不断重复的画面，镜头来回转换加深刻画。</p>
+
+<p>最近几集没有深究，好吧，表示开始习惯了。<br/>
+印象最深的是610话， 标题明明是 两位中将的xxxxxx
+结果整集下来一半的镜头给了 M， <br/>
+剩下的一半当中有四分三是在各个场景之间切换，
+真正看维尔戈跟斯摩格过手不知道有没5招，目测镜头时间不超过3分钟！！！</p>
+
+<p><img src="https://7nnpba.dm2301.livefilestore.com/y2pgFj_q49UBPpAcVG8GOjIkuYoUDgDLbkrcYsFN55uNtMt7jyaTDEs7yPZkRvJ2OK1GdmTBGtbWxoKWTflwela5a7VAH6noYahLwCuXS_V5SE/QQ20131011-2.png?psid=1" alt="" /></p>
+
+<p>表示理解动画要拖拖剧情等漫画，但这拖得略不靠谱了吧。如果只是为了等漫画，那我觉得偶尔直接来个停播会好点呢？完全可以理解啊，就像漫画前不久也停刊好几回，当然那是照顾到尾田大神的身体状况，不管怎样，完全可以理解。又或者跟以往那样来些个什么番外篇打酱油，也都总比这样把一集的剧情拖沓成这样要好。</p>
+
+<p>相比之下，漫画的剧情引导显得顺多了。  以「顶上战争」作为分界的两年后的新世界篇，在漫画里头与两年前的剧情相比有过之而无不及。但在动画里头，给我的感觉却是，比之两年前的剧情，那是相去甚远，之所以产生这种心理，应该是缘由这剧情拖沓。反正1 - 570+的动画重看了N次，没有一次说是强烈地觉得剧情拖沓跳过哪一集。而今，好几集好几次我都想按快进 =。=  但还是没有按下去。 难道，是因为时间的作用使之沉淀下来，难道现在的剧情也要等过上些时间沉淀才会打消这些感觉？</p>
+
+<p>最后，我发觉并深感OP里最喜欢的不是Luffy君，说不上谁是最喜欢的角色，但，可以肯定，对 罗宾酱&amp;索大 的喜欢更多一些。</p>
+
+<p><img class="left" src="https://7nmgwa.dm1.livefilestore.com/y2piowWh9rmGFKLaMMZX9p0hjieu0nhXYeJLNicKrqCqu44Ai-nJgUbgIl4ELt5Nty2DCHO6Gd0GHh-GagLaN3XOkefcg5FVZON8l0UQm1yxLE/Nico.Robin.full.1401954.jpg?psid=1" width="350" height="600">
+<img class="right" src="https://7no7na.dm2301.livefilestore.com/y2pyPdpo4WPWPKcGC9nYQoI5vn_BOqO2S31h64Nh-nGZZq4T99T8w3lNT_JVot7o9u9Xeh9g31anmx7mBgY8vnmGza_wDQMYvm9flRIYiUxsVU/7f4996e7jw1e5c2o3526nj20bu0goaar.jpg?psid=1" width="350" height="600"></p>
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post">
+	<header>
+		<h2 class="title">
+			
+			<a href="/blog/2013/09/27/back-to-code/">
+			
+				Back to Code</a>
+		</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-09-27T14:12:00+08:00" pubdate data-updated="true">Sep 27<span>th</span>, 2013</time></div>
+	</header>
+	<div class="entry-content">
+		<p>好多年以前，在「街头篮球」这款游戏看到过的一句，「一天不碰球，就一天没长进」。<br/>
+而今，我是好几个月没真正意义的code，所以，这状态，想不roll back都难，更何求长进。</p>
+
+<p>真心，重头来过也忽然无从下手。</p>
+
+<p>打开Octopress准备更新，发觉连Git的一些命令的想了好久才想起来。</p>
+
+<p>看到Git的提示里冒出有
+ <code>
+git bisect reset
+</code>
+这货功能很强大呀，昏了，之前怎么完全没印象有过着玩意的？又是学艺不精啊！</p>
+
+
+		
+		<a href="/blog/2013/09/27/back-to-code/" class="more-link">Read on &rarr;</a>
+	</div>
+
+</article>
+
+
+    <article class="post">
+	<header>
+		<h2 class="title">
+			
+			<a href="/blog/2013/06/03/photos-and-stories/">
+			
+				照片的故事</a>
+		</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-06-03T16:30:00+08:00" pubdate data-updated="true">Jun 3<span>rd</span>, 2013</time></div>
+	</header>
+	<div class="entry-content">
+		<p><img src="http://farm8.staticflickr.com/7332/8942652946_af9121957f_n.jpg" alt="" />
+<img src="http://farm8.staticflickr.com/7289/8942653776_bdfb3e28a3_n.jpg" alt="" />   <br/>
+那时候，你们在想着什么，仅仅只是摆着姿势那么简单吗？<br/>
+你说我穿的太colorful了，没有你那么忧伤  <br/>
+要是我的最深处也这般colorful那该多好</p>
+
+<p><img src="http://farm8.staticflickr.com/7432/8942651358_e04d1e5d94.jpg" alt="" />
+<img src="http://farm4.staticflickr.com/3732/8942025755_d37f645d5d.jpg" alt="" /><br/>
+不知道你是望着天空还是闭着眼睛，我自己也忘记了<br/>
+草地不很舒服，但给的感觉却让人享受着可以睡去</p>
+
+
+		
+		<a href="/blog/2013/06/03/photos-and-stories/" class="more-link">Read on &rarr;</a>
+	</div>
+
+</article>
+
+
+    <article class="post">
+	<header>
+		<h2 class="title">
+			
+			<a href="/blog/2013/05/14/negative-energy/">
+			
+				负能量 - 从支纤镜说起 - 正能量</a>
+		</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-05-14T23:05:00+08:00" pubdate data-updated="true">May 14<span>th</span>, 2013</time></div>
+	</header>
+	<div class="entry-content">
+		<p>尽管日期标的是May，但是写的时候，是在April 27th - 并刚做完支纤镜 - 耳边塞着耳机，麻醉也还在，全身如喝醉酒那般，浑坨坨，当然只是轻度的，不然我也不可能写的出这些。<br/>
+被病魔缠着也有半年了，目测还得继续治疗休养多半年。<br/>
+说说这个支纤镜吧。第二次做。比起第一次，尽管有了些许经验(也正因为有经验)，做之前还是有些小紧张，表现主要有心跳略有加速。很重要的一点上次的医生没说而这次的医生教了，&#8221;(粤语)吞口水，无口水就做吞口水噶动作&#8221;。难受是必须的，在某个point我一个没忍着，口中就吐了一堆我自己也看不着啥，anyway，死不了。</p>
+
+<p>耳机里播放着《仓颉》</p>
+
+
+		
+		<a href="/blog/2013/05/14/negative-energy/" class="more-link">Read on &rarr;</a>
+	</div>
+
+</article>
+
+
+    <article class="post">
+	<header>
+		<h2 class="title">
+			
+			<a href="/blog/2013/05/12/record-of-the-void-century-and-d/">
+			
+				[Repost]关于D一族的真相以及历史文本的分析</a>
+		</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-05-12T14:16:00+08:00" pubdate data-updated="true">May 12<span>th</span>, 2013</time></div>
+	</header>
+	<div class="entry-content">
+		<h2>关于D一族的真相：</h2>
+
+<p>路飞等人，一出场就有了与众不同的名字，即在名字当中比所有的普通人都多了一个D字，而海贼里不像现实中的美国等国，有MiddleName这个属性，事实上除了D一族的人以外，漫画中还没有出现过三个名字的人物。这真的是D一族自古流传下来的特殊起名方式吗?</p>
+
+<p>我的观点是，是流传下来的，但这个起名方式却是从800年前刚刚突然开始流传的。因为罗宾在读到海底森林的历史文本时，最后的署名是“乔伊波伊”，这个人物很明显与D一族息息相关但却没有D（该人物具体分析见后文）。</p>
+
+<p><img src="https://uvqrqa.dm1.livefilestore.com/y2pfqTNQa7HcK__HqPl6n8RqzkF080dUaO13KHRGdeduPCn-y7geS-x6xcW98_F9QgJFV5HI9qMPiUUef_-3gpCxx8GRC1mKy-BgjZdoUiLP48/838ba61ea8d3fd1f45f53966314e251f94ca5fe9.jpg?psid=1" alt="" /></p>
+
+
+		
+		<a href="/blog/2013/05/12/record-of-the-void-century-and-d/" class="more-link">Read on &rarr;</a>
+	</div>
+
+</article>
+
+
+    <article class="post">
+	<header>
+		<h2 class="title">
+			
+			<a href="/blog/2013/05/11/repost-days-with-my-father/">
+			
+				[Repost]与父亲在一起的日子 (组图)</a>
+		</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-05-11T13:52:00+08:00" pubdate data-updated="true">May 11<span>th</span>, 2013</time></div>
+	</header>
+	<div class="entry-content">
+		<p>昨天是父亲节。</p>
+
+<p>半夜里，我突然想起来，曾经推荐过一个美国摄影师的作品。母亲去世后，他就拍他的父亲，还写下自己的感想。</p>
+
+<p>这组作品，我看过多次，昨天再看，竟然又一次被感动了。儿子对父亲的关心、对老年人衰老和孤独的感慨，都在其中得到了细腻的体现，非常感人。</p>
+
+<p>网上似乎还没有全文翻译，我就把它译了出来，再一次推荐给大家。</p>
+
+
+		
+		<a href="/blog/2013/05/11/repost-days-with-my-father/" class="more-link">Read on &rarr;</a>
+	</div>
+
+</article>
+
+<nav id="pagenavi">
+    
+    
+        <a href="/blog/page/2/" class="next">Next</a>
+    
+</nav>
+</div>
+	<footer id="footer" class="inner"><br>
+<br>
+<br>
+<br>
+&copy; 2013
+
+    XguoX
+
+</footer>
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/hyphenator.js"></script>
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'xguox';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-39166710-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+
+
+</body>
+<script>
+  $(document).ready(function() {
+  // Make images center
+  $('p:has(img)').css('text-align', 'center');
+  });
+</script>
+</html>

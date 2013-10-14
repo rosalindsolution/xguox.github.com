@@ -1,79 +1,70 @@
 
-<!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<!DOCTYPE HTML>
+<html lang="en-GB">
 <head>
-  <meta charset="utf-8">
-  <title>rails小记两则 - XguoX</title>
-  <meta name="author" content="XguoX">
+	<meta charset="utf-8">
+	<title>rails小记两则  | XguoX</title>
 
-  
-  <meta name="description" content="最近在做个课程设计，好吧，俺老师是要求用JSP的，可惜我那弱爆了的水平是不可能完成的。于是顶着各种压力自己用rails来做。 今天才发现个问题，原来mysql默认存储的int貌似最多是10位就爆了，原本我的数据库中有学号那个字段的并且migration是存为integer， &hellip;">
-  
+	<meta name="author" content="XguoX">
 
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="最近在做个课程设计，好吧，俺老师是要求用JSP的，可惜我那弱爆了的水平是不可能完成的。于是顶着各种压力自己用rails来做。 今天才发现个问题，原来mysql默认存储的int貌似最多是10位就爆了，原本我的数据库中有学号那个字段的并且migration是存为integer， &hellip;"> <meta name="keywords" content="">
 
-  
-  <link rel="canonical" href="http://xguox.github.com/blog/2012/05/27/rails-note/">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="/javascripts/ender.js"></script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <link href="/atom.xml" rel="alternate" title="XguoX" type="application/atom+xml">
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic' rel='stylesheet' type='text/css'>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  
-  <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-39166710-1']);
-    _gaq.push(['_trackPageview']);
-
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
-
+	<link href="/atom.xml" rel="alternate" title="XguoX" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	
 
 </head>
 
-<body   >
-  <header role="banner"><hgroup>
-  <!-- <img src="/images/ah_frame_transparent.png" /> -->
-  <h1><a href="/">XguoX</a></h1>
-</hgroup>
+
+
+<body>
+	<header id="header" class="inner"><h1><a href="/">XguoX</a></h1>
+<span class="tagline">Coder & Jabber</span>
+<!-- <nav id="main-nav"><ul>
+	<li><a href="/about">About</a></li>
+	<li><a href="/archives">Archives</a></li>
+	<li><a href="/contact">Contact</a></li>
+</ul>
+</nav> -->
+<!-- <nav id="mobile-nav"> -->
+<!-- 	<div class="alignleft menu"> -->
+<!-- 		<a class="button">Menu</a> -->
+<!-- 		<div class="container"><ul>
+	<li><a href="/about">About</a></li>
+	<li><a href="/archives">Archives</a></li>
+	<li><a href="/contact">Contact</a></li>
+</ul>
+</div> -->
+<!-- 	</div> -->
+<!-- </nav> -->
+
 
 </header>
-  <div id="main">
-    <div id="content">
-      <div>
-<article class="hentry" role="article">
+
+	<div id="content" class="inner"><article class="post">
+	<header>
+		<h2 class="title">Rails小记两则</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
   
-  <header>
-    
-      <h1 class="entry-title">Rails小记两则</h1>
-    
-  </header>
 
 
-
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/rails/'>Rails</a>, <a class='category' href='/blog/categories/ruby/'>Ruby</a>
-  
-</span>
-
-
-<div class="entry-content"><p>最近在做个课程设计，好吧，俺老师是要求用JSP的，可惜我那弱爆了的水平是不可能完成的。于是顶着各种压力自己用rails来做。</p>
+<time datetime="2012-05-27T11:15:00+08:00" pubdate data-updated="true">May 27<span>th</span>, 2012</time></div>
+	</header>
+	<div class="entry-content"><p>最近在做个课程设计，好吧，俺老师是要求用JSP的，可惜我那弱爆了的水平是不可能完成的。于是顶着各种压力自己用rails来做。</p>
 
 <p>今天才发现个问题，原来mysql默认存储的int貌似最多是10位就爆了，原本我的数据库中有学号那个字段的并且migration是存为integer，结果录入数据时候就各种甭了，因为学校学号都是10位数，不管我输入的是什么，进了数据库的学号字段都变成 2147483648, 刚开始看日志，看程序都木有发现什么问题，纠结不能，查看数据库发现，每条记录的学号西端都是统一的,搜索一通才发现问题所在。于是直接用mysql工具将学号字段改成了BIGINT，杠杠的就啥事都没了</p>
 
@@ -81,160 +72,56 @@
 
 
 <p>另外个是，用了will_paginate这个gem做分页，不过默认显示的是“previous”和“next”，改为中文的“前一页”和“后一页”需要先在config/initializers/ 下新建一个will_paginate.rb,  and then在里头加入
-Liquid error: undefined method `join&#8217; for #&lt;String:0x007fdc12a65fe0></p>
+Liquid error: undefined method `join&#8217; for #&lt;String:0x007fc946484290></p>
 </div>
 
-
-  <footer>
-    <p class="meta">
-      
-  
-
-<span class="byline author vcard">Posted by <span class="fn">XguoX</span></span>
-
-      
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-05-27T11:15:00+08:00" pubdate data-updated="true">May 27<span>th</span>, 2012</time>
-    </p>
-    
-      <div class="sharing">
-  
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://xguox.github.com/blog/2012/05/27/rails-note/" data-via="" data-counturl="http://xguox.github.com/blog/2012/05/27/rails-note/" >Tweet</a>
-  
-  
-  <div class="g-plusone" data-size="medium"></div>
-  
-  
-</div>
-
-    
-    <p class="meta">
-      
-        <a class="basic-alignment left" href="/blog/2012/05/11/recently-status/" title="Previous Post: Recently小记">&laquo; Recently小记</a>
-      
-      
-        <a class="basic-alignment right" href="/blog/2012/06/04/some-findings/" title="Next Post: 一些学习，一些发现">一些学习，一些发现 &raquo;</a>
-      
-    </p>
-  </footer>
 </article>
 
-  <section>
-    <h1>Comments</h1>
+	
+	<div class="share">
+	  <!-- <ul> -->
+	  <!--   <li>
+  <a href="https://twitter.com/intent/tweet?text=rails小记两则 by @&url=http://xguox.github.com/blog/2012/05/27/rails-note/" title="Share rails小记两则 on Twitter">
+    <img src="/images/social/twitter.png" />
+  </a>
+</li>
+ -->
+	  <!--   <li>
+  <a href="https://www.facebook.com/sharer.php?u=http://xguox.github.com/blog/2012/05/27/rails-note/" title="Share rails小记两则 on Facebook">
+    <img src="/images/social/facebook.png" />
+  </a>
+</li>
+ -->
+	  <!--   <li>
+  <a href="https://plus.google.com/share?url=http://xguox.github.com/blog/2012/05/27/rails-note/" title="Share rails小记两则 on Google Plus">
+    <img src="/images/social/google.png" />
+  </a>
+</li>
+ -->
+	  <!-- </ul> -->
+	</div>
+
+
+
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
     <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
-  </section>
-
+</section>
 </div>
+	<footer id="footer" class="inner"><br>
+<br>
+<br>
+<br>
+&copy; 2013
 
-<aside class="sidebar">
-  
-    <section>
-  <ul id="recent_posts">
-      <li class="post">
-      <a href="/" alt="Home"><img src="/images/Home.png"></a>
-      <a href="/archives/" alt="Archives"><img src="/images/Calendar.png"></a>
-      <a href="mailto:golvinlu@gmail.com" alt="E-Mail"><img src="/images/Envelope.png"></a>
-      <a href="/about/" alt="About XguoX"><img src="/images/User.png"></a>
-      <a href="/atom.xml" alt="subscribe feed"><img src="/images/rss_big.png"></a>
-      </li>
-  </ul>
-</section>
-
-<section>
-<h1>Category</h1>
-<span class='categories_tag'> <a href='/blog/categories/books' style='font-size: 101.76470588235294%'>Books</a>  <a href='/blog/categories/css' style='font-size: 101.76470588235294%'>Css</a>  <a href='/blog/categories/hexo' style='font-size: 101.76470588235294%'>Hexo</a>  <a href='/blog/categories/jabber' style='font-size: 160.0%'>Jabber</a>  <a href='/blog/categories/javascript' style='font-size: 101.76470588235294%'>Javascript</a>  <a href='/blog/categories/json' style='font-size: 101.76470588235294%'>Json</a>  <a href='/blog/categories/meteor' style='font-size: 112.3529411764706%'>Meteor</a>  <a href='/blog/categories/onepiece' style='font-size: 103.52941176470588%'>Onepiece</a>  <a href='/blog/categories/performance' style='font-size: 101.76470588235294%'>Performance</a>  <a href='/blog/categories/rails' style='font-size: 115.88235294117646%'>Rails</a>  <a href='/blog/categories/repost' style='font-size: 105.29411764705883%'>Repost</a>  <a href='/blog/categories/ruby' style='font-size: 115.88235294117646%'>Ruby</a>  <a href='/blog/categories/sublime' style='font-size: 101.76470588235294%'>Sublime</a>  <a href='/blog/categories/translation' style='font-size: 124.70588235294117%'>Translation</a>  <a href='/blog/categories/travel' style='font-size: 107.05882352941177%'>Travel</a> </span>
-</section>
-
-
-<section class="even">
-	<iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=zh_cn&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=4&isTitle=0&noborder=0&isWeibo=1&isFans=0&uid=1660802261&verifier=0594649b&colors=d04e38,d04e38,ffffff,0082cb,f08456&dpc=1"></iframe>
-</section>
-
-
-
-<section class="last odd">
-<h1>My <span style="color: #0063dc;">Flick<span style="color: #ff0084;">r</h1>
-<style type="text/css">
-	#flickrList li { text-align: left; display:inline; margin: 0 2px;}
-</style>
-<ul id="flickrList"></ul>
-<script lang="Javascript">
-var flickrNickname = "GroverLu";
-function jsonFlickrApi(rsp) {
-	if (rsp.stat != "ok"){
-  		return;
- 	}
- 	var list = "";
- 	for (var i=0; i < rsp.photos.photo.length; i++) {
-  		var photo    = rsp.photos.photo[i];
-  		var imgUrl   = 'http://farm'+ photo.farm +'.static.flickr.com/'+ photo.server +'/'+ photo.id +'_'+ photo.secret +'_s.jpg';
-  		var photoUrl = 'http://www.flickr.com/photos/'+ flickrNickname +'/'+ photo.id;
-  		list += '<li id="flickrItem_'+i+'"><a href="'+ photoUrl +'" title="'+ photo.title +'"><img alt="'+ photo.title +'" src="'+ imgUrl +'" /></a></li>';
- 	}
- 	document.getElementById('flickrList').innerHTML = list;
-}
-</script>
-<script lang="Javascript" src="http://api.flickr.com/services/rest/?format=json&method=flickr.photos.search&user_id=94631627@N04&per_page=15&api_key=d286c7fecaa39173da37f6e681c443f6"></script>
-</section>
-<section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/blog/2013/10/13/jianshu-tiny-bug/">简书，Safari(Mac)，Bug?</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/10/11/one-piece-recently/">由OP最近的拖剧情说起</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/09/27/back-to-code/">Back to Code</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/06/03/photos-and-stories/">照片的故事</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/05/14/negative-energy/">负能量 - 从支纤镜说起 - 正能量</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/05/12/record-of-the-void-century-and-d/">[Repost]关于D一族的真相以及历史文本的分析</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/05/11/repost-days-with-my-father/">[Repost]与父亲在一起的日子 (组图)</a>
-      </li>
-    
-  </ul>
-</section>
-
-  
-</aside>
-
-
-    </div>
-  </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2013 - XguoX -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</p>
+    XguoX
 
 </footer>
-  
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/hyphenator.js"></script>
+
 
 <script type="text/javascript">
       var disqus_shortname = 'xguox';
@@ -254,34 +141,26 @@ function jsonFlickrApi(rsp) {
 
 
 
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-39166710-1']);
+		_gaq.push(['_trackPageview']);
 
-
-  <script type="text/javascript">
-    (function() {
-      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
-      script.src = 'https://apis.google.com/js/plusone.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
-    })();
-  </script>
-
-
-
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
 
 
 
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-<script src="/javascripts/aharris.js"></script>
 
 </body>
+<script>
+  $(document).ready(function() {
+  // Make images center
+  $('p:has(img)').css('text-align', 'center');
+  });
+</script>
 </html>
