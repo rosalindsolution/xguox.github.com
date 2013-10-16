@@ -1,0 +1,1458 @@
+
+<!DOCTYPE HTML>
+<html lang="en-GB">
+<head>
+	<meta charset="utf-8">
+	<title>5 Use Cases for Icon Fonts  | XguoX</title>
+
+	<meta name="author" content="XguoX">
+
+<meta name="description" content="Icon fonts非常的强大: You can CSS the crap out of them and they don’t mind.
+在任何的显示器和分辨率上看起来都很不错
+无论多大的icons集都只需要一次HTTP请求 下面来看看5个典型的icon fonts用例. 在开始之前 &hellip;"> <meta name="keywords" content="">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="XguoX" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	
+
+</head>
+
+
+
+<body>
+	<header id="header" class="inner"><h1><a href="/">XguoX</a></h1>
+<span class="tagline">Coder & Jabber</span>
+<nav id="main-nav"><ul>
+	<li><a href="http://www.flickr.com/photos/groverlu/sets" target="_blank">Flickr</a></li>
+	<li><a href="/about">About</a></li>
+	<li><a href="/atom.xml">RSS</a></li>
+</ul>
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul>
+	<li><a href="http://www.flickr.com/photos/groverlu/sets" target="_blank">Flickr</a></li>
+	<li><a href="/about">About</a></li>
+	<li><a href="/atom.xml">RSS</a></li>
+</ul>
+</div>
+	</div>
+</nav>
+
+
+</header>
+
+	<div id="content" class="inner"><article class="post">
+	<header>
+		<h2 class="title">5 Use Cases for Icon Fonts</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-25T15:48:00+08:00" pubdate data-updated="true">Mar 25<span>th</span>, 2013</time></div>
+	</header>
+	<div class="entry-content"><p>Icon fonts非常的强大:</p>
+
+<ul>
+<li>You can CSS the crap out of them and they don’t mind.</li>
+<li>在任何的显示器和分辨率上看起来都很不错</li>
+<li>无论多大的icons集都只需要一次HTTP请求</li>
+</ul>
+
+
+<p>下面来看看5个典型的icon fonts用例.</p>
+
+<h2>在开始之前</h2>
+
+<p>为了让代码保持整洁和高可读性, 我们将不会用到浏览器前缀. 我们会用到的东西诸如animations, transitions, and transforms, 所有的这些为了确保更好的浏览器支持一般都需要添加hack前缀. 在这里你想如何处理浏览器前缀问题<a href="http://css-tricks.com/how-to-deal-with-vendor-prefixes/">由你自己决定</a>.</p>
+
+<!-- more -->
+
+
+<p>正如你在例子中可以看到的, 我使用的是icon fonts托管服务<a href="http://weloveiconfonts.com/">weloveiconfonts.com</a>. 这是一个我自己的项目&mdash;原本想写一篇文章关于icon-fonts, 搜索发现没有免费的icon fonts托管服务, 于是就新建了这么个项目来完成这篇文章.</p>
+
+<h2>1. CSS Loader</h2>
+
+<p>现今有许多<a href="http://codepen.io/stuffit/pen/vlfyA">很棒的</a>, <a href="http://codepen.io/FWeinb/pen/BeJLo">纯</a>CSS Loader, 你也可以在<a href="http://cssload.net/">cssload.net</a>上创建你自己的Loader. 而除此之外我们还可以使用<a href="http://css-tricks.com/flat-icons-icon-fonts/">icon fonts</a>来完成. 你可以使用一个看起来像Loading的符号,然后用CSS让其<a href="http://docs.webplatform.org/wiki/css/properties/animation/animation">动起来</a>.</p>
+
+<p>以下这是基本的HTML. 开始是三个loader, 他们都是<code>div.wrapper</code>的子元素. 第四个(<code>div.complex</code>)是由两个icons组成.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;wrapper&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;fontelico-spin1&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;fontelico-spin3&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;fontelico-spin5&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
+</span><span class='line'><span class="nt">&lt;/div&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;complex&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;fontelico-emo-devil&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;fontelico-spin4&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
+</span><span class='line'><span class="nt">&lt;/div&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>导入icon font <a href="https://github.com/fontello/fontelico.font">Fontelico</a>到你的CSS之中.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="k">@import</span> <span class="nt">url</span><span class="o">(</span><span class="nt">http</span><span class="o">://</span><span class="nt">weloveiconfonts</span><span class="nc">.com</span><span class="o">/</span><span class="nt">api</span><span class="o">/?</span><span class="nt">family</span><span class="o">=</span><span class="nt">fontelico</span><span class="o">)</span><span class="p">;</span>
+</span><span class='line'><span class="o">[</span><span class="nt">class</span><span class="o">*=</span><span class="s2">&quot;fontelico-&quot;</span><span class="o">]</span><span class="nd">:before</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">font-family</span><span class="o">:</span> <span class="s1">&#39;fontelico&#39;</span><span class="o">,</span> <span class="k">sans-serif</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>给元素添加名为<code>load</code>的动画, 使得这些元素360度旋转, 可适当做一些调整或者更改颜色.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="c">/* Normal (left) */</span>
+</span><span class='line'><span class="nt">span</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">float</span><span class="o">:</span> <span class="k">left</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">text-align</span><span class="o">:</span> <span class="k">center</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">margin</span><span class="o">:</span> <span class="m">0</span> <span class="m">5em</span><span class="p">;</span>
+</span><span class='line'>  <span class="n">animation</span><span class="o">:</span> <span class="n">load</span> <span class="m">1.337s</span> <span class="n">infinite</span> <span class="n">ease</span><span class="o">-</span><span class="n">out</span> <span class="n">reverse</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="c">/* Fast (center) */</span>
+</span><span class='line'><span class="nc">.wrapper</span> <span class="nt">span</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">2</span><span class="o">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="n">animation</span><span class="o">:</span> <span class="n">load</span> <span class="m">.5s</span> <span class="n">infinite</span> <span class="n">linear</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="c">/* Steps (right) */</span>
+</span><span class='line'><span class="nc">.wrapper</span> <span class="nt">span</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">3</span><span class="o">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="n">animation</span><span class="o">:</span> <span class="n">load</span> <span class="m">1.25s</span> <span class="n">infinite</span> <span class="n">steps</span><span class="p">(</span><span class="m">18</span><span class="o">,</span> <span class="n">end</span><span class="p">)</span> <span class="n">forwards</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="k">@keyframes</span> <span class="nt">load</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nt">0</span><span class="o">%</span> <span class="p">{</span>
+</span><span class='line'>    <span class="n">transform</span><span class="o">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">0</span><span class="p">)</span> <span class="n">scale</span><span class="p">(</span><span class="m">1</span><span class="o">,</span> <span class="m">1</span><span class="p">);</span>
+</span><span class='line'>    <span class="k">color</span><span class="o">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="o">.</span><span class="m">5</span><span class="p">);</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="nt">10</span><span class="o">%</span> <span class="p">{</span> <span class="k">color</span><span class="o">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span> <span class="m">120</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="o">.</span><span class="m">5</span><span class="p">);</span> <span class="p">}</span>
+</span><span class='line'>  <span class="nt">20</span><span class="o">%</span> <span class="p">{</span> <span class="k">color</span><span class="o">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span> <span class="m">120</span><span class="o">,</span> <span class="m">120</span><span class="o">,</span> <span class="o">.</span><span class="m">5</span><span class="p">);</span> <span class="p">}</span>
+</span><span class='line'>  <span class="nt">30</span><span class="o">%</span> <span class="p">{</span> <span class="k">color</span><span class="o">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">120</span><span class="o">,</span> <span class="m">120</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="o">.</span><span class="m">5</span><span class="p">);</span> <span class="p">}</span>
+</span><span class='line'>  <span class="nt">40</span><span class="o">%</span> <span class="p">{</span> <span class="k">color</span><span class="o">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">120</span><span class="o">,</span> <span class="o">.</span><span class="m">5</span><span class="p">);</span> <span class="p">}</span>
+</span><span class='line'>  <span class="nt">50</span><span class="o">%</span> <span class="p">{</span>
+</span><span class='line'>    <span class="n">transform</span><span class="o">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">180</span><span class="n">deg</span><span class="p">)</span> <span class="n">scale</span><span class="p">(</span><span class="m">1</span><span class="o">.</span><span class="m">85</span><span class="o">,</span> <span class="m">1</span><span class="o">.</span><span class="m">85</span><span class="p">);</span>
+</span><span class='line'>    <span class="k">color</span><span class="o">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">120</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="o">.</span><span class="m">5</span><span class="p">);</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="nt">100</span><span class="o">%</span> <span class="p">{</span>
+</span><span class='line'>    <span class="n">transform</span><span class="o">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">360</span><span class="n">deg</span><span class="p">)</span> <span class="n">scale</span><span class="p">(</span><span class="m">1</span><span class="o">,</span> <span class="m">1</span><span class="p">);</span>
+</span><span class='line'>    <span class="k">color</span><span class="o">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="o">.</span><span class="m">5</span><span class="p">);</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>将最后的那个loader(<code>div.complex</code>) 的两个icons堆叠在最上层. 第一个子元素为devil形状的icon(用的是名为<code>rotate</code>的动画), 第二个子元素为spin icon(使用名为<code>scale</code>的动画).</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nc">.complex</span> <span class="nt">span</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">1</span><span class="o">),</span>
+</span><span class='line'><span class="nc">.complex</span> <span class="nt">span</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">2</span><span class="o">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">position</span><span class="o">:</span> <span class="k">absolute</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">margin</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">width</span><span class="o">:</span> <span class="m">1em</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">height</span><span class="o">:</span> <span class="m">1em</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="c">/* Devil icon  */</span>
+</span><span class='line'><span class="nc">.complex</span> <span class="nt">span</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">1</span><span class="o">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="n">animation</span><span class="o">:</span> <span class="n">load</span> <span class="m">1.25s</span> <span class="n">infinite</span> <span class="n">steps</span><span class="p">(</span><span class="m">18</span><span class="o">,</span> <span class="n">end</span><span class="p">)</span> <span class="n">forwards</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="c">/* Spin icon */</span>
+</span><span class='line'><span class="nc">.complex</span> <span class="nt">span</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">2</span><span class="o">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">font-size</span><span class="o">:</span> <span class="m">3em</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">left</span><span class="o">:</span> <span class="m">-.35em</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">top</span><span class="o">:</span> <span class="m">-.35em</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">color</span><span class="o">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="o">.</span><span class="m">3</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">animation</span><span class="o">:</span> <span class="n">devil</span> <span class="m">3s</span> <span class="n">infinite</span> <span class="n">linear</span> <span class="n">reverse</span> <span class="n">forwards</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="k">@keyframes</span> <span class="nt">devil</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nt">0</span><span class="o">%</span> <span class="p">{</span>
+</span><span class='line'>    <span class="n">transform</span><span class="o">:</span> <span class="n">scale</span><span class="p">(</span><span class="m">-1</span><span class="o">.</span><span class="m">85</span><span class="o">,</span> <span class="m">1</span><span class="o">.</span><span class="m">85</span><span class="p">);</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="nt">50</span><span class="o">%</span> <span class="p">{</span>
+</span><span class='line'>    <span class="n">transform</span><span class="o">:</span> <span class="n">scale</span><span class="p">(</span><span class="m">1</span><span class="o">.</span><span class="m">85</span><span class="o">,</span> <span class="m">-1</span><span class="o">.</span><span class="m">85</span><span class="p">);</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="nt">100</span><span class="o">%</span> <span class="p">{</span>
+</span><span class='line'>    <span class="n">transform</span><span class="o">:</span> <span class="n">scale</span><span class="p">(</span><span class="m">-1</span><span class="o">.</span><span class="m">85</span><span class="o">,</span> <span class="m">1</span><span class="o">.</span><span class="m">85</span><span class="p">);</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<pre class="codepen" data-height="300" data-type="result" data-href="FCsHe" data-user="TimPietrusky"><code></code></pre>
+
+
+<script async src="http://codepen.io:/assets/embed/ei.js"></script>
+
+
+<h2>SocialCount meets Style</h2>
+
+<p>人们都喜欢在他们的网站上使用一些社交分享按钮, 从而使得访问者可以轻易的传播他们的内容. 但是当你如果添加Facebook, Twitter, Google+, 那么你将要面临的是大约309KB的空缓存负载量. 这就是<a href="https://github.com/filamentgroup/SocialCount">SocialCount jQuery plugin</a>所存在的原因. SocialCount是渐进增强的, 并且可以lazy loaded以及对移动设备比较友好.</p>
+
+<p>它的默认样式很简单且在iframe中包含的buttons也很少. 下面, 让我们为这些buttons添加一些CSS花样.</p>
+
+<p>以下的HTML是由<a href="SocialCount%20markup%20generator">SocialCount markup generator</a>所创建. 其实也就是一些包含着链接和icons的无序列表.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;ul</span>
+</span><span class='line'>  <span class="na">class=</span><span class="s">&quot;socialcount&quot;</span>
+</span><span class='line'>  <span class="na">data-url=</span><span class="s">&quot;http://www.google.com/&quot;</span>
+</span><span class='line'>  <span class="na">data-counts=</span><span class="s">&quot;true&quot;</span>
+</span><span class='line'>  <span class="na">data-share-text=</span><span class="s">&quot;Google is a search engine&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;facebook&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;https://www.facebook.com/sharer/sharer.php?u=http://www.google.com/&quot;</span> <span class="na">title=</span><span class="s">&quot;Share on Facebook&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>      <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;count entypo-thumbs-up&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;/a&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;/li&gt;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;twitter&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;https://twitter.com/intent/tweet?text=http://www.google.com/&quot;</span> <span class="na">title=</span><span class="s">&quot;Share on Twitter&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>      <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;count entypo-twitter&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;/a&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;/li&gt;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">&quot;googleplus&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;https://plus.google.com/share?url=http://www.google.com/&quot;</span> <span class="na">title=</span><span class="s">&quot;Share on Google Plus&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;count entypo-gplus&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;/a&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;/li&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="nt">&lt;/ul&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>接着在CSS中导入icon font(Entypo)</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="k">@import</span> <span class="nt">url</span><span class="o">(</span><span class="nt">http</span><span class="o">://</span><span class="nt">weloveiconfonts</span><span class="nc">.com</span><span class="o">/</span><span class="nt">api</span><span class="o">/?</span><span class="nt">family</span><span class="o">=</span><span class="nt">entypo</span><span class="o">)</span><span class="p">;</span>
+</span><span class='line'><span class="o">[</span><span class="nt">class</span><span class="o">*=</span><span class="s2">&quot;entypo-&quot;</span><span class="o">]</span><span class="nd">:before</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">font</span><span class="o">:</span> <span class="m">2.5em</span><span class="o">/</span><span class="m">1.9em</span> <span class="s1">&#39;entypo&#39;</span><span class="o">,</span> <span class="k">sans-serif</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>然后是重写SocialCount提供的默认样式:</p>
+
+<ul>
+<li>加入transition</li>
+<li>缩放iframe</li>
+<li>给buttons设定自定义的背景</li>
+</ul>
+
+
+<blockquote><p>Editor&rsquo;s note: 以下的CSS所使用的是SASS的一种格式SCSS.  包括后边的也是. 如果你想要使用标准的CSS, 可以跳转到下边的CodePen 演示链接,  在CSS编辑框头部点击&#8221;SCSS&#8221;, 然后就可以看到经过编译后的标准CSS</p></blockquote>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+</pre></td><td class='code'><pre><code class='sass'><span class='line'><span class="nc">.socialcount</span> <span class="err">{</span>
+</span><span class='line'>  <span class="o">&gt;</span> <span class="nt">li</span> <span class="err">{</span>
+</span><span class='line'>    <span class="na">width</span><span class="o">:</span> <span class="mi">33</span><span class="kt">%</span><span class="err">;</span>
+</span><span class='line'>    <span class="na">border-radius</span><span class="o">:</span> <span class="mi">0</span><span class="err">;</span>
+</span><span class='line'>    <span class="na">transition</span><span class="o">:</span> <span class="n">all</span> <span class="mf">.3</span><span class="kt">s</span> <span class="n">ease-in-out</span><span class="err">;</span>
+</span><span class='line'>    <span class="na">cursor</span><span class="o">:</span> <span class="no">pointer</span><span class="err">;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="na">&amp;</span><span class="o">:</span><span class="n">hover</span> <span class="p">[</span><span class="n">class</span><span class="o">*=</span><span class="s2">&quot;entypo-&quot;</span><span class="p">]</span><span class="o">:</span><span class="n">before</span> <span class="err">{</span>
+</span><span class='line'>      <span class="na">opacity</span><span class="o">:</span> <span class="mi">0</span><span class="err">;</span>
+</span><span class='line'>    <span class="err">}</span>
+</span><span class='line'>  <span class="err">}</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nt">iframe</span> <span class="err">{</span>
+</span><span class='line'>    <span class="na">transform</span><span class="o">:</span> <span class="nf">scale</span><span class="p">(</span><span class="mi">1</span><span class="mf">.65</span><span class="o">,</span> <span class="mi">1</span><span class="mf">.65</span><span class="p">)</span><span class="err">;</span>
+</span><span class='line'>  <span class="err">}</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nc">.button</span> <span class="err">{</span>
+</span><span class='line'>    <span class="na">top</span><span class="o">:</span> <span class="mi">50</span><span class="kt">%</span><span class="err">;</span>
+</span><span class='line'>    <span class="na">margin</span><span class="o">:</span> <span class="mf">-.75</span><span class="kt">em</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">0</span><span class="err">;</span>
+</span><span class='line'>    <span class="na">height</span><span class="o">:</span> <span class="mi">2</span><span class="kt">em</span><span class="err">;</span>
+</span><span class='line'>  <span class="err">}</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nc">.facebook</span> <span class="err">{</span>
+</span><span class='line'>    <span class="na">background</span><span class="o">:</span> <span class="nf">rgba</span><span class="p">(</span><span class="mi">59</span><span class="o">,</span> <span class="mi">89</span><span class="o">,</span> <span class="mi">152</span><span class="o">,</span> <span class="mf">.7</span><span class="p">)</span><span class="err">;</span>
+</span><span class='line'>  <span class="err">}</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">&amp;</span><span class="nc">.like</span> <span class="nc">.facebook</span> <span class="nt">iframe</span> <span class="err">{</span>
+</span><span class='line'>    <span class="na">width</span><span class="o">:</span> <span class="mi">8</span><span class="kt">em</span><span class="err">;</span>
+</span><span class='line'>  <span class="err">}</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nc">.twitter</span> <span class="err">{</span>
+</span><span class='line'>    <span class="na">background</span><span class="o">:</span> <span class="nf">rgba</span><span class="p">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">172</span><span class="o">,</span> <span class="mi">237</span><span class="o">,</span> <span class="mf">.7</span><span class="p">)</span><span class="err">;</span>
+</span><span class='line'>  <span class="err">}</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nc">.googleplus</span> <span class="err">{</span>
+</span><span class='line'>    <span class="na">background</span><span class="o">:</span> <span class="nf">rgba</span><span class="p">(</span><span class="mi">172</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mi">0</span><span class="o">,</span> <span class="mf">.7</span><span class="p">)</span><span class="err">;</span>
+</span><span class='line'>  <span class="err">}</span>
+</span><span class='line'><span class="err">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<pre class="codepen" data-height="300" data-type="result" data-href="Czfyu" data-user="TimPietrusky"><code></code></pre>
+
+
+<script async src="http://codepen.io:/assets/embed/ei.js"></script>
+
+
+<h2>3.Enhanced lists</h2>
+
+<p>下边的三个例子都基于下边这个简单的HTML</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;div&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;h2&gt;</span>Title<span class="nt">&lt;/h2&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">&quot;style&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;li</span> <span class="na">data-text=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>Text<span class="nt">&lt;/li&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;li</span> <span class="na">data-text=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>Text<span class="nt">&lt;/li&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;li</span> <span class="na">data-text=</span><span class="s">&quot;&quot;</span><span class="nt">&gt;</span>Text<span class="nt">&lt;/li&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;/ul&gt;</span>
+</span><span class='line'><span class="nt">&lt;/div&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>导入 icon font (Font Awesome)到你的CSS</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="k">@import</span> <span class="nt">url</span><span class="o">(</span><span class="nt">http</span><span class="o">://</span><span class="nt">weloveiconfonts</span><span class="nc">.com</span><span class="o">/</span><span class="nt">api</span><span class="o">/?</span><span class="nt">family</span><span class="o">=</span><span class="nt">fontawesome</span><span class="o">)</span><span class="p">;</span>
+</span><span class='line'><span class="o">[</span><span class="nt">class</span><span class="o">*=</span><span class="s2">&quot;fontawesome-&quot;</span><span class="o">]</span><span class="nd">:before</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">font-family</span><span class="o">:</span> <span class="s1">&#39;FontAwesome&#39;</span><span class="o">,</span> <span class="k">sans-serif</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>为列表, 列表元素, <a href="http://css-tricks.com/almanac/selectors/a/after/">伪元素</a>以及button添加默认样式. 在这里我们不使用class来设定列表元素下的icon的样式, 取而代之是我们改变元素的<code>content</code>属性来创建一个伪元素.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nt">ul</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">list-style</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">padding</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">li</span> <span class="err">{</span>
+</span><span class='line'>    <span class="k">position</span><span class="o">:</span> <span class="k">relative</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">min-height</span><span class="o">:</span> <span class="m">2em</span><span class="p">;</span>
+</span><span class='line'>    <span class="k">padding</span><span class="o">:</span> <span class="m">.3em</span> <span class="m">.3em</span> <span class="m">.3em</span> <span class="m">1.5em</span><span class="p">;</span>
+</span><span class='line'>    <span class="n">transition</span><span class="o">:</span>
+</span><span class='line'>      <span class="k">background</span> <span class="m">.3s</span> <span class="n">ease</span><span class="o">-</span><span class="n">in</span><span class="o">-</span><span class="n">out</span><span class="o">,</span>
+</span><span class='line'>      <span class="k">color</span> <span class="m">.3s</span> <span class="n">ease</span><span class="o">-</span><span class="n">in</span><span class="o">-</span><span class="n">out</span><span class="o">,</span>
+</span><span class='line'>      <span class="n">box</span><span class="o">-</span><span class="n">shadow</span> <span class="m">.1s</span> <span class="n">ease</span><span class="o">-</span><span class="n">in</span><span class="o">-</span><span class="n">out</span><span class="o">,</span>
+</span><span class='line'>      <span class="k">height</span> <span class="m">.25s</span> <span class="n">ease</span><span class="o">-</span><span class="n">in</span><span class="o">-</span><span class="n">out</span>
+</span><span class='line'>   <span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">button</span> <span class="err">{</span>
+</span><span class='line'>      <span class="k">position</span><span class="o">:</span> <span class="k">absolute</span><span class="p">;</span>
+</span><span class='line'>      <span class="k">left</span><span class="o">:</span> <span class="m">1.45em</span><span class="p">;</span>
+</span><span class='line'>      <span class="k">bottom</span><span class="o">:</span> <span class="m">.35em</span><span class="p">;</span>
+</span><span class='line'>      <span class="k">opacity</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+</span><span class='line'>      <span class="k">height</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+</span><span class='line'>      <span class="k">border</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
+</span><span class='line'>      <span class="k">font-size</span><span class="o">:</span> <span class="m">.8em</span><span class="p">;</span>
+</span><span class='line'>      <span class="k">cursor</span><span class="o">:</span> <span class="k">pointer</span><span class="p">;</span>
+</span><span class='line'>      <span class="n">transition</span><span class="o">:</span> <span class="n">all</span> <span class="m">.4s</span> <span class="n">ease</span><span class="o">-</span><span class="n">in</span><span class="o">-</span><span class="n">out</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="o">&amp;</span><span class="nd">:before</span> <span class="p">{</span>
+</span><span class='line'>      <span class="k">position</span><span class="o">:</span> <span class="k">absolute</span><span class="p">;</span>
+</span><span class='line'>      <span class="k">top</span><span class="o">:</span> <span class="m">.425em</span><span class="p">;</span>
+</span><span class='line'>      <span class="k">font-family</span><span class="o">:</span> <span class="s1">&#39;FontAwesome&#39;</span><span class="o">,</span> <span class="k">sans-serif</span><span class="p">;</span>
+</span><span class='line'>      <span class="k">margin</span><span class="o">:</span> <span class="m">0</span> <span class="m">.35em</span> <span class="m">0</span> <span class="m">-1.35em</span><span class="p">;</span>
+</span><span class='line'>      <span class="k">vertical-align</span><span class="o">:</span> <span class="k">bottom</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>    <span class="o">&amp;</span><span class="nd">:hover</span> <span class="p">{</span>
+</span><span class='line'>      <span class="n">button</span> <span class="err">{</span>
+</span><span class='line'>        <span class="k">opacity</span><span class="o">:</span> <span class="m">1</span><span class="p">;</span>
+</span><span class='line'>        <span class="k">height</span><span class="o">:</span> <span class="m">2em</span><span class="p">;</span>
+</span><span class='line'>      <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="o">&amp;</span><span class="nd">:before</span> <span class="p">{</span>
+</span><span class='line'>        <span class="k">color</span><span class="o">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">255</span><span class="o">,</span> <span class="m">255</span><span class="o">,</span> <span class="m">255</span><span class="o">,</span> <span class="m">1</span><span class="p">);</span>
+</span><span class='line'>        <span class="k">right</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+</span><span class='line'>        <span class="n">transform</span><span class="o">:</span> <span class="n">scale</span><span class="p">(</span><span class="m">2</span><span class="o">.</span><span class="m">5</span><span class="o">,</span> <span class="m">2</span><span class="o">.</span><span class="m">5</span><span class="p">)</span> <span class="n">translate</span><span class="p">(</span><span class="m">-.25em</span><span class="o">,</span> <span class="m">.15em</span><span class="p">);</span>
+</span><span class='line'>      <span class="p">}</span>
+</span><span class='line'>      <span class="o">&amp;</span><span class="nd">:after</span> <span class="p">{</span>
+</span><span class='line'>        <span class="k">position</span><span class="o">:</span> <span class="k">absolute</span><span class="p">;</span>
+</span><span class='line'>        <span class="k">content</span><span class="o">:</span> <span class="n">attr</span><span class="p">(</span><span class="n">data</span><span class="o">-</span><span class="k">text</span><span class="p">);</span>
+</span><span class='line'>      <span class="p">}</span>
+</span><span class='line'>    <span class="err">}</span>
+</span><span class='line'>  <span class="err">}</span>
+</span><span class='line'><span class="err">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>3.1 Stuff You Love</h3>
+
+<p>第一个示例很简单. 使用的是一个心形而不是默认的列表样式加特定的hover: icon会被移到右侧, 另外<code>::after</code>伪元素得到data-text这个<a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/elements.html#embedding-custom-non-visible-data-with-the-data-*-attributes">data-attribute</a>的文本</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nc">.love</span> <span class="p">{</span>
+</span><span class='line'>  <span class="n">li</span> <span class="err">{</span>
+</span><span class='line'>    <span class="o">&amp;:</span><span class="n">before</span> <span class="err">{</span>
+</span><span class='line'>      <span class="c">/* fontawesome-heart */</span>
+</span><span class='line'>      <span class="k">content</span><span class="o">:</span> <span class="s2">&quot;\f004&quot;</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>    <span class="o">&amp;</span><span class="nd">:before</span><span class="o">,</span>
+</span><span class='line'>    <span class="o">&amp;</span><span class="nd">:after</span> <span class="p">{</span>
+</span><span class='line'>      <span class="k">color</span><span class="o">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">220</span><span class="o">,</span> <span class="m">20</span><span class="o">,</span> <span class="m">20</span><span class="o">,</span> <span class="o">.</span><span class="m">6</span><span class="p">);</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>    <span class="o">&amp;</span><span class="nd">:hover</span> <span class="p">{</span>
+</span><span class='line'>      <span class="k">background</span><span class="o">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">220</span><span class="o">,</span> <span class="m">20</span><span class="o">,</span> <span class="m">20</span><span class="o">,</span> <span class="o">.</span><span class="m">6</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="o">&amp;:</span><span class="n">after</span> <span class="err">{</span>
+</span><span class='line'>        <span class="k">width</span><span class="o">:</span> <span class="m">2em</span><span class="p">;</span>
+</span><span class='line'>        <span class="k">right</span><span class="o">:</span> <span class="m">.445em</span><span class="p">;</span>
+</span><span class='line'>      <span class="p">}</span>
+</span><span class='line'>    <span class="err">}</span>
+</span><span class='line'>  <span class="err">}</span>
+</span><span class='line'><span class="err">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>3.2 Downloads</h3>
+
+<p>这是一个自定义列表下载扩展标记: 每个列表元素有一个链接和一个icon. 按钮被隐藏了, 只有当hover的时候才显示.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nc">.downloads</span> <span class="p">{</span>
+</span><span class='line'>  <span class="n">li</span> <span class="err">{</span>
+</span><span class='line'>    <span class="k">border-bottom</span><span class="o">:</span> <span class="m">.15em</span> <span class="k">solid</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="o">.</span><span class="m">3</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="o">&amp;:</span><span class="n">before</span> <span class="err">{</span>
+</span><span class='line'>      <span class="c">/* fontawesome-download-alt */</span>
+</span><span class='line'>      <span class="k">content</span><span class="o">:</span> <span class="s2">&quot;\f019&quot;</span><span class="p">;</span>
+</span><span class='line'>      <span class="k">color</span><span class="o">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">50</span><span class="o">,</span> <span class="m">50</span><span class="o">,</span> <span class="m">50</span><span class="o">,</span> <span class="o">.</span><span class="m">5</span><span class="p">);</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>    <span class="o">&amp;</span><span class="nd">:hover</span> <span class="p">{</span>
+</span><span class='line'>      <span class="k">background</span><span class="o">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span> <span class="m">140</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="o">.</span><span class="m">7</span><span class="p">);</span>
+</span><span class='line'>      <span class="k">height</span><span class="o">:</span> <span class="m">4em</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="o">&amp;:</span><span class="n">after</span> <span class="err">{</span>
+</span><span class='line'>        <span class="k">right</span><span class="o">:</span> <span class="m">.35em</span><span class="p">;</span>
+</span><span class='line'>      <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="o">&amp;</span><span class="nd">:before</span> <span class="p">{</span>
+</span><span class='line'>        <span class="k">color</span><span class="o">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">255</span><span class="o">,</span> <span class="m">255</span><span class="o">,</span> <span class="m">255</span><span class="o">,</span> <span class="o">.</span><span class="m">2</span><span class="p">);</span>
+</span><span class='line'>      <span class="p">}</span>
+</span><span class='line'>    <span class="err">}</span>
+</span><span class='line'>  <span class="err">}</span>
+</span><span class='line'><span class="err">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>3.3 Your account</h3>
+
+<p>用户菜单的UI. 当你hover在一个列表元素上的时候, icon移动到右侧并且box-shadow填满整个背景. 基于<code>:nth-child</code>选择器和<code>content</code>属性, 每个列表元素都有一个自己的icon.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nc">.account</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">padding</span><span class="o">:</span> <span class="m">.75em</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">border</span><span class="o">:</span> <span class="m">.15em</span> <span class="k">solid</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="o">.</span><span class="m">2</span><span class="p">);</span>
+</span><span class='line'>  <span class="k">background-color</span><span class="o">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="o">.</span><span class="m">7</span><span class="p">);</span>
+</span><span class='line'>  <span class="k">background-image</span><span class="o">:</span> <span class="n">radial</span><span class="o">-</span><span class="n">gradient</span><span class="p">(</span><span class="k">center</span><span class="o">,</span> <span class="n">ellipse</span> <span class="n">cover</span><span class="o">,</span> <span class="n">rgba</span><span class="p">(</span><span class="m">104</span><span class="o">,</span><span class="m">104</span><span class="o">,</span><span class="m">104</span><span class="o">,</span><span class="m">0</span><span class="o">.</span><span class="m">6</span><span class="p">)</span> <span class="m">0</span><span class="o">%,</span><span class="n">rgba</span><span class="p">(</span><span class="m">23</span><span class="o">,</span><span class="m">23</span><span class="o">,</span><span class="m">23</span><span class="o">,</span><span class="m">0</span><span class="o">.</span><span class="m">7</span><span class="p">)</span> <span class="m">100</span><span class="o">%</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">box</span><span class="o">-</span><span class="n">shadow</span><span class="o">:</span> <span class="k">inset</span> <span class="m">0</span> <span class="m">0</span> <span class="m">.35em</span> <span class="m">0</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="o">.</span><span class="m">2</span><span class="p">);</span>
+</span><span class='line'>  <span class="k">color</span><span class="o">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">255</span><span class="o">,</span> <span class="m">255</span><span class="o">,</span> <span class="m">255</span><span class="o">,</span> <span class="o">.</span><span class="m">6</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">backface</span><span class="o">-</span><span class="k">visibility</span><span class="o">:</span> <span class="k">hidden</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">li</span> <span class="err">{</span>
+</span><span class='line'>    <span class="k">cursor</span><span class="o">:</span> <span class="k">pointer</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="o">&amp;:</span><span class="n">nth</span><span class="o">-</span><span class="n">child</span><span class="p">(</span><span class="m">1</span><span class="p">)</span><span class="o">:</span><span class="n">before</span> <span class="err">{</span>
+</span><span class='line'>      <span class="c">/* fontawesome-heart-empty */</span>
+</span><span class='line'>      <span class="k">content</span><span class="o">:</span> <span class="s2">&quot;\f08a&quot;</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>    <span class="o">&amp;</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">2</span><span class="o">)</span><span class="nd">:before</span> <span class="p">{</span>
+</span><span class='line'>      <span class="c">/* fontawesome-glass */</span>
+</span><span class='line'>      <span class="k">content</span><span class="o">:</span> <span class="s2">&quot;\f000&quot;</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>    <span class="o">&amp;</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">3</span><span class="o">)</span> <span class="p">{</span>
+</span><span class='line'>      <span class="k">margin-bottom</span><span class="o">:</span> <span class="m">1em</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="o">&amp;:</span><span class="n">before</span> <span class="err">{</span>
+</span><span class='line'>      <span class="c">/* fontawesome-comment */</span>
+</span><span class='line'>        <span class="k">content</span><span class="o">:</span> <span class="s2">&quot;\f075&quot;</span><span class="p">;</span>
+</span><span class='line'>      <span class="p">}</span>
+</span><span class='line'>    <span class="err">}</span>
+</span><span class='line'>    <span class="o">&amp;</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">4</span><span class="o">)</span> <span class="p">{</span>
+</span><span class='line'>      <span class="k">margin-bottom</span><span class="o">:</span> <span class="m">.5em</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="o">&amp;:</span><span class="n">before</span> <span class="err">{</span>
+</span><span class='line'>      <span class="c">/* fontawesome-cog */</span>
+</span><span class='line'>         <span class="k">content</span><span class="o">:</span> <span class="s2">&quot;\f013&quot;</span><span class="p">;</span>
+</span><span class='line'>      <span class="p">}</span>
+</span><span class='line'>    <span class="err">}</span>
+</span><span class='line'>    <span class="o">&amp;</span><span class="nd">:nth-child</span><span class="o">(</span><span class="nt">5</span><span class="o">)</span><span class="nd">:before</span> <span class="p">{</span>
+</span><span class='line'>      <span class="c">/* fontawesome-signout */</span>
+</span><span class='line'>      <span class="k">content</span><span class="o">:</span> <span class="s2">&quot;\f08b&quot;</span><span class="p">;</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'>    <span class="o">&amp;</span><span class="nd">:hover</span> <span class="p">{</span>
+</span><span class='line'>      <span class="k">color</span><span class="o">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">255</span><span class="o">,</span> <span class="m">255</span><span class="o">,</span> <span class="m">255</span><span class="o">,</span> <span class="m">1</span><span class="p">);</span>
+</span><span class='line'>      <span class="k">padding-left</span><span class="o">:</span> <span class="m">1.5em</span><span class="p">;</span>
+</span><span class='line'>      <span class="n">box</span><span class="o">-</span><span class="n">shadow</span><span class="o">:</span> <span class="k">inset</span> <span class="m">0</span> <span class="m">0</span> <span class="m">0</span> <span class="m">10em</span> <span class="n">rgba</span><span class="p">(</span><span class="m">255</span><span class="o">,</span> <span class="m">255</span><span class="o">,</span> <span class="m">255</span><span class="o">,</span> <span class="o">.</span><span class="m">5</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>      <span class="o">&amp;:</span><span class="n">before</span> <span class="err">{</span>
+</span><span class='line'>        <span class="k">color</span><span class="o">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">255</span><span class="o">,</span> <span class="m">255</span><span class="o">,</span> <span class="m">255</span><span class="o">,</span> <span class="m">1</span><span class="p">);</span>
+</span><span class='line'>        <span class="n">transform</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
+</span><span class='line'>      <span class="p">}</span>
+</span><span class='line'>    <span class="err">}</span>
+</span><span class='line'>  <span class="err">}</span>
+</span><span class='line'><span class="err">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<pre class="codepen" data-height="300" data-type="result" data-href="tcklJ" data-user="TimPietrusky"><code></code></pre>
+
+
+<script async src="http://codepen.io:/assets/embed/ei.js"></script>
+
+
+<h2>4. Emocons.js jQuery Plugin</h2>
+
+<p><a href="https://github.com/TimPietrusky/emocons">Emojons.js</a>是一个搜索元素里特定字符序列内容的jQuery插件. 所有匹配上的都会用一个<code>span</code>和相应的icon HTML class来替换.<br/>
+例如, 一个聊天app:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;chat&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    :D :) ;) :&#39;( :o :/ :( B) :P :|
+</span><span class='line'>    :beer: :devil: :shoot: :coffee: :thumbsup: :angry: :ueber-happy:
+</span><span class='line'><span class="nt">&lt;/div&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>接着在你的元素上调用 Emocons.js 插件的方法</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.chat&#39;</span><span class="p">).</span><span class="nx">emocons</span><span class="p">();</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>现在, 所有在聊天时候的元素都会被转换成这样:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;fontelico-emo-grin go&quot;</span> <span class="na">title=</span><span class="s">&quot;:D&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>在CSS中导入icon font(Fontelico):</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="k">@import</span> <span class="nt">url</span><span class="o">(</span><span class="nt">http</span><span class="o">://</span><span class="nt">weloveiconfonts</span><span class="nc">.com</span><span class="o">/</span><span class="nt">api</span><span class="o">/?</span><span class="nt">family</span><span class="o">=</span><span class="nt">fontelico</span><span class="o">)</span><span class="p">;</span>
+</span><span class='line'><span class="o">[</span><span class="nt">class</span><span class="o">*=</span><span class="s2">&quot;fontelico-&quot;</span><span class="o">]</span><span class="nd">:before</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">font-family</span><span class="o">:</span> <span class="s1">&#39;fontelico&#39;</span><span class="o">,</span> <span class="k">sans-serif</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>当 Emocons.js 把一个字符串转换成表情符号时, 会给<code>span</code>元素增加一个<code>go</code>类(添加一个动画效果).</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nc">.go</span> <span class="p">{</span>
+</span><span class='line'>  <span class="n">animation</span><span class="o">:</span> <span class="n">hey</span> <span class="m">.55s</span> <span class="m">1</span> <span class="n">linear</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="k">@keyframes</span> <span class="nt">hey</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nt">0</span><span class="o">%</span> <span class="p">{</span>
+</span><span class='line'>    <span class="n">transform</span><span class="o">:</span> <span class="n">scale</span><span class="p">(</span><span class="m">1</span><span class="o">,</span> <span class="m">1</span><span class="p">);</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="nt">50</span><span class="o">%</span> <span class="p">{</span>
+</span><span class='line'>    <span class="n">transform</span><span class="o">:</span> <span class="n">scale</span><span class="p">(</span><span class="m">1</span><span class="o">.</span><span class="m">85</span><span class="o">,</span> <span class="m">-1</span><span class="o">.</span><span class="m">85</span><span class="p">);</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="nt">100</span><span class="o">%</span> <span class="p">{</span>
+</span><span class='line'>    <span class="n">transform</span><span class="o">:</span> <span class="n">scale</span><span class="p">(</span><span class="m">1</span><span class="o">,</span> <span class="m">1</span><span class="p">);</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>一些表情符号会有特殊的样式(如颜色的改变)或者通过<code>::after</code>伪元素添加一些东西</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nc">.fontelico-emo-devil</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">color</span><span class="o">:</span><span class="n">rgba</span><span class="p">(</span><span class="m">180</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="o">.</span><span class="m">9</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="nc">.fontelico-emo-beer</span><span class="nd">:after</span> <span class="p">{</span>
+</span><span class='line'>  <span class="n">box</span><span class="o">-</span><span class="n">shadow</span><span class="o">:</span>
+</span><span class='line'>    <span class="m">-.475em</span> <span class="m">.75em</span> <span class="m">0</span> <span class="m">.275em</span> <span class="n">rgba</span><span class="p">(</span><span class="m">220</span><span class="o">,</span> <span class="m">220</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">1</span><span class="p">)</span><span class="o">,</span>
+</span><span class='line'>    <span class="m">-.185em</span> <span class="m">.675em</span> <span class="m">0</span> <span class="m">.175em</span> <span class="n">rgba</span><span class="p">(</span><span class="m">220</span><span class="o">,</span> <span class="m">220</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">1</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="nc">.fontelico-emo-coffee</span><span class="nd">:after</span> <span class="p">{</span>
+</span><span class='line'>  <span class="n">box</span><span class="o">-</span><span class="n">shadow</span><span class="o">:</span>
+</span><span class='line'>    <span class="m">-.475em</span> <span class="m">.78em</span> <span class="m">0</span> <span class="m">.235em</span> <span class="n">rgba</span><span class="p">(</span><span class="m">222</span><span class="o">,</span> <span class="m">184</span><span class="o">,</span> <span class="m">135</span><span class="o">,</span> <span class="m">1</span><span class="p">)</span><span class="o">,</span>
+</span><span class='line'>    <span class="m">-.215em</span> <span class="m">.715em</span> <span class="m">0</span> <span class="m">.155em</span> <span class="n">rgba</span><span class="p">(</span><span class="m">222</span><span class="o">,</span> <span class="m">184</span><span class="o">,</span> <span class="m">135</span><span class="o">,</span> <span class="m">1</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="nc">.fontelico-emo-shoot</span><span class="nd">:after</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">.15em</span><span class="p">;</span>
+</span><span class='line'>  <span class="n">box</span><span class="o">-</span><span class="n">shadow</span><span class="o">:</span> <span class="m">.315em</span> <span class="m">.525em</span> <span class="m">0</span> <span class="m">.1em</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">1</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="nc">.fontelico-emo-angry</span><span class="nd">:after</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">.15em</span><span class="p">;</span>
+</span><span class='line'>  <span class="n">box</span><span class="o">-</span><span class="n">shadow</span><span class="o">:</span> <span class="m">-.695em</span> <span class="m">.455em</span> <span class="m">0</span> <span class="m">.085em</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span> <span class="m">220</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="o">.</span><span class="m">6</span><span class="p">);</span>
+</span><span class='line'>  <span class="k">z-index</span><span class="o">:</span> <span class="m">2</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<pre class="codepen" data-height="300" data-type="result" data-href="KloGD" data-user="TimPietrusky"><code></code></pre>
+
+
+<script async src="http://codepen.io:/assets/embed/ei.js"></script>
+
+
+<h2>5. Parallax Movie #1337</h2>
+
+<p>最后的这个例子只是为了好玩吧. 它只是一个试验, 使用一个icon font来创建一个无穷的parallax movie. 创建场景的HTML包含有许多的元素.</p>
+
+<ul>
+<li>The setting: sky, ground, night and sun</li>
+<li>Fixed element: bicycle</li>
+<li>Animated elements: Trees, giraffe, shopping cart, buildings and heliport</li>
+</ul>
+
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;night&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+</span><span class='line'><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;wrapper&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;sun&quot;</span><span class="nt">&gt;</span>
+</span><span class='line'>    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;maki-fast-food&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;/div&gt;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;sky&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;maki-bicycle&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;maki-tree-1&quot;</span> <span class="na">data-child=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;maki-tree-1&quot;</span> <span class="na">data-child=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;maki-tree-1&quot;</span> <span class="na">data-child=</span><span class="s">&quot;3&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;maki-giraffe&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;maki-grocery-store&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;maki-commerical-building&quot;</span> <span class="na">data-child=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
+</span><span class='line'>  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;maki-commerical-building&quot;</span> <span class="na">data-child=</span><span class="s">&quot;2&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;maki-heliport&quot;</span><span class="nt">&gt;&lt;/span&gt;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;ground&quot;</span><span class="nt">&gt;&lt;/div&gt;</span>
+</span><span class='line'><span class="nt">&lt;/div&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>在CSS中导入 icon font(Maki):</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="k">@import</span> <span class="nt">url</span><span class="o">(</span><span class="nt">http</span><span class="o">://</span><span class="nt">weloveiconfonts</span><span class="nc">.com</span><span class="o">/</span><span class="nt">api</span><span class="o">/?</span><span class="nt">family</span><span class="o">=</span><span class="nt">maki</span><span class="o">)</span><span class="p">;</span>
+</span><span class='line'><span class="o">[</span><span class="nt">class</span><span class="o">*=</span><span class="s2">&quot;maki-&quot;</span><span class="o">]</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">position</span><span class="o">:</span> <span class="k">absolute</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">margin</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">color</span><span class="o">:</span> <span class="m">#fff</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">font-size</span><span class="o">:</span> <span class="m">2em</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="o">[</span><span class="nt">class</span><span class="o">*=</span><span class="s2">&quot;maki-&quot;</span><span class="o">]</span><span class="nd">:before</span><span class="p">{</span>
+</span><span class='line'>  <span class="k">font-family</span><span class="o">:</span> <span class="s1">&#39;maki&#39;</span><span class="o">,</span> <span class="k">sans-serif</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="o">*</span><span class="nd">:after</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">position</span><span class="o">:</span> <span class="k">absolute</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">top</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">right</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">content</span><span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">z-index</span><span class="o">:</span> <span class="m">-1</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">width</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">height</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>整个场景旋转 &ldquo;-3度&rdquo;.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nc">.wrapper</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">height</span><span class="o">:</span> <span class="m">140</span><span class="o">%</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">width</span><span class="o">:</span> <span class="m">120</span><span class="o">%</span><span class="p">;</span>
+</span><span class='line'>  <span class="n">transform</span><span class="o">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">-3</span><span class="n">deg</span><span class="p">)</span> <span class="n">translate</span><span class="p">(</span><span class="m">-10</span><span class="o">%,</span> <span class="m">-15</span><span class="o">%</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>当日落西山后, 场景变换为夜晚</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nc">.night</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">position</span><span class="o">:</span> <span class="k">absolute</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">z-index</span><span class="o">:</span> <span class="m">5</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">width</span><span class="o">:</span> <span class="m">100</span><span class="o">%</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">height</span><span class="o">:</span> <span class="m">100</span><span class="o">%</span><span class="p">;</span>
+</span><span class='line'>  <span class="n">animation</span><span class="o">:</span> <span class="n">night</span> <span class="m">45s</span> <span class="n">infinite</span> <span class="n">forwards</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="k">@keyframes</span> <span class="nt">night</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nt">0</span><span class="o">%,</span> <span class="nt">30</span><span class="o">%,</span> <span class="nt">100</span><span class="o">%</span> <span class="p">{</span><span class="k">background</span><span class="o">:</span><span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="p">);}</span>
+</span><span class='line'>  <span class="nt">55</span><span class="o">%</span> <span class="p">{</span><span class="k">background</span><span class="o">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="o">.</span><span class="m">6</span><span class="p">);}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>sky与ground都用的是同样的<code>background-position</code>动画, 只是速度有所不同.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nc">.sky</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">position</span><span class="o">:</span> <span class="k">relative</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">z-index</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">background</span><span class="o">:</span> <span class="sx">url(http://subtlepatterns.subtlepatterns.netdna-cdn.com/patterns/bedge_grunge.png)</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">height</span><span class="o">:</span> <span class="m">50</span><span class="o">%</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">width</span><span class="o">:</span> <span class="m">100</span><span class="o">%</span><span class="p">;</span>
+</span><span class='line'>  <span class="n">animation</span><span class="o">:</span> <span class="n">rollin</span><span class="o">-</span><span class="n">bg</span> <span class="m">25s</span> <span class="n">linear</span> <span class="n">infinite</span> <span class="n">forwards</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="nc">.ground</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">position</span><span class="o">:</span> <span class="k">absolute</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">z-index</span><span class="o">:</span> <span class="m">1</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">background</span><span class="o">:</span> <span class="sx">url(http://subtlepatterns.subtlepatterns.netdna-cdn.com/patterns/blackorchid.png)</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">height</span><span class="o">:</span> <span class="m">50</span><span class="o">%</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">width</span><span class="o">:</span> <span class="m">100</span><span class="o">%</span><span class="p">;</span>
+</span><span class='line'>  <span class="n">animation</span><span class="o">:</span> <span class="n">rollin</span><span class="o">-</span><span class="n">bg</span> <span class="m">7s</span> <span class="n">linear</span> <span class="n">infinite</span> <span class="n">forwards</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="k">@keyframes</span> <span class="nt">rollin-bg</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nt">0</span><span class="o">%</span> <span class="p">{</span> <span class="k">background-position</span><span class="o">:</span> <span class="m">100</span><span class="o">%</span><span class="p">;</span> <span class="p">}</span>
+</span><span class='line'>  <span class="nt">100</span><span class="o">%</span> <span class="p">{</span> <span class="k">background-position</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span> <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><a href="http://lea.verou.me/2012/02/moving-an-element-along-a-circle/">沿着圆周移动一个元素</a>(the burger-sun)</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nc">.sun</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">position</span><span class="o">:</span> <span class="k">absolute</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">z-index</span><span class="o">:</span> <span class="m">1</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">left</span><span class="o">:</span> <span class="m">50</span><span class="o">%</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">top</span><span class="o">:</span> <span class="m">10</span><span class="o">%</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">width</span><span class="o">:</span> <span class="m">2em</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">height</span><span class="o">:</span> <span class="m">2em</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">font-size</span><span class="o">:</span> <span class="m">4em</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">line-height</span><span class="o">:</span> <span class="m">1</span><span class="p">;</span>
+</span><span class='line'>  <span class="n">animation</span><span class="o">:</span> <span class="k">circle</span> <span class="m">45s</span> <span class="n">linear</span> <span class="n">infinite</span><span class="p">;</span>
+</span><span class='line'>  <span class="n">transform</span><span class="o">-</span><span class="n">origin</span><span class="o">:</span> <span class="m">50</span><span class="o">%</span> <span class="m">3.85em</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="nc">.sun</span> <span class="o">[</span><span class="nt">class</span><span class="o">*=</span><span class="s2">&quot;maki-&quot;</span><span class="o">]</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">color</span><span class="o">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">240</span><span class="o">,</span> <span class="m">180</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="o">.</span><span class="m">2</span><span class="p">);</span>
+</span><span class='line'>  <span class="k">text-shadow</span><span class="o">:</span> <span class="m">0</span> <span class="m">0</span> <span class="m">.35em</span> <span class="n">rgba</span><span class="p">(</span><span class="m">240</span><span class="o">,</span> <span class="m">240</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="o">.</span><span class="m">7</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="nc">.sun</span> <span class="o">&gt;</span> <span class="nt">div</span> <span class="p">{</span>
+</span><span class='line'>  <span class="n">animation</span><span class="o">:</span> <span class="n">inner</span><span class="o">-</span><span class="k">circle</span> <span class="m">45s</span> <span class="n">linear</span> <span class="n">infinite</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="k">@keyframes</span> <span class="nt">circle</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nt">from</span> <span class="p">{</span> <span class="n">transform</span><span class="o">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">0</span><span class="n">deg</span><span class="p">);</span> <span class="p">}</span>
+</span><span class='line'>  <span class="nt">to</span> <span class="p">{</span> <span class="n">transform</span><span class="o">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">360</span><span class="n">deg</span><span class="p">);</span> <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="k">@keyframes</span> <span class="nt">inner-circle</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nt">from</span> <span class="p">{</span> <span class="n">transform</span><span class="o">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">0</span><span class="n">deg</span><span class="p">);</span> <span class="p">}</span>
+</span><span class='line'>  <span class="nt">to</span> <span class="p">{</span> <span class="n">transform</span><span class="o">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">-360</span><span class="n">deg</span><span class="p">);</span> <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>以下这个是唯一一个没有使用动画效果的元素, 但它看起来还是在移动.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nc">.maki-bicycle</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">left</span><span class="o">:</span> <span class="m">50</span><span class="o">%</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">z-index</span><span class="o">:</span> <span class="m">4</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">margin</span><span class="o">:</span> <span class="m">-.85em</span> <span class="m">0</span> <span class="m">0</span> <span class="m">-.5em</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">color</span><span class="o">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">30</span><span class="o">,</span> <span class="m">30</span><span class="o">,</span> <span class="m">140</span><span class="o">,</span> <span class="o">.</span><span class="m">95</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>这里全都是使用同样的滚动动画, 但速度不一的元素.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+<span class='line-number'>72</span>
+<span class='line-number'>73</span>
+<span class='line-number'>74</span>
+<span class='line-number'>75</span>
+</pre></td><td class='code'><pre><code class='css'><span class='line'><span class="nc">.maki-tree-1</span><span class="o">[</span><span class="nt">data-child</span><span class="o">=</span><span class="s2">&quot;1&quot;</span><span class="o">]</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">margin</span><span class="o">:</span> <span class="m">-1em</span> <span class="m">0</span> <span class="m">0</span> <span class="m">5</span><span class="o">%</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">z-index</span><span class="o">:</span> <span class="m">5</span><span class="p">;</span>
+</span><span class='line'>  <span class="n">animation</span><span class="o">:</span> <span class="n">rollin</span> <span class="m">5s</span> <span class="n">linear</span> <span class="n">infinite</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">font-size</span><span class="o">:</span> <span class="m">2.4em</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">color</span><span class="o">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span> <span class="m">110</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="o">.</span><span class="m">8</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="nc">.maki-tree-1</span><span class="o">[</span><span class="nt">data-child</span><span class="o">=</span><span class="s2">&quot;2&quot;</span><span class="o">]</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">margin</span><span class="o">:</span> <span class="m">-1em</span> <span class="m">0</span> <span class="m">0</span> <span class="m">85</span><span class="o">%</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">z-index</span><span class="o">:</span> <span class="m">2</span><span class="p">;</span>
+</span><span class='line'>  <span class="n">animation</span><span class="o">:</span> <span class="n">rollin</span> <span class="m">12s</span> <span class="n">linear</span> <span class="n">infinite</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">font-size</span><span class="o">:</span> <span class="m">1.6em</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">color</span><span class="o">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span> <span class="m">110</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="o">.</span><span class="m">5</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="nc">.maki-tree-1</span><span class="o">[</span><span class="nt">data-child</span><span class="o">=</span><span class="s2">&quot;3&quot;</span><span class="o">]</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">margin</span><span class="o">:</span> <span class="m">-1em</span> <span class="m">0</span> <span class="m">0</span> <span class="m">25</span><span class="o">%</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">z-index</span><span class="o">:</span> <span class="m">2</span><span class="p">;</span>
+</span><span class='line'>  <span class="n">animation</span><span class="o">:</span> <span class="n">rollin</span> <span class="m">17s</span> <span class="n">linear</span> <span class="n">infinite</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">font-size</span><span class="o">:</span> <span class="m">1.2em</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">color</span><span class="o">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span> <span class="m">110</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="o">.</span><span class="m">3</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="nc">.maki-giraffe</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">margin</span><span class="o">:</span> <span class="m">.25em</span> <span class="m">0</span> <span class="m">0</span> <span class="m">5</span><span class="o">%</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">z-index</span><span class="o">:</span> <span class="m">6</span><span class="p">;</span>
+</span><span class='line'>  <span class="n">animation</span><span class="o">:</span> <span class="n">rollin</span> <span class="m">12s</span> <span class="n">linear</span> <span class="n">infinite</span> <span class="n">reverse</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">font-size</span><span class="o">:</span> <span class="m">10em</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">color</span><span class="o">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">255</span><span class="o">,</span> <span class="m">255</span><span class="o">,</span> <span class="m">10</span><span class="o">,</span> <span class="o">.</span><span class="m">9</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="nc">.maki-giraffe</span><span class="nd">:after</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">right</span><span class="o">:</span> <span class="m">-3em</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">content</span><span class="o">:</span> <span class="s1">&#39;\e82a \e82a \e82a \e82a \e82a&#39;</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">font</span><span class="o">:</span> <span class="m">.2em</span> <span class="s1">&#39;Maki&#39;</span><span class="o">,</span> <span class="k">sans-serif</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">letter-spacing</span><span class="o">:</span> <span class="m">.2em</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">width</span><span class="o">:</span> <span class="m">3em</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">color</span><span class="o">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="o">.</span><span class="m">6</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">box</span><span class="o">-</span><span class="n">shadow</span><span class="o">:</span>
+</span><span class='line'>    <span class="m">0</span> <span class="m">.45em</span> <span class="m">0</span> <span class="m">.75em</span> <span class="n">rgba</span><span class="p">(</span><span class="m">255</span><span class="o">,</span> <span class="m">255</span><span class="o">,</span> <span class="m">255</span><span class="o">,</span> <span class="o">.</span><span class="m">4</span><span class="p">)</span><span class="o">,</span>
+</span><span class='line'>    <span class="m">1em</span> <span class="m">.35em</span> <span class="m">0</span> <span class="m">.75em</span> <span class="n">rgba</span><span class="p">(</span><span class="m">255</span><span class="o">,</span> <span class="m">255</span><span class="o">,</span> <span class="m">255</span><span class="o">,</span> <span class="o">.</span><span class="m">4</span><span class="p">)</span><span class="o">,</span>
+</span><span class='line'>    <span class="m">2.25em</span> <span class="m">.25em</span> <span class="m">0</span> <span class="m">1.05em</span> <span class="n">rgba</span><span class="p">(</span><span class="m">255</span><span class="o">,</span> <span class="m">255</span><span class="o">,</span> <span class="m">255</span><span class="o">,</span> <span class="o">.</span><span class="m">4</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">;</span>
+</span><span class='line'>  <span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span> <span class="m">50</span><span class="o">%</span><span class="p">;</span>
+</span><span class='line'>  <span class="n">transform</span><span class="o">:</span> <span class="n">translate</span><span class="p">(</span><span class="m">2.3em</span><span class="o">,</span> <span class="m">.55em</span><span class="p">)</span> <span class="n">rotateY</span><span class="p">(</span><span class="m">-180</span><span class="n">deg</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="nc">.maki-grocery-store</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">margin</span><span class="o">:</span> <span class="m">-.35em</span> <span class="m">0</span> <span class="m">0</span> <span class="m">5</span><span class="o">%</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">z-index</span><span class="o">:</span> <span class="m">5</span><span class="p">;</span>
+</span><span class='line'>  <span class="n">animation</span><span class="o">:</span> <span class="n">rollin</span> <span class="m">22s</span> <span class="n">linear</span> <span class="n">infinite</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">font-size</span><span class="o">:</span> <span class="m">4em</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">color</span><span class="o">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">220</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">10</span><span class="o">,</span> <span class="o">.</span><span class="m">7</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="nc">.maki-commerical-building</span><span class="o">[</span><span class="nt">data-child</span><span class="o">=</span><span class="s2">&quot;1&quot;</span><span class="o">]</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">margin</span><span class="o">:</span> <span class="m">-1em</span> <span class="m">0</span> <span class="m">0</span> <span class="m">5</span><span class="o">%</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">z-index</span><span class="o">:</span> <span class="m">3</span><span class="p">;</span>
+</span><span class='line'>  <span class="n">animation</span><span class="o">:</span> <span class="n">rollin</span> <span class="m">6s</span> <span class="n">linear</span> <span class="n">infinite</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">font-size</span><span class="o">:</span> <span class="m">7em</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">color</span><span class="o">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">120</span><span class="o">,</span> <span class="m">0</span><span class="o">,</span> <span class="m">120</span><span class="o">,</span> <span class="o">.</span><span class="m">8</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="nc">.maki-commerical-building</span><span class="o">[</span><span class="nt">data-child</span><span class="o">=</span><span class="s2">&quot;2&quot;</span><span class="o">]</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">margin</span><span class="o">:</span> <span class="m">-1em</span> <span class="m">0</span> <span class="m">0</span> <span class="m">5</span><span class="o">%</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">z-index</span><span class="o">:</span> <span class="m">2</span><span class="p">;</span>
+</span><span class='line'>  <span class="n">animation</span><span class="o">:</span> <span class="n">rollin</span> <span class="m">14s</span> <span class="n">linear</span> <span class="n">infinite</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">font-size</span><span class="o">:</span> <span class="m">4em</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">color</span><span class="o">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="o">,</span> <span class="m">120</span><span class="o">,</span> <span class="m">120</span><span class="o">,</span> <span class="o">.</span><span class="m">4</span><span class="p">);</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="nc">.maki-heliport</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">margin</span><span class="o">:</span> <span class="m">-3.5em</span> <span class="m">0</span> <span class="m">0</span> <span class="m">2em</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">z-index</span><span class="o">:</span> <span class="m">1</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">color</span><span class="o">:</span> <span class="n">rgba</span><span class="p">(</span><span class="m">30</span><span class="o">,</span> <span class="m">30</span><span class="o">,</span> <span class="m">30</span><span class="o">,</span> <span class="o">.</span><span class="m">45</span><span class="p">);</span>
+</span><span class='line'>  <span class="k">font-size</span><span class="o">:</span> <span class="m">1.25em</span><span class="p">;</span>
+</span><span class='line'>  <span class="n">animation</span><span class="o">:</span> <span class="n">rollin</span> <span class="m">26s</span> <span class="n">linear</span> <span class="n">infinite</span> <span class="n">reverse</span> <span class="m">2s</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="k">@keyframes</span> <span class="nt">rollin</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nt">0</span><span class="o">%</span> <span class="p">{</span><span class="k">margin-left</span><span class="o">:</span><span class="m">105</span><span class="o">%</span><span class="p">}</span>
+</span><span class='line'>  <span class="nt">100</span><span class="o">%</span> <span class="p">{</span><span class="k">margin-left</span><span class="o">:-</span><span class="m">15</span><span class="o">%</span><span class="p">;}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<pre class="codepen" data-height="300" data-type="result" data-href="ELuiG" data-user="TimPietrusky"><code></code></pre>
+
+
+<script async src="http://codepen.io:/assets/embed/ei.js"></script>
+
+
+<p>原文来自 Tim Pietrusky <a href="http://css-tricks.com/five-use-cases-for-icon-fonts/">5 Use Cases for Icon Fonts</a></p>
+</div>
+
+</article>
+
+	
+	<div class="share">
+	  <!-- <ul> -->
+	  <!--   <li>
+  <a href="https://twitter.com/intent/tweet?text=5 Use Cases for Icon Fonts by @&url=http://xguox.github.com/blog/2013/03/25/5-use-cases-for-icon-fonts/" title="Share 5 Use Cases for Icon Fonts on Twitter">
+    <img src="/images/social/twitter.png" />
+  </a>
+</li>
+ -->
+	  <!--   <li>
+  <a href="https://www.facebook.com/sharer.php?u=http://xguox.github.com/blog/2013/03/25/5-use-cases-for-icon-fonts/" title="Share 5 Use Cases for Icon Fonts on Facebook">
+    <img src="/images/social/facebook.png" />
+  </a>
+</li>
+ -->
+	  <!--   <li>
+  <a href="https://plus.google.com/share?url=http://xguox.github.com/blog/2013/03/25/5-use-cases-for-icon-fonts/" title="Share 5 Use Cases for Icon Fonts on Google Plus">
+    <img src="/images/social/google.png" />
+  </a>
+</li>
+ -->
+	  <!-- </ul> -->
+	</div>
+
+
+
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+</div>
+	<footer id="footer" class="inner"><br>
+<br>
+<br>
+<br>
+&copy; 2013
+
+    XguoX
+
+</footer>
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/hyphenator.js"></script>
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'xguox';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://xguox.github.com/blog/2013/03/25/5-use-cases-for-icon-fonts/';
+        var disqus_url = 'http://xguox.github.com/blog/2013/03/25/5-use-cases-for-icon-fonts/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-39166710-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+
+
+</body>
+<script>
+  $(document).ready(function() {
+  // Make images center
+  $('p:has(img)').css('text-align', 'center');
+  });
+</script>
+</html>

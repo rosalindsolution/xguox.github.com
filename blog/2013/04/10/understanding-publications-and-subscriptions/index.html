@@ -1,0 +1,283 @@
+
+<!DOCTYPE HTML>
+<html lang="en-GB">
+<head>
+	<meta charset="utf-8">
+	<title>Understanding Publications and Subscriptions  | XguoX</title>
+
+	<meta name="author" content="XguoX">
+
+<meta name="description" content="LEVEL: INTERMEDIATE Publications &amp; subscriptions 是在Meteor里最基本也是最重要的概念之一, 但同时也是最难理解的. 很大程度上是由于这其中跟传统的构建web的方式有很大的不同.
+过去, 我们习惯思考, &hellip;"> <meta name="keywords" content="">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="XguoX" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	
+
+</head>
+
+
+
+<body>
+	<header id="header" class="inner"><h1><a href="/">XguoX</a></h1>
+<span class="tagline">Coder & Jabber</span>
+<nav id="main-nav"><ul>
+	<li><a href="http://www.flickr.com/photos/groverlu/sets" target="_blank">Flickr</a></li>
+	<li><a href="/about">About</a></li>
+	<li><a href="/atom.xml">RSS</a></li>
+</ul>
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul>
+	<li><a href="http://www.flickr.com/photos/groverlu/sets" target="_blank">Flickr</a></li>
+	<li><a href="/about">About</a></li>
+	<li><a href="/atom.xml">RSS</a></li>
+</ul>
+</div>
+	</div>
+</nav>
+
+
+</header>
+
+	<div id="content" class="inner"><article class="post">
+	<header>
+		<h2 class="title">Understanding Publications and Subscriptions</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-10T14:22:00+08:00" pubdate data-updated="true">Apr 10<span>th</span>, 2013</time></div>
+	</header>
+	<div class="entry-content"><h5>LEVEL: INTERMEDIATE</h5>
+
+<p>Publications &amp; subscriptions 是在Meteor里最基本也是最重要的概念之一, 但同时也是最难理解的. 很大程度上是由于这其中跟传统的构建web的方式有很大的不同.<br/>
+过去, 我们习惯思考,定义API用在客户端和服务器之间进行数据传递, 而在Meteor中, 客户端和服务端的数据是同步的. 我们使用publications来精确地控制如何同步. <br/>
+最初人们觉得这个概念有一些难以理解的部分原因是由于Meteor像&#8221;魔术&#8221;那样为我们做了这一切. 这些&#8221;魔术&#8221;都非常有用, 而具体发生了什么则都被掩盖封装起来了(就如魔术为何如此奇幻一样). 那么, 现在就让我们拨开这些魔术表层的面纱一探究竟. 在此, 我们将会学习到一到两个窍门.</p>
+
+<h2>Defining Publications</h2>
+
+<p>从本质上讲, <strong>publication</strong>(使用<strong>subscription</strong>与之相连)是从服务端(源)collection到客户端(目标)collection的传递数据方法. 同时, 把subscription想象成一个漏斗连接着标准的数据存储(与mongodb数据库交互的源集合)与客户端缓存(目标集合, 相应数据的备份或者子集).</p>
+
+<p><strong>subscription</strong>精确地控制着哪些数据该通过这个漏斗, 同时负责同步两端的数据. 通过添加多个<strong>subscription</strong>到服务端数据存储, 我们就可以实时地, 有效地, 安全地保持各个客户端的数据同步.</p>
+
+<!-- more -->
+
+
+<p>这里头所用的隧道协议叫作 <strong>DDP</strong>(Distributed Data Protocol). 想要了解更多关于DDP可以观看Matt DeBergalis(Meteor的founder之一)在(<a href="http://2012.realtimeconf.com/video/matt-debergalis">The Realtime Conference</a>上的演讲. 又或者是 Chris Mather的<a href="http://www.eventedmind.com/posts/meteor-subscriptions-and-ddp">这个视频</a>更详细的为你介绍DDP的概念.</p>
+
+<p>现在, 我们了解了基础部分, 让我们往更深层探个究竟吧.</p>
+
+<h2>Autopublish</h2>
+
+<p>当你创建了一个最基本的Meteor应用之后(比如使用 <code>meteor create</code>), 它会自动的启用 <strong>autopublish</strong>这个package. 首先的, 我们先来看看它究竟为干了些什么.</p>
+
+<p><strong>autopublish</strong>是移除了对subscriptions的需要还是只为你保管subscriptions 这取决于你如何看待它. <strong>autopublish</strong>所做的是自动地把服务端的所有数据镜像到客户端.
+<img src="http://www.themeteorbook.com/images/book/autopublish@2x.png" alt="" /></p>
+
+<p>这是怎么做到的呢? 假设你在服务端有个<code>posts</code>的集合. 那么 <strong>autopublish</strong>会自动把在Mongo 的posts 集合所找到的每一个post发送到客户端给一个也同样叫posts 的集合.</p>
+
+<p>所以, 如果你使用<code>autopublish</code>, 你就不用再去管subscriptions了. 数据在哪都可以访问, 所有事情变得各种简单. 当然, 很明显这是有问题的, 你不可能在每一个用户的机器上都缓存有你的整个app的数据库备份.</p>
+
+<p>出于这个原因, <strong>autopublish</strong>只适合用在你的app刚起步还没考虑到subscriptions的时候.</p>
+
+<h2>Publishing Full Collections</h2>
+
+<p>当你移除掉autopublish以后, 很快你就会发现你的数据都会在客户端消失不见. 有一种方法可以很简单地取回这些数据, 那就是简单的复刻<code>autopublish</code>, 并把一个collection全部publish. 例如:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">Meteor</span><span class="p">.</span><span class="nx">publish</span><span class="p">(</span><span class="s1">&#39;allPosts&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+</span><span class='line'>  <span class="k">return</span> <span class="nx">Posts</span><span class="p">.</span><span class="nx">find</span><span class="p">();</span>
+</span><span class='line'><span class="p">});</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><img src="http://www.themeteorbook.com/images/book/fullcollection@2x.png" alt="" /></p>
+
+<p>同样地, 我们也还是把整个collection都publish了, 所不同的是, 现在对哪个collection进行publish是可控的. 在上边这个例子, 我们publish了<code>posts</code> collection, 而<code>comments</code> collection没有被publish.</p>
+
+<h2>Publishing Partial Collections</h2>
+
+<p>更高一级的粒度控制是只publish某个collection的一部分. 比如, 只作用于属于某个author的posts:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">Meteor</span><span class="p">.</span><span class="nx">publish</span><span class="p">(</span><span class="s1">&#39;somePosts&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+</span><span class='line'>  <span class="k">return</span> <span class="nx">Posts</span><span class="p">.</span><span class="nx">find</span><span class="p">({</span><span class="s1">&#39;author&#39;</span><span class="o">:</span><span class="s1">&#39;Tom&#39;</span><span class="p">});</span>
+</span><span class='line'><span class="p">});</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><img src="http://www.themeteorbook.com/images/book/partialcollection@2x.png" alt="" /></p>
+
+<p>代码都很简单, 但是究竟在底层发生了些什么呢?</p>
+
+<p>如果你有读过<a href="http://docs.meteor.com/#publishandsubscribe">Meteor的文档</a>, 可能会对<code>added()</code>和<code>ready()</code>在客户端设置记录的属性感到惊讶,  and struggled to square that with the Meteor apps that you&rsquo;ve seen that never use those methods.(I am so sorry 这句没想着怎么翻译好)</p>
+
+<p>这其中的原因是, Meteor提供了一个非常重要的便利 &ndash; <code>_publishCursor()</code>方法. 可能你从没见过它的使用? 因为有可能不是直接的调用，但如果你在调用一个publish函数并返回一个<strong>游标(cursor)</strong>(例如: <code>Posts.find({'author':'Tom'})</code>), 那么这就是<code>_publishCursor</code>.</p>
+
+<p>当Meteor看到<code>somePosts</code>这个publication返回来一个游标(cursor), 则表明它自动调用了<code>_publishCursor()</code>publish这个cursor. 下面这是<code>_publishCursor()</code>所做的事情:</p>
+
+<ul>
+<li>在服务端查找这个名字的collection</li>
+<li>从cursor中取得所有匹配的documents并发送到客户端的同名集合(在这用到的是<code>added()</code>)</li>
+<li>只要某个document被增删改, 都会被同步到客户端(在cursor上使用<code>.observe()</code>, 并使用<code>.added()</code> <code>.updated()</code> <code>.removed()</code>来完成)</li>
+</ul>
+
+
+<p>那么,在上边的例子, 我们就可以很简便地确保只有用户感兴趣的posts(written by Tom)会出现在他们的客户端缓存之中.</p>
+
+<h2>Publishing Partial Properties</h2>
+
+<p>在上边我们已经看到了如何publish我们的一部分posts, 但是我们还可以做的更精确一些. 下面看看如何publish特定的记录吧. <br/>
+<img src="http://www.themeteorbook.com/images/book/partialproperties@2x.png" alt="" /></p>
+
+<p>跟前边的一样, 我们先用<code>find()</code>得到一个cursor, 不过这一次我们会排除掉一些</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">Meteor</span><span class="p">.</span><span class="nx">publish</span><span class="p">(</span><span class="s1">&#39;allPosts&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+</span><span class='line'>  <span class="k">return</span> <span class="nx">Posts</span><span class="p">.</span><span class="nx">find</span><span class="p">({},</span> <span class="p">{</span><span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nx">author</span><span class="o">:</span> <span class="kc">false</span>
+</span><span class='line'>  <span class="p">}});</span>
+</span><span class='line'><span class="p">});</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>当然的, 我们还能够结合这两种技巧. 比如我们想要返回所有来自Tom的posts同时, 可以这么写</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">Meteor</span><span class="p">.</span><span class="nx">publish</span><span class="p">(</span><span class="s1">&#39;allPosts&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+</span><span class='line'>  <span class="k">return</span> <span class="nx">Posts</span><span class="p">.</span><span class="nx">find</span><span class="p">({</span><span class="s1">&#39;author&#39;</span><span class="o">:</span><span class="s1">&#39;Tom&#39;</span><span class="p">},</span> <span class="p">{</span><span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nx">author</span><span class="o">:</span> <span class="kc">false</span>
+</span><span class='line'>  <span class="p">}});</span>
+</span><span class='line'><span class="p">});</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>总结</h2>
+
+<p>现在, 我们已经知道了如何publish从所有collections的所有documents的所有属性(通过<code>autopublish</code>)到特定collections的特定documents的特定记录.</p>
+
+<p>这包括了你能用Meteor的subscription所能做的所有基本东西, 而这些简单的技巧应该</p>
+
+<p>有时候, 你可能会需要更深层的组合, 联接, 合并 publication, 而这些我们将会再找个时间详谈.</p>
+
+<p>原文来自Tom Coleman <a href="http://www.themeteorbook.com/2013/04/05/publications-and-subscriptions/">Understanding Publications and Subscriptions</a></p>
+</div>
+
+</article>
+
+	
+	<div class="share">
+	  <!-- <ul> -->
+	  <!--   <li>
+  <a href="https://twitter.com/intent/tweet?text=Understanding Publications and Subscriptions by @&url=http://xguox.github.com/blog/2013/04/10/understanding-publications-and-subscriptions/" title="Share Understanding Publications and Subscriptions on Twitter">
+    <img src="/images/social/twitter.png" />
+  </a>
+</li>
+ -->
+	  <!--   <li>
+  <a href="https://www.facebook.com/sharer.php?u=http://xguox.github.com/blog/2013/04/10/understanding-publications-and-subscriptions/" title="Share Understanding Publications and Subscriptions on Facebook">
+    <img src="/images/social/facebook.png" />
+  </a>
+</li>
+ -->
+	  <!--   <li>
+  <a href="https://plus.google.com/share?url=http://xguox.github.com/blog/2013/04/10/understanding-publications-and-subscriptions/" title="Share Understanding Publications and Subscriptions on Google Plus">
+    <img src="/images/social/google.png" />
+  </a>
+</li>
+ -->
+	  <!-- </ul> -->
+	</div>
+
+
+
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+</div>
+	<footer id="footer" class="inner"><br>
+<br>
+<br>
+<br>
+&copy; 2013
+
+    XguoX
+
+</footer>
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/hyphenator.js"></script>
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'xguox';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://xguox.github.com/blog/2013/04/10/understanding-publications-and-subscriptions/';
+        var disqus_url = 'http://xguox.github.com/blog/2013/04/10/understanding-publications-and-subscriptions/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-39166710-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+
+
+</body>
+<script>
+  $(document).ready(function() {
+  // Make images center
+  $('p:has(img)').css('text-align', 'center');
+  });
+</script>
+</html>
