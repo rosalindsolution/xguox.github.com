@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Jabber | XguoX]]></title>
   <link href="http://xguox.github.com/blog/categories/jabber/atom.xml" rel="self"/>
   <link href="http://xguox.github.com/"/>
-  <updated>2013-10-16T18:15:46+08:00</updated>
+  <updated>2013-10-16T18:27:23+08:00</updated>
   <id>http://xguox.github.com/</id>
   <author>
     <name><![CDATA[XguoX]]></name>
@@ -21,6 +21,8 @@
     <content type="html"><![CDATA[<p>隔三差五会把Octopress的主题换一换, 换件衣服换个心情.</p>
 
 <p>这次换的是这么多次更换以来个人觉得最赞的一次，基于<a href="https://github.com/tcnksm/mnmlpress">mnmlpress</a> , 貌似这个源项目也是fork自另外一个改编而成的.  然后那一个也是同样.  Anyway, Octopress的主题大部分都这么改成的.</p>
+
+<p><img src="https://gagqnq.dm2301.livefilestore.com/y2pgGB6njkMoSbIBHSyZvsFl-NyXsUiNM9YF0L4d-xGZJLZF2xD_eGpNCI3ehRiwcuFbOjCdPOgHQDwKZGRvgRimDbLhmdcR0xmFwNUBPb2c20/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202013-10-16%206.22.11%20PM.png?psid=1" alt="" /></p>
 
 <p>And then, 我突发脑热, 征询了几位朋友的意见,分别列出了4个主题样板让他们给我意见评分. 很不幸, 这一次的更换的平均得分最低. 上一个使用的(如图)得分最高.</p>
 
@@ -78,8 +80,8 @@
 
 <p>最后，我发觉并深感OP里最喜欢的不是Luffy君，说不上谁是最喜欢的角色，但，可以肯定，对 罗宾酱&amp;索大 的喜欢更多一些。</p>
 
-<p>{% img left <a href="https://7nmgwa.dm1.livefilestore.com/y2piowWh9rmGFKLaMMZX9p0hjieu0nhXYeJLNicKrqCqu44Ai-nJgUbgIl4ELt5Nty2DCHO6Gd0GHh-GagLaN3XOkefcg5FVZON8l0UQm1yxLE/Nico.Robin.full.1401954.jpg?psid=1">https://7nmgwa.dm1.livefilestore.com/y2piowWh9rmGFKLaMMZX9p0hjieu0nhXYeJLNicKrqCqu44Ai-nJgUbgIl4ELt5Nty2DCHO6Gd0GHh-GagLaN3XOkefcg5FVZON8l0UQm1yxLE/Nico.Robin.full.1401954.jpg?psid=1</a> 350 600 %}
-{% img right <a href="https://7no7na.dm2301.livefilestore.com/y2pyPdpo4WPWPKcGC9nYQoI5vn_BOqO2S31h64Nh-nGZZq4T99T8w3lNT_JVot7o9u9Xeh9g31anmx7mBgY8vnmGza_wDQMYvm9flRIYiUxsVU/7f4996e7jw1e5c2o3526nj20bu0goaar.jpg?psid=1">https://7no7na.dm2301.livefilestore.com/y2pyPdpo4WPWPKcGC9nYQoI5vn_BOqO2S31h64Nh-nGZZq4T99T8w3lNT_JVot7o9u9Xeh9g31anmx7mBgY8vnmGza_wDQMYvm9flRIYiUxsVU/7f4996e7jw1e5c2o3526nj20bu0goaar.jpg?psid=1</a> 350 600 %}</p>
+<p><img class="left <a" src="href="https://7nmgwa.dm1.livefilestore.com/y2piowWh9rmGFKLaMMZX9p0hjieu0nhXYeJLNicKrqCqu44Ai-nJgUbgIl4ELt5Nty2DCHO6Gd0GHh-GagLaN3XOkefcg5FVZON8l0UQm1yxLE/Nico.Robin.full.1401954.jpg?psid=1">https://7nmgwa.dm1.livefilestore.com/y2piowWh9rmGFKLaMMZX9p0hjieu0nhXYeJLNicKrqCqu44Ai-nJgUbgIl4ELt5Nty2DCHO6Gd0GHh-GagLaN3XOkefcg5FVZON8l0UQm1yxLE/Nico.Robin.full.1401954.jpg?psid=1</a>" width="350" height="600">
+<img class="right <a" src="href="https://7no7na.dm2301.livefilestore.com/y2pyPdpo4WPWPKcGC9nYQoI5vn_BOqO2S31h64Nh-nGZZq4T99T8w3lNT_JVot7o9u9Xeh9g31anmx7mBgY8vnmGza_wDQMYvm9flRIYiUxsVU/7f4996e7jw1e5c2o3526nj20bu0goaar.jpg?psid=1">https://7no7na.dm2301.livefilestore.com/y2pyPdpo4WPWPKcGC9nYQoI5vn_BOqO2S31h64Nh-nGZZq4T99T8w3lNT_JVot7o9u9Xeh9g31anmx7mBgY8vnmGza_wDQMYvm9flRIYiUxsVU/7f4996e7jw1e5c2o3526nj20bu0goaar.jpg?psid=1</a>" width="350" height="600"></p>
 ]]></content>
   </entry>
   
