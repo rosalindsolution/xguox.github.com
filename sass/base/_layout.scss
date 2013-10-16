@@ -7,9 +7,9 @@ $max-width: 680px;
 
 body{
 	font-family: $font-default;
-	font-size: 14px;
-	font-weight: 300;
-	line-height: 1.5;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 3;
 	background: $color-background;
 	@media screen and (max-width: 1040px){
 		margin: 0 20px;
