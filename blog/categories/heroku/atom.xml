@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Heroku | XguoX]]></title>
+  <link href="http://xguox.github.com/blog/categories/heroku/atom.xml" rel="self"/>
+  <link href="http://xguox.github.com/"/>
+  <updated>2013-10-18T19:41:57+08:00</updated>
+  <id>http://xguox.github.com/</id>
+  <author>
+    <name><![CDATA[XguoX]]></name>
+    <email><![CDATA[golvinlu@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Deploying Ghost to Heroku]]></title>
+    <link href="http://xguox.github.com/blog/2013/10/18/deploying-ghost-to-heroku/"/>
+    <updated>2013-10-18T13:00:00+08:00</updated>
+    <id>http://xguox.github.com/blog/2013/10/18/deploying-ghost-to-heroku</id>
+    <content type="html"><![CDATA[<p>原本没有意思要班门弄斧写什么Ghost的部署感受帖的,不过前些天看到@lucifr 的这条tweet,于是还是忍不住写了,就让更多假死Ghost诞生吧.</p>
+
+<blockquote class="twitter-tweet"><p>ghost 一出，网上又要冒出一大堆主题风格相似的 blog 了，然后更新两篇使用感受就处于假死状态</p>&mdash; Lucifr (@lucifr) <a href="https://twitter.com/lucifr/statuses/390104155152343040">October 15, 2013</a></blockquote>
+
+
+<script async src="http://xguox.github.com//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<p>先来感受帖,主要是与Octopress之流相比:<br/>
+毕竟还是新东西, bug,issue还有略多没解决的, 功能上也比较欠缺.不过好的地方在于这个移动支持好,  就算在野外拿着移动设备也是可以杠杠的写东西, 只是有多少人如此热衷到必须在室外用移动设备来写呢?还一个是数据的导入导出很简便.</p>
+
+<p>因为以前玩过Heroku, 所以不用各种安装<a href="https://toolbelt.heroku.com/">Heroku Toolbelt</a>,配置SSH key什么的. 也玩过Node, 好吧,这个也省了. (好吧, 我是不是可以不用写下去了 =.= ) 其实主要只是写写这个过程遇到的一些问题吧. 系统是 OS X 10.8.5</p>
+
+<p>在Local安装Ghost(当前最新版本为0.3.2)</p>
+
+<p><a href="https://en.ghost.org/download/">下载</a> 源代码并解压, cd 过去, 在Node和NPM安装配置没问题的前提下
+<code>npm install</code>
+在本地跑起来
+<code>npm start</code>
+基本没报错就往后走不折腾, 也可以在浏览器玩儿一会先的.</p>
+
+<p>接着是让Heroku知道怎么把Ghost跑起来, 执行
+<code>echo "web: node index.js" &gt; Procfile</code>
+在Ghost目录 创建<code>Procfile</code>文本文件并写入<code>web: node index.js</code></p>
+
+<p>部署到Heroku用的数据库是PostgreSQL, 而不是Ghost默认的sqlite, 所以要先在
+<code>package.json</code>这个文件里头做些修改, 在<code>dependencies</code>节点把sqlite的那行去掉改为</p>
+
+<p><code>"pg": "latest",</code></p>
+
+<p>别忘了刚开始在本地跑起来的时候已经安装了sqlite3
+所以,还要执行
+<code>npm uninstall sqlite3</code></p>
+
+<p>下面的一篇参考里头没有提到这点.</p>
+
+<p>准备就绪后就是初始化Git仓库了
+<code>
+git init
+git add .
+git commit -m "Init"
+</code></p>
+
+<p>本地有了Git仓库,还要有个Heroku的远程库,创建项目
+<code>heroku create</code>
+执行完之后在Heroku的Dashboard看到你的项目了,不过是啥都没,因为还没有push.
+生成的项目一般都是类似这样名字很帅的
+<code>
+Creating fathomless-reaches-9699... done, stack is cedar
+http://fathomless-reaches-9699.herokuapp.com/ | git@heroku.com:fathomless-reaches-9699.git
+</code></p>
+
+<p>配置数据库之前先装个PostgreSQL的插件.</p>
+
+<p><code>heroku addons:add heroku-postgresql:dev</code></p>
+
+<p>该命令会输出<code>Attached as HEROKU_POSTGRESQL_BLACK_URL....</code> 类似的信息,其中的BLACK是随机的颜色单词. 下一步命令要用到的.</p>
+
+<p><code>heroku pg:promote HEROKU_POSTGRESQL_BLACK</code></p>
+
+<p>插件安装就搞定了,接下来是配置文件. 编辑根目录下的<code>config.js</code></p>
+
+<p>主要要改的地方都在development下, 没发觉不同模式的区别, 如果发图片是用上传的方式的话,在每次push之后图片都会没掉,所以还是用外链好了, 用production也一样,记得改环境变量<code>
+heroku config:set NODE_ENV=production</code></p>
+
+<p>1 url
+比如这里改成<code>  url: 'http://fathomless-reaches-9699.herokuapp.com',</code>
+2 database
+这里要先登录到你的Heroku的Dashboard, 在你的app下可以看到插件栏的<code>Heroku Postgres Dev :: [Color]</code>,点进去就看到你的数据库的各种配置信息,如下图:</p>
+
+<p><img src="https://g3axqg.dm2301.livefilestore.com/y2pAXIXhAaAoKzlQnO0BMJtfAxFJpGGYjlu_qbNuISsChkrL3vj1grBXJW0RDIbw1kZPze2If1ZX_jQDNy9SDU-8RpPHYc94USB54Mx7Dc6r04/QQ20131018-3.png?psid=1" alt="" /></p>
+
+<p><img src="https://g3yyhw.dm2302.livefilestore.com/y2pKkKpTuU-QBtu3ZzKEfcZGPiHuH_oRCDn1dBt7N0wCh9uLkSGkqdjbc8f09uPvejIoGEOoUdn-IQICWWQVUCIvI3ZGdECSNfyRgXtd4JrTRo/QQ20131018-4.png?psid=1" alt="" /></p>
+
+<p>相应的把<code>config.js</code> development下的database修改成如下:
+```
+database: {</p>
+
+<pre><code>    url: 'http://fathomless-reaches-9699.herokuapp.com/',
+    mail: {},
+    database: {
+        client: 'postgres',
+        connection: {
+            host: 'ec2-54-235-92-161.compute-1.amazonaws.com',
+            user: 'tgbutpeekudvst',
+            password: 'POpn0EK7TNfW1nfgVDsXgw_N4L',
+            database: 'd3399k1nh326po',
+            port: '5432'
+        },
+        debug: false
+    },
+</code></pre>
+
+<p>```
+3 server</p>
+
+<p>将原本的
+```</p>
+
+<pre><code>    server: {
+           host: '127.0.0.1',
+           port: '2368'
+    }
+</code></pre>
+
+<p>```</p>
+
+<p>```</p>
+
+<pre><code>    server: {
+        host: '0.0.0.0',
+        port: process.env.PORT
+    }
+</code></pre>
+
+<p>```</p>
+
+<p>然后就可以提交准备push了</p>
+
+<p><code>
+ git add .
+ git commit -m 'for push'
+</code>
+最后Push到Heroku
+<code>git push heroku master</code><br/>
+其实, 后面才是我要写的点. 当我执行这条命令时,
+不断报错如下:
+<code>
+Received disconnect from 50.19.85.132: 10: user closed connection
+error: pack-objects died of signal 13
+error: failed to push some refs to 'git@heroku.com:fathomless-reaches-9699.git'
+</code></p>
+
+<p>话说表示至今没找着原因和解决方法.
+求救于Google和StackOverflow的大神也不行. 什么<code>git repack</code>的不起作用. 后来发了个ticket给heroku求助.貌似没鸟我,但是第二天忽然就好了,能push了.然后前一秒push出错,没过一会再push又成功了.</p>
+
+<p>另外的还有一个地方下面的参考没有提到的是, 成功部署上去后打开链接可能你会看到这样的错误信息</p>
+
+<p>```
+An error occurred in the application and your page could not be served. Please try again in a few moments.</p>
+
+<p>If you are the application owner, check your logs for details.
+```</p>
+
+<p>这东西也纠结了我老久,Logs显示
+<code>ERROR: Invalid value, check page, pages, limit and total are numbers</code><br/>
+没找着原因,后来在官方的Forum上看到的解决办法,是把<code>content/themes/casper/index.hbs</code>里头的 {%raw {{pagination}} %} 注释掉.</p>
+
+<p>然后,就没然后了, 部署完毕,打开你的项目链接玩儿Ghost吧.</p>
+
+<p>另外试过用Mysql作为数据库,但是因为Heroku上唯一的Mysql插件<a href="">ClearDB</a>用了之后会有权限<a href="https://github.com/TryGhost/Ghost/issues/863">BUG</a>,貌似官方还没解决. 所以还是老老实实的用了PostgreSQL</p>
+
+<p>主题的话,<a href="http://marketplace.ghost.org/">这里</a>有收费和免费的可以下载, 下载下来copy到<code>content/themes/</code>这个目录下就OK了, push之后就可以在你的设置页面里直接更换了. 好吧,这样的话"一大堆主题风格相似的 blog"就不能出现了啊.</p>
+
+<p>另, 评论也需要另外添加设置, easy job啦. <a href="http://christophvoigt.com/enable-comments-on-ghost-with-disqus/">参考这里</a></p>
+
+<p>参考资源:</p>
+
+<p><a href="http://docs.ghost.org/installation/">http://docs.ghost.org/installation/</a><br/>
+<a href="http://www.howtoinstallghost.com/how-to-install-ghost-on-heroku/">http://www.howtoinstallghost.com/how-to-install-ghost-on-heroku/</a><br/>
+<a href="http://d5c.me/deploying-ghost-to-heroku/">http://d5c.me/deploying-ghost-to-heroku/</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[最近在折腾 -- deploy Meteor on heroku]]></title>
+    <link href="http://xguox.github.com/blog/2013/04/06/deploy-meteor-on-heroku/"/>
+    <updated>2013-04-06T23:42:00+08:00</updated>
+    <id>http://xguox.github.com/blog/2013/04/06/deploy-meteor-on-heroku</id>
+    <content type="html"><![CDATA[<p>貌似有好一段时间没有在这儿小发一些闷骚或者情感泛滥什么的, 都是用自己蹩脚的英语水平翻译些英文post. 这些天想部署个Meteor app玩一玩, 结果一玩就各种出事了.</p>
+
+<p>vps退货, godaddy的莫名失单, 部署各种卡壳&hellip;</p>
+
+<p>因为最近比较多的关注前端的东西,  同时在自己local耍着<a href="https://github.com/SachaG/Telescope">SachaG / Telescope</a>这个基于Meteor的项目. 于是也就顺手搭了<a href="http://frontn.com">FrontN</a>这么个类似HN, Reddit的玩意. 原本是准备直接把HN,Reddit clone 成中文版的, 不过<a href="http://news.dbanotes.net/">Fenng</a>貌似已经这么干了, 所以, 我也就不再造这个轮子了.另外原本也想专门作为<a href="http://jianshu.io">简书</a>的评论系统. 不过想想也不是很妥, 就&hellip;</p>
+
+<p>Meteor的系统是超级alpha的, 所以很多问题遇上了也没人帮忙, 解决. 比如之前在<a href="http://stackoverflow.com/questions/15654637/same-helper-for-different-template">Stack Overflow</a>. 而部署这一块, 是我比较陌生的. 包括以前搞rails那会, 也没真正意义的整一整部署. 绝大部分时间都在本地跑啊跑. 所以, 在Meteor, 也是这一块最让我头疼.</p>
+
+<!--more -->
+
+
+<p>从vps到appfog到heroku, 各种转了一圈, 最终还是选定了heroku.  原因之一就是资料相对多, 出错情况也较少.</p>
+
+<p>秉承流水帐作风, 待我慢慢道来.</p>
+
+<p>幸得以前一直搞得是ruby/rails. 所以装heroku的时候没啥压力, 不然可能这又得搞上一会. 直接下载了官方的<a href="https://toolbelt.heroku.com/">heroku toolbelt</a>无压力安装, login, clone&hellip;</p>
+
+<p>and then 跟着 <a href="https://github.com/oortcloud/heroku-buildpack-Meteorite">Heroku buildpack for Meteorite</a> 这个buildpack完成接下来的:</p>
+
+<p><code>
+heroku create --stack cedar --buildpack https://github.com/oortcloud/heroku-buildpack-Meteorite.git
+</code>
+<strong>Please note: 在这如果你想把你的项目名改成想要的比如我改成了<a href="frontn.herokuapp.com">frontn.herokuapp.com</a>, 在heroku的项目页面上修改名字的同时, 记得把repo的git remote 也相应的更改</strong></p>
+
+<p>否则就会报错</p>
+
+<p><code>
+heroku !  Resource not found
+</code>
+好吧, 很明显我自己傻13了才会知道要这么做的.</p>
+
+<p>接着到了最关键的push了.  当我<code>git push heroku master</code>的时候, bla,blah blah&hellip;下来还以为这次会真的很顺畅. 结果oops的一嘣</p>
+
+<p><code>javascript
+...
+...
+-----&gt; Launching... !     Heroku push rejected, Please verify your account to install this add-on
+For more information, see http://devcenter.heroku.com/categories/billing
+Verify now at https://heroku.com/verify
+</code>
+纳尼,  原来这货还要用到一个mongo的数据库插件, 在这里是Mongohq, 原本没注意看以为直接
+<code>heroku addons:add mongohq:sandbox</code>就OK
+(sandbox是免费餐)</p>
+
+<p>结果毫无疑问的继续嘣&hellip;</p>
+
+<p><code>javascript
+Adding mongohq:sandbox on frontn... failed
+ !    Please verify your account to install this add-on
+ !    For more information, see http://devcenter.heroku.com/categories/billing
+ !    Verify now at https://heroku.com/verify
+</code></p>
+
+<p>Google之才知道原来Heroku在装插件前得通过传说中的credit card卡认证, 我辣时就更嘣了. 对于我等无产阶级而言, credit card仿佛就跟神一般滴遥不可及. 你想买3刀的godaddy域名?不好意思, 请出示credit card; 你想用name.com买域名? 不好意思, 请出示credit card; 你想买linode的vps?有credit card吗? 亲&hellip;正当我开始准备放弃heroku这条路时, 忽然无意中发现了虚拟信用卡这货, 顺藤摸瓜发现, 柳暗花明又一村.</p>
+
+<p><strong>工行国际e卡 + entropay</strong>(怎么觉得我像在拍广告的)</p>
+
+<p>虽然门路是找着了, 不过弄得我好不蛋疼.<br/>
+因为mac上工行网银不支持插U盾, 于是又启动了以前的那台老爷机, 一卡一顿的, 唉, 为了搞到手就忍忍吧&hellip;结果成功申请后唬弄半晌才知道原来要先用软妹b买美刀才能花, 而且至少买50刀. 我现在要50刀搞毛线撒&hellip;没法子, 只得照办了. 然后是entropay的虚拟卡>>><br/>
+OOXX一轮下来总算是把heroku的验证给通过了, 感动啊&hellip;</p>
+
+<p><code>heroku addons:add mongohq:sandbox</code></p>
+
+<p><code>git push heroku master</code></p>
+
+<p>好吧, 总算是成功了. 我容易吗&hellip;</p>
+
+<p>最后总结, heroku相对的来说除了出错情况较少, 可用资料多之外, 管理上也比自己搭vps要方便些, feel了一下MongoHQ的那个插件还不错&hellip;这样, 也就可以花更多的时间的app的开发上. 而不是折腾这出错那无解.  好吧, 尽管咱都爱折腾, 不过, 往你想的地方折腾不更好吗? 其实这些也就都是Paas的优势啦, 专注核心开发, 减少运维成本&hellip;</p>
+
+<p>其他的待续吧, 相比rails, 或许底层它怎么干还没搞透, 但起码的知道它干了什么, 可Meteor我还真不知道它都干了些什么, 比rails更magic.</p>
+
+<p>不管是否热爱前端的亲, 欢迎做客<a href="http://frontn.com">FrontN</a>. 有Bug那是必然的啦, 欢迎Feedback.</p>
+]]></content>
+  </entry>
+  
+</feed>

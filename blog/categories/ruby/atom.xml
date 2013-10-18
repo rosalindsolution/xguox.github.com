@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Ruby | XguoX]]></title>
   <link href="http://xguox.github.com/blog/categories/ruby/atom.xml" rel="self"/>
   <link href="http://xguox.github.com/"/>
-  <updated>2013-10-16T18:27:23+08:00</updated>
+  <updated>2013-10-18T19:41:57+08:00</updated>
   <id>http://xguox.github.com/</id>
   <author>
     <name><![CDATA[XguoX]]></name>
@@ -545,18 +545,13 @@ $(document).ready(function(){
 
 
 <p>另外个是，用了will_paginate这个gem做分页，不过默认显示的是“previous”和“next”，改为中文的“前一页”和“后一页”需要先在config/initializers/ 下新建一个will_paginate.rb,  and then在里头加入
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
-</span><span class='line'>
-</span><span class='line'>&lt;h1>coding: utf-8&lt;/h1>
-</span><span class='line'>
-</span><span class='line'>&lt;p>WillPaginate::ViewHelpers.pagination_options[:previous_label ] =  &ldquo;前一页&rdquo;
-</span><span class='line'>WillPaginate::ViewHelpers.pagination_options[:next_label ] =  &ldquo;后一页&rdquo;</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+{% codeblock %}</p>
+
+<h1>coding: utf-8</h1>
+
+<p>WillPaginate::ViewHelpers.pagination_options[:previous_label ] =  &ldquo;前一页&rdquo;
+WillPaginate::ViewHelpers.pagination_options[:next_label ] =  &ldquo;后一页&rdquo;
+{% endcodeblock %}</p>
 ]]></content>
   </entry>
   
@@ -577,10 +572,10 @@ $(document).ready(function(){
 <p>好吧，其实，我对这些改进啊有的没的还不怎么敏感。所以与其要看我介绍新功能新特性还不如直接搜索。</p>
 
 <p>我敏感的只是，我的一些rails项目都跑不动了。passenger报错
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Error message:
-</span><span class='line'>libmysqlclient_r.so.16: cannot open shared object file: No such file or directory &ndash; /home/xguox/.rvm/gems/ruby-1.9.2-p290@rails/gems/mysql2-0.3.11/lib/mysql2/mysql2.so</span></code></pre></td></tr></table></div></figure></notextile></div>
+{% codeblock %}
+Error message:
+libmysqlclient_r.so.16: cannot open shared object file: No such file or directory &ndash; /home/xguox/.rvm/gems/ruby-1.9.2-p290@rails/gems/mysql2-0.3.11/lib/mysql2/mysql2.so
+{% endcodeblock %}
 我还以为是我缺少了libmysqlclient_r.so.16这个文件，自己下载了之后也还是不行。期间尝试重装mysql，也试过之前说的那个，安装各种组建的命令还是无果。最终在ruby-china得到大神指点，居然只需卸了重装mysql2这个gem就可以了。貌似是因为/usr/lib 下的mysql2.so没有link到gem里边的mysql2.so
 过后，还是跟往常没有多大差别的继续Rails&hellip;</p>
 ]]></content>
@@ -597,21 +592,24 @@ $(document).ready(function(){
 <p>API：</p>
 
 <p>不使用try的时候是<!-- more -->
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>@person &amp;&amp; @person.name</span></code></pre></td></tr></table></div></figure></notextile></div>
+{% codeblock %}
+@person &amp;&amp; @person.name
+{% endcodeblock %}
 需确保@person不是nil，否则会报错
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>NoMethodError: undefined method `name' for nil:NilClass</span></code></pre></td></tr></table></div></figure></notextile></div>
+{% codeblock %}
+NoMethodError: undefined method `name' for nil:NilClass
+{% endcodeblock %}
 如果用try的话
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>@person.try(:name)</span></code></pre></td></tr></table></div></figure></notextile></div>
+{% codeblock %}
+@person.try(:name)
+{% endcodeblock %}
 如果@person为nil则返回nil而不是报错</p>
 
 <p>另外，try还可以接收block作为参数，
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Person.try(:find, 1)
-</span><span class='line'>@people.try(:collect) {|p| p.name}</span></code></pre></td></tr></table></div></figure></notextile></div>
+{% codeblock %}
+Person.try(:find, 1)
+@people.try(:collect) {|p| p.name}
+{% endcodeblock %}
 漏了一句，API开头就说了，像常规的ruby的Object#send 那样工作
 看了下源码，貌似是利用了<strong>send</strong>实现的。最近在研究ruby的元编程。</p>
 ]]></content>

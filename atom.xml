@@ -4,13 +4,209 @@
   <title><![CDATA[XguoX]]></title>
   <link href="http://xguox.github.com/atom.xml" rel="self"/>
   <link href="http://xguox.github.com/"/>
-  <updated>2013-10-16T18:27:23+08:00</updated>
+  <updated>2013-10-18T19:41:40+08:00</updated>
   <id>http://xguox.github.com/</id>
   <author>
     <name><![CDATA[XguoX]]></name>
     <email><![CDATA[golvinlu@gmail.com]]></email>
   </author>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Deploying Ghost to Heroku]]></title>
+    <link href="http://xguox.github.com/blog/2013/10/18/deploying-ghost-to-heroku/"/>
+    <updated>2013-10-18T13:00:00+08:00</updated>
+    <id>http://xguox.github.com/blog/2013/10/18/deploying-ghost-to-heroku</id>
+    <content type="html"><![CDATA[<p>原本没有意思要班门弄斧写什么Ghost的部署感受帖的,不过前些天看到@lucifr 的这条tweet,于是还是忍不住写了,就让更多假死Ghost诞生吧.</p>
+
+<blockquote class="twitter-tweet"><p>ghost 一出，网上又要冒出一大堆主题风格相似的 blog 了，然后更新两篇使用感受就处于假死状态</p>&mdash; Lucifr (@lucifr) <a href="https://twitter.com/lucifr/statuses/390104155152343040">October 15, 2013</a></blockquote>
+
+
+<script async src="http://xguox.github.com//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<p>先来感受帖,主要是与Octopress之流相比:<br/>
+毕竟还是新东西, bug,issue还有略多没解决的, 功能上也比较欠缺.不过好的地方在于这个移动支持好,  就算在野外拿着移动设备也是可以杠杠的写东西, 只是有多少人如此热衷到必须在室外用移动设备来写呢?还一个是数据的导入导出很简便.</p>
+
+<p>因为以前玩过Heroku, 所以不用各种安装<a href="https://toolbelt.heroku.com/">Heroku Toolbelt</a>,配置SSH key什么的. 也玩过Node, 好吧,这个也省了. (好吧, 我是不是可以不用写下去了 =.= ) 其实主要只是写写这个过程遇到的一些问题吧. 系统是 OS X 10.8.5</p>
+
+<p>在Local安装Ghost(当前最新版本为0.3.2)</p>
+
+<p><a href="https://en.ghost.org/download/">下载</a> 源代码并解压, cd 过去, 在Node和NPM安装配置没问题的前提下
+<code>npm install</code>
+在本地跑起来
+<code>npm start</code>
+基本没报错就往后走不折腾, 也可以在浏览器玩儿一会先的.</p>
+
+<p>接着是让Heroku知道怎么把Ghost跑起来, 执行
+<code>echo "web: node index.js" &gt; Procfile</code>
+在Ghost目录 创建<code>Procfile</code>文本文件并写入<code>web: node index.js</code></p>
+
+<p>部署到Heroku用的数据库是PostgreSQL, 而不是Ghost默认的sqlite, 所以要先在
+<code>package.json</code>这个文件里头做些修改, 在<code>dependencies</code>节点把sqlite的那行去掉改为</p>
+
+<p><code>"pg": "latest",</code></p>
+
+<p>别忘了刚开始在本地跑起来的时候已经安装了sqlite3
+所以,还要执行
+<code>npm uninstall sqlite3</code></p>
+
+<p>下面的一篇参考里头没有提到这点.</p>
+
+<p>准备就绪后就是初始化Git仓库了</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git init
+</span><span class='line'>git add .
+</span><span class='line'>git commit -m "Init"</span></code></pre></td></tr></table></div></figure>
+
+
+<p>本地有了Git仓库,还要有个Heroku的远程库,创建项目
+<code>heroku create</code>
+执行完之后在Heroku的Dashboard看到你的项目了,不过是啥都没,因为还没有push.
+生成的项目一般都是类似这样名字很帅的</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Creating fathomless-reaches-9699... done, stack is cedar
+</span><span class='line'>http://fathomless-reaches-9699.herokuapp.com/ | git@heroku.com:fathomless-reaches-9699.git</span></code></pre></td></tr></table></div></figure>
+
+
+<p>配置数据库之前先装个PostgreSQL的插件.</p>
+
+<p><code>heroku addons:add heroku-postgresql:dev</code></p>
+
+<p>该命令会输出<code>Attached as HEROKU_POSTGRESQL_BLACK_URL....</code> 类似的信息,其中的BLACK是随机的颜色单词. 下一步命令要用到的.</p>
+
+<p><code>heroku pg:promote HEROKU_POSTGRESQL_BLACK</code></p>
+
+<p>插件安装就搞定了,接下来是配置文件. 编辑根目录下的<code>config.js</code></p>
+
+<p>主要要改的地方都在development下, 没发觉不同模式的区别, 如果发图片是用上传的方式的话,在每次push之后图片都会没掉,所以还是用外链好了, 用production也一样,记得改环境变量<code>
+heroku config:set NODE_ENV=production</code></p>
+
+<p>1 url
+比如这里改成<code>  url: 'http://fathomless-reaches-9699.herokuapp.com',</code>
+2 database
+这里要先登录到你的Heroku的Dashboard, 在你的app下可以看到插件栏的<code>Heroku Postgres Dev :: [Color]</code>,点进去就看到你的数据库的各种配置信息,如下图:</p>
+
+<p><img src="https://g3axqg.dm2301.livefilestore.com/y2pAXIXhAaAoKzlQnO0BMJtfAxFJpGGYjlu_qbNuISsChkrL3vj1grBXJW0RDIbw1kZPze2If1ZX_jQDNy9SDU-8RpPHYc94USB54Mx7Dc6r04/QQ20131018-3.png?psid=1" alt="" /></p>
+
+<p><img src="https://g3yyhw.dm2302.livefilestore.com/y2pKkKpTuU-QBtu3ZzKEfcZGPiHuH_oRCDn1dBt7N0wCh9uLkSGkqdjbc8f09uPvejIoGEOoUdn-IQICWWQVUCIvI3ZGdECSNfyRgXtd4JrTRo/QQ20131018-4.png?psid=1" alt="" /></p>
+
+<p>相应的把<code>config.js</code> development下的database修改成如下:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>database: {
+</span><span class='line'>        url: 'http://fathomless-reaches-9699.herokuapp.com/',
+</span><span class='line'>        mail: {},
+</span><span class='line'>        database: {
+</span><span class='line'>            client: 'postgres',
+</span><span class='line'>            connection: {
+</span><span class='line'>                host: 'ec2-54-235-92-161.compute-1.amazonaws.com',
+</span><span class='line'>                user: 'tgbutpeekudvst',
+</span><span class='line'>                password: 'POpn0EK7TNfW1nfgVDsXgw_N4L',
+</span><span class='line'>                database: 'd3399k1nh326po',
+</span><span class='line'>                port: '5432'
+</span><span class='line'>            },
+</span><span class='line'>            debug: false
+</span><span class='line'>        },</span></code></pre></td></tr></table></div></figure>
+
+
+<p>3 server</p>
+
+<p>将原本的</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>    server: {
+</span><span class='line'>           host: '127.0.0.1',
+</span><span class='line'>           port: '2368'
+</span><span class='line'>    }</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>    server: {
+</span><span class='line'>        host: '0.0.0.0',
+</span><span class='line'>        port: process.env.PORT
+</span><span class='line'>    }</span></code></pre></td></tr></table></div></figure>
+
+
+<p>然后就可以提交准备push了</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> git add .
+</span><span class='line'> git commit -m 'for push'</span></code></pre></td></tr></table></div></figure>
+
+
+<p>最后Push到Heroku
+<code>git push heroku master</code><br/>
+其实, 后面才是我要写的点. 当我执行这条命令时,
+不断报错如下:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Received disconnect from 50.19.85.132: 10: user closed connection
+</span><span class='line'>error: pack-objects died of signal 13
+</span><span class='line'>error: failed to push some refs to 'git@heroku.com:fathomless-reaches-9699.git'</span></code></pre></td></tr></table></div></figure>
+
+
+<p>话说表示至今没找着原因和解决方法.
+求救于Google和StackOverflow的大神也不行. 什么<code>git repack</code>的不起作用. 后来发了个ticket给heroku求助.貌似没鸟我,但是第二天忽然就好了,能push了.然后前一秒push出错,没过一会再push又成功了.</p>
+
+<p>另外的还有一个地方下面的参考没有提到的是, 成功部署上去后打开链接可能你会看到这样的错误信息</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>An error occurred in the application and your page could not be served. Please try again in a few moments.
+</span><span class='line'>
+</span><span class='line'>If you are the application owner, check your logs for details.</span></code></pre></td></tr></table></div></figure>
+
+
+<p>这东西也纠结了我老久,Logs显示
+<code>ERROR: Invalid value, check page, pages, limit and total are numbers</code><br/>
+没找着原因,后来在官方的Forum上看到的解决办法,是把<code>content/themes/casper/index.hbs</code>里头的  注释掉.</p>
+
+<p>然后,就没然后了, 部署完毕,打开你的项目链接玩儿Ghost吧.</p>
+
+<p>另外试过用Mysql作为数据库,但是因为Heroku上唯一的Mysql插件<a href="">ClearDB</a>用了之后会有权限<a href="https://github.com/TryGhost/Ghost/issues/863">BUG</a>,貌似官方还没解决. 所以还是老老实实的用了PostgreSQL</p>
+
+<p>主题的话,<a href="http://marketplace.ghost.org/">这里</a>有收费和免费的可以下载, 下载下来copy到<code>content/themes/</code>这个目录下就OK了, push之后就可以在你的设置页面里直接更换了. 好吧,这样的话&#8221;一大堆主题风格相似的 blog&#8221;就不能出现了啊.</p>
+
+<p>另, 评论也需要另外添加设置, easy job啦. <a href="http://christophvoigt.com/enable-comments-on-ghost-with-disqus/">参考这里</a></p>
+
+<p>参考资源:</p>
+
+<p><a href="http://docs.ghost.org/installation/">http://docs.ghost.org/installation/</a><br/>
+<a href="http://www.howtoinstallghost.com/how-to-install-ghost-on-heroku/">http://www.howtoinstallghost.com/how-to-install-ghost-on-heroku/</a><br/>
+<a href="http://d5c.me/deploying-ghost-to-heroku/">http://d5c.me/deploying-ghost-to-heroku/</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[换主题说起，再思，写blog为哪般]]></title>
@@ -45,8 +241,8 @@
 
 <p>除去照片,对我这种怀旧党来说,文字就是最好的记录工具了.看看老照片,看看老文字,,,,,,,,,,,,,,,,,,,,,瞬间觉得自己老了好多(抱歉在传递负能量).我这才写了几年,等写了十几年,几十年回来看 XDDDD</p>
 
-<p>事实上,其实现在还蛮后悔以前有时候会有所顾忌,怕别人看了会觉得想法很无聊很幼稚很扯淡,所以没都记录下来. 总会觉得自己积累的底子不够多.  包括现在, 觉得写出来的东西难登大雅之堂的主要原因就是积累的不及高玩们那么多. <br/>
-但是,积累可不是一个瞬间完成的动作，不写点不靠谱的东西出来，哪能积累出靠谱的。</p>
+<p>事实上,其实现在还蛮后悔以前有时候会有所顾忌,常常怕别人看了会觉得想法很无聊很幼稚很扯淡,所以没都记录下来. 总会觉得自己积累的底子不够多.  包括现在, 觉得写出来的东西难登大雅之堂的主要原因就是积累的不及高玩们那么多. <br/>
+但是,积累可不是一个瞬间完成的动作，不写点不靠谱的东西出来，何时才能积累出靠谱的。</p>
 
 <p>在量和质都不高的前提下, 没有观众那再自然不过.  想要观众的话其实也不难吧, 把链接往热闹的地方一贴, 花更多些的心思写的美美的投个稿, 那铁定不会那么惨淡的访问量. 不过还是说到底,第一是给我自己看的,所以没有很care的写一篇帖一篇.<br/>
 文字写出来未必就必须是给读者看的(有读者肯定是好, 不想要读者的也不会用公开的方式去记录了)，偶尔回顾自己曾经写过的文章，目睹自己进步与否，有何改变, 除了记录下来还有别的好的方式吗?</p>
@@ -3557,442 +3753,6 @@ Meteor目前使用的模板引擎只能是 <a href="http://handlebarsjs.com/">ha
 
 <p>原文来自Andrew Scala <a href="http://andrewscala.com/meteor/">Learn Meteor Fundamentals and Best Practices</a>  <br/>
 Ps:文章有点老,XD&hellip;不过就像该篇文章的作者所说, Meteor 现在还是处于一个 super-beta 阶段, 版本更新自然会相对来得快些. 据说1.0版本将会在不到一年的时间内发布.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[A Look at a Meteor Template]]></title>
-    <link href="http://xguox.github.com/blog/2013/03/06/a-look-at-a-meteor-template/"/>
-    <updated>2013-03-06T14:40:00+08:00</updated>
-    <id>http://xguox.github.com/blog/2013/03/06/a-look-at-a-meteor-template</id>
-    <content type="html"><![CDATA[<h5>LEVEL: BEGINNER</h5>
-
-<p>学习一门语言或框架的最好方法之一是从零开始开发一个应用程序.</p>
-
-<p>但是,当你开发了N次的To-do list应用之后, 或许你会想要一些稍微新鲜的玩意. 所以这一次, 让我们来看看一些实际的应用的代码, 这里我们用的是 <a href="http://telesc.pe/">Telescope</a></p>
-
-<p>Telescope是一个基于Meteor的开源社交新闻网站. <a href="http://reddit.com/">Reddit</a> or <a href="http://news.ycombinator.com/">Hacker News</a>的实时版本.</p>
-
-<p>我们即将看到的代码是简化版的<code>post_edit</code><a href="https://github.com/SachaG/Telescope/blob/master/client/views/posts/post_edit.html">模板</a>及其<a href="https://github.com/SachaG/Telescope/blob/master/client/views/posts/post_edit.js">控制器(controller)</a>. 听名字你应该就知道, 这个模板的作用是提供一个简单的表单来编辑一篇已经存在的post. post有标题(title), 链接(URl), 主体(body), 以及一个或多个的类别(categories). 该程序实际的表单中还会有一些额外的东西, 但我们现在不需要关心那些.<br/>
-<img src="http://theMeteorbook.com/images/telescope-post-edit.png" alt="" /></p>
-
-<p>这篇文章的目的是让你对Meteor的模板有个大概的认识. 如果你在其他的环境下使用过模板系统就会感到很熟悉, 如果没的话,那就现在开始学习吧.</p>
-
-<h2>Basic Organization</h2>
-
-<p>Meteor模板系统有两个部分组成,分别是: HTML模板和JavaScript控制器. HTML部分只是纯粹的有变量占位符的哑巴模板, 所有的实际动作都是通过JavaScript产生的.</p>
-
-<!-- more -->
-
-
-<p>顺便说句, Meteor通过<code>template</code>标签的<code>name</code>属性来得到这个模板的名字(<code>&lt;template name="post_edit"&gt;</code>), 因此,建议使用同一名字命名所有相关的文件和模板本身, 如在这个例子中的<code>post_edit.html</code>和<code>post_edit.js</code></p>
-
-<figure class='code'><figcaption><span>post_edit.html template</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;template</span> <span class="na">name=</span><span class="s">&quot;post_edit&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>  
-</span><span class='line'>  {{#with post}}
-</span><span class='line'>    <span class="nt">&lt;form&gt;</span>
-</span><span class='line'>      <span class="nt">&lt;div&gt;</span>
-</span><span class='line'>        <span class="nt">&lt;label&gt;</span>Title<span class="nt">&lt;/label&gt;</span>
-</span><span class='line'>        <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;title&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">value=</span><span class="s">&quot;{{headline}}&quot;</span> <span class="nt">/&gt;</span>
-</span><span class='line'>      <span class="nt">&lt;/div&gt;</span>
-</span><span class='line'>      <span class="nt">&lt;div&gt;</span>
-</span><span class='line'>        <span class="nt">&lt;label&gt;</span>URL<span class="nt">&lt;/label&gt;</span>
-</span><span class='line'>        <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;url&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">value=</span><span class="s">&quot;{{url}}&quot;</span> <span class="nt">/&gt;</span>
-</span><span class='line'>      <span class="nt">&lt;/div&gt;</span>
-</span><span class='line'>      <span class="nt">&lt;div&gt;</span>
-</span><span class='line'>        <span class="nt">&lt;label&gt;</span>Body<span class="nt">&lt;/label&gt;</span>
-</span><span class='line'>        <span class="nt">&lt;textarea</span> <span class="na">id=</span><span class="s">&quot;body&quot;</span> <span class="na">value=</span><span class="s">&quot;&quot;</span> <span class="na">class=</span><span class="s">&quot;input-xlarge&quot;</span><span class="nt">&gt;</span>{{body}}<span class="nt">&lt;/textarea&gt;</span>
-</span><span class='line'>      <span class="nt">&lt;/div&gt;</span>
-</span><span class='line'>      <span class="nt">&lt;div&gt;</span>
-</span><span class='line'>        <span class="nt">&lt;label&gt;</span>Category<span class="nt">&lt;/label&gt;</span>
-</span><span class='line'>        {{#each categories}}
-</span><span class='line'>          <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;checkbox inline&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>            <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;category_{{_id}}&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">value=</span><span class="s">&quot;{{_id}}&quot;</span> <span class="na">name=</span><span class="s">&quot;category&quot;</span> <span class="err">{{</span><span class="na">hasCategory</span><span class="err">}}</span> <span class="nt">/&gt;</span> {{name}}
-</span><span class='line'>          <span class="nt">&lt;/label&gt;</span>
-</span><span class='line'>        {{/each}}
-</span><span class='line'>      <span class="nt">&lt;/div&gt;</span>
-</span><span class='line'>      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;form-actions&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>        <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">&quot;delete-link&quot;</span> <span class="na">href=</span><span class="s">&quot;/posts/deleted&quot;</span><span class="nt">&gt;</span>Delete Post<span class="nt">&lt;/a&gt;</span>
-</span><span class='line'>        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;submit&quot;</span> <span class="na">value=</span><span class="s">&quot;Submit&quot;</span> <span class="nt">/&gt;</span>
-</span><span class='line'>      <span class="nt">&lt;/div&gt;</span>
-</span><span class='line'>    <span class="nt">&lt;/form&gt;</span>
-</span><span class='line'>  {{/with}}
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;/template&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<figure class='code'><figcaption><span>post_edit.js controller</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">Template</span><span class="p">.</span><span class="nx">post_edit</span><span class="p">.</span><span class="nx">helpers</span><span class="p">({</span>
-</span><span class='line'>  <span class="nx">post</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>    <span class="k">return</span> <span class="nx">Posts</span><span class="p">.</span><span class="nx">findOne</span><span class="p">(</span><span class="nx">Session</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;selectedPostId&#39;</span><span class="p">));</span>
-</span><span class='line'>  <span class="p">},</span>
-</span><span class='line'>  <span class="nx">categories</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>    <span class="k">return</span> <span class="nx">Categories</span><span class="p">.</span><span class="nx">find</span><span class="p">().</span><span class="nx">fetch</span><span class="p">();</span>
-</span><span class='line'>  <span class="p">},</span>
-</span><span class='line'>  <span class="nx">hasCategory</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>    <span class="kd">var</span> <span class="nx">post</span> <span class="o">=</span> <span class="nx">Posts</span><span class="p">.</span><span class="nx">findOne</span><span class="p">(</span><span class="nx">Session</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;selectedPostId&#39;</span><span class="p">));</span>
-</span><span class='line'>    <span class="k">return</span> <span class="nx">_</span><span class="p">.</span><span class="nx">contains</span><span class="p">(</span><span class="nx">post</span><span class="p">.</span><span class="nx">categories</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span> <span class="o">?</span> <span class="s1">&#39;checked&#39;</span> <span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
-</span><span class='line'>  <span class="p">}</span>
-</span><span class='line'><span class="p">});</span>
-</span><span class='line'>
-</span><span class='line'><span class="nx">Template</span><span class="p">.</span><span class="nx">post_edit</span><span class="p">.</span><span class="nx">events</span> <span class="o">=</span> <span class="p">{</span>
-</span><span class='line'>  <span class="s1">&#39;click input[type=submit]&#39;</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>    <span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="kd">var</span> <span class="nx">selectedPostId</span> <span class="o">=</span> <span class="nx">Session</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;selectedPostId&#39;</span><span class="p">);</span>
-</span><span class='line'>    <span class="kd">var</span> <span class="nx">post</span> <span class="o">=</span> <span class="nx">Posts</span><span class="p">.</span><span class="nx">findOne</span><span class="p">(</span><span class="nx">selectedPostId</span><span class="p">);</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="kd">var</span> <span class="nx">categories</span> <span class="o">=</span> <span class="p">[];</span>
-</span><span class='line'>    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;input[name=category]:checked&#39;</span><span class="p">).</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>      <span class="nx">categories</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">val</span><span class="p">());</span>
-</span><span class='line'>    <span class="p">});</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="kd">var</span> <span class="nx">properties</span> <span class="o">=</span> <span class="p">{</span>
-</span><span class='line'>      <span class="nx">title</span><span class="o">:</span>         <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#title&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
-</span><span class='line'>      <span class="nx">url</span><span class="o">:</span>           <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#url&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span>
-</span><span class='line'>      <span class="nx">body</span><span class="o">:</span>          <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#body&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
-</span><span class='line'>      <span class="nx">categories</span><span class="o">:</span>    <span class="nx">categories</span><span class="p">,</span>
-</span><span class='line'>    <span class="p">};</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="nx">Posts</span><span class="p">.</span><span class="nx">update</span><span class="p">(</span><span class="nx">selectedPostId</span><span class="p">,</span> <span class="p">{</span><span class="nx">$set</span><span class="o">:</span> <span class="nx">properties</span><span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>      <span class="k">if</span> <span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>        <span class="nx">alert</span><span class="p">(</span><span class="nx">error</span><span class="p">.</span><span class="nx">reason</span><span class="p">);</span>
-</span><span class='line'>      <span class="p">}</span>
-</span><span class='line'>    <span class="p">});</span>
-</span><span class='line'>  <span class="p">},</span>
-</span><span class='line'>  <span class="s1">&#39;click .delete-link&#39;</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>    <span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
-</span><span class='line'>    <span class="k">if</span><span class="p">(</span><span class="nx">confirm</span><span class="p">(</span><span class="s2">&quot;Are you sure?&quot;</span><span class="p">))</span> <span class="p">{</span>
-</span><span class='line'>      <span class="kd">var</span> <span class="nx">selectedPostId</span> <span class="o">=</span> <span class="nx">Session</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;selectedPostId&#39;</span><span class="p">);</span>
-</span><span class='line'>      <span class="nx">Posts</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="nx">selectedPostId</span><span class="p">);</span>
-</span><span class='line'>    <span class="p">}</span>
-</span><span class='line'>  <span class="p">}</span>
-</span><span class='line'><span class="p">};</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>代码看起来很多, 但是只要拆开来看,即使你从未看过Meteor的代码也会觉得很容易.</p>
-
-<h2>Handlebars Tags</h2>
-
-<p>首先来快速浏览下HTML部分. 你一定注意到这种奇怪的标签用法了吧. 这些都是<a href="http://handlebarsjs.com/">Handlebars</a>标签用来让我们展示动态数据.
-先来看第一个handlebars标签<code>{{#with post}}</code></p>
-
-<figure class='code'><figcaption><span>The &#8220;with&#8221; block helper</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;template</span> <span class="na">name=</span><span class="s">&quot;post_edit&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>
-</span><span class='line'>  {{#with post}}
-</span><span class='line'>    <span class="c">&lt;!-- do something with &quot;post&quot; --&gt;</span>
-</span><span class='line'>  {{/with}}
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;/template&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p><a href="http://handlebarsjs.com/block_helpers.html">block helper</a>是一种快捷的方式告诉我们要在哪个模板对象上工作. 在<code>{{#with post}}</code>block里, 我们的应用知道<code>this</code>代表一个<code>post</code>. <code>this</code>也是传说中方法的上下文.</p>
-
-<h2>Template Helpers</h2>
-
-<p>你可能会好奇,我们是从哪里得到<code>post</code>, 找到你的controller里的</p>
-
-<figure class='code'><figcaption><span>The &#8220;post&#8221; template helper</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">Template</span><span class="p">.</span><span class="nx">post_edit</span><span class="p">.</span><span class="nx">helpers</span><span class="p">({</span>
-</span><span class='line'>  <span class="nx">post</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>    <span class="k">return</span> <span class="nx">Posts</span><span class="p">.</span><span class="nx">findOne</span><span class="p">(</span><span class="nx">Session</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;selectedPostId&#39;</span><span class="p">));</span>
-</span><span class='line'>  <span class="p">}</span>
-</span><span class='line'><span class="p">});</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>在这我们要做的是添加一个<code>post</code><a href="http://docs.Meteor.com/#template_helpers">Template Helper</a>到我们的<code>post_edit</code>模板. Template helpers 是一些简单的JavaScript方法允许你使用 Handlebars template.</p>
-
-<p>在这个例子中,不管任何时候我们的Handlebars模板调用<code>post</code>, 我们都能在我们的<code>Posts</code> collection 中找到current post并返回之. 要做到这样首先我们需要用到<code>selectedPostId</code>这个通过路由设置的Session变量(but that’s for another lesson)</p>
-
-<h2>Object Properties</h2>
-
-<p>继续往下, 我们将看到第二个handlebars标签<code>{{title}}</code></p>
-
-<figure class='code'><figcaption><span>The &#8220;title&#8221; template helper</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;div&gt;</span>
-</span><span class='line'>  <span class="nt">&lt;label&gt;</span>Title<span class="nt">&lt;/label&gt;</span>
-</span><span class='line'>  <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;title&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">value=</span><span class="s">&quot;{{title}}&quot;</span> <span class="nt">/&gt;</span>
-</span><span class='line'><span class="nt">&lt;/div&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>尽管不能用什么方式告诉你这个<code>{{title}}</code>不是一个Template helper, 而是我们的<code>post</code>对象的属性之一. 无须任何其他的工作,Meteor很神奇地提供给了我们使用的.</p>
-
-<h2>Nested Objects</h2>
-
-<p>链接(URL)和主体(Body)表单域用的都是相同的模式, 而类别(Category)域则有些不同了.在这里, 我们希望通过类别检查展示一系列复选框给所有网站的预定义类别.</p>
-
-<p>首先的工作是准备一系列的类别选择, 我们通过<code>{{#each categories}}</code>这个block helper来完成:</p>
-
-<figure class='code'><figcaption><span>Looping over categories with the &#8220;each&#8221; helper</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;div&gt;</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="nt">&lt;label&gt;</span>Category<span class="nt">&lt;/label&gt;</span>
-</span><span class='line'>  {{#each categories}}
-</span><span class='line'>    <span class="nt">&lt;label</span> <span class="na">class=</span><span class="s">&quot;checkbox inline&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>      <span class="nt">&lt;input</span> <span class="na">id=</span><span class="s">&quot;category_{{_id}}&quot;</span> <span class="na">type=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">value=</span><span class="s">&quot;{{_id}}&quot;</span> <span class="na">name=</span><span class="s">&quot;category&quot;</span> <span class="err">{{</span><span class="na">hasCategory</span><span class="err">}}</span> <span class="nt">/&gt;</span> {{name}}
-</span><span class='line'>    <span class="nt">&lt;/label&gt;</span>
-</span><span class='line'>  {{/each}}
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;/div&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>这个helper完成了两件事: 遍历<code>categories</code>对象, 以及在代码块里使用<code>this</code>来表示每一个遍历结果.</p>
-
-<p>或许你已经猜到, <code>categories</code>像<code>posts</code>那样是一个Template helper. 在这个例子中,我们只返回了在我们的数据库中的一系列类别(categories)</p>
-
-<figure class='code'><figcaption><span>The &#8220;categories&#8221; template helper</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'>  <span class="nx">categories</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>    <span class="k">return</span> <span class="nx">Categories</span><span class="p">.</span><span class="nx">find</span><span class="p">();</span>
-</span><span class='line'>  <span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>还记得我说过block helper 会改变<code>this</code>的值吗?这就是为什么我们能看到<code>{{_id}}</code>而不会混乱. 因为这事在block helper里边, 因此可以知道,我们处理的是category的ID,而不是post的ID</p>
-
-<h2>More Helpers</h2>
-
-<p>到目前为止, 我们的helper简单地查询了我们的collections并返回了数据. 但helper却不仅限于此. 让我们一起看一看 <code>{{hasCategory}}{endraw}</code>这个helper</p>
-
-<figure class='code'><figcaption><span>The &#8220;hasCategory&#8221; template helper</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">hasCategory</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>  <span class="kd">var</span> <span class="nx">post</span> <span class="o">=</span> <span class="nx">Posts</span><span class="p">.</span><span class="nx">findOne</span><span class="p">(</span><span class="nx">Session</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;selectedPostId&#39;</span><span class="p">));</span>
-</span><span class='line'>  <span class="k">return</span> <span class="nx">_</span><span class="p">.</span><span class="nx">contains</span><span class="p">(</span><span class="nx">post</span><span class="p">.</span><span class="nx">categories</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span> <span class="o">?</span> <span class="s1">&#39;checked&#39;</span> <span class="o">:</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>还记得吧, 我们是在block <code>{%raw%}{{#each categories}}</code>里调用了这个helper, 这就意味着这里<code>this</code>表示的是category</p>
-
-<p>那么我们现在是首次得到我们的current post对象, 然后检查看current category是否包含在这个post的categories里.如果包含有, 则我们很容易地返回&#8221;checked&#8221;字符串用以标记我们这个复选框被选中.</p>
-
-<p>你可能已经注意到, <code>_.contains()</code>是一个 <a href="http://underscorejs.org/">Underscore</a>方法. Underscore是一个非常有用的JavaScript工具包并被内置绑定到了Meteor里边.</p>
-
-<h2>Template Events</h2>
-
-<p>我们现在的代码足够用来加载一篇post的标题,URL,主体,以及类别了. 但还是需要一种保存这个表单的方法. 也就是下面的模板事件(template events)</p>
-
-<figure class='code'><figcaption><span>Template events</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">Template</span><span class="p">.</span><span class="nx">post_edit</span><span class="p">.</span><span class="nx">events</span> <span class="o">=</span> <span class="p">{</span>
-</span><span class='line'>  <span class="s1">&#39;click input[type=submit]&#39;</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>    <span class="c1">// do something when the users clicks input[type=submit]</span>
-</span><span class='line'>  <span class="p">},</span>
-</span><span class='line'>  <span class="s1">&#39;click .delete-link&#39;</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>    <span class="c1">// do something when the users clicks .delete-link</span>
-</span><span class='line'>  <span class="p">}</span>
-</span><span class='line'><span class="p">};</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>如你所见, 定义 template events其实就是简单把事件和CSS选择器放在一起. 在这里我们有两个处理监听,一个是提交表单,另一个是删除post.<br/>
-先来看看表单提交处理:</p>
-
-<figure class='code'><figcaption><span>Our form submit handler</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="s1">&#39;click input[type=submit]&#39;</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>  <span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="kd">var</span> <span class="nx">selectedPostId</span> <span class="o">=</span> <span class="nx">Session</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;selectedPostId&#39;</span><span class="p">);</span>
-</span><span class='line'>  <span class="kd">var</span> <span class="nx">post</span> <span class="o">=</span> <span class="nx">Posts</span><span class="p">.</span><span class="nx">findOne</span><span class="p">(</span><span class="nx">selectedPostId</span><span class="p">);</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="kd">var</span> <span class="nx">categories</span> <span class="o">=</span> <span class="p">[];</span>
-</span><span class='line'>  <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;input[name=category]:checked&#39;</span><span class="p">).</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>    <span class="nx">categories</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">val</span><span class="p">());</span>
-</span><span class='line'>  <span class="p">});</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="kd">var</span> <span class="nx">properties</span> <span class="o">=</span> <span class="p">{</span>
-</span><span class='line'>    <span class="nx">title</span><span class="o">:</span>         <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#title&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
-</span><span class='line'>    <span class="nx">url</span><span class="o">:</span>           <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#url&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span>
-</span><span class='line'>    <span class="nx">body</span><span class="o">:</span>          <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#body&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">(),</span>
-</span><span class='line'>    <span class="nx">categories</span><span class="o">:</span>    <span class="nx">categories</span><span class="p">,</span>
-</span><span class='line'>  <span class="p">};</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="nx">Posts</span><span class="p">.</span><span class="nx">update</span><span class="p">(</span><span class="nx">selectedPostId</span><span class="p">,</span> <span class="p">{</span><span class="nx">$set</span><span class="o">:</span> <span class="nx">properties</span><span class="p">});</span>
-</span><span class='line'><span class="p">},</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>处理方法带有两个参数, event 和 template 实例. 现在, 我们可以忽略template 实例. 使用<code>e.preventDefault();</code>来开始你的处理可以很好的阻止浏览器执行默认的事件行为.</p>
-
-<p>如你所见, 这里有大量的<code>$</code>符号. 除了Underscore, Meteor还绑定了jQuery. 看吧, 你已经了解了Meteor的一半了.</p>
-
-<p>再来一次, 处理categories相较于其他的来说比较麻烦一些.  通过使用jQuery, we’re checking for checked checkboxes(敢不敢把这句话说上10次,LOL)并使用他们的ID来填充给一个数组.</p>
-
-<p>接下来我们就能够建立我们的属性对象, 并使用Meteor的<a href="http://docs.Meteor.com/#update">update()</a>可以简单地提交我们的修改给数据库.</p>
-
-<p>删除post更是简单</p>
-
-<figure class='code'><figcaption><span>Our post delete handler</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="s1">&#39;click .delete-link&#39;</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>  <span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
-</span><span class='line'>  <span class="k">if</span><span class="p">(</span><span class="nx">confirm</span><span class="p">(</span><span class="s2">&quot;Are you sure?&quot;</span><span class="p">))</span> <span class="p">{</span>
-</span><span class='line'>    <span class="kd">var</span> <span class="nx">selectedPostId</span> <span class="o">=</span> <span class="nx">Session</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;selectedPostId&#39;</span><span class="p">);</span>
-</span><span class='line'>    <span class="nx">Posts</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="nx">selectedPostId</span><span class="p">);</span>
-</span><span class='line'>  <span class="p">}</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>只需要简单地把要删除的ID传送给Meteor的<a href="http://docs.Meteor.com/#remove">remove()</a>方法就搞定.</p>
-
-<h2>Other Callbacks</h2>
-
-<p>Meteor给管理模板提供了一些其他的回调, 比如<a href="http://docs.Meteor.com/#template_created">created</a>和<a href="http://docs.Meteor.com/#template_rendered">render</a>回调</p>
-
-<p>尽管我们在这里没有使用到, 但只要Meteor完成渲染一个模板, 那么<code>rendered</code>回调可以很容易的通过jQuery来做一些DOM操作.</p>
-
-<h2>Conclusion</h2>
-
-<p>CRUD (Create, Read, Update, Delete)操作经常就是组成网站的主要功能. Meteor能如此简单的完成这些工作显然是要大加分的.</p>
-
-<p>更重要的是, Meteor代码所依赖的很多模式和库都是你所熟悉的.这意味着可以非常快的掌握,只需要一些JavaScript知识.</p>
-
-<p>当然，随着您的需求的发展，你需要深入挖掘这个框架的复杂性。但是即使你只知道Meteor最基本的功能你也同样能作出一些东西来, 我想,这大概就是为什么Meteor非常好玩的原因之一.</p>
-
-<p>原文来自 Sacha Greif  <a href="http://theMeteorbook.com/2013/02/20/a-look-at-a-Meteor-template/">A Look at a Meteor Template</a></p>
 ]]></content>
   </entry>
   
