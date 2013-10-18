@@ -3,7 +3,7 @@ layout: post
 title: "最近在折腾 -- deploy Meteor on heroku"
 date: 2013-04-06 23:42
 comments: true
-categories: Meteor Jabber 
+categories: Meteor Jabber Heroku
 ---
 貌似有好一段时间没有在这儿小发一些闷骚或者情感泛滥什么的, 都是用自己蹩脚的英语水平翻译些英文post. 这些天想部署个Meteor app玩一玩, 结果一玩就各种出事了.  
 
