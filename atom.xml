@@ -4,13 +4,282 @@
   <title><![CDATA[XguoX]]></title>
   <link href="http://xguox.github.com/atom.xml" rel="self"/>
   <link href="http://xguox.github.com/"/>
-  <updated>2013-10-24T22:38:19+08:00</updated>
+  <updated>2013-10-28T15:13:41+08:00</updated>
   <id>http://xguox.github.com/</id>
   <author>
     <name><![CDATA[XguoX]]></name>
     <email><![CDATA[golvinlu@gmail.com]]></email>
   </author>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Hidden Productivity Secrets With Alfred]]></title>
+    <link href="http://xguox.github.com/blog/2013/10/28/hidden-productivity-secrets-with-alfred/"/>
+    <updated>2013-10-28T15:07:00+08:00</updated>
+    <id>http://xguox.github.com/blog/2013/10/28/hidden-productivity-secrets-with-alfred</id>
+    <content type="html"><![CDATA[<p>好的开发人员总是在寻找可以让自己的工作流程更快速,更自动化的方法。这次,我们带来的是<strong>Alfred的一系列workflows</strong>,它们可以极大的提高你的开发效率,相信你会为之震惊.</p>
+
+<h3>What is Alfred?</h3>
+
+<p>对于大多数了解不深的人来说,<a href="http://www.alfredapp.com/">Alfred</a>是一个备受赞誉的Mac OS X app, 它可以快速地帮助你查找在线或者本地的文件. 最新的版本 <strong>Alfred 2</strong>更是带来了大量的改进,尤其是其中的<a href="http://www.alfredapp.com/powerpack/">Powerpack</a>,可以让你创建自己的workflows(工作流程).</p>
+
+<p>下面你将会看到一这些精心挑选出来的,能够改变你的工作方式的workflows.</p>
+
+<h2>Open With Sublime Text</h2>
+
+<p>强大的文件,目录搜索能力是Alfred最让人喜爱的功能之一. 那如果我们利用它使用自己喜爱的编辑器(比如说Sublime Text 3)打开我们文件或者目录呢?</p>
+
+<ul>
+<li><a href="https://github.com/franzheidl/alfred-workflows/tree/master/open-with-sublime-text">Open With Sublime Text (v3)</a>, developed by <a href="https://github.com/franzheidl/">@franzheidl</a></li>
+<li><a href="http://zno.io/RcAe">下载</a></li>
+<li>触发: <code>subl</code>,<code>subl*</code></li>
+</ul>
+
+
+<p>想要其他编辑器的话请猛击 <a href="https://github.com/zenorocha/alfred-workflows/wiki/Extras#code-editors">Extras</a></p>
+
+<p><img src="http://media.smashingmagazine.com/wp-content/uploads/2013/10/alfred-subl-opt.png.png" alt="" /></p>
+
+<p>XguoX: 可能更多人还是选择在终端直接用命令敲开.</p>
+
+<h2>Can I Use&hellip; Workflow</h2>
+
+<p>在HTML5时代,当使用你某一个CSS属性或者JavaScript APIs之前,你需要检查知道浏览器是否支持. 当然,你可以打开浏览器,直接浏览<a href="http://caniuse.com/">Can I Use&hellip;</a>这个网站, 然后搜索某个关键字从而看看浏览器的支持情况.除此外,你还可以使用这个Alfred Workflow.</p>
+
+<ul>
+<li><a href="https://github.com/willfarrell/alfred-caniuse-workflow">Can I Use&hellip; Workflow</a>,developed by <a href="https://github.com/willfarrell/">@willfarrell</a></li>
+<li><a href="http://zno.io/Rcex">下载</a></li>
+<li>触发: <code>caniuse</code></li>
+</ul>
+
+
+<p><img src="http://media.smashingmagazine.com/wp-content/uploads/2013/10/alfred-caniuse-opt.png" alt="" /></p>
+
+<p>XguoX:搜索速度还行</p>
+
+<h2>Dash Workflow</h2>
+
+<p>没有人会知道某一门语言或者某一个框架的所有.我们时常会需要查找某个特定的method如何使用.最近,发现了一个非常惊艳的app,<a href="http://kapeli.com/dash">Dash</a>,在本地查找各类APIs文档,完全离线的说. 这还不算啥,通过这个workflow,你可以通过过滤各个语言(框架)关键字来查找相关文档.这个流弊的app可是免费的哦,所以,在使用这个workflow前请先安装好Dash.</p>
+
+<ul>
+<li><a href="https://github.com/willfarrell/alfred-dash-workflow">Dash Workflow</a>,developed by <a href="https://github.com/willfarrell/">@willfarrell</a></li>
+<li><a href="http://zno.io/Rc3p">下载</a></li>
+<li>触发:<code>dash</code> <code>html</code> <code>css</code> <code>gem</code> <code>angularjs</code> <code>rails</code> 基本上常用的语言框架库都有了</li>
+</ul>
+
+
+<p><img src="http://media.smashingmagazine.com/wp-content/uploads/2013/10/alfred-dash-bs-mini.png" alt="" />
+<img src="http://media.smashingmagazine.com/wp-content/uploads/2013/10/alfred-dash-js-opt.png" alt="" /></p>
+
+<p>XguoX:Dash 真心很流弊!巨赞!!!</p>
+
+<h2>Terminal Finder</h2>
+
+<p>一些操作我们可能会希望在终端完成,而另一些则希望在Finder完成.这个workflow可以流畅地在这两者之间转换.在终端(iTerm)中打开当前的Finder窗口,反之亦然.</p>
+
+<ul>
+<li><a href="https://github.com/LeEnno/alfred-terminalfinder">TerminalFinder</a>, developed by <a href="https://github.com/LeEnno/">@LeEnno</a></li>
+<li><a href="http://zno.io/RkU2">下载</a></li>
+<li>触发: <code>ft</code> <code>tf</code> <code>fi</code> <code>if</code></li>
+</ul>
+
+
+<p><img src="http://media.smashingmagazine.com/wp-content/uploads/2013/10/alfred-fi-opt.png" alt="" />
+<img src="http://media.smashingmagazine.com/wp-content/uploads/2013/10/alfred-tf-opt.png.png" alt="" /></p>
+
+<p>XguoX:又是一个巨实用的workflow</p>
+
+<h2>Package Managers Workflow</h2>
+
+<p>代码复用是软件开发的一个重要组成部分,现如今我们有很多的方案来构建我们的代码以及搜索使用第三方软件包. 想要使用某个Node.js module? Grunt task?通过这个workflow,你可以快速简便地在一个地方通过你想要的包管理器查找到你想要的插件或者组件.</p>
+
+<ul>
+<li>[]Package Managers Workflow](<a href="https://github.com/willfarrell/alfred-pkgman-workflow">https://github.com/willfarrell/alfred-pkgman-workflow</a>), developed by <a href="https://github.com/willfarrell/">@willfarrell</a></li>
+<li><a href="https://github.com/willfarrell/">下载</a></li>
+<li>触发: <code>bower</code> <code>grunt</code> <code>npm</code> <code>composer</code> <code>gems</code> <code>pear</code> <code>pypi</code> <code>cocoa</code> <code>brew</code> <code>alcatraz</code> <code>rpm</code> <code>maven</code> <code>docker</code></li>
+</ul>
+
+
+<p><img src="http://media.smashingmagazine.com/wp-content/uploads/2013/10/alfred-pkg-bower-opt.png" alt="" />
+<img src="http://media.smashingmagazine.com/wp-content/uploads/2013/10/alfred-pkg-grunt-opt.png" alt="" />
+<img src="http://media.smashingmagazine.com/wp-content/uploads/2013/10/alfred-pkg-npm-opt.png" alt="" /></p>
+
+<h2>Colors</h2>
+
+<p>不用再每次想要转换某个颜色格式的时候打开Photoshop了.通过这个workflow可以很轻易在HEX, RGB, HSL等各种颜色格式之间转换.</p>
+
+<ul>
+<li><a href="https://github.com/TylerEich/Alfred-Extras/tree/master/Source/Colors">Colors</a>, developed by <a href="https://github.com/TylerEich/">@TylerEich</a></li>
+<li><a href="http://zno.io/RcFz">下载</a></li>
+<li>触发: <code>#</code> <code>rgb</code> <code>hsl</code> <code>c</code></li>
+</ul>
+
+
+<p><img src="http://media.smashingmagazine.com/wp-content/uploads/2013/10/alfred-colors-opt.png" alt="" /></p>
+
+<h2>Jenkins Workflow</h2>
+
+<p>做单元测试固然是好,但是每更改一行代码就手动跑一次测试的话会让人抓狂的. 为了得到更好的代码质量,我们需要跑跟更多的测试,或者至少的自动测试那些我们已经在跑的. 这就是为嘛<strong>持续集成系统</strong>那么重要.通过这个workflow,你可以列出<a href="http://jenkins-ci.org/">Jenkins</a>的所有工作以及它们的状态.</p>
+
+<ul>
+<li><a href="https://github.com/jeroenseegers/alfred-jenkins-workflow">Jenkins Workflow for Alfred v2</a>, developed by <a href="https://github.com/jeroenseegers/">@jeroenseegers</a></li>
+<li><a href="https://github.com/jeroenseegers/alfred-jenkins-workflow/raw/master/Jenkins.alfredworkflow">下载</a></li>
+<li>触发: <code>jenkins status</code></li>
+</ul>
+
+
+<p><img src="http://media.smashingmagazine.com/wp-content/uploads/2013/10/alfred-jenkins-opt.png" alt="" /></p>
+
+<p>XguoX:好吧,这玩意没接触过</p>
+
+<h2>Open in FileZilla</h2>
+
+<p>目前来说传输文件到Web服务器的最流行方式还是使用FTP. 而这个workflow可以帮助你快速地通过<a href="https://filezilla-project.org/">Filezilla</a>. FileZilla也是一个免费的应用,所以,在用这个workflow之前需要先安装之.</p>
+
+<ul>
+<li><a href="https://github.com/jeffmagill/alfred-open-in-filezilla">Open in FileZilla</a>, developed by <a href="https://github.com/jeffmagill/">@jeffmagill</a></li>
+<li><a href="http://zno.io/RnTx">下载</a></li>
+<li>触发: <code>fz</code></li>
+</ul>
+
+
+<p>在用其他FTP客户端吗?请猛击 <a href="https://github.com/zenorocha/alfred-workflows/wiki/Extras#ftp">Extras</a></p>
+
+<p><img src="http://media.smashingmagazine.com/wp-content/uploads/2013/10/alfred-fz-opt.png" alt="" /></p>
+
+<h2>Domainr Workflow</h2>
+
+<p>不想错过一些帅气的域名的话,可以通过<a href="https://domai.nr/">Domainr</a> APIs快速查找.</p>
+
+<ul>
+<li><a href="https://github.com/dingyi/Alfred-Workflows/tree/master/Domainr">Domainr Workflow</a>, developed by <a href="https://github.com/dingyi/">@dingyi</a></li>
+<li><a href="http://zno.io/RctP">下载</a></li>
+<li>触发: <code>domainr</code></li>
+</ul>
+
+
+<p><img src="http://media.smashingmagazine.com/wp-content/uploads/2013/10/alfred-domain-mini.png" alt="" /></p>
+
+<h2>Encode / Decode</h2>
+
+<p>有时候, 我们需要把一些UTF-8字符转换成HTML编码,或是解码某个URL. 使用 Encode / Decode , 这些杂碎的事情将不再需要浪费那么多的时间了.</p>
+
+<ul>
+<li><a href="https://github.com/willfarrell/alfred-encode-decode-workflow">Encode / Decode</a>, developed by <a href="https://github.com/willfarrell/">@willfarrell</a></li>
+<li><a href="http://zno.io/RcCX">下载</a></li>
+<li>触发: <code>encode</code> <code>decode</code></li>
+</ul>
+
+
+<p><img src="http://media.smashingmagazine.com/wp-content/uploads/2013/10/687474703a2f2f662e636c2e6c792f6974656d732f324a336d3147314-e34363035304930453077336e2f616c667265642d656e636f64652e706e67-opt.png" alt="" /></p>
+
+<h2>Font Awesome Workflow</h2>
+
+<p>Font icons很好很强大, 只需简单地输入类似的<code>&lt;i class="my-icon-name"&gt;&lt;/i&gt;</code>. 但问题是,我们经常没能准确地记住我们需要的某个icon的类名,以至于老需要去翻看文档. 现在的话通过这个workflow我们可以很轻易地查找到<a href="http://fortawesome.github.io/Font-Awesome/">Font Awesome</a>的icon集.</p>
+
+<ul>
+<li><a href="https://github.com/ruedap/alfred2-font-awesome-workflow">Font Awesome Workflow for Alfred 2</a>, developed by <a href="https://github.com/ruedap/">@ruedap</a></li>
+<li><a href="http://zno.io/RcJ3">下载</a></li>
+<li>触发: <code>fonta</code></li>
+</ul>
+
+
+<p><img src="http://media.smashingmagazine.com/wp-content/uploads/2013/10/alfred-fonta-opt.png" alt="" /></p>
+
+<p>XguoX:赞!</p>
+
+<h2>Source Tree Workflow</h2>
+
+<p>有人习惯在终端使用Git命令, 也有喜欢使用GUI工具. 如果你属于后者,那么<a href="http://www.sourcetreeapp.com/">Source Tree</a> workflow 可以帮你列出,查找,打开Git仓库. Source Tree 也是需要在使用这个workflow之前先<a href="http://www.sourcetreeapp.com/">下载</a>安装的应用.</p>
+
+<ul>
+<li><a href="https://github.com/zhaocai/alfred2-sourcetree-workflow">Source Tree</a>, developed by <a href="https://github.com/zhaocai/">@zhaocai</a></li>
+<li><a href="http://zno.io/Ro6V">下载</a></li>
+<li>触发: <code>st</code>  <code>stbookmark</code></li>
+</ul>
+
+
+<p>使用其他的Git客户端吗?请猛击 <a href="https://github.com/zenorocha/alfred-workflows/wiki/Extras#git-client">Extras</a></p>
+
+<p><img src="http://media.smashingmagazine.com/wp-content/uploads/2013/10/alfred-st1-opt.png" alt="" /></p>
+
+<h2>GitHub Workflow</h2>
+
+<p>如果你最喜欢的社交网站是Github,那你一定会想要看看这个.简单快速地查找并在浏览器打开Github上的仓库.</p>
+
+<ul>
+<li><a href="https://github.com/gharlan/alfred-github-workflow">GitHub Workflow</a>, developed by <a href="https://github.com/gharlan/">@gharlan</a></li>
+<li><a href="http://zno.io/RcPe">下载</a></li>
+<li>触发: <code>gh</code></li>
+</ul>
+
+
+<p><img src="http://media.smashingmagazine.com/wp-content/uploads/2013/10/alfred-gh-1-mini.png" alt="" />
+<img src="http://media.smashingmagazine.com/wp-content/uploads/2013/10/alfred-gh-2-mini.png" alt="" />
+<img src="http://media.smashingmagazine.com/wp-content/uploads/2013/10/alfred-gh-3-opt.png" alt="" /></p>
+
+<h2>StackOverflow Workflow</h2>
+
+<p>在<a href="http://stackoverflow.com/">StackOverflow</a>搜寻各类编程问题的答案</p>
+
+<ul>
+<li><a href="https://github.com/xhinking/Alfred">StackOverflow Workflow</a>, developed by <a href="https://github.com/xhinking/">@xhinking</a></li>
+<li><a href="http://zno.io/RceO">下载</a></li>
+<li>触发: <code>st</code></li>
+</ul>
+
+
+<p><img src="http://media.smashingmagazine.com/wp-content/uploads/2013/10/alfred-st-opt.png.png" alt="" /></p>
+
+<h2>TimeZones Workflow</h2>
+
+<p>现如今,很多的团队的成员纷纷来自全球各地. 那么,我们不会希望在同事的下班时间去打搅人家.所以,在这之前,我们总会先查看一下对方的当地时间.这个workflow可以巨方便地列出世界各地不同城市的当前时间.</p>
+
+<ul>
+<li><a href="http://www.alfredforum.com/topic/491-timezones-a-world-clock-script-filter-updated-to-v161/">TimeZones Workflow</a>, developed by <a href="http://www.alfredforum.com/topic/491-timezones-a-world-clock-script-filter-updated-to-v161/">@CarlosNZ</a></li>
+<li><a href="http://zno.io/Rce5">下载</a></li>
+<li>触发: <code>tz</code></li>
+</ul>
+
+
+<p><img src="http://media.smashingmagazine.com/wp-content/uploads/2013/10/alfred-tz-opt.png" alt="" /></p>
+
+<h2>VirtualBox Control</h2>
+
+<p>很不幸地,跨浏览器兼容的仍然是开发人员所面临的一大问题. 测试你的网站在不同浏览器 &amp; 不同操作系统 是否运行正常是件无法逃避的事. 使用虚拟机(比如<a href="https://www.virtualbox.org/">VirtualBox</a>)是当下流行的,可以完成这事的一种方式. 好吧,在用这个workflow之前老规矩,先装上VirtualBox.</p>
+
+<ul>
+<li><a href="https://github.com/aiyodk/Alfred-Extensions/tree/master/AlfredApp_2.x/VirtualBox-Control">VirtualBox Control</a>, developed by <a href="https://github.com/aiyodk">@aiyodk</a></li>
+<li><a href="http://zno.io/RyOE">下载</a></li>
+<li>触发: <code>vm</code></li>
+</ul>
+
+
+<p>在用其他的虚拟机客户端吗?请猛击 <a href="https://github.com/zenorocha/alfred-workflows/wiki/Extras#virtual-machines">Extras</a></p>
+
+<p><img src="http://media.smashingmagazine.com/wp-content/uploads/2013/10/alfred-vb-1-opt.png" alt="" />
+<img src="http://media.smashingmagazine.com/wp-content/uploads/2013/10/alfred-vb-2-opt.png" alt="" /></p>
+
+<h2>Create Your Own!</h2>
+
+<p>所有的这些workflows都非常的赞并对于大多数人来说很有帮助. 但是,每个人的工作方式不尽相同. 所以我们需要创建真正属于自己的workflow. 其实这个也很是简单. 以下的这个例子仅需不到10秒,就可以创建一个workflow来自动搜寻Smashing Magazine.</p>
+
+<p><img src="http://media.smashingmagazine.com/wp-content/uploads/2013/10/custom-alfred.gif" alt="" /></p>
+
+<h2>Want More?</h2>
+
+<p><a href="https://github.com/zenorocha/alfred-workflows/">这是作者的收集的一些</a><br/>
+此外,Alfred的<a href="http://www.alfredforum.com/forum/3-share-your-workflows/">官方论坛</a>上也有海量的workflows.</p>
+
+<h2>The End?</h2>
+
+<p>一堆帮助你自动化工作流程的技巧,很赞对吧!希望能够对你有所帮助.可能这些会激发你的一些灵感,从而创造,分享你的隐藏技能.</p>
+
+<p>如果你喜欢的workflow没有在这列出,可以在下边的评论当中跟我们分享. 如果你觉得上边提到的那些赞到爆的话,也可以告诉我们哦!</p>
+
+<p>文章翻译自 <a href="http://coding.smashingmagazine.com/2013/10/25/hidden-productivity-secrets-with-alfred/">Hidden Productivity Secrets With Alfred</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Wedding, Photography]]></title>
@@ -3004,466 +3273,6 @@ OOXX一轮下来总算是把heroku的验证给通过了, 感动啊&hellip;</p>
 <p>But I do believe Meteor has enough potential to make it worth evaluating it on its own merits. 所以如果你犹豫不决是否使用Meteor， 希望我的建议能说服你你选择它.</p>
 
 <p>原文来自 Sacha Greif  <a href="http://theMeteorbook.com/2013/03/12/5-Meteor-misconceptions/">5 Meteor Misconceptions</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Introduction to Realtime Web with Meteor and Node.js]]></title>
-    <link href="http://xguox.github.com/blog/2013/03/10/introduction-to-realtime-web-with-meteor-dot-js-and-node-dot-js/"/>
-    <updated>2013-03-10T23:16:00+08:00</updated>
-    <id>http://xguox.github.com/blog/2013/03/10/introduction-to-realtime-web-with-meteor-dot-js-and-node-dot-js</id>
-    <content type="html"><![CDATA[<p>最近,有许多关于 <a href="http://derbyjs.com/">Derby.js</a>的激动人心的讨论涌现在了我的Twitter Timeline. 我从未使用过能够帮你做这么多&mdash;实时同步客户端和服务端 的框架. 从本质上讲, 这使得我们可以自己编写一个代码量很少的应用可以让两个人编写同一个 text field–live. 而 Derby帮你处理了在 models 和 views 之间所有的同步. 就如 Google Docs 的协作编辑那样.</p>
-
-<p>这非常的伟大, 但经过深入的研究, 发现 Derby.js 并没有我想象中的那么成熟&mdash;目前还没有到1.0版本. 当然, Node.js 和 Meteor 也同样没有. 但相比起来, 似乎Derby缺少的更多一些. 比如, 据我目前知道的, 还没有一个好使的方法来处理sessions. 或许是因为缺乏文档的原因吧, 但是, 据说Derby的团队目前正在开发authentication. 如果有谁有一些关于Derby.js 处理sessions的新手指引, 我会很乐意去研究的.</p>
-
-<p>另外一个我经常见到被拿来与Derby.js做比较的框架是<a href="http://Meteor.com/">Meteor</a>. 与Derby相似的是,它也能在多个客户端下实时更新views, 尽管做法上可能跟Derby有点不同. Derby可以较容易的使用多种数据库, 而Meteor则只亲近于<a href="http://mongodb.org/">MongoDB</a>. 事实上, 通过如<a href="http://mongoosejs.com/">Mongoose</a>客户端接入数据库的API与你在服务端所期望的已经非常接近了.</p>
-
-<p>比起现在node的一些缺点和<a href="http://bjouhier.wordpress.com/2012/03/11/fibers-and-threads-in-node-js-what-for/">争议</a>, Meteor看起来是非常有趣的选择用来建立有实时需求的应用. 个人觉得还是Derby基于传统回调的编程形式更吸引我, 但在Derby的强大背后,却缺乏健壮的文档和一个大的开发者社区, 这无疑是个很大的打击. 或许这会随着时间推移而有所改变吧, 但比起Meteor来说还是会慢很多, 因为后者最近获得了1100万美元的资金. 这笔财政资金确保了Meteor的存在以及得到持续的支持. 对于那些需要财政与发展稳定的框架的开发者而言, 这笔资金只会让Meteor更加优胜.</p>
-
-<!-- more -->
-
-
-<p>今天,让我们一起来看看如何新建一个真实的但又简单的Meteor应用. 本质上说, 这是基于<a href="http://vimeo.com/40300075">Tom的 Vimeo screencast</a>的一个新手指引. 与Tom的 Vimeo screencast最大的不同是处理事件的方式. 比起复制粘贴一个Meteor示例的代码, 我会一步一步的通过自己的方式来处理使用Enter键来提交一则讯息. 让我们开始吧.</p>
-
-<h3>Creating a Meteor App</h3>
-
-<p>Derby和Meteor 他们共有的一个大加分是他们各自的命令行工具. 与Derby使用Node的内置的 npm 工具所不同的是, Meteor使用的是它自己的.</p>
-
-<p>在终端(Mac OS X 和 Linux),执行如下的命令. (在这之前请确保你已经安装了Node)</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ curl https://install.Meteor.com | /bin/sh</span></code></pre></td></tr></table></div></figure>
-
-
-<p>接下来的事Meteor会自己搞定了.</p>
-
-<p>要新建一个项目, 先转到你的工作目录然后运行下边的代码. 这会创建一个目录, 里边包括有Meteor和一个最基本模板程序.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ Meteor create chat</span></code></pre></td></tr></table></div></figure>
-
-
-<p>现在, 你可以转到该目录并运行下面的代码让它跑起来</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ cd chat
-</span><span class='line'>$ Meteor
-</span><span class='line'>Running on: http://localhost:3000/</span></code></pre></td></tr></table></div></figure>
-
-
-<p>想要看到这个最基础的应用程序, 你只需要在任意一款不过时的浏览器下打开<code>http://localhost:3000/</code></p>
-
-<p>只要你想, 你可以使用Meteor内置的<code>Meteor deploy</code>命令来部署你的应用到Meteor自己的服务器上</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ Meteor deploy my-app-name.Meteor.com</span></code></pre></td></tr></table></div></figure>
-
-
-<p>只要你更新保存了你的代码, 所有连接上的浏览器都会实时更新其页面.</p>
-
-<h3>Developing the Chat App</h3>
-
-<p>通过<code>Meteor create</code>命令生成的文件夹里, 你可以看到几个不同的文件. 如果你的系统设置了显示隐藏文件, 那还可以看到一个<code>.Meteor</code>文件夹. 这个文件夹包括的Meteor本身, 以及MongoDB数据库的文件.</p>
-
-<p>在你的项目的根目录, 你可以看到的还有<code>chat.html</code> <code>chat.js</code> <code>chat.css</code>. 这三个文件自解释?的. HTML包含了这个应用的模板和视图, 并都通过<code>chat.css</code>来添加样式. 而这个JavaScript文件则包含了在客户端和服务端执行的代码. 这非常的重要&mdash;请不要把任何东西比如配置数据和密码都放在这里, 因为任何人都能通过查看你的应用程序的源文件看到.</p>
-
-<p>用你最喜欢的文本编辑器打开<code>chat.js</code>. 我个人使用的是<a href="http://sublimetext.com/">Sublime Text 2</a>, 因为它很简洁并且有多光标功能.
-你可以在<code>chat.js</code>看到下面这些代码</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="k">if</span> <span class="p">(</span><span class="nx">Meteor</span><span class="p">.</span><span class="nx">is_client</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>  <span class="nx">Template</span><span class="p">.</span><span class="nx">hello</span><span class="p">.</span><span class="nx">greeting</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>    <span class="k">return</span> <span class="s2">&quot;Welcome to chat.&quot;</span><span class="p">;</span>
-</span><span class='line'>  <span class="p">};</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="nx">Template</span><span class="p">.</span><span class="nx">hello</span><span class="p">.</span><span class="nx">events</span> <span class="o">=</span> <span class="p">{</span>
-</span><span class='line'>    <span class="s1">&#39;click input&#39;</span> <span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>      <span class="c1">// template data, if any, is available in &#39;this&#39;</span>
-</span><span class='line'>      <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">console</span> <span class="o">!==</span> <span class="s1">&#39;undefined&#39;</span><span class="p">)</span>
-</span><span class='line'>        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&quot;You pressed the button&quot;</span><span class="p">);</span>
-</span><span class='line'>    <span class="p">}</span>
-</span><span class='line'>  <span class="p">};</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">if</span> <span class="p">(</span><span class="nx">Meteor</span><span class="p">.</span><span class="nx">is_server</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>  <span class="nx">Meteor</span><span class="p">.</span><span class="nx">startup</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>    <span class="c1">// code to run on server at startup</span>
-</span><span class='line'>  <span class="p">});</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>分别注意到<code>if</code>语句里的<code>Meteor.is_client</code>和<code>Meteor.is_server</code>部分. 在这里边的代码分别只在客户端和服务端下执行. 这就是Meteor共用代码的能力了.</p>
-
-<p>删除掉<code>Meteor.is_server</code>这段代码并把<code>if (Meteor.is_client)</code>里边的代码删除了,只留如下部分:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="k">if</span> <span class="p">(</span><span class="nx">Meteor</span><span class="p">.</span><span class="nx">is_client</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>注意到, 当你保存了你的脚本之后, 浏览器会马上重新加载这个新脚本.</p>
-
-<h3>Creating the View</h3>
-
-<p>在我们正式对这个脚本文件动工之前, 我们需要先新建一个视图用来展示聊天记录.
-在编辑器里打开<code>chat.html</code>并删除<code>body</code>标签里边的代码. 包括名为hello的<code>template</code>标签.只留如下部分</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;head&gt;</span>
-</span><span class='line'>  <span class="nt">&lt;title&gt;</span>chat<span class="nt">&lt;/title&gt;</span>
-</span><span class='line'><span class="nt">&lt;/head&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;body&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;/body&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>接着在<code>body</code>标签里添加下面这句</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'>{{&gt; entryfield}}
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Meteor使用的模板系统与<a href="http://mustache.github.com/">Mustache</a>很相似.大括号<code>{{}}</code>表示要呈现的内容. 通过简单地在两对大括号里添加内容如<code>{{hello}}</code>, 模板系统会用<code>hello</code>这个变量的值来替换它. 后面会更详细的介绍.</p>
-
-<p>注意到了在<code>entryfield</code>这个词前面有个大于号<code>&gt;</code>了吗? 使用该符号来指定渲染哪一个模板.</p>
-
-<p>接下来使用下面这段代码来新建一个名叫<code>entryfield</code>的模板</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;template</span> <span class="na">name=</span><span class="s">&quot;entryfield&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">id=</span><span class="s">&quot;name&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Name&quot;</span> <span class="nt">/&gt;</span> <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">id=</span><span class="s">&quot;message&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Your Message&quot;</span> <span class="nt">/&gt;</span>
-</span><span class='line'><span class="nt">&lt;/template&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>在这个例子中,<code>template</code>标签只有一个属性&mdash;用来表示这个template的名字. 也就是当我们渲染的时候需要用来指定的名字.</p>
-
-<p>查看浏览器, 你会发现页面已经刷新了, 输入框已经呈现出来了.</p>
-
-<p>接下来, 在body里边添加另外的一个mutache标签用以渲染讯息列表</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'>{{&gt; message}}
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>最后, 我们还需要新建一个名叫<code>messages</code>的模板. 在<code>entryfield</code>模板下面添加下面这段代码</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;template</span> <span class="na">name=</span><span class="s">&quot;messages&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>    <span class="nt">&lt;p&gt;</span>
-</span><span class='line'>        {{#each messages}}
-</span><span class='line'>            <span class="nt">&lt;strong&gt;</span>{{name}}<span class="nt">&lt;/strong&gt;</span>- {{message}}
-</span><span class='line'>       {{/each}}
-</span><span class='line'>  <span class="nt">&lt;/p&gt;</span>
-</span><span class='line'><span class="nt">&lt;/template&gt;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>注意到<code>each</code>子句. 在Meteor中你可以使用如下的语法来遍历一个数组模板</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'>
-</span><span class='line'>{{#each [name of array]}}
-</span><span class='line'>{{/each}}
-</span><span class='line'>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>使用each循环时,上下文会有所改变. 当引用变量的时候, 实际上你引用的是每一个数组元素的值.
-例如,在我们的chat应用中, 我们遍历了数组模板&#8221;messages&#8221;里边的每个元素, 该数组可以像下面这样,</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="p">[</span>
-</span><span class='line'>    <span class="p">{</span>
-</span><span class='line'>        <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;Andrew&quot;</span><span class="p">,</span>
-</span><span class='line'>        <span class="s2">&quot;message&quot;</span><span class="o">:</span> <span class="s2">&quot;Hello world!&quot;</span>
-</span><span class='line'>    <span class="p">},</span>
-</span><span class='line'>    <span class="p">{</span>
-</span><span class='line'>        <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;Bob&quot;</span><span class="p">,</span>
-</span><span class='line'>        <span class="s2">&quot;message&quot;</span><span class="o">:</span> <span class="s2">&quot;Hey, Andrew!&quot;</span>
-</span><span class='line'>    <span class="p">}</span>
-</span><span class='line'><span class="p">]</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>然后, 在each循环中, 你可以看到<code>{{message}}</code> <code>{{name}}</code>, 这会引用 每一个数组元素的值来替代(Andrew 和 Bob 替换 name, 以及各自的问候信息.)</p>
-
-<p>当返回到你的浏览器, 你还看不到任何的改变. 因为讯息数组还没被传送到模板, 所以Meteor遍历不到任何东西来呈现.</p>
-
-<p>你的<code>chat.html</code>最后应该是这样的</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;head&gt;</span>
-</span><span class='line'>  <span class="nt">&lt;title&gt;</span>chat<span class="nt">&lt;/title&gt;</span>
-</span><span class='line'><span class="nt">&lt;/head&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;body&gt;</span>
-</span><span class='line'>  {{&gt; entryfield}}
-</span><span class='line'>  {{&gt; messages}}
-</span><span class='line'><span class="nt">&lt;/body&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;template</span> <span class="na">name=</span><span class="s">&quot;entryfield&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">id=</span><span class="s">&quot;name&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Name&quot;</span> <span class="nt">/&gt;</span> <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">id=</span><span class="s">&quot;message&quot;</span> <span class="na">placeholder=</span><span class="s">&quot;Your Message&quot;</span> <span class="nt">/&gt;</span>
-</span><span class='line'><span class="nt">&lt;/template&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="nt">&lt;template</span> <span class="na">name=</span><span class="s">&quot;messages&quot;</span><span class="nt">&gt;</span>
-</span><span class='line'>  
-</span><span class='line'>    <span class="nt">&lt;p&gt;</span>
-</span><span class='line'>      {{#each messages}}
-</span><span class='line'>            <span class="nt">&lt;strong&gt;</span>{{name}}<span class="nt">&lt;/strong&gt;</span>- {{message}}<span class="nt">&lt;br/&gt;</span>
-</span><span class='line'>        {{/each}}
-</span><span class='line'>    <span class="nt">&lt;/p&gt;</span>
-</span><span class='line'><span class="nt">&lt;/template&gt;</span>
-</span><span class='line'>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>The Javascript</h3>
-
-<p>从现在开始, 我们处理的大部分代码都是客户端代码, 所以, 除非特别说明, 以下的代码都是在<code>if (Meteor.is_client)</code>代码块中.</p>
-
-<p>在我们编写展示讯息的代码之前,让我们先新建一个<code>Collection</code>. 从本质上讲, 这是一组Models. 换句话说, 在这个chat应用的环境下, Messages collection保存着整个聊天记录, 而每条讯息记录是一个Model.</p>
-
-<p>在if语句前, 添加如下代码来初始化Collection:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">Messages</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Meteor</span><span class="p">.</span><span class="nx">Collection</span><span class="p">(</span><span class="s1">&#39;messages&#39;</span><span class="p">);</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>因为我们希望这个Collection可以在客户端和服务端被创建, 所以我们把它写在了客户端代码块之外.</p>
-
-<p>由于Meteor为我们做了大部分的工作, 要展示聊天记录是非常容易的. 只需要把下面的代码添加进if语句里边.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">Template</span><span class="p">.</span><span class="nx">messages</span><span class="p">.</span><span class="nx">messages</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
-</span><span class='line'>    <span class="k">return</span> <span class="nx">Messages</span><span class="p">.</span><span class="nx">find</span><span class="p">({},</span> <span class="p">{</span> <span class="nx">sort</span><span class="o">:</span> <span class="p">{</span> <span class="nx">time</span><span class="o">:</span> <span class="o">-</span><span class="mi">1</span> <span class="p">}});</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>让我们拆开来分析这段代码:<br/>
-<strong>Template</strong>.messages.messages = function(){ … }<br/>
-第一部分<code>Template</code>表示我们正在修改一个模板的行为.<br/>
-Template.<strong>messages</strong>.messages = function(){ … }<br/>
-第二部分<code>messages</code>是模板的名字, 表示是在修改哪一个模板. 例如,如果我们想要对&#8221;entryfield&#8221;模板做些什么,   只需把代码改成<code>Template.entryfields.variable = function(){ … }</code>(在这里, 请别这么做)<br/>
-Template.messages.<strong>messages</strong> = function(){ … }<br/>
-第三部分的这个<code>messages</code>代表的是一个这个模板里的一个变量. 还记得我们的each循环遍历<code>messages</code>吗? 这就是那个mesaages.</p>
-
-<p>当你打开浏览器时, 页面还是没有什么改变. 这是意料之中的事, 因为我们只抓取的讯息, 而没有展示出来.</p>
-
-<p>此时,你的<code>chat.js</code>应该是这样的. 是否很惊讶就只需在服务器写这么些代码我们就能展示一个实时的聊天记录应用.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">Messages</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Meteor</span><span class="p">.</span><span class="nx">Collection</span><span class="p">(</span><span class="s1">&#39;messages&#39;</span><span class="p">);</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">if</span> <span class="p">(</span><span class="nx">Meteor</span><span class="p">.</span><span class="nx">is_client</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>  <span class="nx">Template</span><span class="p">.</span><span class="nx">messages</span><span class="p">.</span><span class="nx">messages</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
-</span><span class='line'>    <span class="k">return</span> <span class="nx">Messages</span><span class="p">.</span><span class="nx">find</span><span class="p">({},</span> <span class="p">{</span> <span class="nx">sort</span><span class="o">:</span> <span class="p">{</span> <span class="nx">time</span><span class="o">:</span> <span class="o">-</span><span class="mi">1</span> <span class="p">}});</span>
-</span><span class='line'>  <span class="p">}</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>Adding a Message through the Console</h3>
-
-<p>这部分的内容是可选的, 当然它有助于你调试程序. 你可以直接跳过往下学习建立form来响应key press.</p>
-
-<p>如果你想要测试你的讯息显示代码, 你可以手动插入一条记录到数据库. 打开你的浏览器控制台, 并输入如下:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">Messages</span><span class="p">.</span><span class="nx">insert</span><span class="p">({</span> <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Andrew&#39;</span><span class="p">,</span> <span class="nx">message</span><span class="o">:</span> <span class="s1">&#39;Hello world!&#39;</span><span class="p">,</span> <span class="nx">time</span><span class="o">:</span> <span class="mi">0</span> <span class="p">})</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>这将会在数据库中新建一条记录, 如果正确的操作了的话,那浏览器就会即刻更新这条讯息在页面上.</p>
-
-<h3>The Message Entry Form</h3>
-
-<p>返回到<code>chat.js</code>, 我们即将要完成的是允许用户在输入框中提交聊天讯息到数据库. <br/>
-在if语句里头最下面添加下面这段代码</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">Template</span><span class="p">.</span><span class="nx">entryfield</span><span class="p">.</span><span class="nx">events</span> <span class="o">=</span> <span class="p">{</span>
-</span><span class='line'>  <span class="s2">&quot;keydown #message&quot;</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">){</span>
-</span><span class='line'>    <span class="k">if</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">which</span> <span class="o">==</span> <span class="mi">13</span><span class="p">){</span>
-</span><span class='line'>      <span class="c1">// Submit the form</span>
-</span><span class='line'>      <span class="kd">var</span> <span class="nx">name</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">);</span>
-</span><span class='line'>      <span class="kd">var</span> <span class="nx">message</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;message&#39;</span><span class="p">);</span>
-</span><span class='line'>
-</span><span class='line'>      <span class="k">if</span><span class="p">(</span><span class="nx">name</span><span class="p">.</span><span class="nx">value</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span> <span class="o">&amp;&amp;</span> <span class="nx">message</span><span class="p">.</span><span class="nx">value</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span><span class="p">){</span>
-</span><span class='line'>        <span class="nx">Messages</span><span class="p">.</span><span class="nx">insert</span><span class="p">({</span>
-</span><span class='line'>          <span class="nx">name</span><span class="o">:</span> <span class="nx">name</span><span class="p">.</span><span class="nx">value</span><span class="p">,</span>
-</span><span class='line'>          <span class="nx">message</span><span class="o">:</span> <span class="nx">message</span><span class="p">.</span><span class="nx">value</span><span class="p">,</span>
-</span><span class='line'>          <span class="nx">time</span><span class="o">:</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span>
-</span><span class='line'>        <span class="p">});</span>
-</span><span class='line'>
-</span><span class='line'>        <span class="nx">name</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
-</span><span class='line'>        <span class="nx">message</span><span class="p">.</span><span class="nx">value</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
-</span><span class='line'>      <span class="p">}</span>
-</span><span class='line'>    <span class="p">}</span>
-</span><span class='line'>  <span class="p">}</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>这段代码比较多, 让我们一步步分析. 你应该还有印象, 紧跟<code>Template</code>之后的词表示我们即将要修改的template的名字. 跟前面修改的模板是<code>messages</code>不一样的是, 这里我们要修改的是<code>entryfield</code>.<br/>
-template的<code>event</code>属性会包含有一个对象, 这个对象的keys的格式如下:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="s2">&quot;[eventname] [selector]&quot;</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>比如, 如果我们想绑定了一个<code>click</code>事件给了ID为<code>hello</code>的按钮. 则需要像下面这样添加一个<code>events</code>对象</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="s2">&quot;click #hello&quot;</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">event</span><span class="p">){</span> <span class="err">…</span> <span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>在我们这个例子中,我们绑定了一个<code>keydown</code>事件给了ID为<code>message</code>的输入框. 这个输入框在我们一开始的<code>chat.html</code>已经建好.</p>
-
-<p>在<code>events</code>对象里, 每一个key都有一个函数作为它的值. 当事件被触发的时候, 这个<code>event</code>对象会被作为第一个参数传给这个函数.在我们的chat应用, 每一次在输入框中按下一个按键(<code>keydown</code>), 这个函数都会被调用.</p>
-
-<p>在函数里的代码非常简单. 首先, 我们先要检测按下的是否&#8221;enter&#8221;键(&ldquo;enter&#8221;的keycode 是13). 接着,通过ID来得到两个输入框中的DOM元素. 最后, 我们检查确保输入框中的值不为空, 用户不允许发送空的名字和讯息.</p>
-
-<p>下面的代码需要注意了, 它会被直接插入到数据库中</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">Messages</span><span class="p">.</span><span class="nx">insert</span><span class="p">({</span>
-</span><span class='line'>  <span class="nx">name</span><span class="o">:</span> <span class="nx">name</span><span class="p">.</span><span class="nx">value</span><span class="p">,</span>
-</span><span class='line'>  <span class="nx">message</span><span class="o">:</span> <span class="nx">message</span><span class="p">.</span><span class="nx">value</span><span class="p">,</span>
-</span><span class='line'>  <span class="nx">time</span><span class="o">:</span> <span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span>
-</span><span class='line'><span class="p">});</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>你会发现,这其实跟我们直接在浏览器控制台中输入的代码很相似, 只是我们用DOM元素的值来替换固定值. 另外, 欧文木讷添加了时间值来确保是按照时间来排序.</p>
-
-<p>最后,我们把两个输入框设置为空<code>''</code></p>
-
-<p>现在, 你可以打开浏览器尝试在输入框输入名字和讯息. 按下&#8221;enter&#8221;后,输入框会被被清空, 而且这则讯息会立马出现在你的输入框下边. 使用另外一个浏览器窗口或者其他浏览器打开同样的链接(<code>http://127.0.0.1:3000</code>).    尝试输入一则新的讯息, 此时你就会看到Meteor的强大之处.无须单独写一行代码来更新讯息记录, 就可以实时同步在不同的客户端浏览器中.</p>
-
-<h3>Conclusion</h3>
-
-<p>While Meteor is pretty cool to work with and there are some pretty useful applications for it, like Derby.js, it is immature. For examples of this, just browse through the documentation and look for the red quotations. For example, the documentation states the following about MongoDB collections:</p>
-
-<blockquote><p>Currently the client is given full write access to the collection. They can execute arbitrary Mongo update commands. Once we build authentication, you will be able to limit the client’s direct access to insert, update, and remove. We are also considering validators and other ORM-like functionality.</p></blockquote>
-
-<p>对于任何一个产品而言, 用户拥有数据库的所有读写权限都是非常大的问题, 非常危险.</p>
-
-<p>原文来自Andrew Munsell <a href="http://www.andrewmunsell.com/blog/introduction-to-realtime-web-Meteor-and-nodejs/#.UTyJZtHN-tv">Introduction to Realtime Web with Meteor and Node.js</a></p>
-
-<p>另附上Tom的 Vimeo screencast(需FanQiang)<br/>
-<video width='640' height='320' preload='none' controls poster='http://b.vimeocdn.com/ts/278/431/278431171_960.jpg'><source src='http://av.vimeo.com/31624/419/93304834.mp4?aksessionid=d86b5b612c86d70bd2022ae1050aa1be&token=1362992353_ce10e413b18fa6f2d0e3483ef6b82894' ></video></p>
 ]]></content>
   </entry>
   

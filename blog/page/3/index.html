@@ -7,7 +7,8 @@
 
 	<meta name="author" content="XguoX">
 
-<meta name="description" content="早之前就听说了Hexo, 也就是Octopress的node.js版本, 不过是源自台湾. setup的话其实中文英文都无妨吧. 尽管阅读起来肯定是较之中文困难, 不过也基本习惯了. 基本上按照官方给出的guide很容易搭建好. 不过还是不准备现在就撤出Octopress奔赴Hexo, &hellip;"> <meta name="keywords" content="">
+<meta name="description" content="LEVEL: INTERMEDIATE Publications &amp; subscriptions 是在Meteor里最基本也是最重要的概念之一, 但同时也是最难理解的. 很大程度上是由于这其中跟传统的构建web的方式有很大的不同.
+过去, 我们习惯思考, &hellip;"> <meta name="keywords" content="">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -48,6 +49,49 @@
 </header>
 
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<header>
+		<h2 class="title">
+			
+			<a href="/blog/2013/04/10/understanding-publications-and-subscriptions/">
+			
+				Understanding Publications and Subscriptions</a>
+		</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-10T14:22:00+08:00" pubdate data-updated="true">Apr 10<span>th</span>, 2013</time></div>
+	</header>
+	<div class="entry-content">
+		<h5>LEVEL: INTERMEDIATE</h5>
+
+<p>Publications &amp; subscriptions 是在Meteor里最基本也是最重要的概念之一, 但同时也是最难理解的. 很大程度上是由于这其中跟传统的构建web的方式有很大的不同.<br/>
+过去, 我们习惯思考,定义API用在客户端和服务器之间进行数据传递, 而在Meteor中, 客户端和服务端的数据是同步的. 我们使用publications来精确地控制如何同步. <br/>
+最初人们觉得这个概念有一些难以理解的部分原因是由于Meteor像&#8221;魔术&#8221;那样为我们做了这一切. 这些&#8221;魔术&#8221;都非常有用, 而具体发生了什么则都被掩盖封装起来了(就如魔术为何如此奇幻一样). 那么, 现在就让我们拨开这些魔术表层的面纱一探究竟. 在此, 我们将会学习到一到两个窍门.</p>
+
+<h2>Defining Publications</h2>
+
+<p>从本质上讲, <strong>publication</strong>(使用<strong>subscription</strong>与之相连)是从服务端(源)collection到客户端(目标)collection的传递数据方法. 同时, 把subscription想象成一个漏斗连接着标准的数据存储(与mongodb数据库交互的源集合)与客户端缓存(目标集合, 相应数据的备份或者子集).</p>
+
+<p><strong>subscription</strong>精确地控制着哪些数据该通过这个漏斗, 同时负责同步两端的数据. 通过添加多个<strong>subscription</strong>到服务端数据存储, 我们就可以实时地, 有效地, 安全地保持各个客户端的数据同步.</p>
+
+
+		
+		<a href="/blog/2013/04/10/understanding-publications-and-subscriptions/" class="more-link">Read on &rarr;</a>
+	</div>
+
+</article>
 
 
     <article class="post">
@@ -335,53 +379,6 @@
 
 		
 		<a href="/blog/2013/03/10/introduction-to-realtime-web-with-meteor-dot-js-and-node-dot-js/" class="more-link">Read on &rarr;</a>
-	</div>
-
-</article>
-
-
-    <article class="post">
-	<header>
-		<h2 class="title">
-			
-			<a href="/blog/2013/03/08/learn-meteor-fundamentals-and-best-practices/">
-			
-				Meteor基础与最佳实践</a>
-		</h2>
-		<div class="meta date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-03-08T17:42:00+08:00" pubdate data-updated="true">Mar 8<span>th</span>, 2013</time></div>
-	</header>
-	<div class="entry-content">
-		<h2>引言</h2>
-
-<p>想知道这个新奇又好玩的东西&mdash;-Meteor是如何工作的?那就太好了,你来对地方了. 我会向你展示一个Meteor项目的方方面面 并会给你一些最好的提示让你应用在未来自己的Meteor项目当中.</p>
-
-<h2>What is Meteor</h2>
-
-<p>Meteor能让你打造非常动态的的网页同时代码量出乎意料之少. 记住一点,Meteor目前还在一个超级测试的版本(原文发布时候为 preview 0.3.8, 翻译时为 preview 0.5.7). 所以, 请不要因为工作的不够完美而感到意外.<br/>
-Meteor是基于<a href="http://nodejs.org/">Node.js</a>, 因此, 你所写的大部分代码也将会是JavaScript. 这没什么好惊奇的. 如果你想要一些好的资源来快递提高你的JavaScript, 可以看一看 <a href="http://bonsaiden.github.com/JavaScript-Garden/">JavaScript Garden</a>.  <br/>
-Meteor存储数据所使用的是MongoDB. 尽管如此, 实际上,Meteor使用的是minimongo作为接口.  它只是拥有相对完整的功能而非标准MongoDB的所有功能. 你并不需要确切地知道MongoDB是如何工作的, 但我还是建议你看一看Meteor 的<a href="http://docs.Meteor.com/#collections">Collections文档</a>以便知道你能做些什么.<br/>
-Meteor目前使用的模板引擎只能是 <a href="http://handlebarsjs.com/">handlebars</a>. 但在未来支持使用别的模板引擎也是很有可能的.(翻译该文章时已经支持使用其他的如 Jade )<br/>
-最后, 只要你开发网站, 了解 HTML 和 CSS 都是必须的.</p>
-
-<h2>基础</h2>
-
-<p>一个Meteor项目包含的大多都是JavaScript文件. 如果你放置任意一个 <code>*.js</code>文件在你的项目的任何位置, Meteor会自动帮你加载并运行之. 你在Meteor项目中写的每一个JavaScript文件都会被部署到服务端和客户端(额&hellip;也不完全是这样的,继续往下看吧!). 之所以Meteor这么,这么的cool,原因之一就是:当你写了一个JavaScript函数,在客户端和服务端都可以使用之!  <br/>
-更cool的是, 比如,你在项目的任意一个地方放置<code>*.less</code>, 那么这些文件都会自动被编译并发送至客户端以及从而包含进页面当中.<br/>
-有时候,可能你希望分离开服务端和客户端的代码. 幸运地是,
-		
-		<a href="/blog/2013/03/08/learn-meteor-fundamentals-and-best-practices/" class="more-link">Read on &rarr;</a>
 	</div>
 
 </article>
