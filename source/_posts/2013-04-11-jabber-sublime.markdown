@@ -30,10 +30,9 @@ Actually, 想装啥插件可以直接在里头搜, 或者网页版搜索, 一般
 - [knockdown](https://github.com/aziz/knockdown)
 - [Sass](https://github.com/nathos/sass-textmate-bundle) Sass的高亮, 补全...
 - [CoffeeScript](http://xavura.github.io/CoffeeScript-Sublime-Plugin/)  CoffeeScript高亮,补全, Compile等...
-- [Pretty JSON](https://github.com/dzhibas/SublimePrettyJson) 经常看到一些个JSON文件一坨坨的, 有了这货看着也舒服多了
 - [JSHint](https://github.com/uipoet/sublime-jshint) 检查Javascript的语法规范, 要先在装了node, 然后`npm install -g jshint`
 - [Emmet](http://emmet.io/) 前身Zen Coding, 貌似所有的packages之中排在最前的. 几乎被吹捧成为神器中的神器了. 
-- [HTMLpretty]() 个人觉得解决缩进等格式问题的神器, 好吧, 即使木有这个偶本身也是具有良好编码规范的.
+- [HTMLpretty](https://sublime.wbond.net/packages/HTML-CSS-JS%20Prettify) 个人觉得解决缩进等格式问题的神器, 好吧, 即使木有这个偶本身也是具有良好编码规范的.
 - [Git](https://github.com/kemayo/sublime-text-2-git) 
 - [Web Inspector](https://github.com/sokolovstas/SublimeWebInspector) 纯属贪新鲜装上耍耍, 取代浏览器的inspector不太可能. 
 - [ERB Insert and Toggle Commands](https://github.com/eddorre/SublimeERB) 快速输入`<%= %>`或者`<% %>`
