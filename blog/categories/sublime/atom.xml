@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Sublime | XguoX]]></title>
   <link href="http://xguox.github.com/blog/categories/sublime/atom.xml" rel="self"/>
   <link href="http://xguox.github.com/"/>
-  <updated>2013-10-28T23:46:41+08:00</updated>
+  <updated>2013-11-02T19:35:28+08:00</updated>
   <id>http://xguox.github.com/</id>
   <author>
     <name><![CDATA[XguoX]]></name>
@@ -50,10 +50,9 @@ Actually, 想装啥插件可以直接在里头搜, 或者网页版搜索, 一般
 <li><a href="https://github.com/aziz/knockdown">knockdown</a></li>
 <li><a href="https://github.com/nathos/sass-textmate-bundle">Sass</a> Sass的高亮, 补全&hellip;</li>
 <li><a href="http://xavura.github.io/CoffeeScript-Sublime-Plugin/">CoffeeScript</a>  CoffeeScript高亮,补全, Compile等&hellip;</li>
-<li><a href="https://github.com/dzhibas/SublimePrettyJson">Pretty JSON</a> 经常看到一些个JSON文件一坨坨的, 有了这货看着也舒服多了</li>
 <li><a href="https://github.com/uipoet/sublime-jshint">JSHint</a> 检查Javascript的语法规范, 要先在装了node, 然后<code>npm install -g jshint</code></li>
 <li><a href="http://emmet.io/">Emmet</a> 前身Zen Coding, 貌似所有的packages之中排在最前的. 几乎被吹捧成为神器中的神器了.</li>
-<li><a href="">HTMLpretty</a> 个人觉得解决缩进等格式问题的神器, 好吧, 即使木有这个偶本身也是具有良好编码规范的.</li>
+<li><a href="https://sublime.wbond.net/packages/HTML-CSS-JS%20Prettify">HTMLpretty</a> 个人觉得解决缩进等格式问题的神器, 好吧, 即使木有这个偶本身也是具有良好编码规范的.</li>
 <li><a href="https://github.com/kemayo/sublime-text-2-git">Git</a></li>
 <li><a href="https://github.com/sokolovstas/SublimeWebInspector">Web Inspector</a> 纯属贪新鲜装上耍耍, 取代浏览器的inspector不太可能.</li>
 <li><a href="https://github.com/eddorre/SublimeERB">ERB Insert and Toggle Commands</a> 快速输入<code>&lt;%= %&gt;</code>或者<code>&lt;% %&gt;</code></li>

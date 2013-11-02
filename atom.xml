@@ -4,7 +4,7 @@
   <title><![CDATA[XguoX]]></title>
   <link href="http://xguox.github.com/atom.xml" rel="self"/>
   <link href="http://xguox.github.com/"/>
-  <updated>2013-10-28T23:46:41+08:00</updated>
+  <updated>2013-11-02T19:35:11+08:00</updated>
   <id>http://xguox.github.com/</id>
   <author>
     <name><![CDATA[XguoX]]></name>
@@ -22,13 +22,13 @@
 
 <h3>What is Alfred?</h3>
 
-<p>对于大多数了解不深的人来说,<a href="http://www.alfredapp.com/">Alfred</a>是一个备受赞誉的Mac OS X app, 它可以快速地帮助你查找在线或者本地的文件. 最新的版本 <strong>Alfred 2</strong>更是带来了大量的改进,尤其是其中的<a href="http://www.alfredapp.com/powerpack/">Powerpack</a>,可以让你创建自己的workflows(工作流程).</p>
+<p>对于大多数了解不深的人来说,<a href="http://www.alfredapp.com/">Alfred</a>只是一个备受赞誉的Mac OS X app, 它可以快速地帮助你查找在线或者本地的文件. 最新的版本 <strong>Alfred 2</strong>更是带来了大量的改进,尤其是其中的<a href="http://www.alfredapp.com/powerpack/">Powerpack</a>,可以让你创建自己的workflows(工作流程).</p>
 
 <p>下面你将会看到这些精心挑选出来的,能够改变你的工作方式的workflows.</p>
 
 <h2>Open With Sublime Text</h2>
 
-<p>强大的文件,目录搜索能力是Alfred所最让人喜爱的功能之一. 那如果我们利用它使用自己喜爱的编辑器(比如说Sublime Text 3)打开文件或者目录呢?</p>
+<p>强大的文件,目录搜索能力是Alfred所最让人喜爱的功能之一. 那如果我们想要利用它使用自己喜爱的编辑器(比如说Sublime Text 3)打开文件或者目录呢?</p>
 
 <ul>
 <li><a href="https://github.com/franzheidl/alfred-workflows/tree/master/open-with-sublime-text">Open With Sublime Text (v3)</a>, developed by <a href="https://github.com/franzheidl/">@franzheidl</a></li>
@@ -269,7 +269,7 @@
 
 <h2>Want More?</h2>
 
-<p><a href="https://github.com/zenorocha/alfred-workflows/">这是作者的收集的一些</a><br/>
+<p><a href="https://github.com/zenorocha/alfred-workflows/">这是作者收集的一些</a><br/>
 此外,Alfred的<a href="http://www.alfredforum.com/forum/3-share-your-workflows/">官方论坛</a>上也有海量的workflows.</p>
 
 <h2>The End?</h2>
@@ -1376,10 +1376,9 @@ Actually, 想装啥插件可以直接在里头搜, 或者网页版搜索, 一般
 <li><a href="https://github.com/aziz/knockdown">knockdown</a></li>
 <li><a href="https://github.com/nathos/sass-textmate-bundle">Sass</a> Sass的高亮, 补全&hellip;</li>
 <li><a href="http://xavura.github.io/CoffeeScript-Sublime-Plugin/">CoffeeScript</a>  CoffeeScript高亮,补全, Compile等&hellip;</li>
-<li><a href="https://github.com/dzhibas/SublimePrettyJson">Pretty JSON</a> 经常看到一些个JSON文件一坨坨的, 有了这货看着也舒服多了</li>
 <li><a href="https://github.com/uipoet/sublime-jshint">JSHint</a> 检查Javascript的语法规范, 要先在装了node, 然后<code>npm install -g jshint</code></li>
 <li><a href="http://emmet.io/">Emmet</a> 前身Zen Coding, 貌似所有的packages之中排在最前的. 几乎被吹捧成为神器中的神器了.</li>
-<li><a href="">HTMLpretty</a> 个人觉得解决缩进等格式问题的神器, 好吧, 即使木有这个偶本身也是具有良好编码规范的.</li>
+<li><a href="https://sublime.wbond.net/packages/HTML-CSS-JS%20Prettify">HTMLpretty</a> 个人觉得解决缩进等格式问题的神器, 好吧, 即使木有这个偶本身也是具有良好编码规范的.</li>
 <li><a href="https://github.com/kemayo/sublime-text-2-git">Git</a></li>
 <li><a href="https://github.com/sokolovstas/SublimeWebInspector">Web Inspector</a> 纯属贪新鲜装上耍耍, 取代浏览器的inspector不太可能.</li>
 <li><a href="https://github.com/eddorre/SublimeERB">ERB Insert and Toggle Commands</a> 快速输入<code>&lt;%= %&gt;</code>或者<code>&lt;% %&gt;</code></li>
