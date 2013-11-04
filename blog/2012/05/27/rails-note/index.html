@@ -3,11 +3,11 @@
 <html lang="en-GB">
 <head>
 	<meta charset="utf-8">
-	<title>rails小记两则  | XguoX</title>
+	<title>Rails小记两则  | XguoX</title>
 
 	<meta name="author" content="XguoX">
 
-<meta name="description" content="最近在做个课程设计，好吧，俺老师是要求用JSP的，可惜我那弱爆了的水平是不可能完成的。于是顶着各种压力自己用rails来做。 今天才发现个问题，原来mysql默认存储的int貌似最多是10位就爆了，原本我的数据库中有学号那个字段的并且migration是存为integer， &hellip;"> <meta name="keywords" content="">
+<meta name="description" content="最近在做个课程设计,好吧,俺老师是要求用JSP的,可惜我那弱爆了的水平是不可能完成的.于是顶着各种压力自己用Rails来做. 今天才发现个问题,原来mysql默认存储的int貌似最多是10位就爆了,原本我的数据库中有学号那个字段的并且migration是存为integer, &hellip;"> <meta name="keywords" content="">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -64,14 +64,14 @@
 
 <time datetime="2012-05-27T11:15:00+08:00" pubdate data-updated="true">May 27<span>th</span>, 2012</time></div>
 	</header>
-	<div class="entry-content"><p>最近在做个课程设计，好吧，俺老师是要求用JSP的，可惜我那弱爆了的水平是不可能完成的。于是顶着各种压力自己用rails来做。</p>
+	<div class="entry-content"><p>最近在做个课程设计,好吧,俺老师是要求用JSP的,可惜我那弱爆了的水平是不可能完成的.于是顶着各种压力自己用Rails来做.</p>
 
-<p>今天才发现个问题，原来mysql默认存储的int貌似最多是10位就爆了，原本我的数据库中有学号那个字段的并且migration是存为integer，结果录入数据时候就各种甭了，因为学校学号都是10位数，不管我输入的是什么，进了数据库的学号字段都变成 2147483648, 刚开始看日志，看程序都木有发现什么问题，纠结不能，查看数据库发现，每条记录的学号西端都是统一的,搜索一通才发现问题所在。于是直接用mysql工具将学号字段改成了BIGINT，杠杠的就啥事都没了</p>
+<p>今天才发现个问题,原来mysql默认存储的int貌似最多是10位就爆了,原本我的数据库中有学号那个字段的并且migration是存为integer,结果录入数据时候就各种甭了,因为学校学号都是10位数,不管我输入的是什么,进了数据库的学号字段都变成 2147483648, 刚开始看日志,看程序都木有发现什么问题,纠结不能,查看数据库发现,每条记录的学号西端都是统一的,搜索一通才发现问题所在.于是直接用mysql工具将学号字段改成了BIGINT,杠杠的就啥事都没了</p>
 
 <!-- more -->
 
 
-<p>另外个是，用了will_paginate这个gem做分页，不过默认显示的是“previous”和“next”，改为中文的“前一页”和“后一页”需要先在config/initializers/ 下新建一个will_paginate.rb,  and then在里头加入</p>
+<p>另外个是,用了will_paginate这个gem做分页,不过默认显示的是&#8221;previous&#8221;和&#8221;next&#8221;,改为中文的&#8221;前一页&#8221;和&#8221;后一页&#8221;需要先在config/initializers/ 下新建一个will_paginate.rb,  and then在里头加入</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -90,19 +90,19 @@
 	<div class="share">
 	  <!-- <ul> -->
 	  <!--   <li>
-  <a href="https://twitter.com/intent/tweet?text=rails小记两则 by @&url=http://xguox.github.com/blog/2012/05/27/rails-note/" title="Share rails小记两则 on Twitter">
+  <a href="https://twitter.com/intent/tweet?text=Rails小记两则 by @&url=http://xguox.github.com/blog/2012/05/27/rails-note/" title="Share Rails小记两则 on Twitter">
     <img src="/images/social/twitter.png" />
   </a>
 </li>
  -->
 	  <!--   <li>
-  <a href="https://www.facebook.com/sharer.php?u=http://xguox.github.com/blog/2012/05/27/rails-note/" title="Share rails小记两则 on Facebook">
+  <a href="https://www.facebook.com/sharer.php?u=http://xguox.github.com/blog/2012/05/27/rails-note/" title="Share Rails小记两则 on Facebook">
     <img src="/images/social/facebook.png" />
   </a>
 </li>
  -->
 	  <!--   <li>
-  <a href="https://plus.google.com/share?url=http://xguox.github.com/blog/2012/05/27/rails-note/" title="Share rails小记两则 on Google Plus">
+  <a href="https://plus.google.com/share?url=http://xguox.github.com/blog/2012/05/27/rails-note/" title="Share Rails小记两则 on Google Plus">
     <img src="/images/social/google.png" />
   </a>
 </li>

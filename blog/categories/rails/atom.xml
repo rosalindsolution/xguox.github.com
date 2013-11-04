@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Rails | XguoX]]></title>
   <link href="http://xguox.github.com/blog/categories/rails/atom.xml" rel="self"/>
   <link href="http://xguox.github.com/"/>
-  <updated>2013-11-04T15:03:00+08:00</updated>
+  <updated>2013-11-04T19:29:49+08:00</updated>
   <id>http://xguox.github.com/</id>
   <author>
     <name><![CDATA[XguoX]]></name>
@@ -18,32 +18,32 @@
     <link href="http://xguox.github.com/blog/2012/07/12/rails-3-remote-links-and-forms-part-2-data-type-with-jquery/"/>
     <updated>2012-07-12T11:28:00+08:00</updated>
     <id>http://xguox.github.com/blog/2012/07/12/rails-3-remote-links-and-forms-part-2-data-type-with-jquery</id>
-    <content type="html"><![CDATA[<p>自从写了<a href="http://www.alfajango.com/blog/rails-3-remote-links-and-forms/">Rails 3 Remote Links &amp; Forms Definitive Guide</a>有一个问题也接踵而至：</p>
+    <content type="html"><![CDATA[<p>自从写了<a href="http://www.alfajango.com/blog/Rails-3-remote-links-and-forms/">Rails 3 Remote Links &amp; Forms Definitive Guide</a>有一个问题也接踵而至:</p>
 
-<h4>我们该如何使远程链接或者表单取回 js.erb而不是一个html的partial？</h4>
+<h4>我们该如何使远程链接或者表单取回 js.erb而不是一个html的partial?</h4>
 
-<p>在上一篇中，我们请求一个html partial并通过ajax回调插入到页面中。但如果我们想要javascript被执行？或者XML、JSON被解析？又或者显示出纯文本呢？</p>
+<p>在上一篇中,我们请求一个html partial并通过ajax回调插入到页面中.但如果我们想要javascript被执行?或者XML、JSON被解析?又或者显示出纯文本呢?</p>
 
 <!-- more -->
 
 
 <h2>Equal parts Rails &amp; jQuery</h2>
 
-<p>首先，我们需要明白rails3中 :remote => true 的过程。 It’s equal parts Rails and jQuery magic.但表担心，这只是一个小魔术，捆绑成4个步骤的过程： 1. rails告诉jQuery，”哥们，把你的ajax绑定到这霸气的表单/链接”,通过 :remote => true 这个选项。 2. jQuery劫持？元素的click/submit事件并绑定到.ajax()方法。现在，元素提交通过使用ajax取代在浏览器中加载一个新页面。 3. 当这个元素被click/submit时，rails接收到ajax网页请求并响应以一些内容。 4. jQuery接收到响应的内容有.ajax()方法hi-jacked在我们的的元素中，并为我们提供回调用以在页面中处理这个响应。</p>
+<p>首先,我们需要明白Rails3中 :remote => true 的过程. It&rsquo;s equal parts Rails and jQuery magic.但表担心,这只是一个小魔术,捆绑成4个步骤的过程: 1. Rails告诉jQuery,&ldquo;哥们,把你的ajax绑定到这霸气的表单/链接&rdquo;,通过 :remote => true 这个选项. 2. jQuery劫持?元素的click/submit事件并绑定到.ajax()方法.现在,元素提交通过使用ajax取代在浏览器中加载一个新页面. 3. 当这个元素被click/submit时,Rails接收到ajax网页请求并响应以一些内容. 4. jQuery接收到响应的内容有.ajax()方法hi-jacked在我们的的元素中,并为我们提供回调用以在页面中处理这个响应.</p>
 
-<p>在这篇文章中，我们正在探索各种各样的、使我们能够指定ajax的响应格式并据此做出处理的方式，这实际上涵盖上述所有4个步骤。</p>
+<p>在这篇文章中,我们正在探索各种各样的、使我们能够指定ajax的响应格式并据此做出处理的方式,这实际上涵盖上述所有4个步骤.</p>
 
 <h2>步骤 1 &amp; 2:设置data-type</h2>
 
-<p>当浏览器发送web请求，在浏览器到服务器，服务器返回浏览器的过程中，部分 请求/响应 的header能够指定内容的格式。当在浏览器中加载一个页面，内容的类型通常从url的拓展可以推断得出。尽管如此，jQuery能够直接在ajax请求的header部分设置我们所想要的data-type。</p>
+<p>当浏览器发送web请求,在浏览器到服务器,服务器返回浏览器的过程中,部分 请求/响应 的header能够指定内容的格式.当在浏览器中加载一个页面,内容的类型通常从url的拓展可以推断得出.尽管如此,jQuery能够直接在ajax请求的header部分设置我们所想要的data-type.</p>
 
 <h2>jQuery允许dataType参数</h2>
 
-<p>jQuery的.ajax()方法提供一个可选的dataType参数用以指定我们所想要的响应data-type.这允许jQuery在请求的HTTP Accept header指定格式类型，然后封装响应的内容到适当的数据对象使得更容易操作。</p>
+<p>jQuery的.ajax()方法提供一个可选的dataType参数用以指定我们所想要的响应data-type.这允许jQuery在请求的HTTP Accept header指定格式类型,然后封装响应的内容到适当的数据对象使得更容易操作.</p>
 
-<blockquote><p>在jQuery1.4中，如果你不指定响应的data-type,jQuery会检查响应的MIME类型头并智能的猜测其为data-type,动态的转换响应对象的data-type</p></blockquote>
+<blockquote><p>在jQuery1.4中,如果你不指定响应的data-type,jQuery会检查响应的MIME类型头并智能的猜测其为data-type,动态的转换响应对象的data-type</p></blockquote>
 
-<p>在.ajax()文档页面有更多的信息，但基本的类型有如下:</p>
+<p>在.ajax()文档页面有更多的信息,但基本的类型有如下:</p>
 
 <table>
   <tbody><tr>
@@ -51,27 +51,27 @@
     <th>Behavior</th>
   </tr>
   <tr>
-    <td>“xml”</td>
+    <td>"xml"</td>
     <td>返回一个能呗jQuery处理的XML文档</td>
   </tr>
   <tr>
-    <td>“html”</td>
-    <td>返回纯文本的html，调用标记中的所有&lt; script&gt;标签</td>
+    <td>"html"</td>
+    <td>返回纯文本的html,调用标记中的所有&lt; script&gt;标签</td>
   </tr>
   <tr>
-    <td>“script”</td>
+    <td>"script"</td>
     <td>Evaluates the response as JavaScript并以纯文本格式返回</td>
   </tr>
   <tr>
-    <td>“json”</td>
+    <td>"json"</td>
     <td>Evaluates the response as JSON 并返回一个javascript对象</td>
   </tr>
   <tr>
-    <td>“jsonp”</td>
+    <td>"jsonp"</td>
     <td>在一个JSON块中使用JSONP加载响应</td>
   </tr>
   <tr>
-    <td>“text”</td>
+    <td>"text"</td>
     <td>返回一个纯文本字符串</td>
   </tr>
 </tbody></table>
@@ -79,15 +79,15 @@
 
 <h2>Rails.js设置dataType参数</h2>
 
-<p>Rails UJS驱动通过我们在远程链接/表单中指定的data-type属性来设置我们的ajax dataType参数。如果我们不明确地指定data-type，那默认的data-type将使用公有的$.ajaxSettings.如果我们没有提前设置它，那么一个通用的请求发送出后将会收到任意类型的响应。</p>
+<p>Rails UJS驱动通过我们在远程链接/表单中指定的data-type属性来设置我们的ajax dataType参数.如果我们不明确地指定data-type,那默认的data-type将使用公有的$.ajaxSettings.如果我们没有提前设置它,那么一个通用的请求发送出后将会收到任意类型的响应.</p>
 
 <p><code>javascript
 dataType = element.attr('data-type') || ($.ajaxSettings &amp;&amp; $.ajaxSettings.dataType);
 </code></p>
 
-<p>老版本的UJS驱动会默认一个在script 中的data-type，而不是发送一个通用的请求。看上去，这像是一个明智的做法，但如果在我们controller的action中没有定义format.js的话， Rails将会抛出一个异常。 而在较新版本的UJS驱动中则简单地使用jQuery的’/‘默认dataType.这会告诉服务器，”不管你收到什么都给我”。然而，这会让controller响应以在Responder中所列出的第一种格式(见下一节)。这样的话，如果 format.html 列在 format.js 前面的话，app会响应以HTML格式(这意味着将会尝试跳转到POST或DELETE方法的ajax请求)。这并不是我们想要的。</p>
+<p>老版本的UJS驱动会默认一个在script 中的data-type,而不是发送一个通用的请求.看上去,这像是一个明智的做法,但如果在我们controller的action中没有定义format.js的话, Rails将会抛出一个异常. 而在较新版本的UJS驱动中则简单地使用jQuery的'/&lsquo;默认dataType.这会告诉服务器,&ldquo;不管你收到什么都给我&rdquo;.然而,这会让controller响应以在Responder中所列出的第一种格式(见下一节).这样的话,如果 format.html 列在 format.js 前面的话,app会响应以HTML格式(这意味着将会尝试跳转到POST或DELETE方法的ajax请求).这并不是我们想要的.</p>
 
-<p>所以在最新版本的UJS驱动中，我们找到如何设置默认情况，比如说，当它告诉服务器，”尽管我更希望得到JS格式，但我会得到所有你得到的.”这样，如果所有可用的响应格式包括format.js都被定义，那么返回的将会是JS格式。当然，如果format.js没有被定义，那controller将会继续按照列表顺序返回第一个。</p>
+<p>所以在最新版本的UJS驱动中,我们找到如何设置默认情况,比如说,当它告诉服务器,&ldquo;尽管我更希望得到JS格式,但我会得到所有你得到的."这样,如果所有可用的响应格式包括format.js都被定义,那么返回的将会是JS格式.当然,如果format.js没有被定义,那controller将会继续按照列表顺序返回第一个.</p>
 
 <p><code>
 // Simplified for clarityif (dataType === undefined) {
@@ -95,23 +95,23 @@ dataType = element.attr('data-type') || ($.ajaxSettings &amp;&amp; $.ajaxSetting
 }
 </code></p>
 
-<h2>步骤 3 :在rails的controller中的响应</h2>
+<h2>步骤 3 :在Rails的controller中的响应</h2>
 
-<p>现在我们已经有了一个ajax请求，同时，在该请求的header指定我们希望得到的data-type。我们的rails app接收到这个请求，就会路由到相应的action，并渲染出一个响应。</p>
+<p>现在我们已经有了一个ajax请求,同时,在该请求的header指定我们希望得到的data-type.我们的Rails app接收到这个请求,就会路由到相应的action,并渲染出一个响应.</p>
 
-<p>我们的controller决定渲染些什么内容作为响应，以及是什么样的格式。respond_with 和 respond_to 这两个在Rails的Responder类中的方法会检查请求的 Accept 头（通过dataType设置）以渲染出适当的响应。</p>
+<p>我们的controller决定渲染些什么内容作为响应,以及是什么样的格式.respond_with 和 respond_to 这两个在Rails的Responder类中的方法会检查请求的 Accept 头(通过dataType设置)以渲染出适当的响应.</p>
 
-<p>对于基于对象的data-types，如XML和JSON，我们通常会对其序列化并返回一个指定格式的对象。这就是Responder默认所做的。而对于给予内容的data-types，如JS或html，我们通常会渲染一个 js.erb 或 html.erb 文件。</p>
+<p>对于基于对象的data-types,如XML和JSON,我们通常会对其序列化并返回一个指定格式的对象.这就是Responder默认所做的.而对于给予内容的data-types,如JS或html,我们通常会渲染一个 js.erb 或 html.erb 文件.</p>
 
-<blockquote><p>技术上，我们也能有一个自定义的 json.erb 或 xml.erb模板来渲染一个自定义的数据对象。Responder会查找这些模板，如果存在则渲染之。</p></blockquote>
+<blockquote><p>技术上,我们也能有一个自定义的 json.erb 或 xml.erb模板来渲染一个自定义的数据对象.Responder会查找这些模板,如果存在则渲染之.</p></blockquote>
 
 <h2>步骤 4 : jQuery处理响应</h2>
 
-<p>从上一篇文章可知，我们绑定了我们处理响应的jQuery代码在ajax:success,ajax:error,ajax:complete这些回调中。</p>
+<p>从上一篇文章可知,我们绑定了我们处理响应的jQuery代码在ajax:success,ajax:error,ajax:complete这些回调中.</p>
 
-<p>现在，我们对于各种不同的data-types及如何设置它们有了新的认识，我们能够修改我们的响应回调来处理我们所想要的data-type。在上一篇文章中，我们的回调绑定处理了一个HTML响应。</p>
+<p>现在,我们对于各种不同的data-types及如何设置它们有了新的认识,我们能够修改我们的响应回调来处理我们所想要的data-type.在上一篇文章中,我们的回调绑定处理了一个HTML响应.</p>
 
-<p>处理HTML响应：</p>
+<p>处理HTML响应:</p>
 
 <p>```
 $(&lsquo;#i-want-html&rsquo;)  .bind(&lsquo;ajax:success&rsquo;, function(evt, data, status, xhr){</p>
@@ -137,9 +137,9 @@ $(this).find('.errors').html(xhr.responseText);
 
 <p>  });
 ```
-同样的，我们能很轻易的修改上面的代码来处理JSON响应：</p>
+同样的,我们能很轻易的修改上面的代码来处理JSON响应:</p>
 
-<p>处理JSON请求：</p>
+<p>处理JSON请求:</p>
 
 <p>```javascript
 $(&lsquo;#i-want-json&rsquo;)  .bind(&lsquo;ajax:success&rsquo;, function(evt, data, status, xhr){</p>
@@ -167,30 +167,30 @@ $(this).find('.errors').html(errors);
 
 <p>});
 ```
-最后，如果是要处理一个JS请求，则我们不需要绑定任何的回调函数。记住，如果是 data-type: ‘script’ ,jQuery会自动执行页面中的JavaScript响应。</p>
+最后,如果是要处理一个JS请求,则我们不需要绑定任何的回调函数.记住,如果是 data-type: &lsquo;script&rsquo; ,jQuery会自动执行页面中的JavaScript响应.</p>
 
 <p>处理JS请求:</p>
 
 <p><code>
 //Nothing!
 </code>
-如果 我们的响应没有自动为我们执行，那我们的处理方式可能是像下面这样:</p>
+如果 我们的响应没有自动为我们执行,那我们的处理方式可能是像下面这样:</p>
 
 <p><code>javascript
 $('#i-want-js').bind('ajax:complete', function(evt, xhr, status){  eval(xhr.responseText);
 });
 </code>
-注意，我们已经绑定了回调 ajax:complete 来取代ajax:success|error.这是因为，我们的success/error处理都在js.erb文件。</p>
+注意,我们已经绑定了回调 ajax:complete 来取代ajax:success|error.这是因为,我们的success/error处理都在js.erb文件.</p>
 
-<blockquote><p>上面的处理方式并不非完全和自动执行函数一致。上述的函数会在 $(‘#i-want-js’) 元素的上下文执行我们的脚本，同时，jQuery在 $(window) 上下文自动执行我们的脚本。</p></blockquote>
+<blockquote><p>上面的处理方式并不非完全和自动执行函数一致.上述的函数会在 $(&lsquo;#i-want-js&rsquo;) 元素的上下文执行我们的脚本,同时,jQuery在 $(window) 上下文自动执行我们的脚本.</p></blockquote>
 
-<p>现在，让我们来个总结</p>
+<p>现在,让我们来个总结</p>
 
 <h2>使用js.erb的例子</h2>
 
-<p>就像上一篇文章，我们会创建一个comment并通过ajax提交。所不同的是，这次我们会响应以 js.erb</p>
+<p>就像上一篇文章,我们会创建一个comment并通过ajax提交.所不同的是,这次我们会响应以 js.erb</p>
 
-<p>在controller中，我们会添加一些响应html、hs、json请求的功能。</p>
+<p>在controller中,我们会添加一些响应html、hs、json请求的功能.</p>
 
 <p>comments_controller.rb</p>
 
@@ -208,7 +208,7 @@ respond_with( @comment, :layout =&gt; !request.xhr? )
 <p>  end
 end
 ```
-如果你对rails3的Responder不熟悉，下面的代码效果是一样的:</p>
+如果你对Rails3的Responder不熟悉,下面的代码效果是一样的:</p>
 
 <p>```ruby
 class TestCommentsController &lt; ApplicationController &hellip;
@@ -230,7 +230,7 @@ respond_to do |format|
 <p>  end
 end
 ```
-现在，我们来设定index页面来列出所有的comments，以及包括我们的ajax表单用以创建一个新comment。我们不需要在我们的表单中写任何data-type这鸽HTML5属性，Rails UJS会默认我们需要JS</p>
+现在,我们来设定index页面来列出所有的comments,以及包括我们的ajax表单用以创建一个新comment.我们不需要在我们的表单中写任何data-type这鸽HTML5属性,Rails UJS会默认我们需要JS</p>
 
 <p>index.html.erb</p>
 
@@ -245,7 +245,7 @@ end
   &lt;%= f.submit %>
 &lt;% end %>
 ```
-最后，我们需要创建 js.erb模板，该模板会被执行并插入响应到我们的页面中。</p>
+最后,我们需要创建 js.erb模板,该模板会被执行并插入响应到我们的页面中.</p>
 
 <p>create.js.erb</p>
 
@@ -282,11 +282,11 @@ var el = $(&lsquo;#new-comment-form&rsquo;);
 <p>&lt;% end %>
 ```</p>
 
-<h2>写在最后！</h2>
+<h2>写在最后!</h2>
 
-<p>重申一次，这里我们不需要绑定任何ajax回调。It just works.</p>
+<p>重申一次,这里我们不需要绑定任何ajax回调.It just works.</p>
 
-<blockquote><p>有时候，javascript响应不会像它本应该的那样执行，取而代之的是作为一个字符串返回。这通常意味着有在这个响应的javascript中有一些异常。这是很烦人的，但它不会从自动执行响应中抛出任何可见的javascript错误。</p></blockquote>
+<blockquote><p>有时候,javascript响应不会像它本应该的那样执行,取而代之的是作为一个字符串返回.这通常意味着有在这个响应的javascript中有一些异常.这是很烦人的,但它不会从自动执行响应中抛出任何可见的javascript错误.</p></blockquote>
 
 <p>See Rails js.erb Remote Response not Executing.</p>
 ]]></content>
@@ -297,51 +297,51 @@ var el = $(&lsquo;#new-comment-form&rsquo;);
     <link href="http://xguox.github.com/blog/2012/07/11/rails-3-remote-links-and-forms/"/>
     <updated>2012-07-11T11:28:00+08:00</updated>
     <id>http://xguox.github.com/blog/2012/07/11/rails-3-remote-links-and-forms</id>
-    <content type="html"><![CDATA[<h2>楼主物语：</h2>
+    <content type="html"><![CDATA[<h2>楼主物语:</h2>
 
-<blockquote><p>这些天遇上一些困难请教Larry的时候他没少给我一些英文的资料，虽然能够阅读，但是始终觉得翻译回中文以后再看也方便些。不过有些地方翻的比较蹩脚呀。</p>
+<blockquote><p>这些天遇上一些困难请教Larry的时候他没少给我一些英文的资料,虽然能够阅读,但是始终觉得翻译回中文以后再看也方便些.不过有些地方翻的比较蹩脚呀.</p>
 
-<p>原文：<a href="http://www.alfajango.com/blog/rails-3-remote-links-and-forms/">Rails 3 Remote Links and Forms: A Definitive Guide</a></p></blockquote>
+<p>原文:<a href="http://www.alfajango.com/blog/Rails-3-remote-links-and-forms/">Rails 3 Remote Links and Forms: A Definitive Guide</a></p></blockquote>
 
 <!-- more -->
 
 
-<p>Spoiler Alert:如果你喜欢魔法，请停止阅读这篇文章。因为，让rails的表单、连接、输入等如此强大的Rails 3 UJS驱动—-rails.js,当你知道它的工作原理后，你就知道其实它没有多么的神奇。</p>
+<p>Spoiler Alert:如果你喜欢魔法,请停止阅读这篇文章.因为,让Rails的表单、连接、输入等如此强大的Rails 3 UJS驱动—-Rails.js,当你知道它的工作原理后,你就知道其实它没有多么的神奇.</p>
 
-<h2>rails.js做什么</h2>
+<h2>Rails.js做什么</h2>
 
 <ol>
-<li>它找到远程链接、表单和输入，并通过Ajax覆盖这些的click事件以提交到服务器端。</li>
+<li>它找到远程链接、表单和输入,并通过Ajax覆盖这些的click事件以提交到服务器端.</li>
 <li>它触发6种javascript事件来让你绑定一些回调函数用以处理和操纵这个Ajax响应</li>
 <li><del>它处理从服务器端得到的Ajax回应</del></li>
 </ol>
 
 
-<h2>rails.js不做什么</h2>
+<h2>Rails.js不做什么</h2>
 
-<p>请注意到上述最后一点是加了删除线的。当启用新的rails3远程功能时候，这似乎是混乱的最大来源。因为已经根深蒂固的习惯于rails2的 link_to_remote 与 remote_form_for,我们期待rails3也同样的会为我们的表单、链接处理Ajax响应。但是rails3却没有这么做，它把这些都交给你去完成。 Rails会做的是帮你把包裹搬上房间，但不会帮你打开包裹。This is by design;为什么你想要侍从帮你使用你的东西呢？同样的，每个元素的数据实际处理方式很大程度上是独一无二的，并且取决于你再各种情况下工作所得的的数据。所以，Rails把这一部分留给你来做决定，而我们则回到了过去。</p>
+<p>请注意到上述最后一点是加了删除线的.当启用新的Rails3远程功能时候,这似乎是混乱的最大来源.因为已经根深蒂固的习惯于Rails2的 link_to_remote 与 remote_form_for,我们期待Rails3也同样的会为我们的表单、链接处理Ajax响应.但是Rails3却没有这么做,它把这些都交给你去完成. Rails会做的是帮你把包裹搬上房间,但不会帮你打开包裹.This is by design;为什么你想要侍从帮你使用你的东西呢?同样的,每个元素的数据实际处理方式很大程度上是独一无二的,并且取决于你再各种情况下工作所得的的数据.所以,Rails把这一部分留给你来做决定,而我们则回到了过去.</p>
 
 <h2>HTML5的角色</h2>
 
-<p>你可能已经听说Rails3将使用HTML5。的确是的。但HTML5所扮演的实际角色并没有你想象中的那么重要。 是否还记得rails.js所做的第一样东西。在它能覆盖所有远程元素的click事件和submit事件前，它需要先找到这些所有的元素。 因此，我们需要一种方法来指定我们的远程元素。在以前，我们可能会添加 class=”remote” 到我们的远程元素。但现在，所有的class属性都跟样式相关联了。难道就没有一种办法能区分出远程元素而不用污染到我们的CSS类。 这，在HTML5中是有的。有这么一段HTML5规范:现在，你可以添加任意标签到一个HTML元素，只要这个标签的起始部分是”data-“.因此，下面这是一个有效的HTML标记：</p>
+<p>你可能已经听说Rails3将使用HTML5.的确是的.但HTML5所扮演的实际角色并没有你想象中的那么重要. 是否还记得Rails.js所做的第一样东西.在它能覆盖所有远程元素的click事件和submit事件前,它需要先找到这些所有的元素. 因此,我们需要一种方法来指定我们的远程元素.在以前,我们可能会添加 class=&ldquo;remote&rdquo; 到我们的远程元素.但现在,所有的class属性都跟样式相关联了.难道就没有一种办法能区分出远程元素而不用污染到我们的CSS类. 这,在HTML5中是有的.有这么一段HTML5规范:现在,你可以添加任意标签到一个HTML元素,只要这个标签的起始部分是"data-&ldquo;.因此,下面这是一个有效的HTML标记:</p>
 
 <p><code>html
 &lt;a href="stuff.hml" data-rocketsocks="whateva"]] &gt; Blast off!&lt;/a]] &gt;
 </code>
-Rails 3充分利用了这种新的HTML标记，它通过在HTML元素中添加 :remote => true 来转换所有的链接和表单使其拥有了标签 data-remote = true
+Rails 3充分利用了这种新的HTML标记,它通过在HTML元素中添加 :remote => true 来转换所有的链接和表单使其拥有了标签 data-remote = true
 <code>html
 &lt;%= link_to "Get remote sauce", {:action =&gt; "sauce"}, :remote =&gt; true, :class =&gt; "button-link" %&gt;# =&gt; &lt;a href="sauce" class="button-link" data-remote=true&gt;Get remote sauce&lt;/a&gt;
 </code>
-现在rails.js通过如下的选择器找到所有的远程链接：
+现在Rails.js通过如下的选择器找到所有的远程链接:
 <code>javascript
 $('form[data-remote]')
 $('a[data-remote],input[data-remote]'
 </code>
-并且分别通过一个ajax请求到form的action和link的href属性从而重载了submit和click动作， Then it does the same thing wirh remote forms and inputs, using the form’s action. 就是这样，HTML5只是提供一个方便、语法、方式给我们用以指定及选择劫持哪个元素（？？？）</p>
+并且分别通过一个ajax请求到form的action和link的href属性从而重载了submit和click动作, Then it does the same thing wirh remote forms and inputs, using the form&rsquo;s action. 就是这样,HTML5只是提供一个方便、语法、方式给我们用以指定及选择劫持哪个元素(???)</p>
 
 <h2>处理Ajax响应</h2>
 
-<p>那么，我们到底是如何根据ajax响应做一些事情呢？幸运的是，当rails.js远程发送你的请求时，它同时也触发了6个自定义事件，并传输相应的数据/响应到每一个事件。你也可以绑定你自己的处理函数到这些事件。 这6个事件是：</p>
+<p>那么,我们到底是如何根据ajax响应做一些事情呢?幸运的是,当Rails.js远程发送你的请求时,它同时也触发了6个自定义事件,并传输相应的数据/响应到每一个事件.你也可以绑定你自己的处理函数到这些事件. 这6个事件是:</p>
 
 <p><code>
 ajax:before
@@ -354,7 +354,7 @@ ajax:after
 
 <h2>Update:</h2>
 
-<blockquote><p>在这篇文章写下后，rails团队对 jQuery UJS driver 做了些改动。在最新版本的rails.js中，只剩下了以下4个回调事件：</p></blockquote>
+<blockquote><p>在这篇文章写下后,Rails团队对 jQuery UJS driver 做了些改动.在最新版本的Rails.js中,只剩下了以下4个回调事件:</p></blockquote>
 
 <p><code>
 ajax:beforeSend
@@ -362,23 +362,23 @@ ajax:success
 ajax:complete
 ajax:error
 </code>
-这样，在你的页面中，你将会像下面这样绑定这些事件到一个函数中：</p>
+这样,在你的页面中,你将会像下面这样绑定这些事件到一个函数中:</p>
 
 <p><code>javascript
 $('.button-link').bind('ajax:success', function(){  alert("Success!");
 });
 </code>
-你会发现，通过绑定一些函数到实体/事件，在rails中的所有的javascript功能都是很方便的。</p>
+你会发现,通过绑定一些函数到实体/事件,在Rails中的所有的javascript功能都是很方便的.</p>
 
-<p>Binding is good，因为它不是引人注目的。javascript功能和html标记分别作为完全独立单位但通过javascript绑定在一起的存在。如果用户没有用到javascript，那么javascript所绑定到html实体的js函数将永远不会被执行，用户所得到的，只是干干净净、有效的HTML</p>
+<p>Binding is good,因为它不是引人注目的.javascript功能和html标记分别作为完全独立单位但通过javascript绑定在一起的存在.如果用户没有用到javascript,那么javascript所绑定到html实体的js函数将永远不会被执行,用户所得到的,只是干干净净、有效的HTML</p>
 
 <h2>把他们都放在一起</h2>
 
-<p>解释的足够多了，下面让我们建立一个加载一些内容到页面的远程表单。我们会提供给用户即时反馈，完整地处理所有的错误，以及能让用户重置表单再做一次。有了以上知识的武装，希望下面的没有人会看起来以为是魔法。 接下来，我们将假定在我们的rails app中，有一个Comment model,且该model在数据库中有一个text类型的”content”字段。通过提交一个远程表单，我们能让用户创建一个comment，并将这个comment插入到页面中。</p>
+<p>解释的足够多了,下面让我们建立一个加载一些内容到页面的远程表单.我们会提供给用户即时反馈,完整地处理所有的错误,以及能让用户重置表单再做一次.有了以上知识的武装,希望下面的没有人会看起来以为是魔法. 接下来,我们将假定在我们的Rails app中,有一个Comment model,且该model在数据库中有一个text类型的"content"字段.通过提交一个远程表单,我们能让用户创建一个comment,并将这个comment插入到页面中.</p>
 
-<blockquote><p>你可能注意到，我们直接请求了一个html的响应，但却以JSON的形式返回一些错误。我们使用 respond_with 覆盖了许多魔术方法。这一切说明我们在请求/响应中有多大的控制权。</p>
+<blockquote><p>你可能注意到,我们直接请求了一个html的响应,但却以JSON的形式返回一些错误.我们使用 respond_with 覆盖了许多魔术方法.这一切说明我们在请求/响应中有多大的控制权.</p>
 
-<p>接着的Part2将通过一个更production-appropriate的例子叙述了如何请求一个JS（xml,json,文本或其他）的响应。</p></blockquote>
+<p>接着的Part2将通过一个更production-appropriate的例子叙述了如何请求一个JS(xml,json,文本或其他)的响应.</p></blockquote>
 
 <h2>View</h2>
 
@@ -430,17 +430,17 @@ end
 <p>  end
 end
 ```
-显而易见的，我们需要一个显示comment的partial模板 _show.html.erb 。希望你知道如何做到。</p>
+显而易见的,我们需要一个显示comment的partial模板 _show.html.erb .希望你知道如何做到.</p>
 
-<p>在这一点上，我们有一个提交到远程服务器上的表单，并且我们的服务器响应以我们在view中的partial，并准备插入到页面中去。但有一点是，它并不是真正的被插入到页面中。</p>
+<p>在这一点上,我们有一个提交到远程服务器上的表单,并且我们的服务器响应以我们在view中的partial,并准备插入到页面中去.但有一点是,它并不是真正的被插入到页面中.</p>
 
 <h2>Javascript</h2>
 
-<p>是时候绑定一些处理函数到那些触发的ajax事件。因此，在我们的表单页面中，我们将希望加载这个javascript（可能会在标签或者在一个分离开的js文件）</p>
+<p>是时候绑定一些处理函数到那些触发的ajax事件.因此,在我们的表单页面中,我们将希望加载这个javascript(可能会在标签或者在一个分离开的js文件)</p>
 
 <blockquote><p>Update:</p>
 
-<p>下面这段已经更新以绑定到最新版本的rails.js所允许的回调。</p></blockquote>
+<p>下面这段已经更新以绑定到最新版本的Rails.js所允许的回调.</p></blockquote>
 
 <p>```javascript
 $(document).ready(function(){
@@ -502,49 +502,49 @@ $(document).ready(function(){
 <p>});
 ```</p>
 
-<blockquote><p>这些函数每一个都能轻易地抽象化，这样他们能轻易地或者自动地应用在我们所有的远程表单中。</p></blockquote>
+<blockquote><p>这些函数每一个都能轻易地抽象化,这样他们能轻易地或者自动地应用在我们所有的远程表单中.</p></blockquote>
 
-<p>这些绑定也以同样的方式工作于远程链接中。但我想我们已经使用了一个远程表单在这个例子中，由于这需要一些额外的但没有明显区别的步骤（例如清除表单或增添验证错误）</p>
+<p>这些绑定也以同样的方式工作于远程链接中.但我想我们已经使用了一个远程表单在这个例子中,由于这需要一些额外的但没有明显区别的步骤(例如清除表单或增添验证错误)</p>
 
-<p>同时，需要注意到:从ajax事件所传输到你的函数的数据并不是在同一个顺序.在ajax:success中是 evt,data,status,xhr ，而在ajax:failure中是，eve,xhr,status,error。This will get ya every time.</p>
+<p>同时,需要注意到:从ajax事件所传输到你的函数的数据并不是在同一个顺序.在ajax:success中是 evt,data,status,xhr ,而在ajax:failure中是,eve,xhr,status,error.This will get ya every time.</p>
 
-<h2>别急，还有更重要的</h2>
+<h2>别急,还有更重要的</h2>
 
-<p>如果你从文章开始就做足功课，并且看过了rails.js文件，你应该会注意到一些额外的细节。</p>
+<p>如果你从文章开始就做足功课,并且看过了Rails.js文件,你应该会注意到一些额外的细节.</p>
 
 <h2>.live</h2>
 
-<p>rails.js实际上用 .live() 而不是直接绑定click事件到远程表单、链接、输入。这样，在上面的javascript中，你可以替换 .bind() 为 .live() 显得更文艺一些。</p>
+<p>Rails.js实际上用 .live() 而不是直接绑定click事件到远程表单、链接、输入.这样,在上面的javascript中,你可以替换 .bind() 为 .live() 显得更文艺一些.</p>
 
-<h2>Update：</h2>
+<h2>Update:</h2>
 
-<blockquote><p>如果要在你的ajax处理中使用 .live() ,请确定你所使用的jQuery版本>v1.4.4,因为早些的版本会在IE中出现一些问题。</p></blockquote>
+<blockquote><p>如果要在你的ajax处理中使用 .live() ,请确定你所使用的jQuery版本>v1.4.4,因为早些的版本会在IE中出现一些问题.</p></blockquote>
 
-<h2>:confirm => “R U sure? ”</h2>
+<h2>:confirm => &ldquo;R U sure? &rdquo;</h2>
 
-<p>你可能还会注意到 rails.js文件处理 :confirm => “R U sure? “(当你点击或者提交一些东西的时候嘣的弹出一个小窗口并显示”R U sure”（你也可以只写 :confirm => true 使用默认的信息）)，就像远程功能，Rails 3简单地添加有效的标签 data-confirm=true 到你的HTML元素</p>
+<p>你可能还会注意到 Rails.js文件处理 :confirm => &ldquo;R U sure? &rdquo;(当你点击或者提交一些东西的时候嘣的弹出一个小窗口并显示"R U sure"(你也可以只写 :confirm => true 使用默认的信息)),就像远程功能,Rails 3简单地添加有效的标签 data-confirm=true 到你的HTML元素</p>
 
-<h2>:disable_with => “Submitting…”</h2>
+<h2>:disable_with => &ldquo;Submitting…&rdquo;</h2>
 
-<p>Rails 3给了我们另外的一个选项，:disable_with,这样当一个远程表单被提交的时候， we can give to form input elements to disable and re-label them.添加data-disable-with标签到这些输入中，使rails.js能选择和绑定这个功能。</p>
+<p>Rails 3给了我们另外的一个选项,:disable_with,这样当一个远程表单被提交的时候, we can give to form input elements to disable and re-label them.添加data-disable-with标签到这些输入中,使Rails.js能选择和绑定这个功能.</p>
 
-<p>想知道如何让远程表单或者链接工作于 js.erb(或者其他任何与之相关联的形式)，请看这篇文章的<a href="http://xguox.me/blog/2012/07/12/rails-3-remote-links-and-forms-part-2-data-type-with-jquery/">Part 2</a></p>
+<p>想知道如何让远程表单或者链接工作于 js.erb(或者其他任何与之相关联的形式),请看这篇文章的<a href="http://xguox.me/blog/2012/07/12/Rails-3-remote-links-and-forms-part-2-data-type-with-jquery/">Part 2</a></p>
 ]]></content>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[rails小记两则]]></title>
+    <title type="html"><![CDATA[Rails小记两则]]></title>
     <link href="http://xguox.github.com/blog/2012/05/27/rails-note/"/>
     <updated>2012-05-27T11:15:00+08:00</updated>
     <id>http://xguox.github.com/blog/2012/05/27/rails-note</id>
-    <content type="html"><![CDATA[<p>最近在做个课程设计，好吧，俺老师是要求用JSP的，可惜我那弱爆了的水平是不可能完成的。于是顶着各种压力自己用rails来做。</p>
+    <content type="html"><![CDATA[<p>最近在做个课程设计,好吧,俺老师是要求用JSP的,可惜我那弱爆了的水平是不可能完成的.于是顶着各种压力自己用Rails来做.</p>
 
-<p>今天才发现个问题，原来mysql默认存储的int貌似最多是10位就爆了，原本我的数据库中有学号那个字段的并且migration是存为integer，结果录入数据时候就各种甭了，因为学校学号都是10位数，不管我输入的是什么，进了数据库的学号字段都变成 2147483648, 刚开始看日志，看程序都木有发现什么问题，纠结不能，查看数据库发现，每条记录的学号西端都是统一的,搜索一通才发现问题所在。于是直接用mysql工具将学号字段改成了BIGINT，杠杠的就啥事都没了</p>
+<p>今天才发现个问题,原来mysql默认存储的int貌似最多是10位就爆了,原本我的数据库中有学号那个字段的并且migration是存为integer,结果录入数据时候就各种甭了,因为学校学号都是10位数,不管我输入的是什么,进了数据库的学号字段都变成 2147483648, 刚开始看日志,看程序都木有发现什么问题,纠结不能,查看数据库发现,每条记录的学号西端都是统一的,搜索一通才发现问题所在.于是直接用mysql工具将学号字段改成了BIGINT,杠杠的就啥事都没了</p>
 
 <!-- more -->
 
 
-<p>另外个是，用了will_paginate这个gem做分页，不过默认显示的是“previous”和“next”，改为中文的“前一页”和“后一页”需要先在config/initializers/ 下新建一个will_paginate.rb,  and then在里头加入
+<p>另外个是,用了will_paginate这个gem做分页,不过默认显示的是"previous"和"next",改为中文的"前一页"和"后一页"需要先在config/initializers/ 下新建一个will_paginate.rb,  and then在里头加入
 <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -561,28 +561,28 @@ $(document).ready(function(){
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[ubuntu12.04 and rails]]></title>
+    <title type="html"><![CDATA[ubuntu12.04 and Rails]]></title>
     <link href="http://xguox.github.com/blog/2012/04/27/ubuntu1204-and-rails/"/>
     <updated>2012-04-27T23:51:00+08:00</updated>
     <id>http://xguox.github.com/blog/2012/04/27/ubuntu1204-and-rails</id>
-    <content type="html"><![CDATA[<p>昨晚，把ubuntu升级到了12.04，其实，对我目前的使用来说，系统是否升级几乎没影响。不过看着更新管理器冒出了新版本，反正也就按几个下的功夫，于是就升上去了。</p>
+    <content type="html"><![CDATA[<p>昨晚,把ubuntu升级到了12.04,其实,对我目前的使用来说,系统是否升级几乎没影响.不过看着更新管理器冒出了新版本,反正也就按几个下的功夫,于是就升上去了.</p>
 
-<p>新版本多了首先感觉感觉性能上貌似快了些许，不多&hellip;另外对我而言直观的体验是launcher，之前的launcher也太敏感了，不过现在这倒是太呆板了，有时想要却不出来。不过桌面状态下不显示这点我比较喜欢。（以前也可以设置？不知道，木有研究）</p>
+<p>新版本多了首先感觉感觉性能上貌似快了些许,不多&hellip;另外对我而言直观的体验是launcher,之前的launcher也太敏感了,不过现在这倒是太呆板了,有时想要却不出来.不过桌面状态下不显示这点我比较喜欢.(以前也可以设置?不知道,木有研究)</p>
 
 <!-- more -->
 
 
-<p>另外alt键貌似上边会冒出个可输入命令行的，目前还木有发现其实际作用。</p>
+<p>另外alt键貌似上边会冒出个可输入命令行的,目前还木有发现其实际作用.</p>
 
-<p>好吧，其实，我对这些改进啊有的没的还不怎么敏感。所以与其要看我介绍新功能新特性还不如直接搜索。</p>
+<p>好吧,其实,我对这些改进啊有的没的还不怎么敏感.所以与其要看我介绍新功能新特性还不如直接搜索.</p>
 
-<p>我敏感的只是，我的一些rails项目都跑不动了。passenger报错
+<p>我敏感的只是,我的一些Rails项目都跑不动了.passenger报错
 <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>Error message:
-</span><span class='line'>libmysqlclient_r.so.16: cannot open shared object file: No such file or directory &ndash; /home/xguox/.rvm/gems/ruby-1.9.2-p290@rails/gems/mysql2-0.3.11/lib/mysql2/mysql2.so</span></code></pre></td></tr></table></div></figure></notextile></div>
-我还以为是我缺少了libmysqlclient_r.so.16这个文件，自己下载了之后也还是不行。期间尝试重装mysql，也试过之前说的那个，安装各种组建的命令还是无果。最终在ruby-china得到大神指点，居然只需卸了重装mysql2这个gem就可以了。貌似是因为/usr/lib 下的mysql2.so没有link到gem里边的mysql2.so
-过后，还是跟往常没有多大差别的继续Rails&hellip;</p>
+</span><span class='line'>libmysqlclient_r.so.16: cannot open shared object file: No such file or directory &ndash; /home/xguox/.rvm/gems/Ruby-1.9.2-p290@Rails/gems/mysql2-0.3.11/lib/mysql2/mysql2.so</span></code></pre></td></tr></table></div></figure></notextile></div>
+我还以为是我缺少了libmysqlclient_r.so.16这个文件,自己下载了之后也还是不行.期间尝试重装mysql,也试过之前说的那个,安装各种组建的命令还是无果.最终在Ruby-china得到大神指点,居然只需卸了重装mysql2这个gem就可以了.貌似是因为/usr/lib 下的mysql2.so没有link到gem里边的mysql2.so
+过后,还是跟往常没有多大差别的继续Rails&hellip;</p>
 ]]></content>
   </entry>
   
@@ -591,15 +591,15 @@ $(document).ready(function(){
     <link href="http://xguox.github.com/blog/2012/04/20/usage-of-try/"/>
     <updated>2012-04-20T23:17:00+08:00</updated>
     <id>http://xguox.github.com/blog/2012/04/20/usage-of-try</id>
-    <content type="html"><![CDATA[<p>居然今晚才发现Rails中try的用法，初一看，怎么那么像印象中某些语言的异常处理？不对啊，ruby中的异常处理不是长这个样子的。
-查了下rails的API才了解了大致用法。</p>
+    <content type="html"><![CDATA[<p>居然今晚才发现Rails中try的用法,初一看,怎么那么像印象中某些语言的异常处理?不对啊,Ruby中的异常处理不是长这个样子的.
+查了下Rails的API才了解了大致用法.</p>
 
-<p>API：</p>
+<p>API:</p>
 
 <p>不使用try的时候是<!-- more -->
 <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>@person &amp;&amp; @person.name</span></code></pre></td></tr></table></div></figure></notextile></div>
-需确保@person不是nil，否则会报错
+需确保@person不是nil,否则会报错
 <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>NoMethodError: undefined method `name' for nil:NilClass</span></code></pre></td></tr></table></div></figure></notextile></div>
 如果用try的话
@@ -607,13 +607,13 @@ $(document).ready(function(){
 </pre></td><td class='code'><pre><code class=''><span class='line'>@person.try(:name)</span></code></pre></td></tr></table></div></figure></notextile></div>
 如果@person为nil则返回nil而不是报错</p>
 
-<p>另外，try还可以接收block作为参数，
+<p>另外,try还可以接收block作为参数,
 <div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>Person.try(:find, 1)
 </span><span class='line'>@people.try(:collect) {|p| p.name}</span></code></pre></td></tr></table></div></figure></notextile></div>
-漏了一句，API开头就说了，像常规的ruby的Object#send 那样工作
-看了下源码，貌似是利用了<strong>send</strong>实现的。最近在研究ruby的元编程。</p>
+漏了一句,API开头就说了,像常规的Ruby的Object#send 那样工作
+看了下源码,貌似是利用了<strong>send</strong>实现的.最近在研究Ruby的元编程.</p>
 ]]></content>
   </entry>
   

@@ -7,9 +7,9 @@
 
 	<meta name="author" content="XguoX">
 
-<meta name="description" content="居然今晚才发现Rails中try的用法，初一看，怎么那么像印象中某些语言的异常处理？不对啊，ruby中的异常处理不是长这个样子的。
-查了下rails的API才了解了大致用法。 API： 不使用try的时候是 1
-@person && @person.name 需确保@person不是nil， &hellip;"> <meta name="keywords" content="">
+<meta name="description" content="居然今晚才发现Rails中try的用法,初一看,怎么那么像印象中某些语言的异常处理?不对啊,Ruby中的异常处理不是长这个样子的.
+查了下Rails的API才了解了大致用法. API: 不使用try的时候是 1
+@person && @person.name 需确保@person不是nil, &hellip;"> <meta name="keywords" content="">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -66,10 +66,10 @@
 
 <time datetime="2012-04-20T23:17:00+08:00" pubdate data-updated="true">Apr 20<span>th</span>, 2012</time></div>
 	</header>
-	<div class="entry-content"><p>居然今晚才发现Rails中try的用法，初一看，怎么那么像印象中某些语言的异常处理？不对啊，ruby中的异常处理不是长这个样子的。
-查了下rails的API才了解了大致用法。</p>
+	<div class="entry-content"><p>居然今晚才发现Rails中try的用法,初一看,怎么那么像印象中某些语言的异常处理?不对啊,Ruby中的异常处理不是长这个样子的.
+查了下Rails的API才了解了大致用法.</p>
 
-<p>API：</p>
+<p>API:</p>
 
 <p>不使用try的时候是<!-- more --></p>
 
@@ -77,7 +77,7 @@
 </pre></td><td class='code'><pre><code class=''><span class='line'>@person && @person.name</span></code></pre></td></tr></table></div></figure>
 
 
-<p>需确保@person不是nil，否则会报错</p>
+<p>需确保@person不是nil,否则会报错</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>NoMethodError: undefined method `name' for nil:NilClass</span></code></pre></td></tr></table></div></figure>
@@ -91,7 +91,7 @@
 
 <p>如果@person为nil则返回nil而不是报错</p>
 
-<p>另外，try还可以接收block作为参数，</p>
+<p>另外,try还可以接收block作为参数,</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -99,8 +99,8 @@
 </span><span class='line'>@people.try(:collect) {|p| p.name}</span></code></pre></td></tr></table></div></figure>
 
 
-<p>漏了一句，API开头就说了，像常规的ruby的Object#send 那样工作
-看了下源码，貌似是利用了<strong>send</strong>实现的。最近在研究ruby的元编程。</p>
+<p>漏了一句,API开头就说了,像常规的Ruby的Object#send 那样工作
+看了下源码,貌似是利用了<strong>send</strong>实现的.最近在研究Ruby的元编程.</p>
 </div>
 
 </article>

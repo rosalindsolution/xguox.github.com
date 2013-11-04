@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Ghost | XguoX]]></title>
   <link href="http://xguox.github.com/blog/categories/ghost/atom.xml" rel="self"/>
   <link href="http://xguox.github.com/"/>
-  <updated>2013-11-04T15:03:00+08:00</updated>
+  <updated>2013-11-04T19:29:49+08:00</updated>
   <id>http://xguox.github.com/</id>
   <author>
     <name><![CDATA[XguoX]]></name>
@@ -20,7 +20,7 @@
     <id>http://xguox.github.com/blog/2013/10/18/deploying-ghost-to-heroku</id>
     <content type="html"><![CDATA[<p>原本没有意思要班门弄斧写什么Ghost的部署感受帖的,不过前些天看到@lucifr 的这条tweet,于是还是忍不住写了,就让更多假死Ghost诞生吧.</p>
 
-<blockquote class="twitter-tweet"><p>ghost 一出，网上又要冒出一大堆主题风格相似的 blog 了，然后更新两篇使用感受就处于假死状态</p>&mdash; Lucifr (@lucifr) <a href="https://twitter.com/lucifr/statuses/390104155152343040">October 15, 2013</a></blockquote>
+<blockquote class="twitter-tweet"><p>ghost 一出,网上又要冒出一大堆主题风格相似的 blog 了,然后更新两篇使用感受就处于假死状态</p>&mdash; Lucifr (@lucifr) <a href="https://twitter.com/lucifr/statuses/390104155152343040">October 15, 2013</a></blockquote>
 
 
 <script async src="http://xguox.github.com//platform.twitter.com/widgets.js" charset="utf-8"></script>

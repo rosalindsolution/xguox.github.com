@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Performance | XguoX]]></title>
   <link href="http://xguox.github.com/blog/categories/performance/atom.xml" rel="self"/>
   <link href="http://xguox.github.com/"/>
-  <updated>2013-11-04T15:03:00+08:00</updated>
+  <updated>2013-11-04T19:29:49+08:00</updated>
   <id>http://xguox.github.com/</id>
   <author>
     <name><![CDATA[XguoX]]></name>
@@ -33,7 +33,7 @@
 
 <h2>Designing for performance</h2>
 
-<p>网站的性能优劣从网站设计开始.权衡一个设计选择对你的网页速度的影响 你的网站的转化率. 你真的需要8个深浅不同的蓝色吗？这个宽度为1000px的背景图片还需要加什么值吗? 使用icon font来取代sprite会导致页面变得更重,渲染更慢, 还是会比使用原始图片更快呢?</p>
+<p>网站的性能优劣从网站设计开始.权衡一个设计选择对你的网页速度的影响 你的网站的转化率. 你真的需要8个深浅不同的蓝色吗?这个宽度为1000px的背景图片还需要加什么值吗? 使用icon font来取代sprite会导致页面变得更重,渲染更慢, 还是会比使用原始图片更快呢?</p>
 
 <p>并非所有的设计决策都是有利于性能的. 我发现一个略微减慢了页面速度的button样式可以提高转化(conversions), 对于仅需要牺牲小小的页面速度来说, 这是值得的.</p>
 

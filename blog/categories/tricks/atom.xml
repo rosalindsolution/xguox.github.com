@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Tricks | XguoX]]></title>
   <link href="http://xguox.github.com/blog/categories/tricks/atom.xml" rel="self"/>
   <link href="http://xguox.github.com/"/>
-  <updated>2013-11-04T15:03:00+08:00</updated>
+  <updated>2013-11-04T19:29:49+08:00</updated>
   <id>http://xguox.github.com/</id>
   <author>
     <name><![CDATA[XguoX]]></name>
@@ -18,7 +18,7 @@
     <link href="http://xguox.github.com/blog/2013/10/28/hidden-productivity-secrets-with-alfred/"/>
     <updated>2013-10-28T15:07:00+08:00</updated>
     <id>http://xguox.github.com/blog/2013/10/28/hidden-productivity-secrets-with-alfred</id>
-    <content type="html"><![CDATA[<p>好的开发人员总是在寻找可以让自己的工作流程更快速,更自动化的方法。<br/>
+    <content type="html"><![CDATA[<p>好的开发人员总是在寻找可以让自己的工作流程更快速,更自动化的方法.<br/>
 这次,我们带来的是<strong>Alfred的一系列workflows</strong>,它们可以极大的提高你的开发效率,相信你会为之震惊.</p>
 
 <h3>What is Alfred?</h3>
@@ -66,7 +66,7 @@
 <ul>
 <li><a href="https://github.com/willfarrell/alfred-dash-workflow">Dash Workflow</a>,developed by <a href="https://github.com/willfarrell/">@willfarrell</a></li>
 <li><a href="http://zno.io/Rc3p">下载</a></li>
-<li>触发:<code>dash</code> <code>html</code> <code>css</code> <code>gem</code> <code>angularjs</code> <code>rails</code> 基本上常用的语言框架库都有了</li>
+<li>触发:<code>dash</code> <code>html</code> <code>css</code> <code>gem</code> <code>angularjs</code> <code>Rails</code> 基本上常用的语言框架库都有了</li>
 </ul>
 
 

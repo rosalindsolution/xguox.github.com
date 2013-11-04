@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Heroku | XguoX]]></title>
   <link href="http://xguox.github.com/blog/categories/heroku/atom.xml" rel="self"/>
   <link href="http://xguox.github.com/"/>
-  <updated>2013-11-04T15:03:00+08:00</updated>
+  <updated>2013-11-04T19:29:49+08:00</updated>
   <id>http://xguox.github.com/</id>
   <author>
     <name><![CDATA[XguoX]]></name>
@@ -20,7 +20,7 @@
     <id>http://xguox.github.com/blog/2013/10/18/deploying-ghost-to-heroku</id>
     <content type="html"><![CDATA[<p>原本没有意思要班门弄斧写什么Ghost的部署感受帖的,不过前些天看到@lucifr 的这条tweet,于是还是忍不住写了,就让更多假死Ghost诞生吧.</p>
 
-<blockquote class="twitter-tweet"><p>ghost 一出，网上又要冒出一大堆主题风格相似的 blog 了，然后更新两篇使用感受就处于假死状态</p>&mdash; Lucifr (@lucifr) <a href="https://twitter.com/lucifr/statuses/390104155152343040">October 15, 2013</a></blockquote>
+<blockquote class="twitter-tweet"><p>ghost 一出,网上又要冒出一大堆主题风格相似的 blog 了,然后更新两篇使用感受就处于假死状态</p>&mdash; Lucifr (@lucifr) <a href="https://twitter.com/lucifr/statuses/390104155152343040">October 15, 2013</a></blockquote>
 
 
 <script async src="http://xguox.github.com//platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -193,7 +193,7 @@ An error occurred in the application and your page could not be served. Please t
 
 <p>因为最近比较多的关注前端的东西,  同时在自己local耍着<a href="https://github.com/SachaG/Telescope">SachaG / Telescope</a>这个基于Meteor的项目. 于是也就顺手搭了<a href="http://frontn.com">FrontN</a>这么个类似HN, Reddit的玩意. 原本是准备直接把HN,Reddit clone 成中文版的, 不过<a href="http://news.dbanotes.net/">Fenng</a>貌似已经这么干了, 所以, 我也就不再造这个轮子了.另外原本也想专门作为<a href="http://jianshu.io">简书</a>的评论系统. 不过想想也不是很妥, 就&hellip;</p>
 
-<p>Meteor的系统是超级alpha的, 所以很多问题遇上了也没人帮忙, 解决. 比如之前在<a href="http://stackoverflow.com/questions/15654637/same-helper-for-different-template">Stack Overflow</a>. 而部署这一块, 是我比较陌生的. 包括以前搞rails那会, 也没真正意义的整一整部署. 绝大部分时间都在本地跑啊跑. 所以, 在Meteor, 也是这一块最让我头疼.</p>
+<p>Meteor的系统是超级alpha的, 所以很多问题遇上了也没人帮忙, 解决. 比如之前在<a href="http://stackoverflow.com/questions/15654637/same-helper-for-different-template">Stack Overflow</a>. 而部署这一块, 是我比较陌生的. 包括以前搞Rails那会, 也没真正意义的整一整部署. 绝大部分时间都在本地跑啊跑. 所以, 在Meteor, 也是这一块最让我头疼.</p>
 
 <!--more -->
 
@@ -202,7 +202,7 @@ An error occurred in the application and your page could not be served. Please t
 
 <p>秉承流水帐作风, 待我慢慢道来.</p>
 
-<p>幸得以前一直搞得是ruby/rails. 所以装heroku的时候没啥压力, 不然可能这又得搞上一会. 直接下载了官方的<a href="https://toolbelt.heroku.com/">heroku toolbelt</a>无压力安装, login, clone&hellip;</p>
+<p>幸得以前一直搞得是Ruby/Rails. 所以装heroku的时候没啥压力, 不然可能这又得搞上一会. 直接下载了官方的<a href="https://toolbelt.heroku.com/">heroku toolbelt</a>无压力安装, login, clone&hellip;</p>
 
 <p>and then 跟着 <a href="https://github.com/oortcloud/heroku-buildpack-Meteorite">Heroku buildpack for Meteorite</a> 这个buildpack完成接下来的:</p>
 
@@ -256,7 +256,7 @@ OOXX一轮下来总算是把heroku的验证给通过了, 感动啊&hellip;</p>
 
 <p>最后总结, heroku相对的来说除了出错情况较少, 可用资料多之外, 管理上也比自己搭vps要方便些, feel了一下MongoHQ的那个插件还不错&hellip;这样, 也就可以花更多的时间的app的开发上. 而不是折腾这出错那无解.  好吧, 尽管咱都爱折腾, 不过, 往你想的地方折腾不更好吗? 其实这些也就都是Paas的优势啦, 专注核心开发, 减少运维成本&hellip;</p>
 
-<p>其他的待续吧, 相比rails, 或许底层它怎么干还没搞透, 但起码的知道它干了什么, 可Meteor我还真不知道它都干了些什么, 比rails更magic.</p>
+<p>其他的待续吧, 相比Rails, 或许底层它怎么干还没搞透, 但起码的知道它干了什么, 可Meteor我还真不知道它都干了些什么, 比Rails更magic.</p>
 
 <p>不管是否热爱前端的亲, 欢迎做客<a href="http://frontn.com">FrontN</a>. 有Bug那是必然的啦, 欢迎Feedback.</p>
 ]]></content>

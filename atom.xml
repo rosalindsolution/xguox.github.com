@@ -4,7 +4,7 @@
   <title><![CDATA[XguoX]]></title>
   <link href="http://xguox.github.com/atom.xml" rel="self"/>
   <link href="http://xguox.github.com/"/>
-  <updated>2013-11-04T15:03:00+08:00</updated>
+  <updated>2013-11-04T19:29:49+08:00</updated>
   <id>http://xguox.github.com/</id>
   <author>
     <name><![CDATA[XguoX]]></name>
@@ -250,9 +250,9 @@
 
 <p>此时,<code>p</code>和<code>puts</code>是相同的,因为<code>to_s</code>被重写,Ruby会把它当作默认的<code>inspect</code>结果.除非你重写<code>inspect</code>方法. 如前边的例子</p>
 
-<p>参考<a href="http://rubymonk.com/learning/books/4-ruby-primer-ascent/chapters/45-more-classes/lessons/108-displaying-objects">RubyMonk</a></p>
+<p>参考<a href="http://Rubymonk.com/learning/books/4-Ruby-primer-ascent/chapters/45-more-classes/lessons/108-displaying-objects">RubyMonk</a></p>
 
-<p><a href="http://stackoverflow.com/questions/12040527/ruby-automatically-calls-to-s-method-when-object-is-created/19751192#19751192">http://stackoverflow.com/questions/12040527/ruby-automatically-calls-to-s-method-when-object-is-created/19751192#19751192</a></p>
+<p><a href="http://stackoverflow.com/questions/12040527/Ruby-automatically-calls-to-s-method-when-object-is-created/19751192#19751192">http://stackoverflow.com/questions/12040527/Ruby-automatically-calls-to-s-method-when-object-is-created/19751192#19751192</a></p>
 
 <h2>Module</h2>
 
@@ -351,7 +351,7 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>最后, 还有可以通过调用<code>ActiveSupport::Concern</code>.参考 <a href="http://api.rubyonrails.org/">Rails</a> 文档<br/>
+<p>最后, 还有可以通过调用<code>ActiveSupport::Concern</code>.参考 <a href="http://api.RubyonRails.org/">Rails</a> 文档<br/>
 典型的 module 是:</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -563,7 +563,7 @@
     <link href="http://xguox.github.com/blog/2013/10/28/hidden-productivity-secrets-with-alfred/"/>
     <updated>2013-10-28T15:07:00+08:00</updated>
     <id>http://xguox.github.com/blog/2013/10/28/hidden-productivity-secrets-with-alfred</id>
-    <content type="html"><![CDATA[<p>好的开发人员总是在寻找可以让自己的工作流程更快速,更自动化的方法。<br/>
+    <content type="html"><![CDATA[<p>好的开发人员总是在寻找可以让自己的工作流程更快速,更自动化的方法.<br/>
 这次,我们带来的是<strong>Alfred的一系列workflows</strong>,它们可以极大的提高你的开发效率,相信你会为之震惊.</p>
 
 <h3>What is Alfred?</h3>
@@ -611,7 +611,7 @@
 <ul>
 <li><a href="https://github.com/willfarrell/alfred-dash-workflow">Dash Workflow</a>,developed by <a href="https://github.com/willfarrell/">@willfarrell</a></li>
 <li><a href="http://zno.io/Rc3p">下载</a></li>
-<li>触发:<code>dash</code> <code>html</code> <code>css</code> <code>gem</code> <code>angularjs</code> <code>rails</code> 基本上常用的语言框架库都有了</li>
+<li>触发:<code>dash</code> <code>html</code> <code>css</code> <code>gem</code> <code>angularjs</code> <code>Rails</code> 基本上常用的语言框架库都有了</li>
 </ul>
 
 
@@ -833,34 +833,34 @@
     <link href="http://xguox.github.com/blog/2013/10/20/diary-about-wedding-about-photography/"/>
     <updated>2013-10-20T23:37:00+08:00</updated>
     <id>http://xguox.github.com/blog/2013/10/20/diary-about-wedding-about-photography</id>
-    <content type="html"><![CDATA[<p>随着年龄的成长，现在跟朋友在一起聊的话题似乎从以往的各种扯淡转变成了 婚姻 &amp; 工作。毕业后这些日子更明显了。这不又一对老同学结成连理了。往后还陆续有来叻！</p>
+    <content type="html"><![CDATA[<p>随着年龄的成长,现在跟朋友在一起聊的话题似乎从以往的各种扯淡转变成了 婚姻 &amp; 工作.毕业后这些日子更明显了.这不又一对老同学结成连理了.往后还陆续有来叻！</p>
 
-<p>昨天说到牛总明年的婚事，我和甫表示各种强烈赞成建议他抛弃那些个什么Benz，BMW，四个圈之类的去迎亲，改用超豪华得大巴更拉风  XD</p>
+<p>昨天说到牛总明年的婚事,我和甫表示各种强烈赞成建议他抛弃那些个什么Benz,BMW,四个圈之类的去迎亲,改用超豪华得大巴更拉风  XD</p>
 
-<p>另外，有趣的是，相较之下，初中的同学更多是谈到婚姻，而高中的则更多是谈到工作。不知道有没什么必然联系 =。=</p>
+<p>另外,有趣的是,相较之下,初中的同学更多是谈到婚姻,而高中的则更多是谈到工作.不知道有没什么必然联系 =.=</p>
 
 <p><img src="http://farm4.staticflickr.com/3831/10457108984_9b8950c033_z.jpg" alt="" /></p>
 
-<p>帮牛总的婚庆工作室拍了两场婚礼，纯客串的当个没入门摄影师。总结下来，跟专业的必须有差距，无论是器材，技法，引导，后期等等</p>
+<p>帮牛总的婚庆工作室拍了两场婚礼,纯客串的当个没入门摄影师.总结下来,跟专业的必须有差距,无论是器材,技法,引导,后期等等</p>
 
-<p>这其中，差距最大的还是引导这一块。</p>
+<p>这其中,差距最大的还是引导这一块.</p>
 
-<p>器材上，其实主要是缺一枚灯。这个差距最好弥补。几百块一个永诺的闪灯要能玩得转对我而言就足够了，不过略有原厂情结，刚开始还准备一步到位上 600ex 的说，反正迟迟没买，直到现在6D套摆上架&hellip;&hellip;</p>
+<p>器材上,其实主要是缺一枚灯.这个差距最好弥补.几百块一个永诺的闪灯要能玩得转对我而言就足够了,不过略有原厂情结,刚开始还准备一步到位上 600ex 的说,反正迟迟没买,直到现在6D套摆上架&hellip;&hellip;</p>
 
-<p>技术，后期等因素比较客观，不扯淡。</p>
+<p>技术,后期等因素比较客观,不扯淡.</p>
 
-<p>其实我主要是想说，我跟那天那个影楼的摄影师的最大差距在于指挥能力。人家专业的好家伙让你怎么摆就怎么摆，说集中就得集中。而我，顶多吆喝一句让人看着镜头，然后，就没然后了。其余只会跟着流程，跟着队伍瞎跑，动作好不好，站位好不好，怎么才好都没有更多的指示。几次的大合照最明显不过。另外，自己的站位，跑位也经常出现蛋疼的失误。</p>
+<p>其实我主要是想说,我跟那天那个影楼的摄影师的最大差距在于指挥能力.人家专业的好家伙让你怎么摆就怎么摆,说集中就得集中.而我,顶多吆喝一句让人看着镜头,然后,就没然后了.其余只会跟着流程,跟着队伍瞎跑,动作好不好,站位好不好,怎么才好都没有更多的指示.几次的大合照最明显不过.另外,自己的站位,跑位也经常出现蛋疼的失误.</p>
 
-<p>还有一个，其实还跟上面相关，交流问题。尽管是专业的，也即使是专业的，他也未必百发能百中，但是，我时常看他回看之后觉得拍不好或者动作不是摆得很到位会很自然的让被摄者再来一次，直到片子成功为止。相反的，我是经常按了快门就算了，主要是略不好意思让被摄者重复或者keep住某个动作或表情。(哪有那么多内敛，艹，你拿相机你才是老大！)</p>
+<p>还有一个,其实还跟上面相关,交流问题.尽管是专业的,也即使是专业的,他也未必百发能百中,但是,我时常看他回看之后觉得拍不好或者动作不是摆得很到位会很自然的让被摄者再来一次,直到片子成功为止.相反的,我是经常按了快门就算了,主要是略不好意思让被摄者重复或者keep住某个动作或表情.(哪有那么多内敛,艹,你拿相机你才是老大！)</p>
 
-<p>最后是多机的问题。其实这个问题早在之前拍各种毕业照时候就有，拍大合照之类的时候，如果面对着2台或者以上的相机(包括手机)，如果不做出明确的喊话指定眼神看哪台机子，出来的照片就会很蛋疼的眼神往各个方向飘。遇上这问题，要不就霸气点喊着全场看过来，要不就商量好各台机器各司其职。</p>
+<p>最后是多机的问题.其实这个问题早在之前拍各种毕业照时候就有,拍大合照之类的时候,如果面对着2台或者以上的相机(包括手机),如果不做出明确的喊话指定眼神看哪台机子,出来的照片就会很蛋疼的眼神往各个方向飘.遇上这问题,要不就霸气点喊着全场看过来,要不就商量好各台机器各司其职.</p>
 
-<p>最后的最后，不得不感叹一下后期。</p>
+<p>最后的最后,不得不感叹一下后期.</p>
 
-<blockquote><p>数码不后期，就是大傻逼。</p></blockquote>
+<blockquote><p>数码不后期,就是大傻逼.</p></blockquote>
 
-<p>反正绝大部分片子不后期几下都不太好意思交功课了。尽管我的后期渣一般，
-但好几张完全惨不忍睹的照片被我用Photoshop，Lightroom救了回来。</p>
+<p>反正绝大部分片子不后期几下都不太好意思交功课了.尽管我的后期渣一般,
+但好几张完全惨不忍睹的照片被我用Photoshop,Lightroom救了回来.</p>
 ]]></content>
   </entry>
   
@@ -871,7 +871,7 @@
     <id>http://xguox.github.com/blog/2013/10/18/deploying-ghost-to-heroku</id>
     <content type="html"><![CDATA[<p>原本没有意思要班门弄斧写什么Ghost的部署感受帖的,不过前些天看到@lucifr 的这条tweet,于是还是忍不住写了,就让更多假死Ghost诞生吧.</p>
 
-<blockquote class="twitter-tweet"><p>ghost 一出，网上又要冒出一大堆主题风格相似的 blog 了，然后更新两篇使用感受就处于假死状态</p>&mdash; Lucifr (@lucifr) <a href="https://twitter.com/lucifr/statuses/390104155152343040">October 15, 2013</a></blockquote>
+<blockquote class="twitter-tweet"><p>ghost 一出,网上又要冒出一大堆主题风格相似的 blog 了,然后更新两篇使用感受就处于假死状态</p>&mdash; Lucifr (@lucifr) <a href="https://twitter.com/lucifr/statuses/390104155152343040">October 15, 2013</a></blockquote>
 
 
 <script async src="http://xguox.github.com//platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -1061,13 +1061,13 @@ heroku config:set NODE_ENV=production</code></p>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[换主题说起，再思，写blog为哪般]]></title>
+    <title type="html"><![CDATA[换主题说起,再思,写blog为哪般]]></title>
     <link href="http://xguox.github.com/blog/2013/10/16/thinking-why-blog/"/>
     <updated>2013-10-16T17:40:00+08:00</updated>
     <id>http://xguox.github.com/blog/2013/10/16/thinking-why-blog</id>
     <content type="html"><![CDATA[<p>隔三差五会把Octopress的主题换一换, 换件衣服换个心情.</p>
 
-<p>这次换的是这么多次更换以来个人觉得最赞的一次，基于<a href="https://github.com/tcnksm/mnmlpress">mnmlpress</a> , 貌似这个源项目也是fork自另外一个改编而成的.  然后那一个也是同样.  Anyway, Octopress的主题大部分都这么改成的.</p>
+<p>这次换的是这么多次更换以来个人觉得最赞的一次,基于<a href="https://github.com/tcnksm/mnmlpress">mnmlpress</a> , 貌似这个源项目也是fork自另外一个改编而成的.  然后那一个也是同样.  Anyway, Octopress的主题大部分都这么改成的.</p>
 
 <p><img src="https://gagqnq.dm2301.livefilestore.com/y2pgGB6njkMoSbIBHSyZvsFl-NyXsUiNM9YF0L4d-xGZJLZF2xD_eGpNCI3ehRiwcuFbOjCdPOgHQDwKZGRvgRimDbLhmdcR0xmFwNUBPb2c20/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202013-10-16%206.22.11%20PM.png?psid=1" alt="" /></p>
 
@@ -1076,7 +1076,7 @@ heroku config:set NODE_ENV=production</code></p>
 <p><img src="https://h0jiyg.dm2302.livefilestore.com/y2pX0zFxCmooR-IGec_cSnXt7Dw5lkxR3EK84t5izNfkvsQGtZW5J0aVocESCzuQFSIDHldl5q_feGSNzJ_P0-Ysa6nU4dMRzOE9XzYLBjFfhU/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202013-10-14%202.15.08%20PM.png?psid=1" alt="" /></p>
 
 <p>说意外也其实不意外,单纯从UX上说的话我也觉得上一个蛮不错的. 丰富的sidebar啊, 各种share啊, category, 还算协调的配色啊, 甚至乎还有个微博的widget等等. 整个页面,能提供的信息基本都有了, 虽然排版的还算有序,但感觉还是有种说不出的乱
-相比之下这个新主题会各种操作不方面,体验不佳.  甚至,可能会让人觉得这根本不能称作是主题，什么都没有。就一个banner, 一个Archives页面.没有丰富的sidebar,没有各种share, 也没category, 颜色, 不单白,还很白, 朋友说的,看久了还眼累,  连翻页也都没了.
+相比之下这个新主题会各种操作不方面,体验不佳.  甚至,可能会让人觉得这根本不能称作是主题,什么都没有.就一个banner, 一个Archives页面.没有丰富的sidebar,没有各种share, 也没category, 颜色, 不单白,还很白, 朋友说的,看久了还眼累,  连翻页也都没了.
 自己数落着都觉得太不像样了.</p>
 
 <p><strong>于是引发了我的一个疑问, 这写的东西我是要给自己看呢?还是给其他人看呢?进而引申的疑问, 为嘛要写blog.</strong></p>
@@ -1084,20 +1084,20 @@ heroku config:set NODE_ENV=production</code></p>
 <p>如果这里所要考虑的用户只是我自己的话,那一切都可以随意地按我自己的性子来修改,自己看着爽就行. 其他什么的自己想要就加不想要就减. 好比这次, 用上这个极简的主题,自己看着特舒服就成,  觉得缺个navigation,就自己加了上去. 毕竟我不是在做产品给别人用, 犯不着还要蛋疼的去看看在IE6-8下长什么样子吧.
 如果是主面向其他读者,那我必须考虑更多的是用户阅读操作等体验. Right?</p>
 
-<blockquote><p>要么追随自己，让大众去评说，要么追随大众，压抑自己的内心</p></blockquote>
+<blockquote><p>要么追随自己,让大众去评说,要么追随大众,压抑自己的内心</p></blockquote>
 
-<p>当然了,这是在假设我的blog有观众的前提下. 由Google Analytics所得, 我的Blog日均访问一般都在20次左右.可能偶尔不小心写了一篇或者翻译了一篇比较nice的文章，会稍稍飘高一点点，也很快就回落下来。</p>
+<p>当然了,这是在假设我的blog有观众的前提下. 由Google Analytics所得, 我的Blog日均访问一般都在20次左右.可能偶尔不小心写了一篇或者翻译了一篇比较nice的文章,会稍稍飘高一点点,也很快就回落下来.</p>
 
 <p>在这种巨低访问量的情况下, 写Blog是否还有意义.<br/>
-我的判断是, 在这里,首先是写给自己看的, 记录思考, 其次才是为观众们寻找看点，分享发现, 从而收获评论交流甚至谩骂.</p>
+我的判断是, 在这里,首先是写给自己看的, 记录思考, 其次才是为观众们寻找看点,分享发现, 从而收获评论交流甚至谩骂.</p>
 
 <p>除去照片,对我这种怀旧党来说,文字就是最好的记录工具了.看看老照片,看看老文字,,,,,,,,,,,,,,,,,,,,,瞬间觉得自己老了好多(抱歉在传递负能量).我这才写了几年,等写了十几年,几十年回来看 XDDDD</p>
 
 <p>事实上,其实现在还蛮后悔以前有时候会有所顾忌,常常怕别人看了会觉得想法很无聊很幼稚很扯淡,所以没都记录下来. 总会觉得自己积累的底子不够多.  包括现在, 觉得写出来的东西难登大雅之堂的主要原因就是积累的不及高玩们那么多. <br/>
-但是,积累可不是一个瞬间完成的动作，不写点不靠谱的东西出来，何时才能积累出靠谱的。</p>
+但是,积累可不是一个瞬间完成的动作,不写点不靠谱的东西出来,何时才能积累出靠谱的.</p>
 
 <p>在量和质都不高的前提下, 没有观众那再自然不过.  想要观众的话其实也不难吧, 把链接往热闹的地方一贴, 花更多些的心思写的美美的投个稿, 那铁定不会那么惨淡的访问量. 不过还是说到底,第一是给我自己看的,所以没有很care的写一篇帖一篇.<br/>
-文字写出来未必就必须是给读者看的(有读者肯定是好, 不想要读者的也不会用公开的方式去记录了)，偶尔回顾自己曾经写过的文章，目睹自己进步与否，有何改变, 除了记录下来还有别的好的方式吗?</p>
+文字写出来未必就必须是给读者看的(有读者肯定是好, 不想要读者的也不会用公开的方式去记录了),偶尔回顾自己曾经写过的文章,目睹自己进步与否,有何改变, 除了记录下来还有别的好的方式吗?</p>
 
 <p>P.S. 写blog另一个目的是想要捣腾一番这些程序, Octopress啊,Hexo啊,以前小弄过一会Wordpress就没继续玩儿了. 原本甚至还准备去弄一弄Haskell版本的<a href="http://jaspervdj.be/hakyll/">Hakyll</a>.
 还有刚发布的<a href="https://ghost-xguox.rhcloud.com/">Ghost</a>, 题外话,Ghost的Markdown支持比之简书好的是预览跟随原文同时滚动, 另外移动端的Markdown体验也要稍好点.  Anyway, 定位不一样不扯淡, 再说可能林立君早用不着预览了吧=.=</p>
@@ -1105,17 +1105,17 @@ heroku config:set NODE_ENV=production</code></p>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[简书，Safari(Mac)，Bug?]]></title>
+    <title type="html"><![CDATA[简书,Safari(Mac),Bug?]]></title>
     <link href="http://xguox.github.com/blog/2013/10/13/jianshu-tiny-bug/"/>
     <updated>2013-10-13T22:26:00+08:00</updated>
     <id>http://xguox.github.com/blog/2013/10/13/jianshu-tiny-bug</id>
-    <content type="html"><![CDATA[<p>前不久在<a href="https://twitter.com/XguoX_L/statuses/388577622990389248">twitter</a>跟@larry 反馈了的Bug，但是当时很快耍着耍着就没了，又正常了，于是撒手结帖了。然则，比较奇葩，刚刚又不小心再现了，虽然只是很微小的一处不妥，但影响到UX的话， 我表示有点轻微的强迫症，外加Twitter上 140 字符配以我的文字水平不足以表述清楚。所以还是写作文好了。</p>
+    <content type="html"><![CDATA[<p>前不久在<a href="https://twitter.com/XguoX_L/statuses/388577622990389248">twitter</a>跟@larry 反馈了的Bug,但是当时很快耍着耍着就没了,又正常了,于是撒手结帖了.然则,比较奇葩,刚刚又不小心再现了,虽然只是很微小的一处不妥,但影响到UX的话, 我表示有点轻微的强迫症,外加Twitter上 140 字符配以我的文字水平不足以表述清楚.所以还是写作文好了.</p>
 
-<p>鉴于上一次滚动条受Thunder插件的影响，所以这次我把Safari的插件全关了。(同样方式，其他浏览器无任何异常)</p>
+<p>鉴于上一次滚动条受Thunder插件的影响,所以这次我把Safari的插件全关了.(同样方式,其他浏览器无任何异常)</p>
 
 <p>这个Bug是这样的:</p>
 
-<blockquote><p>删除文章的垃圾桶icon在Safari下hover在中间和右边表示不能点选(如图，鼠标未改变)，只有hover在偏向左侧的地方才work，其他浏览器正常。</p></blockquote>
+<blockquote><p>删除文章的垃圾桶icon在Safari下hover在中间和右边表示不能点选(如图,鼠标未改变),只有hover在偏向左侧的地方才work,其他浏览器正常.</p></blockquote>
 
 <p><img src="https://7nmnbw.dm2302.livefilestore.com/y2pMd9Hqqq8zcLNm4HmC2VAXY0If8JNgrxOQ_YyS5esT5C65NGiPyPXRGBas-Ggdk13KnyUpKqHmk7maKNQ2A29iNMWEjSIoPGIErQmhg0Akzo/tu1.jpg?psid=1" alt="" /></p>
 
@@ -1123,19 +1123,19 @@ heroku config:set NODE_ENV=production</code></p>
 
 <p><img src="https://7nomkg.dm1.livefilestore.com/y2pnQSLb70jLri1R75fAlctMv9tStL7PtnGGP3-9mbRg3ncEeEmRaKOTcxCzdUxpjxXlxMBvtFfQzeR39oxhEFQLiojchvoAQj1RUHvqOvOda0/tu2.jpg?psid=1" alt="" /></p>
 
-<p><strong>为什么偶尔会正常，偶尔抽风？</strong></p>
+<p><strong>为什么偶尔会正常,偶尔抽风?</strong></p>
 
-<p>请看下面两图，看看有啥不同</p>
+<p>请看下面两图,看看有啥不同</p>
 
 <p><img src="https://h0hcka.dm1.livefilestore.com/y2pA5ROBtWFdo3kL875emP4XeTT-N7OzbNPXLq1AmqEx1XYSHM40ObSCBL5lkCK1GXPKC1BxSDd8EUsKiyjNWP8ZbC75vhdLewfOKOBLrSd_j4/tu3.jpg?psid=1" alt="" /></p>
 
 <p><img src="https://h0j3ba.dm2302.livefilestore.com/y2pibC_etDmFwTYabbHWr8bXvV4USwL-NF922Ax2NkXzIH6kOYg4uxNoVs-AKL5c0qJH74vJssJxcziLn2TMu43YVVuIZ81IDDOqhzP0d-iA_o/tu4.jpg?psid=1" alt="" /></p>
 
-<p>经反复的、<strong>不严格的</strong>控制变量法实验，目前我的解释是，当一个文集里边的文章数量足够多到出现中间栏的滚动条之后, 就会出现这个删除icon不正常的状况。</p>
+<p>经反复的、<strong>不严格的</strong>控制变量法实验,目前我的解释是,当一个文集里边的文章数量足够多到出现中间栏的滚动条之后, 就会出现这个删除icon不正常的状况.</p>
 
-<p>至于，为嘛出现这种情况，留给简书的小伙伴们吧。</p>
+<p>至于,为嘛出现这种情况,留给简书的小伙伴们吧.</p>
 
-<p>请使用Mac的用户帮忙测试看看，看是通病还是我个人机器、软件等出了问题。</p>
+<p>请使用Mac的用户帮忙测试看看,看是通病还是我个人机器、软件等出了问题.</p>
 ]]></content>
   </entry>
   
@@ -1144,23 +1144,23 @@ heroku config:set NODE_ENV=production</code></p>
     <link href="http://xguox.github.com/blog/2013/10/11/one-piece-recently/"/>
     <updated>2013-10-11T20:31:00+08:00</updated>
     <id>http://xguox.github.com/blog/2013/10/11/one-piece-recently</id>
-    <content type="html"><![CDATA[<p>尽管在我的个人Tags里边经常标的无非那几个，Code，摄影，One Piece, 也无碍接下来抱怨几句最近的OP(动画)。</p>
+    <content type="html"><![CDATA[<p>尽管在我的个人Tags里边经常标的无非那几个,Code,摄影,One Piece, 也无碍接下来抱怨几句最近的OP(动画).</p>
 
-<p>追着OP的看官不难发现，最近动画明显是各种拖剧情，某很多些神情，某大量的回忆篇加强插入，某动作刻画的时间，都Y的太太长了。而且还不少不断重复的画面，镜头来回转换加深刻画。</p>
+<p>追着OP的看官不难发现,最近动画明显是各种拖剧情,某很多些神情,某大量的回忆篇加强插入,某动作刻画的时间,都Y的太太长了.而且还不少不断重复的画面,镜头来回转换加深刻画.</p>
 
-<p>最近几集没有深究，好吧，表示开始习惯了。<br/>
-印象最深的是610话， 标题明明是 两位中将的xxxxxx
-结果整集下来一半的镜头给了 M， <br/>
-剩下的一半当中有四分三是在各个场景之间切换，
-真正看维尔戈跟斯摩格过手不知道有没5招，目测镜头时间不超过3分钟！！！</p>
+<p>最近几集没有深究,好吧,表示开始习惯了.<br/>
+印象最深的是610话, 标题明明是 两位中将的xxxxxx
+结果整集下来一半的镜头给了 M, <br/>
+剩下的一半当中有四分三是在各个场景之间切换,
+真正看维尔戈跟斯摩格过手不知道有没5招,目测镜头时间不超过3分钟!!!</p>
 
 <p><img src="https://7nnpba.dm2301.livefilestore.com/y2pgFj_q49UBPpAcVG8GOjIkuYoUDgDLbkrcYsFN55uNtMt7jyaTDEs7yPZkRvJ2OK1GdmTBGtbWxoKWTflwela5a7VAH6noYahLwCuXS_V5SE/QQ20131011-2.png?psid=1" alt="" /></p>
 
-<p>表示理解动画要拖拖剧情等漫画，但这拖得略不靠谱了吧。如果只是为了等漫画，那我觉得偶尔直接来个停播会好点呢？完全可以理解啊，就像漫画前不久也停刊好几回，当然那是照顾到尾田大神的身体状况，不管怎样，完全可以理解。又或者跟以往那样来些个什么番外篇打酱油，也都总比这样把一集的剧情拖沓成这样要好。</p>
+<p>表示理解动画要拖拖剧情等漫画,但这拖得略不靠谱了吧.如果只是为了等漫画,那我觉得偶尔直接来个停播会好点呢?完全可以理解啊,就像漫画前不久也停刊好几回,当然那是照顾到尾田大神的身体状况,不管怎样,完全可以理解.又或者跟以往那样来些个什么番外篇打酱油,也都总比这样把一集的剧情拖沓成这样要好.</p>
 
-<p>相比之下，漫画的剧情引导显得顺多了。  以「顶上战争」作为分界的两年后的新世界篇，在漫画里头与两年前的剧情相比有过之而无不及。但在动画里头，给我的感觉却是，比之两年前的剧情，那是相去甚远，之所以产生这种心理，应该是缘由这剧情拖沓。反正1 &ndash; 570+的动画重看了N次，没有一次说是强烈地觉得剧情拖沓跳过哪一集。而今，好几集好几次我都想按快进 =。=  但还是没有按下去。 难道，是因为时间的作用使之沉淀下来，难道现在的剧情也要等过上些时间沉淀才会打消这些感觉？</p>
+<p>相比之下,漫画的剧情引导显得顺多了.  以「顶上战争」作为分界的两年后的新世界篇,在漫画里头与两年前的剧情相比有过之而无不及.但在动画里头,给我的感觉却是,比之两年前的剧情,那是相去甚远,之所以产生这种心理,应该是缘由这剧情拖沓.反正1 &ndash; 570+的动画重看了N次,没有一次说是强烈地觉得剧情拖沓跳过哪一集.而今,好几集好几次我都想按快进 =.=  但还是没有按下去. 难道,是因为时间的作用使之沉淀下来,难道现在的剧情也要等过上些时间沉淀才会打消这些感觉?</p>
 
-<p>最后，我发觉并深感OP里最喜欢的不是Luffy君，说不上谁是最喜欢的角色，但，可以肯定，对 罗宾酱&amp;索大 的喜欢更多一些。</p>
+<p>最后,我发觉并深感OP里最喜欢的不是Luffy君,说不上谁是最喜欢的角色,但,可以肯定,对 罗宾酱&amp;索大 的喜欢更多一些.</p>
 
 <p><img class="left" src="https://7nmgwa.dm1.livefilestore.com/y2piowWh9rmGFKLaMMZX9p0hjieu0nhXYeJLNicKrqCqu44Ai-nJgUbgIl4ELt5Nty2DCHO6Gd0GHh-GagLaN3XOkefcg5FVZON8l0UQm1yxLE/Nico.Robin.full.1401954.jpg?psid=1" width="350" height="600">
 <img class="right" src="https://7no7na.dm2301.livefilestore.com/y2pyPdpo4WPWPKcGC9nYQoI5vn_BOqO2S31h64Nh-nGZZq4T99T8w3lNT_JVot7o9u9Xeh9g31anmx7mBgY8vnmGza_wDQMYvm9flRIYiUxsVU/7f4996e7jw1e5c2o3526nj20bu0goaar.jpg?psid=1" width="350" height="600"></p>
@@ -1172,50 +1172,50 @@ heroku config:set NODE_ENV=production</code></p>
     <link href="http://xguox.github.com/blog/2013/09/27/back-to-code/"/>
     <updated>2013-09-27T14:12:00+08:00</updated>
     <id>http://xguox.github.com/blog/2013/09/27/back-to-code</id>
-    <content type="html"><![CDATA[<p>好多年以前，在「街头篮球」这款游戏看到过的一句，「一天不碰球，就一天没长进」。<br/>
-而今，我是好几个月没真正意义的code，所以，这状态，想不roll back都难，更何求长进。</p>
+    <content type="html"><![CDATA[<p>好多年以前,在「街头篮球」这款游戏看到过的一句,「一天不碰球,就一天没长进」.<br/>
+而今,我是好几个月没真正意义的code,所以,这状态,想不roll back都难,更何求长进.</p>
 
-<p>真心，重头来过也忽然无从下手。</p>
+<p>真心,重头来过也忽然无从下手.</p>
 
-<p>打开Octopress准备更新，发觉连Git的一些命令的想了好久才想起来。</p>
+<p>打开Octopress准备更新,发觉连Git的一些命令的想了好久才想起来.</p>
 
 <p>看到Git的提示里冒出有
  <code>
 git bisect reset
 </code>
-这货功能很强大呀，昏了，之前怎么完全没印象有过着玩意的？又是学艺不精啊！</p>
+这货功能很强大呀,昏了,之前怎么完全没印象有过着玩意的?又是学艺不精啊!</p>
 
 <!-- more -->
 
 
-<p>想把Octopress更新到2.1，一直略期待着，却一直在preview状态，今儿却才发现，2.1的branch挂了，倒是多了个 3.0的branch。</p>
+<p>想把Octopress更新到2.1,一直略期待着,却一直在preview状态,今儿却才发现,2.1的branch挂了,倒是多了个 3.0的branch.</p>
 
-<p>好吧，老规矩的话，那就换个新面孔好了。这不流行Flat-UI嘛。发现一个还不错的&mdash;&ndash;<a href="https://github.com/alexharris/octopress-flat/">octopress-flat</a>。加上自己做一些些个修改。</p>
+<p>好吧,老规矩的话,那就换个新面孔好了.这不流行Flat-UI嘛.发现一个还不错的&mdash;&ndash;<a href="https://github.com/alexharris/octopress-flat/">octopress-flat</a>.加上自己做一些些个修改.</p>
 
-<p>and then 准备new_post的时候报了这玩意，奇葩了，之前zsh貌似不见报这错的啊？难道几个月不碰就变的面目全非了。
+<p>and then 准备new_post的时候报了这玩意,奇葩了,之前zsh貌似不见报这错的啊?难道几个月不碰就变的面目全非了.
 <code>
 zsh: no matches found: new_post
 </code></p>
 
-<p>搜之，在~/.zshrc 里添加
+<p>搜之,在~/.zshrc 里添加
 <code>
 alias rake="noglob rake"
 </code></p>
 
-<p>前些时间落下了好多东西，包括刚着手的翻译行当还有初尝Meteor。</p>
+<p>前些时间落下了好多东西,包括刚着手的翻译行当还有初尝Meteor.</p>
 
-<p>在写简书那会，虽远远称不上精通全端、一锅端，但也绝不至于像现在这样什么都端不起来。
-现在想再端起来，还要各种瞻前顾后的，连端啥都决定不好。</p>
+<p>在写简书那会,虽远远称不上精通全端、一锅端,但也绝不至于像现在这样什么都端不起来.
+现在想再端起来,还要各种瞻前顾后的,连端啥都决定不好.</p>
 
-<p>想来，回上海或者北漂几乎没啥可能，尽管我很enjoy上海那段日子。so，目测往后也是在珠三角荡悠。要是能找到一份remote job，那就更好不过了。说起来，一直很想去佛山那家创业公司。前年还是他家boss指引我才开始知道并用上Github。现在是更想去了，因为他们支持远程工作 XD</p>
+<p>想来,回上海或者北漂几乎没啥可能,尽管我很enjoy上海那段日子.so,目测往后也是在珠三角荡悠.要是能找到一份remote job,那就更好不过了.说起来,一直很想去佛山那家创业公司.前年还是他家boss指引我才开始知道并用上Github.现在是更想去了,因为他们支持远程工作 XD</p>
 
-<p>but,现在的我比起11年那会还不行。这情何以堪。</p>
+<p>but,现在的我比起11年那会还不行.这情何以堪.</p>
 
-<p>好吧。Anyway，一切都只能等痊愈再说！</p>
+<p>好吧.Anyway,一切都只能等痊愈再说!</p>
 
-<p>消沉够了就要回到正轨奋斗了。好好利用这几个月。</p>
+<p>消沉够了就要回到正轨奋斗了.好好利用这几个月.</p>
 
-<p>接下来&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;..要不要，从HTML重新开始呢呢呢,不知道俺的Ruby/Rails 还剩几多斤两呢, 好吧,都不是, 从工具开始, 回归使用Vim好了&hellip;&hellip;&hellip;&hellip;&hellip;.</p>
+<p>接下来&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;..要不要,从HTML重新开始呢呢呢,不知道俺的Ruby/Rails 还剩几多斤两呢, 好吧,都不是, 从工具开始, 回归使用Vim好了&hellip;&hellip;&hellip;&hellip;&hellip;.</p>
 ]]></content>
   </entry>
   
@@ -1226,21 +1226,21 @@ alias rake="noglob rake"
     <id>http://xguox.github.com/blog/2013/06/03/photos-and-stories</id>
     <content type="html"><![CDATA[<p><img src="http://farm8.staticflickr.com/7332/8942652946_af9121957f_n.jpg" alt="" />
 <img src="http://farm8.staticflickr.com/7289/8942653776_bdfb3e28a3_n.jpg" alt="" />   <br/>
-那时候，你们在想着什么，仅仅只是摆着姿势那么简单吗？<br/>
-你说我穿的太colorful了，没有你那么忧伤  <br/>
+那时候,你们在想着什么,仅仅只是摆着姿势那么简单吗?<br/>
+你说我穿的太colorful了,没有你那么忧伤  <br/>
 要是我的最深处也这般colorful那该多好</p>
 
 <p><img src="http://farm8.staticflickr.com/7432/8942651358_e04d1e5d94.jpg" alt="" />
 <img src="http://farm4.staticflickr.com/3732/8942025755_d37f645d5d.jpg" alt="" /><br/>
-不知道你是望着天空还是闭着眼睛，我自己也忘记了<br/>
-草地不很舒服，但给的感觉却让人享受着可以睡去</p>
+不知道你是望着天空还是闭着眼睛,我自己也忘记了<br/>
+草地不很舒服,但给的感觉却让人享受着可以睡去</p>
 
 <!-- more -->
 
 
 <p><img src="http://farm8.staticflickr.com/7350/8942022805_03c7825513.jpg" alt="" />
 <img src="http://farm6.staticflickr.com/5346/8942644888_259c5a6e7e.jpg" alt="" /><br/>
-背影总给人有沉重感，仿佛，这些年的影子都被呈现出来了。</p>
+背影总给人有沉重感,仿佛,这些年的影子都被呈现出来了.</p>
 
 <p><img src="http://farm9.staticflickr.com/8538/8942627584_def59fc38f.jpg" alt="" />
 <img src="http://farm4.staticflickr.com/3757/8942628346_e2ac194f1b.jpg" alt="" />
@@ -1248,39 +1248,39 @@ alias rake="noglob rake"
 <img src="http://farm6.staticflickr.com/5328/8942627264_17b43443fa.jpg" alt="" />
 <img src="http://farm9.staticflickr.com/8272/8942004051_e1ee9b1655.jpg" alt="" />
 <img src="http://farm8.staticflickr.com/7387/8942626614_68f3ce0409.jpg" alt="" /><br/>
-路，一个人走，两个人走&hellip;回头，总能望见你</p>
+路,一个人走,两个人走&hellip;回头,总能望见你</p>
 
 <p><img src="http://farm4.staticflickr.com/3722/8942006795_499d3efaf2.jpg" alt="" />
 <img src="http://farm9.staticflickr.com/8136/8942630138_91654db5d7.jpg" alt="" />
 <img src="http://farm4.staticflickr.com/3799/8942011361_e2d201dae8.jpg" alt="" /><br/>
-路过的行人都不自觉就把我们设为焦点，或轻轻一笑，或心有所思，谢谢为我们合照的那个人。 <br/>
-说自己垃圾，说自己病痨<br/>
+路过的行人都不自觉就把我们设为焦点,或轻轻一笑,或心有所思,谢谢为我们合照的那个人. <br/>
+说自己垃圾,说自己病痨<br/>
 我情愿被你们这么说<br/>
 也不要自己自嘲</p>
 
 <p><img src="http://farm3.staticflickr.com/2837/8942001679_4fb28efb7b.jpg" alt="" />
 <img src="http://farm6.staticflickr.com/5335/8942002583_080e5a9e0d.jpg" alt="" /><br/>
-低头，抬头，仰望，俯视，在同一个位置</p>
+低头,抬头,仰望,俯视,在同一个位置</p>
 
 <p><img src="http://farm8.staticflickr.com/7348/8941980615_d394b6f30f.jpg" alt="" />
 <img src="http://farm3.staticflickr.com/2850/8941978751_2d21c5ec0b.jpg" alt="" /><br/>
-你说，车站总给人有一种说不出的感觉。<br/>
-我说，等，等待，等车，等人&hellip;</p>
+你说,车站总给人有一种说不出的感觉.<br/>
+我说,等,等待,等车,等人&hellip;</p>
 
 <p><img src="http://farm8.staticflickr.com/7359/8941984311_fd5057e945.jpg" alt="" />
 <img src="http://farm8.staticflickr.com/7385/8942620208_e60bb022e2.jpg" alt="" /> <br/>
-你想拥抱雨，正如我也那么想被雨穿透</p>
+你想拥抱雨,正如我也那么想被雨穿透</p>
 
 <p><img src="http://farm6.staticflickr.com/5464/8942610446_8b5ce4132e.jpg" alt="" />
 <img src="http://farm4.staticflickr.com/3676/8941991289_ef499b456b.jpg" alt="" /><br/>
 无力的文字已经不足以描述我有多爱这两张照片</p>
 
 <p><img src="http://farm4.staticflickr.com/3665/8941981741_85e92f11b2.jpg" alt="" /><br/>
-多谢路过的小师妹，一开始，因为我之前把ISO设置到了6400，还开着闪光灯，闪瞎了&hellip;折腾了几下才发现问题。<br/>
-小师妹问，你们是大四的师兄吧？<br/>
-我可以这么回答吗？我们还在读高中！</p>
+多谢路过的小师妹,一开始,因为我之前把ISO设置到了6400,还开着闪光灯,闪瞎了&hellip;折腾了几下才发现问题.<br/>
+小师妹问,你们是大四的师兄吧?<br/>
+我可以这么回答吗?我们还在读高中!</p>
 
-<p>从未想过摘下腕带，尽管它们普通的甚至有些寒酸，也不是谁的珍贵礼物，只是我自己给自己的地摊货，但它们好像是替代你们看着我。</p>
+<p>从未想过摘下腕带,尽管它们普通的甚至有些寒酸,也不是谁的珍贵礼物,只是我自己给自己的地摊货,但它们好像是替代你们看着我.</p>
 ]]></content>
   </entry>
   
@@ -1289,66 +1289,66 @@ alias rake="noglob rake"
     <link href="http://xguox.github.com/blog/2013/05/14/negative-energy/"/>
     <updated>2013-05-14T23:05:00+08:00</updated>
     <id>http://xguox.github.com/blog/2013/05/14/negative-energy</id>
-    <content type="html"><![CDATA[<p>尽管日期标的是May，但是写的时候，是在April 27th &ndash; 并刚做完支纤镜 &ndash; 耳边塞着耳机，麻醉也还在，全身如喝醉酒那般，浑坨坨，当然只是轻度的，不然我也不可能写的出这些。<br/>
-被病魔缠着也有半年了，目测还得继续治疗休养多半年。<br/>
-说说这个支纤镜吧。第二次做。比起第一次，尽管有了些许经验(也正因为有经验)，做之前还是有些小紧张，表现主要有心跳略有加速。很重要的一点上次的医生没说而这次的医生教了，&#8221;(粤语)吞口水，无口水就做吞口水噶动作&#8221;。难受是必须的，在某个point我一个没忍着，口中就吐了一堆我自己也看不着啥，anyway，死不了。</p>
+    <content type="html"><![CDATA[<p>尽管日期标的是May,但是写的时候,是在April 27th &ndash; 并刚做完支纤镜 &ndash; 耳边塞着耳机,麻醉也还在,全身如喝醉酒那般,浑坨坨,当然只是轻度的,不然我也不可能写的出这些.<br/>
+被病魔缠着也有半年了,目测还得继续治疗休养多半年.<br/>
+说说这个支纤镜吧.第二次做.比起第一次,尽管有了些许经验(也正因为有经验),做之前还是有些小紧张,表现主要有心跳略有加速.很重要的一点上次的医生没说而这次的医生教了,&ldquo;(粤语)吞口水,无口水就做吞口水噶动作&rdquo;.难受是必须的,在某个point我一个没忍着,口中就吐了一堆我自己也看不着啥,anyway,死不了.</p>
 
 <p>耳机里播放着《仓颉》</p>
 
 <!-- more -->
 
 
-<p>只有我一个人在医院，不要问我爸妈在哪，他们比任何人想在我身边，只是我比较脑残，他们越是关心我我越不让，总会吼回去（脑残吼？呃，俺不是BL老大）关于这点我觉得我应该去看看心理医生。<br/>
-好吧，其实我觉得不单这个我也要去找找心理医生。患病的这些日子以来，已被打磨的没有任何锐气了。<br/>
-身上多了一道大疤痕，尽管日常情况下几乎看不到。但是要是裸身照着镜子还是会被吓呆。再加上，看着自己瘦得这副排骨身板，哎，同样的那么大的痕，在Luffy和Zoro身上怎么能那么酷！<br/>
-身体的不堪，也让我辞去了工作的机会，好吧，实习。我坦然接受了，毕竟，我认识了 @linlis 他们，我的技术、认识也得到提高，好吧，我承认好久没碰过ruby/rails了。尴尬，连语法都生疏了。<br/>
-所有的这些，比较尴尬的是工作吧，看着身边认识不认识的同学拿到好的坏的offer，而我…即使再过些时日痊愈了…赶脚被拉开距离了&hellip;</p>
+<p>只有我一个人在医院,不要问我爸妈在哪,他们比任何人想在我身边,只是我比较脑残,他们越是关心我我越不让,总会吼回去(脑残吼?呃,俺不是BL老大)关于这点我觉得我应该去看看心理医生.<br/>
+好吧,其实我觉得不单这个我也要去找找心理医生.患病的这些日子以来,已被打磨的没有任何锐气了.<br/>
+身上多了一道大疤痕,尽管日常情况下几乎看不到.但是要是裸身照着镜子还是会被吓呆.再加上,看着自己瘦得这副排骨身板,哎,同样的那么大的痕,在Luffy和Zoro身上怎么能那么酷!<br/>
+身体的不堪,也让我辞去了工作的机会,好吧,实习.我坦然接受了,毕竟,我认识了 @linlis 他们,我的技术、认识也得到提高,好吧,我承认好久没碰过Ruby/Rails了.尴尬,连语法都生疏了.<br/>
+所有的这些,比较尴尬的是工作吧,看着身边认识不认识的同学拿到好的坏的offer,而我…即使再过些时日痊愈了…赶脚被拉开距离了&hellip;</p>
 
-<p>大四，大四下，是个奇葩的学期，各种琐事，课程重修，毕业体检，毕业照，毕业论文，外加这最麻烦的肺。心里头压根没法真正静下来学习（Front-End）。so，其实这些时间我只是在翻译一些国外的技术文，以meteor为主。</p>
+<p>大四,大四下,是个奇葩的学期,各种琐事,课程重修,毕业体检,毕业照,毕业论文,外加这最麻烦的肺.心里头压根没法真正静下来学习(Front-End).so,其实这些时间我只是在翻译一些国外的技术文,以meteor为主.</p>
 
 <p>耳机里播放着《十面埋伏》</p>
 
-<p>但是，一看到雅安的状况，我瞬间觉得自己更弱爆了，比起那儿的灾难，难道不是幸福的吗？我™还要愁毛线撒？<br/>
-我是个会反思的人，这点必须赞自己，但是，在这个思之后，却似乎没有省。<br/>
-我自我安慰，完全不用焦急任何的东西，身体最最最™重要。<br/>
-我心里总对自己说，大不了晚毕业一年呗，反正本来就比同班的普遍小了一两岁。可是我会这么想，却不会这么去接受，总是心不甘。有点渴望离开校园。<br/>
-某些时候，我会装的很孙子，而某些时候，却又一点都不肯示弱。</p>
+<p>但是,一看到雅安的状况,我瞬间觉得自己更弱爆了,比起那儿的灾难,难道不是幸福的吗?我™还要愁毛线撒?<br/>
+我是个会反思的人,这点必须赞自己,但是,在这个思之后,却似乎没有省.<br/>
+我自我安慰,完全不用焦急任何的东西,身体最最最™重要.<br/>
+我心里总对自己说,大不了晚毕业一年呗,反正本来就比同班的普遍小了一两岁.可是我会这么想,却不会这么去接受,总是心不甘.有点渴望离开校园.<br/>
+某些时候,我会装的很孙子,而某些时候,却又一点都不肯示弱.</p>
 
 <p>耳机里播放着《the dawn》</p>
 
-<p>某一个晚上，石头酱开导我说，你不要辣嚒大的报复心(抱负)啦!  这个引发了我想了关于抱负好久。有很大的抱负吗？我没要去改变世界，撬动世界啊，就想安安乐乐的enjoy着写代码而已。 我原本是这么以为的。</p>
+<p>某一个晚上,石头酱开导我说,你不要辣嚒大的报复心(抱负)啦!  这个引发了我想了关于抱负好久.有很大的抱负吗?我没要去改变世界,撬动世界啊,就想安安乐乐的enjoy着写代码而已. 我原本是这么以为的.</p>
 
-<p>写到这，麻醉也去了7788了，不过手上还是插着吊瓶的针。耳机里播放着《数码暴龙1 主题曲》，LOL，略脑残是伐？不单这首，还有，《One Piece》的所有OP，《龙珠》的某一部OP，还有几首以前翡翠台播的动画的主题曲。Anyway，Don&rsquo;t u think they are fucking awesome and memorable？</p>
+<p>写到这,麻醉也去了7788了,不过手上还是插着吊瓶的针.耳机里播放着《数码暴龙1 主题曲》,LOL,略脑残是伐?不单这首,还有,《One Piece》的所有OP,《龙珠》的某一部OP,还有几首以前翡翠台播的动画的主题曲.Anyway,Don&rsquo;t u think they are fucking awesome and memorable?</p>
 
-<p>在医院呆着其实也没什么不好的，至少的，我的作息正常的多，早睡早起，杠杠的，偶尔还能瞄瞄护士(看口罩是伐?) ，写到这我想起刚刚做完支纤镜荡回来的路上很巧的遇上，几个月前同一病房的病友的老婆，然后就混混沌沌的跟她扯了一会，尽管她戴着口罩(我居然还能认出来)，不过看得出比之前那会憔悴了许多，正如我家的两老也是。想来他老公会比我要承受稍大一些的心理压力，上有老，下有小&hellip;所以，横看竖看，我还是得跟自己说，不是什么大事。</p>
+<p>在医院呆着其实也没什么不好的,至少的,我的作息正常的多,早睡早起,杠杠的,偶尔还能瞄瞄护士(看口罩是伐?) ,写到这我想起刚刚做完支纤镜荡回来的路上很巧的遇上,几个月前同一病房的病友的老婆,然后就混混沌沌的跟她扯了一会,尽管她戴着口罩(我居然还能认出来),不过看得出比之前那会憔悴了许多,正如我家的两老也是.想来他老公会比我要承受稍大一些的心理压力,上有老,下有小&hellip;所以,横看竖看,我还是得跟自己说,不是什么大事.</p>
 
-<p>写到这，换针水，鸽的血倒流出来了。a~ a~ a~ a~ 护士妹纸，快来啊！！！<br/>
-写到这，耳机播放《其实我介意》<br/>
-写出来，即使没人看见，也总比藏在心里舒服！！！</p>
+<p>写到这,换针水,鸽的血倒流出来了.a~ a~ a~ a~ 护士妹纸,快来啊!!!<br/>
+写到这,耳机播放《其实我介意》<br/>
+写出来,即使没人看见,也总比藏在心里舒服!!!</p>
 
 <p>=================================================</p>
 
 <p>May 14th</p>
 
-<p>我不是一个适合传递正能量的人, 因为我身上似乎充满负能量， 或者很轻易就陷入进去。</p>
+<p>我不是一个适合传递正能量的人, 因为我身上似乎充满负能量, 或者很轻易就陷入进去.</p>
 
-<p>这不是一次好的“散步”，我带去了不少负面情绪。与初衷背道而驰。</p>
+<p>这不是一次好的&#8221;散步&#8221;,我带去了不少负面情绪.与初衷背道而驰.</p>
 
-<p>听到你妈妈对我讲的那些, 除了揪心还是揪心, 只因我也曾经深切的体会过那般剧烈的苦痛。因为有过切身体会，所以仅仅是几句简单的描述，足以让我想象得到那些场景。或许某些东西上你比我更痛苦。 那些我未曾经历的…</p>
+<p>听到你妈妈对我讲的那些, 除了揪心还是揪心, 只因我也曾经深切的体会过那般剧烈的苦痛.因为有过切身体会,所以仅仅是几句简单的描述,足以让我想象得到那些场景.或许某些东西上你比我更痛苦. 那些我未曾经历的…</p>
 
-<p>原来我们还会有这么个共同点，都有这样的坏毛病，都那么的不希望被担心。尤其是至亲。不到真正必要时刻绝不想麻烦他人，即使是至亲。即使躺在那张让人浑身不自在的病床也不愿落下看书。（这点毕竟还是你强悍啊，我之前也就床头边摆着《失控》或者《JS高程》，而你从床边到抽屉再到一书包的，各种书。）</p>
+<p>原来我们还会有这么个共同点,都有这样的坏毛病,都那么的不希望被担心.尤其是至亲.不到真正必要时刻绝不想麻烦他人,即使是至亲.即使躺在那张让人浑身不自在的病床也不愿落下看书.(这点毕竟还是你强悍啊,我之前也就床头边摆着《失控》或者《JS高程》,而你从床边到抽屉再到一书包的,各种书.)</p>
 
-<p>正因为这么的相似，所以，那一刻，我真不知道该说什么回应这位悲伤的母亲。</p>
+<p>正因为这么的相似,所以,那一刻,我真不知道该说什么回应这位悲伤的母亲.</p>
 
-<p>今天这种尴尬不能再有！</p>
+<p>今天这种尴尬不能再有!</p>
 
-<p>咱不该比谁更悲惨，我也不该过多抱怨自己的这个悲剧，这都不应该。</p>
+<p>咱不该比谁更悲惨,我也不该过多抱怨自己的这个悲剧,这都不应该.</p>
 
-<p>但确实性格使然。</p>
+<p>但确实性格使然.</p>
 
-<p>忽而发现我真的不知道如何去安慰一个人，因为我满脑充斥的都是负能量。</p>
+<p>忽而发现我真的不知道如何去安慰一个人,因为我满脑充斥的都是负能量.</p>
 
-<p>于是，决定解放自己，摆脱负能量，从自己开始。</p>
+<p>于是,决定解放自己,摆脱负能量,从自己开始.</p>
 
 <p>祝福</p>
 ]]></content>
@@ -1359,107 +1359,107 @@ alias rake="noglob rake"
     <link href="http://xguox.github.com/blog/2013/05/12/record-of-the-void-century-and-d/"/>
     <updated>2013-05-12T14:16:00+08:00</updated>
     <id>http://xguox.github.com/blog/2013/05/12/record-of-the-void-century-and-d</id>
-    <content type="html"><![CDATA[<h2>关于D一族的真相：</h2>
+    <content type="html"><![CDATA[<h2>关于D一族的真相:</h2>
 
-<p>路飞等人，一出场就有了与众不同的名字，即在名字当中比所有的普通人都多了一个D字，而海贼里不像现实中的美国等国，有MiddleName这个属性，事实上除了D一族的人以外，漫画中还没有出现过三个名字的人物。这真的是D一族自古流传下来的特殊起名方式吗?</p>
+<p>路飞等人,一出场就有了与众不同的名字,即在名字当中比所有的普通人都多了一个D字,而海贼里不像现实中的美国等国,有MiddleName这个属性,事实上除了D一族的人以外,漫画中还没有出现过三个名字的人物.这真的是D一族自古流传下来的特殊起名方式吗?</p>
 
-<p>我的观点是，是流传下来的，但这个起名方式却是从800年前刚刚突然开始流传的。因为罗宾在读到海底森林的历史文本时，最后的署名是“乔伊波伊”，这个人物很明显与D一族息息相关但却没有D（该人物具体分析见后文）。</p>
+<p>我的观点是,是流传下来的,但这个起名方式却是从800年前刚刚突然开始流传的.因为罗宾在读到海底森林的历史文本时,最后的署名是&#8221;乔伊波伊&#8221;,这个人物很明显与D一族息息相关但却没有D(该人物具体分析见后文).</p>
 
 <p><img src="https://uvqrqa.dm1.livefilestore.com/y2pfqTNQa7HcK__HqPl6n8RqzkF080dUaO13KHRGdeduPCn-y7geS-x6xcW98_F9QgJFV5HI9qMPiUUef_-3gpCxx8GRC1mKy-BgjZdoUiLP48/838ba61ea8d3fd1f45f53966314e251f94ca5fe9.jpg?psid=1" alt="" /></p>
 
 <!-- more -->
 
 
-<p>在漫画中，一个名字，两个名字的人物都数不胜数，而三个名字的人物只有D一族而已。我想D很可能是因为国家遭难后，被迫背井离乡的人们为了不忘记国家而特地加进名字当中的，而D很可能就是以前王国名字的缩写。这样一来乔伊波伊在历史文本的署名里没有D就很好理解了，因为800年前，他们的名字没有加入D，所以乔伊波伊留书给友人时不会平白加个D进去。</p>
+<p>在漫画中,一个名字,两个名字的人物都数不胜数,而三个名字的人物只有D一族而已.我想D很可能是因为国家遭难后,被迫背井离乡的人们为了不忘记国家而特地加进名字当中的,而D很可能就是以前王国名字的缩写.这样一来乔伊波伊在历史文本的署名里没有D就很好理解了,因为800年前,他们的名字没有加入D,所以乔伊波伊留书给友人时不会平白加个D进去.</p>
 
-<p>这里容许我先把D的真相先放一放，分析一下古代兵器 <br/>
-古代兵器一共有3个，分别是冥王Pluton，海王Poseidon，以及天王Uranus。<br/>
-其中的普鲁托和波塞冬的真相已经揭露，分别是一炮能轰掉一座岛的战船和能控制海王类的人鱼公主。天王乌拉努斯是什么呢？因为有了人鱼公主是波塞冬的先例，所以天王已经不局限于“兵器”的范畴里了，而且已经有了威力惊人的普鲁托，再有类似战斗力的兵器也有些多余，即便天王是所谓能在天空飞的船，用处似乎也不大（能源问题也无法解决），所以我认为天王不是真正意义上的兵器。<br/>
-三个古代兵器都是D国的最高机密，但前两者都并非出自D国，如果三者都来自外界的话，D国似乎没什么理由成为独占这三个兵器秘密的国家。所以天王乌拉努斯应该来自D国，并且是人类。</p>
+<p>这里容许我先把D的真相先放一放,分析一下古代兵器 <br/>
+古代兵器一共有3个,分别是冥王Pluton,海王Poseidon,以及天王Uranus.<br/>
+其中的普鲁托和波塞冬的真相已经揭露,分别是一炮能轰掉一座岛的战船和能控制海王类的人鱼公主.天王乌拉努斯是什么呢?因为有了人鱼公主是波塞冬的先例,所以天王已经不局限于&#8221;兵器&#8221;的范畴里了,而且已经有了威力惊人的普鲁托,再有类似战斗力的兵器也有些多余,即便天王是所谓能在天空飞的船,用处似乎也不大(能源问题也无法解决),所以我认为天王不是真正意义上的兵器.<br/>
+三个古代兵器都是D国的最高机密,但前两者都并非出自D国,如果三者都来自外界的话,D国似乎没什么理由成为独占这三个兵器秘密的国家.所以天王乌拉努斯应该来自D国,并且是人类.</p>
 
-<p>推理到了这里，就回头来看一下D国的名字吧。波塞冬这个海王之名既然来自人鱼中的尼普顿（海神）一族，那D一族自然就是天神一族了。如此一来我脑海中就浮现了一个D开头的天神的词汇Deus迪乌斯。如果是这个词，我觉得一切都能串联起来了，在奥哈拉的时候，尾田特意安排不让教授说出该国的国名，就是知道提前泄露了这个国名的话，那D的神秘就被揭开了大半吧。</p>
+<p>推理到了这里,就回头来看一下D国的名字吧.波塞冬这个海王之名既然来自人鱼中的尼普顿(海神)一族,那D一族自然就是天神一族了.如此一来我脑海中就浮现了一个D开头的天神的词汇Deus迪乌斯.如果是这个词,我觉得一切都能串联起来了,在奥哈拉的时候,尾田特意安排不让教授说出该国的国名,就是知道提前泄露了这个国名的话,那D的神秘就被揭开了大半吧.</p>
 
 <p><img src="https://gagqnq.dm1.livefilestore.com/y2p30ujb7bNrRXuFeG7IQpRLehjTwGrg8_sQOph6h1rbsnLp9LEnoZ-WjJZiTziIiAlKSsMXxZ_wLc_dl3490Z2GIvJyzUm2iwZL1BTpOIeC2k/e5f5bc3eb13533fa874a0872a9d3fd1f40345b9f.jpg?psid=1" alt="" /></p>
 
 <h2>天王Uranus的真面目</h2>
 
-<p>我觉得该“兵器”势必要有与“天”有关惊人的能力，并且该能力必须跟人鱼公主那样，是某个独有的能力。而漫画至今为止，满足这些条件的能力只有一个了，可能有不少读者知道我在说什么了，没错，指的就是目前只显示了冰山一角的，海贼王罗杰的“聆听万物之声”的能力。所以，我的结论就是，古代兵器天王乌拉努斯，以前是海贼王罗杰，而现在指的则是路飞。</p>
+<p>我觉得该&#8221;兵器&#8221;势必要有与&#8221;天&#8221;有关惊人的能力,并且该能力必须跟人鱼公主那样,是某个独有的能力.而漫画至今为止,满足这些条件的能力只有一个了,可能有不少读者知道我在说什么了,没错,指的就是目前只显示了冰山一角的,海贼王罗杰的&#8221;聆听万物之声&#8221;的能力.所以,我的结论就是,古代兵器天王乌拉努斯,以前是海贼王罗杰,而现在指的则是路飞.</p>
 
 <p><img src="https://gagqnq.dm1.livefilestore.com/y2p5r9RVEDBkkC0Y9ym_wuy0OTM2RKLpUExNVT682E8JJDxfE4s7cdMWOyeRV0wLzmrGpBcyLO1UdyXg7-vvlqw9XEZiO7x6Gnu2sUvFqxiM4c/edf2a9ec8a136327e285586f908fa0ec08fac734.jpg?psid=1" alt="" /></p>
 
-<p>有了这个结论之后，有很多东西都更为明朗了，比如我查阅之后发现，Uranus的含义不仅代表天空，还象征了希望与未来，这不正是路飞的特质么。</p>
+<p>有了这个结论之后,有很多东西都更为明朗了,比如我查阅之后发现,Uranus的含义不仅代表天空,还象征了希望与未来,这不正是路飞的特质么.</p>
 
 <p><img src="https://tupdbg.dm1.livefilestore.com/y2p37k-nIzvb3mtO8Z1-_EVJCD1xtW8XyDozEOuxeai8BeXCpkHHTmG_mZHoPK3epkhEsDtAycuSGy9_2iTn557h6VmlqDIFv3KwsaHKQkOcAc/f2d91bd5ad6eddc47de02ea738dbb6fd52663310.jpg?psid=1" alt="" /></p>
 
-<p>而在顶上战争中战国元帅的异常反应，以及之前表现出的对D的异常警觉，我觉得也得到解释了。要知道，在新世界里霸气不说烂大街，但也不是稀有到极点吧，多弗拉明戈啥的都有霸气了，而G5小兵们的反应，也没有像他这样夸张。那为什么见多识广的战国会对个霸气，对个D族海贼如此惊讶呢？我想是因为他还知道一个事实，那就是，D一族的人如果拥有霸气，就有成为天王乌拉努斯的可能（就像海王波塞冬的能力局限于王族的人鱼）。</p>
+<p>而在顶上战争中战国元帅的异常反应,以及之前表现出的对D的异常警觉,我觉得也得到解释了.要知道,在新世界里霸气不说烂大街,但也不是稀有到极点吧,多弗拉明戈啥的都有霸气了,而G5小兵们的反应,也没有像他这样夸张.那为什么见多识广的战国会对个霸气,对个D族海贼如此惊讶呢?我想是因为他还知道一个事实,那就是,D一族的人如果拥有霸气,就有成为天王乌拉努斯的可能(就像海王波塞冬的能力局限于王族的人鱼).</p>
 
 <p><img src="https://uvqkyq.dm1.livefilestore.com/y2p15mcfbDi0AFQMVedyw_k7fOfLCfrPX_h7tV43Re8ksYUEaFQc64bc3bFhl8-JTwyhgCDjpnbdw0v8twmvKM_rGFlA0_G4qOfpHNXbZIRs48/c8b6033b5bb5c9eab80698bfd439b6003bf3b3a7.jpg?psid=1" alt="" /></p>
 
 <p><img src="https://uv8asw.dm1.livefilestore.com/y2pNpqBNJsn1eWkN8RVxH4Z0a87gH8M3t2o8bpQm5yVyCbdiyFOEGKRozsi2-FQzHXGjvQarc4OeXy3PKLJooDmEzPeM3JtzyUEVW6zDfq209U/e7f8ad6eddc451daacf196b7b7fd5266d0163210.jpg?psid=1" alt="" /></p>
 
-<p>这也符合了战国对艾斯说的这一番话，这个资质，即不是指是个高手就有的霸王色霸气，更不是说能把武装色见闻色练到多强，指的其实是“聆听万物之声”这个能力。这里战国说的“海贼王”，指的就是“天王”，他不挑选四皇的任何一人（至少红发有霸气），而偏偏说艾斯会成为“海贼王”，不是说艾斯的能力或战斗潜力，而是因为他是D族，惧怕他成为“天王”。</p>
+<p>这也符合了战国对艾斯说的这一番话,这个资质,即不是指是个高手就有的霸王色霸气,更不是说能把武装色见闻色练到多强,指的其实是&#8221;聆听万物之声&#8221;这个能力.这里战国说的&#8221;海贼王&#8221;,指的就是&#8221;天王&#8221;,他不挑选四皇的任何一人(至少红发有霸气),而偏偏说艾斯会成为&#8221;海贼王&#8221;,不是说艾斯的能力或战斗潜力,而是因为他是D族,惧怕他成为&#8221;天王&#8221;.</p>
 
-<p>就像在20年前，罗杰被冠上了“海贼王”的名号，就实力来说，也并没有说过罗杰就比金狮子，白胡子等人强了。只是去过拉夫德鲁就被封海贼王，是否有点不妥呢。我认为，这其实是知道真相的ZF高层赋予的名号，五老星清楚的知道，罗杰是古代兵器天王乌拉努斯，也惧怕他的意志，他的能力，于是把跟ZF敌对的“天王”冠上了“海贼王”的头衔，让普通民众去憎恨这样一个存在。</p>
+<p>就像在20年前,罗杰被冠上了&#8221;海贼王&#8221;的名号,就实力来说,也并没有说过罗杰就比金狮子,白胡子等人强了.只是去过拉夫德鲁就被封海贼王,是否有点不妥呢.我认为,这其实是知道真相的ZF高层赋予的名号,五老星清楚的知道,罗杰是古代兵器天王乌拉努斯,也惧怕他的意志,他的能力,于是把跟ZF敌对的&#8221;天王&#8221;冠上了&#8221;海贼王&#8221;的头衔,让普通民众去憎恨这样一个存在.</p>
 
 <p><img src="https://tureeg.dm1.livefilestore.com/y2p7O7HYWQqHDu0JsNMBIjyeUEDlmwde9p7u8AnoAQAcE0lQOhAVNAYcnIP9mXllv9tI1NiZJAShA38sKTR3qt7Za7QY5J0o8_2NGcfcZqxKhY/ff165bb5c9ea15ce981b7b55b7003af33b87b2a7.jpg?psid=1" alt="" /></p>
 
-<p>这种表达与真意有差别的说话方式，也是尾田这个老狐狸一直玩的把戏了。听起来就像是说艾斯实力会变强到成为海贼王啥的，知道内情的人才知道这是指天王的能力会觉醒。同时我也了解了为什么尾田一定要安排艾斯在这里死去，安排路飞非要在2年后才觉醒了这种能力。因为就像波塞冬一样，天王乌拉努斯在一个时代只会出现一人，这样一来，与路飞同样是D一族，性格相同，做法类似，同样意志的艾斯，很可能会先于路飞一步觉醒该能力，故事就变成艾斯传了。</p>
+<p>这种表达与真意有差别的说话方式,也是尾田这个老狐狸一直玩的把戏了.听起来就像是说艾斯实力会变强到成为海贼王啥的,知道内情的人才知道这是指天王的能力会觉醒.同时我也了解了为什么尾田一定要安排艾斯在这里死去,安排路飞非要在2年后才觉醒了这种能力.因为就像波塞冬一样,天王乌拉努斯在一个时代只会出现一人,这样一来,与路飞同样是D一族,性格相同,做法类似,同样意志的艾斯,很可能会先于路飞一步觉醒该能力,故事就变成艾斯传了.</p>
 
 <p><img src="https://7nmmeq.dm1.livefilestore.com/y2pofDYf8635GNVnad1kvfQqCWcM7T9LoY0fwkxBmHi0rddBVhCZU1IgbLcs_Tfb9tru89yb-SBjc7D9hvO9beFWwFHqOz7Z46gkQoTF5DyzgM/21e951da81cb39db99c7fd0ad1160924ab183010.jpg?psid=1" alt="" /></p>
 
 <p><img src="https://uv8hkg.dm1.livefilestore.com/y2pPA59Q5_rujOviWT4zGnOIHgkaQbxleenJ6iSOyORoCQHoZF5PFzFEyrgQJC_3b-jDtGilZBiPO8Lf8IHInnhU03V6FGx17nHEK6y9SpGlAs/adf781cb39dbb6fd625c7f7a0824ab18972b3710.jpg?psid=1" alt="" /></p>
 
-<p>同样的，知道真相的白胡子在临死前说罗杰等的不是蒂奇，这也许是因为只是D族，只有霸气还不够吧，还需要继承D的意志，三个齐全了才能觉醒。</p>
+<p>同样的,知道真相的白胡子在临死前说罗杰等的不是蒂奇,这也许是因为只是D族,只有霸气还不够吧,还需要继承D的意志,三个齐全了才能觉醒.</p>
 
 <h2>一窥天王乌拉努斯能力的一角</h2>
 
 <p><img src="https://gagqnq.dm1.livefilestore.com/y2pb4WHFN8IFVdQunF8Pa7k0LihzpIEp-k6sB-NEsL1WfQVXN_CaTWzmQ0giUEV-jUxOI29b8F5cD059paTGmrWpTnd_DUQlvIfY1HHvhcgW_Q/763e632762d0f703131d0f8009fa513d2797c5e9.jpg?psid=1" alt="" /></p>
 
-<p>综合雷利的说法，他们不认识历史文本的文字，但在空岛上，罗杰切切实实的说将文字（而非石头本身）带去了目的地，并且在边上的黄金上留下也是这种文字！</p>
+<p>综合雷利的说法,他们不认识历史文本的文字,但在空岛上,罗杰切切实实的说将文字(而非石头本身)带去了目的地,并且在边上的黄金上留下也是这种文字!</p>
 
 <p><img src="https://uv9q1g.dm1.livefilestore.com/y2pZhTd6h45qNcQCx5qEUXq-eigqS7TN45du1Gd7hkmgRttzwMtYqLGtddS-8oLIIs0mW7pvHxZLFZgDA_aPqZFL0RG9hJXm2Z3j9QQAnUZwfw/c52c213fb80e7bec812998bd2e2eb9389a506bad.jpg?psid=1" alt="" /></p>
 
 <p><img src="https://uv9qna.dm1.livefilestore.com/y2ptCrdmtJMdUgzV_F96rOt-gPnE3dtZPF8IhQvijDMH1T971W5ZYu0SODxxIY5tvi7U5X70TW70WYsO4-ShTNGs74PbR084H3siIuVFXxKYGA/8fdd82025aafa40f0d885481aa64034f79f019c9.jpg?psid=1" alt="" /></p>
 
-<p>再结合漫画中明确透露的该能力能听懂海王类的对话（无法像波塞冬对其进行召唤与命令）。我想，这个&#8221;聆听万物之声&#8221;的能力应该没有任何夸张，确实它能听到“万物”的声音，万物包括记录历史文本的石头。</p>
+<p>再结合漫画中明确透露的该能力能听懂海王类的对话(无法像波塞冬对其进行召唤与命令).我想,这个&#8221;聆听万物之声&#8221;的能力应该没有任何夸张,确实它能听到&#8221;万物&#8221;的声音,万物包括记录历史文本的石头.</p>
 
 <p><img src="https://7nncyg.dm1.livefilestore.com/y2p1NgYDTVDAFfNw8XQEJfp1ocjLwTSES8qzGnEnHz2SG0c09KSxkSkBFMrRXNY6yFM78A9qnuJG6Xlucrm92CUnkWLWCDeWMFX-Bsem-EoKpY/44237bec54e736d1f85a17549a504fc2d46269cb.jpg?psid=1" alt="" /></p>
 
-<p>这样一来，这块无法破坏的石头为什么能刻上文字也能说得通了，即便D国有在石头上刻字的技术手段，也应该不会让工匠来操作。更何况海王，冥王这种情报，我觉得应该是除了“王”以外不该泄露给任何人的信息。这样，能在石头上写上字的人乔伊波伊自然就是原初的“天王”，那该如何写字呢，石头无法破坏，罗杰更是不认识这种字。这里只能运用“听”的能力了，我认为，该能力能与万物进行“交谈与控制”，而石头黄金等物体会“听从”天王的命令，浮现他想记录的信息，也就是说，文本上的文字可以说是“石文字”，而罗杰那时就是靠这个能力，从石头那里“听到”了记录的内容，并“命令”旁边的黄金记录下该任务“已完成”的信息。</p>
+<p>这样一来,这块无法破坏的石头为什么能刻上文字也能说得通了,即便D国有在石头上刻字的技术手段,也应该不会让工匠来操作.更何况海王,冥王这种情报,我觉得应该是除了&#8221;王&#8221;以外不该泄露给任何人的信息.这样,能在石头上写上字的人乔伊波伊自然就是原初的&#8221;天王&#8221;,那该如何写字呢,石头无法破坏,罗杰更是不认识这种字.这里只能运用&#8221;听&#8221;的能力了,我认为,该能力能与万物进行&#8221;交谈与控制&#8221;,而石头黄金等物体会&#8221;听从&#8221;天王的命令,浮现他想记录的信息,也就是说,文本上的文字可以说是&#8221;石文字&#8221;,而罗杰那时就是靠这个能力,从石头那里&#8221;听到&#8221;了记录的内容,并&#8221;命令&#8221;旁边的黄金记录下该任务&#8221;已完成&#8221;的信息.</p>
 
 <p><img src="https://gagqnq.dm1.livefilestore.com/y2pomnNI6dgcTcMvJ-uGVNkkmhPRnMLlnd9jhBQ0MBNh0mv1HGaPzyUud-97MO1N8W7r3MBaBa7rqitc3pGJZaGfKImXJbxVCC5JvwzWbdwF5A/b7d6fbedab64034f3283585aaec379310b551dc9.jpg?psid=1" alt="" /></p>
 
-<p>能与石头进行对话的能力，从鱼人岛的谢罪文中也能一窥究竟。尼普顿很清楚的说了，这据说是写给人鱼公主的，但详细内容没流传下来，所以尼普顿不认识这些文字，国王都不认识了，很明显以前的王族都不会认识。但如果要写信的话，用大家都明白的文字写是常识吧。但偏偏石头上的还是这种鸟文，我想这也从侧面证明了石头上写字的人无法控制显示的字体，即无法人为的在这些石头上刻字。</p>
+<p>能与石头进行对话的能力,从鱼人岛的谢罪文中也能一窥究竟.尼普顿很清楚的说了,这据说是写给人鱼公主的,但详细内容没流传下来,所以尼普顿不认识这些文字,国王都不认识了,很明显以前的王族都不会认识.但如果要写信的话,用大家都明白的文字写是常识吧.但偏偏石头上的还是这种鸟文,我想这也从侧面证明了石头上写字的人无法控制显示的字体,即无法人为的在这些石头上刻字.</p>
 
 <h2>二十国攻打天神国的缘由及导火索</h2>
 
-<p>在800年前，D国就拥有了三个古代兵器的助力，又有“天神”的国名，很可能属于君临天下的国度。应该是世界各国的领导者。可惜的是，这个国家的施政方针让一些国家的贵族，王族产生了不满。</p>
+<p>在800年前,D国就拥有了三个古代兵器的助力,又有&#8221;天神&#8221;的国名,很可能属于君临天下的国度.应该是世界各国的领导者.可惜的是,这个国家的施政方针让一些国家的贵族,王族产生了不满.</p>
 
 <p><img src="https://7npb7q.dm1.livefilestore.com/y2pug1GsjZunfwEXlFl2OLfdHfdFf6jokVuN2Pok_7MduOKj_0iv7SegR6Se4aSoeVENL8YjeePGGFawTavxUY_tftuu8cMr31i6zQPZGKPMtE/6202070828381f3086bb17f5a8014c086f06f0fe.jpg?psid=1" alt="" /></p>
 
 <p><img src="https://gagqnq.dm1.livefilestore.com/y2pJGG2u-UJI7M2C_2w5grJoJpaLuNEPKJzraSbDYkIV6ZITmmG3CAHH1E5wWH0h6WXIZ_hhNi8NF4gKiHd90E8PIl5s6YDIR71J8j57O40ua0/fb2528381f30e924c806066d4d086e061c95f7fe.jpg?psid=1" alt="" /></p>
 
-<p>就漫画中揭露的几个王族来看，可以清晰的看到两个极端，一种是像沙之岛和鱼人岛那样，王族与民众都相濡以沫，没有隔阂。一种就像天龙人，哥亚王国那样，尊卑分明，下等阶级被当做垃圾，当做奴隶。虽然各国有各国的做法，也算互不相干，但天神国作为世界各国的领导者如果这么做的话，问题就严重了，恰巧D国托付历史文本的两个国度都是没有明确的尊卑之分的国度，可以想象D国的王族也是类似这两个国家的。</p>
+<p>就漫画中揭露的几个王族来看,可以清晰的看到两个极端,一种是像沙之岛和鱼人岛那样,王族与民众都相濡以沫,没有隔阂.一种就像天龙人,哥亚王国那样,尊卑分明,下等阶级被当做垃圾,当做奴隶.虽然各国有各国的做法,也算互不相干,但天神国作为世界各国的领导者如果这么做的话,问题就严重了,恰巧D国托付历史文本的两个国度都是没有明确的尊卑之分的国度,可以想象D国的王族也是类似这两个国家的.</p>
 
-<p>一直以来，都是号称“君权神授”，君王总是以“天子”的姿态，让民众敬仰，崇拜，服从。但若是各国领导者的“天神”一族的天王要与民众们平起平坐的话，那阶级思想根深蒂固的国王们以后该如何服众？为了保住自己的地位，“王”决定要挑战“神”，于是20国的联合军出发将神一网打尽了。</p>
+<p>一直以来,都是号称&#8221;君权神授&#8221;,君王总是以&#8221;天子&#8221;的姿态,让民众敬仰,崇拜,服从.但若是各国领导者的&#8221;天神&#8221;一族的天王要与民众们平起平坐的话,那阶级思想根深蒂固的国王们以后该如何服众?为了保住自己的地位,&ldquo;王&#8221;决定要挑战&#8221;神&rdquo;,于是20国的联合军出发将神一网打尽了.</p>
 
-<p>而“神”虽然有冥王，有波塞冬相助，但如果他们以暴制暴，那就与初衷完全相悖了。于是他们选择了隐忍，将一众族人分送去世界各地，并留下了历史文本，希望D国逃难出去的人们能出现D意志的继承者，并能找到更好的方法来打破贵族与平民之间的鸿沟吧。与其说这是20国与D国的对抗，不如说是这个世界古旧的制度与新的思维之间的对抗，这就是一切的源头。</p>
+<p>而&#8221;神&#8221;虽然有冥王,有波塞冬相助,但如果他们以暴制暴,那就与初衷完全相悖了.于是他们选择了隐忍,将一众族人分送去世界各地,并留下了历史文本,希望D国逃难出去的人们能出现D意志的继承者,并能找到更好的方法来打破贵族与平民之间的鸿沟吧.与其说这是20国与D国的对抗,不如说是这个世界古旧的制度与新的思维之间的对抗,这就是一切的源头.</p>
 
 <h2>导火索</h2>
 
-<p>我认为就是将鱼人岛移去地上的这个决定。</p>
+<p>我认为就是将鱼人岛移去地上的这个决定.</p>
 
 <p><img src="https://uvpnza.dm1.livefilestore.com/y2pvW7f8IKTfYROnqtR2bxZA3NFg64Btq_1Dt7ST_gCvH2nEPrZVlS3jeUCOt8SxvOtSlk_Qs8sthxTtSVIj1zPx0k7xJS2FBFvlJuyWg-N_W0/6310f8dcd100baa1d7c7dce74610b912c9fc2eb4.jpg?psid=1" alt="" /></p>
 
-<p>罗宾在一开始就说了，鱼人岛的历史文本，是至关重要的。但如果仅仅是写给人鱼公主的私人信件的话，再怎么也重要不到哪里去。但是将各个线索串联起来看一下的话呢？</p>
+<p>罗宾在一开始就说了,鱼人岛的历史文本,是至关重要的.但如果仅仅是写给人鱼公主的私人信件的话,再怎么也重要不到哪里去.但是将各个线索串联起来看一下的话呢?</p>
 
 <p><img src="https://7nolba.dm1.livefilestore.com/y2pPLCWFaY4K4stKt0-A09iSiTz7Uf1o4jgkSP6oDRYOUkfl3PdEvbZMoUsb_UXNaSZ664B1yuD0rWNd_u6DuRlsfVKMTdNimshGFSsz55BPq0/26994aed2e738bd4d5f7286da08b87d6267ff942.jpg?psid=1" alt="" /></p>
 
-<p>奴隶制度，人鱼和鱼人被认为是鱼。在鱼人岛的偏偏是谢罪文，为何要谢罪，是因为无法完成约定。那也就是说，之前D国的乔伊波伊已经与尼普顿一族约定了要把鱼人岛移去地面上。但有波塞冬的力量，移动诺亚搬去海面不是轻而易举吗？为什么会做不到呢？</p>
+<p>奴隶制度,人鱼和鱼人被认为是鱼.在鱼人岛的偏偏是谢罪文,为何要谢罪,是因为无法完成约定.那也就是说,之前D国的乔伊波伊已经与尼普顿一族约定了要把鱼人岛移去地面上.但有波塞冬的力量,移动诺亚搬去海面不是轻而易举吗?为什么会做不到呢?</p>
 
-<p>这里我能想到的就是世界会议了，在过去的世界会议上，身为盟主的天神国决定帮助鱼人岛移去地上，在当年的世界会议上提出了该提案，遭到了对鱼人深度种族歧视的国王们的反对和憎恨，并导致了接下来的灭国。于是才有了这封谢罪文。而这个约定，也致使对D国积累了诸多不满的20个国家的国王终于下定决心要灭掉这个危险的存在。</p>
+<p>这里我能想到的就是世界会议了,在过去的世界会议上,身为盟主的天神国决定帮助鱼人岛移去地上,在当年的世界会议上提出了该提案,遭到了对鱼人深度种族歧视的国王们的反对和憎恨,并导致了接下来的灭国.于是才有了这封谢罪文.而这个约定,也致使对D国积累了诸多不满的20个国家的国王终于下定决心要灭掉这个危险的存在.</p>
 
-<p>现在就期待着路飞，这个新时代的象征希望与未来的天王乌拉努斯，能亲自一个一个国家的进行调和，将D国的意志真正的融入到每个民众心中，一环一环的打破古老的枷锁，让世界的风向朝向自己。这样，一定能够打开崭新的局面吧。</p>
+<p>现在就期待着路飞,这个新时代的象征希望与未来的天王乌拉努斯,能亲自一个一个国家的进行调和,将D国的意志真正的融入到每个民众心中,一环一环的打破古老的枷锁,让世界的风向朝向自己.这样,一定能够打开崭新的局面吧.</p>
 ]]></content>
   </entry>
   
@@ -1468,13 +1468,13 @@ alias rake="noglob rake"
     <link href="http://xguox.github.com/blog/2013/05/11/repost-days-with-my-father/"/>
     <updated>2013-05-11T13:52:00+08:00</updated>
     <id>http://xguox.github.com/blog/2013/05/11/repost-days-with-my-father</id>
-    <content type="html"><![CDATA[<p>昨天是父亲节。</p>
+    <content type="html"><![CDATA[<p>昨天是父亲节.</p>
 
-<p>半夜里，我突然想起来，曾经推荐过一个美国摄影师的作品。母亲去世后，他就拍他的父亲，还写下自己的感想。</p>
+<p>半夜里,我突然想起来,曾经推荐过一个美国摄影师的作品.母亲去世后,他就拍他的父亲,还写下自己的感想.</p>
 
-<p>这组作品，我看过多次，昨天再看，竟然又一次被感动了。儿子对父亲的关心、对老年人衰老和孤独的感慨，都在其中得到了细腻的体现，非常感人。</p>
+<p>这组作品,我看过多次,昨天再看,竟然又一次被感动了.儿子对父亲的关心、对老年人衰老和孤独的感慨,都在其中得到了细腻的体现,非常感人.</p>
 
-<p>网上似乎还没有全文翻译，我就把它译了出来，再一次推荐给大家。</p>
+<p>网上似乎还没有全文翻译,我就把它译了出来,再一次推荐给大家.</p>
 
 <!-- more -->
 
@@ -1482,148 +1482,148 @@ alias rake="noglob rake"
 <p>=============================================================</p>
 
 <p>与父亲在一起的日子<br/>
-作者：Phillip Toledano<br/>
-译者：<a href="http://www.ruanyifeng.com/blog/2011/06/days_with_my_father.html">阮一峰</a> <br/>
-原文网址：<a href="http://www.dayswithmyfather.com">http://www.dayswithmyfather.com</a></p>
+作者:Phillip Toledano<br/>
+译者:<a href="http://www.ruanyifeng.com/blog/2011/06/days_with_my_father.html">阮一峰</a> <br/>
+原文网址:<a href="http://www.dayswithmyfather.com">http://www.dayswithmyfather.com</a></p>
 
 <p>1
 <img src="http://image.beekka.com/blog/201106/bg2011062001.jpg" alt="" />  <br/>
-这是一份日记，记录我的父亲。</p>
+这是一份日记,记录我的父亲.</p>
 
 <p>2
 <img src="http://image.beekka.com/blog/201106/bg2011062002.jpg" alt="" />  <br/>
-我希望留下我和他在一起的日子。</p>
+我希望留下我和他在一起的日子.</p>
 
 <p>3
 <img src="http://image.beekka.com/blog/201106/bg2011062003.jpg" alt="" />  <br/>
-2006年9月4日，母亲突然过世，将照顾父亲的重担一下子留给了我。父亲患有健忘症，经常不记得几分钟前发生的事。<br/>
-我带着父亲参加了母亲的葬礼。但是回家后，每隔15分钟，父亲就问我母亲去了哪里。我不得不一遍遍地解释，她死了。父亲震惊极了，问我为什么没人告诉他？为什么不让他参加葬礼？为什么他从没去医院探望她？&hellip;&hellip;他全忘了。<br/>
-于是，我改口说，母亲去巴黎照顾生病的舅舅了，暂时不回来。</p>
+2006年9月4日,母亲突然过世,将照顾父亲的重担一下子留给了我.父亲患有健忘症,经常不记得几分钟前发生的事.<br/>
+我带着父亲参加了母亲的葬礼.但是回家后,每隔15分钟,父亲就问我母亲去了哪里.我不得不一遍遍地解释,她死了.父亲震惊极了,问我为什么没人告诉他?为什么不让他参加葬礼?为什么他从没去医院探望她?&hellip;&hellip;他全忘了.<br/>
+于是,我改口说,母亲去巴黎照顾生病的舅舅了,暂时不回来.</p>
 
 <p>4
 <img src="http://image.beekka.com/blog/201106/bg2011062004.jpg" alt="" /><br/>
-年轻时，父亲非常英俊，在好莱坞当电影演员。他不喜欢自己现在苍老的样子。<br/>
-我让他看着镜子，想拍一张肖像。他看到镜中的自己，顿时变得非常不安。<br/>
-你看，即使到了98岁，他还是有虚荣心。</p>
+年轻时,父亲非常英俊,在好莱坞当电影演员.他不喜欢自己现在苍老的样子.<br/>
+我让他看着镜子,想拍一张肖像.他看到镜中的自己,顿时变得非常不安.<br/>
+你看,即使到了98岁,他还是有虚荣心.</p>
 
 <p>5
 <img src="http://image.beekka.com/blog/201106/bg2011062005.jpg" alt="" /><br/>
-屋子里到处都是他留下的小纸条，上面写着&#8221;人都到哪里去了？&#8221;、&#8221;发生什么事了？&#8221;&hellip;&hellip;这显示了他内心深处的恐慌，他从不对我说这些。</p>
+屋子里到处都是他留下的小纸条,上面写着&#8221;人都到哪里去了?&ldquo;、&#8221;发生什么事了?&rdquo;&hellip;&hellip;这显示了他内心深处的恐慌,他从不对我说这些.</p>
 
 <p>6
 <img src="http://image.beekka.com/blog/201106/bg2011062006.jpg" alt="" /><br/>
-父亲握着我的妻子卡拉的手。<br/>
-每当卡拉画眉毛或者穿新裙子，他都会注意到，他对细节很敏感。另一方面，他还赞美卡拉&#8221;身材好&#8221;，喜欢看卡拉穿短裙，我觉得很有意思。</p>
+父亲握着我的妻子卡拉的手.<br/>
+每当卡拉画眉毛或者穿新裙子,他都会注意到,他对细节很敏感.另一方面,他还赞美卡拉&#8221;身材好&#8221;,喜欢看卡拉穿短裙,我觉得很有意思.</p>
 
 <p>7
 <img src="http://image.beekka.com/blog/201106/bg2011062007.jpg" alt="" /><br/>
-这是拉尔夫叔叔的照片。他是父亲的弟弟，去年死了，父亲还不知道。</p>
+这是拉尔夫叔叔的照片.他是父亲的弟弟,去年死了,父亲还不知道.</p>
 
 <p>8
 <img src="http://image.beekka.com/blog/201106/bg2011062008.jpg" alt="" /><br/>
-父亲经常对我说，他想死。他说是时候走了，他已经活得太长了。<br/>
-很奇怪，我竟然有些赞同他的想法。他现在如此健忘，这样的生活根本不能叫做生活，而是一种折磨。但是，这个世界上，我的直系亲属只剩下他一个人了。</p>
+父亲经常对我说,他想死.他说是时候走了,他已经活得太长了.<br/>
+很奇怪,我竟然有些赞同他的想法.他现在如此健忘,这样的生活根本不能叫做生活,而是一种折磨.但是,这个世界上,我的直系亲属只剩下他一个人了.</p>
 
 <p>9
 <img src="http://image.beekka.com/blog/201106/bg2011062009.jpg" alt="" /><br/>
-这是我家的狗乔治。父亲不记得她的名字，就叫她&#8221;狗狗&#8221;。<br/>
-晚餐时，父亲喜欢把菜扔到地上喂她（这总会吓到母亲）。当乔治朝着地上的菜窜过来，父亲就会很高兴，夸她可以去拍电影。</p>
+这是我家的狗乔治.父亲不记得她的名字,就叫她&#8221;狗狗&#8221;.<br/>
+晚餐时,父亲喜欢把菜扔到地上喂她(这总会吓到母亲).当乔治朝着地上的菜窜过来,父亲就会很高兴,夸她可以去拍电影.</p>
 
 <p>10
 <img src="http://image.beekka.com/blog/201106/bg2011062010.jpg" alt="" /><br/>
-每天，父亲待在厕所的时间很长很长。因为他健忘，所以他可以在那里待上几个小时。<br/>
-他常常在厕所里刚系上裤子，就说&#8221;等一等，我要去上厕所&#8221;。这让人又恼火又伤心。我对他说，你已经在厕所里一个小时了，他就会用一付难以置信的表情看着我。</p>
+每天,父亲待在厕所的时间很长很长.因为他健忘,所以他可以在那里待上几个小时.<br/>
+他常常在厕所里刚系上裤子,就说&#8221;等一等,我要去上厕所&#8221;.这让人又恼火又伤心.我对他说,你已经在厕所里一个小时了,他就会用一付难以置信的表情看着我.</p>
 
 <p>11
 <img src="http://image.beekka.com/blog/201106/bg2011062011.jpg" alt="" />
-我喜欢他看报纸的那些时刻。<br/>
-有那么几分钟，他很清醒，一切看上去又回到以前。那时，我们就不再称母亲去了巴黎，而是说她去买吃的了，一会就回来。那是一天中的甜蜜时刻。</p>
+我喜欢他看报纸的那些时刻.<br/>
+有那么几分钟,他很清醒,一切看上去又回到以前.那时,我们就不再称母亲去了巴黎,而是说她去买吃的了,一会就回来.那是一天中的甜蜜时刻.</p>
 
 <p>12
 <img src="http://image.beekka.com/blog/201106/bg2011062012.jpg" alt="" /><br/>
-吃饭总是一个大问题。我现在明白，为什么母亲去世之前，总是烧一模一样的菜，因为父亲只吃那个。<br/>
-一般情况下，他只吃鸡蛋，炒鸡蛋、鸡蛋色拉、鸡蛋汤等等。奇怪的是，他的胆固醇一点也不高。</p>
+吃饭总是一个大问题.我现在明白,为什么母亲去世之前,总是烧一模一样的菜,因为父亲只吃那个.<br/>
+一般情况下,他只吃鸡蛋,炒鸡蛋、鸡蛋色拉、鸡蛋汤等等.奇怪的是,他的胆固醇一点也不高.</p>
 
 <p>13
 <img src="http://image.beekka.com/blog/201106/bg2011062013.jpg" alt="" /><br/>
-父亲是一个幽默的人。我把两块饼干放在他的胸口，他说&#8221;快来看我的奶头&#8221;。这难道不好笑吗？</p>
+父亲是一个幽默的人.我把两块饼干放在他的胸口,他说&#8221;快来看我的奶头&#8221;.这难道不好笑吗?</p>
 
 <p>14
 <img src="http://image.beekka.com/blog/201106/bg2011062014.jpg" alt="" /><br/>
-父亲退休后，依然保持对艺术的热爱。他用大量的时间听歌剧、画画、雕塑。<br/>
-虽然现在他不再画画了，但是依然向往艺术。他对日落很着迷，说这些色彩可以画出很多画。虽然身体不行了，他的心还是年轻的。</p>
+父亲退休后,依然保持对艺术的热爱.他用大量的时间听歌剧、画画、雕塑.<br/>
+虽然现在他不再画画了,但是依然向往艺术.他对日落很着迷,说这些色彩可以画出很多画.虽然身体不行了,他的心还是年轻的.</p>
 
 <p>15
 <img src="http://image.beekka.com/blog/201106/bg2011062015.jpg" alt="" /><br/>
-父亲是讲故事的高手。从小我就喜欢听他的故事，他的表演可是奥斯卡级别的。<br/>
-如果他心情不好，我就请他讲一个故事，他会很快进入角色，把自己忘了。</p>
+父亲是讲故事的高手.从小我就喜欢听他的故事,他的表演可是奥斯卡级别的.<br/>
+如果他心情不好,我就请他讲一个故事,他会很快进入角色,把自己忘了.</p>
 
 <p>16
 <img src="http://image.beekka.com/blog/201106/bg2011062016.jpg" alt="" /><br/>
-今天，他过98岁生日。</p>
+今天,他过98岁生日.</p>
 
 <p>17
 <img src="http://image.beekka.com/blog/201106/bg2011062017.jpg" alt="" /><br/>
-我让他拍一张我的照片。我想知道，他能看出我有多爱他吗。<br/>
-我手上的戒指，是母亲去世那天戴的。</p>
+我让他拍一张我的照片.我想知道,他能看出我有多爱他吗.<br/>
+我手上的戒指,是母亲去世那天戴的.</p>
 
 <p>18
 <img src="http://image.beekka.com/blog/201106/bg2011062018.jpg" alt="" /><br/>
-今天是母亲的生日。我总是记不住这个日子，但是今天早上我梦到了她。她在笑。<br/>
-要是她还活着，今天就是81岁了。<br/>
-妈，生日快乐。</p>
+今天是母亲的生日.我总是记不住这个日子,但是今天早上我梦到了她.她在笑.<br/>
+要是她还活着,今天就是81岁了.<br/>
+妈,生日快乐.</p>
 
 <p>19
 <img src="http://image.beekka.com/blog/201106/bg2011062019.jpg" alt="" />
-父亲很在意别人给予他的关心。<br/>
-每次我去看他，他都把这当做一件大事，总是说他有多爱我。在他眼里，我是一个天才，而卡拉也是我们家当然的一份子。<br/>
-我真高兴，这段时间我们在一起。</p>
+父亲很在意别人给予他的关心.<br/>
+每次我去看他,他都把这当做一件大事,总是说他有多爱我.在他眼里,我是一个天才,而卡拉也是我们家当然的一份子.<br/>
+我真高兴,这段时间我们在一起.</p>
 
 <p>20
 <img src="http://image.beekka.com/blog/201106/bg2011062020.jpg" alt="" /><br/>
-我总是被父亲爱母亲的程度震惊。他一直在谈她，对她充满感激，无比珍惜这段感情。<br/>
-母亲很爱我，就像胶水一样，把我们这个家紧紧粘在一起。从小她就事事管着我，我有点嫌她啰嗦。有一次，她甚至打电话让我不要出门，因为外面风大危险。<br/>
-现在她不在了，我才意识到，我一生都在抵制她对我施加影响。如今它不在了，我却想念了。她应该很高兴听到我这样说。</p>
+我总是被父亲爱母亲的程度震惊.他一直在谈她,对她充满感激,无比珍惜这段感情.<br/>
+母亲很爱我,就像胶水一样,把我们这个家紧紧粘在一起.从小她就事事管着我,我有点嫌她啰嗦.有一次,她甚至打电话让我不要出门,因为外面风大危险.<br/>
+现在她不在了,我才意识到,我一生都在抵制她对我施加影响.如今它不在了,我却想念了.她应该很高兴听到我这样说.</p>
 
 <p>21
 <img src="http://image.beekka.com/blog/201106/bg2011062021.jpg" alt="" /><br/>
-父亲很注意健康。早在粗粮流行之前，他就开始吃了。每天早上，他都非常投入地做健身操，弯腰用手指触碰脚趾，还做仰卧起坐。<br/>
-他还喜欢往橙汁里加生鸡蛋。他总是问我要不要一起喝，我说这种饮料很恶心，他就得意地哈哈大笑。</p>
+父亲很注意健康.早在粗粮流行之前,他就开始吃了.每天早上,他都非常投入地做健身操,弯腰用手指触碰脚趾,还做仰卧起坐.<br/>
+他还喜欢往橙汁里加生鸡蛋.他总是问我要不要一起喝,我说这种饮料很恶心,他就得意地哈哈大笑.</p>
 
 <p>22
 <img src="http://image.beekka.com/blog/201106/bg2011062022.jpg" alt="" /><br/>
-最让父亲开心的，就是我取得成功。<br/>
-每当他心情不佳的时候，我就立刻讲一个我职业上的最新突破。我告诉他，我正在为某本著名杂志或者某个大型项目，拍摄重要的作品。有时候，这是真话，有时候，这是假话。但是这不重要，重要的是我要尽可能让他开心。<br/>
-他一听到我的这些话，脸上就会露出幸福的表情。他总说：&#8221;我必须让所有朋友都知道，我有一个著名的儿子。&#8221;</p>
+最让父亲开心的,就是我取得成功.<br/>
+每当他心情不佳的时候,我就立刻讲一个我职业上的最新突破.我告诉他,我正在为某本著名杂志或者某个大型项目,拍摄重要的作品.有时候,这是真话,有时候,这是假话.但是这不重要,重要的是我要尽可能让他开心.<br/>
+他一听到我的这些话,脸上就会露出幸福的表情.他总说:&ldquo;我必须让所有朋友都知道,我有一个著名的儿子.&rdquo;</p>
 
 <p>23
 <img src="http://image.beekka.com/blog/201106/bg2011062023.jpg" alt="" />
-有一天，我把父亲以前的电影借回家。那是一部30年代拍摄的《陈查理探案记》，我和他一起看。<br/>
-他告诉我，那时太年轻，电影里的小胡子都是胶水粘上去的。看着父亲年轻时的形象，我感觉很奇妙。那时他完全不知道，未来会有母亲和我，我们会生活在一起，生活充满了各种可能。</p>
+有一天,我把父亲以前的电影借回家.那是一部30年代拍摄的《陈查理探案记》,我和他一起看.<br/>
+他告诉我,那时太年轻,电影里的小胡子都是胶水粘上去的.看着父亲年轻时的形象,我感觉很奇妙.那时他完全不知道,未来会有母亲和我,我们会生活在一起,生活充满了各种可能.</p>
 
 <p>24
 <img src="http://image.beekka.com/blog/201106/bg2011062024.jpg" alt="" /><br/>
-父亲又问母亲去哪里了，我还是说在巴黎。<br/>
-他又问她现在干什么（除了照顾生病的舅舅），我就说她正在管理一个杂技团，然后做出把头放在狮子嘴里、荡秋千、跳火圈的动作。这让我们两个都笑起来了。</p>
+父亲又问母亲去哪里了,我还是说在巴黎.<br/>
+他又问她现在干什么(除了照顾生病的舅舅),我就说她正在管理一个杂技团,然后做出把头放在狮子嘴里、荡秋千、跳火圈的动作.这让我们两个都笑起来了.</p>
 
 <p>25
 <img src="http://image.beekka.com/blog/201106/bg2011062025.jpg" alt="" />
-有一次，我们说着说着，他就停下来了，什么话也不说，发出叹息，然后闭上眼睛。<br/>
-就是从那时起，我明白他其实都知道，关于母亲，关于所有的事情。</p>
+有一次,我们说着说着,他就停下来了,什么话也不说,发出叹息,然后闭上眼睛.<br/>
+就是从那时起,我明白他其实都知道,关于母亲,关于所有的事情.</p>
 
 <p>26
 <img src="http://image.beekka.com/blog/201106/bg2011062026.jpg" alt="" /><br/>
-昨天，父亲去世了。<br/>
-我整晚都和他在一起，握着他的手，听着他的呼吸声，想知道哪一口气是他最后的呼吸。他死在家中自己的床上，我和卡拉在他的身旁。<br/>
-过去三年来，我一直害怕，他会在我不在家的时候去世。我不想让他孤单经历这一切，不想让他周围有陌生人。我知道，这样说可能不合适，但是我非常满意这件事发生的方式。<br/>
-很幸运，过去三年我与他在一起，我们没有话没说，知道彼此深爱对方，知道他深深为我骄傲，而我也发现他竟是如此有趣。这是我的一份非常非常宝贵的礼物。</p>
+昨天,父亲去世了.<br/>
+我整晚都和他在一起,握着他的手,听着他的呼吸声,想知道哪一口气是他最后的呼吸.他死在家中自己的床上,我和卡拉在他的身旁.<br/>
+过去三年来,我一直害怕,他会在我不在家的时候去世.我不想让他孤单经历这一切,不想让他周围有陌生人.我知道,这样说可能不合适,但是我非常满意这件事发生的方式.<br/>
+很幸运,过去三年我与他在一起,我们没有话没说,知道彼此深爱对方,知道他深深为我骄傲,而我也发现他竟是如此有趣.这是我的一份非常非常宝贵的礼物.</p>
 
 <p>27
 <img src="http://image.beekka.com/blog/201106/bg2011062027.jpg" alt="" />
-感谢每一位读完这份日记的人，我从没想过其他人会对这件事有兴趣。我深感荣幸我有这么多读者，我读过你们的每一条留言、每一封电子邮件。<br/>
-父亲如果知道我这样做，他会很开心。他希望别人知道他的故事。他的生命从无静止，他就像一条河流，一直在奔腾向前。  <br/>
-上周是他99岁生日，我问他知道自己几岁吗？他笑着说：&#8221;22岁？&#8221;
-现在，他去巴黎了，与母亲团聚了。</p>
+感谢每一位读完这份日记的人,我从没想过其他人会对这件事有兴趣.我深感荣幸我有这么多读者,我读过你们的每一条留言、每一封电子邮件.<br/>
+父亲如果知道我这样做,他会很开心.他希望别人知道他的故事.他的生命从无静止,他就像一条河流,一直在奔腾向前.  <br/>
+上周是他99岁生日,我问他知道自己几岁吗?他笑着说:&ldquo;22岁?&rdquo;
+现在,他去巴黎了,与母亲团聚了.</p>
 
 <p>(完)</p>
 ]]></content>
@@ -1638,7 +1638,7 @@ alias rake="noglob rake"
 
 <blockquote><p>Travel is fatal to prejudice, bigotry, and narrow-mindedness. (旅行是克服偏见、自大、狭隘的最好方法.) &mdash;&mdash; Mark Twain</p></blockquote>
 
-<p>远途旅行, 开阔视野, 我觉得这对于常年呆在硅谷的人来说尤为重要. 旅行可以让你见识到人们真真切切遇到的一些问题, 并使你有这样的机会去想办法解决掉, 而不是满脑子都是一些在家的琐碎想法. 一个新的视角, 一个新的想法，也或许就在你的旅途之中诞生.</p>
+<p>远途旅行, 开阔视野, 我觉得这对于常年呆在硅谷的人来说尤为重要. 旅行可以让你见识到人们真真切切遇到的一些问题, 并使你有这样的机会去想办法解决掉, 而不是满脑子都是一些在家的琐碎想法. 一个新的视角, 一个新的想法,也或许就在你的旅途之中诞生.</p>
 
 <p><img src="http://stuckincustoms.smugmug.com/Portfolio-The-Best/your-favorites/i-n54tcJV/0/M/The-Patagonia-L.jpg" alt="" /></p>
 
@@ -1647,7 +1647,7 @@ alias rake="noglob rake"
 
 <h2>选择去哪里</h2>
 
-<p>在最开始, 选取目的地会是一件让人头疼的事, 尤其是当你又对其他的国家都一无所知的时候更是如此. 前年, 我在南非呆过三个月, 于是，我决定从那些熟悉的地方开始进入到我的旅行节奏.</p>
+<p>在最开始, 选取目的地会是一件让人头疼的事, 尤其是当你又对其他的国家都一无所知的时候更是如此. 前年, 我在南非呆过三个月, 于是,我决定从那些熟悉的地方开始进入到我的旅行节奏.</p>
 
 <p>在作出选择之前, 我参观了<a href="http://www.stuckincustoms.com/"> Trey Ratcliff 的 HDR 摄影博客</a>. 事实上, 下面的所有照片都是来自于Trey.  这家伙已经把全世界都游遍了, 甚至还到过许多不可思议的地方.  我只是简单地浏览了他所到过的地方, 然后把我觉得最美丽的列了个清单. 其中列表如下:</p>
 
@@ -1655,7 +1655,7 @@ alias rake="noglob rake"
 
 <p>我的目标是尽可能多的在一年内游览完, 然后在未来某个时候把一些地方再细致地重游一遍.  如果你没有这么多的时间, 我的建议是, 专注于某一个区域, 比如亚洲. 关于下一次旅行, 我的计划是:</p>
 
-<blockquote><p>从北京启程, 坐火车到西藏, 往下到尼泊尔, 环游印度, 直到孟买, 然后飞往东南亚,  穿越泰国北部，柬埔寨，越南和老挝。</p></blockquote>
+<blockquote><p>从北京启程, 坐火车到西藏, 往下到尼泊尔, 环游印度, 直到孟买, 然后飞往东南亚,  穿越泰国北部,柬埔寨,越南和老挝.</p></blockquote>
 
 <p>所以, 换句话说, 你想去哪取决于你的时间, 预算和意愿.</p>
 
@@ -1681,13 +1681,13 @@ alias rake="noglob rake"
 
 <p>只带上一些你确实需要的, 尽可能轻装上阵, 只用你的背就能搞定那就最好了.  从安全的角度着想你也应该这么做. 因为你携带的越多, 你就必须多加一双眼看着.</p>
 
-<p>我刚刚从ebay买了一个90L的背包. 然后在里边塞了一个星期的衣服, 一条毛巾, 一套相机设备. 而实际上我在马来西亚就已经把我的三脚架和潜水服寄了回来. 对我来说他们太过笨重了. 当你发现一些需要的东西忘了带可以直接在当地买. 事实上，我一直坚持<a href="http://guynameddave.com/100-thing-challenge/">这种简约</a>的生活方式, 同时这也是我喜欢旅行的其中一点.</p>
+<p>我刚刚从ebay买了一个90L的背包. 然后在里边塞了一个星期的衣服, 一条毛巾, 一套相机设备. 而实际上我在马来西亚就已经把我的三脚架和潜水服寄了回来. 对我来说他们太过笨重了. 当你发现一些需要的东西忘了带可以直接在当地买. 事实上,我一直坚持<a href="http://guynameddave.com/100-thing-challenge/">这种简约</a>的生活方式, 同时这也是我喜欢旅行的其中一点.</p>
 
 <h2>预算&amp;住宿</h2>
 
 <p>住宿是件简单的事, 尤其当你在一些亚洲很便宜的地方游玩的话. 因为我自己本身有这个预算, 所以一般都住在酒店 &ndash; 不包括一些在亚洲或者南非的古怪的酒店. 好的酒店比较难找到, 这需要你专门的在网上做一些调查. <a href="http://hostelworld.com/">Hotel World</a>, <a href="http://www.lonelyplanet.com/">Lonely Planet</a>, <a href="http://wikitravel.org/en/Main_Page">Wikitravel</a>都是不错的选择. 有些地方的设施对旅客非常的友好便利, 例如新西兰, 而有些则相反, 比如夏威夷和日本.</p>
 
-<p>酒店也是一个非常好的地方可以结识到朋友, 还可以从他们那得到一些游玩的建议.  另外你也会遇上一些有趣的人. 我曾经遇到过的有半导体芯片设计师，专业潜水员和量子加密专家&hellip;我结识了一些驴友并和他们建立友谊, 这都是旅行所带给我的乐趣.</p>
+<p>酒店也是一个非常好的地方可以结识到朋友, 还可以从他们那得到一些游玩的建议.  另外你也会遇上一些有趣的人. 我曾经遇到过的有半导体芯片设计师,专业潜水员和量子加密专家&hellip;我结识了一些驴友并和他们建立友谊, 这都是旅行所带给我的乐趣.</p>
 
 <p>整一年我的总预算大概是$15K, 包括我的所有食宿.  这个数目对我来说刚刚好, 我不必住在特别的廉价的地方. 当然, 在你的银行卡上有一定的缓冲预算是好的, 因为这样你可以有个更安心的行程.</p>
 
@@ -1723,7 +1723,7 @@ alias rake="noglob rake"
 
 <h2>签证</h2>
 
-<p>如果你很幸运的是一名美国或者欧洲公民, 那签证将不会有什么大问题. 唯一一个在过境时没有给我签证的国家是越南. 我只好在柬埔寨一间酒店里给了点钱一个家伙让他帮我把签证送到越南大使馆并处理之. 这事情值得提前做一些研究，不过通常来说是没问题的.</p>
+<p>如果你很幸运的是一名美国或者欧洲公民, 那签证将不会有什么大问题. 唯一一个在过境时没有给我签证的国家是越南. 我只好在柬埔寨一间酒店里给了点钱一个家伙让他帮我把签证送到越南大使馆并处理之. 这事情值得提前做一些研究,不过通常来说是没问题的.</p>
 
 <h2>安全保险</h2>
 
@@ -1733,7 +1733,7 @@ alias rake="noglob rake"
 
 <h2>生活方式</h2>
 
-<p>在离开之前我一般会在一个地方逗留上几天, 有时候最多会是一周.  当然, 基于那么频繁的转移, 偶尔的搁浅还是很舒服的.   每当产生那样感觉，我会停留在一个地方几个星期。比如, 为了使得我的书取得一些进展, 我在胡志明市停留了两周.</p>
+<p>在离开之前我一般会在一个地方逗留上几天, 有时候最多会是一周.  当然, 基于那么频繁的转移, 偶尔的搁浅还是很舒服的.   每当产生那样感觉,我会停留在一个地方几个星期.比如, 为了使得我的书取得一些进展, 我在胡志明市停留了两周.</p>
 
 <p>锻炼方面, 如果不去冲浪的话我会选择在海滩上跑至少半小时. 有更多的时间可以全身心地投入到你的健康, 是旅游的主要好处之一. 每天的冲浪和长跑, 持续几个月后换来的是我从未有过的强壮的身体.</p>
 
@@ -1741,14 +1741,14 @@ alias rake="noglob rake"
 
 <p>读完书后, 我会开始hack一些开源项目, 并开发了<a href="http://spinejs.com/">spine</a>. 事实上, spine的第一个版本是我在新西兰做长途车的时候写的. 插上耳机, 祛除杂念的专注于此, 很不可思议吧.</p>
 
-<p>每当我旅行到一个新的城市,  就会提前在ruby邮件列表发帖看看是否有人有兴趣来个聚会什么的.
-很多时候都是成功的, 我会和这些人一起聚会然后向他们请教一些问题. 在东京和香港我还做了技术演讲.  在悉尼和开普敦则和当地的ruby团队聚餐了.</p>
+<p>每当我旅行到一个新的城市,  就会提前在Ruby邮件列表发帖看看是否有人有兴趣来个聚会什么的.
+很多时候都是成功的, 我会和这些人一起聚会然后向他们请教一些问题. 在东京和香港我还做了技术演讲.  在悉尼和开普敦则和当地的Ruby团队聚餐了.</p>
 
 <h2>经验</h2>
 
 <p>周游世界可以让你见识,经历到的比你想象中要多的多. 你可以获得国王般的口福, 从你不认识名字的马来西亚的美味水果, 到在阿根廷你所尝试过的最美味的牛排.  你可以在新西兰爬山, 以及秘鲁大峡谷徒步旅行.  还可以在哥斯达黎加难以忘怀的冲浪, 以及就像迎接世界末日那样的开party. 你会遇上一些令人惊奇的人, 改变生活的经历.</p>
 
-<p>这一切都很简单，周游世界，将会是你做的最好的决定之一.</p>
+<p>这一切都很简单,周游世界,将会是你做的最好的决定之一.</p>
 
 <p><img src="http://stuckincustoms.smugmug.com/Portfolio-The-Best/your-favorites/Warm-Fisherman-in-Guilin/1043857172_py9xC-M.jpg" alt="" /></p>
 
@@ -1769,119 +1769,119 @@ alias rake="noglob rake"
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[[Repost]旅行，写作，编程]]></title>
+    <title type="html"><![CDATA[[Repost]旅行,写作,编程]]></title>
     <link href="http://xguox.github.com/blog/2013/04/13/traveling-writing-programming/"/>
     <updated>2013-04-13T21:53:00+08:00</updated>
     <id>http://xguox.github.com/blog/2013/04/13/traveling-writing-programming</id>
-    <content type="html"><![CDATA[<p>概括起来，今年到目前为止，我所做的事情包括：</p>
+    <content type="html"><![CDATA[<p>概括起来,今年到目前为止,我所做的事情包括:</p>
 
 <blockquote><ul>
-<li>花了10个月的时间做世界环游，途经非洲，东南亚，澳洲，中南美洲里的17个国家和地区。这次旅行的主题就是冲浪和摄影。</li>
-<li>出席在香港，日本，美国和伦敦举行的会议</li>
-<li>启程时给O’Reilly出版公司写了一本书，书名叫做<a href="http://bit.ly/uFbFJR">《JavaScript Web Applications》</a></li>
-<li>另外写了一本关于<a href="http://arcturo.github.com/library/coffeescript/">CoffeeScript</a>的书，很快就会由O’Reilly公司出版。</li>
-<li>写了大量的开源库，例如<a href="http://spinejs.com/">Spine</a>, <a href="https://spinejs.com/mobile">Spine.Mobile</a>, <a href="http://maccman.github.com/gfx">GFX</a>, 和 <a href="http://github.com/maccman/juggernaut">Juggernaut</a>.</li>
+<li>花了10个月的时间做世界环游,途经非洲,东南亚,澳洲,中南美洲里的17个国家和地区.这次旅行的主题就是冲浪和摄影.</li>
+<li>出席在香港,日本,美国和伦敦举行的会议</li>
+<li>启程时给O&#8217;Reilly出版公司写了一本书,书名叫做<a href="http://bit.ly/uFbFJR">《JavaScript Web Applications》</a></li>
+<li>另外写了一本关于<a href="http://arcturo.github.com/library/coffeescript/">CoffeeScript</a>的书,很快就会由O&#8217;Reilly公司出版.</li>
+<li>写了大量的开源库,例如<a href="http://spinejs.com/">Spine</a>, <a href="https://spinejs.com/mobile">Spine.Mobile</a>, <a href="http://maccman.github.com/gfx">GFX</a>, 和 <a href="http://github.com/maccman/juggernaut">Juggernaut</a>.</li>
 <li>筹划了一个创业公司的框架</li>
 <li>出席伦敦2011<a href="http://futureofwebapps.com/london-2011/">FOWA</a>会议</li>
-<li>最后，我在Twitter公司找到了一份工作</li>
+<li>最后,我在Twitter公司找到了一份工作</li>
 </ul>
 </blockquote>
 
 <!-- more -->
 
 
-<p>那么，让我从一年前开始，那是2010年9月，我刚好从一个我合作创办的公司里出来，尽管这段经历是很有价值的，但无休无止的长时间苦干让我精疲力尽。我回到了英格兰，需要对未来做一些思考。我一直有一个梦想——移居美国(几年就好)，所以，我在Google记事本上写了下面的话：</p>
+<p>那么,让我从一年前开始,那是2010年9月,我刚好从一个我合作创办的公司里出来,尽管这段经历是很有价值的,但无休无止的长时间苦干让我精疲力尽.我回到了英格兰,需要对未来做一些思考.我一直有一个梦想——移居美国(几年就好),所以,我在Google记事本上写了下面的话:</p>
 
-<blockquote><p>人生的选择：
+<blockquote><p>人生的选择:
   去纽约哥伦比亚大学深造</p>
 
-<pre><code>坏处 - 非常昂贵，并不一定能学到什么真正有用的东西，无聊?
-好处 - 那是一个纽约的大学！
+<pre><code>坏处 - 非常昂贵,并不一定能学到什么真正有用的东西,无聊?
+好处 - 那是一个纽约的大学!
 </code></pre>
 
-<p>  写一本书，申请 01 签证</p>
+<p>  写一本书,申请 01 签证</p>
 
-<pre><code>坏处 - 需要大量的时间，有风险
-好处 - 对事业有好处，有趣
+<pre><code>坏处 - 需要大量的时间,有风险
+好处 - 对事业有好处,有趣
 </code></pre>
 
-<p>  等待。去纽约度一次假(3个月)。等待创业签证。</p>
+<p>  等待.去纽约度一次假(3个月).等待创业签证.</p>
 
 <pre><code>很容易 - 不是那么有趣
 </code></pre>
 
-<p>也许选第二个，不行就选3？</p></blockquote>
+<p>也许选第二个,不行就选3?</p></blockquote>
 
-<p>最终我选择了2，我已经对JavaScript web应用研究了很久，我要写一本这方面的书，为什么不边做环游世界的旅行、边写书呢？这也是我一个梦想呀。我从oneworld买了一份环游世界的机票(比你们想象的要便宜)，决定下周去我的第一站，南非。</p>
+<p>最终我选择了2,我已经对JavaScript web应用研究了很久,我要写一本这方面的书,为什么不边做环游世界的旅行、边写书呢?这也是我一个梦想呀.我从oneworld买了一份环游世界的机票(比你们想象的要便宜),决定下周去我的第一站,南非.</p>
 
 <p><img src="https://lh5.googleusercontent.com/-H3VYHMYwDMk/TsRYhToP2CI/AAAAAAAABfE/7j5TikginMI/s640/rtw.png" alt="" /></p>
 
-<p>如果你从来没有到过非洲，你应该去一次。那里的景色原始而美丽，对那些没有体验过这种景色的人，你很难用言语描绘明白。几年前我就喜欢上了南方，那时我在东海岸做了一个为期3个月的冲浪旅行。这次，我只有一个月的时间，穿越特兰斯凯，从开普敦到德班。当我在南非旅行时，我的写作也开始了，把早期向O’Reilly提交的书的框架里的数章填充了材料。</p>
+<p>如果你从来没有到过非洲,你应该去一次.那里的景色原始而美丽,对那些没有体验过这种景色的人,你很难用言语描绘明白.几年前我就喜欢上了南方,那时我在东海岸做了一个为期3个月的冲浪旅行.这次,我只有一个月的时间,穿越特兰斯凯,从开普敦到德班.当我在南非旅行时,我的写作也开始了,把早期向O&#8217;Reilly提交的书的框架里的数章填充了材料.</p>
 
-<p>特兰斯凯是南非非常具有乡野特色的地方，到处是连绵的小山，一些小村庄和土堆的茅屋。他们仍然沿袭着酋长制度，有一个首领，大多数的当地人靠捕鱼为生。我们在高低不平的土路上颠了两天才到达我心仪的地方，一个美丽的海湾，叫做咖啡湾(Coffee Bay)。在那里，我休整了一下，从网上下载了一些相关资料，为更远的海湾远征做准备。</p>
+<p>特兰斯凯是南非非常具有乡野特色的地方,到处是连绵的小山,一些小村庄和土堆的茅屋.他们仍然沿袭着酋长制度,有一个首领,大多数的当地人靠捕鱼为生.我们在高低不平的土路上颠了两天才到达我心仪的地方,一个美丽的海湾,叫做咖啡湾(Coffee Bay).在那里,我休整了一下,从网上下载了一些相关资料,为更远的海湾远征做准备.</p>
 
-<p>我还清晰的记得我们走了数里地来到那个未开垦的海滩，我们从那些一个个被黄沙和小丘孤立的村庄穿行而过。有一个地方，我们要过一条大河，我们需要游过去，我把背包举过头顶，以免里面的相机和iPod遇到水。非洲是一个让你脱离尘世的地方，解放你的思想，重新认识人生最重要的东西是什么。</p>
+<p>我还清晰的记得我们走了数里地来到那个未开垦的海滩,我们从那些一个个被黄沙和小丘孤立的村庄穿行而过.有一个地方,我们要过一条大河,我们需要游过去,我把背包举过头顶,以免里面的相机和iPod遇到水.非洲是一个让你脱离尘世的地方,解放你的思想,重新认识人生最重要的东西是什么.</p>
 
 <p><img src="https://lh6.googleusercontent.com/-t9Ja-8BnWvM/TOzGcHEVcLI/AAAAAAAAA_I/Gbk7HpkAlyE/s640/DSC_0164.jpg" alt="" /></p>
 
-<p>下一站是香港，在那里，我度过了我的21岁生日，接着，我从陆路由新加坡到越南河内。很多人不相信香港70%的面积由自然公园覆盖，我徒步走了几条精彩的景观路线，非常的精彩壮观，比如：香港龙脊。有几天，我在boot.hk这个网站上闲逛，这是一个协作工作的网站，我顺便教了一个同行的游客如何使用ruby。然后，到了夜里，我跟Soho里的一些<a href="http://couchsurfing.org/">冲浪爱好者</a>狂欢到凌晨。</p>
+<p>下一站是香港,在那里,我度过了我的21岁生日,接着,我从陆路由新加坡到越南河内.很多人不相信香港70%的面积由自然公园覆盖,我徒步走了几条精彩的景观路线,非常的精彩壮观,比如:香港龙脊.有几天,我在boot.hk这个网站上闲逛,这是一个协作工作的网站,我顺便教了一个同行的游客如何使用Ruby.然后,到了夜里,我跟Soho里的一些<a href="http://couchsurfing.org/">冲浪爱好者</a>狂欢到凌晨.</p>
 
 <p><img src="https://lh5.googleusercontent.com/-w4dOtoMx8FQ/TP92f1yaUgI/AAAAAAAAA_I/CkWZJTnj24s/s640/DSC_0032.jpg" alt="" /></p>
 
-<p>从泰国到柬埔寨到越南是我这次旅行中做喜欢的部分，如果你从没有到过亚洲，你绝对应该去一次。这些国家非常的漂亮，气候非常的好，食物美味可口，人们非常友善。吴哥窟是世上最神奇的地方之一，每个人都应该去看看。是<a href="http://stuckincustoms.com/">Trey Ratcliff</a>的照片把我吸引到了那里，我的很多其它旅游目的地也是受了他的影响。那个家伙是很多旅游地的第一宣传者。</p>
+<p>从泰国到柬埔寨到越南是我这次旅行中做喜欢的部分,如果你从没有到过亚洲,你绝对应该去一次.这些国家非常的漂亮,气候非常的好,食物美味可口,人们非常友善.吴哥窟是世上最神奇的地方之一,每个人都应该去看看.是<a href="http://stuckincustoms.com/">Trey Ratcliff</a>的照片把我吸引到了那里,我的很多其它旅游目的地也是受了他的影响.那个家伙是很多旅游地的第一宣传者.</p>
 
 <p><img src="https://lh6.googleusercontent.com/-bLvyRFra6DE/TShMHEaRv5I/AAAAAAAAA_I/cOGMjy8WTyU/s640/DSC_0031.jpg" alt="" /></p>
 
-<p>在一些无名的小博客中，我听有人说过一个很远的美丽的小岛，在柬埔寨的海边。说小岛的Sihanoukville这个地方有个酒吧，说只能坐小渔船到那里。我，还有几个非常好的朋友，乘坐晚上的大巴，开始寻找这个传说中的酒吧。搜索差不多进行了一整天，每一个问过的酒吧都把我们指向另外一个酒吧。最终，我们问了出来，并在第二天早晨做短程巴士去了那个地方。</p>
+<p>在一些无名的小博客中,我听有人说过一个很远的美丽的小岛,在柬埔寨的海边.说小岛的Sihanoukville这个地方有个酒吧,说只能坐小渔船到那里.我,还有几个非常好的朋友,乘坐晚上的大巴,开始寻找这个传说中的酒吧.搜索差不多进行了一整天,每一个问过的酒吧都把我们指向另外一个酒吧.最终,我们问了出来,并在第二天早晨做短程巴士去了那个地方.</p>
 
 <p><img src="https://lh5.googleusercontent.com/-dyNjvQtn4GA/TTZ6x3dT0WI/AAAAAAAAA_I/PMQbesSbknU/s640/DSC_0039.jpg" alt="" /></p>
 
-<p>上面的照片上是海岸边一个10美元一晚的小木屋。从当地居民区离开后，我们的队伍像小岛上唯一的人，我们随性自由的奔跑。白天我们懒懒的躺在海滩上，吃着岛上厨师准备的鲜美可口的水果沙拉，在夜晚，我们在到处是浮游生物的海里游泳。</p>
+<p>上面的照片上是海岸边一个10美元一晚的小木屋.从当地居民区离开后,我们的队伍像小岛上唯一的人,我们随性自由的奔跑.白天我们懒懒的躺在海滩上,吃着岛上厨师准备的鲜美可口的水果沙拉,在夜晚,我们在到处是浮游生物的海里游泳.</p>
 
 <p><img src="https://lh4.googleusercontent.com/-lLhNdn4DxvY/TTZ74Z7MhEI/AAAAAAAAA_I/TZBf2T5pADg/s640/DSC_0115.jpg" alt="" /></p>
 
-<p>下一站是越南，我们沿着湄公河支流来到一个边界上的小镇，我们是这里唯一的西方人，交流成了最大的问题。幸运的是，我们发现一个也许是镇上唯一会说英语的人，他骑车当我们的向导。当我的信用卡被那里的一个自动取款机吞掉了后，他提供了我很大的帮助！</p>
+<p>下一站是越南,我们沿着湄公河支流来到一个边界上的小镇,我们是这里唯一的西方人,交流成了最大的问题.幸运的是,我们发现一个也许是镇上唯一会说英语的人,他骑车当我们的向导.当我的信用卡被那里的一个自动取款机吞掉了后,他提供了我很大的帮助!</p>
 
 <p><img src="https://lh6.googleusercontent.com/-r629c1pOE2E/TVCwrLAdL2I/AAAAAAAABBY/r48a8WSsTS0/s640/DSC_0059.jpg" alt="" /></p>
 
-<p>我们的队伍分成了几路，在我到达越南时，我的书正在按计划完成，进行的非常顺利。此时，我在西贡多待了几周，让我在书的好几章上有了重大的进展，正好是中国旧历新年，气氛非常的壮观热闹。</p>
+<p>我们的队伍分成了几路,在我到达越南时,我的书正在按计划完成,进行的非常顺利.此时,我在西贡多待了几周,让我在书的好几章上有了重大的进展,正好是中国旧历新年,气氛非常的壮观热闹.</p>
 
-<p>接着是日本，澳大利亚，新西兰和夏威夷。我很难把我所有的感受都在这篇文章里写出来，但说这是此生难忘的一段历程是不为过的。把如此多的美景都放到一个国家里，太让人赞叹了,我说的正是新西兰。我最喜爱的一段记忆是沿着Wanaka的一个湖边在阳光下跑步，还有就是背着食物和生活用品，徒步数天穿越Routeburn的大山。在这个国家的旅途中，我结识了好几个值得一生相伴的好友。这是一个真正的天堂。</p>
+<p>接着是日本,澳大利亚,新西兰和夏威夷.我很难把我所有的感受都在这篇文章里写出来,但说这是此生难忘的一段历程是不为过的.把如此多的美景都放到一个国家里,太让人赞叹了,我说的正是新西兰.我最喜爱的一段记忆是沿着Wanaka的一个湖边在阳光下跑步,还有就是背着食物和生活用品,徒步数天穿越Routeburn的大山.在这个国家的旅途中,我结识了好几个值得一生相伴的好友.这是一个真正的天堂.</p>
 
-<p>就在我环绕新西兰的南部岛屿时，我的书终于完成了，提交给了技术编辑校对。</p>
+<p>就在我环绕新西兰的南部岛屿时,我的书终于完成了,提交给了技术编辑校对.</p>
 
 <p><img src="https://lh3.googleusercontent.com/-hVGczAgcsxw/TZqg8ATYqkI/AAAAAAAABLk/OYT0p-Cq4L0/s640/DSC_0096.jpg" alt="" /></p>
 
-<p>接下来是纽约和旧金山，这两个神奇的地方到处是天才的程序员，有些人我很幸运的认识。Techcrunch Disrupt办的很精彩(我高度推荐hackathon)。</p>
+<p>接下来是纽约和旧金山,这两个神奇的地方到处是天才的程序员,有些人我很幸运的认识.Techcrunch Disrupt办的很精彩(我高度推荐hackathon).</p>
 
-<p>在从纽约到旧金山的中途停留期间，我在各种公司了进行了不少的求职面试，最终在Twitter公司找到了一份做前端开发的工作。要在那里和杰出的团队一起工作，我不能不高兴的颤抖，而去旧金山，同样也是我此生的一个梦想。</p>
+<p>在从纽约到旧金山的中途停留期间,我在各种公司了进行了不少的求职面试,最终在Twitter公司找到了一份做前端开发的工作.要在那里和杰出的团队一起工作,我不能不高兴的颤抖,而去旧金山,同样也是我此生的一个梦想.</p>
 
-<p>当签证的事办下来了后，我去了中、南美洲旅行，同时开发了我的一个小工程：一个JavaScript MVC框架库，叫做Spine。我到了哥斯达黎加，巴拿马，秘鲁，Bolvia，和阿根廷。 秘鲁是我的最爱，尽管那里的海拔给我带来了不少麻烦，我大部分的时间都在探险。下面的图片是哥斯达黎加传说中神奇猎鹰，是在我爬下世界最深的峡谷时拍到的。</p>
+<p>当签证的事办下来了后,我去了中、南美洲旅行,同时开发了我的一个小工程:一个JavaScript MVC框架库,叫做Spine.我到了哥斯达黎加,巴拿马,秘鲁,Bolvia,和阿根廷. 秘鲁是我的最爱,尽管那里的海拔给我带来了不少麻烦,我大部分的时间都在探险.下面的图片是哥斯达黎加传说中神奇猎鹰,是在我爬下世界最深的峡谷时拍到的.</p>
 
 <p><img src="https://lh3.googleusercontent.com/-kQInzZ5DQC0/TsXiz712K7I/AAAAAAAABfk/8GfSq98ccwU/s640/DSC_0027.jpg" alt="" /></p>
 
-<p>当我在哥斯达黎加时，微博上有个叫Roberto的家伙给我发了条信息，说他读了我的书，问我是否有兴趣一起冲浪。我欣然同意，坐上去圣何塞的汽车，在几天后和他会了面。那天我们一起在他海边的公寓里开发Spine和Ruby项目，使用移动硬盘，用汽车电源给笔记本充电。当电量不足后，让太阳能板补充能量，我们去冲浪。</p>
+<p>当我在哥斯达黎加时,微博上有个叫Roberto的家伙给我发了条信息,说他读了我的书,问我是否有兴趣一起冲浪.我欣然同意,坐上去圣何塞的汽车,在几天后和他会了面.那天我们一起在他海边的公寓里开发Spine和Ruby项目,使用移动硬盘,用汽车电源给笔记本充电.当电量不足后,让太阳能板补充能量,我们去冲浪.</p>
 
 <p><img src="https://lh5.googleusercontent.com/-ydIJPFqgspY/TsXgVzCENyI/AAAAAAAABfY/nkOE1Y0N-X4/s640/DSC_0300.jpg" alt="" /></p>
 
-<p>我推荐大家去写一本书，特别是边旅游边写书。可以想象，如果我不去旧金山去看一看，我可能还在旅途中，做顾问，去创业。当作家并不能让你直接的挣到很多钱，但它绝对能提升你的身份地位，给你带来很多潜在的机会。事实上，写作过程让我真正享受的是，我可以认真深入的研究一个题目。</p>
+<p>我推荐大家去写一本书,特别是边旅游边写书.可以想象,如果我不去旧金山去看一看,我可能还在旅途中,做顾问,去创业.当作家并不能让你直接的挣到很多钱,但它绝对能提升你的身份地位,给你带来很多潜在的机会.事实上,写作过程让我真正享受的是,我可以认真深入的研究一个题目.</p>
 
 <p><img src="http://ittopic.gotoip1.com/qee/wordpress/wp-content/uploads/2011/12/DSC_0069.jpg" alt="" /></p>
 
-<p>这一年是我这辈子目前为止最好的一年，而我感觉今后的一年会更好。当我如今定居下来后，我并没有感觉旅行对我的吸引力减少了；我始终把签证放到一个口袋里，而另一个口袋里装着钱包，当召唤降临，随时准备离开。</p>
+<p>这一年是我这辈子目前为止最好的一年,而我感觉今后的一年会更好.当我如今定居下来后,我并没有感觉旅行对我的吸引力减少了；我始终把签证放到一个口袋里,而另一个口袋里装着钱包,当召唤降临,随时准备离开.</p>
 
-<p>可是，这篇文章并不是关于我的旅行，它是要发送一个信号：</p>
+<p>可是,这篇文章并不是关于我的旅行,它是要发送一个信号:</p>
 
-<p>对于程序员来说，有个得天独厚的条件，就是这种职业可以远程工作或边旅游边工作，这是其它职业办不到的。当然，也不都是这样，在我的旅途中，我没有碰到第二个跟我的做法相似的程序员。这种情况让人悲哀。我想向程序员们送出的信息是，不要再找借口了，行动起来，你可以做到。一个人只有一生，我可以向你保证，这样的生活才不枉世间走这一遭。</p>
+<p>对于程序员来说,有个得天独厚的条件,就是这种职业可以远程工作或边旅游边工作,这是其它职业办不到的.当然,也不都是这样,在我的旅途中,我没有碰到第二个跟我的做法相似的程序员.这种情况让人悲哀.我想向程序员们送出的信息是,不要再找借口了,行动起来,你可以做到.一个人只有一生,我可以向你保证,这样的生活才不枉世间走这一遭.</p>
 
-<p>就像我，我感到极度的幸运，能这样的生活，去发现我的热情所在，去做每天我喜欢做的事情。你可以看出，大部分我现在的境遇并非偶然或侥幸，这是计划，追求，工作的结果。</p>
+<p>就像我,我感到极度的幸运,能这样的生活,去发现我的热情所在,去做每天我喜欢做的事情.你可以看出,大部分我现在的境遇并非偶然或侥幸,这是计划,追求,工作的结果.</p>
 
-<p>一份汗水，一份收成。</p>
+<p>一份汗水,一份收成.</p>
 
-<p>这篇文章的目标不是做一些自我陶醉似的炫耀和大话，而是向大家演示如何立下目标，鼓励大家去做相似的事情。想清楚你现在的处境，这一年内你想得到什么，制定出一系列具体的能让你到达这些目标的步骤。追随你的梦想。</p>
+<p>这篇文章的目标不是做一些自我陶醉似的炫耀和大话,而是向大家演示如何立下目标,鼓励大家去做相似的事情.想清楚你现在的处境,这一年内你想得到什么,制定出一系列具体的能让你到达这些目标的步骤.追随你的梦想.</p>
 
 <p>原文来自Alex MacCaw <a href="http://alexmaccaw.co.uk/posts/traveling_writing_programming">Traveling Writing Programming</a><br/>
-本译文出自外刊IT评论 <a href="http://www.aqee.net/traveling-writing-programming/">旅行，写作，编程</a></p>
+本译文出自外刊IT评论 <a href="http://www.aqee.net/traveling-writing-programming/">旅行,写作,编程</a></p>
 ]]></content>
   </entry>
   
@@ -2009,15 +2009,15 @@ Actually, 想装啥插件可以直接在里头搜, 或者网页版搜索, 一般
 <span class='line-number'>9</span>
 <span class='line-number'>10</span>
 </pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">focus</span><span class="err">到侧边栏</span><span class="o">:</span> <span class="s1">&#39;ctrl + 0&#39;</span>
-</span><span class='line'><span class="nx">Command</span> <span class="o">+</span> <span class="nx">D</span><span class="err">：选择词。重复按下可以增加选择下一相同的词。按下</span> <span class="nx">Ctrl</span> <span class="o">+</span> <span class="nx">Command</span> <span class="o">+</span> <span class="nx">G</span> <span class="err">可选中所有相同的词。</span>
-</span><span class='line'><span class="nx">Command</span> <span class="o">+</span> <span class="nx">Option</span> <span class="o">+</span> <span class="err">/：块注释。</span>
-</span><span class='line'><span class="nx">Control</span> <span class="o">+</span> <span class="nx">M</span><span class="err">：跳转到对应的括号。</span>
-</span><span class='line'><span class="nx">Control</span> <span class="o">+</span> <span class="nx">Shift</span> <span class="o">+</span> <span class="nx">M</span><span class="err">：选中当前括号内的内容，重复按下可增加选择括号本身。</span>
-</span><span class='line'><span class="nx">Command</span> <span class="o">+</span> <span class="nx">Shift</span> <span class="o">+</span> <span class="nx">J</span><span class="err">：选中当前缩进级别下的所有代码。</span>
-</span><span class='line'><span class="nx">Command</span> <span class="o">+</span> <span class="nx">Option</span> <span class="o">+</span> <span class="p">.</span><span class="err">：闭合</span> <span class="nx">HTML</span> <span class="err">标签。</span><span class="p">(</span><span class="err">说常用也不常用</span><span class="p">,</span> <span class="err">但又貌似有用</span><span class="p">)</span>
+</span><span class='line'><span class="nx">Command</span> <span class="o">+</span> <span class="nx">D</span><span class="o">:</span><span class="err">选择词</span><span class="p">.</span><span class="err">重复按下可以增加选择下一相同的词</span><span class="p">.</span><span class="err">按下</span> <span class="nx">Ctrl</span> <span class="o">+</span> <span class="nx">Command</span> <span class="o">+</span> <span class="nx">G</span> <span class="err">可选中所有相同的词</span><span class="p">.</span>
+</span><span class='line'><span class="nx">Command</span> <span class="o">+</span> <span class="nx">Option</span> <span class="o">+</span> <span class="err">/:块注释.</span>
+</span><span class='line'><span class="nx">Control</span> <span class="o">+</span> <span class="nx">M</span><span class="o">:</span><span class="err">跳转到对应的括号</span><span class="p">.</span>
+</span><span class='line'><span class="nx">Control</span> <span class="o">+</span> <span class="nx">Shift</span> <span class="o">+</span> <span class="nx">M</span><span class="o">:</span><span class="err">选中当前括号内的内容</span><span class="p">,</span><span class="err">重复按下可增加选择括号本身</span><span class="p">.</span>
+</span><span class='line'><span class="nx">Command</span> <span class="o">+</span> <span class="nx">Shift</span> <span class="o">+</span> <span class="nx">J</span><span class="o">:</span><span class="err">选中当前缩进级别下的所有代码</span><span class="p">.</span>
+</span><span class='line'><span class="nx">Command</span> <span class="o">+</span> <span class="nx">Option</span> <span class="o">+</span> <span class="p">.</span><span class="o">:</span><span class="err">闭合</span> <span class="nx">HTML</span> <span class="err">标签</span><span class="p">.(</span><span class="err">说常用也不常用</span><span class="p">,</span> <span class="err">但又貌似有用</span><span class="p">)</span>
 </span><span class='line'><span class="err">按住</span><span class="nx">option</span> <span class="err">拖拽多列</span>
-</span><span class='line'><span class="err">按下</span> <span class="nx">Control</span> <span class="o">+</span> <span class="nx">Shift</span> <span class="o">+</span> <span class="err">方向键，可以选中矩形区域的文本。</span>
-</span><span class='line'><span class="err">选择数行文本末端，选中区域然后按下</span> <span class="nx">Shift</span> <span class="o">+</span> <span class="nx">Command</span> <span class="o">+</span> <span class="nx">L</span><span class="err">。</span>
+</span><span class='line'><span class="err">按下</span> <span class="nx">Control</span> <span class="o">+</span> <span class="nx">Shift</span> <span class="o">+</span> <span class="err">方向键</span><span class="p">,</span><span class="err">可以选中矩形区域的文本</span><span class="p">.</span>
+</span><span class='line'><span class="err">选择数行文本末端</span><span class="p">,</span><span class="err">选中区域然后按下</span> <span class="nx">Shift</span> <span class="o">+</span> <span class="nx">Command</span> <span class="o">+</span> <span class="nx">L</span><span class="p">.</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
@@ -2112,7 +2112,7 @@ Actually, 想装啥插件可以直接在里头搜, 或者网页版搜索, 一般
 
 <p>如果你有读过<a href="http://docs.meteor.com/#publishandsubscribe">Meteor的文档</a>, 可能会对<code>added()</code>和<code>ready()</code>在客户端设置记录的属性感到惊讶,  and struggled to square that with the Meteor apps that you&rsquo;ve seen that never use those methods.(I am so sorry 这句没想着怎么翻译好)</p>
 
-<p>这其中的原因是, Meteor提供了一个非常重要的便利 &ndash; <code>_publishCursor()</code>方法. 可能你从没见过它的使用? 因为有可能不是直接的调用，但如果你在调用一个publish函数并返回一个<strong>游标(cursor)</strong>(例如: <code>Posts.find({'author':'Tom'})</code>), 那么这就是<code>_publishCursor</code>.</p>
+<p>这其中的原因是, Meteor提供了一个非常重要的便利 &ndash; <code>_publishCursor()</code>方法. 可能你从没见过它的使用? 因为有可能不是直接的调用,但如果你在调用一个publish函数并返回一个<strong>游标(cursor)</strong>(例如: <code>Posts.find({'author':'Tom'})</code>), 那么这就是<code>_publishCursor</code>.</p>
 
 <p>当Meteor看到<code>somePosts</code>这个publication返回来一个游标(cursor), 则表明它自动调用了<code>_publishCursor()</code>publish这个cursor. 下面这是<code>_publishCursor()</code>所做的事情:</p>
 
@@ -2244,7 +2244,7 @@ Actually, 想装啥插件可以直接在里头搜, 或者网页版搜索, 一般
 
 <p>因为最近比较多的关注前端的东西,  同时在自己local耍着<a href="https://github.com/SachaG/Telescope">SachaG / Telescope</a>这个基于Meteor的项目. 于是也就顺手搭了<a href="http://frontn.com">FrontN</a>这么个类似HN, Reddit的玩意. 原本是准备直接把HN,Reddit clone 成中文版的, 不过<a href="http://news.dbanotes.net/">Fenng</a>貌似已经这么干了, 所以, 我也就不再造这个轮子了.另外原本也想专门作为<a href="http://jianshu.io">简书</a>的评论系统. 不过想想也不是很妥, 就&hellip;</p>
 
-<p>Meteor的系统是超级alpha的, 所以很多问题遇上了也没人帮忙, 解决. 比如之前在<a href="http://stackoverflow.com/questions/15654637/same-helper-for-different-template">Stack Overflow</a>. 而部署这一块, 是我比较陌生的. 包括以前搞rails那会, 也没真正意义的整一整部署. 绝大部分时间都在本地跑啊跑. 所以, 在Meteor, 也是这一块最让我头疼.</p>
+<p>Meteor的系统是超级alpha的, 所以很多问题遇上了也没人帮忙, 解决. 比如之前在<a href="http://stackoverflow.com/questions/15654637/same-helper-for-different-template">Stack Overflow</a>. 而部署这一块, 是我比较陌生的. 包括以前搞Rails那会, 也没真正意义的整一整部署. 绝大部分时间都在本地跑啊跑. 所以, 在Meteor, 也是这一块最让我头疼.</p>
 
 <!--more -->
 
@@ -2253,7 +2253,7 @@ Actually, 想装啥插件可以直接在里头搜, 或者网页版搜索, 一般
 
 <p>秉承流水帐作风, 待我慢慢道来.</p>
 
-<p>幸得以前一直搞得是ruby/rails. 所以装heroku的时候没啥压力, 不然可能这又得搞上一会. 直接下载了官方的<a href="https://toolbelt.heroku.com/">heroku toolbelt</a>无压力安装, login, clone&hellip;</p>
+<p>幸得以前一直搞得是Ruby/Rails. 所以装heroku的时候没啥压力, 不然可能这又得搞上一会. 直接下载了官方的<a href="https://toolbelt.heroku.com/">heroku toolbelt</a>无压力安装, login, clone&hellip;</p>
 
 <p>and then 跟着 <a href="https://github.com/oortcloud/heroku-buildpack-Meteorite">Heroku buildpack for Meteorite</a> 这个buildpack完成接下来的:</p>
 
@@ -2319,7 +2319,7 @@ OOXX一轮下来总算是把heroku的验证给通过了, 感动啊&hellip;</p>
 
 <p>最后总结, heroku相对的来说除了出错情况较少, 可用资料多之外, 管理上也比自己搭vps要方便些, feel了一下MongoHQ的那个插件还不错&hellip;这样, 也就可以花更多的时间的app的开发上. 而不是折腾这出错那无解.  好吧, 尽管咱都爱折腾, 不过, 往你想的地方折腾不更好吗? 其实这些也就都是Paas的优势啦, 专注核心开发, 减少运维成本&hellip;</p>
 
-<p>其他的待续吧, 相比rails, 或许底层它怎么干还没搞透, 但起码的知道它干了什么, 可Meteor我还真不知道它都干了些什么, 比rails更magic.</p>
+<p>其他的待续吧, 相比Rails, 或许底层它怎么干还没搞透, 但起码的知道它干了什么, 可Meteor我还真不知道它都干了些什么, 比Rails更magic.</p>
 
 <p>不管是否热爱前端的亲, 欢迎做客<a href="http://frontn.com">FrontN</a>. 有Bug那是必然的啦, 欢迎Feedback.</p>
 ]]></content>
@@ -2333,7 +2333,7 @@ OOXX一轮下来总算是把heroku的验证给通过了, 感动啊&hellip;</p>
     <content type="html"><![CDATA[<p>Icon fonts非常的强大:</p>
 
 <ul>
-<li>You can CSS the crap out of them and they don’t mind.</li>
+<li>You can CSS the crap out of them and they don&rsquo;t mind.</li>
 <li>在任何的显示器和分辨率上看起来都很不错</li>
 <li>无论多大的icons集都只需要一次HTTP请求</li>
 </ul>
@@ -3652,7 +3652,7 @@ OOXX一轮下来总算是把heroku的验证给通过了, 感动啊&hellip;</p>
 
 <h2>Designing for performance</h2>
 
-<p>网站的性能优劣从网站设计开始.权衡一个设计选择对你的网页速度的影响 你的网站的转化率. 你真的需要8个深浅不同的蓝色吗？这个宽度为1000px的背景图片还需要加什么值吗? 使用icon font来取代sprite会导致页面变得更重,渲染更慢, 还是会比使用原始图片更快呢?</p>
+<p>网站的性能优劣从网站设计开始.权衡一个设计选择对你的网页速度的影响 你的网站的转化率. 你真的需要8个深浅不同的蓝色吗?这个宽度为1000px的背景图片还需要加什么值吗? 使用icon font来取代sprite会导致页面变得更重,渲染更慢, 还是会比使用原始图片更快呢?</p>
 
 <p>并非所有的设计决策都是有利于性能的. 我发现一个略微减慢了页面速度的button样式可以提高转化(conversions), 对于仅需要牺牲小小的页面速度来说, 这是值得的.</p>
 
