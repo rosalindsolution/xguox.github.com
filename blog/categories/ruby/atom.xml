@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Ruby | XguoX]]></title>
   <link href="http://xguox.github.com/blog/categories/ruby/atom.xml" rel="self"/>
   <link href="http://xguox.github.com/"/>
-  <updated>2013-11-02T19:35:28+08:00</updated>
+  <updated>2013-11-04T15:01:51+08:00</updated>
   <id>http://xguox.github.com/</id>
   <author>
     <name><![CDATA[XguoX]]></name>
@@ -12,6 +12,413 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[重学Ruby]]></title>
+    <link href="http://xguox.github.com/blog/2013/11/04/relearn-ruby/"/>
+    <updated>2013-11-04T14:47:00+08:00</updated>
+    <id>http://xguox.github.com/blog/2013/11/04/relearn-ruby</id>
+    <content type="html"><![CDATA[<p>真心尴尬,学习并使用了一年多的 Ruby/Rails,然后些个月不碰就忘了大半了.原本就不高端,这一回滚跟重头再来差不多了. 语法还能快速过了一遍.(主要通过 <a href="https://www.codeschool.com/">CodeSchool</a>) 元编程,DSL那一块接下来可要费点劲了,毕竟原先也没完全掌握到.</p>
+
+<p>今天学到两个之前没注意的 tricks.</p>
+
+<p>一个是关于<code>to_s</code>的,另外个是关于 <code>Module</code> .</p>
+
+<h2>to_s</h2>
+
+<p>```ruby
+class Game
+  attr_accessor :name, :year, :system
+  attr_reader :created_at
+  def initialize(name, options={})</p>
+
+<pre><code>self.name = name
+self.year = options[:year]
+self.system = options[:system]
+@created_at = Time.now
+</code></pre>
+
+<p>  end</p>
+
+<p>  def to_s</p>
+
+<pre><code>self.name
+</code></pre>
+
+<p>  end</p>
+
+<p>  def description</p>
+
+<pre><code>"#{self} was released in #{self.year}."
+</code></pre>
+
+<p>  end
+end</p>
+
+<p>class ConsoleGame &lt; Game
+  def to_s</p>
+
+<pre><code>"#{self.name} - #{self.system}"
+</code></pre>
+
+<p>  end
+end
+<code>``
+其中的字符串插值</code>#{self}<code>其实相当于隐式调用了</code>to_s<code>,在这里也就是</code>self.to_s<code>好吧, 我傻逼了,字符串插值当然是不管啥都执行</code>to_s<code>. 不过我想说的不是这个.而是牵扯到</code>puts<code>和</code>p`</p>
+
+<h3>puts and p and inspect</h3>
+
+<p>调用一些例子:</p>
+
+<p>```ruby
+class A
+  def initialize(string, number)</p>
+
+<pre><code>@string = string
+@number = number
+</code></pre>
+
+<p>  end</p>
+
+<p>  def to_s</p>
+
+<pre><code>"In to_s:\n   #{@string}, #{@number}\n"
+</code></pre>
+
+<p>  end
+  def to_a</p>
+
+<pre><code>"In to_a:\n   #{@string}, #{@number}\n"
+</code></pre>
+
+<p>  end
+end
+puts a = A.new(&ldquo;hello world&rdquo;, 5)
+<code>
+输出
+</code>ruby
+In to_s:
+   hello world, 5
+<code>``
+这里的</code>to_s`在对象被实例化之后隐式调用了</p>
+
+<p>然后是
+```ruby
+class Item
+  def inspect</p>
+
+<pre><code>"Result of inspect"
+</code></pre>
+
+<p>  end
+end</p>
+
+<p>puts Item.new
+puts Item.new.to_s
+p Item.new</p>
+
+<p>```
+输出</p>
+
+<p>```ruby</p>
+
+<h1>&lt;Item:0x8f85568></h1>
+
+<h1>&lt;Item:0x8f8552c></h1>
+
+<p>Result of inspect
+<code>``
+</code>puts<code>通常输出的是 对象调用</code>to_s<code>的结果,而</code>p<code>则是直接输出</code>inspect`</p>
+
+<h3>inspect vs to_s</h3>
+
+<p>另一个例子
+```ruby
+class Item
+  def initialize(item_name, qty)</p>
+
+<pre><code>@item_name = item_name
+@qty = qty
+</code></pre>
+
+<p>  end
+end</p>
+
+<p>item = Item.new(&ldquo;a&rdquo;,1)</p>
+
+<p>puts item
+p item</p>
+
+<p><code>
+输出
+</code>ruby</p>
+
+<h1>&lt;Item:0x8f85388></h1>
+
+<h1>&lt;Item:0x8f85388 @item_name=&ldquo;a&rdquo;, @qty=1></h1>
+
+<p><code>``
+可以看到,</code>puts`打印出类名然后跟着一个十六进制的数,这个数字跟该对象在内存中的存储位置相关,不过我们很少会使用到.</p>
+
+<p>而<code>p</code>的话是打印出类名及该对象的所有的实例变量,这个在debug的时候非常有用.</p>
+
+<p>上面这个例子说明了<code>p</code>和<code>puts</code>的不同,但是,有时候你会想要自定义这些方法的输出形式. 这个可以通过重写<code>to_s</code>来完成.</p>
+
+<p>如下面的例子</p>
+
+<p>```ruby
+class Item
+  def initialize(item_name, qty)</p>
+
+<pre><code>@item_name = item_name
+@qty = qty
+</code></pre>
+
+<p>  end</p>
+
+<p>  def to_s</p>
+
+<pre><code>"#{@item_name}: #{@qty}"
+</code></pre>
+
+<p>  end
+end</p>
+
+<p>item = Item.new(&ldquo;a&rdquo;,1)</p>
+
+<p>puts item
+p item</p>
+
+<p>```
+输出</p>
+
+<p><code>ruby
+a: 1
+a: 1
+</code></p>
+
+<p>此时,<code>p</code>和<code>puts</code>是相同的,因为<code>to_s</code>被重写,Ruby会把它当作默认的<code>inspect</code>结果.除非你重写<code>inspect</code>方法. 如前边的例子</p>
+
+<p>参考<a href="http://rubymonk.com/learning/books/4-ruby-primer-ascent/chapters/45-more-classes/lessons/108-displaying-objects">RubyMonk</a></p>
+
+<p><a href="http://stackoverflow.com/questions/12040527/ruby-automatically-calls-to-s-method-when-object-is-created/19751192#19751192">http://stackoverflow.com/questions/12040527/ruby-automatically-calls-to-s-method-when-object-is-created/19751192#19751192</a></p>
+
+<h2>Module</h2>
+
+<p>一般的,把 module 的方法添加到类中有两种方式(用途也不同).</p>
+
+<p>一种是使用 include 添加后作为实例方法; 另一种是使用 extend ,对应的是作为类方法使.</p>
+
+<p>当然,这是比较多用到的, 再还有一种则是扩展单个对象.<br/>
+直接 copy 官方文档的例子
+```ruby
+module Mod
+  def hello</p>
+
+<pre><code>"Hello from Mod.\n"
+</code></pre>
+
+<p>  end
+end</p>
+
+<p>class Klass
+  def hello</p>
+
+<pre><code>"Hello from Klass.\n"
+</code></pre>
+
+<p>  end
+end</p>
+
+<p>k = Klass.new
+k.hello         #=> &ldquo;Hello from Klass.\n&rdquo;
+k.extend(Mod)   #=> #&lt;Klass:0x401b3bc8>
+k.hello         #=> &ldquo;Hello from Mod.\n&rdquo;
+```</p>
+
+<p>当需要作为类方法和实例方法添加到类当中的时候, 当然, 可以同时使用<code>include</code>和<code>extend</code>, 不过还有另一种简便一些的方法 <strong>Hooks &ndash; self.included</strong></p>
+
+<p>比如
+```ruby
+module LibraryUtils
+  def self.included(base)</p>
+
+<pre><code>base.extend(ClassMethods)
+</code></pre>
+
+<p>  end</p>
+
+<p>  def add_game(game)
+  end</p>
+
+<p>  def remove_game(game)
+  end</p>
+
+<p>  module ClassMethods</p>
+
+<pre><code>def search_by_game_name(name)
+end
+</code></pre>
+
+<p>  end
+end</p>
+
+<p>class AtariLibrary
+  include LibraryUtils
+end</p>
+
+<h1>当前 module 被 base 包含</h1>
+
+<h1>module名 ClassMethods 可以任意取</h1>
+
+<p>```</p>
+
+<p>最后, 还有可以通过调用<code>ActiveSupport::Concern</code>.参考 <a href="http://api.rubyonrails.org/">Rails</a> 文档<br/>
+典型的 module 是:
+```ruby
+module M
+  def self.included(base)</p>
+
+<pre><code>base.extend ClassMethods
+base.class_eval do
+  scope :disabled, -&gt; { where(disabled: true) }
+end
+</code></pre>
+
+<p>  end</p>
+
+<p>  module ClassMethods</p>
+
+<pre><code>...
+</code></pre>
+
+<p>  end
+end
+```</p>
+
+<p>使用 <code>ActiveSupport::Concern</code> 上边的例子可以这么改写:</p>
+
+<p>```ruby
+require &lsquo;active_support/concern&rsquo;</p>
+
+<p>module M
+  extend ActiveSupport::Concern</p>
+
+<p>  included do</p>
+
+<pre><code>scope :disabled, -&gt; { where(disabled: true) }
+</code></pre>
+
+<p>  end</p>
+
+<p>  module ClassMethods</p>
+
+<pre><code>...
+</code></pre>
+
+<p>  end
+end
+<code>
+此外, 它可以优雅地处理 module 之间的依赖. 如下例子,假定 module `Bar` 依赖于 module `Foo`. 通常的我们会这么写
+</code>ruby
+module Foo
+  def self.included(base)</p>
+
+<pre><code>base.class_eval do
+  def self.method_injected_by_foo
+    ...
+  end
+end
+</code></pre>
+
+<p>  end
+end</p>
+
+<p>module Bar
+  def self.included(base)</p>
+
+<pre><code>base.method_injected_by_foo
+</code></pre>
+
+<p>  end
+end</p>
+
+<p>class Host
+  include Foo # We need to include this dependency for Bar
+  include Bar # Bar is the module that Host really needs
+end
+<code>
+但是,`Host`为嘛要关心`Bar` 的依赖 `Foo`呢?为啥不直接在`Bar`里头引入`Foo`呢?
+</code>ruby
+module Bar
+  include Foo
+  def self.included(base)</p>
+
+<pre><code>base.method_injected_by_foo
+</code></pre>
+
+<p>  end
+end</p>
+
+<p>class Host
+  include Bar
+end
+<code>``
+不幸的是,这不起作用. 因为当</code>Foo<code>在</code>Bar<code>中included 的时候,</code>Foo<code>中的</code>base<code>实际上是</code>Bar<code>module,而不是</code>Host<code>类.这时候用</code>ActiveSupport::Concern`的话就可以杠杠地解决这个依赖问题.</p>
+
+<p>```ruby
+require &lsquo;active_support/concern&rsquo;</p>
+
+<p>module Foo
+  extend ActiveSupport::Concern
+  included do</p>
+
+<pre><code>def self.method_injected_by_foo
+  ...
+end
+</code></pre>
+
+<p>  end
+end</p>
+
+<p>module Bar
+  extend ActiveSupport::Concern
+  include Foo</p>
+
+<p>  included do</p>
+
+<pre><code>self.method_injected_by_foo
+</code></pre>
+
+<p>  end
+end</p>
+
+<p>class Host
+  include Bar # works, Bar takes care now of its dependencies
+end
+```</p>
+
+<p>最后,附上<code>included</code>源码
+```ruby</p>
+
+<h1>File activesupport/lib/active_support/concern.rb, line 118</h1>
+
+<p>def included(base = nil, &amp;block)
+  if base.nil?</p>
+
+<pre><code>@_included_block = block
+</code></pre>
+
+<p>  else</p>
+
+<pre><code>super
+</code></pre>
+
+<p>  end
+end
+```</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Rails 3 Remote Links and Forms Part 2: Data-type (With jQuery)]]></title>
@@ -545,13 +952,18 @@ $(document).ready(function(){
 
 
 <p>另外个是，用了will_paginate这个gem做分页，不过默认显示的是“previous”和“next”，改为中文的“前一页”和“后一页”需要先在config/initializers/ 下新建一个will_paginate.rb,  and then在里头加入
-{% codeblock %}</p>
-
-<h1>coding: utf-8</h1>
-
-<p>WillPaginate::ViewHelpers.pagination_options[:previous_label ] =  &ldquo;前一页&rdquo;
-WillPaginate::ViewHelpers.pagination_options[:next_label ] =  &ldquo;后一页&rdquo;
-{% endcodeblock %}</p>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>coding: utf-8&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;p>WillPaginate::ViewHelpers.pagination_options[:previous_label ] =  &ldquo;前一页&rdquo;
+</span><span class='line'>WillPaginate::ViewHelpers.pagination_options[:next_label ] =  &ldquo;后一页&rdquo;</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 ]]></content>
   </entry>
   
@@ -572,46 +984,12 @@ WillPaginate::ViewHelpers.pagination_options[:next_label ] =  &ldquo;后一页&r
 <p>好吧，其实，我对这些改进啊有的没的还不怎么敏感。所以与其要看我介绍新功能新特性还不如直接搜索。</p>
 
 <p>我敏感的只是，我的一些rails项目都跑不动了。passenger报错
-{% codeblock %}
-Error message:
-libmysqlclient_r.so.16: cannot open shared object file: No such file or directory &ndash; /home/xguox/.rvm/gems/ruby-1.9.2-p290@rails/gems/mysql2-0.3.11/lib/mysql2/mysql2.so
-{% endcodeblock %}
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Error message:
+</span><span class='line'>libmysqlclient_r.so.16: cannot open shared object file: No such file or directory &ndash; /home/xguox/.rvm/gems/ruby-1.9.2-p290@rails/gems/mysql2-0.3.11/lib/mysql2/mysql2.so</span></code></pre></td></tr></table></div></figure></notextile></div>
 我还以为是我缺少了libmysqlclient_r.so.16这个文件，自己下载了之后也还是不行。期间尝试重装mysql，也试过之前说的那个，安装各种组建的命令还是无果。最终在ruby-china得到大神指点，居然只需卸了重装mysql2这个gem就可以了。貌似是因为/usr/lib 下的mysql2.so没有link到gem里边的mysql2.so
 过后，还是跟往常没有多大差别的继续Rails&hellip;</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Rails中try的用法]]></title>
-    <link href="http://xguox.github.com/blog/2012/04/20/usage-of-try/"/>
-    <updated>2012-04-20T23:17:00+08:00</updated>
-    <id>http://xguox.github.com/blog/2012/04/20/usage-of-try</id>
-    <content type="html"><![CDATA[<p>居然今晚才发现Rails中try的用法，初一看，怎么那么像印象中某些语言的异常处理？不对啊，ruby中的异常处理不是长这个样子的。
-查了下rails的API才了解了大致用法。</p>
-
-<p>API：</p>
-
-<p>不使用try的时候是<!-- more -->
-{% codeblock %}
-@person &amp;&amp; @person.name
-{% endcodeblock %}
-需确保@person不是nil，否则会报错
-{% codeblock %}
-NoMethodError: undefined method `name' for nil:NilClass
-{% endcodeblock %}
-如果用try的话
-{% codeblock %}
-@person.try(:name)
-{% endcodeblock %}
-如果@person为nil则返回nil而不是报错</p>
-
-<p>另外，try还可以接收block作为参数，
-{% codeblock %}
-Person.try(:find, 1)
-@people.try(:collect) {|p| p.name}
-{% endcodeblock %}
-漏了一句，API开头就说了，像常规的ruby的Object#send 那样工作
-看了下源码，貌似是利用了<strong>send</strong>实现的。最近在研究ruby的元编程。</p>
 ]]></content>
   </entry>
   
