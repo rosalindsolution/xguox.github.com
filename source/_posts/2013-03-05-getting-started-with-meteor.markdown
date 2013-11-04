@@ -71,7 +71,7 @@ if (Meteor.isClient) {
   })
 }
 ```
-这看起来只是一个简单的变化，但事实并非如此。 我们做的事是在客户端和服务端创建了一个叫作`posts`的Meteor `Collection`. 这是什么意思呢?
+这看起来只是一个简单的变化,但事实并非如此. 我们做的事是在客户端和服务端创建了一个叫作`posts`的Meteor `Collection`. 这是什么意思呢?
 
 在服务端,当数据被添加进来之后, 会被插入写进到一个[mongo](http://www.mongodb.org/)数据库(mongo内置包含在每个Meteor应用程序). 当执行查询的时候, Meteor会查找到这个数据库. 这样我们其实就已经把这些posts永久性的存贮起来了.
 

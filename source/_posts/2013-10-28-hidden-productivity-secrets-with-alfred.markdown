@@ -5,7 +5,7 @@ date: 2013-10-28 15:07
 comments: true
 categories: Alfred Tricks Translate
 ---
-好的开发人员总是在寻找可以让自己的工作流程更快速,更自动化的方法。  
+好的开发人员总是在寻找可以让自己的工作流程更快速,更自动化的方法.  
 这次,我们带来的是**Alfred的一系列workflows**,它们可以极大的提高你的开发效率,相信你会为之震惊.  
 ###What is Alfred?
 对于大多数了解不深的人来说,[Alfred](http://www.alfredapp.com/)只是一个备受赞誉的Mac OS X app, 它可以快速地帮助你查找在线或者本地的文件. 最新的版本 **Alfred 2**更是带来了大量的改进,尤其是其中的[Powerpack](http://www.alfredapp.com/powerpack/),可以让你创建自己的workflows(工作流程).
@@ -42,7 +42,7 @@ XguoX:搜索速度还行
 
 - [Dash Workflow](https://github.com/willfarrell/alfred-dash-workflow),developed by [@willfarrell](https://github.com/willfarrell/)
 - [下载](http://zno.io/Rc3p)
-- 触发:`dash` `html` `css` `gem` `angularjs` `rails` 基本上常用的语言框架库都有了
+- 触发:`dash` `html` `css` `gem` `angularjs` `Rails` 基本上常用的语言框架库都有了
 
 ![](https://7nnqba.dm1.livefilestore.com/y2p8jXte6unkiz4tr4VJFW9zTtwY5LHw6TPj8Bhx6IOm_bI2eU-6GyzBMx8DdEbI6jsLcPz7ttB9S1FqNDA9q8rU4JsouoEspKKgbjj2k-EQLA/alfred-dash-bs-opt.png?psid=1)
 ![](https://7nnqba.dm2302.livefilestore.com/y2pxzqD2DRpB4rhywnWViFn5zJMrjn59dI_lKaX4wCj9HTSO40hX1NSuRoCJGObJMCHdRB-bkmuYE9OPQePbPjXcaVli3J3dETsLtKIPWx-aHU/alfred-dash-js-opt.png?psid=1)

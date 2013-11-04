@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "why i can not rl a post"
+title: "Why I can not rl a post"
 date: 2011-12-26 01:36
 comments: true
 categories: Jabber

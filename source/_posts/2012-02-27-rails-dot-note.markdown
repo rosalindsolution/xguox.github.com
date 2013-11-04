@@ -5,7 +5,7 @@ date: 2012-02-27 17:55
 comments: true
 categories: Ruby Rails
 ---
-把平常中一些开发出错以及解决方法记录了下来，其实，基本上都是Google或者StackOverflow得到的答案。然后有些都不知道问题的根源，只知道个解决方法
+把平常中一些开发出错以及解决方法记录了下来,其实,基本上都是Google或者StackOverflow得到的答案.然后有些都不知道问题的根源,只知道个解决方法
 
 *
 {% codeblock %}Issue--
@@ -27,7 +27,7 @@ categories: Ruby Rails
 	Make sure that `gem install mysql2 -v '0.3.11'` succeeds before bundling.
 {% endcodeblock %}
 {% codeblock %}Solution--
-sudo apt-get install libmysql-ruby libmysqlclient-dev （Ubuntu）
+sudo apt-get install libmysql-Ruby libmysqlclient-dev (Ubuntu)
 {% endcodeblock %}
 
 *
@@ -35,9 +35,9 @@ sudo apt-get install libmysql-ruby libmysqlclient-dev （Ubuntu）
 Could not find a JavaScript runtime. See https://github.com/sstephenson/execjs for a list of available runtimes.
 {% endcodeblock %}
 {% codeblock %}Solution--
-Just install execjs and the rubyracer in your gemfile and run bundle after.
+Just install execjs and the Rubyracer in your gemfile and run bundle after.
 gem 'execjs'
-gem 'therubyracer'
+gem 'theRubyracer'
 {% endcodeblock %}
 
 *
@@ -47,14 +47,14 @@ Couldn't create database for {"adapter"=>"mysql2", "encoding"=>"utf8", "database
 {% endcodeblock %}
 {% codeblock %}
 Solution--
-host：127.0.0.1（diff？？localhost）
+host:127.0.0.1(diff??localhost)
 {% endcodeblock %}
 
 *
 {% codeblock %}Issue--
 Gem::Installer::ExtensionBuildError: ERROR: Failed to build gem native extension.
 
-/usr/bin/ruby1.9.1 extconf.rb 
+/usr/bin/Ruby1.9.1 extconf.rb 
 checking for pg_config... no
 No pg_config... trying anyway. If building fails, please try again with
 --with-pg-config=/path/to/pg_config
@@ -79,6 +79,6 @@ sudo gem install pg
 {% endcodeblock %}
 
 {% codeblock %}
-除了系统的ruby文件可以用相对路径，自己编写的ruby文件如果要require的话需要用绝对路径。否则会报错no such file to load .
-而load则无论什么ruby文件都可以用相对路径加载
+除了系统的Ruby文件可以用相对路径,自己编写的Ruby文件如果要require的话需要用绝对路径.否则会报错no such file to load .
+而load则无论什么Ruby文件都可以用相对路径加载
 {% endcodeblock %}

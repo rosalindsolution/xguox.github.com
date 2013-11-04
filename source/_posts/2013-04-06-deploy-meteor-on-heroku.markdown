@@ -11,13 +11,13 @@ vps退货, godaddy的莫名失单, 部署各种卡壳...
 
 因为最近比较多的关注前端的东西,  同时在自己local耍着[SachaG / Telescope](https://github.com/SachaG/Telescope)这个基于Meteor的项目. 于是也就顺手搭了[FrontN](http://frontn.com)这么个类似HN, Reddit的玩意. 原本是准备直接把HN,Reddit clone 成中文版的, 不过[Fenng](http://news.dbanotes.net/)貌似已经这么干了, 所以, 我也就不再造这个轮子了.另外原本也想专门作为[简书](http://jianshu.io)的评论系统. 不过想想也不是很妥, 就...
 
-Meteor的系统是超级alpha的, 所以很多问题遇上了也没人帮忙, 解决. 比如之前在[Stack Overflow](http://stackoverflow.com/questions/15654637/same-helper-for-different-template). 而部署这一块, 是我比较陌生的. 包括以前搞rails那会, 也没真正意义的整一整部署. 绝大部分时间都在本地跑啊跑. 所以, 在Meteor, 也是这一块最让我头疼. 
+Meteor的系统是超级alpha的, 所以很多问题遇上了也没人帮忙, 解决. 比如之前在[Stack Overflow](http://stackoverflow.com/questions/15654637/same-helper-for-different-template). 而部署这一块, 是我比较陌生的. 包括以前搞Rails那会, 也没真正意义的整一整部署. 绝大部分时间都在本地跑啊跑. 所以, 在Meteor, 也是这一块最让我头疼. 
 <!--more -->
 从vps到appfog到heroku, 各种转了一圈, 最终还是选定了heroku.  原因之一就是资料相对多, 出错情况也较少. 
 
 秉承流水帐作风, 待我慢慢道来. 
 
-幸得以前一直搞得是ruby/rails. 所以装heroku的时候没啥压力, 不然可能这又得搞上一会. 直接下载了官方的[heroku toolbelt](https://toolbelt.heroku.com/)无压力安装, login, clone...
+幸得以前一直搞得是Ruby/Rails. 所以装heroku的时候没啥压力, 不然可能这又得搞上一会. 直接下载了官方的[heroku toolbelt](https://toolbelt.heroku.com/)无压力安装, login, clone...
 
 and then 跟着 [Heroku buildpack for Meteorite](https://github.com/oortcloud/heroku-buildpack-Meteorite) 这个buildpack完成接下来的:
 
@@ -71,6 +71,6 @@ OOXX一轮下来总算是把heroku的验证给通过了, 感动啊...
 
 最后总结, heroku相对的来说除了出错情况较少, 可用资料多之外, 管理上也比自己搭vps要方便些, feel了一下MongoHQ的那个插件还不错...这样, 也就可以花更多的时间的app的开发上. 而不是折腾这出错那无解.  好吧, 尽管咱都爱折腾, 不过, 往你想的地方折腾不更好吗? 其实这些也就都是Paas的优势啦, 专注核心开发, 减少运维成本...
 
-其他的待续吧, 相比rails, 或许底层它怎么干还没搞透, 但起码的知道它干了什么, 可Meteor我还真不知道它都干了些什么, 比rails更magic. 
+其他的待续吧, 相比Rails, 或许底层它怎么干还没搞透, 但起码的知道它干了什么, 可Meteor我还真不知道它都干了些什么, 比Rails更magic. 
 
 不管是否热爱前端的亲, 欢迎做客[FrontN](http://frontn.com). 有Bug那是必然的啦, 欢迎Feedback.

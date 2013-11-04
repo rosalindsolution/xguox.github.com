@@ -307,7 +307,7 @@ Messages.insert({
 ###Conclusion
 
 While Meteor is pretty cool to work with and there are some pretty useful applications for it, like Derby.js, it is immature. For examples of this, just browse through the documentation and look for the red quotations. For example, the documentation states the following about MongoDB collections:  
->Currently the client is given full write access to the collection. They can execute arbitrary Mongo update commands. Once we build authentication, you will be able to limit the client’s direct access to insert, update, and remove. We are also considering validators and other ORM-like functionality.
+>Currently the client is given full write access to the collection. They can execute arbitrary Mongo update commands. Once we build authentication, you will be able to limit the client's direct access to insert, update, and remove. We are also considering validators and other ORM-like functionality.
 
 对于任何一个产品而言, 用户拥有数据库的所有读写权限都是非常大的问题, 非常危险.
 

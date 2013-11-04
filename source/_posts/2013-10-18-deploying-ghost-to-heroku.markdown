@@ -8,7 +8,7 @@ categories: Ghost Heroku
 
 原本没有意思要班门弄斧写什么Ghost的部署感受帖的,不过前些天看到@lucifr 的这条tweet,于是还是忍不住写了,就让更多假死Ghost诞生吧.
 
-<blockquote class="twitter-tweet"><p>ghost 一出，网上又要冒出一大堆主题风格相似的 blog 了，然后更新两篇使用感受就处于假死状态</p>&mdash; Lucifr (@lucifr) <a href="https://twitter.com/lucifr/statuses/390104155152343040">October 15, 2013</a></blockquote>
+<blockquote class="twitter-tweet"><p>ghost 一出,网上又要冒出一大堆主题风格相似的 blog 了,然后更新两篇使用感受就处于假死状态</p>&mdash; Lucifr (@lucifr) <a href="https://twitter.com/lucifr/statuses/390104155152343040">October 15, 2013</a></blockquote>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 先来感受帖,主要是与Octopress之流相比:  

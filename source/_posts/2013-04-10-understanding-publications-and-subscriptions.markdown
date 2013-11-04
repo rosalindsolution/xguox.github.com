@@ -60,7 +60,7 @@ Meteor.publish('somePosts',function(){
 
 如果你有读过[Meteor的文档](http://docs.meteor.com/#publishandsubscribe), 可能会对`added()`和`ready()`在客户端设置记录的属性感到惊讶,  and struggled to square that with the Meteor apps that you've seen that never use those methods.(I am so sorry 这句没想着怎么翻译好)
 
-这其中的原因是, Meteor提供了一个非常重要的便利 - `_publishCursor()`方法. 可能你从没见过它的使用? 因为有可能不是直接的调用，但如果你在调用一个publish函数并返回一个**游标(cursor)**(例如: `Posts.find({'author':'Tom'})`), 那么这就是`_publishCursor`.
+这其中的原因是, Meteor提供了一个非常重要的便利 - `_publishCursor()`方法. 可能你从没见过它的使用? 因为有可能不是直接的调用,但如果你在调用一个publish函数并返回一个**游标(cursor)**(例如: `Posts.find({'author':'Tom'})`), 那么这就是`_publishCursor`.
 
 当Meteor看到`somePosts`这个publication返回来一个游标(cursor), 则表明它自动调用了`_publishCursor()`publish这个cursor. 下面这是`_publishCursor()`所做的事情:  
 

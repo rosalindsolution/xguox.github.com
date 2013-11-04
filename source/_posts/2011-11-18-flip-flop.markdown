@@ -1,0 +1,31 @@
+---
+layout: post
+title: "Flip-Flop"
+date: 2011-11-18 17:11
+comments: true
+categories: Ruby
+---
+今天学习到的一种比较新的,挺有趣的特性, 说新只是以前学JAVA和PHP的时候木有接触过.貌似Ruby的这一特性是从Perl那里继承而来,所以学习过Perl的程序员应该比较熟悉.
+
+## flip-flop
+以下内容摘自**《Ruby编程语言》**
+> 当..和...操作符被用在一个条件式,或者一个循环中时,它们不会创建Range对象.相反地,它们将创建一种特殊的布尔表达式,名为flip-flop.和比较以及相等表达式一样,一个flip-flop表达式的值也为true或者false.但是一个flip-flop表达式的特殊之处在于,它的值依赖于此前的求值结果,这就意味着flip-flop表达式具有与其关联的状态,所以你可能会认为一个flip-flop是一个某种类型的对象,但事实上flip-flop并不是对象,而是Ruby表达式.Ruby解释器在处理完一个flip-flop表达式之后,将为它在内部存储一个解析后的表现形式,其中就保存了该表达式的状态(只是作为一个布尔值).
+
+有了这些背景知识后,请看下面代码中的`flip-flop`.第一个`..`创建一个`Range`对象,第二个`..`则创建了一个`flip-flop`表达式:
+`(1..10).each {|x| print x if x==3..x==5 }`
+
+>    在一个由条件式或者循环所构成的上下文中,一个flip-flop由两个通过..操作符相连的布尔表达式构成.除非其左侧表达式为true,否则一个flip-flop表达式就位false,而且在左侧表达式为true之前,它的值都会是false.
+
+>   一旦该表达式为true那么它就会"flips"到一个持久的true状态.它会保持该状态,而且对其后续的求值也返回true,直到其右侧的表达式为true为止.如果右侧表达式为 true了那么该flip-flop就会"flops"回一个持久的false状态,对其后续的求值也返回false,直到其左侧表达式再次成为true为止.
+
+>   在上面的代码例子中,该flip-flop被反复求值,相应的x的值也从1增加到10.起初,它的状态为false,而且在x等1和2的时候一直是false.当x等于3的时候,该flip-flop的状态就成为true.在x等于4和5的时候,该flip-flop的状态又回到了false,而且对于后续的x,它总是返回false.上述代码的执行结果是打印出345 .
+可以使用..或...来编写flip-flop.起差别在于:当一个..flip-flop为true时,它会返回true,同时测试它的右侧表达式以决定是否需要将其内部状态设置回false；而对于...flip-flop来说,它等到下一次求值的时候才测试其右侧表达式.观察下面的代码:
+
+```ruby
+# Prints "3"  .  Flips and flops back  when x==3
+(1..10).each {|x| print x if x==3..x>=3}
+# Print "34" .   Flis when x==3 and flops when x==4
+(1..10).each {|x| print x if x==3...x>=3}
+```
+
+注:flip-flop其中一个意思是突变,flip和flop都有翻转的意思

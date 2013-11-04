@@ -80,15 +80,15 @@ Actually, 想装啥插件可以直接在里头搜, 或者网页版搜索, 一般
 
 ```
 focus到侧边栏: 'ctrl + 0'
-Command + D：选择词。重复按下可以增加选择下一相同的词。按下 Ctrl + Command + G 可选中所有相同的词。
-Command + Option + /：块注释。
-Control + M：跳转到对应的括号。
-Control + Shift + M：选中当前括号内的内容，重复按下可增加选择括号本身。
-Command + Shift + J：选中当前缩进级别下的所有代码。
-Command + Option + .：闭合 HTML 标签。(说常用也不常用, 但又貌似有用)
+Command + D:选择词.重复按下可以增加选择下一相同的词.按下 Ctrl + Command + G 可选中所有相同的词.
+Command + Option + /:块注释.
+Control + M:跳转到对应的括号.
+Control + Shift + M:选中当前括号内的内容,重复按下可增加选择括号本身.
+Command + Shift + J:选中当前缩进级别下的所有代码.
+Command + Option + .:闭合 HTML 标签.(说常用也不常用, 但又貌似有用)
 按住option 拖拽多列
-按下 Control + Shift + 方向键，可以选中矩形区域的文本。
-选择数行文本末端，选中区域然后按下 Shift + Command + L。
+按下 Control + Shift + 方向键,可以选中矩形区域的文本.
+选择数行文本末端,选中区域然后按下 Shift + Command + L.
 
 ```
 

@@ -7,7 +7,7 @@ categories: Translation CSS
 ---
 Icon fonts非常的强大:
 
-- You can CSS the crap out of them and they don’t mind.
+- You can CSS the crap out of them and they don't mind.
 - 在任何的显示器和分辨率上看起来都很不错
 - 无论多大的icons集都只需要一次HTTP请求
 

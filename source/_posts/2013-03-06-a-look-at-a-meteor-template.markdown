@@ -131,7 +131,7 @@ Template.post_edit.helpers({
 ```
 在这我们要做的是添加一个`post`[Template Helper](http://docs.Meteor.com/#template_helpers)到我们的`post_edit`模板. Template helpers 是一些简单的JavaScript方法允许你使用 Handlebars template.
 
-在这个例子中,不管任何时候我们的Handlebars模板调用`post`, 我们都能在我们的`Posts` collection 中找到current post并返回之. 要做到这样首先我们需要用到`selectedPostId`这个通过路由设置的Session变量(but that’s for another lesson)
+在这个例子中,不管任何时候我们的Handlebars模板调用`post`, 我们都能在我们的`Posts` collection 中找到current post并返回之. 要做到这样首先我们需要用到`selectedPostId`这个通过路由设置的Session变量(but that's for another lesson)
 
 ##Object Properties
 继续往下, 我们将看到第二个handlebars标签`{%raw%}{{title}}{%endraw%}`
@@ -223,7 +223,7 @@ Template.post_edit.events = {
 
 如你所见, 这里有大量的`$`符号. 除了Underscore, Meteor还绑定了jQuery. 看吧, 你已经了解了Meteor的一半了.
 
-再来一次, 处理categories相较于其他的来说比较麻烦一些.  通过使用jQuery, we’re checking for checked checkboxes(敢不敢把这句话说上10次,LOL)并使用他们的ID来填充给一个数组. 
+再来一次, 处理categories相较于其他的来说比较麻烦一些.  通过使用jQuery, we're checking for checked checkboxes(敢不敢把这句话说上10次,LOL)并使用他们的ID来填充给一个数组. 
 
 接下来我们就能够建立我们的属性对象, 并使用Meteor的[update()](http://docs.Meteor.com/#update)可以简单地提交我们的修改给数据库.
 
@@ -249,7 +249,7 @@ CRUD (Create, Read, Update, Delete)操作经常就是组成网站的主要功能
 
 更重要的是, Meteor代码所依赖的很多模式和库都是你所熟悉的.这意味着可以非常快的掌握,只需要一些JavaScript知识.
 
-当然，随着您的需求的发展，你需要深入挖掘这个框架的复杂性。但是即使你只知道Meteor最基本的功能你也同样能作出一些东西来, 我想,这大概就是为什么Meteor非常好玩的原因之一. 
+当然,随着您的需求的发展,你需要深入挖掘这个框架的复杂性.但是即使你只知道Meteor最基本的功能你也同样能作出一些东西来, 我想,这大概就是为什么Meteor非常好玩的原因之一. 
 
 原文来自 Sacha Greif  [A Look at a Meteor Template](http://theMeteorbook.com/2013/02/20/a-look-at-a-Meteor-template/)
 

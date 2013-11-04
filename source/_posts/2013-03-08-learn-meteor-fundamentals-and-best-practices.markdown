@@ -18,7 +18,7 @@ Meteor目前使用的模板引擎只能是 [handlebars](http://handlebarsjs.com/
 一个Meteor项目包含的大多都是JavaScript文件. 如果你放置任意一个 ```*.js```文件在你的项目的任何位置, Meteor会自动帮你加载并运行之. 你在Meteor项目中写的每一个JavaScript文件都会被部署到服务端和客户端(额...也不完全是这样的,继续往下看吧!). 之所以Meteor这么,这么的cool,原因之一就是:当你写了一个JavaScript函数,在客户端和服务端都可以使用之!    
 更cool的是, 比如,你在项目的任意一个地方放置```*.less```, 那么这些文件都会自动被编译并发送至客户端以及从而包含进页面当中.  
 有时候,可能你希望分离开服务端和客户端的代码. 幸运地是,<!-- more --> Meteor有这么一对标识可以帮你:```Meteor.is_server```和```Meteor.is_client```   
-下面的例子在浏览器的JavaScript控制台中会输出```Hi. I’m CLIENT```,而在服务端中则会输出 ```Hi. I’m SERVER```  
+下面的例子在浏览器的JavaScript控制台中会输出```Hi. I'm CLIENT```,而在服务端中则会输出 ```Hi. I'm SERVER```  
 
 ```javascript
 // This function is available on both the client and the server.
@@ -56,7 +56,7 @@ Meteor有一些特殊的目录来帮助你解决分离 ```client/server```的代
 - ```[project_root]/.Meteor/``` 一些特殊的,和项目相关的的信息放在这里,  比如你安装的某些模块. 你几乎可以不用关心这里边的东西
 
 ##响应(Reactivity)
-Meteor 通过 响应数据源(“reactive” data sources) 和 上下文(context) 帮你省去了当数据改变时手动替换页面的麻烦. 当响应数据源被更新后,响应上下文会重新运行(A reactive context is just a function that will get re-run if it contains a reactive data source that gets updated.) 刚开始的时候要把思维转换过来可能有些难, 下面的例子将为你解释清楚.   
+Meteor 通过 响应数据源("reactive" data sources) 和 上下文(context) 帮你省去了当数据改变时手动替换页面的麻烦. 当响应数据源被更新后,响应上下文会重新运行(A reactive context is just a function that will get re-run if it contains a reactive data source that gets updated.) 刚开始的时候要把思维转换过来可能有些难, 下面的例子将为你解释清楚.   
 下面是一个html页面和一个叫```cool_dude```Meteor[模板](http://docs.Meteor.com/#templates), 以及一个在客户端运行的JavaScript函数---传一个```username```的值给模板用以渲染.
 {% codeblock %}
 <html>
@@ -80,7 +80,7 @@ Template.cool_dude.username = function() {
     return "Andrew Scala";
 };
 ```
-当页面被渲染的时候会输出 `“Andrew Scala sure is one cool dude!” `
+当页面被渲染的时候会输出 `"Andrew Scala sure is one cool dude!" `
 
 模板即是响应的上下文: 如果它依赖于响应数据源, 那么当数据源改变时它会重渲染自身. 客户端的`session`一种响应数据源. 它只会在客户端存储一些键值对, 且当页面刷新的时候被擦除.
 
@@ -147,7 +147,7 @@ if(Meteor.is_client) {
 ```
 
 [Meteor.autorun](http://docs.meteor.com/#deps_autorun)是一个响应上下文, 意思是只要有响应数据源更新,所有在里头的东西都会重运行. 我们把当前所在的频道存储在Session的```"current_channel"```. 如果这个session值改变, 那么订阅(subscription)也就更新,
-这样我们就能够访问其他的信息了. 如果用户想要加入```“breakfast talk”```这个频道. 我们可以运行```Session.set("current_channel", "breakfast_talk")```, 这会触发autosubscribe, 让我们可以且仅可访问```"breakfast_talk"```频道下的信息.
+这样我们就能够访问其他的信息了. 如果用户想要加入```"breakfast talk"```这个频道. 我们可以运行```Session.set("current_channel", "breakfast_talk")```, 这会触发autosubscribe, 让我们可以且仅可访问```"breakfast_talk"```频道下的信息.
 
 或许,你很多次都希望发布所有的collection到客户端. 仔细思考客户端实际需要的是什么. 比起发送所有的文档, 只发送特定领域会来得明智些.
 
