@@ -1,0 +1,610 @@
+
+<!DOCTYPE HTML>
+<html lang="en-GB">
+<head>
+	<meta charset="utf-8">
+	<title>重拾Ruby (II)  | XguoX</title>
+
+	<meta name="author" content="XguoX">
+
+<meta name="description" content="继续复习 + 笔记, 今天要写的是 Dynamic Classes &amp; Methods Struct 一般的, 定义一个类的做法如下： 1
+2
+3
+4
+5
+6
+7
+8
+9
+class Game attr_accessor :name, :year, :system def &hellip;"> <meta name="keywords" content="">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="XguoX" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	
+
+</head>
+
+
+
+<body>
+	<header id="header" class="inner"><h1><a href="/">XguoX</a></h1>
+<span class="tagline">Coder & Jabber</span>
+<nav id="main-nav"><ul>
+	<li><a href="http://www.flickr.com/photos/groverlu/sets" target="_blank">Flickr</a></li>
+	<li><a href="/about">About</a></li>
+	<li><a href="/atom.xml">RSS</a></li>
+</ul>
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul>
+	<li><a href="http://www.flickr.com/photos/groverlu/sets" target="_blank">Flickr</a></li>
+	<li><a href="/about">About</a></li>
+	<li><a href="/atom.xml">RSS</a></li>
+</ul>
+</div>
+	</div>
+</nav>
+
+
+</header>
+
+	<div id="content" class="inner"><article class="post">
+	<header>
+		<h2 class="title">重拾Ruby (II)</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-11-05T16:30:00+08:00" pubdate data-updated="true">Nov 5<span>th</span>, 2013</time></div>
+	</header>
+	<div class="entry-content"><p>继续复习 + 笔记, 今天要写的是 Dynamic Classes &amp; Methods</p>
+
+<h2>Struct</h2>
+
+<p>一般的, 定义一个类的做法如下：</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Game</span>
+</span><span class='line'>  <span class="kp">attr_accessor</span> <span class="ss">:name</span><span class="p">,</span> <span class="ss">:year</span><span class="p">,</span> <span class="ss">:system</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="nb">name</span><span class="p">,</span> <span class="n">year</span><span class="p">,</span> <span class="nb">system</span><span class="p">)</span>
+</span><span class='line'>    <span class="nb">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="nb">name</span>
+</span><span class='line'>    <span class="nb">self</span><span class="o">.</span><span class="n">year</span> <span class="o">=</span> <span class="n">year</span>
+</span><span class='line'>    <span class="nb">self</span><span class="o">.</span><span class="n">system</span> <span class="o">=</span> <span class="nb">system</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>而鉴于以上这个例子的数据结构比较简单, 所以其实我们可以使用Struct来写之:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="no">Game</span> <span class="o">=</span> <span class="no">Struct</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="ss">:name</span><span class="p">,</span> <span class="ss">:year</span><span class="p">,</span> <span class="ss">:system</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>如果需要添加实例方法则可以这么干:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="no">Game</span> <span class="o">=</span> <span class="no">Struct</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="ss">:name</span><span class="p">,</span> <span class="ss">:year</span><span class="p">,</span> <span class="ss">:system</span><span class="p">)</span> <span class="k">do</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">to_s</span>
+</span><span class='line'>    <span class="s2">&quot;</span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">,</span><span class="si">#{</span><span class="n">year</span><span class="si">}</span><span class="s2">,</span><span class="si">#{</span><span class="nb">system</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>如果需要定义的 data 比 behavior 要多的话, 推荐使用 Struct 来创建类, 反之则使用传统的方法.</p>
+
+<h2>alias_method</h2>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Timeline</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">tweets</span><span class="o">=[]</span><span class="p">)</span>
+</span><span class='line'>   <span class="vi">@tweets</span> <span class="o">=</span> <span class="n">tweets</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">tweets</span>
+</span><span class='line'>    <span class="vi">@tweets</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">contents</span>
+</span><span class='line'>    <span class="vi">@tweets</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>由于 tweets 和 contents 两个方法体其实是一样的只是方法名不同, 为免重复我们可以这么干</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Timeline</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">tweets</span><span class="o">=[]</span><span class="p">)</span>
+</span><span class='line'>   <span class="vi">@tweets</span> <span class="o">=</span> <span class="n">tweets</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">tweets</span>
+</span><span class='line'>    <span class="vi">@tweets</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'> <span class="c1">#实际上其实这是getter方法,所以其实这里可以这么写</span>
+</span><span class='line'>
+</span><span class='line'> <span class="c1">#attr_reader :tweets</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">alias_method</span> <span class="ss">:contents</span><span class="p">,</span> <span class="ss">:tweets</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>更多例子, 假设如下在 Timeline 类</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Timeline</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="kp">attr_accessor</span><span class="p">:</span> <span class="ss">:tweets</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">print</span>
+</span><span class='line'>    <span class="nb">puts</span> <span class="n">tweets</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;\n&#39;</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>我们需要给 print 方法添加 authentication .如果由于某些原因我们不想改动现有的方法的话, 可以重新打开<code>Timeline</code> 这个类,然后使用 <code>alias_method</code></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Timeline</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">alias_method</span> <span class="ss">:old_print</span><span class="p">,</span> <span class="ss">:print</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">print</span>
+</span><span class='line'>    <span class="n">authenticate!</span>
+</span><span class='line'>    <span class="n">old_print</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c1">#实际上就是旧有的 print 方法改名为 old_print, 而重写了 print 给它加上了 authenticate! </span>
+</span><span class='line'>  <span class="c1">#然后调用旧有方法 old_print</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">authenticate!</span>
+</span><span class='line'>    <span class="c1"># do sth authentication</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>但是,需要注意的是,重新打开一个类是个危险的做法. 所以, 另一种做法是使用继承.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">AuthenticatedTimeline</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">print</span>
+</span><span class='line'>    <span class="n">authenticate!</span>
+</span><span class='line'>    <span class="k">super</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">authenticate!</span>
+</span><span class='line'>    <span class="c1"># do sth authentication</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>好吧, 尴尬了,貌似 alias_method 没看到什么更实际的意义了 =.=</p>
+
+<h2>define_method</h2>
+
+<p>下边例子, 可以看到比较多的重复代码,</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Tweet</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">draft</span>
+</span><span class='line'>    <span class="vi">@status</span> <span class="o">=</span> <span class="ss">:draft</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">posted</span>
+</span><span class='line'>    <span class="vi">@status</span> <span class="o">=</span> <span class="ss">:posted</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">deleted</span>
+</span><span class='line'>    <span class="vi">@status</span> <span class="o">=</span> <span class="p">:</span> <span class="n">deleted</span>
+</span><span class='line'>  <span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>使用 define_method 可以杠杠的减少这些重复. 并且,当需要添加新的 state 时候只需添加到 states 数组中即可.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Tweet</span>
+</span><span class='line'>  <span class="n">states</span> <span class="o">=</span> <span class="o">[</span><span class="ss">:draft</span><span class="p">,</span> <span class="ss">:posted</span><span class="p">,</span> <span class="ss">:deleted</span><span class="o">]</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">states</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">status</span><span class="o">|</span>
+</span><span class='line'>    <span class="n">define_method</span> <span class="n">status</span> <span class="k">do</span>
+</span><span class='line'>      <span class="vi">@status</span> <span class="o">=</span> <span class="n">status</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>send</h2>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Timeline</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">tweets</span><span class="p">)</span>
+</span><span class='line'>    <span class="vi">@tweets</span> <span class="o">=</span> <span class="n">tweets</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">contents</span>
+</span><span class='line'>    <span class="vi">@tweets</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="kp">private</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">direct_messages</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">tweets</span> <span class="o">=</span> <span class="o">[</span><span class="s1">&#39;Compiling!&#39;</span><span class="p">,</span> <span class="s1">&#39;Bundling...&#39;</span><span class="o">]</span>
+</span><span class='line'><span class="n">timeline</span> <span class="o">=</span> <span class="no">Timeline</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">tweets</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><code>timeline.contents</code>
+一般的, 我们是这么调用 contents 方法.</p>
+
+<p>除此外,我们还可以使用 send</p>
+
+<p><code>timeline.send(:contents)</code></p>
+
+<p>等同于</p>
+
+<p><code>timeline.send("contents")</code></p>
+
+<p>另外,我们还可以用 send 来调用 private  或者 protected
+<code>timeline.direct_message</code></p>
+
+<p>如果不希望调用 private 和 protected 的方法则可以用 <code>public_send</code></p>
+
+<p>尴尬,更具体用途有待挖掘.</p>
+
+<h2>method 方法</h2>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Timeline</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">tweets</span><span class="p">)</span>
+</span><span class='line'>    <span class="vi">@tweets</span> <span class="o">=</span> <span class="n">tweets</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">contents</span>
+</span><span class='line'>    <span class="vi">@tweets</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">show_tweet</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
+</span><span class='line'>    <span class="nb">puts</span> <span class="vi">@tweets</span><span class="o">[</span><span class="n">index</span><span class="o">]</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">tweets</span> <span class="o">=</span> <span class="o">[</span><span class="s1">&#39;Compling!&#39;</span><span class="p">,</span> <span class="s1">&#39;Bundling...&#39;</span><span class="o">]</span>
+</span><span class='line'><span class="n">timeline</span> <span class="o">=</span> <span class="no">Timeline</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">tweets</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">content_method</span> <span class="o">=</span> <span class="n">timeline</span><span class="o">.</span><span class="n">method</span><span class="p">(</span><span class="ss">:contents</span><span class="p">)</span>
+</span><span class='line'> <span class="c1"># =&gt; #&lt;Method: Timeline#contents&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">content_method</span><span class="o">.</span><span class="n">call</span>
+</span><span class='line'> <span class="c1"># =&gt; [&#39;Compling!&#39;, &#39;Bundling...&#39;]</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">show_method</span> <span class="o">=</span> <span class="n">timeline</span><span class="o">.</span><span class="n">method</span><span class="p">(</span><span class="ss">:show_tweet</span><span class="p">)</span>
+</span><span class='line'> <span class="c1"># =&gt; #&lt;Method: Timeline#show_tweet&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">show_method</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span><span class='line'> <span class="c1"># =&gt; Compiling!</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">(</span><span class="mi">0</span><span class="o">.</span><span class="n">.</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">each</span><span class="p">(</span><span class="o">&amp;</span><span class="n">show_method</span><span class="p">)</span>
+</span><span class='line'> <span class="c1"># =&gt;</span>
+</span><span class='line'> <span class="c1"># Compiling!</span>
+</span><span class='line'> <span class="c1"># Bundling...</span>
+</span><span class='line'>
+</span><span class='line'> <span class="c1"># 通过 &amp; 把 method 对象转换成 block</span>
+</span><span class='line'> <span class="c1"># same as</span>
+</span><span class='line'> <span class="c1"># show_method.call(0)</span>
+</span><span class='line'> <span class="c1"># show_method.call(1)</span>
+</span><span class='line'>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>在 Ruby 中, 任何东西都是 object, 任意的一个方法同样,也是一个 object</p>
+
+<h1>Practice</h1>
+
+<p>重构</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Library</span>
+</span><span class='line'>  <span class="kp">attr_accessor</span> <span class="ss">:games</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">each</span><span class="p">(</span><span class="o">&amp;</span><span class="n">block</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">games</span><span class="o">.</span><span class="n">each</span><span class="p">(</span><span class="o">&amp;</span><span class="n">block</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">map</span><span class="p">(</span><span class="o">&amp;</span><span class="n">block</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">games</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="o">&amp;</span><span class="n">block</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">select</span><span class="p">(</span><span class="o">&amp;</span><span class="n">block</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">games</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="o">&amp;</span><span class="n">block</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>好吧,没掌握熟练,各种转晕了</p>
+</div>
+
+</article>
+
+	
+	<div class="share">
+	  <!-- <ul> -->
+	  <!--   <li>
+  <a href="https://twitter.com/intent/tweet?text=重拾Ruby (II) by @&url=http://xguox.github.com/blog/2013/11/05/relearn-ruby-2/" title="Share 重拾Ruby (II) on Twitter">
+    <img src="/images/social/twitter.png" />
+  </a>
+</li>
+ -->
+	  <!--   <li>
+  <a href="https://www.facebook.com/sharer.php?u=http://xguox.github.com/blog/2013/11/05/relearn-ruby-2/" title="Share 重拾Ruby (II) on Facebook">
+    <img src="/images/social/facebook.png" />
+  </a>
+</li>
+ -->
+	  <!--   <li>
+  <a href="https://plus.google.com/share?url=http://xguox.github.com/blog/2013/11/05/relearn-ruby-2/" title="Share 重拾Ruby (II) on Google Plus">
+    <img src="/images/social/google.png" />
+  </a>
+</li>
+ -->
+	  <!-- </ul> -->
+	</div>
+
+
+
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+</div>
+	<footer id="footer" class="inner"><br>
+<br>
+<br>
+<br>
+&copy; 2013
+
+    XguoX
+
+</footer>
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/hyphenator.js"></script>
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'xguox';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://xguox.github.com/blog/2013/11/05/relearn-ruby-2/';
+        var disqus_url = 'http://xguox.github.com/blog/2013/11/05/relearn-ruby-2/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-39166710-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+
+
+</body>
+<script>
+  $(document).ready(function() {
+  // Make images center
+  $('p:has(img)').css('text-align', 'center');
+  });
+</script>
+</html>
