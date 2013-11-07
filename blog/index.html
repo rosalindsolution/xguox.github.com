@@ -82,26 +82,28 @@ tweets.each(& &hellip;"> <meta name="keywords" content="">
 
 <p>lambda 在1.9之后的写法(之前的也可以用)</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>lamb = -&gt; { }</span></code></pre></td></tr></table></div></figure>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">lamb</span> <span class="o">=</span> <span class="o">-&gt;</span> <span class="p">{</span> <span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>proc 对象 和 block 对象之间的转换.</p>
 
 <h4>调用方法的时候参数前加 &amp;</h4>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>tweets.each(&printer)
-</span><span class='line'> # 把 proc 对象 转换成 block 对象 each 后面的是 block ,不是传参数</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">tweets</span><span class="o">.</span><span class="n">each</span><span class="p">(</span><span class="o">&amp;</span><span class="n">printer</span><span class="p">)</span>
+</span><span class='line'> <span class="c1"># 把 proc 对象 转换成 block 对象 each 后面的是 block ,不是传参数</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <h4>定义方法的时候参数前加 &amp;</h4>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>def each(&block)
-</span><span class='line'> # 把 block 对象 转换成 proc 对象, 把 block 转换成 proc 才能作为参数
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">each</span><span class="p">(</span><span class="o">&amp;</span><span class="n">block</span><span class="p">)</span>
+</span><span class='line'> <span class="c1"># 把 block 对象 转换成 proc 对象, 把 block 转换成 proc 才能作为参数</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
@@ -119,35 +121,37 @@ tweets.each(& &hellip;"> <meta name="keywords" content="">
 
 <h4>closure</h4>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>def tweet_as(user)
-</span><span class='line'>  lambda { |tweet| puts "#{user}: #{tweet}" }
-</span><span class='line'>end</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">tweet_as</span><span class="p">(</span><span class="n">user</span><span class="p">)</span>
+</span><span class='line'>  <span class="nb">lambda</span> <span class="p">{</span> <span class="o">|</span><span class="n">tweet</span><span class="o">|</span> <span class="nb">puts</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">user</span><span class="si">}</span><span class="s2">: </span><span class="si">#{</span><span class="n">tweet</span><span class="si">}</span><span class="s2">&quot;</span> <span class="p">}</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <p>当 lambda 被创建后局部变量(在这即user) 被保存起来</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
 <span class='line-number'>6</span>
 <span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>gregg_tweet = tweet_as("greggpollack")
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">gregg_tweet</span> <span class="o">=</span> <span class="n">tweet_as</span><span class="p">(</span><span class="s2">&quot;greggpollack&quot;</span><span class="p">)</span>
 </span><span class='line'>
-</span><span class='line'> # 相当于创建了   lambda { |tweet| puts "greggpollack: #{tweet}" }
+</span><span class='line'> <span class="c1"># 相当于创建了   lambda { |tweet| puts &quot;greggpollack: #{tweet}&quot; }</span>
 </span><span class='line'>
-</span><span class='line'>gregg_tweet.call("Test!")
+</span><span class='line'><span class="n">gregg_tweet</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="s2">&quot;Test!&quot;</span><span class="p">)</span>
 </span><span class='line'>
-</span><span class='line'> # greggpollack: Test!</span></code></pre></td></tr></table></div></figure>
+</span><span class='line'> <span class="c1"># greggpollack: Test!</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <h2>self</h2>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -156,15 +160,16 @@ tweets.each(& &hellip;"> <meta name="keywords" content="">
 <span class='line-number'>7</span>
 <span class='line-number'>8</span>
 <span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>puts "Outside the class : #{self}"
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">puts</span> <span class="s2">&quot;Outside the class : </span><span class="si">#{</span><span class="nb">self</span><span class="si">}</span><span class="s2">&quot;</span>
 </span><span class='line'>
-</span><span class='line'> # Outside the class : main
+</span><span class='line'> <span class="c1"># Outside the class : main</span>
 </span><span class='line'>
-</span><span class='line'>class Tweet
-</span><span class='line'>  puts "Inside the class : #{Tweet}"
-</span><span class='line'>end
+</span><span class='line'><span class="k">class</span> <span class="nc">Tweet</span>
+</span><span class='line'>  <span class="nb">puts</span> <span class="s2">&quot;Inside the class : </span><span class="si">#{</span><span class="no">Tweet</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span class='line'><span class="k">end</span>
 </span><span class='line'>
-</span><span class='line'> # Inside the class : Tweet</span></code></pre></td></tr></table></div></figure>
+</span><span class='line'> <span class="c1"># Inside the class : Tweet</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <h3>class_eval sets <code>self</code> to the given class and executes the block</h3>

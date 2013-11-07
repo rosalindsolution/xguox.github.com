@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Ruby | XguoX]]></title>
   <link href="http://xguox.github.com/blog/categories/ruby/atom.xml" rel="self"/>
   <link href="http://xguox.github.com/"/>
-  <updated>2013-11-07T23:59:16+08:00</updated>
+  <updated>2013-11-08T00:02:08+08:00</updated>
   <id>http://xguox.github.com/</id>
   <author>
     <name><![CDATA[XguoX]]></name>
@@ -24,7 +24,7 @@
 
 <p>lambda 在1.9之后的写法(之前的也可以用)</p>
 
-<p><code>
+<p><code>ruby
 lamb = -&gt; { }
 </code></p>
 
@@ -32,14 +32,14 @@ lamb = -&gt; { }
 
 <h4>调用方法的时候参数前加 &amp;</h4>
 
-<p><code>
+<p><code>ruby
 tweets.each(&amp;printer)
  # 把 proc 对象 转换成 block 对象 each 后面的是 block ,不是传参数
 </code></p>
 
 <h4>定义方法的时候参数前加 &amp;</h4>
 
-<p>```
+<p>```ruby
 def each(&amp;block)
  # 把 block 对象 转换成 proc 对象, 把 block 转换成 proc 才能作为参数</p>
 
@@ -59,14 +59,14 @@ def each(&amp;block)
 
 <h4>closure</h4>
 
-<p><code>
+<p><code>ruby
 def tweet_as(user)
   lambda { |tweet| puts "#{user}: #{tweet}" }
 end
 </code>
 当 lambda 被创建后局部变量(在这即user) 被保存起来</p>
 
-<p>```
+<p>```ruby
 gregg_tweet = tweet_as(&ldquo;greggpollack&rdquo;)</p>
 
 <p> # 相当于创建了   lambda { |tweet| puts &ldquo;greggpollack: #{tweet}&rdquo; }</p>
@@ -78,7 +78,7 @@ gregg_tweet = tweet_as(&ldquo;greggpollack&rdquo;)</p>
 
 <h2>self</h2>
 
-<p>```
+<p>```ruby
 puts &ldquo;Outside the class : #{self}&rdquo;</p>
 
 <p> # Outside the class : main</p>
