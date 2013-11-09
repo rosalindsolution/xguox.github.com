@@ -4,13 +4,30 @@
   <title><![CDATA[XguoX]]></title>
   <link href="http://xguox.github.com/atom.xml" rel="self"/>
   <link href="http://xguox.github.com/"/>
-  <updated>2013-11-08T00:02:08+08:00</updated>
+  <updated>2013-11-10T00:01:58+08:00</updated>
   <id>http://xguox.github.com/</id>
   <author>
     <name><![CDATA[XguoX]]></name>
     <email><![CDATA[golvinlu@gmail.com]]></email>
   </author>
 
+  
+  <entry>
+    <title type="html"><![CDATA[一本书和一个杯子]]></title>
+    <link href="http://xguox.github.com/blog/2013/11/09/a-sudden-consciousness/"/>
+    <updated>2013-11-09T23:17:00+08:00</updated>
+    <id>http://xguox.github.com/blog/2013/11/09/a-sudden-consciousness</id>
+    <content type="html"><![CDATA[<p>忽然发现, 曾经买过一本Rails书, AWDWR.
+然后,落了在上海.<br/>
+第四版的,这一版本的中译本封面真心难看,跟英文原书完全不同了。</p>
+
+<p>其次还落了的是一个杯子.<br/>
+<img src="https://gagqnq.dm2301.livefilestore.com/y2pjyqqxX98DCYtkwLQsHtjPL7ciJvZF6OCJEAZnvRbwbaqbJEPq2rUH7U-Z01ayjUTZZce_F2BUz32TOcnOenBCZWp7wCo4CnQxxm7GCHh-z8/T2Kd9EXiRaXXXXXXXX_!!112015850.jpg_310x310.jpg?psid=1" alt="" /><br/>
+ 当时选择买这个杯子的原因是因为上面的20, 刚好那时20岁. 这没一会. 我就即将22岁了. 还记得这个杯子比一般的要高出个七八厘米,目测也是20cm左右, 也特厚特重. 但是用久了,习惯了以后就没感觉了. 等到我回来家里. 刚开始的那些天拿起家里的杯子各种轻, 那种感觉特别明显. 但是, 时间过去, 我也又熟悉了家里的这个这么轻的杯子,忘记了那个20的重量.</p>
+
+<p> 也不知道还有啥落了,估计有也不是什么重要东西, 滚回来一年了.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[重拾Ruby (III)]]></title>
@@ -2789,98 +2806,6 @@ Actually, 想装啥插件可以直接在里头搜, 或者网页版搜索, 一般
 <p>现阶段的plugins自然还是跟Octopress有些差距的,  不过挺看好的. 虽然暂时不撤往Hexo. 但还是弄了个<a href="http://xguoxlu.github.io/">github pages</a>, 喜欢折腾吧&hellip;</p>
 
 <p>另外也顺带把404页面改成扣扣的公益页面了. 尽管知道不太可能起到什么作用&hellip;</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[最近在折腾 -- deploy Meteor on heroku]]></title>
-    <link href="http://xguox.github.com/blog/2013/04/06/deploy-meteor-on-heroku/"/>
-    <updated>2013-04-06T23:42:00+08:00</updated>
-    <id>http://xguox.github.com/blog/2013/04/06/deploy-meteor-on-heroku</id>
-    <content type="html"><![CDATA[<p>貌似有好一段时间没有在这儿小发一些闷骚或者情感泛滥什么的, 都是用自己蹩脚的英语水平翻译些英文post. 这些天想部署个Meteor app玩一玩, 结果一玩就各种出事了.</p>
-
-<p>vps退货, godaddy的莫名失单, 部署各种卡壳&hellip;</p>
-
-<p>因为最近比较多的关注前端的东西,  同时在自己local耍着<a href="https://github.com/SachaG/Telescope">SachaG / Telescope</a>这个基于Meteor的项目. 于是也就顺手搭了<a href="http://frontn.com">FrontN</a>这么个类似HN, Reddit的玩意. 原本是准备直接把HN,Reddit clone 成中文版的, 不过<a href="http://news.dbanotes.net/">Fenng</a>貌似已经这么干了, 所以, 我也就不再造这个轮子了.另外原本也想专门作为<a href="http://jianshu.io">简书</a>的评论系统. 不过想想也不是很妥, 就&hellip;</p>
-
-<p>Meteor的系统是超级alpha的, 所以很多问题遇上了也没人帮忙, 解决. 比如之前在<a href="http://stackoverflow.com/questions/15654637/same-helper-for-different-template">Stack Overflow</a>. 而部署这一块, 是我比较陌生的. 包括以前搞Rails那会, 也没真正意义的整一整部署. 绝大部分时间都在本地跑啊跑. 所以, 在Meteor, 也是这一块最让我头疼.</p>
-
-<!--more -->
-
-
-<p>从vps到appfog到heroku, 各种转了一圈, 最终还是选定了heroku.  原因之一就是资料相对多, 出错情况也较少.</p>
-
-<p>秉承流水帐作风, 待我慢慢道来.</p>
-
-<p>幸得以前一直搞得是Ruby/Rails. 所以装heroku的时候没啥压力, 不然可能这又得搞上一会. 直接下载了官方的<a href="https://toolbelt.heroku.com/">heroku toolbelt</a>无压力安装, login, clone&hellip;</p>
-
-<p>and then 跟着 <a href="https://github.com/oortcloud/heroku-buildpack-Meteorite">Heroku buildpack for Meteorite</a> 这个buildpack完成接下来的:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>heroku create --stack cedar --buildpack https://github.com/oortcloud/heroku-buildpack-Meteorite.git</span></code></pre></td></tr></table></div></figure>
-
-
-<p><strong>Please note: 在这如果你想把你的项目名改成想要的比如我改成了<a href="frontn.herokuapp.com">frontn.herokuapp.com</a>, 在heroku的项目页面上修改名字的同时, 记得把repo的git remote 也相应的更改</strong></p>
-
-<p>否则就会报错</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>heroku !  Resource not found</span></code></pre></td></tr></table></div></figure>
-
-
-<p>好吧, 很明显我自己傻13了才会知道要这么做的.</p>
-
-<p>接着到了最关键的push了.  当我<code>git push heroku master</code>的时候, bla,blah blah&hellip;下来还以为这次会真的很顺畅. 结果oops的一嘣</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="p">...</span>
-</span><span class='line'><span class="p">...</span>
-</span><span class='line'><span class="o">-----&gt;</span> <span class="nx">Launching</span><span class="p">...</span> <span class="o">!</span>     <span class="nx">Heroku</span> <span class="nx">push</span> <span class="nx">rejected</span><span class="p">,</span> <span class="nx">Please</span> <span class="nx">verify</span> <span class="nx">your</span> <span class="nx">account</span> <span class="nx">to</span> <span class="nx">install</span> <span class="k">this</span> <span class="nx">add</span><span class="o">-</span><span class="nx">on</span>
-</span><span class='line'><span class="nx">For</span> <span class="nx">more</span> <span class="nx">information</span><span class="p">,</span> <span class="nx">see</span> <span class="nx">http</span><span class="o">:</span><span class="c1">//devcenter.heroku.com/categories/billing</span>
-</span><span class='line'><span class="nx">Verify</span> <span class="nx">now</span> <span class="nx">at</span> <span class="nx">https</span><span class="o">:</span><span class="c1">//heroku.com/verify</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>纳尼,  原来这货还要用到一个mongo的数据库插件, 在这里是Mongohq, 原本没注意看以为直接
-<code>heroku addons:add mongohq:sandbox</code>就OK
-(sandbox是免费餐)</p>
-
-<p>结果毫无疑问的继续嘣&hellip;</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">Adding</span> <span class="nx">mongohq</span><span class="o">:</span><span class="nx">sandbox</span> <span class="nx">on</span> <span class="nx">frontn</span><span class="p">...</span> <span class="nx">failed</span>
-</span><span class='line'> <span class="o">!</span>    <span class="nx">Please</span> <span class="nx">verify</span> <span class="nx">your</span> <span class="nx">account</span> <span class="nx">to</span> <span class="nx">install</span> <span class="k">this</span> <span class="nx">add</span><span class="o">-</span><span class="nx">on</span>
-</span><span class='line'> <span class="o">!</span>    <span class="nx">For</span> <span class="nx">more</span> <span class="nx">information</span><span class="p">,</span> <span class="nx">see</span> <span class="nx">http</span><span class="o">:</span><span class="c1">//devcenter.heroku.com/categories/billing</span>
-</span><span class='line'> <span class="o">!</span>    <span class="nx">Verify</span> <span class="nx">now</span> <span class="nx">at</span> <span class="nx">https</span><span class="o">:</span><span class="c1">//heroku.com/verify</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Google之才知道原来Heroku在装插件前得通过传说中的credit card卡认证, 我辣时就更嘣了. 对于我等无产阶级而言, credit card仿佛就跟神一般滴遥不可及. 你想买3刀的godaddy域名?不好意思, 请出示credit card; 你想用name.com买域名? 不好意思, 请出示credit card; 你想买linode的vps?有credit card吗? 亲&hellip;正当我开始准备放弃heroku这条路时, 忽然无意中发现了虚拟信用卡这货, 顺藤摸瓜发现, 柳暗花明又一村.</p>
-
-<p><strong>工行国际e卡 + entropay</strong>(怎么觉得我像在拍广告的)</p>
-
-<p>虽然门路是找着了, 不过弄得我好不蛋疼.<br/>
-因为mac上工行网银不支持插U盾, 于是又启动了以前的那台老爷机, 一卡一顿的, 唉, 为了搞到手就忍忍吧&hellip;结果成功申请后唬弄半晌才知道原来要先用软妹b买美刀才能花, 而且至少买50刀. 我现在要50刀搞毛线撒&hellip;没法子, 只得照办了. 然后是entropay的虚拟卡>>><br/>
-OOXX一轮下来总算是把heroku的验证给通过了, 感动啊&hellip;</p>
-
-<p><code>heroku addons:add mongohq:sandbox</code></p>
-
-<p><code>git push heroku master</code></p>
-
-<p>好吧, 总算是成功了. 我容易吗&hellip;</p>
-
-<p>最后总结, heroku相对的来说除了出错情况较少, 可用资料多之外, 管理上也比自己搭vps要方便些, feel了一下MongoHQ的那个插件还不错&hellip;这样, 也就可以花更多的时间的app的开发上. 而不是折腾这出错那无解.  好吧, 尽管咱都爱折腾, 不过, 往你想的地方折腾不更好吗? 其实这些也就都是Paas的优势啦, 专注核心开发, 减少运维成本&hellip;</p>
-
-<p>其他的待续吧, 相比Rails, 或许底层它怎么干还没搞透, 但起码的知道它干了什么, 可Meteor我还真不知道它都干了些什么, 比Rails更magic.</p>
-
-<p>不管是否热爱前端的亲, 欢迎做客<a href="http://frontn.com">FrontN</a>. 有Bug那是必然的啦, 欢迎Feedback.</p>
 ]]></content>
   </entry>
   
