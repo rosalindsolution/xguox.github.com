@@ -4,7 +4,7 @@
   <title><![CDATA[XguoX]]></title>
   <link href="http://xguox.github.com/atom.xml" rel="self"/>
   <link href="http://xguox.github.com/"/>
-  <updated>2013-11-10T15:43:51+08:00</updated>
+  <updated>2013-11-10T17:02:12+08:00</updated>
   <id>http://xguox.github.com/</id>
   <author>
     <name><![CDATA[XguoX]]></name>
@@ -13,11 +13,72 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Octopress 添加 Audio]]></title>
+    <link href="http://xguox.github.com/blog/2013/11/10/octopress-audio/"/>
+    <updated>2013-11-10T16:07:00+08:00</updated>
+    <id>http://xguox.github.com/blog/2013/11/10/octopress-audio</id>
+    <content type="html"><![CDATA[<p>又是忽然的,想贴音乐在 Octopress ,但是发现貌似自带的插件只有 video_tag 贴视频. 搜索了一下发现一个合适的. 直接贴 Gist 了(尴尬,才发现 Gist 的样式貌似跟主题冲突了,又一个 TODO ):</p>
+
+<div><script src='https://gist.github.com/3487038.js?file=audio_tag.rb'></script>
+<noscript><pre><code># Title:
+#       Octopress HTML5 Audio Tag
+#       http://antoncherkasov.me/projects/octopress-plugins
+# Author:
+#       Anton Cherkasov
+#       http://antoncherkasov.me
+#       antoncherkasov@me.com
+# Syntax:
+#       {% audio url/to/mp3 %}
+#       {% audio url/to/mp3 url/to/ogg %}
+# Example:
+#       {% audio http://example.org/music.mp3 http://example.org/music.ogg %}
+# Output:
+#       &lt;audio controls&gt;&lt;source src=&quot;http://example.org/music.mp3&quot;&gt;&lt;source src=&quot;http://example.org/music.org&quot;&gt;&lt;/audio&gt;
+
+module Jekyll
+    class AudioTag &lt; Liquid::Tag
+        @audio = nil
+
+        def initialize(tag_name, markup, tokens)
+            @files = markup
+            super
+        end
+
+        def render(context)
+            output = super
+            audio = &quot;&lt;audio controls&gt;&quot;
+            @files.each_line(' ') do |file|
+                audio += &quot;&lt;source src='#{file[0...-1]}'&gt;&quot;
+            end
+            audio += &quot;&lt;/audio&gt;&quot;
+        end
+    end
+end
+
+Liquid::Template.register_tag('audio', Jekyll::AudioTag)</code></pre></noscript></div>
+
+
+<p>语法跟原本的 video_tag差不多,</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>    {% audio url/to/mp3 %}
+</span><span class='line'>    {% audio url/to/mp3  url/to/ogg %}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>有了插件支持,还得有 mp3 的 url, 听歌真心不多, 偶尔用的多的是虾米, 但却没处找上边的音乐的真实地址, 后得大神提醒, 在浏览器的 Inspector 可以查找到, 以 Chrome 为例, 在 Dev Tool 的 &lsquo;Network&rsquo; 可以轻易找到相应音乐的链接.<br/>
+还有更流弊的做法参考 <a href="http://www.cnblogs.com/bobzhou/archive/2013/02/16/bobzhou.html">http://www.cnblogs.com/bobzhou/archive/2013/02/16/bobzhou.html</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[一本书和一个杯子]]></title>
     <link href="http://xguox.github.com/blog/2013/11/09/a-sudden-consciousness/"/>
     <updated>2013-11-09T23:17:00+08:00</updated>
     <id>http://xguox.github.com/blog/2013/11/09/a-sudden-consciousness</id>
     <content type="html"><![CDATA[<p><audio controls><source src='http://m1.file.xiami.com/259/58259/515557/1771031189_3321387_l.mp3'></audio></p>
+
+<h1>Test audio_tag</h1>
 
 <p>忽然发现, 曾经买过一本Rails书, AWDWR.
 然后,落了在上海.<br/>
@@ -2748,67 +2809,6 @@ Actually, 想装啥插件可以直接在里头搜, 或者网页版搜索, 一般
 <p>有时候, 你可能会需要更深层的组合, 联接, 合并 publication, 而这些我们将会再找个时间详谈.</p>
 
 <p>原文来自Tom Coleman <a href="http://www.themeteorbook.com/2013/04/05/publications-and-subscriptions/">Understanding Publications and Subscriptions</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[继续折腾 -- Hexo版Blog]]></title>
-    <link href="http://xguox.github.com/blog/2013/04/08/hexo-blog-node-octopress/"/>
-    <updated>2013-04-08T22:51:00+08:00</updated>
-    <id>http://xguox.github.com/blog/2013/04/08/hexo-blog-node-octopress</id>
-    <content type="html"><![CDATA[<p>早之前就听说了<a href="http://zespia.tw/hexo/">Hexo</a>,  也就是Octopress的node.js版本, 不过是源自台湾.  setup的话其实中文英文都无妨吧.  尽管阅读起来肯定是较之中文困难, 不过也基本习惯了.</p>
-
-<p>基本上按照官方给出的guide很容易搭建好. 不过还是不准备现在就撤出Octopress奔赴Hexo, 尽管基于node.js的Hexo在generate, deploy的时候有一定的执行速度优势, 不过目前post不太多, so有感觉出差距, 但不大.</p>
-
-<p>因为不熟node, 还是遇上了麻烦, root下的db.json就不太明白. 导致在修改tags的时候死活修改不了, 查了一下github上以前的issue才知道得把db.json这货rm掉.  否则不管怎么generate, 怎么deploy都只会有增无减.</p>
-
-<p>另一个跟Octopress比较不同的是Markdown的解析器. Octopress用的是Liquid, 而Hexo用的是Marked. 大部分情况下都没什么差别. 而之所以发现这个不同是因为刚开始的generate的时候不断报错</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>undefined:11
-</span><span class='line'>if ((typeof _context !== "undefined" && typeof _context.&gt; posts !== "undefined
-</span><span class='line'>                                                        ^
-</span><span class='line'>SyntaxError: Unexpected token &gt;
-</span><span class='line'>    at Object.Function (unknown source)
-</span><span class='line'>    at createRenderFunc (/usr/local/Cellar/node/0.8.20/lib/node_modules/hexo/node_modules/swig/lib/swig.js:44:10)
-</span><span class='line'>    at createTemplate (/usr/local/Cellar/node/0.8.20/lib/node_modules/hexo/node_modules/swig/lib/swig.js:96:14)
-</span><span class='line'>    at getTemplate (/usr/local/Cellar/node/0.8.20/lib/node_modules/hexo/node_modules/swig/lib/swig.js:124:20)
-</span><span class='line'>    at Object.exports.compile (/usr/local/Cellar/node/0.8.20/lib/node_modules/hexo/node_modules/swig/lib/swig.js:186:14)
-</span><span class='line'>    at file.read.async.waterfall.compiled.replace.options.gutter (/usr/local/Cellar/node/0.8.20/lib/node_modules/hexo/lib/plugins/processor/index.js:128:27)
-</span><span class='line'>    at async.iterator.fn (/usr/local/Cellar/node/0.8.20/lib/node_modules/hexo/node_modules/async/lib/async.js:573:34)
-</span><span class='line'>    at async.waterfall.wrapIterator (/usr/local/Cellar/node/0.8.20/lib/node_modules/hexo/node_modules/async/lib/async.js:489:34)
-</span><span class='line'>    at process.startup.processNextTick.process._tickCallback (node.js:244:9)</span></code></pre></td></tr></table></div></figure>
-
-
-<p>用尽各种蛋疼的办法才发现原来是有一篇文章里头的一段underscore代码块解析出了问题</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>  
-</span><span class='line'>{{ &gt; posts}}
-</span><span class='line'> </span></code></pre></td></tr></table></div></figure>
-
-
-<p>
-吐血啊, 找了我老久.  原来是这个东西忘了套上 &ldquo;{ % raw % }&rdquo; &ldquo;{ % endraw % }&#8221;<br/>
-在Octopress(Liquid)里没套上的话则直接无视掉, 而Hexo(Marked)则直接嘣掉.</p>
-
-<p>现阶段的plugins自然还是跟Octopress有些差距的,  不过挺看好的. 虽然暂时不撤往Hexo. 但还是弄了个<a href="http://xguoxlu.github.io/">github pages</a>, 喜欢折腾吧&hellip;</p>
-
-<p>另外也顺带把404页面改成扣扣的公益页面了. 尽管知道不太可能起到什么作用&hellip;</p>
 ]]></content>
   </entry>
   

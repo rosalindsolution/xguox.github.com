@@ -7,7 +7,7 @@
 
 	<meta name="author" content="XguoX">
 
-<meta name="description" content="隔三差五会把Octopress的主题换一换, 换件衣服换个心情. 这次换的是这么多次更换以来个人觉得最赞的一次,基于mnmlpress , 貌似这个源项目也是fork自另外一个改编而成的. 然后那一个也是同样. Anyway, Octopress的主题大部分都这么改成的. And then, &hellip;"> <meta name="keywords" content="">
+<meta name="description" content="原本没有意思要班门弄斧写什么Ghost的部署感受帖的,不过前些天看到@lucifr 的这条tweet,于是还是忍不住写了,就让更多假死Ghost诞生吧. ghost 一出,网上又要冒出一大堆主题风格相似的 blog 了,然后更新两篇使用感受就处于假死状态&mdash; Lucifr (@ &hellip;"> <meta name="keywords" content="">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -48,6 +48,225 @@
 </header>
 
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<header>
+		<h2 class="title">
+			
+			<a href="/blog/2013/10/18/deploying-ghost-to-heroku/">
+			
+				Deploying Ghost to Heroku</a>
+		</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-10-18T13:00:00+08:00" pubdate data-updated="true">Oct 18<span>th</span>, 2013</time></div>
+	</header>
+	<div class="entry-content">
+		<p>原本没有意思要班门弄斧写什么Ghost的部署感受帖的,不过前些天看到@lucifr 的这条tweet,于是还是忍不住写了,就让更多假死Ghost诞生吧.</p>
+
+<blockquote class="twitter-tweet"><p>ghost 一出,网上又要冒出一大堆主题风格相似的 blog 了,然后更新两篇使用感受就处于假死状态</p>&mdash; Lucifr (@lucifr) <a href="https://twitter.com/lucifr/statuses/390104155152343040">October 15, 2013</a></blockquote>
+
+
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<p>先来感受帖,主要是与Octopress之流相比:<br/>
+毕竟还是新东西, bug,issue还有略多没解决的, 功能上也比较欠缺.不过好的地方在于这个移动支持好,  就算在野外拿着移动设备也是可以杠杠的写东西, 只是有多少人如此热衷到必须在室外用移动设备来写呢?还一个是数据的导入导出很简便.</p>
+
+<p>因为以前玩过Heroku, 所以不用各种安装<a href="https://toolbelt.heroku.com/">Heroku Toolbelt</a>,配置SSH key什么的. 也玩过Node, 好吧,这个也省了. (好吧, 我是不是可以不用写下去了 =.= ) 其实主要只是写写这个过程遇到的一些问题吧. 系统是 OS X 10.8.5</p>
+
+<p>在Local安装Ghost(当前最新版本为0.3.2)</p>
+
+<p><a href="https://en.ghost.org/download/">下载</a> 源代码并解压, cd 过去, 在Node和NPM安装配置没问题的前提下
+<code>npm install</code>
+在本地跑起来
+<code>npm start</code>
+基本没报错就往后走不折腾, 也可以在浏览器玩儿一会先的.</p>
+
+<p>接着是让Heroku知道怎么把Ghost跑起来, 执行
+<code>echo "web: node index.js" &gt; Procfile</code>
+在Ghost目录 创建<code>Procfile</code>文本文件并写入<code>web: node index.js</code></p>
+
+<p>部署到Heroku用的数据库是PostgreSQL, 而不是Ghost默认的sqlite, 所以要先在
+<code>package.json</code>这个文件里头做些修改, 在<code>dependencies</code>节点把sqlite的那行去掉改为</p>
+
+<p><code>"pg": "latest",</code></p>
+
+<p>别忘了刚开始在本地跑起来的时候已经安装了sqlite3
+所以,还要执行
+<code>npm uninstall sqlite3</code></p>
+
+<p>下面的一篇参考里头没有提到这点.</p>
+
+<p>准备就绪后就是初始化Git仓库了</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git init
+</span><span class='line'>git add .
+</span><span class='line'>git commit -m "Init"</span></code></pre></td></tr></table></div></figure>
+
+
+<p>本地有了Git仓库,还要有个Heroku的远程库,创建项目
+<code>heroku create</code>
+执行完之后在Heroku的Dashboard看到你的项目了,不过是啥都没,因为还没有push.
+生成的项目一般都是类似这样名字很帅的</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Creating fathomless-reaches-9699... done, stack is cedar
+</span><span class='line'>http://fathomless-reaches-9699.herokuapp.com/ | git@heroku.com:fathomless-reaches-9699.git</span></code></pre></td></tr></table></div></figure>
+
+
+<p>配置数据库之前先装个PostgreSQL的插件.</p>
+
+<p><code>heroku addons:add heroku-postgresql:dev</code></p>
+
+<p>该命令会输出<code>Attached as HEROKU_POSTGRESQL_BLACK_URL....</code> 类似的信息,其中的BLACK是随机的颜色单词. 下一步命令要用到的.</p>
+
+<p><code>heroku pg:promote HEROKU_POSTGRESQL_BLACK</code></p>
+
+<p>插件安装就搞定了,接下来是配置文件. 编辑根目录下的<code>config.js</code></p>
+
+<p>主要要改的地方都在development下, 没发觉不同模式的区别, 如果发图片是用上传的方式的话,在每次push之后图片都会没掉,所以还是用外链好了, 用production也一样,记得改环境变量<code>
+heroku config:set NODE_ENV=production</code></p>
+
+<p>1 url
+比如这里改成<code>  url: 'http://fathomless-reaches-9699.herokuapp.com',</code>
+2 database
+这里要先登录到你的Heroku的Dashboard, 在你的app下可以看到插件栏的<code>Heroku Postgres Dev :: [Color]</code>,点进去就看到你的数据库的各种配置信息,如下图:</p>
+
+<p><img src="https://g3axqg.dm2301.livefilestore.com/y2pAXIXhAaAoKzlQnO0BMJtfAxFJpGGYjlu_qbNuISsChkrL3vj1grBXJW0RDIbw1kZPze2If1ZX_jQDNy9SDU-8RpPHYc94USB54Mx7Dc6r04/QQ20131018-3.png?psid=1" alt="" /></p>
+
+<p><img src="https://g3yyhw.dm2302.livefilestore.com/y2pKkKpTuU-QBtu3ZzKEfcZGPiHuH_oRCDn1dBt7N0wCh9uLkSGkqdjbc8f09uPvejIoGEOoUdn-IQICWWQVUCIvI3ZGdECSNfyRgXtd4JrTRo/QQ20131018-4.png?psid=1" alt="" /></p>
+
+<p>相应的把<code>config.js</code> development下的database修改成如下:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>database: {
+</span><span class='line'>        url: 'http://fathomless-reaches-9699.herokuapp.com/',
+</span><span class='line'>        mail: {},
+</span><span class='line'>        database: {
+</span><span class='line'>            client: 'postgres',
+</span><span class='line'>            connection: {
+</span><span class='line'>                host: 'ec2-54-235-92-161.compute-1.amazonaws.com',
+</span><span class='line'>                user: 'tgbutpeekudvst',
+</span><span class='line'>                password: 'POpn0EK7TNfW1nfgVDsXgw_N4L',
+</span><span class='line'>                database: 'd3399k1nh326po',
+</span><span class='line'>                port: '5432'
+</span><span class='line'>            },
+</span><span class='line'>            debug: false
+</span><span class='line'>        },</span></code></pre></td></tr></table></div></figure>
+
+
+<p>3 server</p>
+
+<p>将原本的</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>    server: {
+</span><span class='line'>           host: '127.0.0.1',
+</span><span class='line'>           port: '2368'
+</span><span class='line'>    }</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>    server: {
+</span><span class='line'>        host: '0.0.0.0',
+</span><span class='line'>        port: process.env.PORT
+</span><span class='line'>    }</span></code></pre></td></tr></table></div></figure>
+
+
+<p>然后就可以提交准备push了</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'> git add .
+</span><span class='line'> git commit -m 'for push'</span></code></pre></td></tr></table></div></figure>
+
+
+<p>最后Push到Heroku
+<code>git push heroku master</code><br/>
+其实, 后面才是我要写的点. 当我执行这条命令时,
+不断报错如下:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Received disconnect from 50.19.85.132: 10: user closed connection
+</span><span class='line'>error: pack-objects died of signal 13
+</span><span class='line'>error: failed to push some refs to 'git@heroku.com:fathomless-reaches-9699.git'</span></code></pre></td></tr></table></div></figure>
+
+
+<p>话说表示至今没找着原因和解决方法.
+求救于Google和StackOverflow的大神也不行. 什么<code>git repack</code>的不起作用. 后来发了个ticket给heroku求助.貌似没鸟我,但是第二天忽然就好了,能push了.然后前一秒push出错,没过一会再push又成功了.</p>
+
+<p>另外的还有一个地方下面的参考没有提到的是, 成功部署上去后打开链接可能你会看到这样的错误信息</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>An error occurred in the application and your page could not be served. Please try again in a few moments.
+</span><span class='line'>
+</span><span class='line'>If you are the application owner, check your logs for details.</span></code></pre></td></tr></table></div></figure>
+
+
+<p>这东西也纠结了我老久,Logs显示
+<code>ERROR: Invalid value, check page, pages, limit and total are numbers</code><br/>
+没找着原因,后来在官方的Forum上看到的解决办法,是把<code>content/themes/casper/index.hbs</code>里头的  {{pagination}} 注释掉.</p>
+
+<p>然后,就没然后了, 部署完毕,打开你的项目链接玩儿Ghost吧.</p>
+
+<p>另外试过用Mysql作为数据库,但是因为Heroku上唯一的Mysql插件<a href="">ClearDB</a>用了之后会有权限<a href="https://github.com/TryGhost/Ghost/issues/863">BUG</a>,貌似官方还没解决. 所以还是老老实实的用了PostgreSQL</p>
+
+<p>主题的话,<a href="http://marketplace.ghost.org/">这里</a>有收费和免费的可以下载, 下载下来copy到<code>content/themes/</code>这个目录下就OK了, push之后就可以在你的设置页面里直接更换了. 好吧,这样的话&#8221;一大堆主题风格相似的 blog&#8221;就不能出现了啊.</p>
+
+<p>另, 评论也需要另外添加设置, easy job啦. <a href="http://christophvoigt.com/enable-comments-on-ghost-with-disqus/">参考这里</a></p>
+
+<p>参考资源:</p>
+
+<p><a href="http://docs.ghost.org/installation/">http://docs.ghost.org/installation/</a><br/>
+<a href="http://www.howtoinstallghost.com/how-to-install-ghost-on-heroku/">http://www.howtoinstallghost.com/how-to-install-ghost-on-heroku/</a><br/>
+<a href="http://d5c.me/deploying-ghost-to-heroku/">http://d5c.me/deploying-ghost-to-heroku/</a></p>
+
+		
+		
+	</div>
+
+</article>
 
 
     <article class="post">
@@ -344,45 +563,6 @@ git bisect reset
 
 		
 		<a href="/blog/2013/05/14/negative-energy/" class="more-link">Read on &rarr;</a>
-	</div>
-
-</article>
-
-
-    <article class="post">
-	<header>
-		<h2 class="title">
-			
-			<a href="/blog/2013/05/12/record-of-the-void-century-and-d/">
-			
-				[Repost]关于D一族的真相以及历史文本的分析</a>
-		</h2>
-		<div class="meta date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-05-12T14:16:00+08:00" pubdate data-updated="true">May 12<span>th</span>, 2013</time></div>
-	</header>
-	<div class="entry-content">
-		<h2>关于D一族的真相:</h2>
-
-<p>路飞等人,一出场就有了与众不同的名字,即在名字当中比所有的普通人都多了一个D字,而海贼里不像现实中的美国等国,有MiddleName这个属性,事实上除了D一族的人以外,漫画中还没有出现过三个名字的人物.这真的是D一族自古流传下来的特殊起名方式吗?</p>
-
-<p>我的观点是,是流传下来的,但这个起名方式却是从800年前刚刚突然开始流传的.因为罗宾在读到海底森林的历史文本时,最后的署名是&#8221;乔伊波伊&#8221;,这个人物很明显与D一族息息相关但却没有D(该人物具体分析见后文).</p>
-
-<p><img src="https://uvqrqa.dm1.livefilestore.com/y2pfqTNQa7HcK__HqPl6n8RqzkF080dUaO13KHRGdeduPCn-y7geS-x6xcW98_F9QgJFV5HI9qMPiUUef_-3gpCxx8GRC1mKy-BgjZdoUiLP48/838ba61ea8d3fd1f45f53966314e251f94ca5fe9.jpg?psid=1" alt="" /></p>
-
-
-		
-		<a href="/blog/2013/05/12/record-of-the-void-century-and-d/" class="more-link">Read on &rarr;</a>
 	</div>
 
 </article>

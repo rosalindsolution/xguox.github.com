@@ -7,7 +7,7 @@
 
 	<meta name="author" content="XguoX">
 
-<meta name="description" content="最近在做个课程设计,好吧,俺老师是要求用JSP的,可惜我那弱爆了的水平是不可能完成的.于是顶着各种压力自己用Rails来做. 今天才发现个问题,原来mysql默认存储的int貌似最多是10位就爆了,原本我的数据库中有学号那个字段的并且migration是存为integer, &hellip;"> <meta name="keywords" content="">
+<meta name="description" content="今个儿有发现问题,也有学到东西了. 先说学到的吧,在做公司的论坛时候,要做一个浏览统计,因为一般做浏览统计都要加个时间限制的,刚接到任务时候第一反应就是在show这个action上使用session,后来自然很悲剧的粗大事了.因为每点击一篇topic都会keep住一个session,所以, &hellip;"> <meta name="keywords" content="">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -48,6 +48,41 @@
 </header>
 
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<header>
+		<h2 class="title">
+			
+			<a href="/blog/2012/06/04/some-findings/">
+			
+				一些学习,一些发现</a>
+		</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-06-04T17:20:00+08:00" pubdate data-updated="true">Jun 4<span>th</span>, 2012</time></div>
+	</header>
+	<div class="entry-content">
+		<p>今个儿有发现问题,也有学到东西了.</p>
+
+<p>先说学到的吧,在做公司的论坛时候,要做一个浏览统计,因为一般做浏览统计都要加个时间限制的,刚接到任务时候第一反应就是在show这个action上使用session,后来自然很悲剧的粗大事了.因为每点击一篇topic都会keep住一个session,所以,如果做了时间限制后,点击了一篇再去点击其他的topic的话,则只会在第一篇topic那增加点击数,而其他的不会.其实,逻辑很Y的简单,那会临近下班时间,于是就没认真想,还以为很复杂.后来这么简单的问题还要公司的高手提示,真心觉得失败啊.</p>
+
+
+		
+		<a href="/blog/2012/06/04/some-findings/" class="more-link">Read on &rarr;</a>
+	</div>
+
+</article>
 
 
     <article class="post">
@@ -256,39 +291,6 @@
 
 		
 		<a href="/blog/2012/03/23/two-weeks-withs-rails/" class="more-link">Read on &rarr;</a>
-	</div>
-
-</article>
-
-
-    <article class="post">
-	<header>
-		<h2 class="title">
-			
-			<a href="/blog/2012/03/12/something-in-google-plus/">
-			
-				Something in Google Plus</a>
-		</h2>
-		<div class="meta date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-03-12T21:09:00+08:00" pubdate data-updated="true">Mar 12<span>th</span>, 2012</time></div>
-	</header>
-	<div class="entry-content">
-		<p>忘了从什么时候开始g+貌似不用翻墙就能上(貌似我一直都要开着VPN才能上),也逐渐的有了不少的国人开始登陆到这片&#8221;新土地&#8221;.其实不管g+上的国人多了少了怎么的,都跟我没一毛钱关系.但是,当我发现奥巴马的g+页面下的那某一些无聊,幼稚,低级的中文评论时&hellip;呃,好吧,其实也跟我也没啥关系.但是,那种侵占式地发垃圾评论,别说是外国人.即使是作为中国人的我都真看不下去了.</p>
-
-
-		
-		<a href="/blog/2012/03/12/something-in-google-plus/" class="more-link">Read on &rarr;</a>
 	</div>
 
 </article>

@@ -1,0 +1,209 @@
+
+<!DOCTYPE HTML>
+<html lang="en-GB">
+<head>
+	<meta charset="utf-8">
+	<title>Octopress 添加 Audio  | XguoX</title>
+
+	<meta name="author" content="XguoX">
+
+<meta name="description" content="又是忽然的,想贴音乐在 Octopress ,但是发现貌似自带的插件只有 video_tag 贴视频. 搜索了一下发现一个合适的. 直接贴 Gist 了(尴尬,才发现 Gist 的样式貌似跟主题冲突了,又一个 TODO ): # Title:
+# Octopress HTML5 Audio Tag &hellip;"> <meta name="keywords" content="">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="XguoX" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	
+
+</head>
+
+
+
+<body>
+	<header id="header" class="inner"><h1><a href="/">XguoX</a></h1>
+<span class="tagline">Coder & Jabber</span>
+<nav id="main-nav"><ul>
+	<li><a href="http://www.flickr.com/photos/groverlu/sets" target="_blank">Flickr</a></li>
+	<li><a href="/about">About</a></li>
+	<li><a href="/atom.xml">RSS</a></li>
+</ul>
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul>
+	<li><a href="http://www.flickr.com/photos/groverlu/sets" target="_blank">Flickr</a></li>
+	<li><a href="/about">About</a></li>
+	<li><a href="/atom.xml">RSS</a></li>
+</ul>
+</div>
+	</div>
+</nav>
+
+
+</header>
+
+	<div id="content" class="inner"><article class="post">
+	<header>
+		<h2 class="title">Octopress 添加 Audio</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-11-10T16:07:00+08:00" pubdate data-updated="true">Nov 10<span>th</span>, 2013</time></div>
+	</header>
+	<div class="entry-content"><p>又是忽然的,想贴音乐在 Octopress ,但是发现貌似自带的插件只有 video_tag 贴视频. 搜索了一下发现一个合适的. 直接贴 Gist 了(尴尬,才发现 Gist 的样式貌似跟主题冲突了,又一个 TODO ):</p>
+
+<div><script src='https://gist.github.com/3487038.js?file=audio_tag.rb'></script>
+<noscript><pre><code># Title:
+#       Octopress HTML5 Audio Tag
+#       http://antoncherkasov.me/projects/octopress-plugins
+# Author:
+#       Anton Cherkasov
+#       http://antoncherkasov.me
+#       antoncherkasov@me.com
+# Syntax:
+#       {% audio url/to/mp3 %}
+#       {% audio url/to/mp3 url/to/ogg %}
+# Example:
+#       {% audio http://example.org/music.mp3 http://example.org/music.ogg %}
+# Output:
+#       &lt;audio controls&gt;&lt;source src=&quot;http://example.org/music.mp3&quot;&gt;&lt;source src=&quot;http://example.org/music.org&quot;&gt;&lt;/audio&gt;
+
+module Jekyll
+    class AudioTag &lt; Liquid::Tag
+        @audio = nil
+
+        def initialize(tag_name, markup, tokens)
+            @files = markup
+            super
+        end
+
+        def render(context)
+            output = super
+            audio = &quot;&lt;audio controls&gt;&quot;
+            @files.each_line(' ') do |file|
+                audio += &quot;&lt;source src='#{file[0...-1]}'&gt;&quot;
+            end
+            audio += &quot;&lt;/audio&gt;&quot;
+        end
+    end
+end
+
+Liquid::Template.register_tag('audio', Jekyll::AudioTag)</code></pre></noscript></div>
+
+
+<p>语法跟原本的 video_tag差不多,</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>    {% audio url/to/mp3 %}
+</span><span class='line'>    {% audio url/to/mp3  url/to/ogg %}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>有了插件支持,还得有 mp3 的 url, 听歌真心不多, 偶尔用的多的是虾米, 但却没处找上边的音乐的真实地址, 后得大神提醒, 在浏览器的 Inspector 可以查找到, 以 Chrome 为例, 在 Dev Tool 的 &lsquo;Network&rsquo; 可以轻易找到相应音乐的链接.<br/>
+还有更流弊的做法参考 <a href="http://www.cnblogs.com/bobzhou/archive/2013/02/16/bobzhou.html">http://www.cnblogs.com/bobzhou/archive/2013/02/16/bobzhou.html</a></p>
+</div>
+
+</article>
+
+	
+	<div class="share">
+	  <!-- <ul> -->
+	  <!--   <li>
+  <a href="https://twitter.com/intent/tweet?text=Octopress 添加 Audio by @&url=http://xguox.github.com/blog/2013/11/10/octopress-audio/" title="Share Octopress 添加 Audio on Twitter">
+    <img src="/images/social/twitter.png" />
+  </a>
+</li>
+ -->
+	  <!--   <li>
+  <a href="https://www.facebook.com/sharer.php?u=http://xguox.github.com/blog/2013/11/10/octopress-audio/" title="Share Octopress 添加 Audio on Facebook">
+    <img src="/images/social/facebook.png" />
+  </a>
+</li>
+ -->
+	  <!--   <li>
+  <a href="https://plus.google.com/share?url=http://xguox.github.com/blog/2013/11/10/octopress-audio/" title="Share Octopress 添加 Audio on Google Plus">
+    <img src="/images/social/google.png" />
+  </a>
+</li>
+ -->
+	  <!-- </ul> -->
+	</div>
+
+
+
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+</div>
+	<footer id="footer" class="inner"><br>
+<br>
+<br>
+<br>
+&copy; 2013
+
+    XguoX
+
+</footer>
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/hyphenator.js"></script>
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'xguox';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://xguox.github.com/blog/2013/11/10/octopress-audio/';
+        var disqus_url = 'http://xguox.github.com/blog/2013/11/10/octopress-audio/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-39166710-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+
+
+</body>
+<script>
+  $(document).ready(function() {
+  // Make images center
+  $('p:has(img)').css('text-align', 'center');
+  });
+</script>
+</html>
