@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Octopress | XguoX]]></title>
   <link href="http://xguox.github.com/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://xguox.github.com/"/>
-  <updated>2013-11-10T17:02:12+08:00</updated>
+  <updated>2013-11-10T17:07:10+08:00</updated>
   <id>http://xguox.github.com/</id>
   <author>
     <name><![CDATA[XguoX]]></name>
@@ -69,8 +69,38 @@ Liquid::Template.register_tag('audio', Jekyll::AudioTag)</code></pre></noscript>
 
 <p>```</p>
 
+<p><audio controls><source src='<a'><source src='href="http://m1.file.xiami.com/259/58259/71695147/1771959699_10559682_l.mp3">http://m1.file.xiami.com/259/58259/71695147/1771959699_10559682_l.mp3</a>'></audio></p>
+
 <p>有了插件支持,还得有 mp3 的 url, 听歌真心不多, 偶尔用的多的是虾米, 但却没处找上边的音乐的真实地址, 后得大神提醒, 在浏览器的 Inspector 可以查找到, 以 Chrome 为例, 在 Dev Tool 的 &lsquo;Network&rsquo; 可以轻易找到相应音乐的链接.<br/>
 还有更流弊的做法参考 <a href="http://www.cnblogs.com/bobzhou/archive/2013/02/16/bobzhou.html">http://www.cnblogs.com/bobzhou/archive/2013/02/16/bobzhou.html</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Octopress' Rake New_post Doesn't Work With Zsh]]></title>
+    <link href="http://xguox.github.com/blog/2013/01/04/octopress-rake-new-post-doesnt-work-with-zsh/"/>
+    <updated>2013-01-04T20:06:00+08:00</updated>
+    <id>http://xguox.github.com/blog/2013/01/04/octopress-rake-new-post-doesnt-work-with-zsh</id>
+    <content type="html"><![CDATA[<p>原文&mdash;&ndash;<a href="http://ryanarneson.com/blog/2012/04/07/rake-new-post-doesnt-work-with-zsh/">传送门</a></p>
+
+<p> 近日,在医院闲来无事写点东西,才发现,在<strong>zsh(oh-my-zsh)</strong>下,原本用于生成一篇Octopress Post的命令<code>rake new_post["My new post"]</code>不管用鸟,各种报错
+<code>
+zsh: no matches found: new_post[My new post]
+</code></p>
+
+<!-- more -->
+
+
+<p>如果你对个中缘由感兴趣的话,这有个<a href="https://github.com/imathis/octopress/issues/117#issuecomment-3707975">传送门</a></p>
+
+<p>如果你木有兴趣知道,那想要解决也很简单,把命令换成<code>rake new_post\["My new post"\]</code></p>
+
+<p>由传送门对面的讨论可知, <a href="https://github.com/imathis">imathis</a>准备把<strong>new_post</strong>命令更新成以下这样:</p>
+
+<p><code>
+rake new_post
+Enter a post title:
+</code></p>
 ]]></content>
   </entry>
   
