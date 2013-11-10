@@ -3,7 +3,7 @@ layout: post
 title: "扯点Sublime"
 date: 2013-04-11 18:33
 comments: true
-categories: Sublime
+categories: Tools
 ---
 ##Fxxk Jabber
 回想起初初接触编程语言的时候, 特喜欢折腾IDE的玩意, 什么visual studio啊, Eclipse啊, Netbeans, Aptana的会不会用好不好用都不管了, 装进PC再说, 怎么说, 很傻13的觉得我的PC里有这些工具我就牛13了, 熟不知真正的编程知识却木有学到, 后来搞Ruby开始放弃笨重的IDE改玩Vim和Sublime Text, 当时Textmate被捧上天不过木有Mac耍不起.   

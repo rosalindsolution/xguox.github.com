@@ -3,7 +3,7 @@ layout: post
 title: "Octopress' Rake New_post Doesn't Work With Zsh"
 date: 2013-01-04 20:06
 comments: true
-categories: 
+categories: Octopress
 ---
 原文---[传送门]( http://ryanarneson.com/blog/2012/04/07/rake-new-post-doesnt-work-with-zsh/)
 

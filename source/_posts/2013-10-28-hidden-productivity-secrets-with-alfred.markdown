@@ -3,7 +3,7 @@ layout: post
 title: "Hidden Productivity Secrets With Alfred"
 date: 2013-10-28 15:07
 comments: true
-categories: Alfred Tricks Translate
+categories: Tools Tricks Translate
 ---
 好的开发人员总是在寻找可以让自己的工作流程更快速,更自动化的方法.  
 这次,我们带来的是**Alfred的一系列workflows**,它们可以极大的提高你的开发效率,相信你会为之震惊.  
