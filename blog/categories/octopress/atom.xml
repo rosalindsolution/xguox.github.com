@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Octopress | XguoX]]></title>
   <link href="http://xguox.github.com/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://xguox.github.com/"/>
-  <updated>2013-11-10T17:07:10+08:00</updated>
+  <updated>2013-11-10T17:11:33+08:00</updated>
   <id>http://xguox.github.com/</id>
   <author>
     <name><![CDATA[XguoX]]></name>
@@ -59,7 +59,7 @@ end
 Liquid::Template.register_tag('audio', Jekyll::AudioTag)</code></pre></noscript></div>
 </p>
 
-<p>语法跟原本的 video_tag差不多,</p>
+<p>语法跟原本的 <code>video_tag</code> 差不多,</p>
 
 <p>```</p>
 
