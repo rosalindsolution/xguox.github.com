@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Jabber | XguoX]]></title>
   <link href="http://xguox.github.com/blog/categories/jabber/atom.xml" rel="self"/>
   <link href="http://xguox.github.com/"/>
-  <updated>2013-11-14T10:24:09+08:00</updated>
+  <updated>2013-11-14T14:31:17+08:00</updated>
   <id>http://xguox.github.com/</id>
   <author>
     <name><![CDATA[XguoX]]></name>
@@ -18,11 +18,11 @@
     <link href="http://xguox.github.com/blog/2013/11/11/camera-geek/"/>
     <updated>2013-11-11T10:07:00+08:00</updated>
     <id>http://xguox.github.com/blog/2013/11/11/camera-geek</id>
-    <content type="html"><![CDATA[<blockquote><p>好不容易把闹腾相机的心静下来，结果前些天又让骚尼君扯动了那片涟漪。A7 / A7R 完全把我的折腾心又搅起来了。这不20号帮牛总拍完婚礼立马把6D出了。下订, 然后，就剩下等待了, 结果, 在我无限接近得到A7的时候,半路杀出了个<a href="http://xjrumo.com/2013/11/05/nikon_df_comming/"> Nikon Df</a>, 这是帅的一塌糊涂啊,尤其银色的骚的无与伦比, 快到嘴的A7要飞了.再结果, 那让人蛋碎的定价&hellip;</p></blockquote>
-
-<p><audio controls><source src='<a'><source src='href="http://hq.update.sony.net.edgesuite.net/united/clock/assets/sound/a_clock_main_theme2012.mp3">http://hq.update.sony.net.edgesuite.net/united/clock/assets/sound/a_clock_main_theme2012.mp3</a>'></audio><br/>
-赞上一个bgm,来自 <a href="http://www.sony.net/united/clock/">Sony Global &ndash; &ldquo;α&rdquo; CLOCK: WORLD TIME, CAPTURED BY &ldquo;α&rdquo;</a> <br/>
+    <content type="html"><![CDATA[<p>{% audio <a href="http://hq.update.sony.net.edgesuite.net/united/clock/assets/sound/a_clock_main_theme2012.mp3">http://hq.update.sony.net.edgesuite.net/united/clock/assets/sound/a_clock_main_theme2012.mp3</a> %}<br/>
+先赞上一个bgm,来自 <a href="http://www.sony.net/united/clock/">Sony Global &ndash; &ldquo;α&rdquo; CLOCK: WORLD TIME, CAPTURED BY &ldquo;α&rdquo;</a> <br/>
 那个对焦声音以前听A77听习惯了,现在蛮有感觉的.</p>
+
+<blockquote><p>好不容易把闹腾相机的心静下来，结果前些天又让骚尼君扯动了那片涟漪。A7 / A7R 完全把我的折腾心又搅起来了。这不20号帮牛总拍完婚礼立马把6D出了。下订, 然后，就剩下等待了, 结果, 在我无限接近得到A7的时候,半路杀出了个<a href="http://xjrumo.com/2013/11/05/nikon_df_comming/"> Nikon Df</a>, 这是帅的一塌糊涂啊,尤其银色的骚的无与伦比, 快到嘴的A7要飞了.再结果, 那让人蛋碎的定价&hellip;</p></blockquote>
 
 <p>开篇之前，先扯出我的观点：</p>
 
@@ -122,7 +122,7 @@
     <link href="http://xguox.github.com/blog/2013/11/09/a-sudden-consciousness/"/>
     <updated>2013-11-09T23:17:00+08:00</updated>
     <id>http://xguox.github.com/blog/2013/11/09/a-sudden-consciousness</id>
-    <content type="html"><![CDATA[<p><audio controls><source src='<a'><source src='href="http://m1.file.xiami.com/259/58259/515557/1771031189_3321387_l.mp3">http://m1.file.xiami.com/259/58259/515557/1771031189_3321387_l.mp3</a>'></audio></p>
+    <content type="html"><![CDATA[<p>{% audio <a href="http://m1.file.xiami.com/259/58259/515557/1771031189_3321387_l.mp3">http://m1.file.xiami.com/259/58259/515557/1771031189_3321387_l.mp3</a> %}</p>
 
 <h1>Test audio_tag</h1>
 
@@ -242,8 +242,8 @@
 
 <p>最后,我发觉并深感OP里最喜欢的不是Luffy君,说不上谁是最喜欢的角色,但,可以肯定,对 罗宾酱&amp;索大 的喜欢更多一些.</p>
 
-<p><img class="left <a" src="href="https://7nmgwa.dm1.livefilestore.com/y2piowWh9rmGFKLaMMZX9p0hjieu0nhXYeJLNicKrqCqu44Ai-nJgUbgIl4ELt5Nty2DCHO6Gd0GHh-GagLaN3XOkefcg5FVZON8l0UQm1yxLE/Nico.Robin.full.1401954.jpg?psid=1">https://7nmgwa.dm1.livefilestore.com/y2piowWh9rmGFKLaMMZX9p0hjieu0nhXYeJLNicKrqCqu44Ai-nJgUbgIl4ELt5Nty2DCHO6Gd0GHh-GagLaN3XOkefcg5FVZON8l0UQm1yxLE/Nico.Robin.full.1401954.jpg?psid=1</a>" width="350" height="600">
-<img class="right <a" src="href="https://7no7na.dm2301.livefilestore.com/y2pyPdpo4WPWPKcGC9nYQoI5vn_BOqO2S31h64Nh-nGZZq4T99T8w3lNT_JVot7o9u9Xeh9g31anmx7mBgY8vnmGza_wDQMYvm9flRIYiUxsVU/7f4996e7jw1e5c2o3526nj20bu0goaar.jpg?psid=1">https://7no7na.dm2301.livefilestore.com/y2pyPdpo4WPWPKcGC9nYQoI5vn_BOqO2S31h64Nh-nGZZq4T99T8w3lNT_JVot7o9u9Xeh9g31anmx7mBgY8vnmGza_wDQMYvm9flRIYiUxsVU/7f4996e7jw1e5c2o3526nj20bu0goaar.jpg?psid=1</a>" width="350" height="600"></p>
+<p>{% img left <a href="https://7nmgwa.dm1.livefilestore.com/y2piowWh9rmGFKLaMMZX9p0hjieu0nhXYeJLNicKrqCqu44Ai-nJgUbgIl4ELt5Nty2DCHO6Gd0GHh-GagLaN3XOkefcg5FVZON8l0UQm1yxLE/Nico.Robin.full.1401954.jpg?psid=1">https://7nmgwa.dm1.livefilestore.com/y2piowWh9rmGFKLaMMZX9p0hjieu0nhXYeJLNicKrqCqu44Ai-nJgUbgIl4ELt5Nty2DCHO6Gd0GHh-GagLaN3XOkefcg5FVZON8l0UQm1yxLE/Nico.Robin.full.1401954.jpg?psid=1</a> 350 600 %}
+{% img right <a href="https://7no7na.dm2301.livefilestore.com/y2pyPdpo4WPWPKcGC9nYQoI5vn_BOqO2S31h64Nh-nGZZq4T99T8w3lNT_JVot7o9u9Xeh9g31anmx7mBgY8vnmGza_wDQMYvm9flRIYiUxsVU/7f4996e7jw1e5c2o3526nj20bu0goaar.jpg?psid=1">https://7no7na.dm2301.livefilestore.com/y2pyPdpo4WPWPKcGC9nYQoI5vn_BOqO2S31h64Nh-nGZZq4T99T8w3lNT_JVot7o9u9Xeh9g31anmx7mBgY8vnmGza_wDQMYvm9flRIYiUxsVU/7f4996e7jw1e5c2o3526nj20bu0goaar.jpg?psid=1</a> 350 600 %}</p>
 ]]></content>
   </entry>
   

@@ -1,56 +1,91 @@
 
-<!DOCTYPE HTML>
-<html lang="en-GB">
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
-	<meta charset="utf-8">
-	<title>Rails 3 Remote Links and Forms Part 2: Data-type (With jQuery)  | XguoX</title>
+  <meta charset="utf-8">
+  <title>Rails 3 Remote Links and Forms Part 2: Data-type (With jQuery) - XguoX</title>
+  <meta name="author" content="XguoX">
 
-	<meta name="author" content="XguoX">
+  
+  <meta name="description" content="自从写了Rails 3 Remote Links &amp; Forms Definitive Guide有一个问题也接踵而至: 我们该如何使远程链接或者表单取回 js.erb而不是一个html的partial? 在上一篇中,我们请求一个html partial并通过ajax回调插入到页面中. &hellip;">
+  
 
-<meta name="description" content="自从写了Rails 3 Remote Links &amp; Forms Definitive Guide有一个问题也接踵而至: 我们该如何使远程链接或者表单取回 js.erb而不是一个html的partial? 在上一篇中,我们请求一个html partial并通过ajax回调插入到页面中. &hellip;"> <meta name="keywords" content="">
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <link rel="canonical" href="http://xguox.github.com/blog/2012/07/12/rails-3-remote-links-and-forms-part-2-data-type-with-jquery">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="XguoX" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-39166710-1']);
+    _gaq.push(['_trackPageview']);
 
-	<link href="/atom.xml" rel="alternate" title="XguoX" type="application/atom+xml">
-	<link rel="canonical" href="">
-	<link href="/favicon.png" rel="shortcut icon">
-	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-	
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
 
 </head>
 
-
-
-<body>
-	<header id="header" class="inner"><h1><a href="/">XguoX</a></h1>
-<span class="tagline">Coder & Jabber</span>
-<nav id="main-nav"><ul>
-	<li><a href="http://www.flickr.com/photos/groverlu/sets" target="_blank">Flickr</a></li>
-	<li><a href="/about">About</a></li>
-	<li><a href="/atom.xml">RSS</a></li>
-</ul>
-</nav>
-<nav id="mobile-nav">
-	<div class="alignleft menu">
-		<a class="button">Menu</a>
-		<div class="container"><ul>
-	<li><a href="http://www.flickr.com/photos/groverlu/sets" target="_blank">Flickr</a></li>
-	<li><a href="/about">About</a></li>
-	<li><a href="/atom.xml">RSS</a></li>
-</ul>
-</div>
-	</div>
-</nav>
-
+<body   class="collapse-sidebar sidebar-footer" >
+  <header role="banner"><hgroup>
+  <h1><a href="/">XguoX</a></h1>
+  
+    <h2>Coder & Jabber</h2>
+  
+</hgroup>
 
 </header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:xguox.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Home</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about">About</a></li>
+</ul>
 
-	<div id="content" class="inner"><article class="post">
-	<header>
-		<h2 class="title">Rails 3 Remote Links and Forms Part 2: Data-type (With jQuery)</h2>
-		<div class="meta date">
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Rails 3 Remote Links and Forms Part 2: Data-type (With jQuery)</h1>
+    
+    
+      <p class="meta">
+        
 
 
 
@@ -62,9 +97,16 @@
   
 
 
-<time datetime="2012-07-12T11:28:00+08:00" pubdate data-updated="true">Jul 12<span>th</span>, 2012</time></div>
-	</header>
-	<div class="entry-content"><p>自从写了<a href="http://www.alfajango.com/blog/Rails-3-remote-links-and-forms/">Rails 3 Remote Links &amp; Forms Definitive Guide</a>有一个问题也接踵而至:</p>
+<time datetime="2012-07-12T11:28:00+08:00" pubdate data-updated="true">Jul 12<span>th</span>, 2012</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>自从写了<a href="http://www.alfajango.com/blog/Rails-3-remote-links-and-forms/">Rails 3 Remote Links &amp; Forms Definitive Guide</a>有一个问题也接踵而至:</p>
 
 <h4>我们该如何使远程链接或者表单取回 js.erb而不是一个html的partial?</h4>
 
@@ -420,53 +462,167 @@
 <p>See Rails js.erb Remote Response not Executing.</p>
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">XguoX</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-07-12T11:28:00+08:00" pubdate data-updated="true">Jul 12<span>th</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/rails/'>Rails</a>, <a class='category' href='/blog/categories/ruby/'>Ruby</a>, <a class='category' href='/blog/categories/translation/'>Translation</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://xguox.github.com/blog/2012/07/12/rails-3-remote-links-and-forms-part-2-data-type-with-jquery/" data-via="" data-counturl="http://xguox.github.com/blog/2012/07/12/rails-3-remote-links-and-forms-part-2-data-type-with-jquery/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/07/11/rails-3-remote-links-and-forms/" title="Previous Post: Rails 3 Remote Links and Forms: A Definitive Guide">&laquo; Rails 3 Remote Links and Forms: A Definitive Guide</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/07/15/an-unusual-trip/" title="Next Post: 不平坦的魔都路">不平坦的魔都路 &raquo;</a>
+      
+    </p>
+  </footer>
 </article>
 
-	
-	<div class="share">
-	  <!-- <ul> -->
-	  <!--   <li>
-  <a href="https://twitter.com/intent/tweet?text=Rails 3 Remote Links and Forms Part 2: Data-type (With jQuery) by @&url=http://xguox.github.com/blog/2012/07/12/rails-3-remote-links-and-forms-part-2-data-type-with-jquery/" title="Share Rails 3 Remote Links and Forms Part 2: Data-type (With jQuery) on Twitter">
-    <img src="/images/social/twitter.png" />
-  </a>
-</li>
- -->
-	  <!--   <li>
-  <a href="https://www.facebook.com/sharer.php?u=http://xguox.github.com/blog/2012/07/12/rails-3-remote-links-and-forms-part-2-data-type-with-jquery/" title="Share Rails 3 Remote Links and Forms Part 2: Data-type (With jQuery) on Facebook">
-    <img src="/images/social/facebook.png" />
-  </a>
-</li>
- -->
-	  <!--   <li>
-  <a href="https://plus.google.com/share?url=http://xguox.github.com/blog/2012/07/12/rails-3-remote-links-and-forms-part-2-data-type-with-jquery/" title="Share Rails 3 Remote Links and Forms Part 2: Data-type (With jQuery) on Google Plus">
-    <img src="/images/social/google.png" />
-  </a>
-</li>
- -->
-	  <!-- </ul> -->
-	</div>
-
-
-
-
-<section id="comment">
-    <h2 class="title">Comments</h2>
+  <section>
+    <h1>Comments</h1>
     <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
-</section>
-</div>
-	<footer id="footer" class="inner"><br>
-<br>
-<br>
-<br>
-&copy; 2013
+  </section>
 
-    XguoX
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <ul id="recent_posts">
+      <li class="post">
+      <a href="/" alt="Home"><img src="/images/Home.png"></a>
+      <a href="/archives/" alt="Archives"><img src="/images/Calendar.png"></a>
+      <a href="mailto:golvinlu@gmail.com" alt="E-Mail"><img src="/images/Envelope.png"></a>
+      <a href="/about/" alt="About XguoX"><img src="/images/User.png"></a>
+      <a href="/atom.xml" alt="subscribe feed"><img src="/images/rss_big.png"></a>
+      </li>
+  </ul>
+</section>
+
+<section>
+<h1>Category</h1>
+<span class='categories_tag'> <a href='/blog/categories/books' style='font-size: 102.66666666666667%'>Books</a>  <a href='/blog/categories/css' style='font-size: 101.33333333333333%'>Css</a>  <a href='/blog/categories/diary' style='font-size: 106.66666666666667%'>Diary</a>  <a href='/blog/categories/ghost' style='font-size: 101.33333333333333%'>Ghost</a>  <a href='/blog/categories/heroku' style='font-size: 102.66666666666667%'>Heroku</a>  <a href='/blog/categories/hexo' style='font-size: 101.33333333333333%'>Hexo</a>  <a href='/blog/categories/jabber' style='font-size: 160.0%'>Jabber</a>  <a href='/blog/categories/javascript' style='font-size: 101.33333333333333%'>Javascript</a>  <a href='/blog/categories/json' style='font-size: 101.33333333333333%'>Json</a>  <a href='/blog/categories/mac' style='font-size: 101.33333333333333%'>Mac</a>  <a href='/blog/categories/meteor' style='font-size: 109.33333333333333%'>Meteor</a>  <a href='/blog/categories/octopress' style='font-size: 102.66666666666667%'>Octopress</a>  <a href='/blog/categories/onepiece' style='font-size: 102.66666666666667%'>Onepiece</a>  <a href='/blog/categories/performance' style='font-size: 101.33333333333333%'>Performance</a>  <a href='/blog/categories/photo' style='font-size: 101.33333333333333%'>Photo</a>  <a href='/blog/categories/rails' style='font-size: 114.66666666666667%'>Rails</a>  <a href='/blog/categories/repost' style='font-size: 105.33333333333333%'>Repost</a>  <a href='/blog/categories/ruby' style='font-size: 121.33333333333333%'>Ruby</a>  <a href='/blog/categories/tools' style='font-size: 102.66666666666667%'>Tools</a>  <a href='/blog/categories/translate' style='font-size: 101.33333333333333%'>Translate</a>  <a href='/blog/categories/translation' style='font-size: 118.66666666666667%'>Translation</a>  <a href='/blog/categories/travel' style='font-size: 105.33333333333333%'>Travel</a>  <a href='/blog/categories/tricks' style='font-size: 101.33333333333333%'>Tricks</a> </span>
+</section>
+
+
+<section class="even">
+	<iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=zh_cn&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=4&isTitle=0&noborder=0&isWeibo=1&isFans=0&uid=1660802261&verifier=0594649b&colors=d04e38,d04e38,ffffff,0082cb,f08456&dpc=1"></iframe>
+</section>
+
+
+
+<section class="last odd">
+<h1>My <span style="color: #0063dc;">Flick<span style="color: #ff0084;">r</h1>
+<style type="text/css">
+	#flickrList li { text-align: left; display:inline; margin: 0 2px;}
+</style>
+<ul id="flickrList"></ul>
+<script lang="Javascript">
+var flickrNickname = "GroverLu";
+function jsonFlickrApi(rsp) {
+	if (rsp.stat != "ok"){
+  		return;
+ 	}
+ 	var list = "";
+ 	for (var i=0; i < rsp.photos.photo.length; i++) {
+  		var photo    = rsp.photos.photo[i];
+  		var imgUrl   = 'http://farm'+ photo.farm +'.static.flickr.com/'+ photo.server +'/'+ photo.id +'_'+ photo.secret +'_s.jpg';
+  		var photoUrl = 'http://www.flickr.com/photos/'+ flickrNickname +'/'+ photo.id;
+  		list += '<li id="flickrItem_'+i+'"><a href="'+ photoUrl +'" title="'+ photo.title +'"><img alt="'+ photo.title +'" src="'+ imgUrl +'" /></a></li>';
+ 	}
+ 	document.getElementById('flickrList').innerHTML = list;
+}
+</script>
+<script lang="Javascript" src="http://api.flickr.com/services/rest/?format=json&method=flickr.photos.search&user_id=94631627@N04&per_page=15&api_key=d286c7fecaa39173da37f6e681c443f6"></script>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/11/14/lightroom-presets/">Lightroom 预设</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/11/12/time-machine-local-snapshot/">Time Machine & Local Snapshots</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/11/11/camera-geek/">不折腾会死玩相机星人</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/11/10/octopress-audio/">Octopress 添加 Audio</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/11/09/a-sudden-consciousness/">一本书和一个杯子</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/11/07/relearn-ruby-iii/">重拾Ruby (III)</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/11/05/relearn-ruby-2/">重拾Ruby (II)</a>
+      </li>
+    
+  </ul>
+</section>
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - XguoX -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
 
 </footer>
-	<script src="/javascripts/slash.js"></script>
-<script src="/javascripts/hyphenator.js"></script>
-
+  
 
 <script type="text/javascript">
       var disqus_shortname = 'xguox';
@@ -486,26 +642,34 @@
 
 
 
-	<script type="text/javascript">
-		var _gaq = _gaq || [];
-		_gaq.push(['_setAccount', 'UA-39166710-1']);
-		_gaq.push(['_trackPageview']);
 
-		(function() {
-			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		})();
-	</script>
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
 
 
 
 
 </body>
-<script>
-  $(document).ready(function() {
-  // Make images center
-  $('p:has(img)').css('text-align', 'center');
-  });
-</script>
 </html>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Mac | XguoX]]></title>
+  <link href="http://xguox.github.com/blog/categories/mac/atom.xml" rel="self"/>
+  <link href="http://xguox.github.com/"/>
+  <updated>2013-11-14T14:31:17+08:00</updated>
+  <id>http://xguox.github.com/</id>
+  <author>
+    <name><![CDATA[XguoX]]></name>
+    <email><![CDATA[golvinlu@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Time Machine & Local Snapshots]]></title>
+    <link href="http://xguox.github.com/blog/2013/11/12/time-machine-local-snapshot/"/>
+    <updated>2013-11-12T10:18:00+08:00</updated>
+    <id>http://xguox.github.com/blog/2013/11/12/time-machine-local-snapshot</id>
+    <content type="html"><![CDATA[<p>因为 Air 的硬盘只有 120G,所以总习惯性地 <br/>
+ &ndash;  关于本机 &ndash; 更多信息</p>
+
+<p>然后每次都看着那蛋疼的数字,  然后这次略离谱了</p>
+
+<p><img src="http://ww4.sinaimg.cn/mw690/62fdd4d5gw1eaga1xtdgyj20g0057q3c.jpg" alt="" /></p>
+
+<p>有一段时间没 check, 话说之前一般都维持在 30+ G 的呀,奇怪了那个备份是什么玩意, 我明明已经设置了 Time Machine 备份到我外接的移动硬盘了并且基本上一直都连着这个盘的呀!  查询之,才发现貌似还有个叫 <a href="http://support.apple.com/kb/HT4878?viewlocale=zh_CN">Local Snapshots(本地快照)</a> 的功能(?).</p>
+
+<p>艾玛, 这么个备份法我的硬盘要蛋碎了. 但是这玩意是备份在哪了的说? 再查之, 原来是在
+<code>/Volumes</code></p>
+
+<p>果断删之,  虽然数据的确重要,但是 已经有个外接盘24小时一次的备份了,除非遇上移动盘跟系统同时崩了.</p>
+
+<p>另外据说可以直接 <br/>
+<code>sudo tmutil disablelocal</code> 关闭本地快照,<br/>
+或者
+<code>sudo tmutil enablelocal</code> 再启动之.</p>
+
+<p>想起前不久<a href="http://www.apple.com/hk/en/support/macbookair-flashdrive/">苹果官方</a>召回2012款 Macbook Air 的事. 貌似那一款的东芝盘有什么重大 bug, 艾玛, 刚好就是我这款, 而且我的这个盘也是东芝的, 如果配的是三星的SSD貌似没事.<br/>
+不过其实也一直没问题, 官方说装了个补丁没事就好偶也没啥好不乐意的.  就算无故崩了也还有那高频率的备份.</p>
+
+<p>PS. 影片 + 照片好久没整理了,一直滞留着, 又是一笔大开销, 倒是那个其他还是那么神奇,一会大一会小.</p>
+]]></content>
+  </entry>
+  
+</feed>
