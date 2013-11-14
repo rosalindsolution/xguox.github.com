@@ -4,7 +4,7 @@
   <title><![CDATA[XguoX]]></title>
   <link href="http://xguox.github.com/atom.xml" rel="self"/>
   <link href="http://xguox.github.com/"/>
-  <updated>2013-11-14T14:42:07+08:00</updated>
+  <updated>2013-11-14T19:10:40+08:00</updated>
   <id>http://xguox.github.com/</id>
   <author>
     <name><![CDATA[XguoX]]></name>
@@ -18,7 +18,8 @@
     <link href="http://xguox.github.com/blog/2013/11/14/lightroom-presets/"/>
     <updated>2013-11-14T10:12:00+08:00</updated>
     <id>http://xguox.github.com/blog/2013/11/14/lightroom-presets</id>
-    <content type="html"><![CDATA[<p>在网上搜罗了各种 Lightroom 预设一大车, 目测有两三千个了. 之前都是直接的一坨坨的 copy 到 <code>~/Library/Application Support/Adobe/Lightroom/Develop Presets/</code>, 然后好奇了一下用  Sublime  随意打开来瞧瞧,额,原来长这样,好高端,不明觉厉.</p>
+    <content type="html"><![CDATA[<p>在网上搜罗了各种 Lightroom 预设一大车, 目测有两三千个了. 之前都是直接的一坨坨的 copy 到 <br/>
+<code>~/Library/Application Support/Adobe/Lightroom/Develop Presets/</code>,   然后好奇了一下用  Sublime  随意打开来瞧瞧,额,原来长这样,好高端,不明觉厉.</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
