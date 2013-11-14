@@ -4,13 +4,331 @@
   <title><![CDATA[XguoX]]></title>
   <link href="http://xguox.github.com/atom.xml" rel="self"/>
   <link href="http://xguox.github.com/"/>
-  <updated>2013-11-10T17:11:33+08:00</updated>
+  <updated>2013-11-14T10:24:09+08:00</updated>
   <id>http://xguox.github.com/</id>
   <author>
     <name><![CDATA[XguoX]]></name>
     <email><![CDATA[golvinlu@gmail.com]]></email>
   </author>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Lightroom 预设]]></title>
+    <link href="http://xguox.github.com/blog/2013/11/14/lightroom-presets/"/>
+    <updated>2013-11-14T10:12:00+08:00</updated>
+    <id>http://xguox.github.com/blog/2013/11/14/lightroom-presets</id>
+    <content type="html"><![CDATA[<p>在网上搜罗了各种 Lightroom 预设一大车, 目测有两三千个了. 之前都是直接的一坨坨的 copy 到 <code>~/Library/Application Support/Adobe/Lightroom/Develop Presets/</code>, 然后好奇了一下用  Sublime  随意打开来瞧瞧,额,原来长这样,好高端,不明觉厉.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+<span class='line-number'>72</span>
+<span class='line-number'>73</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">s</span> <span class="o">=</span> <span class="p">{</span>
+</span><span class='line'>  <span class="nx">id</span> <span class="o">=</span> <span class="s2">&quot;DFE17DAE-6240-4CB6-85ED-B41D5B065404&quot;</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">internalName</span> <span class="o">=</span> <span class="s2">&quot;Toners-Light Mocha&quot;</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">title</span> <span class="o">=</span> <span class="s2">&quot;Toners-Light Mocha&quot;</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">type</span> <span class="o">=</span> <span class="s2">&quot;Develop&quot;</span><span class="p">,</span>
+</span><span class='line'>  <span class="nx">value</span> <span class="o">=</span> <span class="p">{</span>
+</span><span class='line'>    <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+</span><span class='line'>      <span class="nx">Blacks2012</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+</span><span class='line'>      <span class="nx">Contrast2012</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+</span><span class='line'>      <span class="nx">ConvertToGrayscale</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+</span><span class='line'>      <span class="nx">EnableGrayscaleMix</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+</span><span class='line'>      <span class="nx">EnableSplitToning</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+</span><span class='line'>      <span class="nx">GrayMixerAqua</span> <span class="o">=</span> <span class="o">-</span><span class="mi">18</span><span class="p">,</span>
+</span><span class='line'>      <span class="nx">GrayMixerBlue</span> <span class="o">=</span> <span class="mi">9</span><span class="p">,</span>
+</span><span class='line'>      <span class="nx">GrayMixerGreen</span> <span class="o">=</span> <span class="o">-</span><span class="mi">27</span><span class="p">,</span>
+</span><span class='line'>      <span class="nx">GrayMixerMagenta</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span>
+</span><span class='line'>      <span class="nx">GrayMixerOrange</span> <span class="o">=</span> <span class="o">-</span><span class="mi">19</span><span class="p">,</span>
+</span><span class='line'>      <span class="nx">GrayMixerPurple</span> <span class="o">=</span> <span class="mi">15</span><span class="p">,</span>
+</span><span class='line'>      <span class="nx">GrayMixerRed</span> <span class="o">=</span> <span class="o">-</span><span class="mi">10</span><span class="p">,</span>
+</span><span class='line'>      <span class="nx">GrayMixerYellow</span> <span class="o">=</span> <span class="o">-</span><span class="mi">23</span><span class="p">,</span>
+</span><span class='line'>      <span class="nx">Highlights2012</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+</span><span class='line'>      <span class="nx">ParametricDarks</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span>
+</span><span class='line'>      <span class="nx">ParametricHighlightSplit</span> <span class="o">=</span> <span class="mi">75</span><span class="p">,</span>
+</span><span class='line'>      <span class="nx">ParametricHighlights</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+</span><span class='line'>      <span class="nx">ParametricLights</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span>
+</span><span class='line'>      <span class="nx">ParametricMidtoneSplit</span> <span class="o">=</span> <span class="mi">50</span><span class="p">,</span>
+</span><span class='line'>      <span class="nx">ParametricShadowSplit</span> <span class="o">=</span> <span class="mi">25</span><span class="p">,</span>
+</span><span class='line'>      <span class="nx">ParametricShadows</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+</span><span class='line'>      <span class="nx">ProcessVersion</span> <span class="o">=</span> <span class="s2">&quot;6.7&quot;</span><span class="p">,</span>
+</span><span class='line'>      <span class="nx">Shadows2012</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+</span><span class='line'>      <span class="nx">SplitToningBalance</span> <span class="o">=</span> <span class="o">-</span><span class="mi">59</span><span class="p">,</span>
+</span><span class='line'>      <span class="nx">SplitToningHighlightHue</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+</span><span class='line'>      <span class="nx">SplitToningHighlightSaturation</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+</span><span class='line'>      <span class="nx">SplitToningShadowHue</span> <span class="o">=</span> <span class="mi">37</span><span class="p">,</span>
+</span><span class='line'>      <span class="nx">SplitToningShadowSaturation</span> <span class="o">=</span> <span class="mi">25</span><span class="p">,</span>
+</span><span class='line'>      <span class="nx">ToneCurveName2012</span> <span class="o">=</span> <span class="s2">&quot;Strong Contrast&quot;</span><span class="p">,</span>
+</span><span class='line'>      <span class="nx">ToneCurvePV2012</span> <span class="o">=</span> <span class="p">{</span>
+</span><span class='line'>        <span class="mi">0</span><span class="p">,</span>
+</span><span class='line'>        <span class="mi">0</span><span class="p">,</span>
+</span><span class='line'>        <span class="mi">32</span><span class="p">,</span>
+</span><span class='line'>        <span class="mi">16</span><span class="p">,</span>
+</span><span class='line'>        <span class="mi">64</span><span class="p">,</span>
+</span><span class='line'>        <span class="mi">50</span><span class="p">,</span>
+</span><span class='line'>        <span class="mi">128</span><span class="p">,</span>
+</span><span class='line'>        <span class="mi">128</span><span class="p">,</span>
+</span><span class='line'>        <span class="mi">192</span><span class="p">,</span>
+</span><span class='line'>        <span class="mi">202</span><span class="p">,</span>
+</span><span class='line'>        <span class="mi">255</span><span class="p">,</span>
+</span><span class='line'>        <span class="mi">255</span><span class="p">,</span>
+</span><span class='line'>      <span class="p">},</span>
+</span><span class='line'>      <span class="nx">ToneCurvePV2012Blue</span> <span class="o">=</span> <span class="p">{</span>
+</span><span class='line'>        <span class="mi">0</span><span class="p">,</span>
+</span><span class='line'>        <span class="mi">0</span><span class="p">,</span>
+</span><span class='line'>        <span class="mi">255</span><span class="p">,</span>
+</span><span class='line'>        <span class="mi">255</span><span class="p">,</span>
+</span><span class='line'>      <span class="p">},</span>
+</span><span class='line'>      <span class="nx">ToneCurvePV2012Green</span> <span class="o">=</span> <span class="p">{</span>
+</span><span class='line'>        <span class="mi">0</span><span class="p">,</span>
+</span><span class='line'>        <span class="mi">0</span><span class="p">,</span>
+</span><span class='line'>        <span class="mi">255</span><span class="p">,</span>
+</span><span class='line'>        <span class="mi">255</span><span class="p">,</span>
+</span><span class='line'>      <span class="p">},</span>
+</span><span class='line'>      <span class="nx">ToneCurvePV2012Red</span> <span class="o">=</span> <span class="p">{</span>
+</span><span class='line'>        <span class="mi">0</span><span class="p">,</span>
+</span><span class='line'>        <span class="mi">0</span><span class="p">,</span>
+</span><span class='line'>        <span class="mi">255</span><span class="p">,</span>
+</span><span class='line'>        <span class="mi">255</span><span class="p">,</span>
+</span><span class='line'>      <span class="p">},</span>
+</span><span class='line'>    <span class="p">},</span>
+</span><span class='line'>    <span class="nx">uuid</span> <span class="o">=</span> <span class="s2">&quot;1DF2363E-780A-4C26-9711-D980D505BF0D&quot;</span><span class="p">,</span>
+</span><span class='line'>  <span class="p">},</span>
+</span><span class='line'>  <span class="nx">version</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>然后话说我是不是也可以把这一坨的上千个预设 push 到 <a href="https://github.com/xguox/Lightroom-Presets">Github</a>叻?
+顺便当做个版本控制也好, 虽然我应该不大会去修改这些预设 =  .  = 不过传了也没坏处吧. Github 不一定只能放代码的!</p>
+
+<p>其实多也没什么好的, 倒是这搜罗了略有点多,其中一大坨感觉基本不会用到, 而且还经常让人犯选择困难,那样反而更蛋疼. 还是习惯了形成一些自己的风格好. (但是,又很贪心地想把这全部风格都尝试一遍 XD)</p>
+
+<p>不过, 一张照片如果原图就是好照片的话基本上各种调试之后都会觉得不错,  只是看符不符合自己风格罢了.So, 找个时间整理一遍还是有必要的.(不知道拖延症会把这个整理拖到什么时候 = . =)</p>
+
+<p>借了A7 的样片搞了几下, 有一张是原图,不过忘了是哪张了.</p>
+
+<p><img src="https://dehqla.dm2302.livefilestore.com/y2pTJK3tT7W_F1Qo3SbSEscIannTpX0vhG9sU4Q0wDoxRuM8CHZMnrT7PcHJY1TXDOHCIyG_bjwIlJg27YyyefCAmt4zvlQS00f084NnOAaNHA/A.jpg?psid=1" alt="" /></p>
+
+<p><img src="https://dehqla.dm2301.livefilestore.com/y2pLz4HmEx4IKcbX8Be_51CjD9VHnh8dDbRVAgEJ5c8RCxHsryH68_iUbNSejCSfVo6o52BgnwhZJo4d-dPgRFKm2SrNc83oKbL2sHPFoxYh0Q/B.JPG?psid=1" alt="" /></p>
+
+<p><img src="https://dehqla.dm2301.livefilestore.com/y2pHBrLuf1Zih_AfRHRryDmGA4aojfvcqTTGLv22oQi6nIQixCcD38rIYKxlt7kixDc0o1WkMRRps6SIfuffr0BLXVSqmBVoO5qyDwkkltXzzA/C.jpg?psid=1" alt="" /></p>
+
+<p><img src="https://dehqla.dm2301.livefilestore.com/y2pG1Bv_j8EUGJN6WND-KlCo8c6mg2hgqib4pTdIdgU4wrLI65pqMIYPslE410svRfjFugBOoU3dShMXunfb56kYbY6b68QbHXbfZJ37krKgQg/D.jpg?psid=1" alt="" /></p>
+
+<p><img src="https://dehqla.dm1.livefilestore.com/y2pADOmVwG9-_56XkyzGWrnv89cxAXcmuw2xrV4thuuSWmhvHzw17XczFtZCgtX_pqJuTVH2hfiuVA7D5EJ9oOA3Y_ZL7z-_nRWeBR4VarMhpw/E.jpg?psid=1" alt="" /></p>
+
+<p><img src="https://dehqla.dm2301.livefilestore.com/y2pOA-S3zSmWu3Rlj4PpdgezF9EsYPZIlQCP7ZqKBxec_4OmIalXtfMi9WpcKhiIn8OhGRbVCWED3atgi6wF1uEnghxRA7pL4FHir28zB_bH8g/F.jpg?psid=1" alt="" /></p>
+
+<p><img src="https://dehqla.dm2302.livefilestore.com/y2pG5Lg3JMGBfw4LtcA3Pb-arIAuVoz3xjGKV3tupPtcvO1Ir07MneGHKBQTEY8z-hSidzywV6beAT6sys9XWPEwUWTRnsHAkfrhzSrFbSUnuQ/G.jpg?psid=1" alt="" /></p>
+
+<p><img src="https://dehqla.dm2302.livefilestore.com/y2pp9KS0kMCqh3vrCMrE8OOOEavAN8qXf7CENdXVcJJxS_mTuQdmffQAT9wwT4Dv27YU5AwNayYVbp_zG4NBPVG7CVTllSTe3akHNMoUAY4hSk/I.jpg?psid=1" alt="" /></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Time Machine & Local Snapshots]]></title>
+    <link href="http://xguox.github.com/blog/2013/11/12/time-machine-local-snapshot/"/>
+    <updated>2013-11-12T10:18:00+08:00</updated>
+    <id>http://xguox.github.com/blog/2013/11/12/time-machine-local-snapshot</id>
+    <content type="html"><![CDATA[<p>因为 Air 的硬盘只有 120G,所以总习惯性地 <br/>
+ &ndash;  关于本机 &ndash; 更多信息</p>
+
+<p>然后每次都看着那蛋疼的数字,  然后这次略离谱了</p>
+
+<p><img src="http://ww4.sinaimg.cn/mw690/62fdd4d5gw1eaga1xtdgyj20g0057q3c.jpg" alt="" /></p>
+
+<p>有一段时间没 check, 话说之前一般都维持在 30+ G 的呀,奇怪了那个备份是什么玩意, 我明明已经设置了 Time Machine 备份到我外接的移动硬盘了并且基本上一直都连着这个盘的呀!  查询之,才发现貌似还有个叫 <a href="http://support.apple.com/kb/HT4878?viewlocale=zh_CN">Local Snapshots(本地快照)</a> 的功能(?).</p>
+
+<p>艾玛, 这么个备份法我的硬盘要蛋碎了. 但是这玩意是备份在哪了的说? 再查之, 原来是在
+<code>/Volumes</code></p>
+
+<p>果断删之,  虽然数据的确重要,但是 已经有个外接盘24小时一次的备份了,除非遇上移动盘跟系统同时崩了.</p>
+
+<p>另外据说可以直接 <br/>
+<code>sudo tmutil disablelocal</code> 关闭本地快照,<br/>
+或者
+<code>sudo tmutil enablelocal</code> 再启动之.</p>
+
+<p>想起前不久<a href="http://www.apple.com/hk/en/support/macbookair-flashdrive/">苹果官方</a>召回2012款 Macbook Air 的事. 貌似那一款的东芝盘有什么重大 bug, 艾玛, 刚好就是我这款, 而且我的这个盘也是东芝的, 如果配的是三星的SSD貌似没事.<br/>
+不过其实也一直没问题, 官方说装了个补丁没事就好偶也没啥好不乐意的.  就算无故崩了也还有那高频率的备份.</p>
+
+<p>PS. 影片 + 照片好久没整理了,一直滞留着, 又是一笔大开销, 倒是那个其他还是那么神奇,一会大一会小.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[不折腾会死玩相机星人]]></title>
+    <link href="http://xguox.github.com/blog/2013/11/11/camera-geek/"/>
+    <updated>2013-11-11T10:07:00+08:00</updated>
+    <id>http://xguox.github.com/blog/2013/11/11/camera-geek</id>
+    <content type="html"><![CDATA[<blockquote><p>好不容易把闹腾相机的心静下来，结果前些天又让骚尼君扯动了那片涟漪。A7 / A7R 完全把我的折腾心又搅起来了。这不20号帮牛总拍完婚礼立马把6D出了。下订, 然后，就剩下等待了, 结果, 在我无限接近得到A7的时候,半路杀出了个<a href="http://xjrumo.com/2013/11/05/nikon_df_comming/"> Nikon Df</a>, 这是帅的一塌糊涂啊,尤其银色的骚的无与伦比, 快到嘴的A7要飞了.再结果, 那让人蛋碎的定价&hellip;</p></blockquote>
+
+<p><audio controls><source src='http://hq.update.sony.net.edgesuite.net/united/clock/assets/sound/a_clock_main_theme2012.mp3'></audio><br/>
+赞上一个bgm,来自 <a href="http://www.sony.net/united/clock/">Sony Global &ndash; &ldquo;α&rdquo; CLOCK: WORLD TIME, CAPTURED BY &ldquo;α&rdquo;</a> <br/>
+那个对焦声音以前听A77听习惯了,现在蛮有感觉的.</p>
+
+<p>开篇之前，先扯出我的观点：</p>
+
+<ul>
+<li>不管是Leica还是1DX还是NEX，全都能出好的片子。甚至乎，把这几台机子拍的片混淆在一起90%的人分辨不出来</li>
+<li>我是玩相机的，不是玩摄影的</li>
+<li>很明显的我不是土豪，糕富帅之流。因为这类人可以眼睛不眨的随便玩儿这些机器，各种徕卡哈苏随便当备机</li>
+<li>如果你真那么流弊看出来了低端机和高端机的差距, 那是因为人家没后期. 几十块的后期书籍绝对比器材巨大的差价带来的图片差异要明显。</li>
+<li>目测6D的一半功能还没玩熟练。</li>
+<li>把花在器材的钱节省下来出去玩比器材压箱底封尘抚摸能多出好片。</li>
+</ul>
+
+
+<p>回顾<strong>11年11月11日</strong>，一个很蛋疼的日子，开始陷入相机这趟浑水就折腾的一发不可收拾。
+从那会开始的入门级600D+ 18-55 ，没几个月又添置了一枚55-250的中长焦。接着12年中全套出了，貌似这也是第一次出让二手东西。 几千块的说多也不多，说少也还要数上一会,但是很傻b，当时直接就在路边&#8221;洋洋洒洒&#8221;地点数几十张百元大钞，也完全没担心会有假钞啊什么的情况，也老老实实的把一些附件，卡啊包啊什么的送给买的那人。想着留着也用不上╮(╯▽╰)╭ <br/>
+说起来，出的原因比较奇葩。记得是因为跟小泡他们去乌镇，然后在东栅的不爽经历。主要是当时人真Y的多爆了。完全是跟随着人流在缓缓挪动前进，加之天气又热，然后我把600D套挂在身上，完全没兴致按快门，还觉得自己特傻逼。</p>
+
+<p><img src="http://farm8.staticflickr.com/7380/8975217373_e8451fb28e_c.jpg" alt="" /></p>
+
+<p>尽管后来西栅还觉得OK，但是东栅那印象太&#8221;深刻&#8221;了
+<img src="http://farm4.staticflickr.com/3779/9688265562_987b8dc203_c.jpg" alt="" /></p>
+
+<p>回来第一件事就是卖了 600D 全套。
+好吧，其实这不能怪 600D，完全是我一时脑热了。回看第一台拍出的照片, 的确也就跟用高端的DC的样子, 构图乱,曝光不准,后期渣.关于构图, 一直没做到画面简洁这一点,经常贪心地想把什么都收进画面!自然纷乱是必然的了.</p>
+
+<p>后来没过两个月，心里又痒痒的没相机玩，然后刚好心思思索尼的单电A77（其实最开始是想着nex7或Xpro-1的，还是因为钱，靠。大爷的，哪有什么选择困难症，其实就是缺钱），于是又入了一台A77+18-55（没入恒定F2.8那枚只因太屌丝了）</p>
+
+<p><img src="http://farm4.staticflickr.com/3762/8976406402_7833ea9021_c.jpg" alt="" /></p>
+
+<p>要不是遇上毕业季，这台机子肯定是拍的最少的吧，结果却好像是拍的最多的一台。
+后来，拍完毕业照什么的，又才入了个50 1.8的大光定。转悠了几天的广州，大概一万快门略多之后7月份又卖了。</p>
+
+<p>至于为什么要卖，其实到现在我也没想明白，可能是想体验下传说中的全幅, 刚好 6D 和 D600 的价格还合适吧。</p>
+
+<p>本来想着耍泥坑的D600的，因为大灯泡据说很犀利，另外想着能玩遍佳能索尼尼康，不过传说的快门掉渣很严重，于是又回到了佳能，拾起6D。
+…6D买的是单机，本来配的50 F1.8，后来用没多久，觉得手感太渣出了买了85 F1.8
+，然后用途单一了又出了，现在想来其实更喜欢50F1.8那个人类光学精华多一些。出了之后买了24-105 。传说中最渣的红圈，的确有狗定胜牛变得感觉，好吧，24-105也还算不上牛变。<br/>
+说实话，传说中的全副也不过如此。有那样的条件aps-c也照样出片。当然，高感确实流弊，6D把ISO开到6400都杠杠的，极端条件开到过万也能使。</p>
+
+<p><img src="http://farm4.staticflickr.com/3722/9797819356_3a14f0cef9_c.jpg" alt="" /></p>
+
+<p>然后没贡献个几千次快门就出了。只因，<strong>骚尼的黑科技</strong></p>
+
+<p>其实期间一直都无敌想耍耍RX1的。还是钱包不堪只能独自YY。随身携带6D对我而言只有理论上的可能，尽管我为了这个目的专门买了NG 5270，也还是不太现实。</p>
+
+<p>A7 / A7R 的出现 ，6D果断就上架了。</p>
+
+<p><img src="https://gagqnq.dm1.livefilestore.com/y2p5UgWOqXisU1HzlNxJ70nju7Fe1aglu1NNS7sJFWAPTv48Hr0smE8B4J52HDYbCs6VV1-BBGI1Hk_VtmxbjxOGTKKYWoIIkE4vIEZvLMnbzI/QQ20131026-10.png?psid=1" alt="" /></p>
+
+<p><strong>ILCE-7 </strong> 是要到碗里来了吗?</p>
+
+<p><img src="https://uvpbza.dm1.livefilestore.com/y2p6mVCXObMLwtzN-5QNq2_nPWkUnITq96Hp5hLhvD4KWAqrj7Kc7_0WZIZuBl_a4gP0fJAfxvQWVGTS35Nssrg4atuOlh9f04CI0VSokKvj7U/138190742143841518_500.jpg?psid=1" alt="" /></p>
+
+<p>这一做法，牛总直接喷我是傻逼了。<br/>
+前几天拿着6D+24-105出去，好些个朋友纷纷说专业，至少看上去专业。问之如何个专业法？答之相机够大，越大越专业。比起看上去专业，我还是拿个小微单好了。虽然比拉风的话被6D套甩开N条街，看上去也业余，so what，本来就是业余撒!不过我这是要换了A7，牛总估计也都不好意思让我这个业余再去给他客串摄影师了。但话说回来,以这玩机心态,说不定哪天会抬一台a99回来的叻! 一直都有双机的计划.</p>
+
+<p>总的说来，这其中进进出出的倒腾必然带给我差价的亏损，朋友很多一听我说又要卖器材就说比我原价买的时候亏了多少多少，但是比起学到一些照相知识，比起得到一些照片，比起满足了玩相机的乐趣，那些损失真心算不上什么，反倒是觉得我赚了。把机器珍藏在家里不用，等到掉价了那才叫损失吧。(这算不算吖Q呢？)</p>
+
+<p>帮亲朋好友拍过婚礼，自己出玩行行摄摄，从 Flickr 可以看出，除去那会600D的一部分照片遗失了之外，从头到尾大概两万次快门多些，带给我的，留下来的只有不到3000张照片。其中绝大部分都是以记录为名,能称的上好片的为数不多,稍微好一点的放到了500px, 也就那么不到百张.不过拍照不大都是要记录吗？只不过因为业余兴趣所以用上了比手机要好的机器罢了。</p>
+
+<p>再骂自己一句,啥时候我也变成数毛党, 百分百党了, Y的看到各种样片还各种 download 之后放大到百分百。我烧坏了定。</p>
+
+<h2>UPDATE</h2>
+
+<p><img src="https://gagqnq.dm1.livefilestore.com/y2pKEQcF2xogDKyFBBScbjZrTI_RJWPlLuvS4lBEIKZNZdAfNhHZKIWaSQdFKGAq-OffIL1pBHYk2StNID2V3g6YGytrxUHvbmRJ2sPFQ3KiYk/QQ20131105-2.png?psid=1" alt="" /></p>
+
+<p>帅到掉渣的Df 一出, 我被迷的一塌糊涂了. (千万别真的跟 D600 那样掉渣就好).</p>
+
+<p>可是帅到没朋友啊, 单机官方价16000+, 比A7贵出一截, 我这是要卖身的节奏啊!!!!!!!(A7 的性价比巨高, 减去各种附送的, 套机才10000略多点) ,但是真的喜欢那个造型.</p>
+
+<p><img src="https://gagqnq.dm2301.livefilestore.com/y2plQmxbpN-LRF6pyVxBR2AcyJuiV0oJvru_vMrizIIwbr0Qq8yujianm9xVSLQyCLHAfV_pQ8JmrhjloSuNuI-qG0bTTYGc7pOWlj6yYUpi4M/QQ20131105-1.png?psid=1" alt="" /></p>
+
+<p>单看参数, 数码科技等各方可能被 A7  完爆(出片未必) <br/>
+什么不能拍视频, 1/4000 快门, 对我来说都是浮云!( wifi 可能有点吸引)    <br/>
+但是 Df 这个造型秒了 A7 九条街啊(A7 样子其实也不错)</p>
+
+<p>PS 有人说这是定位给喜欢胶片的人. 然则, 表示完全不喜欢胶片, 我是反胶片党, 更恶心提什么胶片感的.</p>
+
+<h2>再UPDATE</h2>
+
+<p>虽然喜欢 Nikon 的 Df, 但无奈钱包不足够宽松,本来我已经做好吃螃蟹的准备,但是国内奸商报价24400, 虽然知道很快会降下来,但是这很快也得等上一阵子&hellip; 想过走海淘的, 日亚上卖 250000JPY,折合CNY才15500左右. 顶多就是以后用英文菜单把逼格再拉高一档罢了. 但是, 走海淘由于某些原因,还是要等, 于是, 折腾了一圈,回来选了<strong>A7R</strong>, 被 金属做工(据说也看不大出)+去低通36mp 吸引了.好吧,反正我就是那么容易被相机吸引的.</p>
+
+<p>Df 等以后降到合理价了买来玩双机好了.</p>
+
+<p>不过这个 A7R也纠结了好一会, 官方居然不给订狗头套, 加个35 F2.8的头要18000+ , 艾玛, 这又赶上 Df那个价了! 蛋疼!<br/>
+后来有发现7R 搭狗头的, 于是就这么个奇葩玩法了.希望不会浪费那块 36MP 据说流弊到爆的 CMOS</p>
+
+<p>========</p>
+
+<p>600D 用了不到一年, A77 用了大概9个月, 6D,  不到三个月,  A7 略惨烈，死在订单中，Df 更惨烈, 胎死腹中!  <br/>
+不折腾会死玩相机星人,往后还是不折腾机身镜头了,把附件搞上去再多出去玩儿才是王道 ╮(╯▽╰)╭  有了闪灯或是脚架会比倒腾这些机身镜头来的更有意义,不过那也是不小的开销(没人逼你买7个顶级灯来召唤神龙的!!!)</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Octopress 添加 Audio]]></title>
@@ -2407,410 +2725,6 @@ alias rake="noglob rake"
 <p><img src="http://stuckincustoms.smugmug.com/Portfolio-The-Best/your-favorites/i-dLcWhrZ/0/M/The-Long-Road-in-NZ-M.jpg" alt="" /></p>
 
 <p>原文来自Alex MacCaw <a href="http://alexmaccaw.com/posts/how_to_travel_around_the_world">How to travel around the world for a year.</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[[Repost]旅行,写作,编程]]></title>
-    <link href="http://xguox.github.com/blog/2013/04/13/traveling-writing-programming/"/>
-    <updated>2013-04-13T21:53:00+08:00</updated>
-    <id>http://xguox.github.com/blog/2013/04/13/traveling-writing-programming</id>
-    <content type="html"><![CDATA[<p>概括起来,今年到目前为止,我所做的事情包括:</p>
-
-<blockquote><ul>
-<li>花了10个月的时间做世界环游,途经非洲,东南亚,澳洲,中南美洲里的17个国家和地区.这次旅行的主题就是冲浪和摄影.</li>
-<li>出席在香港,日本,美国和伦敦举行的会议</li>
-<li>启程时给O&#8217;Reilly出版公司写了一本书,书名叫做<a href="http://bit.ly/uFbFJR">《JavaScript Web Applications》</a></li>
-<li>另外写了一本关于<a href="http://arcturo.github.com/library/coffeescript/">CoffeeScript</a>的书,很快就会由O&#8217;Reilly公司出版.</li>
-<li>写了大量的开源库,例如<a href="http://spinejs.com/">Spine</a>, <a href="https://spinejs.com/mobile">Spine.Mobile</a>, <a href="http://maccman.github.com/gfx">GFX</a>, 和 <a href="http://github.com/maccman/juggernaut">Juggernaut</a>.</li>
-<li>筹划了一个创业公司的框架</li>
-<li>出席伦敦2011<a href="http://futureofwebapps.com/london-2011/">FOWA</a>会议</li>
-<li>最后,我在Twitter公司找到了一份工作</li>
-</ul>
-</blockquote>
-
-<!-- more -->
-
-
-<p>那么,让我从一年前开始,那是2010年9月,我刚好从一个我合作创办的公司里出来,尽管这段经历是很有价值的,但无休无止的长时间苦干让我精疲力尽.我回到了英格兰,需要对未来做一些思考.我一直有一个梦想——移居美国(几年就好),所以,我在Google记事本上写了下面的话:</p>
-
-<blockquote><p>人生的选择:
-  去纽约哥伦比亚大学深造</p>
-
-<pre><code>坏处 - 非常昂贵,并不一定能学到什么真正有用的东西,无聊?
-好处 - 那是一个纽约的大学!
-</code></pre>
-
-<p>  写一本书,申请 01 签证</p>
-
-<pre><code>坏处 - 需要大量的时间,有风险
-好处 - 对事业有好处,有趣
-</code></pre>
-
-<p>  等待.去纽约度一次假(3个月).等待创业签证.</p>
-
-<pre><code>很容易 - 不是那么有趣
-</code></pre>
-
-<p>也许选第二个,不行就选3?</p></blockquote>
-
-<p>最终我选择了2,我已经对JavaScript web应用研究了很久,我要写一本这方面的书,为什么不边做环游世界的旅行、边写书呢?这也是我一个梦想呀.我从oneworld买了一份环游世界的机票(比你们想象的要便宜),决定下周去我的第一站,南非.</p>
-
-<p><img src="https://lh5.googleusercontent.com/-H3VYHMYwDMk/TsRYhToP2CI/AAAAAAAABfE/7j5TikginMI/s640/rtw.png" alt="" /></p>
-
-<p>如果你从来没有到过非洲,你应该去一次.那里的景色原始而美丽,对那些没有体验过这种景色的人,你很难用言语描绘明白.几年前我就喜欢上了南方,那时我在东海岸做了一个为期3个月的冲浪旅行.这次,我只有一个月的时间,穿越特兰斯凯,从开普敦到德班.当我在南非旅行时,我的写作也开始了,把早期向O&#8217;Reilly提交的书的框架里的数章填充了材料.</p>
-
-<p>特兰斯凯是南非非常具有乡野特色的地方,到处是连绵的小山,一些小村庄和土堆的茅屋.他们仍然沿袭着酋长制度,有一个首领,大多数的当地人靠捕鱼为生.我们在高低不平的土路上颠了两天才到达我心仪的地方,一个美丽的海湾,叫做咖啡湾(Coffee Bay).在那里,我休整了一下,从网上下载了一些相关资料,为更远的海湾远征做准备.</p>
-
-<p>我还清晰的记得我们走了数里地来到那个未开垦的海滩,我们从那些一个个被黄沙和小丘孤立的村庄穿行而过.有一个地方,我们要过一条大河,我们需要游过去,我把背包举过头顶,以免里面的相机和iPod遇到水.非洲是一个让你脱离尘世的地方,解放你的思想,重新认识人生最重要的东西是什么.</p>
-
-<p><img src="https://lh6.googleusercontent.com/-t9Ja-8BnWvM/TOzGcHEVcLI/AAAAAAAAA_I/Gbk7HpkAlyE/s640/DSC_0164.jpg" alt="" /></p>
-
-<p>下一站是香港,在那里,我度过了我的21岁生日,接着,我从陆路由新加坡到越南河内.很多人不相信香港70%的面积由自然公园覆盖,我徒步走了几条精彩的景观路线,非常的精彩壮观,比如:香港龙脊.有几天,我在boot.hk这个网站上闲逛,这是一个协作工作的网站,我顺便教了一个同行的游客如何使用Ruby.然后,到了夜里,我跟Soho里的一些<a href="http://couchsurfing.org/">冲浪爱好者</a>狂欢到凌晨.</p>
-
-<p><img src="https://lh5.googleusercontent.com/-w4dOtoMx8FQ/TP92f1yaUgI/AAAAAAAAA_I/CkWZJTnj24s/s640/DSC_0032.jpg" alt="" /></p>
-
-<p>从泰国到柬埔寨到越南是我这次旅行中做喜欢的部分,如果你从没有到过亚洲,你绝对应该去一次.这些国家非常的漂亮,气候非常的好,食物美味可口,人们非常友善.吴哥窟是世上最神奇的地方之一,每个人都应该去看看.是<a href="http://stuckincustoms.com/">Trey Ratcliff</a>的照片把我吸引到了那里,我的很多其它旅游目的地也是受了他的影响.那个家伙是很多旅游地的第一宣传者.</p>
-
-<p><img src="https://lh6.googleusercontent.com/-bLvyRFra6DE/TShMHEaRv5I/AAAAAAAAA_I/cOGMjy8WTyU/s640/DSC_0031.jpg" alt="" /></p>
-
-<p>在一些无名的小博客中,我听有人说过一个很远的美丽的小岛,在柬埔寨的海边.说小岛的Sihanoukville这个地方有个酒吧,说只能坐小渔船到那里.我,还有几个非常好的朋友,乘坐晚上的大巴,开始寻找这个传说中的酒吧.搜索差不多进行了一整天,每一个问过的酒吧都把我们指向另外一个酒吧.最终,我们问了出来,并在第二天早晨做短程巴士去了那个地方.</p>
-
-<p><img src="https://lh5.googleusercontent.com/-dyNjvQtn4GA/TTZ6x3dT0WI/AAAAAAAAA_I/PMQbesSbknU/s640/DSC_0039.jpg" alt="" /></p>
-
-<p>上面的照片上是海岸边一个10美元一晚的小木屋.从当地居民区离开后,我们的队伍像小岛上唯一的人,我们随性自由的奔跑.白天我们懒懒的躺在海滩上,吃着岛上厨师准备的鲜美可口的水果沙拉,在夜晚,我们在到处是浮游生物的海里游泳.</p>
-
-<p><img src="https://lh4.googleusercontent.com/-lLhNdn4DxvY/TTZ74Z7MhEI/AAAAAAAAA_I/TZBf2T5pADg/s640/DSC_0115.jpg" alt="" /></p>
-
-<p>下一站是越南,我们沿着湄公河支流来到一个边界上的小镇,我们是这里唯一的西方人,交流成了最大的问题.幸运的是,我们发现一个也许是镇上唯一会说英语的人,他骑车当我们的向导.当我的信用卡被那里的一个自动取款机吞掉了后,他提供了我很大的帮助!</p>
-
-<p><img src="https://lh6.googleusercontent.com/-r629c1pOE2E/TVCwrLAdL2I/AAAAAAAABBY/r48a8WSsTS0/s640/DSC_0059.jpg" alt="" /></p>
-
-<p>我们的队伍分成了几路,在我到达越南时,我的书正在按计划完成,进行的非常顺利.此时,我在西贡多待了几周,让我在书的好几章上有了重大的进展,正好是中国旧历新年,气氛非常的壮观热闹.</p>
-
-<p>接着是日本,澳大利亚,新西兰和夏威夷.我很难把我所有的感受都在这篇文章里写出来,但说这是此生难忘的一段历程是不为过的.把如此多的美景都放到一个国家里,太让人赞叹了,我说的正是新西兰.我最喜爱的一段记忆是沿着Wanaka的一个湖边在阳光下跑步,还有就是背着食物和生活用品,徒步数天穿越Routeburn的大山.在这个国家的旅途中,我结识了好几个值得一生相伴的好友.这是一个真正的天堂.</p>
-
-<p>就在我环绕新西兰的南部岛屿时,我的书终于完成了,提交给了技术编辑校对.</p>
-
-<p><img src="https://lh3.googleusercontent.com/-hVGczAgcsxw/TZqg8ATYqkI/AAAAAAAABLk/OYT0p-Cq4L0/s640/DSC_0096.jpg" alt="" /></p>
-
-<p>接下来是纽约和旧金山,这两个神奇的地方到处是天才的程序员,有些人我很幸运的认识.Techcrunch Disrupt办的很精彩(我高度推荐hackathon).</p>
-
-<p>在从纽约到旧金山的中途停留期间,我在各种公司了进行了不少的求职面试,最终在Twitter公司找到了一份做前端开发的工作.要在那里和杰出的团队一起工作,我不能不高兴的颤抖,而去旧金山,同样也是我此生的一个梦想.</p>
-
-<p>当签证的事办下来了后,我去了中、南美洲旅行,同时开发了我的一个小工程:一个JavaScript MVC框架库,叫做Spine.我到了哥斯达黎加,巴拿马,秘鲁,Bolvia,和阿根廷. 秘鲁是我的最爱,尽管那里的海拔给我带来了不少麻烦,我大部分的时间都在探险.下面的图片是哥斯达黎加传说中神奇猎鹰,是在我爬下世界最深的峡谷时拍到的.</p>
-
-<p><img src="https://lh3.googleusercontent.com/-kQInzZ5DQC0/TsXiz712K7I/AAAAAAAABfk/8GfSq98ccwU/s640/DSC_0027.jpg" alt="" /></p>
-
-<p>当我在哥斯达黎加时,微博上有个叫Roberto的家伙给我发了条信息,说他读了我的书,问我是否有兴趣一起冲浪.我欣然同意,坐上去圣何塞的汽车,在几天后和他会了面.那天我们一起在他海边的公寓里开发Spine和Ruby项目,使用移动硬盘,用汽车电源给笔记本充电.当电量不足后,让太阳能板补充能量,我们去冲浪.</p>
-
-<p><img src="https://lh5.googleusercontent.com/-ydIJPFqgspY/TsXgVzCENyI/AAAAAAAABfY/nkOE1Y0N-X4/s640/DSC_0300.jpg" alt="" /></p>
-
-<p>我推荐大家去写一本书,特别是边旅游边写书.可以想象,如果我不去旧金山去看一看,我可能还在旅途中,做顾问,去创业.当作家并不能让你直接的挣到很多钱,但它绝对能提升你的身份地位,给你带来很多潜在的机会.事实上,写作过程让我真正享受的是,我可以认真深入的研究一个题目.</p>
-
-<p><img src="http://ittopic.gotoip1.com/qee/wordpress/wp-content/uploads/2011/12/DSC_0069.jpg" alt="" /></p>
-
-<p>这一年是我这辈子目前为止最好的一年,而我感觉今后的一年会更好.当我如今定居下来后,我并没有感觉旅行对我的吸引力减少了；我始终把签证放到一个口袋里,而另一个口袋里装着钱包,当召唤降临,随时准备离开.</p>
-
-<p>可是,这篇文章并不是关于我的旅行,它是要发送一个信号:</p>
-
-<p>对于程序员来说,有个得天独厚的条件,就是这种职业可以远程工作或边旅游边工作,这是其它职业办不到的.当然,也不都是这样,在我的旅途中,我没有碰到第二个跟我的做法相似的程序员.这种情况让人悲哀.我想向程序员们送出的信息是,不要再找借口了,行动起来,你可以做到.一个人只有一生,我可以向你保证,这样的生活才不枉世间走这一遭.</p>
-
-<p>就像我,我感到极度的幸运,能这样的生活,去发现我的热情所在,去做每天我喜欢做的事情.你可以看出,大部分我现在的境遇并非偶然或侥幸,这是计划,追求,工作的结果.</p>
-
-<p>一份汗水,一份收成.</p>
-
-<p>这篇文章的目标不是做一些自我陶醉似的炫耀和大话,而是向大家演示如何立下目标,鼓励大家去做相似的事情.想清楚你现在的处境,这一年内你想得到什么,制定出一系列具体的能让你到达这些目标的步骤.追随你的梦想.</p>
-
-<p>原文来自Alex MacCaw <a href="http://alexmaccaw.co.uk/posts/traveling_writing_programming">Traveling Writing Programming</a><br/>
-本译文出自外刊IT评论 <a href="http://www.aqee.net/traveling-writing-programming/">旅行,写作,编程</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[扯点Sublime]]></title>
-    <link href="http://xguox.github.com/blog/2013/04/11/jabber-sublime/"/>
-    <updated>2013-04-11T18:33:00+08:00</updated>
-    <id>http://xguox.github.com/blog/2013/04/11/jabber-sublime</id>
-    <content type="html"><![CDATA[<h2>Fxxk Jabber</h2>
-
-<p>回想起初初接触编程语言的时候, 特喜欢折腾IDE的玩意, 什么visual studio啊, Eclipse啊, Netbeans, Aptana的会不会用好不好用都不管了, 装进PC再说, 怎么说, 很傻13的觉得我的PC里有这些工具我就牛13了, 熟不知真正的编程知识却木有学到, 后来搞Ruby开始放弃笨重的IDE改玩Vim和Sublime Text, 当时Textmate被捧上天不过木有Mac耍不起. <br/>
-换了Mac了, Textmate2也开源了, 于是也装上耍了耍. 没多久又继续用Sublime Text了.  OOXX来来去去, 这两货其实真没差多少. 好吧, 是我用的都不够透彻. (T . T)</p>
-
-<h2>Theme</h2>
-
-<p>有时候蛋疼起来可以折腾某个主题某个配色好长的时间, 即使这对我的编程技能木有任何实质性提高.  强推一款theme &ndash; <a href="https://github.com/thinkpixellab/flatland">Flatland</a>,  随着Flat UI的兴起, ST的主题肿么能落后啊.  附带的icon更是比Sublime原本的霸气的不是一点两点啊. 貌似在哪见过, 想不起来了.
-<img src="http://farm9.staticflickr.com/8392/8636887917_4db9f0f2b7_b.jpg" alt="" /></p>
-
-<p>这UI还行吧? 我自己也懒得再去调了, 额外的把cursor换了个色就是了(原本的灰色真心不够骚啊, 老是眼瞎找不着)</p>
-
-<!-- more -->
-
-
-<p>说到theme就想起这个正在用着的<a href="https://github.com/aziz/knockdown">Knockdown</a> Package -Markdown文件专属的主题, 再配上Sublime Text的<strong>Enter Distraction Free Mode</strong> 用写静态Blog很带感叻, 对不对.  有时候, 巨爱这个模式. 舍不得Sublime的原因之一<br/>
-<img src="http://farm9.staticflickr.com/8264/8638936015_31cde7d54f_b.jpg" alt="" /></p>
-
-<p>之前也试用过<a href="https://github.com/ttscoff/MarkdownEditing">MarkdownEditing</a>, MarkdownEditing的高亮做的没Knockdown那么好(说实话, Knockdown的代码块的高亮配色不怎么符合我的style, 太过偏暗偏沉, 但总比木有高亮来得强), 挺喜欢ME的默认放在center这一点, 但是, 在<strong>Enter Distraction Free Mode</strong>下, 这个优点也就荡然无存了.</p>
-
-<h2>Packages</h2>
-
-<p>每个用Sublime新手老手都会介绍强推的<a href="http://wbond.net/sublime_packages/package_control/installation">Package Control</a> 插件管理就不再累赘啦.
-Actually, 想装啥插件可以直接在里头搜, 或者网页版搜索, 一般都会给出相应的github开源链接. 装什么插件就更是因人而异的.  比如如果从来不写Markdown的那就木有必要装我上面说的那货.  又比如, 如果是重度Hacker News 用户的话, 直接搜hacker news(其实在&#8221;Install Package&#8221;上输入hack就已经跑出来一堆相关让你选择), 当然也不是啥都有的, 如果搜的是reddit就没看到结果了.</p>
-
-<p>个人用的目前装着的packages有:</p>
-
-<ul>
-<li><a href="https://github.com/alienhard/SublimeAllAutocomplete">All Autocomplete</a> 这货是在已打开的文件的基础上拓展匹配的</li>
-<li><a href="https://github.com/aziz/knockdown">knockdown</a></li>
-<li><a href="https://github.com/nathos/sass-textmate-bundle">Sass</a> Sass的高亮, 补全&hellip;</li>
-<li><a href="http://xavura.github.io/CoffeeScript-Sublime-Plugin/">CoffeeScript</a>  CoffeeScript高亮,补全, Compile等&hellip;</li>
-<li><a href="https://github.com/uipoet/sublime-jshint">JSHint</a> 检查Javascript的语法规范, 要先在装了node, 然后<code>npm install -g jshint</code></li>
-<li><a href="http://emmet.io/">Emmet</a> 前身Zen Coding, 貌似所有的packages之中排在最前的. 几乎被吹捧成为神器中的神器了.</li>
-<li><a href="https://sublime.wbond.net/packages/HTML-CSS-JS%20Prettify">HTMLpretty</a> 个人觉得解决缩进等格式问题的神器, 好吧, 即使木有这个偶本身也是具有良好编码规范的.</li>
-<li><a href="https://github.com/kemayo/sublime-text-2-git">Git</a></li>
-<li><a href="https://github.com/sokolovstas/SublimeWebInspector">Web Inspector</a> 纯属贪新鲜装上耍耍, 取代浏览器的inspector不太可能.</li>
-<li><a href="https://github.com/eddorre/SublimeERB">ERB Insert and Toggle Commands</a> 快速输入<code>&lt;%= %&gt;</code>或者<code>&lt;% %&gt;</code></li>
-<li><a href="https://github.com/dotty/HackerNews-SublimeTextPlugin">Hacker News</a> 不常用, 而且要自己改改shortcut, 否则会占用了显隐侧边栏的快捷键.</li>
-<li><a href="https://github.com/aziz/PlainTasks">PlainTasks</a> TODO插件一枚. 配合Sublime的各种快捷键各种操控很nice</li>
-</ul>
-
-
-<h2>Settings-User</h2>
-
-<p>先把custom的show一下, 也没啥的, 都是些无关痛痒的修改. 个人爱好吧. 有个必须有的就是<code>"scroll_past_end": true,</code> 经常写了一大车页面布满了, 下面的就滚不起来, 眼睛老要往下瞄很不爽. 设置以后就可以自由控制底部显示.<br/>
-基本上自己看着Settings &ndash; Default 还是老规矩按需修改啦.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="p">{</span>
-</span><span class='line'>    <span class="s2">&quot;theme&quot;</span><span class="o">:</span> <span class="s2">&quot;Flatland.sublime-theme&quot;</span><span class="p">,</span>
-</span><span class='line'>    <span class="s2">&quot;color_scheme&quot;</span><span class="o">:</span> <span class="s2">&quot;Packages/Theme - Flatland/Flatland.tmtheme&quot;</span><span class="p">,</span>
-</span><span class='line'>    <span class="s2">&quot;tab_size&quot;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-</span><span class='line'>    <span class="s2">&quot;font_options&quot;</span><span class="o">:</span>
-</span><span class='line'>    <span class="p">[</span>
-</span><span class='line'>        <span class="s2">&quot;bold&quot;</span>
-</span><span class='line'>    <span class="p">],</span>
-</span><span class='line'>    <span class="s2">&quot;font_face&quot;</span><span class="o">:</span> <span class="s2">&quot;Courier New&quot;</span><span class="p">,</span>
-</span><span class='line'>    <span class="s2">&quot;font_size&quot;</span><span class="o">:</span> <span class="mf">20.0</span><span class="p">,</span>
-</span><span class='line'>    <span class="s2">&quot;bold_folder_labels&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-</span><span class='line'>    <span class="s2">&quot;hot_exit&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-</span><span class='line'>    <span class="s2">&quot;open_files_in_new_window&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-</span><span class='line'>    <span class="s2">&quot;create_window_at_startup&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
-</span><span class='line'>    <span class="s2">&quot;scroll_past_end&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
-</span><span class='line'>    <span class="s2">&quot;wide_caret&quot;</span><span class="o">:</span> <span class="kc">true</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>Key Bindings &ndash; User</h2>
-
-<p>快捷键同样跟Settings可以多看Default绝对比看路边3322的像我这些要靠谱, 完整的多. 忘了在哪学到的<code>{ "keys": ["ctrl+command+r"], "command": "reveal_in_side_bar" }</code> 挺实用的, 直接在侧边栏显示当前的文件所在的目录.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="p">[</span>
-</span><span class='line'>  <span class="p">{</span> <span class="s2">&quot;keys&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;ctrl+command+r&quot;</span><span class="p">],</span> <span class="s2">&quot;command&quot;</span><span class="o">:</span> <span class="s2">&quot;reveal_in_side_bar&quot;</span> <span class="p">},</span>
-</span><span class='line'>  <span class="p">{</span> <span class="s2">&quot;keys&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;command+shift+.&quot;</span><span class="p">],</span> <span class="s2">&quot;command&quot;</span><span class="o">:</span> <span class="s2">&quot;erb&quot;</span> <span class="p">},</span>
-</span><span class='line'>  <span class="p">{</span> <span class="s2">&quot;keys&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;super+v&quot;</span><span class="p">],</span> <span class="s2">&quot;command&quot;</span><span class="o">:</span> <span class="s2">&quot;paste_and_indent&quot;</span> <span class="p">},</span>
-</span><span class='line'>  <span class="p">{</span> <span class="s2">&quot;keys&quot;</span><span class="o">:</span> <span class="p">[</span><span class="s2">&quot;super+shift+v&quot;</span><span class="p">],</span> <span class="s2">&quot;command&quot;</span><span class="o">:</span> <span class="s2">&quot;paste&quot;</span> <span class="p">}</span>
-</span><span class='line'><span class="p">]</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>Shortcut</h2>
-
-<p>列一些个老是忘记用快捷键的操作, (有时候又无故发现一些快捷键)</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">focus</span><span class="err">到侧边栏</span><span class="o">:</span> <span class="s1">&#39;ctrl + 0&#39;</span>
-</span><span class='line'><span class="nx">Command</span> <span class="o">+</span> <span class="nx">D</span><span class="o">:</span><span class="err">选择词</span><span class="p">.</span><span class="err">重复按下可以增加选择下一相同的词</span><span class="p">.</span><span class="err">按下</span> <span class="nx">Ctrl</span> <span class="o">+</span> <span class="nx">Command</span> <span class="o">+</span> <span class="nx">G</span> <span class="err">可选中所有相同的词</span><span class="p">.</span>
-</span><span class='line'><span class="nx">Command</span> <span class="o">+</span> <span class="nx">Option</span> <span class="o">+</span> <span class="err">/:块注释.</span>
-</span><span class='line'><span class="nx">Control</span> <span class="o">+</span> <span class="nx">M</span><span class="o">:</span><span class="err">跳转到对应的括号</span><span class="p">.</span>
-</span><span class='line'><span class="nx">Control</span> <span class="o">+</span> <span class="nx">Shift</span> <span class="o">+</span> <span class="nx">M</span><span class="o">:</span><span class="err">选中当前括号内的内容</span><span class="p">,</span><span class="err">重复按下可增加选择括号本身</span><span class="p">.</span>
-</span><span class='line'><span class="nx">Command</span> <span class="o">+</span> <span class="nx">Shift</span> <span class="o">+</span> <span class="nx">J</span><span class="o">:</span><span class="err">选中当前缩进级别下的所有代码</span><span class="p">.</span>
-</span><span class='line'><span class="nx">Command</span> <span class="o">+</span> <span class="nx">Option</span> <span class="o">+</span> <span class="p">.</span><span class="o">:</span><span class="err">闭合</span> <span class="nx">HTML</span> <span class="err">标签</span><span class="p">.(</span><span class="err">说常用也不常用</span><span class="p">,</span> <span class="err">但又貌似有用</span><span class="p">)</span>
-</span><span class='line'><span class="err">按住</span><span class="nx">option</span> <span class="err">拖拽多列</span>
-</span><span class='line'><span class="err">按下</span> <span class="nx">Control</span> <span class="o">+</span> <span class="nx">Shift</span> <span class="o">+</span> <span class="err">方向键</span><span class="p">,</span><span class="err">可以选中矩形区域的文本</span><span class="p">.</span>
-</span><span class='line'><span class="err">选择数行文本末端</span><span class="p">,</span><span class="err">选中区域然后按下</span> <span class="nx">Shift</span> <span class="o">+</span> <span class="nx">Command</span> <span class="o">+</span> <span class="nx">L</span><span class="p">.</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>PS:</h2>
-
-<p>官方的symlink貌似有点不妥,</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">ln</span> <span class="o">-</span><span class="nx">s</span> <span class="s2">&quot;/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl&quot;</span> <span class="o">~</span><span class="err">/bin/subl</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>稍作修改为:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">ln</span> <span class="o">-</span><span class="nx">s</span> <span class="s2">&quot;/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl&quot;</span> <span class="o">/</span><span class="nx">usr</span><span class="o">/</span><span class="nx">local</span><span class="o">/</span><span class="nx">bin</span><span class="o">/</span><span class="nx">subl</span>
-</span></code></pre></td></tr></table></div></figure>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Understanding Publications and Subscriptions]]></title>
-    <link href="http://xguox.github.com/blog/2013/04/10/understanding-publications-and-subscriptions/"/>
-    <updated>2013-04-10T14:22:00+08:00</updated>
-    <id>http://xguox.github.com/blog/2013/04/10/understanding-publications-and-subscriptions</id>
-    <content type="html"><![CDATA[<h5>LEVEL: INTERMEDIATE</h5>
-
-<p>Publications &amp; subscriptions 是在Meteor里最基本也是最重要的概念之一, 但同时也是最难理解的. 很大程度上是由于这其中跟传统的构建web的方式有很大的不同.<br/>
-过去, 我们习惯思考,定义API用在客户端和服务器之间进行数据传递, 而在Meteor中, 客户端和服务端的数据是同步的. 我们使用publications来精确地控制如何同步. <br/>
-最初人们觉得这个概念有一些难以理解的部分原因是由于Meteor像&#8221;魔术&#8221;那样为我们做了这一切. 这些&#8221;魔术&#8221;都非常有用, 而具体发生了什么则都被掩盖封装起来了(就如魔术为何如此奇幻一样). 那么, 现在就让我们拨开这些魔术表层的面纱一探究竟. 在此, 我们将会学习到一到两个窍门.</p>
-
-<h2>Defining Publications</h2>
-
-<p>从本质上讲, <strong>publication</strong>(使用<strong>subscription</strong>与之相连)是从服务端(源)collection到客户端(目标)collection的传递数据方法. 同时, 把subscription想象成一个漏斗连接着标准的数据存储(与mongodb数据库交互的源集合)与客户端缓存(目标集合, 相应数据的备份或者子集).</p>
-
-<p><strong>subscription</strong>精确地控制着哪些数据该通过这个漏斗, 同时负责同步两端的数据. 通过添加多个<strong>subscription</strong>到服务端数据存储, 我们就可以实时地, 有效地, 安全地保持各个客户端的数据同步.</p>
-
-<!-- more -->
-
-
-<p>这里头所用的隧道协议叫作 <strong>DDP</strong>(Distributed Data Protocol). 想要了解更多关于DDP可以观看Matt DeBergalis(Meteor的founder之一)在(<a href="http://2012.realtimeconf.com/video/matt-debergalis">The Realtime Conference</a>上的演讲. 又或者是 Chris Mather的<a href="http://www.eventedmind.com/posts/meteor-subscriptions-and-ddp">这个视频</a>更详细的为你介绍DDP的概念.</p>
-
-<p>现在, 我们了解了基础部分, 让我们往更深层探个究竟吧.</p>
-
-<h2>Autopublish</h2>
-
-<p>当你创建了一个最基本的Meteor应用之后(比如使用 <code>meteor create</code>), 它会自动的启用 <strong>autopublish</strong>这个package. 首先的, 我们先来看看它究竟为干了些什么.</p>
-
-<p><strong>autopublish</strong>是移除了对subscriptions的需要还是只为你保管subscriptions 这取决于你如何看待它. <strong>autopublish</strong>所做的是自动地把服务端的所有数据镜像到客户端.
-<img src="http://www.themeteorbook.com/images/book/autopublish@2x.png" alt="" /></p>
-
-<p>这是怎么做到的呢? 假设你在服务端有个<code>posts</code>的集合. 那么 <strong>autopublish</strong>会自动把在Mongo 的posts 集合所找到的每一个post发送到客户端给一个也同样叫posts 的集合.</p>
-
-<p>所以, 如果你使用<code>autopublish</code>, 你就不用再去管subscriptions了. 数据在哪都可以访问, 所有事情变得各种简单. 当然, 很明显这是有问题的, 你不可能在每一个用户的机器上都缓存有你的整个app的数据库备份.</p>
-
-<p>出于这个原因, <strong>autopublish</strong>只适合用在你的app刚起步还没考虑到subscriptions的时候.</p>
-
-<h2>Publishing Full Collections</h2>
-
-<p>当你移除掉autopublish以后, 很快你就会发现你的数据都会在客户端消失不见. 有一种方法可以很简单地取回这些数据, 那就是简单的复刻<code>autopublish</code>, 并把一个collection全部publish. 例如:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">Meteor</span><span class="p">.</span><span class="nx">publish</span><span class="p">(</span><span class="s1">&#39;allPosts&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
-</span><span class='line'>  <span class="k">return</span> <span class="nx">Posts</span><span class="p">.</span><span class="nx">find</span><span class="p">();</span>
-</span><span class='line'><span class="p">});</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p><img src="http://www.themeteorbook.com/images/book/fullcollection@2x.png" alt="" /></p>
-
-<p>同样地, 我们也还是把整个collection都publish了, 所不同的是, 现在对哪个collection进行publish是可控的. 在上边这个例子, 我们publish了<code>posts</code> collection, 而<code>comments</code> collection没有被publish.</p>
-
-<h2>Publishing Partial Collections</h2>
-
-<p>更高一级的粒度控制是只publish某个collection的一部分. 比如, 只作用于属于某个author的posts:</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">Meteor</span><span class="p">.</span><span class="nx">publish</span><span class="p">(</span><span class="s1">&#39;somePosts&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
-</span><span class='line'>  <span class="k">return</span> <span class="nx">Posts</span><span class="p">.</span><span class="nx">find</span><span class="p">({</span><span class="s1">&#39;author&#39;</span><span class="o">:</span><span class="s1">&#39;Tom&#39;</span><span class="p">});</span>
-</span><span class='line'><span class="p">});</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p><img src="http://www.themeteorbook.com/images/book/partialcollection@2x.png" alt="" /></p>
-
-<p>代码都很简单, 但是究竟在底层发生了些什么呢?</p>
-
-<p>如果你有读过<a href="http://docs.meteor.com/#publishandsubscribe">Meteor的文档</a>, 可能会对<code>added()</code>和<code>ready()</code>在客户端设置记录的属性感到惊讶,  and struggled to square that with the Meteor apps that you&rsquo;ve seen that never use those methods.(I am so sorry 这句没想着怎么翻译好)</p>
-
-<p>这其中的原因是, Meteor提供了一个非常重要的便利 &ndash; <code>_publishCursor()</code>方法. 可能你从没见过它的使用? 因为有可能不是直接的调用,但如果你在调用一个publish函数并返回一个<strong>游标(cursor)</strong>(例如: <code>Posts.find({'author':'Tom'})</code>), 那么这就是<code>_publishCursor</code>.</p>
-
-<p>当Meteor看到<code>somePosts</code>这个publication返回来一个游标(cursor), 则表明它自动调用了<code>_publishCursor()</code>publish这个cursor. 下面这是<code>_publishCursor()</code>所做的事情:</p>
-
-<ul>
-<li>在服务端查找这个名字的collection</li>
-<li>从cursor中取得所有匹配的documents并发送到客户端的同名集合(在这用到的是<code>added()</code>)</li>
-<li>只要某个document被增删改, 都会被同步到客户端(在cursor上使用<code>.observe()</code>, 并使用<code>.added()</code> <code>.updated()</code> <code>.removed()</code>来完成)</li>
-</ul>
-
-
-<p>那么,在上边的例子, 我们就可以很简便地确保只有用户感兴趣的posts(written by Tom)会出现在他们的客户端缓存之中.</p>
-
-<h2>Publishing Partial Properties</h2>
-
-<p>在上边我们已经看到了如何publish我们的一部分posts, 但是我们还可以做的更精确一些. 下面看看如何publish特定的记录吧. <br/>
-<img src="http://www.themeteorbook.com/images/book/partialproperties@2x.png" alt="" /></p>
-
-<p>跟前边的一样, 我们先用<code>find()</code>得到一个cursor, 不过这一次我们会排除掉一些</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">Meteor</span><span class="p">.</span><span class="nx">publish</span><span class="p">(</span><span class="s1">&#39;allPosts&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
-</span><span class='line'>  <span class="k">return</span> <span class="nx">Posts</span><span class="p">.</span><span class="nx">find</span><span class="p">({},</span> <span class="p">{</span><span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
-</span><span class='line'>    <span class="nx">author</span><span class="o">:</span> <span class="kc">false</span>
-</span><span class='line'>  <span class="p">}});</span>
-</span><span class='line'><span class="p">});</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>当然的, 我们还能够结合这两种技巧. 比如我们想要返回所有来自Tom的posts同时, 可以这么写</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">Meteor</span><span class="p">.</span><span class="nx">publish</span><span class="p">(</span><span class="s1">&#39;allPosts&#39;</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
-</span><span class='line'>  <span class="k">return</span> <span class="nx">Posts</span><span class="p">.</span><span class="nx">find</span><span class="p">({</span><span class="s1">&#39;author&#39;</span><span class="o">:</span><span class="s1">&#39;Tom&#39;</span><span class="p">},</span> <span class="p">{</span><span class="nx">fields</span><span class="o">:</span> <span class="p">{</span>
-</span><span class='line'>    <span class="nx">author</span><span class="o">:</span> <span class="kc">false</span>
-</span><span class='line'>  <span class="p">}});</span>
-</span><span class='line'><span class="p">});</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>总结</h2>
-
-<p>现在, 我们已经知道了如何publish从所有collections的所有documents的所有属性(通过<code>autopublish</code>)到特定collections的特定documents的特定记录.</p>
-
-<p>这包括了你能用Meteor的subscription所能做的所有基本东西, 而这些简单的技巧应该</p>
-
-<p>有时候, 你可能会需要更深层的组合, 联接, 合并 publication, 而这些我们将会再找个时间详谈.</p>
-
-<p>原文来自Tom Coleman <a href="http://www.themeteorbook.com/2013/04/05/publications-and-subscriptions/">Understanding Publications and Subscriptions</a></p>
 ]]></content>
   </entry>
   

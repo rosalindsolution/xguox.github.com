@@ -7,7 +7,7 @@
 
 	<meta name="author" content="XguoX">
 
-<meta name="description" content="原本没有意思要班门弄斧写什么Ghost的部署感受帖的,不过前些天看到@lucifr 的这条tweet,于是还是忍不住写了,就让更多假死Ghost诞生吧. ghost 一出,网上又要冒出一大堆主题风格相似的 blog 了,然后更新两篇使用感受就处于假死状态&mdash; Lucifr (@ &hellip;"> <meta name="keywords" content="">
+<meta name="description" content="真心尴尬,学习并使用了一年多的 Ruby/Rails,然后些个月不碰就忘了大半了.原本就不高端,这一回滚跟重头再来差不多了. 语法还能快速过了一遍.(主要通过 CodeSchool) 元编程,DSL那一块接下来可要费点劲了,毕竟原先也没完全掌握到. 今天学到两个之前没注意的 tricks. &hellip;"> <meta name="keywords" content="">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -48,6 +48,927 @@
 </header>
 
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<header>
+		<h2 class="title">
+			
+			<a href="/blog/2013/11/04/relearn-ruby/">
+			
+				重拾Ruby (I)</a>
+		</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-11-04T14:47:00+08:00" pubdate data-updated="true">Nov 4<span>th</span>, 2013</time></div>
+	</header>
+	<div class="entry-content">
+		<p>真心尴尬,学习并使用了一年多的 Ruby/Rails,然后些个月不碰就忘了大半了.原本就不高端,这一回滚跟重头再来差不多了. 语法还能快速过了一遍.(主要通过 <a href="https://www.codeschool.com/">CodeSchool</a>) 元编程,DSL那一块接下来可要费点劲了,毕竟原先也没完全掌握到.</p>
+
+<p>今天学到两个之前没注意的 tricks.</p>
+
+<p>一个是关于<code>to_s</code>的,另外个是关于 <code>Module</code> .</p>
+
+<h2>to_s</h2>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Game</span>
+</span><span class='line'>  <span class="kp">attr_accessor</span> <span class="ss">:name</span><span class="p">,</span> <span class="ss">:year</span><span class="p">,</span> <span class="ss">:system</span>
+</span><span class='line'>  <span class="kp">attr_reader</span> <span class="ss">:created_at</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="nb">name</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="p">{})</span>
+</span><span class='line'>    <span class="nb">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="nb">name</span>
+</span><span class='line'>    <span class="nb">self</span><span class="o">.</span><span class="n">year</span> <span class="o">=</span> <span class="n">options</span><span class="o">[</span><span class="ss">:year</span><span class="o">]</span>
+</span><span class='line'>    <span class="nb">self</span><span class="o">.</span><span class="n">system</span> <span class="o">=</span> <span class="n">options</span><span class="o">[</span><span class="ss">:system</span><span class="o">]</span>
+</span><span class='line'>    <span class="vi">@created_at</span> <span class="o">=</span> <span class="no">Time</span><span class="o">.</span><span class="n">now</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">to_s</span>
+</span><span class='line'>    <span class="nb">self</span><span class="o">.</span><span class="n">name</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">description</span>
+</span><span class='line'>    <span class="s2">&quot;</span><span class="si">#{</span><span class="nb">self</span><span class="si">}</span><span class="s2"> was released in </span><span class="si">#{</span><span class="nb">self</span><span class="o">.</span><span class="n">year</span><span class="si">}</span><span class="s2">.&quot;</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">class</span> <span class="nc">ConsoleGame</span> <span class="o">&lt;</span> <span class="no">Game</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">to_s</span>
+</span><span class='line'>    <span class="s2">&quot;</span><span class="si">#{</span><span class="nb">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> - </span><span class="si">#{</span><span class="nb">self</span><span class="o">.</span><span class="n">system</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>其中的字符串插值<code>#{self}</code>其实相当于隐式调用了<code>to_s</code>,在这里也就是<code>self.to_s</code> 好吧, 我傻逼了,字符串插值当然是不管啥都执行<code>to_s</code>. 不过我想说的不是这个.而是牵扯到<code>puts</code>和<code>p</code></p>
+
+<h3>puts and p and inspect</h3>
+
+<p>调用一些例子:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">A</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">string</span><span class="p">,</span> <span class="n">number</span><span class="p">)</span>
+</span><span class='line'>    <span class="vi">@string</span> <span class="o">=</span> <span class="n">string</span>
+</span><span class='line'>    <span class="vi">@number</span> <span class="o">=</span> <span class="n">number</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">to_s</span>
+</span><span class='line'>    <span class="s2">&quot;In to_s:</span><span class="se">\n</span><span class="s2">   </span><span class="si">#{</span><span class="vi">@string</span><span class="si">}</span><span class="s2">, </span><span class="si">#{</span><span class="vi">@number</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">to_a</span>
+</span><span class='line'>    <span class="s2">&quot;In to_a:</span><span class="se">\n</span><span class="s2">   </span><span class="si">#{</span><span class="vi">@string</span><span class="si">}</span><span class="s2">, </span><span class="si">#{</span><span class="vi">@number</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'><span class="nb">puts</span> <span class="n">a</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;hello world&quot;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>输出</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="no">In</span> <span class="nb">to_s</span><span class="p">:</span>
+</span><span class='line'>   <span class="n">hello</span> <span class="n">world</span><span class="p">,</span> <span class="mi">5</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>这里的<code>to_s</code>在对象被实例化之后隐式调用了</p>
+
+<p>然后是</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Item</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">inspect</span>
+</span><span class='line'>    <span class="s2">&quot;Result of inspect&quot;</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="nb">puts</span> <span class="no">Item</span><span class="o">.</span><span class="n">new</span>
+</span><span class='line'><span class="nb">puts</span> <span class="no">Item</span><span class="o">.</span><span class="n">new</span><span class="o">.</span><span class="n">to_s</span>
+</span><span class='line'><span class="nb">p</span> <span class="no">Item</span><span class="o">.</span><span class="n">new</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>输出</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1">#&lt;Item:0x8f85568&gt;</span>
+</span><span class='line'><span class="c1">#&lt;Item:0x8f8552c&gt;</span>
+</span><span class='line'><span class="no">Result</span> <span class="n">of</span> <span class="nb">inspect</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><code>puts</code>通常输出的是 对象调用<code>to_s</code>的结果,而<code>p</code>则是直接输出<code>inspect</code></p>
+
+<h3>inspect vs to_s</h3>
+
+<p>另一个例子</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Item</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">item_name</span><span class="p">,</span> <span class="n">qty</span><span class="p">)</span>
+</span><span class='line'>    <span class="vi">@item_name</span> <span class="o">=</span> <span class="n">item_name</span>
+</span><span class='line'>    <span class="vi">@qty</span> <span class="o">=</span> <span class="n">qty</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">item</span> <span class="o">=</span> <span class="no">Item</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="nb">puts</span> <span class="n">item</span>
+</span><span class='line'><span class="nb">p</span> <span class="n">item</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>输出</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1">#&lt;Item:0x8f85388&gt;</span>
+</span><span class='line'><span class="c1">#&lt;Item:0x8f85388 @item_name=&quot;a&quot;, @qty=1&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>可以看到, <code>puts</code>打印出类名然后跟着一个十六进制的数,这个数字跟该对象在内存中的存储位置相关,不过我们很少会使用到.</p>
+
+<p>而<code>p</code>的话是打印出类名及该对象的所有的实例变量,这个在debug的时候非常有用.</p>
+
+<p>上面这个例子说明了<code>p</code>和<code>puts</code>的不同,但是,有时候你会想要自定义这些方法的输出形式. 这个可以通过重写<code>to_s</code>来完成.</p>
+
+<p>如下面的例子</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">Item</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">item_name</span><span class="p">,</span> <span class="n">qty</span><span class="p">)</span>
+</span><span class='line'>    <span class="vi">@item_name</span> <span class="o">=</span> <span class="n">item_name</span>
+</span><span class='line'>    <span class="vi">@qty</span> <span class="o">=</span> <span class="n">qty</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">to_s</span>
+</span><span class='line'>    <span class="s2">&quot;</span><span class="si">#{</span><span class="vi">@item_name</span><span class="si">}</span><span class="s2">: </span><span class="si">#{</span><span class="vi">@qty</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">item</span> <span class="o">=</span> <span class="no">Item</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="nb">puts</span> <span class="n">item</span>
+</span><span class='line'><span class="nb">p</span> <span class="n">item</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>输出</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="ss">a</span><span class="p">:</span> <span class="mi">1</span>
+</span><span class='line'><span class="ss">a</span><span class="p">:</span> <span class="mi">1</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>此时,<code>p</code>和<code>puts</code>是相同的,因为<code>to_s</code>被重写,Ruby会把它当作默认的<code>inspect</code>结果.除非你重写<code>inspect</code>方法. 如前边的例子</p>
+
+<p>参考<a href="http://Rubymonk.com/learning/books/4-Ruby-primer-ascent/chapters/45-more-classes/lessons/108-displaying-objects">RubyMonk</a></p>
+
+<p><a href="http://stackoverflow.com/questions/12040527/Ruby-automatically-calls-to-s-method-when-object-is-created/19751192#19751192">http://stackoverflow.com/questions/12040527/Ruby-automatically-calls-to-s-method-when-object-is-created/19751192#19751192</a></p>
+
+<h2>Module</h2>
+
+<p>一般的,把 module 的方法添加到类中有两种方式(用途也不同).</p>
+
+<p>一种是使用 include 添加后作为实例方法; 另一种是使用 extend ,对应的是作为类方法使.</p>
+
+<p>当然,这是比较多用到的, 再还有一种则是扩展单个对象.<br/>
+直接 copy 官方文档的例子</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">module</span> <span class="nn">Mod</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">hello</span>
+</span><span class='line'>    <span class="s2">&quot;Hello from Mod.</span><span class="se">\n</span><span class="s2">&quot;</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">class</span> <span class="nc">Klass</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">hello</span>
+</span><span class='line'>    <span class="s2">&quot;Hello from Klass.</span><span class="se">\n</span><span class="s2">&quot;</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">k</span> <span class="o">=</span> <span class="no">Klass</span><span class="o">.</span><span class="n">new</span>
+</span><span class='line'><span class="n">k</span><span class="o">.</span><span class="n">hello</span>         <span class="c1">#=&gt; &quot;Hello from Klass.\n&quot;</span>
+</span><span class='line'><span class="n">k</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="no">Mod</span><span class="p">)</span>   <span class="c1">#=&gt; #&lt;Klass:0x401b3bc8&gt;</span>
+</span><span class='line'><span class="n">k</span><span class="o">.</span><span class="n">hello</span>         <span class="c1">#=&gt; &quot;Hello from Mod.\n&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>当需要作为类方法和实例方法添加到类当中的时候, 当然, 可以同时使用<code>include</code>和<code>extend</code>, 不过还有另一种简便一些的方法 <strong>Hooks &ndash; self.included</strong></p>
+
+<p>比如</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">module</span> <span class="nn">LibraryUtils</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">included</span><span class="p">(</span><span class="n">base</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">base</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="no">ClassMethods</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">add_game</span><span class="p">(</span><span class="n">game</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">remove_game</span><span class="p">(</span><span class="n">game</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">module</span> <span class="nn">ClassMethods</span>
+</span><span class='line'>    <span class="k">def</span> <span class="nf">search_by_game_name</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">class</span> <span class="nc">AtariLibrary</span>
+</span><span class='line'>  <span class="kp">include</span> <span class="no">LibraryUtils</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># 当前 module 被 base 包含</span>
+</span><span class='line'><span class="c1"># module名 ClassMethods 可以任意取</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>最后, 还有可以通过调用<code>ActiveSupport::Concern</code>.参考 <a href="http://api.RubyonRails.org/">Rails</a> 文档<br/>
+典型的 module 是:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">module</span> <span class="nn">M</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">included</span><span class="p">(</span><span class="n">base</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">base</span><span class="o">.</span><span class="n">extend</span> <span class="no">ClassMethods</span>
+</span><span class='line'>    <span class="n">base</span><span class="o">.</span><span class="n">class_eval</span> <span class="k">do</span>
+</span><span class='line'>      <span class="n">scope</span> <span class="ss">:disabled</span><span class="p">,</span> <span class="o">-&gt;</span> <span class="p">{</span> <span class="n">where</span><span class="p">(</span><span class="ss">disabled</span><span class="p">:</span> <span class="kp">true</span><span class="p">)</span> <span class="p">}</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">module</span> <span class="nn">ClassMethods</span>
+</span><span class='line'>    <span class="o">.</span><span class="n">.</span><span class="o">.</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>使用 <code>ActiveSupport::Concern</code> 上边的例子可以这么改写:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">require</span> <span class="s1">&#39;active_support/concern&#39;</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">module</span> <span class="nn">M</span>
+</span><span class='line'>  <span class="kp">extend</span> <span class="ss">ActiveSupport</span><span class="p">:</span><span class="ss">:Concern</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">included</span> <span class="k">do</span>
+</span><span class='line'>    <span class="n">scope</span> <span class="ss">:disabled</span><span class="p">,</span> <span class="o">-&gt;</span> <span class="p">{</span> <span class="n">where</span><span class="p">(</span><span class="ss">disabled</span><span class="p">:</span> <span class="kp">true</span><span class="p">)</span> <span class="p">}</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">module</span> <span class="nn">ClassMethods</span>
+</span><span class='line'>    <span class="o">.</span><span class="n">.</span><span class="o">.</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>此外, 它可以优雅地处理 module 之间的依赖. 如下例子,假定 module <code>Bar</code> 依赖于 module <code>Foo</code>. 通常的我们会这么写</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">module</span> <span class="nn">Foo</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">included</span><span class="p">(</span><span class="n">base</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">base</span><span class="o">.</span><span class="n">class_eval</span> <span class="k">do</span>
+</span><span class='line'>      <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">method_injected_by_foo</span>
+</span><span class='line'>        <span class="o">.</span><span class="n">.</span><span class="o">.</span>
+</span><span class='line'>      <span class="k">end</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">module</span> <span class="nn">Bar</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">included</span><span class="p">(</span><span class="n">base</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">base</span><span class="o">.</span><span class="n">method_injected_by_foo</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">class</span> <span class="nc">Host</span>
+</span><span class='line'>  <span class="kp">include</span> <span class="no">Foo</span> <span class="c1"># We need to include this dependency for Bar</span>
+</span><span class='line'>  <span class="kp">include</span> <span class="no">Bar</span> <span class="c1"># Bar is the module that Host really needs</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>但是,<code>Host</code>为嘛要关心<code>Bar</code> 的依赖 <code>Foo</code>呢?为啥不直接在<code>Bar</code>里头引入<code>Foo</code>呢?</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">module</span> <span class="nn">Bar</span>
+</span><span class='line'>  <span class="kp">include</span> <span class="no">Foo</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">included</span><span class="p">(</span><span class="n">base</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">base</span><span class="o">.</span><span class="n">method_injected_by_foo</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">class</span> <span class="nc">Host</span>
+</span><span class='line'>  <span class="kp">include</span> <span class="no">Bar</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>不幸的是,这不起作用. 因为当<code>Foo</code>在<code>Bar</code>中included 的时候,<code>Foo</code> 中的<code>base</code>实际上是<code>Bar</code> module,而不是 <code>Host</code>类.这时候用<code>ActiveSupport::Concern</code>的话就可以杠杠地解决这个依赖问题.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">require</span> <span class="s1">&#39;active_support/concern&#39;</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">module</span> <span class="nn">Foo</span>
+</span><span class='line'>  <span class="kp">extend</span> <span class="ss">ActiveSupport</span><span class="p">:</span><span class="ss">:Concern</span>
+</span><span class='line'>  <span class="n">included</span> <span class="k">do</span>
+</span><span class='line'>    <span class="k">def</span> <span class="nc">self</span><span class="o">.</span><span class="nf">method_injected_by_foo</span>
+</span><span class='line'>      <span class="o">.</span><span class="n">.</span><span class="o">.</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">module</span> <span class="nn">Bar</span>
+</span><span class='line'>  <span class="kp">extend</span> <span class="ss">ActiveSupport</span><span class="p">:</span><span class="ss">:Concern</span>
+</span><span class='line'>  <span class="kp">include</span> <span class="no">Foo</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">included</span> <span class="k">do</span>
+</span><span class='line'>    <span class="nb">self</span><span class="o">.</span><span class="n">method_injected_by_foo</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">class</span> <span class="nc">Host</span>
+</span><span class='line'>  <span class="kp">include</span> <span class="no">Bar</span> <span class="c1"># works, Bar takes care now of its dependencies</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>最后,附上<code>included</code>源码</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="c1"># File activesupport/lib/active_support/concern.rb, line 118</span>
+</span><span class='line'><span class="k">def</span> <span class="nf">included</span><span class="p">(</span><span class="n">base</span> <span class="o">=</span> <span class="kp">nil</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">block</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">if</span> <span class="n">base</span><span class="o">.</span><span class="n">nil?</span>
+</span><span class='line'>    <span class="vi">@_included_block</span> <span class="o">=</span> <span class="n">block</span>
+</span><span class='line'>  <span class="k">else</span>
+</span><span class='line'>    <span class="k">super</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post">
+	<header>
+		<h2 class="title">
+			
+			<a href="/blog/2013/10/28/hidden-productivity-secrets-with-alfred/">
+			
+				Hidden Productivity Secrets With Alfred</a>
+		</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-10-28T15:07:00+08:00" pubdate data-updated="true">Oct 28<span>th</span>, 2013</time></div>
+	</header>
+	<div class="entry-content">
+		<p>好的开发人员总是在寻找可以让自己的工作流程更快速,更自动化的方法.<br/>
+这次,我们带来的是<strong>Alfred的一系列workflows</strong>,它们可以极大的提高你的开发效率,相信你会为之震惊.</p>
+
+<h3>What is Alfred?</h3>
+
+<p>对于大多数了解不深的人来说,<a href="http://www.alfredapp.com/">Alfred</a>只是一个备受赞誉的Mac OS X app, 它可以快速地帮助你查找在线或者本地的文件. 最新的版本 <strong>Alfred 2</strong>更是带来了大量的改进,尤其是其中的<a href="http://www.alfredapp.com/powerpack/">Powerpack</a>,可以让你创建自己的workflows(工作流程).</p>
+
+<p>下面你将会看到这些精心挑选出来的,能够改变你的工作方式的workflows.</p>
+
+<h2>Open With Sublime Text</h2>
+
+<p>强大的文件,目录搜索能力是Alfred所最让人喜爱的功能之一. 那如果我们想要利用它使用自己喜爱的编辑器(比如说Sublime Text 3)打开文件或者目录呢?</p>
+
+<ul>
+<li><a href="https://github.com/franzheidl/alfred-workflows/tree/master/open-with-sublime-text">Open With Sublime Text (v3)</a>, developed by <a href="https://github.com/franzheidl/">@franzheidl</a></li>
+<li><a href="http://zno.io/RcAe">下载</a></li>
+<li>触发: <code>subl</code>,<code>subl*</code></li>
+</ul>
+
+
+<p>想要其他编辑器的话请猛击 <a href="https://github.com/zenorocha/alfred-workflows/wiki/Extras#code-editors">Extras</a></p>
+
+<p><img src="https://7nnqba.dm1.livefilestore.com/y2pGNECa5OJFUT2KVW5fKdahDKuCsRFn-r7el4QbFLC7ijAiYxRNxBI_COOWUq8W8-oKBvrS0eU7UyCFn129AtLp9eBjydEPpJzJwHMK8hIqMA/alfred-subl-opt.png?psid=1" alt="" /></p>
+
+<p>XguoX: 可能更多人还是选择在终端直接用命令敲开.</p>
+
+<h2>Can I Use&hellip; Workflow</h2>
+
+<p>在HTML5时代,当使用某一个CSS属性或者JavaScript APIs之前,你需要检查知道浏览器是否支持. 当然,你可以打开浏览器,直接浏览<a href="http://caniuse.com/">Can I Use&hellip;</a>这个网站, 然后搜索某个关键字从而看看浏览器的支持情况.除此外,你还可以使用这个Alfred Workflow.</p>
+
+<ul>
+<li><a href="https://github.com/willfarrell/alfred-caniuse-workflow">Can I Use&hellip; Workflow</a>,developed by <a href="https://github.com/willfarrell/">@willfarrell</a></li>
+<li><a href="http://zno.io/Rcex">下载</a></li>
+<li>触发: <code>caniuse</code></li>
+</ul>
+
+
+<p><img src="https://7nnqba.dm2301.livefilestore.com/y2pLGL9Yh8RK9E6UUkjLPqhxSoA_Wofc3tyJuq-9DOmdK1fjtDTfmvBdegAJmCsO45T_Pf02opsLZ2YJXmhoXWy5HXUTmCw-3u-oJfUH9UERVU/alfred-caniuse-opt.png?psid=1" alt="" /></p>
+
+<p>XguoX:搜索速度还行</p>
+
+<h2>Dash Workflow</h2>
+
+<p>没有人会知道某一门语言或者某一个框架的所有.我们时常会需要查找某个特定的method如何使用.最近,发现了一个非常惊艳的app,<a href="http://kapeli.com/dash">Dash</a>,在本地查找各类APIs文档,完全离线的说. 这还不算啥,通过这个workflow,你可以通过过滤各个语言(框架)关键字来查找相关文档.这个流弊的app可是免费的哦,所以,在使用这个workflow前请先安装好Dash.</p>
+
+<ul>
+<li><a href="https://github.com/willfarrell/alfred-dash-workflow">Dash Workflow</a>,developed by <a href="https://github.com/willfarrell/">@willfarrell</a></li>
+<li><a href="http://zno.io/Rc3p">下载</a></li>
+<li>触发:<code>dash</code> <code>html</code> <code>css</code> <code>gem</code> <code>angularjs</code> <code>Rails</code> 基本上常用的语言框架库都有了</li>
+</ul>
+
+
+<p><img src="https://7nnqba.dm1.livefilestore.com/y2p8jXte6unkiz4tr4VJFW9zTtwY5LHw6TPj8Bhx6IOm_bI2eU-6GyzBMx8DdEbI6jsLcPz7ttB9S1FqNDA9q8rU4JsouoEspKKgbjj2k-EQLA/alfred-dash-bs-opt.png?psid=1" alt="" />
+<img src="https://7nnqba.dm2302.livefilestore.com/y2pxzqD2DRpB4rhywnWViFn5zJMrjn59dI_lKaX4wCj9HTSO40hX1NSuRoCJGObJMCHdRB-bkmuYE9OPQePbPjXcaVli3J3dETsLtKIPWx-aHU/alfred-dash-js-opt.png?psid=1" alt="" /></p>
+
+<p>XguoX:Dash 真心很流弊!巨赞!!!</p>
+
+<h2>Terminal Finder</h2>
+
+<p>一些操作我们可能会希望在终端完成,而另一些则希望在Finder完成.这个workflow可以流畅地在这两者之间转换.在终端(iTerm)中打开当前的Finder窗口,反之亦然.</p>
+
+<ul>
+<li><a href="https://github.com/LeEnno/alfred-terminalfinder">TerminalFinder</a>, developed by <a href="https://github.com/LeEnno/">@LeEnno</a></li>
+<li><a href="http://zno.io/RkU2">下载</a></li>
+<li>触发: <code>ft</code> <code>tf</code> <code>fi</code> <code>if</code></li>
+</ul>
+
+
+<p><img src="https://7nnqba.dm2302.livefilestore.com/y2plpdCbBvSP7J7seYaCrTIdd0MPtXmqhhqDa-GPRjiO3nBza38J4jpFTetxVTAWfkafkiiTrqaikp-v3_Q-n2bTiBZj7rc3RvdO8OXgjJIhZU/alfred-fi-opt.png?psid=1" alt="" />
+<img src="https://7nnqba.dm1.livefilestore.com/y2pKTdNdqK9KacL8BTdEMxozuH9vtTAC0qZTdO7wMa3VFtS0rjV_EXpOMKyYx_eqMAGvs6auzVGPw50UN-qYMJyeUVwZNihpyq8TbyYeyqUFyw/alfred-tf-opt.png?psid=1" alt="" /></p>
+
+<p>XguoX:又是一个巨实用的workflow</p>
+
+<h2>Package Managers Workflow</h2>
+
+<p>代码复用是软件开发的一个重要组成部分,现如今我们有很多的方案来构建我们的代码以及搜索使用第三方软件包. 想要使用某个Node.js module? Grunt task?通过这个workflow,你可以快速简便地在一个地方通过你想要的包管理器查找到你想要的插件或者组件.</p>
+
+<ul>
+<li><a href="https://github.com/willfarrell/alfred-pkgman-workflow">Package Managers Workflow</a>, developed by <a href="https://github.com/willfarrell/">@willfarrell</a></li>
+<li><a href="https://github.com/willfarrell/">下载</a></li>
+<li>触发: <code>bower</code> <code>grunt</code> <code>npm</code> <code>composer</code> <code>gems</code> <code>pear</code> <code>pypi</code> <code>cocoa</code> <code>brew</code> <code>alcatraz</code> <code>rpm</code> <code>maven</code> <code>docker</code></li>
+</ul>
+
+
+<p><img src="https://7nnqba.dm1.livefilestore.com/y2ppAHAT45dOTn6bKbLSb4zC8iyK4bl8qlXjz7dsYx3h3lceulR1kHbZdz1wS5XiA5V6pzdJGxrpjKI-gwF6IpD1YNBNZCfYrQjp8YCi1R5fC8/alfred-pkg-npm-opt.png?psid=1" alt="" />
+<img src="https://7nnqba.dm2302.livefilestore.com/y2pWCd9J95EnTh62aMYZ9zHDatkpfUg4qKScGsMpA-Fhy4FBtFBsJ8PkT-flubEWPpzY36rvmSRkv874m_pllj_80s9B0GaEu5XxWonxf6V02o/alfred-pkg-bower-opt.png?psid=1" alt="" />
+<img src="https://7nnqba.dm1.livefilestore.com/y2pQTFJVwQuk4cV5yWHSoFYQCOanTC6JCB5UnfAqtUNouF6M38QLKC-k1d97hzFQi5HOGcI44owdzMcMJJUvmhJS-eLWBgwQjKEe4FDjwh6TWo/alfred-pkg-grunt-opt.png?psid=1" alt="" /></p>
+
+<h2>Colors</h2>
+
+<p>不用再每次想要转换某个颜色格式的时候打开Photoshop了.通过这个workflow可以很轻易在HEX, RGB, HSL这些个颜色格式之间转换.</p>
+
+<ul>
+<li><a href="https://github.com/TylerEich/Alfred-Extras/tree/master/Source/Colors">Colors</a>, developed by <a href="https://github.com/TylerEich/">@TylerEich</a></li>
+<li><a href="http://zno.io/RcFz">下载</a></li>
+<li>触发: <code>#</code> <code>rgb</code> <code>hsl</code> <code>c</code></li>
+</ul>
+
+
+<p><img src="https://7nnqba.dm2301.livefilestore.com/y2p57G91c-OHhp8vWr5mZDL3mvkawhRy64cCzIWzNEBlqL_EVbapnnvDeZUcVdCVtDJ4ow6hfm0cE1yB5AUViUp2A81StX_YpA7T_5mR_B7Rqk/alfred-colors-opt.png?psid=1" alt="" /></p>
+
+<h2>Jenkins Workflow</h2>
+
+<p>做单元测试固然是好,但是每更改一行代码就手动跑一次测试的话会让人抓狂的. 为了得到更好的代码质量,我们需要跑跟更多的测试,或者至少的自动运行那些我们已经在跑的测试. 这就是为嘛<strong>持续集成系统</strong>那么重要.通过这个workflow,你可以列出<a href="http://jenkins-ci.org/">Jenkins</a>的所有工作以及它们的状态.</p>
+
+<ul>
+<li><a href="https://github.com/jeroenseegers/alfred-jenkins-workflow">Jenkins Workflow for Alfred v2</a>, developed by <a href="https://github.com/jeroenseegers/">@jeroenseegers</a></li>
+<li><a href="https://github.com/jeroenseegers/alfred-jenkins-workflow/raw/master/Jenkins.alfredworkflow">下载</a></li>
+<li>触发: <code>jenkins status</code></li>
+</ul>
+
+
+<p><img src="https://7nnqba.dm2302.livefilestore.com/y2p1OLZbpkCxnoR1-ucaW61I99PIVPvOO_136IItknkfT8GvIGdr9lMaF8P78koNZB9q4_Wxld8CzdfdYegwtcTkOMkdbAtb1A3kPK-8WOlsHw/alfred-jenkins-opt.png?psid=1" alt="" /></p>
+
+<p>XguoX:好吧,这玩意没接触过</p>
+
+<h2>Open in FileZilla</h2>
+
+<p>目前来说传输文件到Web服务器的最流行方式还是使用FTP. 而这个workflow可以帮助你快速地通过<a href="https://filezilla-project.org/">FileZilla</a>连接到远程服务器端. FileZilla也是一个免费的应用,所以,在用这个workflow之前请记得先安装之.</p>
+
+<ul>
+<li><a href="https://github.com/jeffmagill/alfred-open-in-filezilla">Open in FileZilla</a>, developed by <a href="https://github.com/jeffmagill/">@jeffmagill</a></li>
+<li><a href="http://zno.io/RnTx">下载</a></li>
+<li>触发: <code>fz</code></li>
+</ul>
+
+
+<p>在用其他FTP客户端吗?请猛击 <a href="https://github.com/zenorocha/alfred-workflows/wiki/Extras#ftp">Extras</a></p>
+
+<p><img src="https://7nnqba.dm1.livefilestore.com/y2pb9b3kwcHV5UkchYzjh4f-Jw_YMi0uHVYkNeM_0A4g4859bfjcc49jLLQcyTpsOu2f-hOlh2D7sDSGAt65humZvmCuy3QFlH9tJHMAhlgLp4/alfred-fz-opt.png?psid=1" alt="" /></p>
+
+<h2>Domainr Workflow</h2>
+
+<p>不想错过一些帅气的域名的话,可以通过<a href="https://domai.nr/">Domainr</a> APIs快速查找.</p>
+
+<ul>
+<li><a href="https://github.com/dingyi/Alfred-Workflows/tree/master/Domainr">Domainr Workflow</a>, developed by <a href="https://github.com/dingyi/">@dingyi</a></li>
+<li><a href="http://zno.io/RctP">下载</a></li>
+<li>触发: <code>domainr</code></li>
+</ul>
+
+
+<p><img src="https://7nnqba.dm2301.livefilestore.com/y2pQl13GHOojZONNNtZnsAeO2IKT6fe1AMAt0uR-SSL5MJQgw-wJ66ZqFNHXS4t7S5X4Osl31-d0jAJ65uishVIPvmNU7L09CfJ19v_Gxi1f7A/alfred-domain-opt.png?psid=1" alt="" /></p>
+
+<h2>Encode / Decode</h2>
+
+<p>有时候, 我们需要把一些UTF-8字符转换成HTML编码,或是解码某个URL. 使用 Encode / Decode , 这些杂碎的事情将不再需要浪费那么多的时间了.</p>
+
+<ul>
+<li><a href="https://github.com/willfarrell/alfred-encode-decode-workflow">Encode / Decode</a>, developed by <a href="https://github.com/willfarrell/">@willfarrell</a></li>
+<li><a href="http://zno.io/RcCX">下载</a></li>
+<li>触发: <code>encode</code> <code>decode</code></li>
+</ul>
+
+
+<p><img src="https://7nnqba.dm2302.livefilestore.com/y2pKvZ6_kJuc6jkwn90DdrOihAOhM5W7fKS7-AoHkhTC41bHpKjagM54XHIYXBYOSPuxivPJ58mAmETym0mdNXAip6qJBJCkxap46HOKzj8W_E/687474703a2f2f662e636c2e6c792f6974656d732f324a336d3147314-e34363035304930453077336e2f616c667265642d656e636f64652e706e67-opt.png?psid=1" alt="" /></p>
+
+<h2>Font Awesome Workflow</h2>
+
+<p>Font icons很好很强大, 只需简单地输入类似的<code>&lt;i class="my-icon-name"&gt;&lt;/i&gt;</code>. 但问题是,我们经常没能准确地记住我们需要的某个icon的类名,以至于老需要去翻看文档. 现在的话通过这个workflow我们可以很轻易地查找到<a href="http://fortawesome.github.io/Font-Awesome/">Font Awesome</a>的icon集.</p>
+
+<ul>
+<li><a href="https://github.com/ruedap/alfred2-font-awesome-workflow">Font Awesome Workflow for Alfred 2</a>, developed by <a href="https://github.com/ruedap/">@ruedap</a></li>
+<li><a href="http://zno.io/RcJ3">下载</a></li>
+<li>触发: <code>fonta</code></li>
+</ul>
+
+
+<p><img src="https://7nnqba.dm2301.livefilestore.com/y2pHAy4Zg3y3qg293hawHzh1DKDkB1ZUd7Ktbw9BtrL7QxRzvJPGIR-B_OUF-fjyx3wq1sn4OrZ72XCQdlHOys6gHOqyjGGbFnwiElSVCkMNxU/alfred-fonta-opt.png?psid=1" alt="" /></p>
+
+<p>XguoX:赞!</p>
+
+<h2>Source Tree Workflow</h2>
+
+<p>有人习惯在终端使用Git命令, 也有喜欢使用GUI工具. 如果你属于后者,那么<a href="http://www.sourcetreeapp.com/">Source Tree</a> workflow 可以帮你列出,查找,打开Git仓库. Source Tree 也是需要在使用这个workflow之前先<a href="http://www.sourcetreeapp.com/">下载</a>安装的应用.</p>
+
+<ul>
+<li><a href="https://github.com/zhaocai/alfred2-sourcetree-workflow">Source Tree</a>, developed by <a href="https://github.com/zhaocai/">@zhaocai</a></li>
+<li><a href="http://zno.io/Ro6V">下载</a></li>
+<li>触发: <code>st</code>  <code>stbookmark</code></li>
+</ul>
+
+
+<p>使用其他的Git客户端吗?请猛击 <a href="https://github.com/zenorocha/alfred-workflows/wiki/Extras#git-client">Extras</a></p>
+
+<p><img src="https://7nnqba.dm2302.livefilestore.com/y2peE5UpatyaBm2USKGJSTP6O-ATHnG5dIkbF_cgAXjVLyUZIJfAjCi-FdRs2E44Me5gKsYygNc6ojyzuCmFfnUnAePfelKmZpB1OmgngYUh1M/alfred-st1-opt.png?psid=1" alt="" /></p>
+
+<h2>GitHub Workflow</h2>
+
+<p>如果你最喜欢的社交网站是Github,那你一定会想要看看这个.简单快速地查找并在浏览器打开Github上的仓库.</p>
+
+<ul>
+<li><a href="https://github.com/gharlan/alfred-github-workflow">GitHub Workflow</a>, developed by <a href="https://github.com/gharlan/">@gharlan</a></li>
+<li><a href="http://zno.io/RcPe">下载</a></li>
+<li>触发: <code>gh</code></li>
+</ul>
+
+
+<p><img src="https://7nnqba.dm2302.livefilestore.com/y2p8Kw5ylIUxXvwnWm1HOp4xQcI2AH9fPU0is_zRQvkLws07H-KINpP86ZbEvywJ8F-IbF4umwGc802UCYyAJwHbXsrQjTD5jR9eni4Hn8v-3Y/alfred-gh-1-opt.png?psid=1" alt="" />
+<img src="https://7nnqba.dm2302.livefilestore.com/y2pAHDVk52bx4FuN7ArITttR0iKhUmXlAenZxif_r6XKjlY7zIdeL57L86L8wTu4a6dHOptenChQ6hdGK12mz4ia1Awc7F1kf42-nF4rKzkbrg/alfred-gh-2-opt.png?psid=1" alt="" />
+<img src="https://7nnqba.dm2301.livefilestore.com/y2pca8u5ITeeKV3q7PAYkeJ26fM5wfHUmFvSjhjS3vfxHWTx8zXT5PQgeZagvY_b6gIUFTMYMdO3B5n-DnWzI-g3Gdxd7A4Tf-BQh75CSKr4UA/alfred-gh-3-opt.png?psid=1" alt="" /></p>
+
+<h2>StackOverflow Workflow</h2>
+
+<p>在<a href="http://stackoverflow.com/">StackOverflow</a>搜寻各类编程问题的答案</p>
+
+<ul>
+<li><a href="https://github.com/xhinking/Alfred">StackOverflow Workflow</a>, developed by <a href="https://github.com/xhinking/">@xhinking</a></li>
+<li><a href="http://zno.io/RceO">下载</a></li>
+<li>触发: <code>st</code></li>
+</ul>
+
+
+<p><img src="https://7nnqba.dm2302.livefilestore.com/y2pmY5gf1twVGB0cDn-C51fasEXdMo79AFhftB4mJqKzQwshL_a0djKiDcoVu6-NP1QMQ360iBdpNf8Pp7cJ5qxc_XZbcoC_C427S0ty9cdMmI/alfred-st-opt.png?psid=1" alt="" /></p>
+
+<h2>TimeZones Workflow</h2>
+
+<p>现如今,很多的团队的成员纷纷来自全球各地. 那么,我们不会希望在同事的下班时间去打搅人家.所以,在这之前,我们总会先查看一下对方的当地时间.这个workflow可以巨方便地列出世界各地不同城市的当前时间.</p>
+
+<ul>
+<li><a href="http://www.alfredforum.com/topic/491-timezones-a-world-clock-script-filter-updated-to-v161/">TimeZones Workflow</a>, developed by <a href="http://www.alfredforum.com/topic/491-timezones-a-world-clock-script-filter-updated-to-v161/">@CarlosNZ</a></li>
+<li><a href="http://zno.io/Rce5">下载</a></li>
+<li>触发: <code>tz</code></li>
+</ul>
+
+
+<p><img src="https://7nnqba.dm2302.livefilestore.com/y2pEw7Fm3pjrusK0c-ihMHdrPo-1oCLOyC6kjipiDXwTsn7OJS3is0zRPDYu6Sy-M80x29f0lVww1ACceNo2LtgksPzQHW-yf0HQ4ZtgilKZVs/alfred-tz-opt.png?psid=1" alt="" /></p>
+
+<h2>VirtualBox Control</h2>
+
+<p>很不幸地,跨浏览器兼容的仍然是开发人员所面临的一大问题. 测试你的网站在不同浏览器 &amp; 不同操作系统 是否运行正常是件无法逃避的事. 使用虚拟机(比如<a href="https://www.virtualbox.org/">VirtualBox</a>)是当下流行的,可以完成这事的一种方式. 好吧,在用这个workflow之前老规矩,先装上VirtualBox.</p>
+
+<ul>
+<li><a href="https://github.com/aiyodk/Alfred-Extensions/tree/master/AlfredApp_2.x/VirtualBox-Control">VirtualBox Control</a>, developed by <a href="https://github.com/aiyodk">@aiyodk</a></li>
+<li><a href="http://zno.io/RyOE">下载</a></li>
+<li>触发: <code>vm</code></li>
+</ul>
+
+
+<p>在用其他的虚拟机客户端吗?请猛击 <a href="https://github.com/zenorocha/alfred-workflows/wiki/Extras#virtual-machines">Extras</a></p>
+
+<p><img src="https://7nnqba.dm2301.livefilestore.com/y2psvNKnOmlDIHPBDdt55ZjXGXipYEXF1vywXnx7K0QWXLTlFzs34ntkNcga99mClSZGNzkG2ANop67cWYvEwkJzHDDualJDf7xIPTcKdVy3Og/alfred-vb-1-opt.png?psid=1" alt="" />
+<img src="https://7nnqba.dm2302.livefilestore.com/y2pUUCXsiAOITeTEiZtDeQSoIQdmNUV0CayHgImh1MpczVHPlU-NUC0rIdVZqkztQ3bUBM7EWiu4SAkbl1eL3EMKFSsd2NFTJpjq8kDoCEJfOE/alfred-vb-2-opt.png?psid=1" alt="" /></p>
+
+<h2>Create Your Own!</h2>
+
+<p>所有的这些workflows都非常的赞并对于大多数人来说很有帮助. 但是,每个人的工作方式不尽相同. 所以我们需要创建真正属于自己的workflow. 其实这个也很是简单. 以下的这个例子仅需不到10秒,就可以创建一个workflow来自动搜寻Smashing Magazine.</p>
+
+<p><img src="https://7nnqba.dm2301.livefilestore.com/y2p2GeFzQuRTl9E0-rFjNQrAw7qS_a5RAlZpfNQh9tT-P45-le3UY_fNKu7n1K5mIIq9JNdp83flsG9hvRzDHzcfXGuB56sspc6CnmRyDh2ikE/custom-alfred.gif?psid=1" alt="" /></p>
+
+<h2>Want More?</h2>
+
+<p><a href="https://github.com/zenorocha/alfred-workflows/">这是作者收集的一些</a><br/>
+此外,Alfred的<a href="http://www.alfredforum.com/forum/3-share-your-workflows/">官方论坛</a>上也有海量的workflows.</p>
+
+<h2>The End?</h2>
+
+<p>一堆帮助你自动化工作流程的技巧,很赞对吧!希望能够对你有所帮助.可能这些会激发你的一些灵感,从而创造,分享你的隐藏技能.</p>
+
+<p>如果你喜欢的workflow没有在这列出,可以在下边的评论当中跟我们分享. 如果你觉得上边提到的那些赞到爆的话,也可以告诉我们哦!</p>
+
+<p>文章翻译自 <a href="http://coding.smashingmagazine.com/2013/10/25/hidden-productivity-secrets-with-alfred/">Hidden Productivity Secrets With Alfred</a></p>
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post">
+	<header>
+		<h2 class="title">
+			
+			<a href="/blog/2013/10/20/diary-about-wedding-about-photography/">
+			
+				Wedding, Photography</a>
+		</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-10-20T23:37:00+08:00" pubdate data-updated="true">Oct 20<span>th</span>, 2013</time></div>
+	</header>
+	<div class="entry-content">
+		<p>随着年龄的成长,现在跟朋友在一起聊的话题似乎从以往的各种扯淡转变成了 婚姻 &amp; 工作.毕业后这些日子更明显了.这不又一对老同学结成连理了.往后还陆续有来叻！</p>
+
+<p>昨天说到牛总明年的婚事,我和甫表示各种强烈赞成建议他抛弃那些个什么Benz,BMW,四个圈之类的去迎亲,改用超豪华得大巴更拉风  XD</p>
+
+<p>另外,有趣的是,相较之下,初中的同学更多是谈到婚姻,而高中的则更多是谈到工作.不知道有没什么必然联系 =.=</p>
+
+<p><img src="http://farm4.staticflickr.com/3831/10457108984_9b8950c033_z.jpg" alt="" /></p>
+
+<p>帮牛总的婚庆工作室拍了两场婚礼,纯客串的当个没入门摄影师.总结下来,跟专业的必须有差距,无论是器材,技法,引导,后期等等</p>
+
+<p>这其中,差距最大的还是引导这一块.</p>
+
+<p>器材上,其实主要是缺一枚灯.这个差距最好弥补.几百块一个永诺的闪灯要能玩得转对我而言就足够了,不过略有原厂情结,刚开始还准备一步到位上 600ex 的说,反正迟迟没买,直到现在6D套摆上架&hellip;&hellip;</p>
+
+<p>技术,后期等因素比较客观,不扯淡.</p>
+
+<p>其实我主要是想说,我跟那天那个影楼的摄影师的最大差距在于指挥能力.人家专业的好家伙让你怎么摆就怎么摆,说集中就得集中.而我,顶多吆喝一句让人看着镜头,然后,就没然后了.其余只会跟着流程,跟着队伍瞎跑,动作好不好,站位好不好,怎么才好都没有更多的指示.几次的大合照最明显不过.另外,自己的站位,跑位也经常出现蛋疼的失误.</p>
+
+<p>还有一个,其实还跟上面相关,交流问题.尽管是专业的,也即使是专业的,他也未必百发能百中,但是,我时常看他回看之后觉得拍不好或者动作不是摆得很到位会很自然的让被摄者再来一次,直到片子成功为止.相反的,我是经常按了快门就算了,主要是略不好意思让被摄者重复或者keep住某个动作或表情.(哪有那么多内敛,艹,你拿相机你才是老大！)</p>
+
+<p>最后是多机的问题.其实这个问题早在之前拍各种毕业照时候就有,拍大合照之类的时候,如果面对着2台或者以上的相机(包括手机),如果不做出明确的喊话指定眼神看哪台机子,出来的照片就会很蛋疼的眼神往各个方向飘.遇上这问题,要不就霸气点喊着全场看过来,要不就商量好各台机器各司其职.</p>
+
+<p>最后的最后,不得不感叹一下后期.</p>
+
+<blockquote><p>数码不后期,就是大傻逼.</p></blockquote>
+
+<p>反正绝大部分片子不后期几下都不太好意思交功课了.尽管我的后期渣一般,
+但好几张完全惨不忍睹的照片被我用Photoshop,Lightroom救了回来.</p>
+
+		
+		
+	</div>
+
+</article>
 
 
     <article class="post">
@@ -440,129 +1361,6 @@ heroku config:set NODE_ENV=production</code></p>
 
 		
 		
-	</div>
-
-</article>
-
-
-    <article class="post">
-	<header>
-		<h2 class="title">
-			
-			<a href="/blog/2013/09/27/back-to-code/">
-			
-				Back to Code</a>
-		</h2>
-		<div class="meta date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-09-27T14:12:00+08:00" pubdate data-updated="true">Sep 27<span>th</span>, 2013</time></div>
-	</header>
-	<div class="entry-content">
-		<p>好多年以前,在「街头篮球」这款游戏看到过的一句,「一天不碰球,就一天没长进」.<br/>
-而今,我是好几个月没真正意义的code,所以,这状态,想不roll back都难,更何求长进.</p>
-
-<p>真心,重头来过也忽然无从下手.</p>
-
-<p>打开Octopress准备更新,发觉连Git的一些命令的想了好久才想起来.</p>
-
-<p>看到Git的提示里冒出有
- <code>
-git bisect reset
-</code>
-这货功能很强大呀,昏了,之前怎么完全没印象有过着玩意的?又是学艺不精啊!</p>
-
-
-		
-		<a href="/blog/2013/09/27/back-to-code/" class="more-link">Read on &rarr;</a>
-	</div>
-
-</article>
-
-
-    <article class="post">
-	<header>
-		<h2 class="title">
-			
-			<a href="/blog/2013/06/03/photos-and-stories/">
-			
-				照片的故事</a>
-		</h2>
-		<div class="meta date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-06-03T16:30:00+08:00" pubdate data-updated="true">Jun 3<span>rd</span>, 2013</time></div>
-	</header>
-	<div class="entry-content">
-		<p><img src="http://farm8.staticflickr.com/7332/8942652946_af9121957f_n.jpg" alt="" />
-<img src="http://farm8.staticflickr.com/7289/8942653776_bdfb3e28a3_n.jpg" alt="" />   <br/>
-那时候,你们在想着什么,仅仅只是摆着姿势那么简单吗?<br/>
-你说我穿的太colorful了,没有你那么忧伤  <br/>
-要是我的最深处也这般colorful那该多好</p>
-
-<p><img src="http://farm8.staticflickr.com/7432/8942651358_e04d1e5d94.jpg" alt="" />
-<img src="http://farm4.staticflickr.com/3732/8942025755_d37f645d5d.jpg" alt="" /><br/>
-不知道你是望着天空还是闭着眼睛,我自己也忘记了<br/>
-草地不很舒服,但给的感觉却让人享受着可以睡去</p>
-
-
-		
-		<a href="/blog/2013/06/03/photos-and-stories/" class="more-link">Read on &rarr;</a>
-	</div>
-
-</article>
-
-
-    <article class="post">
-	<header>
-		<h2 class="title">
-			
-			<a href="/blog/2013/05/14/negative-energy/">
-			
-				负能量 - 从支纤镜说起 - 正能量</a>
-		</h2>
-		<div class="meta date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-05-14T23:05:00+08:00" pubdate data-updated="true">May 14<span>th</span>, 2013</time></div>
-	</header>
-	<div class="entry-content">
-		<p>尽管日期标的是May,但是写的时候,是在April 27th &ndash; 并刚做完支纤镜 &ndash; 耳边塞着耳机,麻醉也还在,全身如喝醉酒那般,浑坨坨,当然只是轻度的,不然我也不可能写的出这些.<br/>
-被病魔缠着也有半年了,目测还得继续治疗休养多半年.<br/>
-说说这个支纤镜吧.第二次做.比起第一次,尽管有了些许经验(也正因为有经验),做之前还是有些小紧张,表现主要有心跳略有加速.很重要的一点上次的医生没说而这次的医生教了,&ldquo;(粤语)吞口水,无口水就做吞口水噶动作&rdquo;.难受是必须的,在某个point我一个没忍着,口中就吐了一堆我自己也看不着啥,anyway,死不了.</p>
-
-<p>耳机里播放着《仓颉》</p>
-
-
-		
-		<a href="/blog/2013/05/14/negative-energy/" class="more-link">Read on &rarr;</a>
 	</div>
 
 </article>

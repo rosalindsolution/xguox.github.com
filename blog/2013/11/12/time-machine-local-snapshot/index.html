@@ -1,0 +1,180 @@
+
+<!DOCTYPE HTML>
+<html lang="en-GB">
+<head>
+	<meta charset="utf-8">
+	<title>Time Machine & Local Snapshots  | XguoX</title>
+
+	<meta name="author" content="XguoX">
+
+<meta name="description" content="因为 Air 的硬盘只有 120G,所以总习惯性地  &ndash; 关于本机 &ndash; 更多信息 然后每次都看着那蛋疼的数字, 然后这次略离谱了 有一段时间没 check, 话说之前一般都维持在 30+ G 的呀,奇怪了那个备份是什么玩意, 我明明已经设置了 Time Machine &hellip;"> <meta name="keywords" content="">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="XguoX" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	
+
+</head>
+
+
+
+<body>
+	<header id="header" class="inner"><h1><a href="/">XguoX</a></h1>
+<span class="tagline">Coder & Jabber</span>
+<nav id="main-nav"><ul>
+	<li><a href="http://www.flickr.com/photos/groverlu/sets" target="_blank">Flickr</a></li>
+	<li><a href="/about">About</a></li>
+	<li><a href="/atom.xml">RSS</a></li>
+</ul>
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul>
+	<li><a href="http://www.flickr.com/photos/groverlu/sets" target="_blank">Flickr</a></li>
+	<li><a href="/about">About</a></li>
+	<li><a href="/atom.xml">RSS</a></li>
+</ul>
+</div>
+	</div>
+</nav>
+
+
+</header>
+
+	<div id="content" class="inner"><article class="post">
+	<header>
+		<h2 class="title">Time Machine & Local Snapshots</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-11-12T10:18:00+08:00" pubdate data-updated="true">Nov 12<span>th</span>, 2013</time></div>
+	</header>
+	<div class="entry-content"><p>因为 Air 的硬盘只有 120G,所以总习惯性地 <br/>
+ &ndash;  关于本机 &ndash; 更多信息</p>
+
+<p>然后每次都看着那蛋疼的数字,  然后这次略离谱了</p>
+
+<p><img src="http://ww4.sinaimg.cn/mw690/62fdd4d5gw1eaga1xtdgyj20g0057q3c.jpg" alt="" /></p>
+
+<p>有一段时间没 check, 话说之前一般都维持在 30+ G 的呀,奇怪了那个备份是什么玩意, 我明明已经设置了 Time Machine 备份到我外接的移动硬盘了并且基本上一直都连着这个盘的呀!  查询之,才发现貌似还有个叫 <a href="http://support.apple.com/kb/HT4878?viewlocale=zh_CN">Local Snapshots(本地快照)</a> 的功能(?).</p>
+
+<p>艾玛, 这么个备份法我的硬盘要蛋碎了. 但是这玩意是备份在哪了的说? 再查之, 原来是在
+<code>/Volumes</code></p>
+
+<p>果断删之,  虽然数据的确重要,但是 已经有个外接盘24小时一次的备份了,除非遇上移动盘跟系统同时崩了.</p>
+
+<p>另外据说可以直接 <br/>
+<code>sudo tmutil disablelocal</code> 关闭本地快照,<br/>
+或者
+<code>sudo tmutil enablelocal</code> 再启动之.</p>
+
+<p>想起前不久<a href="http://www.apple.com/hk/en/support/macbookair-flashdrive/">苹果官方</a>召回2012款 Macbook Air 的事. 貌似那一款的东芝盘有什么重大 bug, 艾玛, 刚好就是我这款, 而且我的这个盘也是东芝的, 如果配的是三星的SSD貌似没事.<br/>
+不过其实也一直没问题, 官方说装了个补丁没事就好偶也没啥好不乐意的.  就算无故崩了也还有那高频率的备份.</p>
+
+<p>PS. 影片 + 照片好久没整理了,一直滞留着, 又是一笔大开销, 倒是那个其他还是那么神奇,一会大一会小.</p>
+</div>
+
+</article>
+
+	
+	<div class="share">
+	  <!-- <ul> -->
+	  <!--   <li>
+  <a href="https://twitter.com/intent/tweet?text=Time Machine & Local Snapshots by @&url=http://xguox.github.com/blog/2013/11/12/time-machine-local-snapshot/" title="Share Time Machine & Local Snapshots on Twitter">
+    <img src="/images/social/twitter.png" />
+  </a>
+</li>
+ -->
+	  <!--   <li>
+  <a href="https://www.facebook.com/sharer.php?u=http://xguox.github.com/blog/2013/11/12/time-machine-local-snapshot/" title="Share Time Machine & Local Snapshots on Facebook">
+    <img src="/images/social/facebook.png" />
+  </a>
+</li>
+ -->
+	  <!--   <li>
+  <a href="https://plus.google.com/share?url=http://xguox.github.com/blog/2013/11/12/time-machine-local-snapshot/" title="Share Time Machine & Local Snapshots on Google Plus">
+    <img src="/images/social/google.png" />
+  </a>
+</li>
+ -->
+	  <!-- </ul> -->
+	</div>
+
+
+
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+</div>
+	<footer id="footer" class="inner"><br>
+<br>
+<br>
+<br>
+&copy; 2013
+
+    XguoX
+
+</footer>
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/hyphenator.js"></script>
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'xguox';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://xguox.github.com/blog/2013/11/12/time-machine-local-snapshot/';
+        var disqus_url = 'http://xguox.github.com/blog/2013/11/12/time-machine-local-snapshot/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-39166710-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+
+
+</body>
+<script>
+  $(document).ready(function() {
+  // Make images center
+  $('p:has(img)').css('text-align', 'center');
+  });
+</script>
+</html>
