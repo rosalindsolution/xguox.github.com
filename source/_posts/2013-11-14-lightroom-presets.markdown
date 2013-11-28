@@ -5,7 +5,8 @@ date: 2013-11-14 10:12
 comments: true
 categories: Photo
 ---
-在网上搜罗了各种 Lightroom 预设一大车, 目测有两三千个了. 之前都是直接的一坨坨的 copy 到 `~/Library/Application Support/Adobe/Lightroom/Develop Presets/`, 然后好奇了一下用  Sublime  随意打开来瞧瞧,额,原来长这样,好高端,不明觉厉. 
+在网上搜罗了各种 Lightroom 预设一大车, 目测有两三千个了. 之前都是直接的一坨坨的 copy 到   
+`~/Library/Application Support/Adobe/Lightroom/Develop Presets/`,   然后好奇了一下用  Sublime  随意打开来瞧瞧,额,原来长这样,好高端,不明觉厉. 
 
 ```javascript
 s = {
