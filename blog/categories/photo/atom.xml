@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Photo | XguoX]]></title>
   <link href="http://xguox.github.com/blog/categories/photo/atom.xml" rel="self"/>
   <link href="http://xguox.github.com/"/>
-  <updated>2013-11-24T13:48:03+08:00</updated>
+  <updated>2013-11-28T11:22:37+08:00</updated>
   <id>http://xguox.github.com/</id>
   <author>
     <name><![CDATA[XguoX]]></name>
@@ -12,6 +12,23 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[解决 Lightroom 闪退]]></title>
+    <link href="http://xguox.github.com/blog/2013/11/28/lightroom-flash-quit-because-of-too-many-presets/"/>
+    <updated>2013-11-28T11:01:00+08:00</updated>
+    <id>http://xguox.github.com/blog/2013/11/28/lightroom-flash-quit-because-of-too-many-presets</id>
+    <content type="html"><![CDATA[<p>接<a href="http://xguox.me/blog/2013/11/14/lightroom-presets/">上一篇</a>, 想着在网上搞了那么多的预设,不用放着也不碍事. 结果没些时间, Lightroom 就各种闪退各种编辑不能.</p>
+
+<p>按理说应该不是跟 Maverick 兼容问题吧,如果那样的话升级了之后应该就会有问题了, 不过升级 10.9 以后没怎么使用, 都是随手的就预设搞定. 没注意预设这点, 只是简单地用 CleanMyMac 卸载了之后重装了一次, 顺手下载了一个 5.3 RC版的来解 A7R 的 RAW, 好吧,我也没怎么用 RAW.</p>
+
+<p>安装过后还是老样子的只要一编辑图片就闪退, 蹦出一个 Error 框来唬人(可以进入 Lightroom,看到图片). 不过奇怪的是, 我用 CleanMyMac 卸载完重装以后, 居然还可以继续使用之前的预设. 打开 <code>~/Library/Application Support/Adobe/Lightroom/Develop Presets/</code> 发现, 一个也没少啊. 这个就奇葩了.</p>
+
+<p>果断把所有预设删除, 杠杠的就可以编辑!!!果然, 不过是预设太多了还是因为有些预设的版本太老了捏?</p>
+
+<p>所以说,还是别贪心啊啊, 找好自己喜欢的风格喜欢的调子就好. 这下不能拖延症了啊!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[用 A7R 玩开箱并各档不严谨不严肃不专业无责任高感测试]]></title>

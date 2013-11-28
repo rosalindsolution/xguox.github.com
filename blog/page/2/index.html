@@ -9,16 +9,10 @@
   <meta name="author" content="XguoX">
 
   
-  <meta name="description" content="继续复习 + 笔记, 今天要写的是 Dynamic Classes &amp; Methods Struct 一般的, 定义一个类的做法如下： 1
+  <meta name="description" content="不把这些当做笔记卸写下来总隐隐约约觉得自己没掌握, 所以还是继续做笔记. Proc lambda 在1.9之后的写法(之前的也可以用) 1
+lamb = -&gt; { } proc 对象 和 block 对象之间的转换. 调用方法的时候参数前加 &amp; 1
 2
-3
-4
-5
-6
-7
-8
-9
-class Game attr_accessor :name, :year, :system def &hellip;">
+tweets.each(& &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -87,6 +81,142 @@ class Game attr_accessor :name, :year, :system def &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/11/07/relearn-ruby-iii/">重拾Ruby (III)</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-11-07T23:56:00+08:00" pubdate data-updated="true">Nov 7<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/11/07/relearn-ruby-iii/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>不把这些当做笔记卸写下来总隐隐约约觉得自己没掌握, 所以还是继续做笔记.</p>
+
+<h2>Proc</h2>
+
+<p>lambda 在1.9之后的写法(之前的也可以用)</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">lamb</span> <span class="o">=</span> <span class="o">-&gt;</span> <span class="p">{</span> <span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>proc 对象 和 block 对象之间的转换.</p>
+
+<h4>调用方法的时候参数前加 &amp;</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">tweets</span><span class="o">.</span><span class="n">each</span><span class="p">(</span><span class="o">&amp;</span><span class="n">printer</span><span class="p">)</span>
+</span><span class='line'> <span class="c1"># 把 proc 对象 转换成 block 对象 each 后面的是 block ,不是传参数</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>定义方法的时候参数前加 &amp;</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">each</span><span class="p">(</span><span class="o">&amp;</span><span class="n">block</span><span class="p">)</span>
+</span><span class='line'> <span class="c1"># 把 block 对象 转换成 proc 对象, 把 block 转换成 proc 才能作为参数</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>PS. method 对象转换成 block 对象</p>
+
+<h4>symbol</h4>
+
+<p><code>tweets.map { |tweet| tweet.user }</code></p>
+
+<p>Same as</p>
+
+<p><code>tweets.map(&amp;:user)</code></p>
+
+<h4>block_given?</h4>
+
+<h4>closure</h4>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">tweet_as</span><span class="p">(</span><span class="n">user</span><span class="p">)</span>
+</span><span class='line'>  <span class="nb">lambda</span> <span class="p">{</span> <span class="o">|</span><span class="n">tweet</span><span class="o">|</span> <span class="nb">puts</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">user</span><span class="si">}</span><span class="s2">: </span><span class="si">#{</span><span class="n">tweet</span><span class="si">}</span><span class="s2">&quot;</span> <span class="p">}</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>当 lambda 被创建后局部变量(在这即user) 被保存起来</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">gregg_tweet</span> <span class="o">=</span> <span class="n">tweet_as</span><span class="p">(</span><span class="s2">&quot;greggpollack&quot;</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'> <span class="c1"># 相当于创建了   lambda { |tweet| puts &quot;greggpollack: #{tweet}&quot; }</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">gregg_tweet</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="s2">&quot;Test!&quot;</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'> <span class="c1"># greggpollack: Test!</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>self</h2>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">puts</span> <span class="s2">&quot;Outside the class : </span><span class="si">#{</span><span class="nb">self</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span class='line'>
+</span><span class='line'> <span class="c1"># Outside the class : main</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">class</span> <span class="nc">Tweet</span>
+</span><span class='line'>  <span class="nb">puts</span> <span class="s2">&quot;Inside the class : </span><span class="si">#{</span><span class="no">Tweet</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'> <span class="c1"># Inside the class : Tweet</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>class_eval sets <code>self</code> to the given class and executes the block</h3>
+
+<h3>instance_eval sets <code>self</code> to the given instance and executes the block</h3>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -1806,70 +1936,6 @@ heroku config:set NODE_ENV=production</code></p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/10/13/jianshu-tiny-bug/">简书,Safari(Mac),Bug?</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-10-13T22:26:00+08:00" pubdate data-updated="true">Oct 13<span>th</span>, 2013</time>
-        
-         | <a href="/blog/2013/10/13/jianshu-tiny-bug/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>前不久在<a href="https://twitter.com/XguoX_L/statuses/388577622990389248">twitter</a>跟@larry 反馈了的Bug,但是当时很快耍着耍着就没了,又正常了,于是撒手结帖了.然则,比较奇葩,刚刚又不小心再现了,虽然只是很微小的一处不妥,但影响到UX的话, 我表示有点轻微的强迫症,外加Twitter上 140 字符配以我的文字水平不足以表述清楚.所以还是写作文好了.</p>
-
-<p>鉴于上一次滚动条受Thunder插件的影响,所以这次我把Safari的插件全关了.(同样方式,其他浏览器无任何异常)</p>
-
-<p>这个Bug是这样的:</p>
-
-<blockquote><p>删除文章的垃圾桶icon在Safari下hover在中间和右边表示不能点选(如图,鼠标未改变),只有hover在偏向左侧的地方才work,其他浏览器正常.</p></blockquote>
-
-<p><img src="https://7nmnbw.dm2302.livefilestore.com/y2pMd9Hqqq8zcLNm4HmC2VAXY0If8JNgrxOQ_YyS5esT5C65NGiPyPXRGBas-Ggdk13KnyUpKqHmk7maKNQ2A29iNMWEjSIoPGIErQmhg0Akzo/tu1.jpg?psid=1" alt="" /></p>
-
-<p>正常情况下(鼠标的形状)应该是</p>
-
-<p><img src="https://7nomkg.dm1.livefilestore.com/y2pnQSLb70jLri1R75fAlctMv9tStL7PtnGGP3-9mbRg3ncEeEmRaKOTcxCzdUxpjxXlxMBvtFfQzeR39oxhEFQLiojchvoAQj1RUHvqOvOda0/tu2.jpg?psid=1" alt="" /></p>
-
-<p><strong>为什么偶尔会正常,偶尔抽风?</strong></p>
-
-<p>请看下面两图,看看有啥不同</p>
-
-<p><img src="https://h0hcka.dm1.livefilestore.com/y2pA5ROBtWFdo3kL875emP4XeTT-N7OzbNPXLq1AmqEx1XYSHM40ObSCBL5lkCK1GXPKC1BxSDd8EUsKiyjNWP8ZbC75vhdLewfOKOBLrSd_j4/tu3.jpg?psid=1" alt="" /></p>
-
-<p><img src="https://h0j3ba.dm2302.livefilestore.com/y2pibC_etDmFwTYabbHWr8bXvV4USwL-NF922Ax2NkXzIH6kOYg4uxNoVs-AKL5c0qJH74vJssJxcziLn2TMu43YVVuIZ81IDDOqhzP0d-iA_o/tu4.jpg?psid=1" alt="" /></p>
-
-<p>经反复的、<strong>不严格的</strong>控制变量法实验,目前我的解释是,当一个文集里边的文章数量足够多到出现中间栏的滚动条之后, 就会出现这个删除icon不正常的状况.</p>
-
-<p>至于,为嘛出现这种情况,留给简书的小伙伴们吧.</p>
-
-<p>请使用Mac的用户帮忙测试看看,看是通病还是我个人机器、软件等出了问题.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/3/">&larr; Older</a>
@@ -1896,7 +1962,7 @@ heroku config:set NODE_ENV=production</code></p>
 
 <section>
 <h1>Category</h1>
-<span class='categories_tag'> <a href='/blog/categories/books' style='font-size: 102.66666666666667%'>Books</a>  <a href='/blog/categories/css' style='font-size: 101.33333333333333%'>Css</a>  <a href='/blog/categories/diary' style='font-size: 106.66666666666667%'>Diary</a>  <a href='/blog/categories/ghost' style='font-size: 101.33333333333333%'>Ghost</a>  <a href='/blog/categories/heroku' style='font-size: 102.66666666666667%'>Heroku</a>  <a href='/blog/categories/hexo' style='font-size: 101.33333333333333%'>Hexo</a>  <a href='/blog/categories/jabber' style='font-size: 160.0%'>Jabber</a>  <a href='/blog/categories/javascript' style='font-size: 101.33333333333333%'>Javascript</a>  <a href='/blog/categories/json' style='font-size: 101.33333333333333%'>Json</a>  <a href='/blog/categories/mac' style='font-size: 101.33333333333333%'>Mac</a>  <a href='/blog/categories/meteor' style='font-size: 109.33333333333333%'>Meteor</a>  <a href='/blog/categories/octopress' style='font-size: 102.66666666666667%'>Octopress</a>  <a href='/blog/categories/onepiece' style='font-size: 102.66666666666667%'>Onepiece</a>  <a href='/blog/categories/performance' style='font-size: 101.33333333333333%'>Performance</a>  <a href='/blog/categories/photo' style='font-size: 102.66666666666667%'>Photo</a>  <a href='/blog/categories/rails' style='font-size: 114.66666666666667%'>Rails</a>  <a href='/blog/categories/repost' style='font-size: 105.33333333333333%'>Repost</a>  <a href='/blog/categories/ruby' style='font-size: 121.33333333333333%'>Ruby</a>  <a href='/blog/categories/tools' style='font-size: 102.66666666666667%'>Tools</a>  <a href='/blog/categories/translate' style='font-size: 101.33333333333333%'>Translate</a>  <a href='/blog/categories/translation' style='font-size: 118.66666666666667%'>Translation</a>  <a href='/blog/categories/travel' style='font-size: 105.33333333333333%'>Travel</a>  <a href='/blog/categories/tricks' style='font-size: 101.33333333333333%'>Tricks</a> </span>
+<span class='categories_tag'> <a href='/blog/categories/books' style='font-size: 102.66666666666667%'>Books</a>  <a href='/blog/categories/css' style='font-size: 101.33333333333333%'>Css</a>  <a href='/blog/categories/diary' style='font-size: 106.66666666666667%'>Diary</a>  <a href='/blog/categories/ghost' style='font-size: 101.33333333333333%'>Ghost</a>  <a href='/blog/categories/heroku' style='font-size: 102.66666666666667%'>Heroku</a>  <a href='/blog/categories/hexo' style='font-size: 101.33333333333333%'>Hexo</a>  <a href='/blog/categories/jabber' style='font-size: 160.0%'>Jabber</a>  <a href='/blog/categories/javascript' style='font-size: 101.33333333333333%'>Javascript</a>  <a href='/blog/categories/json' style='font-size: 101.33333333333333%'>Json</a>  <a href='/blog/categories/mac' style='font-size: 101.33333333333333%'>Mac</a>  <a href='/blog/categories/meteor' style='font-size: 109.33333333333333%'>Meteor</a>  <a href='/blog/categories/octopress' style='font-size: 102.66666666666667%'>Octopress</a>  <a href='/blog/categories/onepiece' style='font-size: 102.66666666666667%'>Onepiece</a>  <a href='/blog/categories/performance' style='font-size: 101.33333333333333%'>Performance</a>  <a href='/blog/categories/photo' style='font-size: 104.0%'>Photo</a>  <a href='/blog/categories/rails' style='font-size: 114.66666666666667%'>Rails</a>  <a href='/blog/categories/repost' style='font-size: 105.33333333333333%'>Repost</a>  <a href='/blog/categories/ruby' style='font-size: 121.33333333333333%'>Ruby</a>  <a href='/blog/categories/tools' style='font-size: 102.66666666666667%'>Tools</a>  <a href='/blog/categories/translate' style='font-size: 101.33333333333333%'>Translate</a>  <a href='/blog/categories/translation' style='font-size: 118.66666666666667%'>Translation</a>  <a href='/blog/categories/travel' style='font-size: 105.33333333333333%'>Travel</a>  <a href='/blog/categories/tricks' style='font-size: 101.33333333333333%'>Tricks</a> </span>
 </section>
 
 
@@ -1935,6 +2001,10 @@ function jsonFlickrApi(rsp) {
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/11/28/lightroom-flash-quit-because-of-too-many-presets/">解决 Lightroom 闪退</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/11/23/a7r-iso-unbox-manfrotto/">用 A7R 玩开箱并各档不严谨不严肃不专业无责任高感测试</a>
       </li>
     
@@ -1956,10 +2026,6 @@ function jsonFlickrApi(rsp) {
     
       <li class="post">
         <a href="/blog/2013/11/09/a-sudden-consciousness/">一本书和一个杯子</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/11/07/relearn-ruby-iii/">重拾Ruby (III)</a>
       </li>
     
   </ul>

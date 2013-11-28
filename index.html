@@ -9,7 +9,7 @@
   <meta name="author" content="XguoX">
 
   
-  <meta name="description" content="接上一篇, 按理说, 应该是给刚到手新鲜热辣略烫手(都几天了还烫手= . =)的 A7R 玩儿开箱, 不过以 A7/R 这一系列的火爆程度, 开箱文从15号左右开始, 一些有门路的早一步拿到机子的早就开箱18鞭了. 无忌索坛也早早开始就被屠版了(Nikon Df 没开卖就干了四五期也很流弊) &hellip;">
+  <meta name="description" content="接上一篇, 想着在网上搞了那么多的预设,不用放着也不碍事. 结果没些时间, Lightroom 就各种闪退各种编辑不能. 按理说应该不是跟 Maverick 兼容问题吧,如果那样的话升级了之后应该就会有问题了, 不过升级 10.9 以后没怎么使用, 都是随手的就预设搞定. 没注意预设这点, &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -78,6 +78,52 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/11/28/lightroom-flash-quit-because-of-too-many-presets/">解决 Lightroom 闪退</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-11-28T11:01:00+08:00" pubdate data-updated="true">Nov 28<span>th</span>, 2013</time>
+        
+         | <a href="/blog/2013/11/28/lightroom-flash-quit-because-of-too-many-presets/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>接<a href="http://xguox.me/blog/2013/11/14/lightroom-presets/">上一篇</a>, 想着在网上搞了那么多的预设,不用放着也不碍事. 结果没些时间, Lightroom 就各种闪退各种编辑不能.</p>
+
+<p>按理说应该不是跟 Maverick 兼容问题吧,如果那样的话升级了之后应该就会有问题了, 不过升级 10.9 以后没怎么使用, 都是随手的就预设搞定. 没注意预设这点, 只是简单地用 CleanMyMac 卸载了之后重装了一次, 顺手下载了一个 5.3 RC版的来解 A7R 的 RAW, 好吧,我也没怎么用 RAW.</p>
+
+<p>安装过后还是老样子的只要一编辑图片就闪退, 蹦出一个 Error 框来唬人(可以进入 Lightroom,看到图片). 不过奇怪的是, 我用 CleanMyMac 卸载完重装以后, 居然还可以继续使用之前的预设. 打开 <code>~/Library/Application Support/Adobe/Lightroom/Develop Presets/</code> 发现, 一个也没少啊. 这个就奇葩了.</p>
+
+<p>果断把所有预设删除, 杠杠的就可以编辑!!!果然, 不过是预设太多了还是因为有些预设的版本太老了捏?</p>
+
+<p>所以说,还是别贪心啊啊, 找好自己喜欢的风格喜欢的调子就好. 这下不能拖延症了啊!</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -689,142 +735,6 @@ Liquid::Template.register_tag('audio', Jekyll::AudioTag)</code></pre></noscript>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/11/07/relearn-ruby-iii/">重拾Ruby (III)</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-11-07T23:56:00+08:00" pubdate data-updated="true">Nov 7<span>th</span>, 2013</time>
-        
-         | <a href="/blog/2013/11/07/relearn-ruby-iii/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>不把这些当做笔记卸写下来总隐隐约约觉得自己没掌握, 所以还是继续做笔记.</p>
-
-<h2>Proc</h2>
-
-<p>lambda 在1.9之后的写法(之前的也可以用)</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">lamb</span> <span class="o">=</span> <span class="o">-&gt;</span> <span class="p">{</span> <span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>proc 对象 和 block 对象之间的转换.</p>
-
-<h4>调用方法的时候参数前加 &amp;</h4>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">tweets</span><span class="o">.</span><span class="n">each</span><span class="p">(</span><span class="o">&amp;</span><span class="n">printer</span><span class="p">)</span>
-</span><span class='line'> <span class="c1"># 把 proc 对象 转换成 block 对象 each 后面的是 block ,不是传参数</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h4>定义方法的时候参数前加 &amp;</h4>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">each</span><span class="p">(</span><span class="o">&amp;</span><span class="n">block</span><span class="p">)</span>
-</span><span class='line'> <span class="c1"># 把 block 对象 转换成 proc 对象, 把 block 转换成 proc 才能作为参数</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>PS. method 对象转换成 block 对象</p>
-
-<h4>symbol</h4>
-
-<p><code>tweets.map { |tweet| tweet.user }</code></p>
-
-<p>Same as</p>
-
-<p><code>tweets.map(&amp;:user)</code></p>
-
-<h4>block_given?</h4>
-
-<h4>closure</h4>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">tweet_as</span><span class="p">(</span><span class="n">user</span><span class="p">)</span>
-</span><span class='line'>  <span class="nb">lambda</span> <span class="p">{</span> <span class="o">|</span><span class="n">tweet</span><span class="o">|</span> <span class="nb">puts</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">user</span><span class="si">}</span><span class="s2">: </span><span class="si">#{</span><span class="n">tweet</span><span class="si">}</span><span class="s2">&quot;</span> <span class="p">}</span>
-</span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>当 lambda 被创建后局部变量(在这即user) 被保存起来</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">gregg_tweet</span> <span class="o">=</span> <span class="n">tweet_as</span><span class="p">(</span><span class="s2">&quot;greggpollack&quot;</span><span class="p">)</span>
-</span><span class='line'>
-</span><span class='line'> <span class="c1"># 相当于创建了   lambda { |tweet| puts &quot;greggpollack: #{tweet}&quot; }</span>
-</span><span class='line'>
-</span><span class='line'><span class="n">gregg_tweet</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="s2">&quot;Test!&quot;</span><span class="p">)</span>
-</span><span class='line'>
-</span><span class='line'> <span class="c1"># greggpollack: Test!</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>self</h2>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">puts</span> <span class="s2">&quot;Outside the class : </span><span class="si">#{</span><span class="nb">self</span><span class="si">}</span><span class="s2">&quot;</span>
-</span><span class='line'>
-</span><span class='line'> <span class="c1"># Outside the class : main</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">class</span> <span class="nc">Tweet</span>
-</span><span class='line'>  <span class="nb">puts</span> <span class="s2">&quot;Inside the class : </span><span class="si">#{</span><span class="no">Tweet</span><span class="si">}</span><span class="s2">&quot;</span>
-</span><span class='line'><span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'> <span class="c1"># Inside the class : Tweet</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>class_eval sets <code>self</code> to the given class and executes the block</h3>
-
-<h3>instance_eval sets <code>self</code> to the given instance and executes the block</h3>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -849,7 +759,7 @@ Liquid::Template.register_tag('audio', Jekyll::AudioTag)</code></pre></noscript>
 
 <section>
 <h1>Category</h1>
-<span class='categories_tag'> <a href='/blog/categories/books' style='font-size: 102.66666666666667%'>Books</a>  <a href='/blog/categories/css' style='font-size: 101.33333333333333%'>Css</a>  <a href='/blog/categories/diary' style='font-size: 106.66666666666667%'>Diary</a>  <a href='/blog/categories/ghost' style='font-size: 101.33333333333333%'>Ghost</a>  <a href='/blog/categories/heroku' style='font-size: 102.66666666666667%'>Heroku</a>  <a href='/blog/categories/hexo' style='font-size: 101.33333333333333%'>Hexo</a>  <a href='/blog/categories/jabber' style='font-size: 160.0%'>Jabber</a>  <a href='/blog/categories/javascript' style='font-size: 101.33333333333333%'>Javascript</a>  <a href='/blog/categories/json' style='font-size: 101.33333333333333%'>Json</a>  <a href='/blog/categories/mac' style='font-size: 101.33333333333333%'>Mac</a>  <a href='/blog/categories/meteor' style='font-size: 109.33333333333333%'>Meteor</a>  <a href='/blog/categories/octopress' style='font-size: 102.66666666666667%'>Octopress</a>  <a href='/blog/categories/onepiece' style='font-size: 102.66666666666667%'>Onepiece</a>  <a href='/blog/categories/performance' style='font-size: 101.33333333333333%'>Performance</a>  <a href='/blog/categories/photo' style='font-size: 102.66666666666667%'>Photo</a>  <a href='/blog/categories/rails' style='font-size: 114.66666666666667%'>Rails</a>  <a href='/blog/categories/repost' style='font-size: 105.33333333333333%'>Repost</a>  <a href='/blog/categories/ruby' style='font-size: 121.33333333333333%'>Ruby</a>  <a href='/blog/categories/tools' style='font-size: 102.66666666666667%'>Tools</a>  <a href='/blog/categories/translate' style='font-size: 101.33333333333333%'>Translate</a>  <a href='/blog/categories/translation' style='font-size: 118.66666666666667%'>Translation</a>  <a href='/blog/categories/travel' style='font-size: 105.33333333333333%'>Travel</a>  <a href='/blog/categories/tricks' style='font-size: 101.33333333333333%'>Tricks</a> </span>
+<span class='categories_tag'> <a href='/blog/categories/books' style='font-size: 102.66666666666667%'>Books</a>  <a href='/blog/categories/css' style='font-size: 101.33333333333333%'>Css</a>  <a href='/blog/categories/diary' style='font-size: 106.66666666666667%'>Diary</a>  <a href='/blog/categories/ghost' style='font-size: 101.33333333333333%'>Ghost</a>  <a href='/blog/categories/heroku' style='font-size: 102.66666666666667%'>Heroku</a>  <a href='/blog/categories/hexo' style='font-size: 101.33333333333333%'>Hexo</a>  <a href='/blog/categories/jabber' style='font-size: 160.0%'>Jabber</a>  <a href='/blog/categories/javascript' style='font-size: 101.33333333333333%'>Javascript</a>  <a href='/blog/categories/json' style='font-size: 101.33333333333333%'>Json</a>  <a href='/blog/categories/mac' style='font-size: 101.33333333333333%'>Mac</a>  <a href='/blog/categories/meteor' style='font-size: 109.33333333333333%'>Meteor</a>  <a href='/blog/categories/octopress' style='font-size: 102.66666666666667%'>Octopress</a>  <a href='/blog/categories/onepiece' style='font-size: 102.66666666666667%'>Onepiece</a>  <a href='/blog/categories/performance' style='font-size: 101.33333333333333%'>Performance</a>  <a href='/blog/categories/photo' style='font-size: 104.0%'>Photo</a>  <a href='/blog/categories/rails' style='font-size: 114.66666666666667%'>Rails</a>  <a href='/blog/categories/repost' style='font-size: 105.33333333333333%'>Repost</a>  <a href='/blog/categories/ruby' style='font-size: 121.33333333333333%'>Ruby</a>  <a href='/blog/categories/tools' style='font-size: 102.66666666666667%'>Tools</a>  <a href='/blog/categories/translate' style='font-size: 101.33333333333333%'>Translate</a>  <a href='/blog/categories/translation' style='font-size: 118.66666666666667%'>Translation</a>  <a href='/blog/categories/travel' style='font-size: 105.33333333333333%'>Travel</a>  <a href='/blog/categories/tricks' style='font-size: 101.33333333333333%'>Tricks</a> </span>
 </section>
 
 
@@ -888,6 +798,10 @@ function jsonFlickrApi(rsp) {
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/11/28/lightroom-flash-quit-because-of-too-many-presets/">解决 Lightroom 闪退</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/11/23/a7r-iso-unbox-manfrotto/">用 A7R 玩开箱并各档不严谨不严肃不专业无责任高感测试</a>
       </li>
     
@@ -909,10 +823,6 @@ function jsonFlickrApi(rsp) {
     
       <li class="post">
         <a href="/blog/2013/11/09/a-sudden-consciousness/">一本书和一个杯子</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/11/07/relearn-ruby-iii/">重拾Ruby (III)</a>
       </li>
     
   </ul>
