@@ -9,7 +9,7 @@
   <meta name="author" content="XguoX">
 
   
-  <meta name="description" content="最近在做个课程设计,好吧,俺老师是要求用JSP的,可惜我那弱爆了的水平是不可能完成的.于是顶着各种压力自己用Rails来做. 今天才发现个问题,原来mysql默认存储的int貌似最多是10位就爆了,原本我的数据库中有学号那个字段的并且migration是存为integer, &hellip;">
+  <meta name="description" content="今个儿有发现问题,也有学到东西了. 先说学到的吧,在做公司的论坛时候,要做一个浏览统计,因为一般做浏览统计都要加个时间限制的,刚接到任务时候第一反应就是在show这个action上使用session,后来自然很悲剧的粗大事了.因为每点击一篇topic都会keep住一个session,所以, &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -78,6 +78,51 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/06/04/some-findings/">一些学习,一些发现</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-06-04T17:20:00+08:00" pubdate data-updated="true">Jun 4<span>th</span>, 2012</time>
+        
+         | <a href="/blog/2012/06/04/some-findings/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>今个儿有发现问题,也有学到东西了.</p>
+
+<p>先说学到的吧,在做公司的论坛时候,要做一个浏览统计,因为一般做浏览统计都要加个时间限制的,刚接到任务时候第一反应就是在show这个action上使用session,后来自然很悲剧的粗大事了.因为每点击一篇topic都会keep住一个session,所以,如果做了时间限制后,点击了一篇再去点击其他的topic的话,则只会在第一篇topic那增加点击数,而其他的不会.其实,逻辑很Y的简单,那会临近下班时间,于是就没认真想,还以为很复杂.后来这么简单的问题还要公司的高手提示,真心觉得失败啊.</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/06/04/some-findings/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -350,49 +395,6 @@
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/03/12/something-in-google-plus/">Something in Google Plus</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-03-12T21:09:00+08:00" pubdate data-updated="true">Mar 12<span>th</span>, 2012</time>
-        
-         | <a href="/blog/2012/03/12/something-in-google-plus/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>忘了从什么时候开始g+貌似不用翻墙就能上(貌似我一直都要开着VPN才能上),也逐渐的有了不少的国人开始登陆到这片&#8221;新土地&#8221;.其实不管g+上的国人多了少了怎么的,都跟我没一毛钱关系.但是,当我发现奥巴马的g+页面下的那某一些无聊,幼稚,低级的中文评论时&hellip;呃,好吧,其实也跟我也没啥关系.但是,那种侵占式地发垃圾评论,别说是外国人.即使是作为中国人的我都真看不下去了.</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2012/03/12/something-in-google-plus/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/10/">&larr; Older</a>
@@ -419,7 +421,7 @@
 
 <section>
 <h1>Category</h1>
-<span class='categories_tag'> <a href='/blog/categories/books' style='font-size: 102.66666666666667%'>Books</a>  <a href='/blog/categories/css' style='font-size: 101.33333333333333%'>Css</a>  <a href='/blog/categories/diary' style='font-size: 106.66666666666667%'>Diary</a>  <a href='/blog/categories/ghost' style='font-size: 101.33333333333333%'>Ghost</a>  <a href='/blog/categories/heroku' style='font-size: 102.66666666666667%'>Heroku</a>  <a href='/blog/categories/hexo' style='font-size: 101.33333333333333%'>Hexo</a>  <a href='/blog/categories/jabber' style='font-size: 160.0%'>Jabber</a>  <a href='/blog/categories/javascript' style='font-size: 101.33333333333333%'>Javascript</a>  <a href='/blog/categories/json' style='font-size: 101.33333333333333%'>Json</a>  <a href='/blog/categories/mac' style='font-size: 101.33333333333333%'>Mac</a>  <a href='/blog/categories/meteor' style='font-size: 109.33333333333333%'>Meteor</a>  <a href='/blog/categories/octopress' style='font-size: 102.66666666666667%'>Octopress</a>  <a href='/blog/categories/onepiece' style='font-size: 102.66666666666667%'>Onepiece</a>  <a href='/blog/categories/performance' style='font-size: 101.33333333333333%'>Performance</a>  <a href='/blog/categories/photo' style='font-size: 105.33333333333333%'>Photo</a>  <a href='/blog/categories/rails' style='font-size: 114.66666666666667%'>Rails</a>  <a href='/blog/categories/repost' style='font-size: 105.33333333333333%'>Repost</a>  <a href='/blog/categories/ruby' style='font-size: 121.33333333333333%'>Ruby</a>  <a href='/blog/categories/tools' style='font-size: 102.66666666666667%'>Tools</a>  <a href='/blog/categories/translate' style='font-size: 101.33333333333333%'>Translate</a>  <a href='/blog/categories/translation' style='font-size: 118.66666666666667%'>Translation</a>  <a href='/blog/categories/travel' style='font-size: 106.66666666666667%'>Travel</a>  <a href='/blog/categories/tricks' style='font-size: 101.33333333333333%'>Tricks</a> </span>
+<span class='categories_tag'> <a href='/blog/categories/books' style='font-size: 102.66666666666667%'>Books</a>  <a href='/blog/categories/css' style='font-size: 101.33333333333333%'>Css</a>  <a href='/blog/categories/diary' style='font-size: 106.66666666666667%'>Diary</a>  <a href='/blog/categories/ghost' style='font-size: 101.33333333333333%'>Ghost</a>  <a href='/blog/categories/heroku' style='font-size: 102.66666666666667%'>Heroku</a>  <a href='/blog/categories/hexo' style='font-size: 101.33333333333333%'>Hexo</a>  <a href='/blog/categories/jabber' style='font-size: 160.0%'>Jabber</a>  <a href='/blog/categories/javascript' style='font-size: 101.33333333333333%'>Javascript</a>  <a href='/blog/categories/json' style='font-size: 101.33333333333333%'>Json</a>  <a href='/blog/categories/mac' style='font-size: 101.33333333333333%'>Mac</a>  <a href='/blog/categories/meteor' style='font-size: 109.33333333333333%'>Meteor</a>  <a href='/blog/categories/octopress' style='font-size: 102.66666666666667%'>Octopress</a>  <a href='/blog/categories/onepiece' style='font-size: 104.0%'>Onepiece</a>  <a href='/blog/categories/performance' style='font-size: 101.33333333333333%'>Performance</a>  <a href='/blog/categories/photo' style='font-size: 105.33333333333333%'>Photo</a>  <a href='/blog/categories/rails' style='font-size: 114.66666666666667%'>Rails</a>  <a href='/blog/categories/repost' style='font-size: 105.33333333333333%'>Repost</a>  <a href='/blog/categories/ruby' style='font-size: 121.33333333333333%'>Ruby</a>  <a href='/blog/categories/tools' style='font-size: 102.66666666666667%'>Tools</a>  <a href='/blog/categories/translate' style='font-size: 101.33333333333333%'>Translate</a>  <a href='/blog/categories/translation' style='font-size: 118.66666666666667%'>Translation</a>  <a href='/blog/categories/travel' style='font-size: 106.66666666666667%'>Travel</a>  <a href='/blog/categories/tricks' style='font-size: 101.33333333333333%'>Tricks</a> </span>
 </section>
 
 
@@ -458,6 +460,10 @@ function jsonFlickrApi(rsp) {
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/12/11/sabo-and-koala-and-one-piece/">One Piece Chapter 731</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/12/09/hello-22/">Diary: 22 西涌</a>
       </li>
     
@@ -479,10 +485,6 @@ function jsonFlickrApi(rsp) {
     
       <li class="post">
         <a href="/blog/2013/11/11/camera-geek/">不折腾会死玩相机星人</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/11/10/octopress-audio/">Octopress 添加 Audio</a>
       </li>
     
   </ul>
