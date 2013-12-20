@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Octopress | XguoX]]></title>
   <link href="http://xguox.github.com/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://xguox.github.com/"/>
-  <updated>2013-12-12T11:10:48+08:00</updated>
+  <updated>2013-12-20T17:16:03+08:00</updated>
   <id>http://xguox.github.com/</id>
   <author>
     <name><![CDATA[XguoX]]></name>
@@ -48,15 +48,15 @@ module Jekyll
 		def render(context)
 			output = super
 			audio = &quot;&lt;audio controls&gt;&quot;
-			@files.each_line(' ') do |file|
-				audio += &quot;&lt;source src='#{file[0...-1]}'&gt;&quot;
+			@files.each_line(&#39; &#39;) do |file|
+				audio += &quot;&lt;source src=&#39;#{file[0...-1]}&#39;&gt;&quot;
 			end
 			audio += &quot;&lt;/audio&gt;&quot;
 		end
 	end
 end
 
-Liquid::Template.register_tag('audio', Jekyll::AudioTag)</code></pre></noscript></div>
+Liquid::Template.register_tag(&#39;audio&#39;, Jekyll::AudioTag)</code></pre></noscript></div>
 </p>
 
 <p>语法跟原本的 <code>video_tag</code> 差不多,</p>

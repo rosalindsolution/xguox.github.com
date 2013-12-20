@@ -4,14 +4,157 @@
   <title><![CDATA[XguoX]]></title>
   <link href="http://xguox.github.com/atom.xml" rel="self"/>
   <link href="http://xguox.github.com/"/>
-  <updated>2013-12-12T11:10:48+08:00</updated>
+  <updated>2013-12-20T17:16:03+08:00</updated>
   <id>http://xguox.github.com/</id>
   <author>
     <name><![CDATA[XguoX]]></name>
     <email><![CDATA[golvinlu@gmail.com]]></email>
   </author>
-  <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Rails4 Devise Strong Parameters]]></title>
+    <link href="http://xguox.github.com/blog/2013/12/20/rails4-devise-strong-parameters/"/>
+    <updated>2013-12-20T14:36:00+08:00</updated>
+    <id>http://xguox.github.com/blog/2013/12/20/rails4-devise-strong-parameters</id>
+    <content type="html"><![CDATA[<p>重拾 Rails, 然后用了 devise 这个 Gem ,遂继续笔记之</p>
+
+<p><strong>Devise</strong> 在 ruby 社区里头几乎都称之为一门<strong>重</strong>炮, 当然了, 重换来的是功能丰富, 用户注册登录相关的一个 Gem 搞定, 只是要把源码搞透彻那必须流弊的人才干得来!</p>
+
+<p>现阶段对我来说, 知道怎么用就 OK 了.</p>
+
+<p>但是, 其实也还算不上完全知道怎么用. 遂笔记 MARK 一发.</p>
+
+<p>参照官方的<strong>Getting started</strong><br/>
+添加 Gem<br/>
+<code>gem 'devise'</code><br/>
+安装 Gem<br/>
+<code>bundle</code><br/>
+跑 generator<br/>
+<code>rails g devise:install</code><br/>
+and then 是一坨的提示，照着撸完，之后<br/>
+<code>rails g devise user</code><br/>
+<code>rake db:migrate</code><br/>
+<code>rails generate devise:views</code></p>
+
+<p>至于如果需要添加 index  show 等其他一些 action 的话直接再 generate 一个 users controller
+不过 在<code>routes.rb</code>中需要加一句 (在<code> devise_for :users
+</code>之后)
+  <code>resources :users, only: [:index, :show]</code></p>
+
+<p>然后是添加其他字段, add username migration 之后</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">ApplicationController</span> <span class="o">&lt;</span> <span class="ss">ActionController</span><span class="p">:</span><span class="ss">:Base</span>
+</span><span class='line'>  <span class="n">before_action</span> <span class="ss">:configure_permitted_parameters</span><span class="p">,</span> <span class="k">if</span><span class="p">:</span> <span class="ss">:devise_controller?</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="kp">protected</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">configure_permitted_parameters</span>
+</span><span class='line'>    <span class="n">devise_parameter_sanitizer</span><span class="o">.</span><span class="n">for</span><span class="p">(</span><span class="ss">:sign_up</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="ss">:username</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>strong parameter</h3>
+
+<p>印象中 rails3 下如
+<code>Post.new(params[:post])</code> 是可以正常运作的,</p>
+
+<p>但是, 在 rails4 当中就报错</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="ss">ActiveModel</span><span class="p">:</span><span class="ss">:ForbiddenAttributesError</span> <span class="k">in</span> <span class="no">PostsController</span><span class="c1">#create</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>在 Rails4 以后要改成</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="no">Post</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">params</span><span class="o">.</span><span class="n">require</span><span class="p">(</span><span class="ss">:post</span><span class="p">)</span><span class="o">.</span><span class="n">permit</span><span class="p">(</span><span class="ss">:title</span><span class="p">,</span> <span class="ss">:content</span><span class="p">))</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p> 相当于以往的 <strong>attr_accessible</strong><br/>
+把工作从 model 转移到 controller 了, 规避了以前的 mass assignment 问题, 又想起以前 github 中招 XD</p>
+
+<p>摘抄官方 guides</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">PeopleController</span> <span class="o">&lt;</span> <span class="ss">ActionController</span><span class="p">:</span><span class="ss">:Base</span>
+</span><span class='line'>  <span class="c1"># This will raise an ActiveModel::ForbiddenAttributes exception</span>
+</span><span class='line'>  <span class="c1"># because it&#39;s using mass assignment without an explicit permit</span>
+</span><span class='line'>  <span class="c1"># step.</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">create</span>
+</span><span class='line'>    <span class="no">Person</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">params</span><span class="o">[</span><span class="ss">:person</span><span class="o">]</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c1"># This will pass with flying colors as long as there&#39;s a person key</span>
+</span><span class='line'>  <span class="c1"># in the parameters, otherwise it&#39;ll raise a</span>
+</span><span class='line'>  <span class="c1"># ActionController::ParameterMissing exception, which will get</span>
+</span><span class='line'>  <span class="c1"># caught by ActionController::Base and turned into that 400 Bad</span>
+</span><span class='line'>  <span class="c1"># Request reply.</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">update</span>
+</span><span class='line'>    <span class="n">person</span> <span class="o">=</span> <span class="n">current_account</span><span class="o">.</span><span class="n">people</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">params</span><span class="o">[</span><span class="ss">:id</span><span class="o">]</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">person</span><span class="o">.</span><span class="n">update_attributes!</span><span class="p">(</span><span class="n">person_params</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">redirect_to</span> <span class="n">person</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="kp">private</span>
+</span><span class='line'>    <span class="c1"># Using a private method to encapsulate the permissible parameters</span>
+</span><span class='line'>    <span class="c1"># is just a good pattern since you&#39;ll be able to reuse the same</span>
+</span><span class='line'>    <span class="c1"># permit list between create and update. Also, you can specialize</span>
+</span><span class='line'>    <span class="c1"># this method with per-user checking of permissible attributes.</span>
+</span><span class='line'>    <span class="k">def</span> <span class="nf">person_params</span>
+</span><span class='line'>      <span class="n">params</span><span class="o">.</span><span class="n">require</span><span class="p">(</span><span class="ss">:person</span><span class="p">)</span><span class="o">.</span><span class="n">permit</span><span class="p">(</span><span class="ss">:name</span><span class="p">,</span> <span class="ss">:age</span><span class="p">)</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>所以上边要先把 username 在 params 给 permit 了.</p>
+
+<p>暂时是这些先 MARK</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[One Piece Chapter 731]]></title>
@@ -24,7 +167,7 @@
 
 <p>只是这激动归激动, 但都是各种不利草帽的因素!!</p>
 
-<p>整个德雷斯罗萨的剧情又是一波高潮!!!萨博的出现固然激动, 但是因为老早知道他没死,出现是迟早的问题, 所以, 其实赞点还是给了克尔拉,  原本以为只是个一笔带过的小龙套, 第二笔就给盘活了!!! 忍不住扒了存在移动硬盘的里的全部OP动画漫画, 特地回看了那几集!!!(顺便整理下文件和文件夹的命名. Mac下的Automator好用极了!)</p>
+<p>整个德雷斯罗萨的剧情又是一波高潮!!!萨博的出现固然激动, 但是因为老早知道他没死,出现是迟早的问题, 所以, 其实赞点还是给了克尔拉(其实我第一眼木有认出来, 只觉得面熟),  原本以为只是个一笔带过的小龙套, 第二笔就给盘活了!!! 忍不住扒了存在移动硬盘的里的全部OP动画漫画, 特地回看了那几集!!!(顺便整理下文件和文件夹的命名. Mac下的Automator好用极了!)</p>
 
 <p>and then,</p>
 
@@ -801,15 +944,15 @@ module Jekyll
         def render(context)
             output = super
             audio = &quot;&lt;audio controls&gt;&quot;
-            @files.each_line(' ') do |file|
-                audio += &quot;&lt;source src='#{file[0...-1]}'&gt;&quot;
+            @files.each_line(&#39; &#39;) do |file|
+                audio += &quot;&lt;source src=&#39;#{file[0...-1]}&#39;&gt;&quot;
             end
             audio += &quot;&lt;/audio&gt;&quot;
         end
     end
 end
 
-Liquid::Template.register_tag('audio', Jekyll::AudioTag)</code></pre></noscript></div>
+Liquid::Template.register_tag(&#39;audio&#39;, Jekyll::AudioTag)</code></pre></noscript></div>
 
 
 <p>语法跟原本的 <code>video_tag</code> 差不多,</p>
@@ -2612,71 +2755,6 @@ alias rake="noglob rake"
 <p>消沉够了就要回到正轨奋斗了.好好利用这几个月.</p>
 
 <p>接下来&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;..要不要,从HTML重新开始呢呢呢,不知道俺的Ruby/Rails 还剩几多斤两呢, 好吧,都不是, 从工具开始, 回归使用Vim好了&hellip;&hellip;&hellip;&hellip;&hellip;.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[照片的故事]]></title>
-    <link href="http://xguox.github.com/blog/2013/06/03/photos-and-stories/"/>
-    <updated>2013-06-03T16:30:00+08:00</updated>
-    <id>http://xguox.github.com/blog/2013/06/03/photos-and-stories</id>
-    <content type="html"><![CDATA[<p><img src="http://farm8.staticflickr.com/7332/8942652946_af9121957f_n.jpg" alt="" />
-<img src="http://farm8.staticflickr.com/7289/8942653776_bdfb3e28a3_n.jpg" alt="" />   <br/>
-那时候,你们在想着什么,仅仅只是摆着姿势那么简单吗?<br/>
-你说我穿的太colorful了,没有你那么忧伤  <br/>
-要是我的最深处也这般colorful那该多好</p>
-
-<p><img src="http://farm8.staticflickr.com/7432/8942651358_e04d1e5d94.jpg" alt="" />
-<img src="http://farm4.staticflickr.com/3732/8942025755_d37f645d5d.jpg" alt="" /><br/>
-不知道你是望着天空还是闭着眼睛,我自己也忘记了<br/>
-草地不很舒服,但给的感觉却让人享受着可以睡去</p>
-
-<!-- more -->
-
-
-<p><img src="http://farm8.staticflickr.com/7350/8942022805_03c7825513.jpg" alt="" />
-<img src="http://farm6.staticflickr.com/5346/8942644888_259c5a6e7e.jpg" alt="" /><br/>
-背影总给人有沉重感,仿佛,这些年的影子都被呈现出来了.</p>
-
-<p><img src="http://farm9.staticflickr.com/8538/8942627584_def59fc38f.jpg" alt="" />
-<img src="http://farm4.staticflickr.com/3757/8942628346_e2ac194f1b.jpg" alt="" />
-<img src="http://farm4.staticflickr.com/3723/8942002947_60ddc9872b.jpg" alt="" />
-<img src="http://farm6.staticflickr.com/5328/8942627264_17b43443fa.jpg" alt="" />
-<img src="http://farm9.staticflickr.com/8272/8942004051_e1ee9b1655.jpg" alt="" />
-<img src="http://farm8.staticflickr.com/7387/8942626614_68f3ce0409.jpg" alt="" /><br/>
-路,一个人走,两个人走&hellip;回头,总能望见你</p>
-
-<p><img src="http://farm4.staticflickr.com/3722/8942006795_499d3efaf2.jpg" alt="" />
-<img src="http://farm9.staticflickr.com/8136/8942630138_91654db5d7.jpg" alt="" />
-<img src="http://farm4.staticflickr.com/3799/8942011361_e2d201dae8.jpg" alt="" /><br/>
-路过的行人都不自觉就把我们设为焦点,或轻轻一笑,或心有所思,谢谢为我们合照的那个人. <br/>
-说自己垃圾,说自己病痨<br/>
-我情愿被你们这么说<br/>
-也不要自己自嘲</p>
-
-<p><img src="http://farm3.staticflickr.com/2837/8942001679_4fb28efb7b.jpg" alt="" />
-<img src="http://farm6.staticflickr.com/5335/8942002583_080e5a9e0d.jpg" alt="" /><br/>
-低头,抬头,仰望,俯视,在同一个位置</p>
-
-<p><img src="http://farm8.staticflickr.com/7348/8941980615_d394b6f30f.jpg" alt="" />
-<img src="http://farm3.staticflickr.com/2850/8941978751_2d21c5ec0b.jpg" alt="" /><br/>
-你说,车站总给人有一种说不出的感觉.<br/>
-我说,等,等待,等车,等人&hellip;</p>
-
-<p><img src="http://farm8.staticflickr.com/7359/8941984311_fd5057e945.jpg" alt="" />
-<img src="http://farm8.staticflickr.com/7385/8942620208_e60bb022e2.jpg" alt="" /> <br/>
-你想拥抱雨,正如我也那么想被雨穿透</p>
-
-<p><img src="http://farm6.staticflickr.com/5464/8942610446_8b5ce4132e.jpg" alt="" />
-<img src="http://farm4.staticflickr.com/3676/8941991289_ef499b456b.jpg" alt="" /><br/>
-无力的文字已经不足以描述我有多爱这两张照片</p>
-
-<p><img src="http://farm4.staticflickr.com/3665/8941981741_85e92f11b2.jpg" alt="" /><br/>
-多谢路过的小师妹,一开始,因为我之前把ISO设置到了6400,还开着闪光灯,闪瞎了&hellip;折腾了几下才发现问题.<br/>
-小师妹问,你们是大四的师兄吧?<br/>
-我可以这么回答吗?我们还在读高中!</p>
-
-<p>从未想过摘下腕带,尽管它们普通的甚至有些寒酸,也不是谁的珍贵礼物,只是我自己给自己的地摊货,但它们好像是替代你们看着我.</p>
 ]]></content>
   </entry>
   

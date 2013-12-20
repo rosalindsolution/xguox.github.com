@@ -1,0 +1,293 @@
+
+<!DOCTYPE HTML>
+<html lang="en-GB">
+<head>
+	<meta charset="utf-8">
+	<title>Rails4 Devise Strong Parameters  | XguoX</title>
+
+	<meta name="author" content="XguoX">
+
+<meta name="description" content="重拾 Rails, 然后用了 devise 这个 Gem ,遂继续笔记之 Devise 在 ruby 社区里头几乎都称之为一门重炮, 当然了, 重换来的是功能丰富, 用户注册登录相关的一个 Gem 搞定, 只是要把源码搞透彻那必须流弊的人才干得来! 现阶段对我来说, 知道怎么用就 OK 了. 但是 &hellip;"> <meta name="keywords" content="">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="XguoX" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	
+
+</head>
+
+
+
+<body>
+	<header id="header" class="inner"><h1><a href="/">XguoX</a></h1>
+<span class="tagline">Coder & Jabber</span>
+<nav id="main-nav"><ul>
+	<li><a href="http://www.flickr.com/photos/groverlu/sets" target="_blank">Flickr</a></li>
+	<li><a href="/about">About</a></li>
+	<li><a href="/atom.xml">RSS</a></li>
+</ul>
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul>
+	<li><a href="http://www.flickr.com/photos/groverlu/sets" target="_blank">Flickr</a></li>
+	<li><a href="/about">About</a></li>
+	<li><a href="/atom.xml">RSS</a></li>
+</ul>
+</div>
+	</div>
+</nav>
+
+
+</header>
+
+	<div id="content" class="inner"><article class="post">
+	<header>
+		<h2 class="title">Rails4 Devise Strong Parameters</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-20T14:36:00+08:00" pubdate data-updated="true">Dec 20<span>th</span>, 2013</time></div>
+	</header>
+	<div class="entry-content"><p>重拾 Rails, 然后用了 devise 这个 Gem ,遂继续笔记之</p>
+
+<p><strong>Devise</strong> 在 ruby 社区里头几乎都称之为一门<strong>重</strong>炮, 当然了, 重换来的是功能丰富, 用户注册登录相关的一个 Gem 搞定, 只是要把源码搞透彻那必须流弊的人才干得来!</p>
+
+<p>现阶段对我来说, 知道怎么用就 OK 了.</p>
+
+<p>但是, 其实也还算不上完全知道怎么用. 遂笔记 MARK 一发.</p>
+
+<p>参照官方的<strong>Getting started</strong><br/>
+添加 Gem<br/>
+<code>gem 'devise'</code><br/>
+安装 Gem<br/>
+<code>bundle</code><br/>
+跑 generator<br/>
+<code>rails g devise:install</code><br/>
+and then 是一坨的提示，照着撸完，之后<br/>
+<code>rails g devise user</code><br/>
+<code>rake db:migrate</code><br/>
+<code>rails generate devise:views</code></p>
+
+<p>至于如果需要添加 index  show 等其他一些 action 的话直接再 generate 一个 users controller
+不过 在<code>routes.rb</code>中需要加一句 (在<code> devise_for :users
+</code>之后)
+  <code>resources :users, only: [:index, :show]</code></p>
+
+<p>然后是添加其他字段, add username migration 之后</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">ApplicationController</span> <span class="o">&lt;</span> <span class="ss">ActionController</span><span class="p">:</span><span class="ss">:Base</span>
+</span><span class='line'>  <span class="n">before_action</span> <span class="ss">:configure_permitted_parameters</span><span class="p">,</span> <span class="k">if</span><span class="p">:</span> <span class="ss">:devise_controller?</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="kp">protected</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">configure_permitted_parameters</span>
+</span><span class='line'>    <span class="n">devise_parameter_sanitizer</span><span class="o">.</span><span class="n">for</span><span class="p">(</span><span class="ss">:sign_up</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="ss">:username</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>strong parameter</h3>
+
+<p>印象中 rails3 下如
+<code>Post.new(params[:post])</code> 是可以正常运作的,</p>
+
+<p>但是, 在 rails4 当中就报错</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="ss">ActiveModel</span><span class="p">:</span><span class="ss">:ForbiddenAttributesError</span> <span class="k">in</span> <span class="no">PostsController</span><span class="c1">#create</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>在 Rails4 以后要改成</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="no">Post</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">params</span><span class="o">.</span><span class="n">require</span><span class="p">(</span><span class="ss">:post</span><span class="p">)</span><span class="o">.</span><span class="n">permit</span><span class="p">(</span><span class="ss">:title</span><span class="p">,</span> <span class="ss">:content</span><span class="p">))</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p> 相当于以往的 <strong>attr_accessible</strong><br/>
+把工作从 model 转移到 controller 了, 规避了以前的 mass assignment 问题, 又想起以前 github 中招 XD</p>
+
+<p>摘抄官方 guides</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">PeopleController</span> <span class="o">&lt;</span> <span class="ss">ActionController</span><span class="p">:</span><span class="ss">:Base</span>
+</span><span class='line'>  <span class="c1"># This will raise an ActiveModel::ForbiddenAttributes exception</span>
+</span><span class='line'>  <span class="c1"># because it&#39;s using mass assignment without an explicit permit</span>
+</span><span class='line'>  <span class="c1"># step.</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">create</span>
+</span><span class='line'>    <span class="no">Person</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">params</span><span class="o">[</span><span class="ss">:person</span><span class="o">]</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c1"># This will pass with flying colors as long as there&#39;s a person key</span>
+</span><span class='line'>  <span class="c1"># in the parameters, otherwise it&#39;ll raise a</span>
+</span><span class='line'>  <span class="c1"># ActionController::ParameterMissing exception, which will get</span>
+</span><span class='line'>  <span class="c1"># caught by ActionController::Base and turned into that 400 Bad</span>
+</span><span class='line'>  <span class="c1"># Request reply.</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">update</span>
+</span><span class='line'>    <span class="n">person</span> <span class="o">=</span> <span class="n">current_account</span><span class="o">.</span><span class="n">people</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">params</span><span class="o">[</span><span class="ss">:id</span><span class="o">]</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">person</span><span class="o">.</span><span class="n">update_attributes!</span><span class="p">(</span><span class="n">person_params</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">redirect_to</span> <span class="n">person</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="kp">private</span>
+</span><span class='line'>    <span class="c1"># Using a private method to encapsulate the permissible parameters</span>
+</span><span class='line'>    <span class="c1"># is just a good pattern since you&#39;ll be able to reuse the same</span>
+</span><span class='line'>    <span class="c1"># permit list between create and update. Also, you can specialize</span>
+</span><span class='line'>    <span class="c1"># this method with per-user checking of permissible attributes.</span>
+</span><span class='line'>    <span class="k">def</span> <span class="nf">person_params</span>
+</span><span class='line'>      <span class="n">params</span><span class="o">.</span><span class="n">require</span><span class="p">(</span><span class="ss">:person</span><span class="p">)</span><span class="o">.</span><span class="n">permit</span><span class="p">(</span><span class="ss">:name</span><span class="p">,</span> <span class="ss">:age</span><span class="p">)</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>所以上边要先把 username 在 params 给 permit 了.</p>
+
+<p>暂时是这些先 MARK</p>
+</div>
+
+</article>
+
+	
+	<div class="share">
+	  <!-- <ul> -->
+	  <!--   <li>
+  <a href="https://twitter.com/intent/tweet?text=Rails4 Devise Strong Parameters by @&url=http://xguox.github.com/blog/2013/12/20/rails4-devise-strong-parameters/" title="Share Rails4 Devise Strong Parameters on Twitter">
+    <img src="/images/social/twitter.png" />
+  </a>
+</li>
+ -->
+	  <!--   <li>
+  <a href="https://www.facebook.com/sharer.php?u=http://xguox.github.com/blog/2013/12/20/rails4-devise-strong-parameters/" title="Share Rails4 Devise Strong Parameters on Facebook">
+    <img src="/images/social/facebook.png" />
+  </a>
+</li>
+ -->
+	  <!--   <li>
+  <a href="https://plus.google.com/share?url=http://xguox.github.com/blog/2013/12/20/rails4-devise-strong-parameters/" title="Share Rails4 Devise Strong Parameters on Google Plus">
+    <img src="/images/social/google.png" />
+  </a>
+</li>
+ -->
+	  <!-- </ul> -->
+	</div>
+
+
+
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
+</div>
+	<footer id="footer" class="inner"><br>
+<br>
+<br>
+<br>
+&copy; 2013
+
+    XguoX
+
+</footer>
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/hyphenator.js"></script>
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'xguox';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://xguox.github.com/blog/2013/12/20/rails4-devise-strong-parameters/';
+        var disqus_url = 'http://xguox.github.com/blog/2013/12/20/rails4-devise-strong-parameters/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-39166710-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+
+
+</body>
+<script>
+  $(document).ready(function() {
+  // Make images center
+  $('p:has(img)').css('text-align', 'center');
+  });
+</script>
+</html>

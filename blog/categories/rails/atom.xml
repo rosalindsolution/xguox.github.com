@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Rails | XguoX]]></title>
   <link href="http://xguox.github.com/blog/categories/rails/atom.xml" rel="self"/>
   <link href="http://xguox.github.com/"/>
-  <updated>2013-12-12T11:10:48+08:00</updated>
+  <updated>2013-12-20T17:16:03+08:00</updated>
   <id>http://xguox.github.com/</id>
   <author>
     <name><![CDATA[XguoX]]></name>
@@ -12,6 +12,121 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Rails4 Devise Strong Parameters]]></title>
+    <link href="http://xguox.github.com/blog/2013/12/20/rails4-devise-strong-parameters/"/>
+    <updated>2013-12-20T14:36:00+08:00</updated>
+    <id>http://xguox.github.com/blog/2013/12/20/rails4-devise-strong-parameters</id>
+    <content type="html"><![CDATA[<p>重拾 Rails, 然后用了 devise 这个 Gem ,遂继续笔记之</p>
+
+<p><strong>Devise</strong> 在 ruby 社区里头几乎都称之为一门<strong>重</strong>炮, 当然了, 重换来的是功能丰富, 用户注册登录相关的一个 Gem 搞定, 只是要把源码搞透彻那必须流弊的人才干得来!</p>
+
+<p>现阶段对我来说, 知道怎么用就 OK 了.</p>
+
+<p>但是, 其实也还算不上完全知道怎么用. 遂笔记 MARK 一发.</p>
+
+<p>参照官方的<strong>Getting started</strong><br/>
+添加 Gem<br/>
+<code>gem 'devise'</code><br/>
+安装 Gem<br/>
+<code>bundle</code><br/>
+跑 generator<br/>
+<code>rails g devise:install</code><br/>
+and then 是一坨的提示，照着撸完，之后<br/>
+<code>rails g devise user</code><br/>
+<code>rake db:migrate</code><br/>
+<code>rails generate devise:views</code></p>
+
+<p>至于如果需要添加 index  show 等其他一些 action 的话直接再 generate 一个 users controller
+不过 在<code>routes.rb</code>中需要加一句 (在<code> devise_for :users
+</code>之后)
+  <code>resources :users, only: [:index, :show]</code></p>
+
+<p>然后是添加其他字段, add username migration 之后</p>
+
+<p>```ruby
+class ApplicationController &lt; ActionController::Base
+  before_action :configure_permitted_parameters, if: :devise_controller?</p>
+
+<p>  protected</p>
+
+<p>  def configure_permitted_parameters</p>
+
+<pre><code>devise_parameter_sanitizer.for(:sign_up) &lt;&lt; :username
+</code></pre>
+
+<p>  end</p>
+
+<p>end
+```</p>
+
+<h3>strong parameter</h3>
+
+<p>印象中 rails3 下如
+<code>Post.new(params[:post])</code> 是可以正常运作的,</p>
+
+<p>但是, 在 rails4 当中就报错</p>
+
+<p>```
+ActiveModel::ForbiddenAttributesError in PostsController#create</p>
+
+<p>```</p>
+
+<p>在 Rails4 以后要改成</p>
+
+<p><code>ruby
+Post.new(params.require(:post).permit(:title, :content))
+</code>
+ 相当于以往的 <strong>attr_accessible</strong><br/>
+把工作从 model 转移到 controller 了, 规避了以前的 mass assignment 问题, 又想起以前 github 中招 XD</p>
+
+<p>摘抄官方 guides</p>
+
+<p>```ruby
+class PeopleController &lt; ActionController::Base
+  # This will raise an ActiveModel::ForbiddenAttributes exception
+  # because it&rsquo;s using mass assignment without an explicit permit
+  # step.
+  def create</p>
+
+<pre><code>Person.create(params[:person])
+</code></pre>
+
+<p>  end</p>
+
+<p>  # This will pass with flying colors as long as there&rsquo;s a person key
+  # in the parameters, otherwise it&rsquo;ll raise a
+  # ActionController::ParameterMissing exception, which will get
+  # caught by ActionController::Base and turned into that 400 Bad
+  # Request reply.
+  def update</p>
+
+<pre><code>person = current_account.people.find(params[:id])
+person.update_attributes!(person_params)
+redirect_to person
+</code></pre>
+
+<p>  end</p>
+
+<p>  private</p>
+
+<pre><code># Using a private method to encapsulate the permissible parameters
+# is just a good pattern since you'll be able to reuse the same
+# permit list between create and update. Also, you can specialize
+# this method with per-user checking of permissible attributes.
+def person_params
+  params.require(:person).permit(:name, :age)
+end
+</code></pre>
+
+<p>end
+```
+所以上边要先把 username 在 params 给 permit 了.</p>
+
+<p>暂时是这些先 MARK</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Rails 3 Remote Links and Forms Part 2: Data-type (With jQuery)]]></title>
@@ -583,37 +698,6 @@ $(document).ready(function(){
 </span><span class='line'>libmysqlclient_r.so.16: cannot open shared object file: No such file or directory &ndash; /home/xguox/.rvm/gems/Ruby-1.9.2-p290@Rails/gems/mysql2-0.3.11/lib/mysql2/mysql2.so</span></code></pre></td></tr></table></div></figure></notextile></div>
 我还以为是我缺少了libmysqlclient_r.so.16这个文件,自己下载了之后也还是不行.期间尝试重装mysql,也试过之前说的那个,安装各种组建的命令还是无果.最终在Ruby-china得到大神指点,居然只需卸了重装mysql2这个gem就可以了.貌似是因为/usr/lib 下的mysql2.so没有link到gem里边的mysql2.so
 过后,还是跟往常没有多大差别的继续Rails&hellip;</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Rails中try的用法]]></title>
-    <link href="http://xguox.github.com/blog/2012/04/20/usage-of-try/"/>
-    <updated>2012-04-20T23:17:00+08:00</updated>
-    <id>http://xguox.github.com/blog/2012/04/20/usage-of-try</id>
-    <content type="html"><![CDATA[<p>居然今晚才发现Rails中try的用法,初一看,怎么那么像印象中某些语言的异常处理?不对啊,Ruby中的异常处理不是长这个样子的.
-查了下Rails的API才了解了大致用法.</p>
-
-<p>API:</p>
-
-<p>不使用try的时候是<!-- more -->
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>@person &amp;&amp; @person.name</span></code></pre></td></tr></table></div></figure></notextile></div>
-需确保@person不是nil,否则会报错
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>NoMethodError: undefined method `name' for nil:NilClass</span></code></pre></td></tr></table></div></figure></notextile></div>
-如果用try的话
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>@person.try(:name)</span></code></pre></td></tr></table></div></figure></notextile></div>
-如果@person为nil则返回nil而不是报错</p>
-
-<p>另外,try还可以接收block作为参数,
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Person.try(:find, 1)
-</span><span class='line'>@people.try(:collect) {|p| p.name}</span></code></pre></td></tr></table></div></figure></notextile></div>
-漏了一句,API开头就说了,像常规的Ruby的Object#send 那样工作
-看了下源码,貌似是利用了<strong>send</strong>实现的.最近在研究Ruby的元编程.</p>
 ]]></content>
   </entry>
   

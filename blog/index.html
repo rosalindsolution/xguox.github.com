@@ -1,92 +1,64 @@
 
-<!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<!DOCTYPE HTML>
+<html lang="en-GB">
 <head>
-  <meta charset="utf-8">
-  <title>XguoX</title>
-  <meta name="author" content="XguoX">
+	<meta charset="utf-8">
+	<title>Coder & Jabber  | XguoX</title>
 
-  
-  <meta name="description" content="尾田大神一下子, 「唔声唔声吓你一惊」 其实德雷斯罗萨已经很激动了, 连毕古麻姆都来了!!! 只是这激动归激动, 但都是各种不利草帽的因素!! 整个德雷斯罗萨的剧情又是一波高潮!!!萨博的出现固然激动, 但是因为老早知道他没死,出现是迟早的问题, 所以, 其实赞点还是给了克尔拉, &hellip;">
-  
+	<meta name="author" content="XguoX">
 
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="重拾 Rails, 然后用了 devise 这个 Gem ,遂继续笔记之 Devise 在 ruby 社区里头几乎都称之为一门重炮, 当然了, 重换来的是功能丰富, 用户注册登录相关的一个 Gem 搞定, 只是要把源码搞透彻那必须流弊的人才干得来! 现阶段对我来说, 知道怎么用就 OK 了. &hellip;"> <meta name="keywords" content="">
 
-  
-  <link rel="canonical" href="http://xguox.github.com/blog">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="XguoX" type="application/atom+xml">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
-  
-  <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-39166710-1']);
-    _gaq.push(['_trackPageview']);
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
-
+	<link href="/atom.xml" rel="alternate" title="XguoX" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	
 
 </head>
 
-<body   class="collapse-sidebar sidebar-footer" >
-  <header role="banner"><hgroup>
-  <h1><a href="/">XguoX</a></h1>
-  
-    <h2>Coder & Jabber</h2>
-  
-</hgroup>
+
+
+<body>
+	<header id="header" class="inner"><h1><a href="/">XguoX</a></h1>
+<span class="tagline">Coder & Jabber</span>
+<nav id="main-nav"><ul>
+	<li><a href="http://www.flickr.com/photos/groverlu/sets" target="_blank">Flickr</a></li>
+	<li><a href="/about">About</a></li>
+	<li><a href="/atom.xml">RSS</a></li>
+</ul>
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul>
+	<li><a href="http://www.flickr.com/photos/groverlu/sets" target="_blank">Flickr</a></li>
+	<li><a href="/about">About</a></li>
+	<li><a href="/atom.xml">RSS</a></li>
+</ul>
+</div>
+	</div>
+</nav>
+
 
 </header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
-</ul>
-  
-<form action="http://google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:xguox.github.com" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul class="main-navigation">
-  <li><a href="/">Home</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
-  <li><a href="/about">About</a></li>
-</ul>
 
-</nav>
-  <div id="main">
-    <div id="content">
-      
+	<div id="content" class="inner">
 
 
     <article class="post">
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/12/11/sabo-and-koala-and-one-piece/">One Piece Chapter 731</a></h1>
-    
-    
-      <p class="meta">
-        
+	<header>
+		<h2 class="title">
+			
+			<a href="/blog/2013/12/20/rails4-devise-strong-parameters/">
+			
+				Rails4 Devise Strong Parameters</a>
+		</h2>
+		<div class="meta date">
 
 
 
@@ -98,22 +70,183 @@
   
 
 
-<time datetime="2013-12-11T23:51:00+08:00" pubdate data-updated="true">Dec 11<span>th</span>, 2013</time>
-        
-         | <a href="/blog/2013/12/11/sabo-and-koala-and-one-piece/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
+<time datetime="2013-12-20T14:36:00+08:00" pubdate data-updated="true">Dec 20<span>th</span>, 2013</time></div>
+	</header>
+	<div class="entry-content">
+		<p>重拾 Rails, 然后用了 devise 这个 Gem ,遂继续笔记之</p>
+
+<p><strong>Devise</strong> 在 ruby 社区里头几乎都称之为一门<strong>重</strong>炮, 当然了, 重换来的是功能丰富, 用户注册登录相关的一个 Gem 搞定, 只是要把源码搞透彻那必须流弊的人才干得来!</p>
+
+<p>现阶段对我来说, 知道怎么用就 OK 了.</p>
+
+<p>但是, 其实也还算不上完全知道怎么用. 遂笔记 MARK 一发.</p>
+
+<p>参照官方的<strong>Getting started</strong><br/>
+添加 Gem<br/>
+<code>gem 'devise'</code><br/>
+安装 Gem<br/>
+<code>bundle</code><br/>
+跑 generator<br/>
+<code>rails g devise:install</code><br/>
+and then 是一坨的提示，照着撸完，之后<br/>
+<code>rails g devise user</code><br/>
+<code>rake db:migrate</code><br/>
+<code>rails generate devise:views</code></p>
+
+<p>至于如果需要添加 index  show 等其他一些 action 的话直接再 generate 一个 users controller
+不过 在<code>routes.rb</code>中需要加一句 (在<code> devise_for :users
+</code>之后)
+  <code>resources :users, only: [:index, :show]</code></p>
+
+<p>然后是添加其他字段, add username migration 之后</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">ApplicationController</span> <span class="o">&lt;</span> <span class="ss">ActionController</span><span class="p">:</span><span class="ss">:Base</span>
+</span><span class='line'>  <span class="n">before_action</span> <span class="ss">:configure_permitted_parameters</span><span class="p">,</span> <span class="k">if</span><span class="p">:</span> <span class="ss">:devise_controller?</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="kp">protected</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">configure_permitted_parameters</span>
+</span><span class='line'>    <span class="n">devise_parameter_sanitizer</span><span class="o">.</span><span class="n">for</span><span class="p">(</span><span class="ss">:sign_up</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="ss">:username</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
-  <div class="entry-content"><p>尾田大神一下子,  「唔声唔声吓你一惊」</p>
+<h3>strong parameter</h3>
+
+<p>印象中 rails3 下如
+<code>Post.new(params[:post])</code> 是可以正常运作的,</p>
+
+<p>但是, 在 rails4 当中就报错</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="ss">ActiveModel</span><span class="p">:</span><span class="ss">:ForbiddenAttributesError</span> <span class="k">in</span> <span class="no">PostsController</span><span class="c1">#create</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>在 Rails4 以后要改成</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="no">Post</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">params</span><span class="o">.</span><span class="n">require</span><span class="p">(</span><span class="ss">:post</span><span class="p">)</span><span class="o">.</span><span class="n">permit</span><span class="p">(</span><span class="ss">:title</span><span class="p">,</span> <span class="ss">:content</span><span class="p">))</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p> 相当于以往的 <strong>attr_accessible</strong><br/>
+把工作从 model 转移到 controller 了, 规避了以前的 mass assignment 问题, 又想起以前 github 中招 XD</p>
+
+<p>摘抄官方 guides</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">PeopleController</span> <span class="o">&lt;</span> <span class="ss">ActionController</span><span class="p">:</span><span class="ss">:Base</span>
+</span><span class='line'>  <span class="c1"># This will raise an ActiveModel::ForbiddenAttributes exception</span>
+</span><span class='line'>  <span class="c1"># because it&#39;s using mass assignment without an explicit permit</span>
+</span><span class='line'>  <span class="c1"># step.</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">create</span>
+</span><span class='line'>    <span class="no">Person</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">params</span><span class="o">[</span><span class="ss">:person</span><span class="o">]</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c1"># This will pass with flying colors as long as there&#39;s a person key</span>
+</span><span class='line'>  <span class="c1"># in the parameters, otherwise it&#39;ll raise a</span>
+</span><span class='line'>  <span class="c1"># ActionController::ParameterMissing exception, which will get</span>
+</span><span class='line'>  <span class="c1"># caught by ActionController::Base and turned into that 400 Bad</span>
+</span><span class='line'>  <span class="c1"># Request reply.</span>
+</span><span class='line'>  <span class="k">def</span> <span class="nf">update</span>
+</span><span class='line'>    <span class="n">person</span> <span class="o">=</span> <span class="n">current_account</span><span class="o">.</span><span class="n">people</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">params</span><span class="o">[</span><span class="ss">:id</span><span class="o">]</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">person</span><span class="o">.</span><span class="n">update_attributes!</span><span class="p">(</span><span class="n">person_params</span><span class="p">)</span>
+</span><span class='line'>    <span class="n">redirect_to</span> <span class="n">person</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="kp">private</span>
+</span><span class='line'>    <span class="c1"># Using a private method to encapsulate the permissible parameters</span>
+</span><span class='line'>    <span class="c1"># is just a good pattern since you&#39;ll be able to reuse the same</span>
+</span><span class='line'>    <span class="c1"># permit list between create and update. Also, you can specialize</span>
+</span><span class='line'>    <span class="c1"># this method with per-user checking of permissible attributes.</span>
+</span><span class='line'>    <span class="k">def</span> <span class="nf">person_params</span>
+</span><span class='line'>      <span class="n">params</span><span class="o">.</span><span class="n">require</span><span class="p">(</span><span class="ss">:person</span><span class="p">)</span><span class="o">.</span><span class="n">permit</span><span class="p">(</span><span class="ss">:name</span><span class="p">,</span> <span class="ss">:age</span><span class="p">)</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>所以上边要先把 username 在 params 给 permit 了.</p>
+
+<p>暂时是这些先 MARK</p>
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post">
+	<header>
+		<h2 class="title">
+			
+			<a href="/blog/2013/12/11/sabo-and-koala-and-one-piece/">
+			
+				One Piece Chapter 731</a>
+		</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-12-11T23:51:00+08:00" pubdate data-updated="true">Dec 11<span>th</span>, 2013</time></div>
+	</header>
+	<div class="entry-content">
+		<p>尾田大神一下子,  「唔声唔声吓你一惊」</p>
 
 <p>其实德雷斯罗萨已经很激动了, 连毕古麻姆都来了!!!</p>
 
 <p>只是这激动归激动, 但都是各种不利草帽的因素!!</p>
 
-<p>整个德雷斯罗萨的剧情又是一波高潮!!!萨博的出现固然激动, 但是因为老早知道他没死,出现是迟早的问题, 所以, 其实赞点还是给了克尔拉,  原本以为只是个一笔带过的小龙套, 第二笔就给盘活了!!! 忍不住扒了存在移动硬盘的里的全部OP动画漫画, 特地回看了那几集!!!(顺便整理下文件和文件夹的命名. Mac下的Automator好用极了!)</p>
+<p>整个德雷斯罗萨的剧情又是一波高潮!!!萨博的出现固然激动, 但是因为老早知道他没死,出现是迟早的问题, 所以, 其实赞点还是给了克尔拉(其实我第一眼木有认出来, 只觉得面熟),  原本以为只是个一笔带过的小龙套, 第二笔就给盘活了!!! 忍不住扒了存在移动硬盘的里的全部OP动画漫画, 特地回看了那几集!!!(顺便整理下文件和文件夹的命名. Mac下的Automator好用极了!)</p>
 
 <p>and then,</p>
 
@@ -125,25 +258,23 @@
 
 <p><img src="http://ww2.sinaimg.cn/mw690/62fdd4d5gw1ebg7w0twqoj20hi0owdm0.jpg" alt="" /></p>
 
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2013/12/11/sabo-and-koala-and-one-piece/">Read on &rarr;</a>
-    </footer>
-  
+
+		
+		<a href="/blog/2013/12/11/sabo-and-koala-and-one-piece/" class="more-link">Read on &rarr;</a>
+	</div>
 
 </article>
 
 
     <article class="post">
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/12/09/hello-22/">Diary: 22 西涌</a></h1>
-    
-    
-      <p class="meta">
-        
+	<header>
+		<h2 class="title">
+			
+			<a href="/blog/2013/12/09/hello-22/">
+			
+				Diary: 22 西涌</a>
+		</h2>
+		<div class="meta date">
 
 
 
@@ -155,16 +286,10 @@
   
 
 
-<time datetime="2013-12-09T21:45:00+08:00" pubdate data-updated="true">Dec 9<span>th</span>, 2013</time>
-        
-         | <a href="/blog/2013/12/09/hello-22/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><h3>前奏</h3>
+<time datetime="2013-12-09T21:45:00+08:00" pubdate data-updated="true">Dec 9<span>th</span>, 2013</time></div>
+	</header>
+	<div class="entry-content">
+		<h3>前奏</h3>
 
 <p>原本是要长叹自己从20岁病到现在22了。发觉消沉的东西太多了，还是不发神经扯淡了。<br/>
 不是特地计划生日当天跑来深圳大鹏半岛这边。不过我却的确来了。<br/>
@@ -203,25 +328,23 @@
 
 <h3>海边</h3>
 
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2013/12/09/hello-22/">Read on &rarr;</a>
-    </footer>
-  
+
+		
+		<a href="/blog/2013/12/09/hello-22/" class="more-link">Read on &rarr;</a>
+	</div>
 
 </article>
 
 
     <article class="post">
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/11/28/lightroom-flash-quit-because-of-too-many-presets/">解决 Lightroom 闪退</a></h1>
-    
-    
-      <p class="meta">
-        
+	<header>
+		<h2 class="title">
+			
+			<a href="/blog/2013/11/28/lightroom-flash-quit-because-of-too-many-presets/">
+			
+				解决 Lightroom 闪退</a>
+		</h2>
+		<div class="meta date">
 
 
 
@@ -233,16 +356,10 @@
   
 
 
-<time datetime="2013-11-28T11:01:00+08:00" pubdate data-updated="true">Nov 28<span>th</span>, 2013</time>
-        
-         | <a href="/blog/2013/11/28/lightroom-flash-quit-because-of-too-many-presets/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>接<a href="http://xguox.me/blog/2013/11/14/lightroom-presets/">上一篇</a>, 想着在网上搞了那么多的预设,不用放着也不碍事. 结果没些时间, Lightroom 就各种闪退各种编辑不能.</p>
+<time datetime="2013-11-28T11:01:00+08:00" pubdate data-updated="true">Nov 28<span>th</span>, 2013</time></div>
+	</header>
+	<div class="entry-content">
+		<p>接<a href="http://xguox.me/blog/2013/11/14/lightroom-presets/">上一篇</a>, 想着在网上搞了那么多的预设,不用放着也不碍事. 结果没些时间, Lightroom 就各种闪退各种编辑不能.</p>
 
 <p>按理说应该不是跟 Maverick 兼容问题吧,如果那样的话升级了之后应该就会有问题了, 不过升级 10.9 以后没怎么使用, 都是随手的就预设搞定. 没注意预设这点, 只是简单地用 CleanMyMac 卸载了之后重装了一次, 顺手下载了一个 5.3 RC版的来解 A7R 的 RAW, 好吧,我也没怎么用 RAW.</p>
 
@@ -253,21 +370,23 @@
 <p>把之前的预设都删光光了之后一个个预设文件夹的复制进去,发现,有些导致了不能编辑, 有些则直接就造成 Lightroom 启动不能. 更具体原因不明&hellip;</p>
 
 <p>所以说,还是别贪心啊啊, 找好自己喜欢的风格喜欢的调子就好. 这下不能拖延症了啊!</p>
-</div>
-  
-  
+
+		
+		
+	</div>
 
 </article>
 
 
     <article class="post">
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/11/23/a7r-iso-unbox-manfrotto/">用 A7R 玩开箱并各档不严谨不严肃不专业无责任高感测试</a></h1>
-    
-    
-      <p class="meta">
-        
+	<header>
+		<h2 class="title">
+			
+			<a href="/blog/2013/11/23/a7r-iso-unbox-manfrotto/">
+			
+				用 A7R 玩开箱并各档不严谨不严肃不专业无责任高感测试</a>
+		</h2>
+		<div class="meta date">
 
 
 
@@ -279,16 +398,10 @@
   
 
 
-<time datetime="2013-11-23T22:35:00+08:00" pubdate data-updated="true">Nov 23<span>rd</span>, 2013</time>
-        
-         | <a href="/blog/2013/11/23/a7r-iso-unbox-manfrotto/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><audio controls><source src='http://hq.update.sony.net.edgesuite.net/united/clock/assets/sound/a_clock_main_theme2012.mp3'></audio></p>
+<time datetime="2013-11-23T22:35:00+08:00" pubdate data-updated="true">Nov 23<span>rd</span>, 2013</time></div>
+	</header>
+	<div class="entry-content">
+		<p><audio controls><source src='http://hq.update.sony.net.edgesuite.net/united/clock/assets/sound/a_clock_main_theme2012.mp3'></audio></p>
 
 <p>接<a href="http://xguox.me/blog/2013/11/11/camera-geek/">上一篇</a>, 按理说, 应该是给刚到手新鲜热辣略烫手(都几天了还烫手= . =)的 A7R 玩儿开箱, 不过以 A7/R 这一系列的火爆程度, 开箱文从15号左右开始, 一些有门路的早一步拿到机子的早就开箱18鞭了. 无忌索坛也早早开始就被屠版了(Nikon Df 没开卖就干了四五期也很流弊) 所以不掺和一脚. 再或者说, 从发布那天开始, 就已经不知道多少人高潮过多少次了. (正在打字的那个, 说你呢,眼睛看哪)<br/>
 不过不玩细节开箱也来个秒开, 两张流帅照还是有的.</p>
@@ -310,25 +423,23 @@ btw, it must take me more time to shoot and review the pic quality .</p></blockq
 
 <p>其实还有一车要说只是实在翻译不过去了.</p>
 
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2013/11/23/a7r-iso-unbox-manfrotto/">Read on &rarr;</a>
-    </footer>
-  
+
+		
+		<a href="/blog/2013/11/23/a7r-iso-unbox-manfrotto/" class="more-link">Read on &rarr;</a>
+	</div>
 
 </article>
 
 
     <article class="post">
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/11/14/lightroom-presets/">Lightroom 预设</a></h1>
-    
-    
-      <p class="meta">
-        
+	<header>
+		<h2 class="title">
+			
+			<a href="/blog/2013/11/14/lightroom-presets/">
+			
+				Lightroom 预设</a>
+		</h2>
+		<div class="meta date">
 
 
 
@@ -340,16 +451,10 @@ btw, it must take me more time to shoot and review the pic quality .</p></blockq
   
 
 
-<time datetime="2013-11-14T10:12:00+08:00" pubdate data-updated="true">Nov 14<span>th</span>, 2013</time>
-        
-         | <a href="/blog/2013/11/14/lightroom-presets/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>在网上搜罗了各种 Lightroom 预设一大车, 目测有两三千个了. 之前都是直接的一坨坨的 copy 到 <br/>
+<time datetime="2013-11-14T10:12:00+08:00" pubdate data-updated="true">Nov 14<span>th</span>, 2013</time></div>
+	</header>
+	<div class="entry-content">
+		<p>在网上搜罗了各种 Lightroom 预设一大车, 目测有两三千个了. 之前都是直接的一坨坨的 copy 到 <br/>
 <code>~/Library/Application Support/Adobe/Lightroom/Develop Presets/</code>,   然后好奇了一下用  Sublime  随意打开来瞧瞧,额,原来长这样,好高端,不明觉厉.</p>
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -525,21 +630,23 @@ btw, it must take me more time to shoot and review the pic quality .</p></blockq
 <p><img src="https://dehqla.dm2302.livefilestore.com/y2pG5Lg3JMGBfw4LtcA3Pb-arIAuVoz3xjGKV3tupPtcvO1Ir07MneGHKBQTEY8z-hSidzywV6beAT6sys9XWPEwUWTRnsHAkfrhzSrFbSUnuQ/G.jpg?psid=1" alt="" /></p>
 
 <p><img src="https://dehqla.dm2302.livefilestore.com/y2pp9KS0kMCqh3vrCMrE8OOOEavAN8qXf7CENdXVcJJxS_mTuQdmffQAT9wwT4Dv27YU5AwNayYVbp_zG4NBPVG7CVTllSTe3akHNMoUAY4hSk/I.jpg?psid=1" alt="" /></p>
-</div>
-  
-  
+
+		
+		
+	</div>
 
 </article>
 
 
     <article class="post">
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/11/12/time-machine-local-snapshot/">Time Machine & Local Snapshots</a></h1>
-    
-    
-      <p class="meta">
-        
+	<header>
+		<h2 class="title">
+			
+			<a href="/blog/2013/11/12/time-machine-local-snapshot/">
+			
+				Time Machine & Local Snapshots</a>
+		</h2>
+		<div class="meta date">
 
 
 
@@ -551,16 +658,10 @@ btw, it must take me more time to shoot and review the pic quality .</p></blockq
   
 
 
-<time datetime="2013-11-12T10:18:00+08:00" pubdate data-updated="true">Nov 12<span>th</span>, 2013</time>
-        
-         | <a href="/blog/2013/11/12/time-machine-local-snapshot/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>因为 Air 的硬盘只有 120G,所以总习惯性地 <br/>
+<time datetime="2013-11-12T10:18:00+08:00" pubdate data-updated="true">Nov 12<span>th</span>, 2013</time></div>
+	</header>
+	<div class="entry-content">
+		<p>因为 Air 的硬盘只有 120G,所以总习惯性地 <br/>
  &ndash;  关于本机 &ndash; 更多信息</p>
 
 <p>然后每次都看着那蛋疼的数字,  然后这次略离谱了</p>
@@ -583,140 +684,10 @@ btw, it must take me more time to shoot and review the pic quality .</p></blockq
 不过其实也一直没问题, 官方说装了个补丁没事就好偶也没啥好不乐意的.  就算无故崩了也还有那高频率的备份.</p>
 
 <p>PS. 影片 + 照片好久没整理了,一直滞留着, 又是一笔大开销, 倒是那个其他还是那么神奇,一会大一会小.</p>
-</div>
-  
-  
 
-</article>
-
-
-    <article class="post">
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/11/11/camera-geek/">不折腾会死玩相机星人</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-11-11T10:07:00+08:00" pubdate data-updated="true">Nov 11<span>th</span>, 2013</time>
-        
-         | <a href="/blog/2013/11/11/camera-geek/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><audio controls><source src='http://hq.update.sony.net.edgesuite.net/united/clock/assets/sound/a_clock_main_theme2012.mp3'></audio><br/>
-先赞上一个bgm,来自 <a href="http://www.sony.net/united/clock/">Sony Global &ndash; &ldquo;α&rdquo; CLOCK: WORLD TIME, CAPTURED BY &ldquo;α&rdquo;</a> <br/>
-那个对焦声音以前听A77听习惯了,现在蛮有感觉的.</p>
-
-<blockquote><p>好不容易把闹腾相机的心静下来,结果前些天又让骚尼君扯动了那片涟漪.A7 / A7R 完全把我的折腾心又搅起来了.这不20号帮牛总拍完婚礼立马把6D出了.下订, 然后,就剩下等待了, 结果, 在我无限接近得到A7的时候,半路杀出了个<a href="http://xjrumo.com/2013/11/05/nikon_df_comming/"> Nikon Df</a>, 这是帅的一塌糊涂啊,尤其银色的骚的无与伦比, 快到嘴的A7要飞了.再结果, 那让人蛋碎的定价&hellip;</p></blockquote>
-
-<p>开篇之前,先扯出我的观点：</p>
-
-<ul>
-<li>不管是Leica还是1DX还是NEX,全都能出好的片子.甚至乎,把这几台机子拍的片混淆在一起90%的人分辨不出来</li>
-<li>我是玩相机的,不是玩摄影的</li>
-<li>很明显的我不是土豪,糕富帅之流.因为这类人可以眼睛不眨的随便玩儿这些机器,各种徕卡哈苏随便当备机</li>
-<li>如果你真那么流弊看出来了低端机和高端机的差距, 那是因为人家没后期. 几十块的后期书籍绝对比器材巨大的差价带来的图片差异要明显.</li>
-<li>目测6D的一半功能还没玩熟练.</li>
-<li>把花在器材的钱节省下来出去玩比器材压箱底封尘抚摸能多出好片.</li>
-</ul>
-
-
-<p>回顾<strong>11年11月11日</strong>,一个很蛋疼的日子,开始陷入相机这趟浑水就折腾的一发不可收拾.
-从那会开始的入门级600D+ 18-55 ,没几个月又添置了一枚55-250的中长焦.接着12年中全套出了,貌似这也是第一次出让二手东西. 几千块的说多也不多,说少也还要数上一会,但是很傻b,当时直接就在路边&#8221;洋洋洒洒&#8221;地点数几十张百元大钞,也完全没担心会有假钞啊什么的情况,也老老实实的把一些附件,卡啊包啊什么的送给买的那人.想着留着也用不上╮(╯▽╰)╭ <br/>
-说起来,出的原因比较奇葩.记得是因为跟小泡他们去乌镇,然后在东栅的不爽经历.主要是当时人真Y的多爆了.完全是跟随着人流在缓缓挪动前进,加之天气又热,然后我把600D套挂在身上,完全没兴致按快门,还觉得自己特傻逼.</p>
-
-<p><img src="http://farm8.staticflickr.com/7380/8975217373_e8451fb28e_c.jpg" alt="" /></p>
-
-<p>尽管后来西栅还觉得OK,但是东栅那印象太&#8221;深刻&#8221;了
-<img src="http://farm4.staticflickr.com/3779/9688265562_987b8dc203_c.jpg" alt="" /></p>
-
-<p>回来第一件事就是卖了 600D 全套.
-好吧,其实这不能怪 600D,完全是我一时脑热了.回看第一台拍出的照片, 的确也就跟用高端的DC的样子, 构图乱,曝光不准,后期渣.关于构图, 一直没做到画面简洁这一点,经常贪心地想把什么都收进画面!自然纷乱是必然的了.</p>
-
-<p>后来没过两个月,心里又痒痒的没相机玩,然后刚好心思思索尼的单电A77(其实最开始是想着nex7或Xpro-1的,还是因为钱,靠.大爷的,哪有什么选择困难症,其实就是缺钱),于是又入了一台A77+18-55(没入恒定F2.8那枚只因太屌丝了)</p>
-
-<p><img src="http://farm4.staticflickr.com/3762/8976406402_7833ea9021_c.jpg" alt="" /></p>
-
-<p>要不是遇上毕业季,这台机子肯定是拍的最少的吧,结果却好像是拍的最多的一台.
-后来,拍完毕业照什么的,又才入了个50 1.8的大光定.转悠了几天的广州,大概一万快门略多之后7月份又卖了.</p>
-
-<p>至于为什么要卖,其实到现在我也没想明白,可能是想体验下传说中的全幅, 刚好 6D 和 D600 的价格还合适吧.</p>
-
-<p>本来想着耍泥坑的D600的,因为大灯泡据说很犀利,另外想着能玩遍佳能索尼尼康,不过传说的快门掉渣很严重,于是又回到了佳能,拾起6D.
-…6D买的是单机,本来配的50 F1.8,后来用没多久,觉得手感太渣出了买了85 F1.8
-,然后用途单一了又出了,现在想来其实更喜欢50F1.8那个人类光学精华多一些.出了之后买了24-105 .传说中最渣的红圈,的确有狗定胜牛变得感觉,好吧,24-105也还算不上牛变.<br/>
-说实话,传说中的全副也不过如此.有那样的条件aps-c也照样出片.当然,高感确实流弊,6D把ISO开到6400都杠杠的,极端条件开到过万也能使.</p>
-
-<p><img src="http://farm4.staticflickr.com/3722/9797819356_3a14f0cef9_c.jpg" alt="" /></p>
-
-<p>然后没贡献个几千次快门就出了.只因,<strong>骚尼的黑科技</strong></p>
-
-<p>其实期间一直都无敌想耍耍RX1的.还是钱包不堪只能独自YY.随身携带6D对我而言只有理论上的可能,尽管我为了这个目的专门买了NG 5270,也还是不太现实.</p>
-
-<p>A7 / A7R 的出现 ,6D果断就上架了,然后&hellip;</p>
-
-<p><img src="https://gagqnq.dm1.livefilestore.com/y2p5UgWOqXisU1HzlNxJ70nju7Fe1aglu1NNS7sJFWAPTv48Hr0smE8B4J52HDYbCs6VV1-BBGI1Hk_VtmxbjxOGTKKYWoIIkE4vIEZvLMnbzI/QQ20131026-10.png?psid=1" alt="" /></p>
-
-<p><strong>ILCE-7 </strong> 是要到碗里来了吗?</p>
-
-<p><img src="https://uvpbza.dm1.livefilestore.com/y2p6mVCXObMLwtzN-5QNq2_nPWkUnITq96Hp5hLhvD4KWAqrj7Kc7_0WZIZuBl_a4gP0fJAfxvQWVGTS35Nssrg4atuOlh9f04CI0VSokKvj7U/138190742143841518_500.jpg?psid=1" alt="" /></p>
-
-<p>这一做法,牛总直接喷我是傻逼了.<br/>
-前几天拿着6D+24-105出去,好些个朋友纷纷说专业,至少看上去专业.问之如何个专业法？答之相机够大,越大越专业.比起看上去专业,我还是拿个小微单好了.虽然比拉风的话被6D套甩开N条街,看上去也业余,so what,本来就是业余撒!不过我这是要换了A7,牛总估计也都不好意思让我这个业余再去给他客串摄影师了.但话说回来,以这玩机心态,说不定哪天会抬一台a99回来的叻! 一直都有双机的计划.</p>
-
-<p>总的说来,这其中进进出出的倒腾必然带给我差价的亏损,朋友很多一听我说又要卖器材就说比我原价买的时候亏了多少多少,但是比起学到一些照相知识,比起得到一些照片,比起满足了玩相机的乐趣,那些损失真心算不上什么,反倒是觉得我赚了.把机器珍藏在家里不用,等到掉价了那才叫损失吧.(这算不算吖Q呢？)</p>
-
-<p>帮亲朋好友拍过婚礼,自己出玩行行摄摄,从 Flickr 可以看出,除去那会600D的一部分照片遗失了之外,从头到尾大概两万次快门多些,带给我的,留下来的只有不到3000张照片.其中绝大部分都是以记录为名,能称的上好片的为数不多,稍微好一点的放到了500px, 也就那么不到百张.不过拍照不大都是要记录吗？只不过因为业余兴趣所以用上了比手机要好的机器罢了.</p>
-
-<p>再骂自己一句,啥时候我也变成数毛党, 百分百党了, Y的看到各种样片还各种 download 之后放大到百分百.我烧坏了定.</p>
-
-<h2>UPDATE</h2>
-
-<p><img src="https://gagqnq.dm1.livefilestore.com/y2pKEQcF2xogDKyFBBScbjZrTI_RJWPlLuvS4lBEIKZNZdAfNhHZKIWaSQdFKGAq-OffIL1pBHYk2StNID2V3g6YGytrxUHvbmRJ2sPFQ3KiYk/QQ20131105-2.png?psid=1" alt="" /></p>
-
-<p>帅到掉渣的Df 一出, 我被迷的一塌糊涂了. (千万别真的跟 D600 那样掉渣就好).</p>
-
-<p>可是帅到没朋友啊, 单机官方价16000+, 比A7贵出一截, 我这是要卖身的节奏啊!!!!!!!(A7 的性价比巨高, 减去各种附送的, 套机才10000略多点) ,但是真的喜欢那个造型.</p>
-
-<p><img src="https://gagqnq.dm2301.livefilestore.com/y2plQmxbpN-LRF6pyVxBR2AcyJuiV0oJvru_vMrizIIwbr0Qq8yujianm9xVSLQyCLHAfV_pQ8JmrhjloSuNuI-qG0bTTYGc7pOWlj6yYUpi4M/QQ20131105-1.png?psid=1" alt="" /></p>
-
-<p>单看参数, 数码科技等各方可能被 A7  完爆(出片未必) <br/>
-什么不能拍视频, 1/4000 快门, 对我来说都是浮云!( wifi 可能有点吸引)    <br/>
-但是 Df 这个造型秒了 A7 九条街啊(A7 样子其实也不错)</p>
-
-<p>PS 有人说这是定位给喜欢胶片的人. 然则, 表示完全不喜欢胶片, 我是反胶片党, 更恶心提什么胶片感的.</p>
-
-<h2>再UPDATE</h2>
-
-<p>虽然喜欢 Nikon 的 Df, 但无奈钱包不足够宽松,本来我已经做好吃螃蟹的准备,但是国内奸商报价24400, 虽然知道很快会降下来,但是这很快也得等上一阵子&hellip; 想过走海淘的, 日亚上卖 250000JPY,折合CNY才15500左右. 顶多就是以后用英文菜单把逼格再拉高一档罢了. 但是, 走海淘由于某些原因,还是要等, 于是, 折腾了一圈,回来选了<strong>A7R</strong>, 被 金属做工(据说也看不大出)+去低通36mp 吸引了.好吧,反正我就是那么容易被相机吸引的.</p>
-
-<p>Df 等以后降到合理价了买来玩双机好了.</p>
-
-<p>不过这个 A7R也纠结了好一会, 官方居然不给订狗头套, 加个35 F2.8的头要18000+ , 艾玛, 这又赶上 Df那个价了! 蛋疼!<br/>
-后来有发现7R 搭狗头的, 于是就这么个奇葩玩法了.希望不会浪费那块 36MP 据说流弊到爆的 CMOS</p>
-
-<p>========</p>
-
-<p>600D 用了不到一年, A77 用了大概9个月, 6D,  不到三个月,  A7 略惨烈,死在订单中,Df 更惨烈, 胎死腹中!  <br/>
-不折腾会死玩相机星人,往后还是不折腾机身镜头了,把附件搞上去再多出去玩儿才是王道 ╮(╯▽╰)╭  有了闪灯或是脚架会比倒腾这些机身镜头来的更有意义,不过那也是不小的开销(没人逼你买7个顶级灯来召唤神龙的!!!)</p>
-</div>
-  
-  
+		
+		
+	</div>
 
 </article>
 
@@ -726,16 +697,19 @@ btw, it must take me more time to shoot and review the pic quality .</p></blockq
         <a href="/blog/page/2/" class="next">Next</a>
     
 </nav>
+</div>
+	<footer id="footer" class="inner"><br>
+<br>
+<br>
+<br>
+&copy; 2013
 
-    </div>
-  </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2013 - XguoX -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</p>
+    XguoX
 
 </footer>
-  
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/hyphenator.js"></script>
+
 
 <script type="text/javascript">
       var disqus_shortname = 'xguox';
@@ -752,34 +726,26 @@ btw, it must take me more time to shoot and review the pic quality .</p></blockq
 
 
 
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-39166710-1']);
+		_gaq.push(['_trackPageview']);
 
-
-
-
-
-  <script type="text/javascript">
-    (function() {
-      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
-      script.src = 'https://apis.google.com/js/plusone.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
-    })();
-  </script>
-
-
-
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
-
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
 
 
 
 
 </body>
+<script>
+  $(document).ready(function() {
+  // Make images center
+  $('p:has(img)').css('text-align', 'center');
+  });
+</script>
 </html>

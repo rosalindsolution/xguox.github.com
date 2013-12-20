@@ -1,94 +1,64 @@
 
-<!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<!DOCTYPE HTML>
+<html lang="en-GB">
 <head>
-  <meta charset="utf-8">
-  <title>XguoX</title>
-  <meta name="author" content="XguoX">
+	<meta charset="utf-8">
+	<title>Coder & Jabber  | XguoX</title>
 
-  
-  <meta name="description" content="今天学习到的一种比较新的,挺有趣的特性, 说新只是以前学JAVA和PHP的时候木有接触过.貌似Ruby的这一特性是从Perl那里继承而来,所以学习过Perl的程序员应该比较熟悉. flip-flop 以下内容摘自《Ruby编程语言》 当..和&hellip;操作符被用在一个条件式,或者一个循环中时 &hellip;">
-  
+	<meta name="author" content="XguoX">
 
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="proc是代码块的对象形式,它的行为就像一个代码块.Lambda的的行为略有不同,它的行为更像方法而非代码块.调用一个proc则像对代码块进行yield,而调用一个lambda则像调用一个方法.在Ruby1.9中的,可以通过Proc对象的实例方法 lambda? &hellip;"> <meta name="keywords" content="">
 
-  
-  <link rel="canonical" href="http://xguox.github.com/blog/page/13">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="XguoX" type="application/atom+xml">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
-  
-  <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-39166710-1']);
-    _gaq.push(['_trackPageview']);
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
-
+	<link href="/atom.xml" rel="alternate" title="XguoX" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	
 
 </head>
 
-<body   class="collapse-sidebar sidebar-footer" >
-  <header role="banner"><hgroup>
-  <h1><a href="/">XguoX</a></h1>
-  
-    <h2>Coder & Jabber</h2>
-  
-</hgroup>
+
+
+<body>
+	<header id="header" class="inner"><h1><a href="/">XguoX</a></h1>
+<span class="tagline">Coder & Jabber</span>
+<nav id="main-nav"><ul>
+	<li><a href="http://www.flickr.com/photos/groverlu/sets" target="_blank">Flickr</a></li>
+	<li><a href="/about">About</a></li>
+	<li><a href="/atom.xml">RSS</a></li>
+</ul>
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul>
+	<li><a href="http://www.flickr.com/photos/groverlu/sets" target="_blank">Flickr</a></li>
+	<li><a href="/about">About</a></li>
+	<li><a href="/atom.xml">RSS</a></li>
+</ul>
+</div>
+	</div>
+</nav>
+
 
 </header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
-</ul>
-  
-<form action="http://google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:xguox.github.com" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul class="main-navigation">
-  <li><a href="/">Home</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
-  <li><a href="/about">About</a></li>
-</ul>
 
-</nav>
-  <div id="main">
-    <div id="content">
-      <div class="blog-index">
-  
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/11/18/flip-flop/">Flip-Flop</a></h1>
-    
-    
-      <p class="meta">
-        
+	<div id="content" class="inner">
+
+
+    <article class="post">
+	<header>
+		<h2 class="title">
+			
+			<a href="/blog/2011/11/18/proc-vs-lambda/">
+			
+				Lambda 和 Proc 的区别在哪儿</a>
+		</h2>
+		<div class="meta date">
 
 
 
@@ -100,16 +70,221 @@
   
 
 
-<time datetime="2011-11-18T17:11:00+08:00" pubdate data-updated="true">Nov 18<span>th</span>, 2011</time>
-        
-         | <a href="/blog/2011/11/18/flip-flop/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
+<time datetime="2011-11-18T17:12:00+08:00" pubdate data-updated="true">Nov 18<span>th</span>, 2011</time></div>
+	</header>
+	<div class="entry-content">
+		<p>proc是代码块的对象形式,它的行为就像一个代码块.Lambda的的行为略有不同,它的行为更像方法而非代码块.调用一个proc则像对代码块进行yield,而调用一个lambda则像调用一个方法.在Ruby1.9中的,可以通过Proc对象的实例方法 lambda? 来判定该实例是一个proc还是lambda,如果返回值为真,那么它是一个lambda,否则为一个proc.</p>
+
+<h2>代码块、proc和lambda中的return语句</h2>
+
+<p>在一个代码块中的return语句不仅仅会从调用代码块的迭代器返回,它还会从调用迭代器的方法返回.例如:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'>  <span class="k">def</span>  <span class="nf">test</span>
+</span><span class='line'>     <span class="nb">puts</span> <span class="s2">&quot;entering method&quot;</span>
+</span><span class='line'>     <span class="mi">1</span><span class="o">.</span><span class="n">times</span><span class="p">{</span><span class="nb">puts</span> <span class="s2">&quot;entering block&quot;</span><span class="p">;</span><span class="k">return</span><span class="p">}</span>
+</span><span class='line'>     <span class="nb">puts</span> <span class="s2">&quot;exiting method&quot;</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>  <span class="nb">test</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
-  <div class="entry-content"><p>今天学习到的一种比较新的,挺有趣的特性, 说新只是以前学JAVA和PHP的时候木有接触过.貌似Ruby的这一特性是从Perl那里继承而来,所以学习过Perl的程序员应该比较熟悉.</p>
+<p>proc与代码块类似,因此如果调用的proc执行一个return语句,它会试图从代码块(这个代码块被转换为一个proc)所在的方法中返回.比如:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'>    <span class="k">def</span>  <span class="nf">test</span>
+</span><span class='line'>            <span class="nb">puts</span> <span class="s2">&quot;entering method&quot;</span>
+</span><span class='line'>            <span class="nb">p</span> <span class="o">=</span><span class="no">Proc</span><span class="o">.</span><span class="n">new</span> <span class="p">{</span><span class="nb">puts</span>  <span class="s2">&quot;entering proc&quot;</span><span class="p">;</span><span class="k">return</span><span class="p">}</span>
+</span><span class='line'>            <span class="nb">p</span><span class="o">.</span><span class="n">call</span>
+</span><span class='line'>            <span class="nb">puts</span> <span class="s2">&quot;exiting method&quot;</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>    <span class="nb">test</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>不过,因为proc经常在不同方法间传递,在proc中使用return语句会十分诡异.在proc被调用时,在句法上包含该proc的方法已经返回:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'>    <span class="k">def</span>   <span class="nf">procBuilder</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+</span><span class='line'>            <span class="no">Proc</span><span class="o">.</span><span class="n">new</span> <span class="p">{</span><span class="nb">puts</span> <span class="n">message</span> <span class="p">;</span><span class="k">return</span><span class="p">}</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">def</span>   <span class="nf">test</span>
+</span><span class='line'>            <span class="nb">puts</span> <span class="s2">&quot;entering method&quot;</span>
+</span><span class='line'>            <span class="nb">p</span> <span class="o">=</span> <span class="n">procBuilder</span><span class="p">(</span><span class="s2">&quot;entering proc&quot;</span><span class="p">)</span>
+</span><span class='line'>            <span class="nb">p</span><span class="o">.</span><span class="n">call</span>
+</span><span class='line'>            <span class="nb">puts</span> <span class="s2">&quot;exiting method&quot;</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>    <span class="nb">test</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>在把代码块转换成对象后,可以四处传递该对象,并且在&#8221;上下文&#8221;之外使用.如果这样做,则要承担从一个已经返回的方法中返回的风险.就像本例所示那样.当这种情况发生时,Ruby会抛出一个LocalJumpError异常.</p>
+
+<p>当然,在这个臆造的例子中,可以通过去掉多余的return语句来修复这个问题.不过return语句并非总是多余的,这时可以通过使用lambda而非proc来修复这个问题.如前所述,lambda更像方法而非代码块.这样,在lambda中的return语句仅仅从lambda自身返回.而不会从产生lambda的方法中返回:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'>    <span class="k">def</span>  <span class="nf">test</span>
+</span><span class='line'>            <span class="nb">puts</span> <span class="s2">&quot;entering method&quot;</span>
+</span><span class='line'>            <span class="nb">p</span> <span class="o">=</span> <span class="nb">lambda</span><span class="p">{</span><span class="nb">puts</span>  <span class="s2">&quot;entering lambda&quot;</span><span class="p">;</span><span class="k">return</span><span class="p">}</span>
+</span><span class='line'>            <span class="nb">p</span><span class="o">.</span><span class="n">call</span>
+</span><span class='line'>            <span class="nb">puts</span> <span class="s2">&quot;exiting method&quot;</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>    <span class="nb">test</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Lambda中的return仅仅从lambda自身返回,这个事实意味着我们根本无须考虑LocalJumpError;</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'>    <span class="k">def</span>  <span class="nf">lambdaBuilder</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+</span><span class='line'>            <span class="nb">lambda</span> <span class="p">{</span><span class="nb">puts</span> <span class="n">message</span><span class="p">;</span><span class="k">return</span><span class="p">}</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">def</span>  <span class="nf">test</span>
+</span><span class='line'>            <span class="nb">puts</span>   <span class="s2">&quot;exiting method&quot;</span>
+</span><span class='line'>            <span class="n">l</span> <span class="o">=</span><span class="n">lambdaBuilder</span><span class="p">(</span><span class="s2">&quot;entering lambda&quot;</span><span class="p">)</span>
+</span><span class='line'>            <span class="n">l</span><span class="o">.</span><span class="n">call</span>
+</span><span class='line'>            <span class="nb">puts</span>  <span class="s2">&quot;exiting method&quot;</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>    <span class="nb">test</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>代码块、proc和lambda中的break语句</h2>
+
+<p>当我们用Proc.new创建一个proc对象时,这个Proc.new就是break语句应该返回的地方,当我们调用proc对象的时候,这个迭代器已经返回了,因此,用Proc.new创建一个顶级break语句是说不通的:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'>            <span class="k">def</span>  <span class="nf">test</span>
+</span><span class='line'>                    <span class="nb">puts</span>  <span class="s2">&quot;entering test method &quot;</span>
+</span><span class='line'>                    <span class="nb">proc</span> <span class="o">=</span><span class="no">Proc</span><span class="o">.</span><span class="n">new</span><span class="p">{</span><span class="nb">puts</span> <span class="s2">&quot;entering proc&quot;</span><span class="p">;</span><span class="k">break</span><span class="p">}</span>
+</span><span class='line'>                    <span class="nb">proc</span><span class="o">.</span><span class="n">call</span>
+</span><span class='line'>                    <span class="nb">puts</span>  <span class="s2">&quot;exiting test method&quot;</span>
+</span><span class='line'>            <span class="k">end</span>
+</span><span class='line'>            <span class="nb">test</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>如果通过迭代器方法的&amp;参数方式创建一个proc,我们可以调用它让该迭代器方法返回；</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'>            <span class="k">def</span>  <span class="nf">iterator</span> <span class="p">(</span><span class="o">&amp;</span><span class="nb">proc</span><span class="p">)</span>
+</span><span class='line'>                    <span class="nb">puts</span>  <span class="s2">&quot;entering iterator&quot;</span>
+</span><span class='line'>                    <span class="nb">proc</span><span class="o">.</span><span class="n">call</span>
+</span><span class='line'>                    <span class="nb">puts</span>  <span class="s2">&quot;exiting test method&quot;</span>
+</span><span class='line'>            <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>            <span class="k">def</span>  <span class="nf">test</span>
+</span><span class='line'>                    <span class="n">iterator</span> <span class="p">{</span><span class="nb">puts</span> <span class="s2">&quot;entering proc&quot;</span><span class="p">;</span><span class="k">break</span><span class="p">)</span>
+</span><span class='line'>            <span class="k">end</span>
+</span><span class='line'>            <span class="nb">test</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Lambda类似于方法,因此,如果把一个break语句单独地放在那里,而不是出现在循环或者迭代方法中是说不通的.下面的语句,没有任何东西可以被break,你可能认为它会失败.
+不过,在这种情况下,break的行为与return一样;</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'>            <span class="k">def</span>  <span class="nf">test</span>
+</span><span class='line'>                    <span class="nb">puts</span> <span class="s2">&quot;entering test method&quot;</span>
+</span><span class='line'>                    <span class="nb">lambda</span><span class="o">=</span><span class="nb">lambda</span><span class="p">{</span><span class="nb">puts</span> <span class="s2">&quot;entering lambda&quot;</span><span class="p">;</span><span class="k">break</span><span class="p">;</span><span class="nb">puts</span> <span class="s2">&quot;exiting    lambda&quot;</span><span class="p">}</span>
+</span><span class='line'>                    <span class="nb">lambda</span><span class="o">.</span><span class="n">call</span>
+</span><span class='line'>                    <span class="nb">puts</span> <span class="s2">&quot;exiting  test  method&quot;</span>
+</span><span class='line'>              <span class="k">end</span>
+</span><span class='line'>            <span class="nb">test</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post">
+	<header>
+		<h2 class="title">
+			
+			<a href="/blog/2011/11/18/flip-flop/">
+			
+				Flip-Flop</a>
+		</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-11-18T17:11:00+08:00" pubdate data-updated="true">Nov 18<span>th</span>, 2011</time></div>
+	</header>
+	<div class="entry-content">
+		<p>今天学习到的一种比较新的,挺有趣的特性, 说新只是以前学JAVA和PHP的时候木有接触过.貌似Ruby的这一特性是从Perl那里继承而来,所以学习过Perl的程序员应该比较熟悉.</p>
 
 <h2>flip-flop</h2>
 
@@ -139,44 +314,38 @@
 
 
 <p>注:flip-flop其中一个意思是突变,flip和flop都有翻转的意思</p>
-</div>
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post">
+	<header>
+		<h2 class="title">
+			
+			<a href="/blog/2011/11/04/diary-that-team/">
+			
+				Diary:That Team</a>
+		</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
   
-  
 
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/11/04/diary-that-team/">Diary:That Team</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-11-04T19:39:00+08:00" pubdate data-updated="true">Nov 4<span>th</span>, 2011</time>
-        
-         | <a href="/blog/2011/11/04/diary-that-team/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>随着各种换届结束,这一年在志愿队就此接近尾声了&hellip;</p>
+<time datetime="2011-11-04T19:39:00+08:00" pubdate data-updated="true">Nov 4<span>th</span>, 2011</time></div>
+	</header>
+	<div class="entry-content">
+		<p>随着各种换届结束,这一年在志愿队就此接近尾声了&hellip;</p>
 
 <p>回看上一篇,大一的那个志愿队！那个志愿队里的那个我！脑海又在逆流了…大一,我,我们,都过得很安逸,好像什么都未曾担心过,就好像刚进大学的懵懂那样！从以前被称为干事到这年被称为副部,大二这一年,真正的是在做事的一年…真正的为之着想的一年~~~真正成长的一年！</p>
 
@@ -195,44 +364,38 @@
 <p>“如果让Luffy选择一个伙伴下船,那他会怎么做选择??”前不久冒出的一句！终于做了决定,现实不允许我改变,我也就只能忍痛割舍了！我能理解小贤当时的心情的！任谁离去心中也难受！好吧…我自己也是感情用事的人,却老是教你们不要感情用事,不要老把家挂嘴边！！！哎╮(╯▽╰)╭没办法啦,我就是那么没学长样的啦！！(都怪玉燕,好的不教把这教给大一！！)</p>
 
 <p>这时代,一直在改变,各部门职能在不断完善,每年有人来了也有人走了,而在我,不变的只有对这个队伍的那份情！！！我和这支队伍一直都在成长,即使我现在大二了,但是在这学习获得的东西依旧很多!!!最重的,便是那份情！</p>
-</div>
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post">
+	<header>
+		<h2 class="title">
+			
+			<a href="/blog/2011/10/29/diary-i-am-old/">
+			
+				Diary:I Am Old</a>
+		</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
   
-  
 
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/10/29/diary-i-am-old/">Diary:I Am Old</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-10-29T19:35:00+08:00" pubdate data-updated="true">Oct 29<span>th</span>, 2011</time>
-        
-         | <a href="/blog/2011/10/29/diary-i-am-old/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>昨晚部门第一次出去外面嗨皮,事实证明,我这位当头头的也真的老了.正如小贤昨晚笑我们是“老野”.O(∩_∩)O哈哈~挺形象的啦.</p>
+<time datetime="2011-10-29T19:35:00+08:00" pubdate data-updated="true">Oct 29<span>th</span>, 2011</time></div>
+	</header>
+	<div class="entry-content">
+		<p>昨晚部门第一次出去外面嗨皮,事实证明,我这位当头头的也真的老了.正如小贤昨晚笑我们是“老野”.O(∩_∩)O哈哈~挺形象的啦.</p>
 
 <p>志愿队好久木有像昨晚那样疯狂的玩啦！！我在广工能笑的那么夸张,也就只有志愿队给我带来的快乐吧.你真的试过晚上睡觉的时候带着很自然的笑容睡吗?一般人都是很平静地睡去吧.但是昨晚我是真的笑着睡着的！其实,还不止这一次,志愿队给我带来了很多欢乐！</p>
 
@@ -255,87 +418,75 @@
 <p>虽然我还是那个时常穿着短衣短裤拖鞋装上讲台发言的那个我,但是,真的老了啊！真的真的,你们都太可爱了.想着再过一年,我也要离开了,不知道会不会有一天,我也会像明华,像周嫚那样毫无保留地&hellip;.. 舍不得大家~~~</p>
 
 <p>不知道什么时候开始很喜欢一首歌了 &mdash;&ndash; Need U Now</p>
-</div>
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post">
+	<header>
+		<h2 class="title">
+			
+			<a href="/blog/2011/09/05/half-university-life/">
+			
+				1/2 的大学</a>
+		</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
   
-  
 
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/09/05/half-university-life/">1/2 的大学</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-09-05T17:29:00+08:00" pubdate data-updated="true">Sep 5<span>th</span>, 2011</time>
-        
-         | <a href="/blog/2011/09/05/half-university-life/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>很久很久以前,曾经写过偶八分之一大学感想.才发现,原来,原来我第一天上大学也如今天一样是9月5号!!不过,今天是2011的9月5号!!也就意味着,我现在写的应该叫做我的二分之一大学感想!<br/>
+<time datetime="2011-09-05T17:29:00+08:00" pubdate data-updated="true">Sep 5<span>th</span>, 2011</time></div>
+	</header>
+	<div class="entry-content">
+		<p>很久很久以前,曾经写过偶八分之一大学感想.才发现,原来,原来我第一天上大学也如今天一样是9月5号!!不过,今天是2011的9月5号!!也就意味着,我现在写的应该叫做我的二分之一大学感想!<br/>
 有时候会觉得,我已经不是从前那个我,我还是从前那个我!! ╮(╯▽╰)╭我貌似又在说废话了! <br/>
 前不久,一个舍友在电话里询问一位师兄关于咱们专业的未来发展问题!我感觉,那是大一的问题,甚至是我大一也懒得去问的问题!!小小的为他悲哀下!其实感觉他是太好学了!什么都想拥有,结果却在奋斗的路上迷路了!真的,当他说出那句&#8221;我想问下我们专业以后的发展…&#8221;我第一时间回想起大一!如果一早就有了自己的规划应该不会等到现在大三了还如此吧!<br/>
 之前,我说,心,要决!那是要建立在有了自己的规划下,许多人总会用一句计划赶不上变化来为自己的不计划找借口!我自认为也是个随性的人,但是,规划的益处还是大大滴有啊!在我看来,做了规划不去努力履行会有良心在谴责自己!好像有点点夸张!不过我现在就有那么点那种感觉吧!<br/>
 这个大二,应该会是大学四年最让我感到失败的一年!虽然依旧贯彻那些思想,依旧各种逃课,可却没有好好利用这逃来的课!!我是规划的不错,可是却没有好好努力去履行!!自学的进展比计划慢的多的多!以至于真的计划发生了变化! <br/>
 大三,刚过去一个礼拜,一切似乎渐渐又步入正轨!!不知道能坚持到多久??先写着这么多吧,晚了,先睡去!!期待明天的聚餐!</p>
-</div>
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post">
+	<header>
+		<h2 class="title">
+			
+			<a href="/blog/2010/05/18/diary-our-team/">
+			
+				Diary:我们的志愿队</a>
+		</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
   
-  
 
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/05/18/diary-our-team/">Diary:我们的志愿队</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-05-18T19:39:00+08:00" pubdate data-updated="true">May 18<span>th</span>, 2010</time>
-        
-         | <a href="/blog/2010/05/18/diary-our-team/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>五月的第十八天,天气晴朗,热,有风.</p>
+<time datetime="2010-05-18T19:39:00+08:00" pubdate data-updated="true">May 18<span>th</span>, 2010</time></div>
+	</header>
+	<div class="entry-content">
+		<p>五月的第十八天,天气晴朗,热,有风.</p>
 
 <p>2009年9月20 &mdash;&mdash;-初试,面试官：金霞师姐&amp;伟强师兄.记得其中有一个问题是要我说一个笑话,我不是一个幽默的人,但是,我是一个幸运的人,恰好那时军训,教官给我们讲了一个,于是我就复述了一遍,也很幸运,哈哈,就这样我通过了！</p>
 
@@ -370,44 +521,38 @@
 <p>小华师兄,思维严谨,不错的演讲家天赋；金霞姐,小家碧玉,很少P人！超级好人…<br/>
 整天笑茄茄的小燕；乐于助人的建安；整天忙到晚我们的袁大团支书烨玲；总爱在工作中搞怪的罗瑜；秀外慧中的玉燕；好吃懒做的颖君；多重人格还头脑不迟钝的潘婷&hellip;&hellip;
 不知道,多年以后看到照片里面的我和你,你,你…会有什么样的感觉,一定很想念大家,想念大家一起走过的这段快乐的日子.谢谢大家给了我一个那么温馨的志愿队.</p>
-</div>
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post">
+	<header>
+		<h2 class="title">
+			
+			<a href="/blog/2010/01/18/review-i-am-c-r-7/">
+			
+				Review 《我是C罗》</a>
+		</h2>
+		<div class="meta date">
+
+
+
+
+
+
+
+
   
-  
 
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/01/18/review-i-am-c-r-7/">Review 《我是C罗》</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-01-18T17:33:00+08:00" pubdate data-updated="true">Jan 18<span>th</span>, 2010</time>
-        
-         | <a href="/blog/2010/01/18/review-i-am-c-r-7/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>最近看了一本写c罗的书,作者是英国的<a href="http://www.amazon.cn/%E6%88%91%E6%98%AFC%E7%BD%97-%E6%B1%A4%E5%A7%86%C2%B7%E6%AC%A7%E8%8F%B2%E5%B0%94%E5%BE%B7/dp/B002BNLLXO/ref=sr_1_1?ie=UTF8&amp;qid=1383562705&amp;sr=8-1&amp;keywords=%E6%88%91%E6%98%AFC%E7%BD%97">汤姆.欧菲尔德</a>!当然是翻译成中文的啦!我暂时还没那么牛可以看英文版的,不过我相信不久的将来我可以!</p>
+<time datetime="2010-01-18T17:33:00+08:00" pubdate data-updated="true">Jan 18<span>th</span>, 2010</time></div>
+	</header>
+	<div class="entry-content">
+		<p>最近看了一本写c罗的书,作者是英国的<a href="http://www.amazon.cn/%E6%88%91%E6%98%AFC%E7%BD%97-%E6%B1%A4%E5%A7%86%C2%B7%E6%AC%A7%E8%8F%B2%E5%B0%94%E5%BE%B7/dp/B002BNLLXO/ref=sr_1_1?ie=UTF8&amp;qid=1383562705&amp;sr=8-1&amp;keywords=%E6%88%91%E6%98%AFC%E7%BD%97">汤姆.欧菲尔德</a>!当然是翻译成中文的啦!我暂时还没那么牛可以看英文版的,不过我相信不久的将来我可以!</p>
 
 <p>回到话题吧!我不是足球迷,不怎么喜欢看足球,偶尔神神的话还是会看看的,06世界杯,无意中看到葡萄牙的比赛,无意中看到了克里斯蒂亚诺-罗纳尔多,无意中看到了他那些炫目如魔术般的脚法,真的被深深吸引了!以致于直到现在,足球比赛,只喜欢看有他存在的比赛,葡萄牙,过去的曼联,现在的皇马!而且,每次看都会在屏幕里面满场的寻找他的踪影!</p>
 
@@ -426,175 +571,34 @@
 <p>06~07赛季,一个很耀眼的赛季,一直在进步的他获得了很多殊荣!虽然他的技术已达到顶峰状态,但是,在态度与风度上,他做的比刚出道时要好的多!曾经的他,在比赛中甚至可以愤怒到狠狠的掐着对手脖子!现在,他的态度,他的成熟,让他更接近完美!!面对众多媒体的口诛笔罚,控制情绪重要不要让情绪控制,他做到了!当然这对于一个年轻人尤其是易怒的人来说是很难的,需要不断的经历风霜的洗礼,才会蜕变成完美!对的,在用心经历过后,我们每个人都会或多、或少的获得一些进步!或许我们曾经被很多人嘲笑指责过,但如果我们因此而放弃,不但没有达到梦想还让嘲笑指责你的人暗自偷乐!何不把嘘声嘲讽变成激励前进的动力了!</p>
 
 <p>或许是我个人偏爱C罗,所以语言上有些偏袒,但是,看到他现在的成功,我们还要说什么吗?我们不是应该多学些他的优秀吗?</p>
+
+		
+		
+	</div>
+
+</article>
+
+<nav id="pagenavi">
+    
+        <a href="/blog/page/12/" class="prev">Previous</a>
+    
+    
+        <a href="/blog/page/14/" class="next">Next</a>
+    
+</nav>
 </div>
-  
-  
+	<footer id="footer" class="inner"><br>
+<br>
+<br>
+<br>
+&copy; 2013
 
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2010/01/16/1-slash-8-university-life/">1/8 的大学</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-01-16T17:31:00+08:00" pubdate data-updated="true">Jan 16<span>th</span>, 2010</time>
-        
-         | <a href="/blog/2010/01/16/1-slash-8-university-life/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>前不久就听到好多这样的声音〖大学过了八分之一〗&hellip;  额…好像是吧!我对这个说法不怎么敏感!</p>
-
-<p>倒一想想,9月5号到现在,这段时光过得还真快啊,虽然每周还是7天每天还是24小时每小时还是60分钟每分钟,依旧是60秒!但是,这每周每天每时每秒好像与过去的有了很大的不同!对比起中学,好多好多的不同&mdash;&mdash;-没有了曾经管着你生活学习的班主任；晚上没有舍管催命般的叫你熄灯、叫你去睡觉禁止你在宿舍开卧谈会；学校里边大部分活动都是学生自发组织完成；我们也更多的与高年级的学长学姐有了一些交流,这在中学几乎是没有的；还有,O(∩_∩)O~甚至直到现在还不知道校长长什么样,完全看不到他老人家一眼；还有,很重要的一点,自学,无论学业还是其他能力,如果想混的好,自学能力起着无可取代的地位&hellip;&hellip;渐渐地,认识了好多来自五湖四海的新面孔,呃…虽然不能一一对应是哪个湖哪个海,其中,不乏认识好多非本班的!相比之下,在中学这是很少的.</p>
-
-<p>上学后,师兄师姐告诫我们不要把大学想的太美好,其实不然,这是一个残酷的小社会；上学后,周围的同学都说跟想象中的差好远好远；上学后,我终于深深的感触到了传说中的大学!!呵呵…是我容易知足还是怎么的!大学,除了没有以前的死党在一起外我觉得很好很nice,这是真话!呃,或许是我热衷于自由,而大学正是给了我这样的自由才让我这样说的吧!!!生活、学习等等各方面都掌握在了我手上,我必须更努力地学会去适应、去创造.在大学,我经历的、学到的是中学那么久以来都没经历过的、没学到的!我成长了很多,看到了这个小社会,慢慢的学会要怎么融入当中,虽然真的有些残酷,但我很喜欢,这样才能让我锻炼、不断强化!其实,大学真的很美好!</p>
-
-<p>很遗憾,我居然完全没有意识自己的喜欢,梦想,追求等等.不过,无论现在如何,我也慢慢地长进了,专业,其实真的并没有想象中那么重要,我相信我的能力,只要我想,我可以在任何一个圈子混的很出色!! 我真正地开始为我的未来想好多、努力好多.我会经常奔图书馆了,这在中学是不可能存在的事情,回想中学,我还不知道图书馆具体构造是怎样,在哪能借书,有什么手续.甚至自学一些课外的东西,其中很多甚至可以说暂时还扯不上任何关系!我知道,这样我既提升了我的自学能力,也学到很多技能,还可以充实我的大学生活.</p>
-
-<p>当一些学生干部,不能在乎这个职位有多高,干了多少社会工作,不能只在乎干了多少,这些都只是表面工作!更重要的是在从事这些工作中你是怎么干,取得了那些成果,深入的程度如何,学会了什么…我承认,一开始上学,我仅仅是以一些好奇心去面试一些学生会啊团委啊的社团机构,但是很不幸,我没有足够的出色让他们选择我.后来,慢慢的,经过多次的面试锻炼,我加入了学校的另一个不那么出名的机构,诚然,那些能进入团委、学生会的同学他们是厉害的,他们在竞选那一刻在评委的眼中更闪更牛X,但是,很多的很多并不是那一刻就决定的!如果在大机构社团碌碌无为,无所事事,只求一个名头,那即使给你个主席书记也不能服众也不能带领大家完美的完成工作……这类进入学生会的只能说他们跑的比我前但是并不及我跑的快! 现在,经常有上级师兄师姐叫你写写这个活动什么的策划书、方案、总结什么的,这,在中学是几乎不可能有的情况,至少我是!</p>
-
-<p>工作、未来、人生,现在应该、必须好好想想了!我不担心挂科,并不代表我不注重学习,在我的大学中,学习还是第一的,学习能力,学习做人,学习处事,未来的路还有好远好远!当然,我知道,现在才是我的大学刚起步,所以我还有很多等待着我去学习,我也知道,大学四年,是一段稍纵即逝的时光,所以,我必须好好珍惜,最大化的完善自己!</p>
-
-<p>希望自己能够真正的学会,理解:<br/>
-在这个世界上我们无法做伟大的事,我们只能怀抱着伟大的爱去做些小事.<br/>
-与其通过告诉别人你自己的善举来冲淡这种积极的感觉,倒不如独享这一秘密以保留全部积极的感觉.<br/>
-&ldquo;他们这样做在努力教我些什么呢?&rdquo; <br/>
-&ldquo;一年后我还会在乎这件事情吗?&#8221;<br/>
-宽容,并不是背弃自己的信仰,更不是代表软弱无能,那是璀璨的魅力.<br/>
-如此烦恼还是解决不了问题,请不要再这样下去了.<br/>
-&#8220;虽然只是铜牌,但是我还是想表扬一下自己&rdquo;</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-    <a class="next" href="/blog/page/12/">Newer &rarr;</a>
-    
-  </div>
-</div>
-<aside class="sidebar">
-  
-    <section>
-  <ul id="recent_posts">
-      <li class="post">
-      <a href="/" alt="Home"><img src="/images/Home.png"></a>
-      <a href="/archives/" alt="Archives"><img src="/images/Calendar.png"></a>
-      <a href="mailto:golvinlu@gmail.com" alt="E-Mail"><img src="/images/Envelope.png"></a>
-      <a href="/about/" alt="About XguoX"><img src="/images/User.png"></a>
-      <a href="/atom.xml" alt="subscribe feed"><img src="/images/rss_big.png"></a>
-      </li>
-  </ul>
-</section>
-
-<section>
-<h1>Category</h1>
-<span class='categories_tag'> <a href='/blog/categories/books' style='font-size: 102.66666666666667%'>Books</a>  <a href='/blog/categories/css' style='font-size: 101.33333333333333%'>Css</a>  <a href='/blog/categories/diary' style='font-size: 106.66666666666667%'>Diary</a>  <a href='/blog/categories/ghost' style='font-size: 101.33333333333333%'>Ghost</a>  <a href='/blog/categories/heroku' style='font-size: 102.66666666666667%'>Heroku</a>  <a href='/blog/categories/hexo' style='font-size: 101.33333333333333%'>Hexo</a>  <a href='/blog/categories/jabber' style='font-size: 160.0%'>Jabber</a>  <a href='/blog/categories/javascript' style='font-size: 101.33333333333333%'>Javascript</a>  <a href='/blog/categories/json' style='font-size: 101.33333333333333%'>Json</a>  <a href='/blog/categories/mac' style='font-size: 101.33333333333333%'>Mac</a>  <a href='/blog/categories/meteor' style='font-size: 109.33333333333333%'>Meteor</a>  <a href='/blog/categories/octopress' style='font-size: 102.66666666666667%'>Octopress</a>  <a href='/blog/categories/onepiece' style='font-size: 104.0%'>Onepiece</a>  <a href='/blog/categories/performance' style='font-size: 101.33333333333333%'>Performance</a>  <a href='/blog/categories/photo' style='font-size: 105.33333333333333%'>Photo</a>  <a href='/blog/categories/rails' style='font-size: 114.66666666666667%'>Rails</a>  <a href='/blog/categories/repost' style='font-size: 105.33333333333333%'>Repost</a>  <a href='/blog/categories/ruby' style='font-size: 121.33333333333333%'>Ruby</a>  <a href='/blog/categories/tools' style='font-size: 102.66666666666667%'>Tools</a>  <a href='/blog/categories/translate' style='font-size: 101.33333333333333%'>Translate</a>  <a href='/blog/categories/translation' style='font-size: 118.66666666666667%'>Translation</a>  <a href='/blog/categories/travel' style='font-size: 106.66666666666667%'>Travel</a>  <a href='/blog/categories/tricks' style='font-size: 101.33333333333333%'>Tricks</a> </span>
-</section>
-
-
-<section class="even">
-	<iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=zh_cn&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=4&isTitle=0&noborder=0&isWeibo=1&isFans=0&uid=1660802261&verifier=0594649b&colors=d04e38,d04e38,ffffff,0082cb,f08456&dpc=1"></iframe>
-</section>
-
-
-
-<section class="last odd">
-<h1>My <span style="color: #0063dc;">Flick<span style="color: #ff0084;">r</h1>
-<style type="text/css">
-	#flickrList li { text-align: left; display:inline; margin: 0 2px;}
-</style>
-<ul id="flickrList"></ul>
-<script lang="Javascript">
-var flickrNickname = "GroverLu";
-function jsonFlickrApi(rsp) {
-	if (rsp.stat != "ok"){
-  		return;
- 	}
- 	var list = "";
- 	for (var i=0; i < rsp.photos.photo.length; i++) {
-  		var photo    = rsp.photos.photo[i];
-  		var imgUrl   = 'http://farm'+ photo.farm +'.static.flickr.com/'+ photo.server +'/'+ photo.id +'_'+ photo.secret +'_s.jpg';
-  		var photoUrl = 'http://www.flickr.com/photos/'+ flickrNickname +'/'+ photo.id;
-  		list += '<li id="flickrItem_'+i+'"><a href="'+ photoUrl +'" title="'+ photo.title +'"><img alt="'+ photo.title +'" src="'+ imgUrl +'" /></a></li>';
- 	}
- 	document.getElementById('flickrList').innerHTML = list;
-}
-</script>
-<script lang="Javascript" src="http://api.flickr.com/services/rest/?format=json&method=flickr.photos.search&user_id=94631627@N04&per_page=15&api_key=d286c7fecaa39173da37f6e681c443f6"></script>
-</section>
-<section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/blog/2013/12/11/sabo-and-koala-and-one-piece/">One Piece Chapter 731</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/12/09/hello-22/">Diary: 22 西涌</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/11/28/lightroom-flash-quit-because-of-too-many-presets/">解决 Lightroom 闪退</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/11/23/a7r-iso-unbox-manfrotto/">用 A7R 玩开箱并各档不严谨不严肃不专业无责任高感测试</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/11/14/lightroom-presets/">Lightroom 预设</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/11/12/time-machine-local-snapshot/">Time Machine & Local Snapshots</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/11/11/camera-geek/">不折腾会死玩相机星人</a>
-      </li>
-    
-  </ul>
-</section>
-
-  
-</aside>
-
-    </div>
-  </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2013 - XguoX -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</p>
+    XguoX
 
 </footer>
-  
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/hyphenator.js"></script>
+
 
 <script type="text/javascript">
       var disqus_shortname = 'xguox';
@@ -611,34 +615,26 @@ function jsonFlickrApi(rsp) {
 
 
 
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-39166710-1']);
+		_gaq.push(['_trackPageview']);
 
-
-
-
-
-  <script type="text/javascript">
-    (function() {
-      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
-      script.src = 'https://apis.google.com/js/plusone.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
-    })();
-  </script>
-
-
-
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
-
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
 
 
 
 
 </body>
+<script>
+  $(document).ready(function() {
+  // Make images center
+  $('p:has(img)').css('text-align', 'center');
+  });
+</script>
 </html>
