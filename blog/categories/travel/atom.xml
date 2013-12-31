@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Travel | XguoX]]></title>
   <link href="http://xguox.github.com/blog/categories/travel/atom.xml" rel="self"/>
   <link href="http://xguox.github.com/"/>
-  <updated>2013-12-31T23:01:14+08:00</updated>
+  <updated>2013-12-31T23:35:00+08:00</updated>
   <id>http://xguox.github.com/</id>
   <author>
     <name><![CDATA[XguoX]]></name>
@@ -106,7 +106,7 @@
 
 <p>先配上经典的BGM</p>
 
-<p><audio controls><source src='<a'><source src='href="http://m5.file.xiami.com/258/1258/6610/375918_14519_l.mp3?auth_key=5205b0c11bb45c41a17eee70ee248618-1386683095-0-null">http://m5.file.xiami.com/258/1258/6610/375918_14519_l.mp3?auth_key=5205b0c11bb45c41a17eee70ee248618-1386683095-0-null</a>'></audio></p>
+<p>{% audio <a href="http://m5.file.xiami.com/258/1258/6610/375918_14519_l.mp3?auth_key=5205b0c11bb45c41a17eee70ee248618-1386683095-0-null">http://m5.file.xiami.com/258/1258/6610/375918_14519_l.mp3?auth_key=5205b0c11bb45c41a17eee70ee248618-1386683095-0-null</a> %}</p>
 
 <p>开始放大招&hellip;
 <img src="https://gagqnq.dm2304.livefilestore.com/y2pwNiiRN6cW5i-TzXo3vbJqEjpz8PJM_31Yj5aj8HalIaLsa8IiMa9FDQb5sJk0yLt0P_NzONtIOt2k7QzoFhO1MLAKjEh3b2yybrqhu_Unmk/DSC00622.jpg?psid=1" alt="" />
@@ -475,7 +475,7 @@
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[travel photo code]]></title>
+    <title type="html"><![CDATA[Travel Photo Code]]></title>
     <link href="http://xguox.github.com/blog/2012/02/25/travel-photo-code/"/>
     <updated>2012-02-25T11:48:00+08:00</updated>
     <id>http://xguox.github.com/blog/2012/02/25/travel-photo-code</id>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: JavaScript | XguoX]]></title>
   <link href="http://xguox.github.com/blog/categories/javascript/atom.xml" rel="self"/>
   <link href="http://xguox.github.com/"/>
-  <updated>2013-12-31T23:01:14+08:00</updated>
+  <updated>2013-12-31T23:35:00+08:00</updated>
   <id>http://xguox.github.com/</id>
   <author>
     <name><![CDATA[XguoX]]></name>
@@ -14,7 +14,7 @@
 
   
   <entry>
-    <title type="html"><![CDATA[你应该在生产环境下使用JavaScript的严格模式(strict mode)吗?]]></title>
+    <title type="html"><![CDATA[你应该在生产环境下使用JavaScript的严格模式(strict Mode)吗?]]></title>
     <link href="http://xguox.github.com/blog/2013/02/08/should-you-use-strict-in-your-production-javascript/"/>
     <updated>2013-02-08T09:32:00+08:00</updated>
     <id>http://xguox.github.com/blog/2013/02/08/should-you-use-strict-in-your-production-javascript</id>
