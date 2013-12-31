@@ -10,7 +10,7 @@ categories: Sublime
 
 不过只是想在白天和黑夜交替更换一下 solarized 的 light 和 dark  , 大夜晚的用浅底的配色不幸福啊  
 
-1. 在[ IFTTT ](https://ifttt.com/)上创建一个 Recipe , Sublime Forum 里边的哪位大神用的是关联天气的日出和日落(if Weather), 好吧,  我还是直接设定时间好了(if Date & Time),  and  than   设置更换主题的时间,   IFTTT 居然不给同一个 Date & Time 设定两个时间 = 。 = 所以, 这里要用到两个 recipes(sunrise & sunset) ,  先做一个 [sunrise](https://ifttt.com/recipes/135801) 的.  时间设置早上9点
+1. 在[ IFTTT ](https://ifttt.com/)上创建一个 Recipe , Sublime Forum 里边的哪位大神用的是关联天气的日出和日落(if Weather), 好吧,  我还是直接设定时间好了(if Date & Time),  and  than   设置更换主题的时间,   IFTTT 居然不给同一个 Date & Time 设定两个时间 = 。 = 所以, 这里要用到两个 recipes(sunrise & sunset) ,  先做一个 [sunrise](https://ifttt.com/recipes/135801) 的.  时间设置早上9点(可能或有几分钟的触发延迟)
 
 2. then **Dropbox**
 -> create a  text file -> **Dropbox folder path** 不改了直接用 `IFTTT/Daylight`
