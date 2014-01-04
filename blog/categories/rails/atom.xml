@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Rails | XguoX]]></title>
   <link href="http://xguox.github.com/blog/categories/rails/atom.xml" rel="self"/>
   <link href="http://xguox.github.com/"/>
-  <updated>2014-01-04T18:12:43+08:00</updated>
+  <updated>2014-01-04T21:08:52+08:00</updated>
   <id>http://xguox.github.com/</id>
   <author>
     <name><![CDATA[XguoX]]></name>
@@ -12,6 +12,41 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[是在扯不等使的事儿吗?]]></title>
+    <link href="http://xguox.github.com/blog/2014/01/04/heroku-rails-do4fun-theme/"/>
+    <updated>2014-01-04T21:08:09+08:00</updated>
+    <id>http://xguox.github.com/blog/2014/01/04/heroku-rails-do4fun-theme</id>
+    <content type="html"><![CDATA[<h4>Rails</h4>
+
+<p>发觉之前又犯二了, 在 console 里头错把 delete 当 destroy 删除一条记录, 把数据库搞得一坨乱. 还是一直纠结 has_many 的 dependent 参数不是已经设置了 destroy 了,肿么不会关联上!!!  原来是这个地方烧饼lity 了!</p>
+
+<p>区别</p>
+
+<h4><a href="http://do4fun.herokuapp.com/">do4fun </a></h4>
+
+<p><a href="http://do4fun.herokuapp.com/">do4fun </a>这个项目进行了也有一段时间, 小有成型的样子.   今天忽然蛋疼把背景的整体色调从原本的略骚的橙红改成了现今的灰白.  布局没变.</p>
+
+<p><img src="http://ww1.sinaimg.cn/mw690/62fdd4d5gw1ec7sglc154j21400p0jxy.jpg" alt="" /></p>
+
+<p><img src="http://ww4.sinaimg.cn/mw690/62fdd4d5gw1ec7sg2wg9lj21400p07ed.jpg" alt="" /></p>
+
+<p>actually, 我还是略喜欢前者.  页面设计上总是没什么感觉啊!</p>
+
+<p>另外又把 xguox.me 的主题换了,  这次用的是<a href="https://github.com/panks/fabric"> Theme fabric by Pankaj Kumar</a>, 没怎么调, 就只是换了背景图&hellip;</p>
+
+<p>好吧, 我不会告诉你是因为换了这个主题才想要把<a href="http://do4fun.herokuapp.com/">do4fun </a> 的对调过来了.</p>
+
+<h4>Heroku</h4>
+
+<p>最后扯扯 heroku ,  除了访问速度在天朝略微蛋疼外 heroku 真心是个好东西, 每次有什么想玩的都是在 heroku  上部署实践. 包括这次的 <a href="http://do4fun.herokuapp.com/">do4fun </a> 项目. 尤其很多插件都不错.</p>
+
+<p>不过最近部署 这个Rails 4 的时候出了点状况, 在 应该是 ckeditor 的问题, 在 <a href="http://stackoverflow.com/questions/20811788/deploy-rails4-with-ckeditor-to-heroku-failed-with-time-out-assetsprecompile">StackOverflow</a> 上提问也没结果.</p>
+
+<p>如果访问速度能给力些的话, 跟 linode 之流抗衡那是杠杠的!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Rails4 Devise Strong Parameters]]></title>
@@ -672,32 +707,6 @@ $(document).ready(function(){
 </span><span class='line'>
 </span><span class='line'>&lt;p>WillPaginate::ViewHelpers.pagination_options[:previous_label ] =  &ldquo;前一页&rdquo;
 </span><span class='line'>WillPaginate::ViewHelpers.pagination_options[:next_label ] =  &ldquo;后一页&rdquo;</span></code></pre></td></tr></table></div></figure></notextile></div></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[ubuntu12.04 and Rails]]></title>
-    <link href="http://xguox.github.com/blog/2012/04/27/ubuntu1204-and-rails/"/>
-    <updated>2012-04-27T23:51:00+08:00</updated>
-    <id>http://xguox.github.com/blog/2012/04/27/ubuntu1204-and-rails</id>
-    <content type="html"><![CDATA[<p>昨晚,把ubuntu升级到了12.04,其实,对我目前的使用来说,系统是否升级几乎没影响.不过看着更新管理器冒出了新版本,反正也就按几个下的功夫,于是就升上去了.</p>
-
-<p>新版本多了首先感觉感觉性能上貌似快了些许,不多&hellip;另外对我而言直观的体验是launcher,之前的launcher也太敏感了,不过现在这倒是太呆板了,有时想要却不出来.不过桌面状态下不显示这点我比较喜欢.(以前也可以设置?不知道,木有研究)</p>
-
-<!-- more -->
-
-
-<p>另外alt键貌似上边会冒出个可输入命令行的,目前还木有发现其实际作用.</p>
-
-<p>好吧,其实,我对这些改进啊有的没的还不怎么敏感.所以与其要看我介绍新功能新特性还不如直接搜索.</p>
-
-<p>我敏感的只是,我的一些Rails项目都跑不动了.passenger报错
-<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>Error message:
-</span><span class='line'>libmysqlclient_r.so.16: cannot open shared object file: No such file or directory &ndash; /home/xguox/.rvm/gems/Ruby-1.9.2-p290@Rails/gems/mysql2-0.3.11/lib/mysql2/mysql2.so</span></code></pre></td></tr></table></div></figure></notextile></div>
-我还以为是我缺少了libmysqlclient_r.so.16这个文件,自己下载了之后也还是不行.期间尝试重装mysql,也试过之前说的那个,安装各种组建的命令还是无果.最终在Ruby-china得到大神指点,居然只需卸了重装mysql2这个gem就可以了.貌似是因为/usr/lib 下的mysql2.so没有link到gem里边的mysql2.so
-过后,还是跟往常没有多大差别的继续Rails&hellip;</p>
 ]]></content>
   </entry>
   

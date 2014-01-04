@@ -6,7 +6,7 @@
 	<title>XguoX</title>
     <meta name="author" content="XguoX">
     
-	<meta name="description" content="Published on: Dec 23rd, 2011 Tags: Diary, Jabber 总有人问,XXX跟YYY那个地方比较好玩.其实我觉得都要自己走过了才能评价,而且别人的评价不一定适合你.再说,我觉得城市跟城市没啥好比较的,各有各的风格韵味. &hellip;">
+	<meta name="description" content="Published on: Dec 25th, 2011 Tags: Rails, Repost, Ruby Repost Ruby 语言常以其灵活性为人所称道.正如 Dick Sites 所言,您可以 &ldquo;为了编程而编程&rdquo;.Ruby on Rails 扩展了核心 Ruby &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -112,6 +112,499 @@
 <!-- begin toload --> 
     <div id="content" class="inner">
         
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2011/12/25/ror-performance/">
+		
+			加速 Ruby on Rails</a>
+	</h2>
+    <div class="entry-content">
+    <div class="meta">
+      <div class="date">Published on: 
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-12-25T17:14:00+08:00" pubdate data-updated="true">Dec 25<span>th</span>, 2011</time></div>
+      <div class="tags">Tags: 
+
+
+	<a class='category' href='/blog/categories/rails/'>Rails</a>, <a class='category' href='/blog/categories/repost/'>Repost</a>, <a class='category' href='/blog/categories/ruby/'>Ruby</a>
+
+
+</div>
+    </div>
+		<p><a href="http://www.ibm.com/developerworks/cn/opensource/os-Railsn1/index.html">Repost</a></p>
+
+<p>Ruby 语言常以其灵活性为人所称道.正如 Dick Sites 所言,您可以 &ldquo;为了编程而编程&rdquo;.Ruby on Rails 扩展了核心 Ruby 语言,但正是 Ruby 本身使得这种扩展成为了可能.Ruby on Rails 使用了该语言的灵活性,这样一来,无需太多样板或额外的代码就可以轻松编写高度结构化的程序:无需额外工作,就可以获得大量标准的行为.虽然这种轻松自由的行为并不总是完美的,但毕竟您可以无需太多工作就可以获得很多好的架构.</p>
+
+<p>例如,Ruby on Rails 基于模型-视图-控制器(Model-View-Controller,MVC)模式,这意味着大多数 Rails 应用程序都可以清晰地分成三个部分.模型部分包含了管理应用程序数据所需的行为.通常,在一个 Ruby on Rails 应用程序中,模型和数据库表之间的关系是 1:1；Ruby on Rails 默认使用的对象关系映射(ORM)ActiveRecord 负责管理模型与数据库的交互,这意味着 Ruby on Rails 程序通常都具有(如果有的话)很少量的 SQL 代码.第二个部分是视图,它包含创建发送至用户的输出所需要的代码；它通常由 HTML、JavaScript 等组成.最后的一个部分是控制器,它将来自用户的输入转变为正确的模型,然后使用适当的视图呈现响应.</p>
+
+<p>Rails 的倡导者通常都乐于将其易用性方面的提高归功于 MVC 范型 — 以及 Ruby 和 Rails 二者的其他一些特性,并称很少有程序员能够在较短的时间内创建更多的功能.当然,这意味着投入到软件开发的成本将能够产生更多的商业价值,因此 Ruby on Rails 开发愈发流行.</p>
+
+<p>不过,最初的开发成本并不是事情的全部,还有其他的后续成本需要考虑,比如应用程序运行的维护成本和硬件成本.Ruby on Rails 开发人员通常会使用测试和其他的敏捷开发技术来降低维护成本,但是这样一来,很容易忽视具有大量数据的 Rails 应用程序的有效运行.虽然 Rails 能够简化对数据库的访问,但它并不总是能够如此有效.</p>
+
+<h2>Rails 应用程序为何运行缓慢?</h2>
+
+<p>Rails 应用程序之所以运行缓慢,其中有几个很基本的原因.第一个原因很简单:Rails 总是会做一些假设为您加速开发.通常,这种假设是正确而有帮助的.不过,它们并不总能有益于性能,并且还会导致资源使用的效率低下 — 尤其是数据库资源.</p>
+
+<p>例如,使用等同于 <code>SELECT *</code>的一个 SQL 语句,ActiveRecord 会默认选择查询上的所有字段.在具有为数众多的列的情况下 — 尤其是当有些字段是巨大的 VARCHAR 或 BLOB 字段时 — 就内存使用和性能而言这种行为很有问题.</p>
+
+<p>另一个显著的挑战是 <strong>N+1</strong> 问题,本文将对此进行详细的探讨.这会导致很多小查询的执行,而不是一个单一的大查询.例如,ActiveRecord 无从知道一组父记录中的哪一个会请求一个子记录,所以它会为每个父记录生成一个子记录查询.由于每查询的负荷,这种行为将导致明显的性能问题.</p>
+
+<p>其他的挑战则更多地与  Ruby on Rails 开发人员的开发习惯和态度相关.由于 ActiveRecord 能够让如此众多的任务变得轻而易举,Rails 开发人员常常会形成 &ldquo;SQL 不怎样&rdquo; 的一种态度,即便在更适合使用 SQL 的时候,也会避免 SQL.创建和处理数量巨大的 ActiveRecord 对象的速度会非常缓慢,所以在有些情况下,直接编写一个无需实例化任何对象的 SQL 查询会更快些.</p>
+
+<p>由于 Ruby on Rails 常被用来降低开发团队的规模,又由于 Ruby on Rails 开发人员通常都会执行部署和维护生产中的应用程序所需的一些系统管理任务,因此若对应用程序的环境知之甚少,就很可能出问题.操作系统和数据库有可能未被正确设置.比如,虽然并不最优,<code>MySQL my.cnf</code> 设置常常在 Ruby on Rails 部署内保留它们的默认设置.此外,可能还会缺少足够的监控和基准测试工具来提供性能的长期状况.当然,这并不是在责怪 Ruby on Rails 开发人员；这是非专业化导致的后果；在有些情况下,Rails 开发人员有可能是这两个领域的专家.</p>
+
+<p>最后一个问题是 Ruby on Rails 鼓励开发人员在本地环境中进行开发.这么做有几个好处 — 比如,开发延迟的减少和分布性的提高 — 但它并不意味着您可以因为工作站规模的减少而只处理有限的数据集.他们如何开发以及代码将被部署于何处之间的差异可能会是一个大问题.即便您在一个性能良好的轻载本地服务器上处理小规模的数据已经很长一段时间,也会发现对于拥塞的服务器上的大型数据此应用程序会有很明显的性能问题.</p>
+
+<p>当然,Rails 应用程序具有性能问题的原因可能有很多.查出 Rails 应用程序有何潜在性能问题的最佳方法是,利用能为您提供可重复、准确度量的诊断工具.</p>
+
+<h2>检测性能问题</h2>
+
+<p>最好的工具之一是 Rails 开发日志,它通常位于每个开发机器上的 <code>log/development.log</code> 文件内.它具有各种综合指标:响应请求所花费的总时间、花费在数据库内的时间所占的百分比、生成视图所花时间的百分比等.此外,还有一些工具可用来分析此日志文件,比如 development-log-analyzer.</p>
+
+<p>在生产期间,通过查看 <code>mysql_slow_log</code>可以找到很多有价值的信息.更为全面的介绍超出了本文的讨论范围,更多信息可以在 <a href="http://www.ibm.com/developerworks/cn/opensource/os-Railsn1/index.html#resources">参考资料 </a>部分找到.</p>
+
+<p>其中一个最强大也是最为有用的工具是 query_reviewer 插件(参见 <a href="http://www.ibm.com/developerworks/cn/opensource/os-Railsn1/index.html#resources">参考资料</a>).这个插件可显示在页面上有多少查询在执行以及页面生成需要多长时间.并且它还会自动分析 ActiveRecord 生成的 SQL 代码以便发现潜在问题.例如,它能找到不使用 MySQL 索引的查询,所以如果您忘记了索引一个重要的列并由此造成了性能问题,那么您将能很容易地找到这个列(有关 MySQL 索引的更多信息,参见 <a href="http://www.ibm.com/developerworks/cn/opensource/os-Railsn1/index.html#resources">参考资料</a>).此插件在一个弹出的 <code>&lt;div&gt;</code>(只在开发模式下可见)中显示了所有这类信息.</p>
+
+<p>最后,不要忘记使用类似 Firebug、yslow、Ping 和 tracert 这样的工具来检测性能问题是来自于网络还是资源加载问题.</p>
+
+<p>接下来,让我们来看具体的一些 Rails 性能问题及其解决方案.</p>
+
+<h2>N+1 查询问题</h2>
+
+<p>N+1 查询问题是 Rails 应用程序最大的问题之一.例如,清单 1 内的代码能生成多少查询?此代码是一个简单的循环,遍历了一个假想的 post 表内的所有 post,并显示 post 的类别和它的主体.</p>
+
+<h3>清单 1. 未优化的 Post.all 代码</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">&lt;</span><span class="sx">%@posts = Post.all(@</span><span class="n">posts</span><span class="p">)</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="nb">p</span><span class="o">|</span><span class="sx">%&gt; </span>
+</span><span class='line'><span class="sx">  &lt;h1&gt;</span><span class="o">&lt;</span><span class="sx">%=p.category.name%&gt;&lt;/h1&gt;</span>
+</span><span class='line'><span class="sx">  &lt;p&gt;&lt;%=</span><span class="nb">p</span><span class="o">.</span><span class="n">body</span><span class="sx">%&gt;&lt;/p&gt;</span>
+</span><span class='line'><span class="o">&lt;%</span><span class="k">end</span><span class="o">%&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>答案:上述代码生成了一个查询外加  <code>@posts</code> 内的每行一个查询.由于每查询的负荷,这可能会成为一个很大的挑战.罪魁祸首是对 <code>p.category.name</code> 的调用.这个调用只应用于该特定的 <code>post</code> 对象,而不是整个 <code>@posts</code> 数组.幸好,通过使用立即加载,我们可以修复这个问题.</p>
+
+<p>立即加载 意味着 Rails 将自动执行所需的查询来加载任何特定子对象的对象.Rails 将使用一个 <code>JOIN</code> SQL 语句或一个执行多个查询的策略.不过,假设指定了将要使用的所有子对象,那么将永远不会导致 N+1 的情形,在 N+1 情形下,一个循环的每个迭代都会生成额外的一个查询.清单 2 是对 清单 1 内代码的修订,它使用了立即加载来避免 N+1 问题.</p>
+
+<h3>清单 2. 用立即加载优化后的 Post.all 代码</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">&lt;</span><span class="sx">%@posts = Post.find(:all, :include=&gt;[:category]</span>
+</span><span class='line'><span class="sx">  @</span><span class="n">posts</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="nb">p</span><span class="o">|</span><span class="sx">%&gt; </span>
+</span><span class='line'><span class="sx">  &lt;h1&gt;</span><span class="o">&lt;</span><span class="sx">%=p.category.name%&gt;&lt;/h1&gt;</span>
+</span><span class='line'><span class="sx">  &lt;p&gt;&lt;%=</span><span class="nb">p</span><span class="o">.</span><span class="n">body</span><span class="sx">%&gt;&lt;/p&gt;</span>
+</span><span class='line'><span class="o">&lt;%</span><span class="k">end</span><span class="o">%&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>该代码最多生成两个查询,而不管在此 <code>posts</code> 表内有多少行.</p>
+
+<p>当然,并不是所有情况都如此简单.处理复杂的 N+1 查询情况需要更多的工作.那么做这么多努力值得么?让我们来做一些快速的测试.</p>
+
+<h2>测试 N+1</h2>
+
+<p>使用清单 3 内的脚本,可以发现查询可以达到 — 多慢 — 或多快. 清单 3 展示了如何在一个独立脚本中使用 ActiveRecord 来建立一个数据库连接、定义表并加载数据.然后,可以使用 Ruby 的内置基准测试库来查看哪种方式更快,快多少.</p>
+
+<h3>清单 3. 立即加载基准测试脚本</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+<span class='line-number'>72</span>
+<span class='line-number'>73</span>
+<span class='line-number'>74</span>
+<span class='line-number'>75</span>
+<span class='line-number'>76</span>
+<span class='line-number'>77</span>
+<span class='line-number'>78</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">require</span> <span class="s1">&#39;Rubygems&#39;</span>
+</span><span class='line'><span class="nb">require</span> <span class="s1">&#39;faker&#39;</span>
+</span><span class='line'><span class="nb">require</span> <span class="s1">&#39;active_record&#39;</span>
+</span><span class='line'><span class="nb">require</span> <span class="s1">&#39;benchmark&#39;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># This call creates a connection to our database.</span>
+</span><span class='line'>
+</span><span class='line'><span class="ss">ActiveRecord</span><span class="p">:</span><span class="ss">:Base</span><span class="o">.</span><span class="n">establish_connection</span><span class="p">(</span>
+</span><span class='line'>  <span class="ss">:adapter</span>  <span class="o">=&gt;</span> <span class="s2">&quot;mysql&quot;</span><span class="p">,</span>
+</span><span class='line'>  <span class="ss">:host</span>     <span class="o">=&gt;</span> <span class="s2">&quot;127.0.0.1&quot;</span><span class="p">,</span>
+</span><span class='line'>  <span class="ss">:username</span> <span class="o">=&gt;</span> <span class="s2">&quot;root&quot;</span><span class="p">,</span> <span class="c1"># Note that while this is the default setting for MySQL,</span>
+</span><span class='line'>  <span class="ss">:password</span> <span class="o">=&gt;</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>     <span class="c1"># a properly secured system will have a different MySQL</span>
+</span><span class='line'>                            <span class="c1"># username and password, and if so, you&#39;ll need to</span>
+</span><span class='line'>                            <span class="c1"># change these settings.</span>
+</span><span class='line'>  <span class="ss">:database</span> <span class="o">=&gt;</span> <span class="s2">&quot;test&quot;</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># First, set up our database... </span>
+</span><span class='line'><span class="k">class</span> <span class="nc">Category</span> <span class="o">&lt;</span>  <span class="ss">ActiveRecord</span><span class="p">:</span><span class="ss">:Base</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">unless</span> <span class="no">Category</span><span class="o">.</span><span class="n">table_exists?</span>
+</span><span class='line'>  <span class="ss">ActiveRecord</span><span class="p">:</span><span class="ss">:Schema</span><span class="o">.</span><span class="n">define</span> <span class="k">do</span>
+</span><span class='line'>    <span class="n">create_table</span> <span class="ss">:categories</span> <span class="k">do</span> <span class="o">|</span><span class="n">t</span><span class="o">|</span>
+</span><span class='line'>        <span class="n">t</span><span class="o">.</span><span class="n">column</span> <span class="ss">:name</span><span class="p">,</span> <span class="ss">:string</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="no">Category</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="ss">:name</span><span class="o">=&gt;</span><span class="s1">&#39;Sara Campbell\&#39;s Stuff&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="no">Category</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="ss">:name</span><span class="o">=&gt;</span><span class="s1">&#39;Jake Moran\&#39;s Possessions&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="no">Category</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="ss">:name</span><span class="o">=&gt;</span><span class="s1">&#39;Josh\&#39;s Items&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="n">number_of_categories</span> <span class="o">=</span> <span class="no">Category</span><span class="o">.</span><span class="n">count</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">class</span> <span class="nc">Item</span> <span class="o">&lt;</span>  <span class="ss">ActiveRecord</span><span class="p">:</span><span class="ss">:Base</span>
+</span><span class='line'>  <span class="n">belongs_to</span> <span class="ss">:category</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># If the table doesn&#39;t exist, we&#39;ll create it.</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">unless</span> <span class="no">Item</span><span class="o">.</span><span class="n">table_exists?</span>
+</span><span class='line'>  <span class="ss">ActiveRecord</span><span class="p">:</span><span class="ss">:Schema</span><span class="o">.</span><span class="n">define</span> <span class="k">do</span>
+</span><span class='line'>    <span class="n">create_table</span> <span class="ss">:items</span> <span class="k">do</span> <span class="o">|</span><span class="n">t</span><span class="o">|</span>
+</span><span class='line'>        <span class="n">t</span><span class="o">.</span><span class="n">column</span> <span class="ss">:name</span><span class="p">,</span> <span class="ss">:string</span>
+</span><span class='line'>        <span class="n">t</span><span class="o">.</span><span class="n">column</span> <span class="ss">:category_id</span><span class="p">,</span> <span class="ss">:integer</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;Loading data...&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">item_count</span> <span class="o">=</span> <span class="no">Item</span><span class="o">.</span><span class="n">count</span>
+</span><span class='line'><span class="n">item_table_size</span> <span class="o">=</span> <span class="mi">10000</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">if</span> <span class="n">item_count</span> <span class="o">&lt;</span> <span class="n">item_table_size</span>
+</span><span class='line'>  <span class="p">(</span><span class="n">item_table_size</span> <span class="o">-</span> <span class="n">item_count</span><span class="p">)</span><span class="o">.</span><span class="n">times</span> <span class="k">do</span>
+</span><span class='line'>    <span class="no">Item</span><span class="o">.</span><span class="n">create!</span><span class="p">(</span><span class="ss">:name</span><span class="o">=&gt;</span><span class="no">Faker</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+</span><span class='line'>                 <span class="ss">:category_id</span><span class="o">=&gt;</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="nb">rand</span><span class="p">(</span><span class="n">number_of_categories</span><span class="o">.</span><span class="n">to_i</span><span class="p">)))</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;Running tests...&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="no">Benchmark</span><span class="o">.</span><span class="n">bm</span> <span class="k">do</span> <span class="o">|</span><span class="n">x</span><span class="o">|</span>
+</span><span class='line'>  <span class="o">[</span><span class="mi">100</span><span class="p">,</span><span class="mi">1000</span><span class="p">,</span><span class="mi">10000</span><span class="o">].</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">size</span><span class="o">|</span>
+</span><span class='line'>    <span class="n">x</span><span class="o">.</span><span class="n">report</span> <span class="s2">&quot;size:</span><span class="si">#{</span><span class="n">size</span><span class="si">}</span><span class="s2">, with n+1 problem&quot;</span> <span class="k">do</span>
+</span><span class='line'>      <span class="vi">@items</span><span class="o">=</span><span class="no">Item</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="ss">:all</span><span class="p">,</span> <span class="ss">:limit</span><span class="o">=&gt;</span><span class="n">size</span><span class="p">)</span>
+</span><span class='line'>      <span class="vi">@items</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span>
+</span><span class='line'>        <span class="n">i</span><span class="o">.</span><span class="n">category</span>
+</span><span class='line'>      <span class="k">end</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>    <span class="n">x</span><span class="o">.</span><span class="n">report</span> <span class="s2">&quot;size:</span><span class="si">#{</span><span class="n">size</span><span class="si">}</span><span class="s2">, with :include&quot;</span> <span class="k">do</span>
+</span><span class='line'>      <span class="vi">@items</span><span class="o">=</span><span class="no">Item</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="ss">:all</span><span class="p">,</span> <span class="ss">:include</span><span class="o">=&gt;</span><span class="ss">:category</span><span class="p">,</span> <span class="ss">:limit</span><span class="o">=&gt;</span><span class="n">size</span><span class="p">)</span>
+</span><span class='line'>      <span class="vi">@items</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span>
+</span><span class='line'>        <span class="n">i</span><span class="o">.</span><span class="n">category</span>
+</span><span class='line'>      <span class="k">end</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>这个脚本使用 <code>:include</code> 子句测试在有和没有立即加载的情况下对 100、1,000 和 10,000 个对象进行循环操作的速度如何.为了运行此脚本,您可能需要用适合于您的本地环境的参数替换此脚本顶部的这些数据库连接参数.此外,需要创建一个名为 test 的 MySQL 数据库.最后,您还需要 ActiveRecord 和 faker 这两个 gem,二者可通过运行 <code>gem install activerecord faker</code> 获得.</p>
+
+<p>在我的机器上运行此脚本生成的结果如清单 4 所示.</p>
+
+<h3>清单 4. 立即加载的基准测试脚本输出</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="o">--</span> <span class="n">create_table</span><span class="p">(</span><span class="ss">:categories</span><span class="p">)</span>
+</span><span class='line'>   <span class="o">-&gt;</span> <span class="mi">0</span><span class="o">.</span><span class="mi">1327</span><span class="n">s</span>
+</span><span class='line'><span class="o">--</span> <span class="n">create_table</span><span class="p">(</span><span class="ss">:items</span><span class="p">)</span>
+</span><span class='line'>   <span class="o">-&gt;</span> <span class="mi">0</span><span class="o">.</span><span class="mi">1215</span><span class="n">s</span>
+</span><span class='line'><span class="no">Loading</span> <span class="n">data</span><span class="o">.</span><span class="n">.</span><span class="o">.</span>
+</span><span class='line'><span class="no">Running</span> <span class="n">tests</span><span class="o">.</span><span class="n">.</span><span class="o">.</span>
+</span><span class='line'>      <span class="n">user</span>     <span class="nb">system</span>      <span class="n">total</span>        <span class="n">real</span>
+</span><span class='line'><span class="ss">size</span><span class="p">:</span><span class="mi">100</span><span class="p">,</span> <span class="n">with</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span> <span class="n">problem</span>  <span class="mi">0</span><span class="o">.</span><span class="mo">030000</span>   <span class="mi">0</span><span class="o">.</span><span class="mo">000000</span>   <span class="mi">0</span><span class="o">.</span><span class="mo">030000</span> <span class="p">(</span>  <span class="mi">0</span><span class="o">.</span><span class="mo">045</span><span class="mi">996</span><span class="p">)</span>
+</span><span class='line'><span class="ss">size</span><span class="p">:</span><span class="mi">100</span><span class="p">,</span> <span class="n">with</span> <span class="ss">:include</span>  <span class="mi">0</span><span class="o">.</span><span class="mo">010000</span>   <span class="mi">0</span><span class="o">.</span><span class="mo">000000</span>   <span class="mi">0</span><span class="o">.</span><span class="mo">010000</span> <span class="p">(</span>  <span class="mi">0</span><span class="o">.</span><span class="mo">00</span><span class="mi">9164</span><span class="p">)</span>
+</span><span class='line'><span class="ss">size</span><span class="p">:</span><span class="mi">1000</span><span class="p">,</span> <span class="n">with</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span> <span class="n">problem</span>  <span class="mi">0</span><span class="o">.</span><span class="mi">260000</span>   <span class="mi">0</span><span class="o">.</span><span class="mo">040000</span>   <span class="mi">0</span><span class="o">.</span><span class="mi">300000</span> <span class="p">(</span>  <span class="mi">0</span><span class="o">.</span><span class="mi">346721</span><span class="p">)</span>
+</span><span class='line'><span class="ss">size</span><span class="p">:</span><span class="mi">1000</span><span class="p">,</span> <span class="n">with</span> <span class="ss">:include</span>  <span class="mi">0</span><span class="o">.</span><span class="mo">060000</span>   <span class="mi">0</span><span class="o">.</span><span class="mo">010000</span>   <span class="mi">0</span><span class="o">.</span><span class="mo">070000</span> <span class="p">(</span>  <span class="mi">0</span><span class="o">.</span><span class="mo">07673</span><span class="mi">9</span><span class="p">)</span>
+</span><span class='line'><span class="ss">size</span><span class="p">:</span><span class="mi">10000</span><span class="p">,</span> <span class="n">with</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span> <span class="n">problem</span>  <span class="mi">3</span><span class="o">.</span><span class="mi">110000</span>   <span class="mi">0</span><span class="o">.</span><span class="mi">380000</span>   <span class="mi">3</span><span class="o">.</span><span class="mi">490000</span> <span class="p">(</span>  <span class="mi">3</span><span class="o">.</span><span class="mi">935518</span><span class="p">)</span>
+</span><span class='line'><span class="ss">size</span><span class="p">:</span><span class="mi">10000</span><span class="p">,</span> <span class="n">with</span> <span class="ss">:include</span>  <span class="mi">0</span><span class="o">.</span><span class="mi">470000</span>   <span class="mi">0</span><span class="o">.</span><span class="mi">080000</span>   <span class="mi">0</span><span class="o">.</span><span class="mi">550000</span> <span class="p">(</span>  <span class="mi">0</span><span class="o">.</span><span class="mi">573861</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>在所有情况下,使用 :include 的测试总是更为迅速 — 分别快 5.02、4.52 和 6.86 倍.当然,具体的输出取决于您的特定情况,但立即加载可明显导致显著的性能改善.</p>
+
+<h2>嵌套的立即加载</h2>
+
+<p>如果您想要引用一个嵌套的关系 — 关系的关系,又该如何呢? 清单 5 展示了这样一个常见的情形:循环遍历所有的 post 并显示作者的图像,其中 Author 与 Image 是 belongs_to 的关系.</p>
+
+<h3>清单 5. 嵌套的立即加载用例</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="vi">@posts</span> <span class="o">=</span> <span class="no">Post</span><span class="o">.</span><span class="n">all</span>
+</span><span class='line'><span class="vi">@posts</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="nb">p</span><span class="o">|</span>
+</span><span class='line'>  <span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;&lt;</span><span class="sx">%=p.category.name%&gt;&lt;/h1&gt;</span>
+</span><span class='line'><span class="sx">  &lt;%=</span><span class="n">image_tag</span> <span class="nb">p</span><span class="o">.</span><span class="n">author</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">public_filename</span> <span class="sx">%&gt; </span>
+</span><span class='line'><span class="sx">  &lt;p&gt;</span><span class="o">&lt;%=</span><span class="nb">p</span><span class="o">.</span><span class="n">body</span><span class="sx">%&gt; </span>
+</span><span class='line'><span class="sx"> &lt;%end%&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>此代码与之前一样亦遭遇了相同的 N+1 问题,但修复的语法却没有那么明显,因为这里所使用的是关系的关系.那么如何才能立即加载嵌套关系呢?</p>
+
+<p>正确的答案是使用 <code>:include</code> 子句的哈希语法.清单 6 给出了使用哈希语法的一个嵌套的立即加载.</p>
+
+<h3>清单 6. 嵌套的立即加载解决方案</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="vi">@posts</span> <span class="o">=</span> <span class="no">Post</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="ss">:all</span><span class="p">,</span> <span class="ss">:include</span><span class="o">=&gt;</span><span class="p">{</span> <span class="ss">:category</span><span class="o">=&gt;[]</span><span class="p">,</span>
+</span><span class='line'>                                       <span class="ss">:author</span><span class="o">=&gt;</span><span class="p">{</span> <span class="ss">:image</span><span class="o">=&gt;[]</span><span class="p">}}</span> <span class="p">)</span>
+</span><span class='line'><span class="vi">@posts</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="nb">p</span><span class="o">|</span>
+</span><span class='line'>  <span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;&lt;</span><span class="sx">%=p.category.name%&gt;&lt;/h1&gt;</span>
+</span><span class='line'><span class="sx">  &lt;%=</span><span class="n">image_tag</span> <span class="nb">p</span><span class="o">.</span><span class="n">author</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">public_filename</span> <span class="sx">%&gt; </span>
+</span><span class='line'><span class="sx">  &lt;p&gt;</span><span class="o">&lt;%=</span><span class="nb">p</span><span class="o">.</span><span class="n">body</span><span class="sx">%&gt; </span>
+</span><span class='line'><span class="sx"> &lt;%end%&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>正如您所见,您可以嵌套哈希和数组实量(literal).请注意在本例中哈希和数组之间的惟一区别是哈希可以含有嵌套的子条目,而数组则不能.否则,二者是等效的.</p>
+
+<h2>间接的立即加载</h2>
+
+<p>并非所有的 N+1 问题都能很容易地察觉到.例如,清单 7 能生成多少查询?</p>
+
+<h3>清单 7. 间接的立即加载示例用例</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'>  <span class="o">&lt;</span><span class="sx">%@user = User.find(5)</span>
+</span><span class='line'><span class="sx">    @</span><span class="n">user</span><span class="o">.</span><span class="n">posts</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="nb">p</span><span class="o">|</span><span class="sx">%&gt;   </span>
+</span><span class='line'><span class="sx">      &lt;%=render :partial=&gt;</span><span class="s1">&#39;posts/summary&#39;</span><span class="p">,</span>  <span class="ss">:locals</span><span class="o">=&gt;</span><span class="ss">:post</span><span class="o">=&gt;</span><span class="nb">p</span>
+</span><span class='line'>     <span class="sx">%&gt; &lt;%end%&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>当然,决定查询的数量需要对 <code>posts/summary</code> partial 有所了解.清单 8 中显示了这个 partial.</p>
+
+<h3>清单 8. 间接立即加载 partial: posts/_summary.html.erb</h3>
+
+<p>  <code>&lt;h1&gt;&lt;%=post.user.name%&gt;&lt;/h1&gt;</code>
+不幸的是,答案是 <strong>清单 7</strong><em> 和 <strong>清单 8</strong></em> 在 post 内每行生成一个额外查询,查找用户的名字 — 即便 post 对象由 ActiveRecord 从一个已在内存中的 User 对象自动生成.简言之,Rails 并不能关联子记录与其父记录.<br/>
+修复方法是使用自引用的立即加载.基本上,由于 Rails 重载由父记录生成的子记录,所以需要立即加载这些父记录,就如同父与子记录之间是完全分开的关系一样.代码如清单 9 所示.</p>
+
+<h3>清单 9. 间接的立即加载解决方案</h3>
+
+<p>  <code>ruby
+  &lt;%@user = User.find(5, :include=&gt;{:posts=&gt;[:user]})
+  ...snip...
+ </code></p>
+
+<p>虽然有悖于直觉,但这种技术与上述技术的工作原理大致相似.但是,很容易使用这种技术进行过多的嵌套,尤其是在体系结构复杂的情况下.简单的用例还好,比如 清单 9 内所示的,但繁复的嵌套也会出问题.在一些情况下,过多地加载 Ruby 对象有可能会比处理 N+1 问题还要缓慢 — 尤其是当每个对象并没有被整个树遍历时.在该种情况下,N+1 问题的其他解决方案可能更为适合.</p>
+
+<p>一种方式是使用缓存技术.Rails V2.1 内置了简单的缓存访问.使用 Rails.cache.read、 Rails.cache.write 及相关方法,可以轻松创建自己的简单缓存机制,并且后端可以是一个简单的内存后端、一个基于文件的后端或一个分布式缓存服务器.在 <a href="http://www.ibm.com/developerworks/cn/opensource/os-Railsn1/index.html#resources">参考资料</a> 部分可以找到有关 Rails 内置缓存支持的更多信息.但您无需创建自己的缓存解决方案；您可以使用一个预置的 Rails 插件,比如 Nick Kallen 的 cache money 插件.这个插件提供了 write-through 缓存并以 Twitter 上使用的代码为基础.更多信息参见 <a href="http://www.ibm.com/developerworks/cn/opensource/os-Railsn1/index.html#resources">参考资料</a>.</p>
+
+<p>当然,并不是所有的 Rails 问题都与查询的数量有关.</p>
+
+<h2>Rails 分组和聚合计算</h2>
+
+<p>您可能遇到的一个问题是在 Ruby 所做的工作本应由数据库完成.这考验了 Ruby 的强大程度.很难想象在没有任何重大激励的情况下人们会自愿在 C 中重新实现其数据库代码的各个部分,但很容易在 Rails 内对 ActiveRecord 对象组进行类似的计算.但是,Ruby 总是要比数据库代码慢.所以请不要使用纯 Ruby 的方式执行计算,如清单 10 所示.</p>
+
+<h3>清单 10. 执行分组计算的不正确方式</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'> <span class="n">all_ages</span> <span class="o">=</span> <span class="no">Person</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="ss">:all</span><span class="p">)</span><span class="o">.</span><span class="n">group_by</span><span class="p">(</span><span class="o">&amp;</span><span class="ss">:age</span><span class="p">)</span><span class="o">.</span><span class="n">keys</span><span class="o">.</span><span class="n">uniq</span>
+</span><span class='line'>  <span class="n">oldest_age</span> <span class="o">=</span> <span class="no">Person</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="ss">:all</span><span class="p">)</span><span class="o">.</span><span class="n">max</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>相反,Rails 提供了一系列的分组和聚合函数.可以像清单 11 所示的那样使用它们.</p>
+
+<h3>清单 11. 执行分组计算的正确方式</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'> <span class="n">all_ages</span> <span class="o">=</span> <span class="no">Person</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="ss">:all</span><span class="p">,</span> <span class="ss">:group</span><span class="o">=&gt;[</span><span class="ss">:age</span><span class="o">]</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">oldest_age</span> <span class="o">=</span> <span class="no">Person</span><span class="o">.</span><span class="n">calcuate</span><span class="p">(</span><span class="ss">:max</span><span class="p">,</span> <span class="ss">:age</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>ActiveRecord::Base#find 有大量选项可用于模仿 SQL.更多信息可以在 Rails 文档内找到.注意,calculate 方法可适用于受数据库支持的任何有效的聚合函数,比如 <code>:min</code>、<code>:sum</code> 和 <code>:avg</code>.此外,calculate 能够接受若干实参,比如 <code>:conditions</code>.查阅 Rails 文档以获得更详细的信息.</p>
+
+<p>不过,并不是在 SQL 内能做的所有事情在 Rails 内也能做.如果插件不够,可以使用定制 SQL.</p>
+
+<h2>用 Rails 定制 SQL</h2>
+
+<p>假设有这样一个表,内含人的职业、年龄以及在过去一年中涉及到他们的事故的数量.可以使用一个定制  SQL 语句来检索此信息,如清单 12 所示.</p>
+
+<h3>清单 12. 用 ActiveRecord 定制 SQL 的例子</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">sql</span> <span class="o">=</span> <span class="s2">&quot;SELECT profession,</span>
+</span><span class='line'><span class="s2">              AVG(age) as average_age,  </span>
+</span><span class='line'><span class="s2">              AVG(accident_count) </span>
+</span><span class='line'><span class="s2">         FROM persons </span>
+</span><span class='line'><span class="s2">        GROUP </span>
+</span><span class='line'><span class="s2">           BY profession&quot;</span>
+</span><span class='line'>
+</span><span class='line'><span class="no">Person</span><span class="o">.</span><span class="n">find_by_sql</span><span class="p">(</span><span class="n">sql</span><span class="p">)</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">row</span><span class="o">|</span>
+</span><span class='line'>  <span class="nb">puts</span> <span class="s2">&quot;</span><span class="si">#{</span><span class="n">row</span><span class="o">.</span><span class="n">profession</span><span class="si">}</span><span class="s2">, &quot;</span> <span class="o">&lt;&lt;</span>
+</span><span class='line'>       <span class="s2">&quot;avg. age: </span><span class="si">#{</span><span class="n">row</span><span class="o">.</span><span class="n">average_age</span><span class="si">}</span><span class="s2">, &quot;</span> <span class="o">&lt;&lt;</span>
+</span><span class='line'>       <span class="s2">&quot;avg. accidents: </span><span class="si">#{</span><span class="n">row</span><span class="o">.</span><span class="n">average_accident_count</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>这个脚本应该能生成清单 13 所示的结果.</p>
+
+<h3>清单 13. 用 ActiveRecord 定制 SQL 的输出</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'>  <span class="no">Programmer</span><span class="p">,</span> <span class="n">avg</span><span class="o">.</span> <span class="ss">age</span><span class="p">:</span> <span class="mi">18</span><span class="o">.</span><span class="mo">010</span><span class="p">,</span> <span class="n">avg</span><span class="o">.</span> <span class="ss">accidents</span><span class="p">:</span> <span class="mi">9</span>
+</span><span class='line'>  <span class="no">System</span> <span class="no">Administrator</span><span class="p">,</span> <span class="n">avg</span><span class="o">.</span> <span class="ss">age</span><span class="p">:</span> <span class="mi">22</span><span class="o">.</span><span class="mi">720</span><span class="p">,</span> <span class="n">avg</span><span class="o">.</span> <span class="ss">accidents</span><span class="p">:</span> <span class="mi">8</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>当然,这是最简单的例子.您可以自己想象一下如何能将此例中的 SQL 扩展成一个有些复杂性的 SQL 语句.您还可以使用 <code>ActiveRecord::Base.connection.execute</code> 方法运行其他类型的 SQL 语句,比如 ALTER TABLE 语句,如清单 14 所示.</p>
+
+<h3>清单 14. 用 ActiveRecord 定制非查找型 SQL</h3>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'>  <span class="ss">ActiveRecord</span><span class="p">:</span><span class="ss">:Base</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">execute</span> <span class="s2">&quot;ALTER TABLE some_table CHANGE COLUMN...&quot;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>大多数的模式操作,比如添加和删除列,都可以使用 Rails 的内置方法完成.但如果需要,也可以使用执行任意 SQL 代码的能力.</p>
+
+<h2>结束语</h2>
+
+<p>与所有的框架一样,如果不多加小心和注意,Ruby on Rails 也会遭遇性能问题.所幸的是,监控和修复这些问题的技术相对简单且易学,而且即便是复杂的问题,只要有耐心并对性能问题的源头有所了解,也是可以解决的.</p>
+
+		
+		
+	</div>
+
+<div class="meta">
+	
+		<span class="comments"><a href="/blog/2011/12/25/ror-performance//blog/page/13/index.html#disqus_thread">Comments</a></span>
+	
+</div>
+</article>
 
 
     <article class="post">
@@ -653,55 +1146,6 @@
 <div class="meta">
 	
 		<span class="comments"><a href="/blog/2011/10/29/diary-i-am-old//blog/page/13/index.html#disqus_thread">Comments</a></span>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2011/09/05/half-university-life/">
-		
-			1/2 的大学</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-09-05T17:29:00+08:00" pubdate data-updated="true">Sep 5<span>th</span>, 2011</time></div>
-      <div class="tags">Tags: 
-
-
-	<a class='category' href='/blog/categories/jabber/'>Jabber</a>
-
-
-</div>
-    </div>
-		<p>很久很久以前,曾经写过偶八分之一大学感想.才发现,原来,原来我第一天上大学也如今天一样是9月5号!!不过,今天是2011的9月5号!!也就意味着,我现在写的应该叫做我的二分之一大学感想!<br/>
-有时候会觉得,我已经不是从前那个我,我还是从前那个我!! ╮(╯▽╰)╭我貌似又在说废话了! <br/>
-前不久,一个舍友在电话里询问一位师兄关于咱们专业的未来发展问题!我感觉,那是大一的问题,甚至是我大一也懒得去问的问题!!小小的为他悲哀下!其实感觉他是太好学了!什么都想拥有,结果却在奋斗的路上迷路了!真的,当他说出那句&#8221;我想问下我们专业以后的发展…&#8221;我第一时间回想起大一!如果一早就有了自己的规划应该不会等到现在大三了还如此吧!<br/>
-之前,我说,心,要决!那是要建立在有了自己的规划下,许多人总会用一句计划赶不上变化来为自己的不计划找借口!我自认为也是个随性的人,但是,规划的益处还是大大滴有啊!在我看来,做了规划不去努力履行会有良心在谴责自己!好像有点点夸张!不过我现在就有那么点那种感觉吧!<br/>
-这个大二,应该会是大学四年最让我感到失败的一年!虽然依旧贯彻那些思想,依旧各种逃课,可却没有好好利用这逃来的课!!我是规划的不错,可是却没有好好努力去履行!!自学的进展比计划慢的多的多!以至于真的计划发生了变化! <br/>
-大三,刚过去一个礼拜,一切似乎渐渐又步入正轨!!不知道能坚持到多久??先写着这么多吧,晚了,先睡去!!期待明天的聚餐!</p>
-
-		
-		
-	</div>
-
-<div class="meta">
-	
-		<span class="comments"><a href="/blog/2011/09/05/half-university-life//blog/page/13/index.html#disqus_thread">Comments</a></span>
 	
 </div>
 </article>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Heroku | XguoX]]></title>
   <link href="http://xguox.github.com/blog/categories/heroku/atom.xml" rel="self"/>
   <link href="http://xguox.github.com/"/>
-  <updated>2014-01-04T18:12:43+08:00</updated>
+  <updated>2014-01-04T21:08:52+08:00</updated>
   <id>http://xguox.github.com/</id>
   <author>
     <name><![CDATA[XguoX]]></name>
@@ -12,6 +12,41 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[是在扯不等使的事儿吗?]]></title>
+    <link href="http://xguox.github.com/blog/2014/01/04/heroku-rails-do4fun-theme/"/>
+    <updated>2014-01-04T21:08:09+08:00</updated>
+    <id>http://xguox.github.com/blog/2014/01/04/heroku-rails-do4fun-theme</id>
+    <content type="html"><![CDATA[<h4>Rails</h4>
+
+<p>发觉之前又犯二了, 在 console 里头错把 delete 当 destroy 删除一条记录, 把数据库搞得一坨乱. 还是一直纠结 has_many 的 dependent 参数不是已经设置了 destroy 了,肿么不会关联上!!!  原来是这个地方烧饼lity 了!</p>
+
+<p>区别</p>
+
+<h4><a href="http://do4fun.herokuapp.com/">do4fun </a></h4>
+
+<p><a href="http://do4fun.herokuapp.com/">do4fun </a>这个项目进行了也有一段时间, 小有成型的样子.   今天忽然蛋疼把背景的整体色调从原本的略骚的橙红改成了现今的灰白.  布局没变.</p>
+
+<p><img src="http://ww1.sinaimg.cn/mw690/62fdd4d5gw1ec7sglc154j21400p0jxy.jpg" alt="" /></p>
+
+<p><img src="http://ww4.sinaimg.cn/mw690/62fdd4d5gw1ec7sg2wg9lj21400p07ed.jpg" alt="" /></p>
+
+<p>actually, 我还是略喜欢前者.  页面设计上总是没什么感觉啊!</p>
+
+<p>另外又把 xguox.me 的主题换了,  这次用的是<a href="https://github.com/panks/fabric"> Theme fabric by Pankaj Kumar</a>, 没怎么调, 就只是换了背景图&hellip;</p>
+
+<p>好吧, 我不会告诉你是因为换了这个主题才想要把<a href="http://do4fun.herokuapp.com/">do4fun </a> 的对调过来了.</p>
+
+<h4>Heroku</h4>
+
+<p>最后扯扯 heroku ,  除了访问速度在天朝略微蛋疼外 heroku 真心是个好东西, 每次有什么想玩的都是在 heroku  上部署实践. 包括这次的 <a href="http://do4fun.herokuapp.com/">do4fun </a> 项目. 尤其很多插件都不错.</p>
+
+<p>不过最近部署 这个Rails 4 的时候出了点状况, 在 应该是 ckeditor 的问题, 在 <a href="http://stackoverflow.com/questions/20811788/deploy-rails4-with-ckeditor-to-heroku-failed-with-time-out-assetsprecompile">StackOverflow</a> 上提问也没结果.</p>
+
+<p>如果访问速度能给力些的话, 跟 linode 之流抗衡那是杠杠的!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Deploying Ghost to Heroku]]></title>

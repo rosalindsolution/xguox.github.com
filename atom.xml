@@ -4,7 +4,7 @@
   <title><![CDATA[XguoX]]></title>
   <link href="http://xguox.github.com/atom.xml" rel="self"/>
   <link href="http://xguox.github.com/"/>
-  <updated>2014-01-04T18:12:43+08:00</updated>
+  <updated>2014-01-04T21:08:52+08:00</updated>
   <id>http://xguox.github.com/</id>
   <author>
     <name><![CDATA[XguoX]]></name>
@@ -12,6 +12,41 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[是在扯不等使的事儿吗?]]></title>
+    <link href="http://xguox.github.com/blog/2014/01/04/heroku-rails-do4fun-theme/"/>
+    <updated>2014-01-04T21:08:09+08:00</updated>
+    <id>http://xguox.github.com/blog/2014/01/04/heroku-rails-do4fun-theme</id>
+    <content type="html"><![CDATA[<h4>Rails</h4>
+
+<p>发觉之前又犯二了, 在 console 里头错把 delete 当 destroy 删除一条记录, 把数据库搞得一坨乱. 还是一直纠结 has_many 的 dependent 参数不是已经设置了 destroy 了,肿么不会关联上!!!  原来是这个地方烧饼lity 了!</p>
+
+<p>区别</p>
+
+<h4><a href="http://do4fun.herokuapp.com/">do4fun </a></h4>
+
+<p><a href="http://do4fun.herokuapp.com/">do4fun </a>这个项目进行了也有一段时间, 小有成型的样子.   今天忽然蛋疼把背景的整体色调从原本的略骚的橙红改成了现今的灰白.  布局没变.</p>
+
+<p><img src="http://ww1.sinaimg.cn/mw690/62fdd4d5gw1ec7sglc154j21400p0jxy.jpg" alt="" /></p>
+
+<p><img src="http://ww4.sinaimg.cn/mw690/62fdd4d5gw1ec7sg2wg9lj21400p07ed.jpg" alt="" /></p>
+
+<p>actually, 我还是略喜欢前者.  页面设计上总是没什么感觉啊!</p>
+
+<p>另外又把 xguox.me 的主题换了,  这次用的是<a href="https://github.com/panks/fabric"> Theme fabric by Pankaj Kumar</a>, 没怎么调, 就只是换了背景图&hellip;</p>
+
+<p>好吧, 我不会告诉你是因为换了这个主题才想要把<a href="http://do4fun.herokuapp.com/">do4fun </a> 的对调过来了.</p>
+
+<h4>Heroku</h4>
+
+<p>最后扯扯 heroku ,  除了访问速度在天朝略微蛋疼外 heroku 真心是个好东西, 每次有什么想玩的都是在 heroku  上部署实践. 包括这次的 <a href="http://do4fun.herokuapp.com/">do4fun </a> 项目. 尤其很多插件都不错.</p>
+
+<p>不过最近部署 这个Rails 4 的时候出了点状况, 在 应该是 ckeditor 的问题, 在 <a href="http://stackoverflow.com/questions/20811788/deploy-rails4-with-ckeditor-to-heroku-failed-with-time-out-assetsprecompile">StackOverflow</a> 上提问也没结果.</p>
+
+<p>如果访问速度能给力些的话, 跟 linode 之流抗衡那是杠杠的!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[2014!]]></title>
@@ -2748,41 +2783,6 @@ heroku config:set NODE_ENV=production</code></p>
 
 <p>P.S. 写blog另一个目的是想要捣腾一番这些程序, Octopress啊,Hexo啊,以前小弄过一会Wordpress就没继续玩儿了. 原本甚至还准备去弄一弄Haskell版本的<a href="http://jaspervdj.be/hakyll/">Hakyll</a>.
 还有刚发布的<a href="https://ghost-xguox.rhcloud.com/">Ghost</a>, 题外话,Ghost的Markdown支持比之简书好的是预览跟随原文同时滚动, 另外移动端的Markdown体验也要稍好点.  Anyway, 定位不一样不扯淡, 再说可能林立君早用不着预览了吧=.=</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[简书,Safari(Mac),Bug?]]></title>
-    <link href="http://xguox.github.com/blog/2013/10/13/jianshu-tiny-bug/"/>
-    <updated>2013-10-13T22:26:00+08:00</updated>
-    <id>http://xguox.github.com/blog/2013/10/13/jianshu-tiny-bug</id>
-    <content type="html"><![CDATA[<p>前不久在<a href="https://twitter.com/XguoX_L/statuses/388577622990389248">twitter</a>跟@larry 反馈了的Bug,但是当时很快耍着耍着就没了,又正常了,于是撒手结帖了.然则,比较奇葩,刚刚又不小心再现了,虽然只是很微小的一处不妥,但影响到UX的话, 我表示有点轻微的强迫症,外加Twitter上 140 字符配以我的文字水平不足以表述清楚.所以还是写作文好了.</p>
-
-<p>鉴于上一次滚动条受Thunder插件的影响,所以这次我把Safari的插件全关了.(同样方式,其他浏览器无任何异常)</p>
-
-<p>这个Bug是这样的:</p>
-
-<blockquote><p>删除文章的垃圾桶icon在Safari下hover在中间和右边表示不能点选(如图,鼠标未改变),只有hover在偏向左侧的地方才work,其他浏览器正常.</p></blockquote>
-
-<p><img src="https://7nmnbw.dm2302.livefilestore.com/y2pMd9Hqqq8zcLNm4HmC2VAXY0If8JNgrxOQ_YyS5esT5C65NGiPyPXRGBas-Ggdk13KnyUpKqHmk7maKNQ2A29iNMWEjSIoPGIErQmhg0Akzo/tu1.jpg?psid=1" alt="" /></p>
-
-<p>正常情况下(鼠标的形状)应该是</p>
-
-<p><img src="https://7nomkg.dm1.livefilestore.com/y2pnQSLb70jLri1R75fAlctMv9tStL7PtnGGP3-9mbRg3ncEeEmRaKOTcxCzdUxpjxXlxMBvtFfQzeR39oxhEFQLiojchvoAQj1RUHvqOvOda0/tu2.jpg?psid=1" alt="" /></p>
-
-<p><strong>为什么偶尔会正常,偶尔抽风?</strong></p>
-
-<p>请看下面两图,看看有啥不同</p>
-
-<p><img src="https://h0hcka.dm1.livefilestore.com/y2pA5ROBtWFdo3kL875emP4XeTT-N7OzbNPXLq1AmqEx1XYSHM40ObSCBL5lkCK1GXPKC1BxSDd8EUsKiyjNWP8ZbC75vhdLewfOKOBLrSd_j4/tu3.jpg?psid=1" alt="" /></p>
-
-<p><img src="https://h0j3ba.dm2302.livefilestore.com/y2pibC_etDmFwTYabbHWr8bXvV4USwL-NF922Ax2NkXzIH6kOYg4uxNoVs-AKL5c0qJH74vJssJxcziLn2TMu43YVVuIZ81IDDOqhzP0d-iA_o/tu4.jpg?psid=1" alt="" /></p>
-
-<p>经反复的、<strong>不严格的</strong>控制变量法实验,目前我的解释是,当一个文集里边的文章数量足够多到出现中间栏的滚动条之后, 就会出现这个删除icon不正常的状况.</p>
-
-<p>至于,为嘛出现这种情况,留给简书的小伙伴们吧.</p>
-
-<p>请使用Mac的用户帮忙测试看看,看是通病还是我个人机器、软件等出了问题.</p>
 ]]></content>
   </entry>
   
