@@ -1,64 +1,129 @@
 
 <!DOCTYPE HTML>
-<html lang="en-GB">
+<html>
 <head>
 	<meta charset="utf-8">
-	<title>Coder & Jabber  | XguoX</title>
-
-	<meta name="author" content="XguoX">
-
-<meta name="description" content="真心尴尬,学习并使用了一年多的 Ruby/Rails,然后些个月不碰就忘了大半了.原本就不高端,这一回滚跟重头再来差不多了. 语法还能快速过了一遍.(主要通过 CodeSchool) 元编程,DSL那一块接下来可要费点劲了,毕竟原先也没完全掌握到. 今天学到两个之前没注意的 tricks. &hellip;"> <meta name="keywords" content="">
-
+	<title>XguoX</title>
+    <meta name="author" content="XguoX">
+    
+	<meta name="description" content="Published on: Nov 4th, 2013 Tags: Ruby 真心尴尬,学习并使用了一年多的 Ruby/Rails,然后些个月不碰就忘了大半了.原本就不高端,这一回滚跟重头再来差不多了. 语法还能快速过了一遍.(主要通过 CodeSchool) 元编程, &hellip;">
+	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 	<link href="/atom.xml" rel="alternate" title="XguoX" type="application/atom+xml">
 	<link rel="canonical" href="">
-	<link href="/favicon.png" rel="shortcut icon">
-	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-	
+	<link href="/favicon.ico" rel="shortcut icon">
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+
+    <link href='http://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Amethysta' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <script type="text/javascript" src="/javascripts/jquery-tapir.js"></script>
+
+    <!-- remove or comment it to disable ajaxification -->   
+    <script src="/javascripts/ajaxify.js"></script>
+   
+    
+    
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-39166710-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
 
 </head>
 
 
-
 <body>
-	<header id="header" class="inner"><h1><a href="/">XguoX</a></h1>
-<span class="tagline">Coder & Jabber</span>
-<nav id="main-nav"><ul>
-	<li><a href="http://www.flickr.com/photos/groverlu/sets" target="_blank">Flickr</a></li>
-	<li><a href="/about">About</a></li>
-	<li><a href="/atom.xml">RSS</a></li>
+    <div id="wrapper">
+    <header id="header" class="inner"><!-- for more effects see _animate.scss -->
+<h1 class="animated bounceInDown">
+    <div id="headerbg">
+        XguoX
+    </div>
+</h1>
+<br>
+
+<ul id="social-links" style="text-align:center">
+  
+  <!-- GitHub -->
+  <li>
+  <a href="https://github.com/xguox" class="github" title="Github"></a>
+  </li>
+  
+  
+  <!-- Google Plus -->
+  <li>
+  <a href="http://plus.google.com/108737859837240042867?rel=author" class="google" title="Google+"></a>
+  </li>
+  
+  
+  
+  <!-- Flickr -->
+  <li>
+  <a href="http://www.flickr.com/photos/GroverLu" class="flickr" title="Flickr"></a>
+  </li>
+  
+  
+  <!-- Twitter -->
+  <li>
+  <a href="http://www.twitter.com/xguox_l" class="twitter" title="Twitter"></a>
+  </li>
+  
+  
+  
+  
+  
 </ul>
-</nav>
-<nav id="mobile-nav">
-	<div class="alignleft menu">
-		<a class="button">Menu</a>
-		<div class="container"><ul>
-	<li><a href="http://www.flickr.com/photos/groverlu/sets" target="_blank">Flickr</a></li>
-	<li><a href="/about">About</a></li>
-	<li><a href="/atom.xml">RSS</a></li>
+
+
+<!-- use full url including 'index.html' for navigation bar if you are using ajax -->
+<ul id="nav">
+	<li id="ajax"><a href="/index.html">Home</a></li>
+	<li id="ajax"><a href="/blog/archives/index.html">Archives</a></li>
+    <li><a href="/atom.xml">RSS</a></li>
+    
+    <li>
+    <div id="dark">
+        <form method="get" action="/search.html" id="search">
+            <input name="query" type="text" placeholder="Search..." x-webkit-speech />
+        </form>
+    </div>
+    </li>
+        
 </ul>
-</div>
-	</div>
-</nav>
+
+
 
 
 </header>
 
-	<div id="content" class="inner">
+<div id="toload">
+<!-- begin toload --> 
+    <div id="content" class="inner">
+        
 
 
     <article class="post">
-	<header>
-		<h2 class="title">
-			
-			<a href="/blog/2013/11/04/relearn-ruby/">
-			
-				重拾Ruby (I)</a>
-		</h2>
-		<div class="meta date">
+	<h2 class="title">
+		
+		<a href="/blog/2013/11/04/relearn-ruby/">
+		
+			重拾Ruby (I)</a>
+	</h2>
+    <div class="entry-content">
+    <div class="meta">
+      <div class="date">Published on: 
 
 
 
@@ -71,8 +136,14 @@
 
 
 <time datetime="2013-11-04T14:47:00+08:00" pubdate data-updated="true">Nov 4<span>th</span>, 2013</time></div>
-	</header>
-	<div class="entry-content">
+      <div class="tags">Tags: 
+
+
+	<a class='category' href='/blog/categories/ruby/'>Ruby</a>
+
+
+</div>
+    </div>
 		<p>真心尴尬,学习并使用了一年多的 Ruby/Rails,然后些个月不碰就忘了大半了.原本就不高端,这一回滚跟重头再来差不多了. 语法还能快速过了一遍.(主要通过 <a href="https://www.codeschool.com/">CodeSchool</a>) 元编程,DSL那一块接下来可要费点劲了,毕竟原先也没完全掌握到.</p>
 
 <p>今天学到两个之前没注意的 tricks.</p>
@@ -616,18 +687,24 @@
 		
 	</div>
 
+<div class="meta">
+	
+		<span class="comments"><a href="/blog/2013/11/04/relearn-ruby//blog/page/3/index.html#disqus_thread">Comments</a></span>
+	
+</div>
 </article>
 
 
     <article class="post">
-	<header>
-		<h2 class="title">
-			
-			<a href="/blog/2013/10/28/hidden-productivity-secrets-with-alfred/">
-			
-				Hidden Productivity Secrets With Alfred</a>
-		</h2>
-		<div class="meta date">
+	<h2 class="title">
+		
+		<a href="/blog/2013/10/28/hidden-productivity-secrets-with-alfred/">
+		
+			Hidden Productivity Secrets With Alfred</a>
+	</h2>
+    <div class="entry-content">
+    <div class="meta">
+      <div class="date">Published on: 
 
 
 
@@ -640,8 +717,14 @@
 
 
 <time datetime="2013-10-28T15:07:00+08:00" pubdate data-updated="true">Oct 28<span>th</span>, 2013</time></div>
-	</header>
-	<div class="entry-content">
+      <div class="tags">Tags: 
+
+
+	<a class='category' href='/blog/categories/tools/'>Tools</a>, <a class='category' href='/blog/categories/translate/'>Translate</a>, <a class='category' href='/blog/categories/tricks/'>Tricks</a>
+
+
+</div>
+    </div>
 		<p>好的开发人员总是在寻找可以让自己的工作流程更快速,更自动化的方法.<br/>
 这次,我们带来的是<strong>Alfred的一系列workflows</strong>,它们可以极大的提高你的开发效率,相信你会为之震惊.</p>
 
@@ -909,18 +992,24 @@
 		
 	</div>
 
+<div class="meta">
+	
+		<span class="comments"><a href="/blog/2013/10/28/hidden-productivity-secrets-with-alfred//blog/page/3/index.html#disqus_thread">Comments</a></span>
+	
+</div>
 </article>
 
 
     <article class="post">
-	<header>
-		<h2 class="title">
-			
-			<a href="/blog/2013/10/20/diary-about-wedding-about-photography/">
-			
-				Wedding, Photography</a>
-		</h2>
-		<div class="meta date">
+	<h2 class="title">
+		
+		<a href="/blog/2013/10/20/diary-about-wedding-about-photography/">
+		
+			Wedding, Photography</a>
+	</h2>
+    <div class="entry-content">
+    <div class="meta">
+      <div class="date">Published on: 
 
 
 
@@ -933,8 +1022,14 @@
 
 
 <time datetime="2013-10-20T23:37:00+08:00" pubdate data-updated="true">Oct 20<span>th</span>, 2013</time></div>
-	</header>
-	<div class="entry-content">
+      <div class="tags">Tags: 
+
+
+	<a class='category' href='/blog/categories/jabber/'>Jabber</a>
+
+
+</div>
+    </div>
 		<p>随着年龄的成长,现在跟朋友在一起聊的话题似乎从以往的各种扯淡转变成了 婚姻 &amp; 工作.毕业后这些日子更明显了.这不又一对老同学结成连理了.往后还陆续有来叻！</p>
 
 <p>昨天说到牛总明年的婚事,我和甫表示各种强烈赞成建议他抛弃那些个什么Benz,BMW,四个圈之类的去迎亲,改用超豪华得大巴更拉风  XD</p>
@@ -968,18 +1063,24 @@
 		
 	</div>
 
+<div class="meta">
+	
+		<span class="comments"><a href="/blog/2013/10/20/diary-about-wedding-about-photography//blog/page/3/index.html#disqus_thread">Comments</a></span>
+	
+</div>
 </article>
 
 
     <article class="post">
-	<header>
-		<h2 class="title">
-			
-			<a href="/blog/2013/10/18/deploying-ghost-to-heroku/">
-			
-				Deploying Ghost to Heroku</a>
-		</h2>
-		<div class="meta date">
+	<h2 class="title">
+		
+		<a href="/blog/2013/10/18/deploying-ghost-to-heroku/">
+		
+			Deploying Ghost to Heroku</a>
+	</h2>
+    <div class="entry-content">
+    <div class="meta">
+      <div class="date">Published on: 
 
 
 
@@ -992,8 +1093,14 @@
 
 
 <time datetime="2013-10-18T13:00:00+08:00" pubdate data-updated="true">Oct 18<span>th</span>, 2013</time></div>
-	</header>
-	<div class="entry-content">
+      <div class="tags">Tags: 
+
+
+	<a class='category' href='/blog/categories/ghost/'>Ghost</a>, <a class='category' href='/blog/categories/heroku/'>Heroku</a>
+
+
+</div>
+    </div>
 		<p>原本没有意思要班门弄斧写什么Ghost的部署感受帖的,不过前些天看到@lucifr 的这条tweet,于是还是忍不住写了,就让更多假死Ghost诞生吧.</p>
 
 <blockquote class="twitter-tweet"><p>ghost 一出,网上又要冒出一大堆主题风格相似的 blog 了,然后更新两篇使用感受就处于假死状态</p>&mdash; Lucifr (@lucifr) <a href="https://twitter.com/lucifr/statuses/390104155152343040">October 15, 2013</a></blockquote>
@@ -1187,18 +1294,24 @@ heroku config:set NODE_ENV=production</code></p>
 		
 	</div>
 
+<div class="meta">
+	
+		<span class="comments"><a href="/blog/2013/10/18/deploying-ghost-to-heroku//blog/page/3/index.html#disqus_thread">Comments</a></span>
+	
+</div>
 </article>
 
 
     <article class="post">
-	<header>
-		<h2 class="title">
-			
-			<a href="/blog/2013/10/16/thinking-why-blog/">
-			
-				换主题说起,再思,写blog为哪般</a>
-		</h2>
-		<div class="meta date">
+	<h2 class="title">
+		
+		<a href="/blog/2013/10/16/thinking-why-blog/">
+		
+			换主题说起,再思,写blog为哪般</a>
+	</h2>
+    <div class="entry-content">
+    <div class="meta">
+      <div class="date">Published on: 
 
 
 
@@ -1211,8 +1324,14 @@ heroku config:set NODE_ENV=production</code></p>
 
 
 <time datetime="2013-10-16T17:40:00+08:00" pubdate data-updated="true">Oct 16<span>th</span>, 2013</time></div>
-	</header>
-	<div class="entry-content">
+      <div class="tags">Tags: 
+
+
+	<a class='category' href='/blog/categories/jabber/'>Jabber</a>
+
+
+</div>
+    </div>
 		<p>隔三差五会把Octopress的主题换一换, 换件衣服换个心情.</p>
 
 <p>这次换的是这么多次更换以来个人觉得最赞的一次,基于<a href="https://github.com/tcnksm/mnmlpress">mnmlpress</a> , 貌似这个源项目也是fork自另外一个改编而成的.  然后那一个也是同样.  Anyway, Octopress的主题大部分都这么改成的.</p>
@@ -1254,18 +1373,24 @@ heroku config:set NODE_ENV=production</code></p>
 		
 	</div>
 
+<div class="meta">
+	
+		<span class="comments"><a href="/blog/2013/10/16/thinking-why-blog//blog/page/3/index.html#disqus_thread">Comments</a></span>
+	
+</div>
 </article>
 
 
     <article class="post">
-	<header>
-		<h2 class="title">
-			
-			<a href="/blog/2013/10/13/jianshu-tiny-bug/">
-			
-				简书,Safari(Mac),Bug?</a>
-		</h2>
-		<div class="meta date">
+	<h2 class="title">
+		
+		<a href="/blog/2013/10/13/jianshu-tiny-bug/">
+		
+			简书,Safari(Mac),Bug?</a>
+	</h2>
+    <div class="entry-content">
+    <div class="meta">
+      <div class="date">Published on: 
 
 
 
@@ -1278,8 +1403,10 @@ heroku config:set NODE_ENV=production</code></p>
 
 
 <time datetime="2013-10-13T22:26:00+08:00" pubdate data-updated="true">Oct 13<span>th</span>, 2013</time></div>
-	</header>
-	<div class="entry-content">
+      <div class="tags">Tags: 
+
+</div>
+    </div>
 		<p>前不久在<a href="https://twitter.com/XguoX_L/statuses/388577622990389248">twitter</a>跟@larry 反馈了的Bug,但是当时很快耍着耍着就没了,又正常了,于是撒手结帖了.然则,比较奇葩,刚刚又不小心再现了,虽然只是很微小的一处不妥,但影响到UX的话, 我表示有点轻微的强迫症,外加Twitter上 140 字符配以我的文字水平不足以表述清楚.所以还是写作文好了.</p>
 
 <p>鉴于上一次滚动条受Thunder插件的影响,所以这次我把Safari的插件全关了.(同样方式,其他浏览器无任何异常)</p>
@@ -1312,18 +1439,24 @@ heroku config:set NODE_ENV=production</code></p>
 		
 	</div>
 
+<div class="meta">
+	
+		<span class="comments"><a href="/blog/2013/10/13/jianshu-tiny-bug//blog/page/3/index.html#disqus_thread">Comments</a></span>
+	
+</div>
 </article>
 
 
     <article class="post">
-	<header>
-		<h2 class="title">
-			
-			<a href="/blog/2013/10/11/one-piece-recently/">
-			
-				由OP最近的拖剧情说起</a>
-		</h2>
-		<div class="meta date">
+	<h2 class="title">
+		
+		<a href="/blog/2013/10/11/one-piece-recently/">
+		
+			由OP最近的拖剧情说起</a>
+	</h2>
+    <div class="entry-content">
+    <div class="meta">
+      <div class="date">Published on: 
 
 
 
@@ -1336,8 +1469,14 @@ heroku config:set NODE_ENV=production</code></p>
 
 
 <time datetime="2013-10-11T20:31:00+08:00" pubdate data-updated="true">Oct 11<span>th</span>, 2013</time></div>
-	</header>
-	<div class="entry-content">
+      <div class="tags">Tags: 
+
+
+	<a class='category' href='/blog/categories/jabber/'>Jabber</a>, <a class='category' href='/blog/categories/onepiece/'>OnePiece</a>
+
+
+</div>
+    </div>
 		<p>尽管在我的个人Tags里边经常标的无非那几个,Code,摄影,One Piece, 也无碍接下来抱怨几句最近的OP(动画).</p>
 
 <p>追着OP的看官不难发现,最近动画明显是各种拖剧情,某很多些神情,某大量的回忆篇加强插入,某动作刻画的时间,都Y的太太长了.而且还不少不断重复的画面,镜头来回转换加深刻画.</p>
@@ -1363,28 +1502,42 @@ heroku config:set NODE_ENV=production</code></p>
 		
 	</div>
 
+<div class="meta">
+	
+		<span class="comments"><a href="/blog/2013/10/11/one-piece-recently//blog/page/3/index.html#disqus_thread">Comments</a></span>
+	
+</div>
 </article>
 
 <nav id="pagenavi">
     
-        <a href="/blog/page/2/" class="prev">Previous</a>
+        <a href="/blog/page/2/" class="prev">Prev</a>
     
     
         <a href="/blog/page/4/" class="next">Next</a>
     
+    <div class="center"><a href="/blog/archives">Blog Archives</a></div>
 </nav>
-</div>
-	<footer id="footer" class="inner"><br>
-<br>
-<br>
-<br>
-&copy; 2013
+
+    </div>
+    <footer id="footer">
+    <div style="display:inline">
+    Copyright &copy; 2014
 
     XguoX
+. Powered by <a href="http://octopress.org">Octopress</a> | 
+    Theme <a href="http://github.com/panks/fabric">fabric</a> by <a href="http://panks.me">Pankaj Kumar</a>
+</div>
 
-</footer>
-	<script src="/javascripts/slash.js"></script>
-<script src="/javascripts/hyphenator.js"></script>
+
+    </footer>
+    <script src="/javascripts/fabric.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
 
 
 <script type="text/javascript">
@@ -1402,26 +1555,16 @@ heroku config:set NODE_ENV=production</code></p>
 
 
 
-	<script type="text/javascript">
-		var _gaq = _gaq || [];
-		_gaq.push(['_setAccount', 'UA-39166710-1']);
-		_gaq.push(['_trackPageview']);
-
-		(function() {
-			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		})();
-	</script>
 
 
-
-
+<!-- end toload --> 
+</div>
+</div>
+<script src="/javascripts/jquery.ui.totop.js" type="text/javascript"></script>
+<script type="text/javascript">
+/*<![CDATA[*/
+;(function($){$().UItoTop({easingType:'easeOutCirc'});})(jQuery); 
+/*]]>*/
+</script><!-- remove it to remove the scroll to top button -->
 </body>
-<script>
-  $(document).ready(function() {
-  // Make images center
-  $('p:has(img)').css('text-align', 'center');
-  });
-</script>
 </html>

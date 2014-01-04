@@ -1,64 +1,129 @@
 
 <!DOCTYPE HTML>
-<html lang="en-GB">
+<html>
 <head>
 	<meta charset="utf-8">
-	<title>Coder & Jabber  | XguoX</title>
-
-	<meta name="author" content="XguoX">
-
-<meta name="description" content="在网上搜罗了各种 Lightroom 预设一大车, 目测有两三千个了. 之前都是直接的一坨坨的 copy 到 ~/Library/Application Support/Adobe/Lightroom/Develop Presets/, 然后好奇了一下用 Sublime 随意打开来瞧瞧,额, &hellip;"> <meta name="keywords" content="">
-
+	<title>XguoX</title>
+    <meta name="author" content="XguoX">
+    
+	<meta name="description" content="Published on: Nov 14th, 2013 Tags: Photo 在网上搜罗了各种 Lightroom 预设一大车, 目测有两三千个了. 之前都是直接的一坨坨的 copy 到 ~/Library/Application Support/Adobe/Lightroom/ &hellip;">
+	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 	<link href="/atom.xml" rel="alternate" title="XguoX" type="application/atom+xml">
 	<link rel="canonical" href="">
-	<link href="/favicon.png" rel="shortcut icon">
-	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-	
+	<link href="/favicon.ico" rel="shortcut icon">
+    <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+
+    <link href='http://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Amethysta' rel='stylesheet' type='text/css'>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+    <script type="text/javascript" src="/javascripts/jquery-tapir.js"></script>
+
+    <!-- remove or comment it to disable ajaxification -->   
+    <script src="/javascripts/ajaxify.js"></script>
+   
+    
+    
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-39166710-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
 
 </head>
 
 
-
 <body>
-	<header id="header" class="inner"><h1><a href="/">XguoX</a></h1>
-<span class="tagline">Coder & Jabber</span>
-<nav id="main-nav"><ul>
-	<li><a href="http://www.flickr.com/photos/groverlu/sets" target="_blank">Flickr</a></li>
-	<li><a href="/about">About</a></li>
-	<li><a href="/atom.xml">RSS</a></li>
+    <div id="wrapper">
+    <header id="header" class="inner"><!-- for more effects see _animate.scss -->
+<h1 class="animated bounceInDown">
+    <div id="headerbg">
+        XguoX
+    </div>
+</h1>
+<br>
+
+<ul id="social-links" style="text-align:center">
+  
+  <!-- GitHub -->
+  <li>
+  <a href="https://github.com/xguox" class="github" title="Github"></a>
+  </li>
+  
+  
+  <!-- Google Plus -->
+  <li>
+  <a href="http://plus.google.com/108737859837240042867?rel=author" class="google" title="Google+"></a>
+  </li>
+  
+  
+  
+  <!-- Flickr -->
+  <li>
+  <a href="http://www.flickr.com/photos/GroverLu" class="flickr" title="Flickr"></a>
+  </li>
+  
+  
+  <!-- Twitter -->
+  <li>
+  <a href="http://www.twitter.com/xguox_l" class="twitter" title="Twitter"></a>
+  </li>
+  
+  
+  
+  
+  
 </ul>
-</nav>
-<nav id="mobile-nav">
-	<div class="alignleft menu">
-		<a class="button">Menu</a>
-		<div class="container"><ul>
-	<li><a href="http://www.flickr.com/photos/groverlu/sets" target="_blank">Flickr</a></li>
-	<li><a href="/about">About</a></li>
-	<li><a href="/atom.xml">RSS</a></li>
+
+
+<!-- use full url including 'index.html' for navigation bar if you are using ajax -->
+<ul id="nav">
+	<li id="ajax"><a href="/index.html">Home</a></li>
+	<li id="ajax"><a href="/blog/archives/index.html">Archives</a></li>
+    <li><a href="/atom.xml">RSS</a></li>
+    
+    <li>
+    <div id="dark">
+        <form method="get" action="/search.html" id="search">
+            <input name="query" type="text" placeholder="Search..." x-webkit-speech />
+        </form>
+    </div>
+    </li>
+        
 </ul>
-</div>
-	</div>
-</nav>
+
+
 
 
 </header>
 
-	<div id="content" class="inner">
+<div id="toload">
+<!-- begin toload --> 
+    <div id="content" class="inner">
+        
 
 
     <article class="post">
-	<header>
-		<h2 class="title">
-			
-			<a href="/blog/2013/11/14/lightroom-presets/">
-			
-				Lightroom 预设</a>
-		</h2>
-		<div class="meta date">
+	<h2 class="title">
+		
+		<a href="/blog/2013/11/14/lightroom-presets/">
+		
+			Lightroom 预设</a>
+	</h2>
+    <div class="entry-content">
+    <div class="meta">
+      <div class="date">Published on: 
 
 
 
@@ -71,8 +136,14 @@
 
 
 <time datetime="2013-11-14T10:12:00+08:00" pubdate data-updated="true">Nov 14<span>th</span>, 2013</time></div>
-	</header>
-	<div class="entry-content">
+      <div class="tags">Tags: 
+
+
+	<a class='category' href='/blog/categories/photo/'>Photo</a>
+
+
+</div>
+    </div>
 		<p>在网上搜罗了各种 Lightroom 预设一大车, 目测有两三千个了. 之前都是直接的一坨坨的 copy 到 <br/>
 <code>~/Library/Application Support/Adobe/Lightroom/Develop Presets/</code>,   然后好奇了一下用  Sublime  随意打开来瞧瞧,额,原来长这样,好高端,不明觉厉.</p>
 
@@ -254,18 +325,24 @@
 		
 	</div>
 
+<div class="meta">
+	
+		<span class="comments"><a href="/blog/2013/11/14/lightroom-presets//blog/page/2/index.html#disqus_thread">Comments</a></span>
+	
+</div>
 </article>
 
 
     <article class="post">
-	<header>
-		<h2 class="title">
-			
-			<a href="/blog/2013/11/12/time-machine-local-snapshot/">
-			
-				Time Machine & Local Snapshots</a>
-		</h2>
-		<div class="meta date">
+	<h2 class="title">
+		
+		<a href="/blog/2013/11/12/time-machine-local-snapshot/">
+		
+			Time Machine & Local Snapshots</a>
+	</h2>
+    <div class="entry-content">
+    <div class="meta">
+      <div class="date">Published on: 
 
 
 
@@ -278,8 +355,14 @@
 
 
 <time datetime="2013-11-12T10:18:00+08:00" pubdate data-updated="true">Nov 12<span>th</span>, 2013</time></div>
-	</header>
-	<div class="entry-content">
+      <div class="tags">Tags: 
+
+
+	<a class='category' href='/blog/categories/mac/'>Mac</a>
+
+
+</div>
+    </div>
 		<p>因为 Air 的硬盘只有 120G,所以总习惯性地 <br/>
  &ndash;  关于本机 &ndash; 更多信息</p>
 
@@ -308,18 +391,24 @@
 		
 	</div>
 
+<div class="meta">
+	
+		<span class="comments"><a href="/blog/2013/11/12/time-machine-local-snapshot//blog/page/2/index.html#disqus_thread">Comments</a></span>
+	
+</div>
 </article>
 
 
     <article class="post">
-	<header>
-		<h2 class="title">
-			
-			<a href="/blog/2013/11/11/camera-geek/">
-			
-				不折腾会死玩相机星人</a>
-		</h2>
-		<div class="meta date">
+	<h2 class="title">
+		
+		<a href="/blog/2013/11/11/camera-geek/">
+		
+			不折腾会死玩相机星人</a>
+	</h2>
+    <div class="entry-content">
+    <div class="meta">
+      <div class="date">Published on: 
 
 
 
@@ -332,8 +421,14 @@
 
 
 <time datetime="2013-11-11T10:07:00+08:00" pubdate data-updated="true">Nov 11<span>th</span>, 2013</time></div>
-	</header>
-	<div class="entry-content">
+      <div class="tags">Tags: 
+
+
+	<a class='category' href='/blog/categories/jabber/'>Jabber</a>
+
+
+</div>
+    </div>
 		<p><audio controls><source src='http://hq.update.sony.net.edgesuite.net/united/clock/assets/sound/a_clock_main_theme2012.mp3'></audio><br/>
 先赞上一个bgm,来自 <a href="http://www.sony.net/united/clock/">Sony Global &ndash; &ldquo;α&rdquo; CLOCK: WORLD TIME, CAPTURED BY &ldquo;α&rdquo;</a> <br/>
 那个对焦声音以前听A77听习惯了,现在蛮有感觉的.</p>
@@ -435,18 +530,24 @@
 		
 	</div>
 
+<div class="meta">
+	
+		<span class="comments"><a href="/blog/2013/11/11/camera-geek//blog/page/2/index.html#disqus_thread">Comments</a></span>
+	
+</div>
 </article>
 
 
     <article class="post">
-	<header>
-		<h2 class="title">
-			
-			<a href="/blog/2013/11/10/octopress-audio/">
-			
-				Octopress 添加 Audio</a>
-		</h2>
-		<div class="meta date">
+	<h2 class="title">
+		
+		<a href="/blog/2013/11/10/octopress-audio/">
+		
+			Octopress 添加 Audio</a>
+	</h2>
+    <div class="entry-content">
+    <div class="meta">
+      <div class="date">Published on: 
 
 
 
@@ -459,8 +560,14 @@
 
 
 <time datetime="2013-11-10T16:07:00+08:00" pubdate data-updated="true">Nov 10<span>th</span>, 2013</time></div>
-	</header>
-	<div class="entry-content">
+      <div class="tags">Tags: 
+
+
+	<a class='category' href='/blog/categories/octopress/'>Octopress</a>
+
+
+</div>
+    </div>
 		<p>又是忽然的,想贴音乐在 Octopress ,但是发现貌似自带的插件只有 video_tag 贴视频. 搜索了一下发现一个合适的. 直接贴 Gist 了(尴尬,才发现 Gist 的样式貌似跟主题冲突了,又一个 TODO ):</p>
 
 <div><script src='https://gist.github.com/3487038.js?file=audio_tag.rb'></script>
@@ -519,18 +626,24 @@ Liquid::Template.register_tag(&#39;audio&#39;, Jekyll::AudioTag)</code></pre></n
 		
 	</div>
 
+<div class="meta">
+	
+		<span class="comments"><a href="/blog/2013/11/10/octopress-audio//blog/page/2/index.html#disqus_thread">Comments</a></span>
+	
+</div>
 </article>
 
 
     <article class="post">
-	<header>
-		<h2 class="title">
-			
-			<a href="/blog/2013/11/09/a-sudden-consciousness/">
-			
-				一本书和一个杯子</a>
-		</h2>
-		<div class="meta date">
+	<h2 class="title">
+		
+		<a href="/blog/2013/11/09/a-sudden-consciousness/">
+		
+			一本书和一个杯子</a>
+	</h2>
+    <div class="entry-content">
+    <div class="meta">
+      <div class="date">Published on: 
 
 
 
@@ -543,8 +656,14 @@ Liquid::Template.register_tag(&#39;audio&#39;, Jekyll::AudioTag)</code></pre></n
 
 
 <time datetime="2013-11-09T23:17:00+08:00" pubdate data-updated="true">Nov 9<span>th</span>, 2013</time></div>
-	</header>
-	<div class="entry-content">
+      <div class="tags">Tags: 
+
+
+	<a class='category' href='/blog/categories/jabber/'>Jabber</a>
+
+
+</div>
+    </div>
 		<p><audio controls><source src='http://m1.file.xiami.com/259/58259/515557/1771031189_3321387_l.mp3'></audio></p>
 
 <h1>Test audio_tag</h1>
@@ -564,18 +683,24 @@ Liquid::Template.register_tag(&#39;audio&#39;, Jekyll::AudioTag)</code></pre></n
 		
 	</div>
 
+<div class="meta">
+	
+		<span class="comments"><a href="/blog/2013/11/09/a-sudden-consciousness//blog/page/2/index.html#disqus_thread">Comments</a></span>
+	
+</div>
 </article>
 
 
     <article class="post">
-	<header>
-		<h2 class="title">
-			
-			<a href="/blog/2013/11/07/relearn-ruby-iii/">
-			
-				重拾Ruby (III)</a>
-		</h2>
-		<div class="meta date">
+	<h2 class="title">
+		
+		<a href="/blog/2013/11/07/relearn-ruby-iii/">
+		
+			重拾Ruby (III)</a>
+	</h2>
+    <div class="entry-content">
+    <div class="meta">
+      <div class="date">Published on: 
 
 
 
@@ -588,8 +713,14 @@ Liquid::Template.register_tag(&#39;audio&#39;, Jekyll::AudioTag)</code></pre></n
 
 
 <time datetime="2013-11-07T23:56:00+08:00" pubdate data-updated="true">Nov 7<span>th</span>, 2013</time></div>
-	</header>
-	<div class="entry-content">
+      <div class="tags">Tags: 
+
+
+	<a class='category' href='/blog/categories/ruby/'>Ruby</a>
+
+
+</div>
+    </div>
 		<p>不把这些当做笔记卸写下来总隐隐约约觉得自己没掌握, 所以还是继续做笔记.</p>
 
 <h2>Proc</h2>
@@ -694,18 +825,24 @@ Liquid::Template.register_tag(&#39;audio&#39;, Jekyll::AudioTag)</code></pre></n
 		
 	</div>
 
+<div class="meta">
+	
+		<span class="comments"><a href="/blog/2013/11/07/relearn-ruby-iii//blog/page/2/index.html#disqus_thread">Comments</a></span>
+	
+</div>
 </article>
 
 
     <article class="post">
-	<header>
-		<h2 class="title">
-			
-			<a href="/blog/2013/11/05/relearn-ruby-2/">
-			
-				重拾Ruby (II)</a>
-		</h2>
-		<div class="meta date">
+	<h2 class="title">
+		
+		<a href="/blog/2013/11/05/relearn-ruby-2/">
+		
+			重拾Ruby (II)</a>
+	</h2>
+    <div class="entry-content">
+    <div class="meta">
+      <div class="date">Published on: 
 
 
 
@@ -718,8 +855,14 @@ Liquid::Template.register_tag(&#39;audio&#39;, Jekyll::AudioTag)</code></pre></n
 
 
 <time datetime="2013-11-05T16:30:00+08:00" pubdate data-updated="true">Nov 5<span>th</span>, 2013</time></div>
-	</header>
-	<div class="entry-content">
+      <div class="tags">Tags: 
+
+
+	<a class='category' href='/blog/categories/ruby/'>Ruby</a>
+
+
+</div>
+    </div>
 		<p>继续复习 + 笔记, 今天要写的是 Dynamic Classes &amp; Methods</p>
 
 <h2>Struct</h2>
@@ -1169,28 +1312,42 @@ Liquid::Template.register_tag(&#39;audio&#39;, Jekyll::AudioTag)</code></pre></n
 		
 	</div>
 
+<div class="meta">
+	
+		<span class="comments"><a href="/blog/2013/11/05/relearn-ruby-2//blog/page/2/index.html#disqus_thread">Comments</a></span>
+	
+</div>
 </article>
 
 <nav id="pagenavi">
     
-        <a href="/blog/" class="prev">Previous</a>
+        <a href="/" class="prev">Prev</a>
     
     
         <a href="/blog/page/3/" class="next">Next</a>
     
+    <div class="center"><a href="/blog/archives">Blog Archives</a></div>
 </nav>
-</div>
-	<footer id="footer" class="inner"><br>
-<br>
-<br>
-<br>
-&copy; 2013
+
+    </div>
+    <footer id="footer">
+    <div style="display:inline">
+    Copyright &copy; 2014
 
     XguoX
+. Powered by <a href="http://octopress.org">Octopress</a> | 
+    Theme <a href="http://github.com/panks/fabric">fabric</a> by <a href="http://panks.me">Pankaj Kumar</a>
+</div>
 
-</footer>
-	<script src="/javascripts/slash.js"></script>
-<script src="/javascripts/hyphenator.js"></script>
+
+    </footer>
+    <script src="/javascripts/fabric.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
 
 
 <script type="text/javascript">
@@ -1208,26 +1365,16 @@ Liquid::Template.register_tag(&#39;audio&#39;, Jekyll::AudioTag)</code></pre></n
 
 
 
-	<script type="text/javascript">
-		var _gaq = _gaq || [];
-		_gaq.push(['_setAccount', 'UA-39166710-1']);
-		_gaq.push(['_trackPageview']);
-
-		(function() {
-			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-		})();
-	</script>
 
 
-
-
+<!-- end toload --> 
+</div>
+</div>
+<script src="/javascripts/jquery.ui.totop.js" type="text/javascript"></script>
+<script type="text/javascript">
+/*<![CDATA[*/
+;(function($){$().UItoTop({easingType:'easeOutCirc'});})(jQuery); 
+/*]]>*/
+</script><!-- remove it to remove the scroll to top button -->
 </body>
-<script>
-  $(document).ready(function() {
-  // Make images center
-  $('p:has(img)').css('text-align', 'center');
-  });
-</script>
 </html>

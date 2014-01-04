@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Jabber | XguoX]]></title>
   <link href="http://xguox.github.com/blog/categories/jabber/atom.xml" rel="self"/>
   <link href="http://xguox.github.com/"/>
-  <updated>2013-12-31T23:35:00+08:00</updated>
+  <updated>2014-01-04T18:12:43+08:00</updated>
   <id>http://xguox.github.com/</id>
   <author>
     <name><![CDATA[XguoX]]></name>
@@ -64,7 +64,7 @@
     <link href="http://xguox.github.com/blog/2013/11/11/camera-geek/"/>
     <updated>2013-11-11T10:07:00+08:00</updated>
     <id>http://xguox.github.com/blog/2013/11/11/camera-geek</id>
-    <content type="html"><![CDATA[<p>{% audio <a href="http://hq.update.sony.net.edgesuite.net/united/clock/assets/sound/a_clock_main_theme2012.mp3">http://hq.update.sony.net.edgesuite.net/united/clock/assets/sound/a_clock_main_theme2012.mp3</a> %}<br/>
+    <content type="html"><![CDATA[<p><audio controls><source src='<a'><source src='href="http://hq.update.sony.net.edgesuite.net/united/clock/assets/sound/a_clock_main_theme2012.mp3">http://hq.update.sony.net.edgesuite.net/united/clock/assets/sound/a_clock_main_theme2012.mp3</a>'></audio><br/>
 先赞上一个bgm,来自 <a href="http://www.sony.net/united/clock/">Sony Global &ndash; &ldquo;α&rdquo; CLOCK: WORLD TIME, CAPTURED BY &ldquo;α&rdquo;</a> <br/>
 那个对焦声音以前听A77听习惯了,现在蛮有感觉的.</p>
 
@@ -168,7 +168,7 @@
     <link href="http://xguox.github.com/blog/2013/11/09/a-sudden-consciousness/"/>
     <updated>2013-11-09T23:17:00+08:00</updated>
     <id>http://xguox.github.com/blog/2013/11/09/a-sudden-consciousness</id>
-    <content type="html"><![CDATA[<p>{% audio <a href="http://m1.file.xiami.com/259/58259/515557/1771031189_3321387_l.mp3">http://m1.file.xiami.com/259/58259/515557/1771031189_3321387_l.mp3</a> %}</p>
+    <content type="html"><![CDATA[<p><audio controls><source src='<a'><source src='href="http://m1.file.xiami.com/259/58259/515557/1771031189_3321387_l.mp3">http://m1.file.xiami.com/259/58259/515557/1771031189_3321387_l.mp3</a>'></audio></p>
 
 <h1>Test audio_tag</h1>
 
