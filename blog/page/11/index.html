@@ -6,7 +6,9 @@
 	<title>XguoX</title>
     <meta name="author" content="XguoX">
     
-	<meta name="description" content="Published on: Feb 25th, 2012 Tags: Jabber, Travel 原本这是一篇记录我从第一天开始这次厦门义工行的流水帐文章.然后,前几天的一次重大失误导致我的硬盘全部东西都没了.没错,全部&hellip; 于是,就这样变成了现在这篇. 1月29号, &hellip;">
+	<meta name="description" content="Published on: Feb 27th, 2012 Tags: Rails, Ruby 把平常中一些开发出错以及解决方法记录了下来,其实,基本上都是Google或者StackOverflow得到的答案.然后有些都不知道问题的根源,只知道个解决方法 * 1
+2
+Issue-- RVM is &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -112,6 +114,71 @@
 <!-- begin toload --> 
     <div id="content" class="inner">
         
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2012/02/27/rails-dot-note/">
+		
+			Ruby/Rails.note</a>
+	</h2>
+    <div class="entry-content">
+    <div class="meta">
+      <div class="date">Published on: 
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-02-27T17:55:00+08:00" pubdate data-updated="true">Feb 27<span>th</span>, 2012</time></div>
+      <div class="tags">Tags: 
+
+
+	<a class='category' href='/blog/categories/rails/'>Rails</a>, <a class='category' href='/blog/categories/ruby/'>Ruby</a>
+
+
+</div>
+    </div>
+		<p>把平常中一些开发出错以及解决方法记录了下来,其实,基本上都是Google或者StackOverflow得到的答案.然后有些都不知道问题的根源,只知道个解决方法</p>
+
+<p>*</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Issue--
+</span><span class='line'>  RVM is not a function, selecting rubies with 'rvm use ...' will not work.</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>Solution--
+</span><span class='line'>  添加下面这句到  ~/.bashrc
+</span><span class='line'>  [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"重启终端</span></code></pre></td></tr></table></div></figure>
+
+
+<p>*</p>
+
+
+		
+		<a href="/blog/2012/02/27/rails-dot-note/" class="more-link">Read on &rarr;</a>
+	</div>
+
+<div class="meta">
+	
+		<span class="comments"><a href="/blog/2012/02/27/rails-dot-note//blog/page/11/index.html#disqus_thread">Comments</a></span>
+	
+</div>
+</article>
 
 
     <article class="post">
@@ -419,60 +486,6 @@
 <div class="meta">
 	
 		<span class="comments"><a href="/blog/2012/01/04/go-back-home//blog/page/11/index.html#disqus_thread">Comments</a></span>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2012/01/02/20120102/">
-		
-			20120102</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-01-02T21:56:00+08:00" pubdate data-updated="true">Jan 2<span>nd</span>, 2012</time></div>
-      <div class="tags">Tags: 
-
-
-	<a class='category' href='/blog/categories/jabber/'>Jabber</a>
-
-
-</div>
-    </div>
-		<p>A test post ..</p>
-
-<p>It&rsquo;s also a test.</p>
-
-<p>A bug still unsolve
-ok?
-not ok???
-A bug with git or me ?
-tomorrow  exam</p>
-
-<p>why so many conflict!!!!!!</p>
-
-		
-		
-	</div>
-
-<div class="meta">
-	
-		<span class="comments"><a href="/blog/2012/01/02/20120102//blog/page/11/index.html#disqus_thread">Comments</a></span>
 	
 </div>
 </article>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Jabber | XguoX]]></title>
   <link href="http://xguox.github.com/blog/categories/jabber/atom.xml" rel="self"/>
   <link href="http://xguox.github.com/"/>
-  <updated>2014-01-04T21:08:52+08:00</updated>
+  <updated>2014-01-20T21:08:40+08:00</updated>
   <id>http://xguox.github.com/</id>
   <author>
     <name><![CDATA[XguoX]]></name>
@@ -14,17 +14,61 @@
 
   
   <entry>
+    <title type="html"><![CDATA[非职业程序员 vs '专业'建站公司]]></title>
+    <link href="http://xguox.github.com/blog/2014/01/20/non-professional-coder-vs-pro-web-company/"/>
+    <updated>2014-01-20T21:03:35+08:00</updated>
+    <id>http://xguox.github.com/blog/2014/01/20/non-professional-coder-vs-pro-web-company</id>
+    <content type="html"><![CDATA[<p>一日, 好友忽而向我抱怨他们婚庆公司的网站做的怎么怎么渣, 找我帮忙. 不好推脱. 于是, 尝试性地接下 , 无报酬这一说, 纯友情支援.</p>
+
+<p>先是看了看他们的网站, 随便点了几下,  当时我就惊呆了. 就这鸟样子居然还能值个<strong>2000多块</strong>?</p>
+
+<p><img src="http://ww4.sinaimg.cn/mw690/62fdd4d5gw1ecq9541k0mj21400p0n0p.jpg" alt="" /></p>
+
+<p>而且据说还搞了<strong>一个多月</strong>, 并且隔三差五就出现各种问题, 解决速度也不敬人意. <br/>
+没接过单不知道行情, 但要我花2000多块雇人搞这么个玩意, 我就只能点点点了&hellip;&hellip;</p>
+
+<p>把原本在进行中的一些计划暂停了下来, and then 选了一个基于 Rails 的比较出名的 CMS &mdash;&ndash; <a href="https://github.com/refinery/refinerycms">Refinery</a>, 自己搞起!</p>
+
+<p><strong>三天的结果</strong>, <br/>
+<img src="http://ww4.sinaimg.cn/mw690/62fdd4d5gw1ecq99eo832j21400p0gtk.jpg" alt="" /></p>
+
+<p>相比之下, 我这个没入流的码农搞出来的怎么也比这公司级别的东西要像样点吧!</p>
+
+<p>原先的那货是基于 asp 这个老掉牙的玩意, 不是说 asp 的问题(负责任地用心做 asp 也可以做出好东西), 而是建站公司的人这是拿着什么心态在干活, 他们做出成品出来自己看着是什么样的心态. 是不是业务人员在外接单回来, 套着某个模板引擎,  稍稍改些个样式, 就交功课了算了.</p>
+
+<p>当然啦, 相比起来, 建站公司的这个玩意也是有优点的, 那就是对 IE 友好! 不像我自己折腾出来的, 明眼人就看出是在堆砌 CSS3, 并不是说我自己多流弊,  其实也没啥含金量的, 把 IE9- 也基本都毙了.</p>
+
+<p>只是觉得, 这说到底还是心态问题, 因为对方是我自己的朋友, 不想怠慢; 另一个,这是我自己的喜欢做的事情, 也不想应付.  自然和人家流水线的作业不一样了!</p>
+
+<p>xguox 自己从来没在外接单子干的一些原因与这次本想推脱朋友的原因一样:</p>
+
+<ol>
+<li>后期维护比较琐碎(维护不是属于自己的东西)</li>
+<li>有些需求莫名其妙, 或者与我自己的想法相悖.</li>
+<li>兼容IE的需求比较强烈 (还是需求问题嘛 = .  =)</li>
+<li>一个人, 搞得累, 组团撸起, 又非我本意.</li>
+</ol>
+
+
+<p>最近看到几个国外的建站团队, 单是自己的官方网页就秒了国内这些多如牛毛的所谓建站公司几条街,  设计总是让人眼前一亮, showcase 大都很赞! <br/>
+可能有些<strong>以偏概全</strong>, 但是总体水平差距就是这么的明显. 目前没看到有这样让人称赞的, 或许某些草根工作室其实挺不错只是我没发现罢了.</p>
+
+<p>就这三线小城市,  目测这样的建站公司大大小小就有几十上百了吧,  却都清一色的工厂流水线式的模式.   对于其中的各种, 理解不能.</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[是在扯不等使的事儿吗?]]></title>
     <link href="http://xguox.github.com/blog/2014/01/04/heroku-rails-do4fun-theme/"/>
     <updated>2014-01-04T21:08:09+08:00</updated>
     <id>http://xguox.github.com/blog/2014/01/04/heroku-rails-do4fun-theme</id>
-    <content type="html"><![CDATA[<h4>Rails</h4>
+    <content type="html"><![CDATA[<h3>Rails</h3>
 
 <p>发觉之前又犯二了, 在 console 里头错把 delete 当 destroy 删除一条记录, 把数据库搞得一坨乱. 还是一直纠结 has_many 的 dependent 参数不是已经设置了 destroy 了,肿么不会关联上!!!  原来是这个地方烧饼lity 了!</p>
 
 <p>区别</p>
 
-<h4><a href="http://do4fun.herokuapp.com/">do4fun </a></h4>
+<h3><a href="http://do4fun.herokuapp.com/">do4fun </a></h3>
 
 <p><a href="http://do4fun.herokuapp.com/">do4fun </a>这个项目进行了也有一段时间, 小有成型的样子.   今天忽然蛋疼把背景的整体色调从原本的略骚的橙红改成了现今的灰白.  布局没变.</p>
 
@@ -38,7 +82,7 @@
 
 <p>好吧, 我不会告诉你是因为换了这个主题才想要把<a href="http://do4fun.herokuapp.com/">do4fun </a> 的对调过来了.</p>
 
-<h4>Heroku</h4>
+<h3>Heroku</h3>
 
 <p>最后扯扯 heroku ,  除了访问速度在天朝略微蛋疼外 heroku 真心是个好东西, 每次有什么想玩的都是在 heroku  上部署实践. 包括这次的 <a href="http://do4fun.herokuapp.com/">do4fun </a> 项目. 尤其很多插件都不错.</p>
 
@@ -99,7 +143,7 @@
     <link href="http://xguox.github.com/blog/2013/11/11/camera-geek/"/>
     <updated>2013-11-11T10:07:00+08:00</updated>
     <id>http://xguox.github.com/blog/2013/11/11/camera-geek</id>
-    <content type="html"><![CDATA[<p><audio controls><source src='<a'><source src='href="http://hq.update.sony.net.edgesuite.net/united/clock/assets/sound/a_clock_main_theme2012.mp3">http://hq.update.sony.net.edgesuite.net/united/clock/assets/sound/a_clock_main_theme2012.mp3</a>'></audio><br/>
+    <content type="html"><![CDATA[<p>{% audio <a href="http://hq.update.sony.net.edgesuite.net/united/clock/assets/sound/a_clock_main_theme2012.mp3">http://hq.update.sony.net.edgesuite.net/united/clock/assets/sound/a_clock_main_theme2012.mp3</a> %}<br/>
 先赞上一个bgm,来自 <a href="http://www.sony.net/united/clock/">Sony Global &ndash; &ldquo;α&rdquo; CLOCK: WORLD TIME, CAPTURED BY &ldquo;α&rdquo;</a> <br/>
 那个对焦声音以前听A77听习惯了,现在蛮有感觉的.</p>
 
@@ -203,7 +247,7 @@
     <link href="http://xguox.github.com/blog/2013/11/09/a-sudden-consciousness/"/>
     <updated>2013-11-09T23:17:00+08:00</updated>
     <id>http://xguox.github.com/blog/2013/11/09/a-sudden-consciousness</id>
-    <content type="html"><![CDATA[<p><audio controls><source src='<a'><source src='href="http://m1.file.xiami.com/259/58259/515557/1771031189_3321387_l.mp3">http://m1.file.xiami.com/259/58259/515557/1771031189_3321387_l.mp3</a>'></audio></p>
+    <content type="html"><![CDATA[<p>{% audio <a href="http://m1.file.xiami.com/259/58259/515557/1771031189_3321387_l.mp3">http://m1.file.xiami.com/259/58259/515557/1771031189_3321387_l.mp3</a> %}</p>
 
 <h1>Test audio_tag</h1>
 
@@ -217,42 +261,6 @@
 <p> 当时选择买这个杯子的原因是因为上面的20, 刚好那时20岁. 这没一会. 我就即将22岁了. 还记得这个杯子比一般的要高出个七八厘米,目测也是20cm左右, 也特厚特重. 但是用久了,习惯了以后就没感觉了. 等到我回来家里. 刚开始的那些天拿起家里的杯子各种轻, 那种感觉特别明显. 但是, 时间过去, 我也又熟悉了家里的这个这么轻的杯子,忘记了那个20的重量.</p>
 
 <p> 也不知道还有啥落了,估计有也不是什么重要东西, 滚回来一年了.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Wedding, Photography]]></title>
-    <link href="http://xguox.github.com/blog/2013/10/20/diary-about-wedding-about-photography/"/>
-    <updated>2013-10-20T23:37:00+08:00</updated>
-    <id>http://xguox.github.com/blog/2013/10/20/diary-about-wedding-about-photography</id>
-    <content type="html"><![CDATA[<p>随着年龄的成长,现在跟朋友在一起聊的话题似乎从以往的各种扯淡转变成了 婚姻 &amp; 工作.毕业后这些日子更明显了.这不又一对老同学结成连理了.往后还陆续有来叻！</p>
-
-<p>昨天说到牛总明年的婚事,我和甫表示各种强烈赞成建议他抛弃那些个什么Benz,BMW,四个圈之类的去迎亲,改用超豪华得大巴更拉风  XD</p>
-
-<p>另外,有趣的是,相较之下,初中的同学更多是谈到婚姻,而高中的则更多是谈到工作.不知道有没什么必然联系 =.=</p>
-
-<p><img src="http://farm4.staticflickr.com/3831/10457108984_9b8950c033_z.jpg" alt="" /></p>
-
-<p>帮牛总的婚庆工作室拍了两场婚礼,纯客串的当个没入门摄影师.总结下来,跟专业的必须有差距,无论是器材,技法,引导,后期等等</p>
-
-<p>这其中,差距最大的还是引导这一块.</p>
-
-<p>器材上,其实主要是缺一枚灯.这个差距最好弥补.几百块一个永诺的闪灯要能玩得转对我而言就足够了,不过略有原厂情结,刚开始还准备一步到位上 600ex 的说,反正迟迟没买,直到现在6D套摆上架&hellip;&hellip;</p>
-
-<p>技术,后期等因素比较客观,不扯淡.</p>
-
-<p>其实我主要是想说,我跟那天那个影楼的摄影师的最大差距在于指挥能力.人家专业的好家伙让你怎么摆就怎么摆,说集中就得集中.而我,顶多吆喝一句让人看着镜头,然后,就没然后了.其余只会跟着流程,跟着队伍瞎跑,动作好不好,站位好不好,怎么才好都没有更多的指示.几次的大合照最明显不过.另外,自己的站位,跑位也经常出现蛋疼的失误.</p>
-
-<p>还有一个,其实还跟上面相关,交流问题.尽管是专业的,也即使是专业的,他也未必百发能百中,但是,我时常看他回看之后觉得拍不好或者动作不是摆得很到位会很自然的让被摄者再来一次,直到片子成功为止.相反的,我是经常按了快门就算了,主要是略不好意思让被摄者重复或者keep住某个动作或表情.(哪有那么多内敛,艹,你拿相机你才是老大！)</p>
-
-<p>最后是多机的问题.其实这个问题早在之前拍各种毕业照时候就有,拍大合照之类的时候,如果面对着2台或者以上的相机(包括手机),如果不做出明确的喊话指定眼神看哪台机子,出来的照片就会很蛋疼的眼神往各个方向飘.遇上这问题,要不就霸气点喊着全场看过来,要不就商量好各台机器各司其职.</p>
-
-<p>最后的最后,不得不感叹一下后期.</p>
-
-<blockquote><p>数码不后期,就是大傻逼.</p></blockquote>
-
-<p>反正绝大部分片子不后期几下都不太好意思交功课了.尽管我的后期渣一般,
-但好几张完全惨不忍睹的照片被我用Photoshop,Lightroom救了回来.</p>
 ]]></content>
   </entry>
   

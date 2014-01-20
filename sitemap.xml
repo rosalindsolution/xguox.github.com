@@ -400,7 +400,13 @@
     </url>
     <url>
         <loc>http://xguox.github.com/blog/2014/01/04/heroku-rails-do4fun-theme/</loc>
-        <lastmod>2014-01-04T21:08:45+08:00</lastmod>
+        <lastmod>2014-01-04T21:10:21+08:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://xguox.github.com/blog/2014/01/20/non-professional-coder-vs-pro-web-company/
+        </loc>
+        <lastmod>2014-01-20T21:07:30+08:00</lastmod>
     </url>
     <url>
         <loc>http://xguox.github.com/about/</loc>
@@ -408,19 +414,19 @@
     </url>
     <url>
         <loc>http://xguox.github.com/archives/</loc>
-        <lastmod>2014-01-04T21:08:45+08:00</lastmod>
+        <lastmod>2014-01-20T21:07:30+08:00</lastmod>
     </url>
     <url>
         <loc>http://xguox.github.com/blog/archives/</loc>
-        <lastmod>2014-01-04T21:08:45+08:00</lastmod>
+        <lastmod>2014-01-20T21:07:30+08:00</lastmod>
     </url>
     <url>
         <loc>http://xguox.github.com/blog/</loc>
-        <lastmod>2014-01-04T21:08:45+08:00</lastmod>
+        <lastmod>2014-01-20T21:07:30+08:00</lastmod>
     </url>
     <url>
         <loc>http://xguox.github.com/</loc>
-        <lastmod>2014-01-04T21:08:45+08:00</lastmod>
+        <lastmod>2014-01-20T21:07:30+08:00</lastmod>
     </url>
     <url>
         <loc>http://xguox.github.com/robots.txt</loc>
