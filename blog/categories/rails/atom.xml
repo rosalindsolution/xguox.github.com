@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Rails | XguoX]]></title>
   <link href="http://xguox.github.com/blog/categories/rails/atom.xml" rel="self"/>
   <link href="http://xguox.github.com/"/>
-  <updated>2014-01-20T21:08:40+08:00</updated>
+  <updated>2014-01-30T13:20:27+08:00</updated>
   <id>http://xguox.github.com/</id>
   <author>
     <name><![CDATA[XguoX]]></name>
@@ -695,13 +695,18 @@ $(document).ready(function(){
 
 
 <p>另外个是,用了will_paginate这个gem做分页,不过默认显示的是"previous"和"next",改为中文的"前一页"和"后一页"需要先在config/initializers/ 下新建一个will_paginate.rb,  and then在里头加入
-{% codeblock %}</p>
-
-<h1>coding: utf-8</h1>
-
-<p>WillPaginate::ViewHelpers.pagination_options[:previous_label ] =  &ldquo;前一页&rdquo;
-WillPaginate::ViewHelpers.pagination_options[:next_label ] =  &ldquo;后一页&rdquo;
-{% endcodeblock %}</p>
+<div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>coding: utf-8&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;p>WillPaginate::ViewHelpers.pagination_options[:previous_label ] =  &ldquo;前一页&rdquo;
+</span><span class='line'>WillPaginate::ViewHelpers.pagination_options[:next_label ] =  &ldquo;后一页&rdquo;</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 ]]></content>
   </entry>
   

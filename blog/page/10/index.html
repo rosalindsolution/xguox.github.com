@@ -6,7 +6,7 @@
 	<title>XguoX</title>
     <meta name="author" content="XguoX">
     
-	<meta name="description" content="Published on: May 11th, 2012 Tags: Jabber 最近各种没状态,我的Rails学习落下了不少,主要是胃病来袭外加一些校内的揪心事.哎,说到底,还是我还不会调整状态.一有什么较为棘手的外部因素就立马各种没状态,定不下来学习! 前几天开始着手写公司的论坛, &hellip;">
+	<meta name="description" content="Published on: May 27th, 2012 Tags: Rails, Ruby 最近在做个课程设计,好吧,俺老师是要求用JSP的,可惜我那弱爆了的水平是不可能完成的.于是顶着各种压力自己用Rails来做. 今天才发现个问题,原来mysql默认存储的int貌似最多是10位就爆了, &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -112,6 +112,53 @@
 <!-- begin toload --> 
     <div id="content" class="inner">
         
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2012/05/27/rails-note/">
+		
+			Rails小记两则</a>
+	</h2>
+    <div class="entry-content">
+    <div class="meta">
+      <div class="date">Published on: 
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-05-27T11:15:00+08:00" pubdate data-updated="true">May 27<span>th</span>, 2012</time></div>
+      <div class="tags">Tags: 
+
+
+	<a class='category' href='/blog/categories/rails/'>Rails</a>, <a class='category' href='/blog/categories/ruby/'>Ruby</a>
+
+
+</div>
+    </div>
+		<p>最近在做个课程设计,好吧,俺老师是要求用JSP的,可惜我那弱爆了的水平是不可能完成的.于是顶着各种压力自己用Rails来做.</p>
+
+<p>今天才发现个问题,原来mysql默认存储的int貌似最多是10位就爆了,原本我的数据库中有学号那个字段的并且migration是存为integer,结果录入数据时候就各种甭了,因为学校学号都是10位数,不管我输入的是什么,进了数据库的学号字段都变成 2147483648, 刚开始看日志,看程序都木有发现什么问题,纠结不能,查看数据库发现,每条记录的学号西端都是统一的,搜索一通才发现问题所在.于是直接用mysql工具将学号字段改成了BIGINT,杠杠的就啥事都没了</p>
+
+
+		
+		<a href="/blog/2012/05/27/rails-note/" class="more-link">Read on &rarr;</a>
+	</div>
+
+<div class="meta">
+	
+		<span class="comments"><a href="/blog/2012/05/27/rails-note//blog/page/10/index.html#disqus_thread">Comments</a></span>
+	
+</div>
+</article>
 
 
     <article class="post">
@@ -386,53 +433,6 @@
 <div class="meta">
 	
 		<span class="comments"><a href="/blog/2012/03/12/something-in-google-plus//blog/page/10/index.html#disqus_thread">Comments</a></span>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2012/03/04/dry/">
-		
-			DRY</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-03-04T10:07:00+08:00" pubdate data-updated="true">Mar 4<span>th</span>, 2012</time></div>
-      <div class="tags">Tags: 
-
-
-	<a class='category' href='/blog/categories/rails/'>Rails</a>, <a class='category' href='/blog/categories/ruby/'>Ruby</a>
-
-
-</div>
-    </div>
-		<p>从刚接触Rails开始就被灌输三种观念&mdash;&mdash;-DRY、COC、REST.虽然这三种思想还没完全的领悟透彻,但是,已经感受到了它们的强大之处.</p>
-
-<p>目前印象最深刻的则是DRY.最近在跟着Ruby on Rails Tutorial学写一点Rspec测试.这种感觉又更强烈了.看着下面代码一步步的减少,感慨DRY的思想无处不在啊.这里只是一个Example可能感觉不到什么,但是当Example多了而且几乎都在测试同一样东西的时候,优点不言而喻.</p>
-
-
-		
-		<a href="/blog/2012/03/04/dry/" class="more-link">Read on &rarr;</a>
-	</div>
-
-<div class="meta">
-	
-		<span class="comments"><a href="/blog/2012/03/04/dry//blog/page/10/index.html#disqus_thread">Comments</a></span>
 	
 </div>
 </article>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Jabber | XguoX]]></title>
   <link href="http://xguox.github.com/blog/categories/jabber/atom.xml" rel="self"/>
   <link href="http://xguox.github.com/"/>
-  <updated>2014-01-20T21:08:40+08:00</updated>
+  <updated>2014-01-30T13:20:27+08:00</updated>
   <id>http://xguox.github.com/</id>
   <author>
     <name><![CDATA[XguoX]]></name>
@@ -12,6 +12,49 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[New Relic T' 开箱!]]></title>
+    <link href="http://xguox.github.com/blog/2014/01/30/new-relic-t-shirt-unbox/"/>
+    <updated>2014-01-30T12:57:56+08:00</updated>
+    <id>http://xguox.github.com/blog/2014/01/30/new-relic-t-shirt-unbox</id>
+    <content type="html"><![CDATA[<p>一件 T' 而已, 我是不是很无聊?   而且明明就没箱子 = .  =   其实是因为之前忘了在哪看到的, 有一篇牙签盒什么的开箱.  更鸡碎的东西  = .  =  <br/>
+不要吐槽没事找渣儿玩的 2货.   大过年刚才拿到 <a href="http://newrelic.com/">New Relic</a> 送的 T-shirt.</p>
+
+<p>10月29发过一条<a href="http://weibo.com/1660802261/AgfH9jL3E?mod=weibotime">微博</a>的.</p>
+
+<blockquote><p>最近感觉没衣服穿了,想起NewRelic那有T-shirt送,不过要成功部署一个应用,刚好最近NewRelic也开始支持Node. 于是果断把放在OpenShift的Ghost给部署一个 =.= 然后,有比我这还钓丝的么? 结果发现,这是夏装T,等寄到我手上我都要穿棉袄了. 尴尬到&hellip;</p></blockquote>
+
+<p><img src="http://ww1.sinaimg.cn/bmiddle/62fdd4d5gw1ea1zvhckgjj20ls0dowg1.jpg" alt="" /></p>
+
+<p>and then, 今个儿终于拿到手了.  刚好就当过年新衣服好了.  最近天气也热了不少. BLABLABLA</p>
+
+<p><img src="http://ww4.sinaimg.cn/mw690/62fdd4d5gw1ed1hjmgf0vj21jk0van5z.jpg" alt="" />  <br/>
+看这戳 1月6 号就到了, 不过是寄到朋友家, 拖了好些天才拿回来.</p>
+
+<p><img src="http://ww1.sinaimg.cn/mw690/62fdd4d5gw1ed1hjrtc6oj21kw11ktkx.jpg" alt="" /><br/>
+英文的地址好像很流弊的样子, 又装到了</p>
+
+<p>拆开来, 等登灯灯&hellip;好一个 NERD , 说的就是咱!
+<img src="http://ww4.sinaimg.cn/mw690/62fdd4d5gw1ed1hjyjfo1j21jk0vawte.jpg" alt="" /></p>
+
+<p>挂外面展开
+<img src="http://ww3.sinaimg.cn/mw690/62fdd4d5gw1ed1hkcnno8j21jk1qw7wh.jpg" alt="" /></p>
+
+<p><img src="http://ww1.sinaimg.cn/mw690/62fdd4d5gw1ed1hkowkmsj21jk0vaazv.jpg" alt="" /></p>
+
+<p>后面这个 logo 的地方不太好, thanks  <a href="http://newrelic.com/">New Relic</a></p>
+
+<p>奇葩的是 made in USA 为嘛上面有好些个中文字<br/>
+<img src="http://ww1.sinaimg.cn/mw690/62fdd4d5gw1ed1hl2ohy4j21kw0y4h8a.jpg" alt="" /></p>
+
+<p>上身对着镜子撸一张<br/>
+<img src="http://ww1.sinaimg.cn/mw690/62fdd4d5gw1ed1hlh28gzj21jk0vah1t.jpg" alt="" /></p>
+
+<p>没事找乐子,<br/>
+that&rsquo;s all.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[非职业程序员 vs '专业'建站公司]]></title>
@@ -143,7 +186,7 @@
     <link href="http://xguox.github.com/blog/2013/11/11/camera-geek/"/>
     <updated>2013-11-11T10:07:00+08:00</updated>
     <id>http://xguox.github.com/blog/2013/11/11/camera-geek</id>
-    <content type="html"><![CDATA[<p>{% audio <a href="http://hq.update.sony.net.edgesuite.net/united/clock/assets/sound/a_clock_main_theme2012.mp3">http://hq.update.sony.net.edgesuite.net/united/clock/assets/sound/a_clock_main_theme2012.mp3</a> %}<br/>
+    <content type="html"><![CDATA[<p><audio controls><source src='<a'><source src='href="http://hq.update.sony.net.edgesuite.net/united/clock/assets/sound/a_clock_main_theme2012.mp3">http://hq.update.sony.net.edgesuite.net/united/clock/assets/sound/a_clock_main_theme2012.mp3</a>'></audio><br/>
 先赞上一个bgm,来自 <a href="http://www.sony.net/united/clock/">Sony Global &ndash; &ldquo;α&rdquo; CLOCK: WORLD TIME, CAPTURED BY &ldquo;α&rdquo;</a> <br/>
 那个对焦声音以前听A77听习惯了,现在蛮有感觉的.</p>
 
@@ -239,28 +282,6 @@
 
 <p>600D 用了不到一年, A77 用了大概9个月, 6D,  不到三个月,  A7 略惨烈,死在订单中,Df 更惨烈, 胎死腹中!  <br/>
 不折腾会死玩相机星人,往后还是不折腾机身镜头了,把附件搞上去再多出去玩儿才是王道 ╮(╯▽╰)╭  有了闪灯或是脚架会比倒腾这些机身镜头来的更有意义,不过那也是不小的开销(没人逼你买7个顶级灯来召唤神龙的!!!)</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[一本书和一个杯子]]></title>
-    <link href="http://xguox.github.com/blog/2013/11/09/a-sudden-consciousness/"/>
-    <updated>2013-11-09T23:17:00+08:00</updated>
-    <id>http://xguox.github.com/blog/2013/11/09/a-sudden-consciousness</id>
-    <content type="html"><![CDATA[<p>{% audio <a href="http://m1.file.xiami.com/259/58259/515557/1771031189_3321387_l.mp3">http://m1.file.xiami.com/259/58259/515557/1771031189_3321387_l.mp3</a> %}</p>
-
-<h1>Test audio_tag</h1>
-
-<p>忽然发现, 曾经买过一本Rails书, AWDWR.
-然后,落了在上海.<br/>
-第四版的,这一版本的中译本封面真心难看,跟英文原书完全不同了.</p>
-
-<p>其次还落了的是一个杯子.<br/>
-<img src="https://gagqnq.dm2301.livefilestore.com/y2pjyqqxX98DCYtkwLQsHtjPL7ciJvZF6OCJEAZnvRbwbaqbJEPq2rUH7U-Z01ayjUTZZce_F2BUz32TOcnOenBCZWp7wCo4CnQxxm7GCHh-z8/T2Kd9EXiRaXXXXXXXX_!!112015850.jpg_310x310.jpg?psid=1" alt="" /></p>
-
-<p> 当时选择买这个杯子的原因是因为上面的20, 刚好那时20岁. 这没一会. 我就即将22岁了. 还记得这个杯子比一般的要高出个七八厘米,目测也是20cm左右, 也特厚特重. 但是用久了,习惯了以后就没感觉了. 等到我回来家里. 刚开始的那些天拿起家里的杯子各种轻, 那种感觉特别明显. 但是, 时间过去, 我也又熟悉了家里的这个这么轻的杯子,忘记了那个20的重量.</p>
-
-<p> 也不知道还有啥落了,估计有也不是什么重要东西, 滚回来一年了.</p>
 ]]></content>
   </entry>
   

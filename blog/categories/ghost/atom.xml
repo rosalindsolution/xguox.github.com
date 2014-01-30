@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Ghost | XguoX]]></title>
   <link href="http://xguox.github.com/blog/categories/ghost/atom.xml" rel="self"/>
   <link href="http://xguox.github.com/"/>
-  <updated>2014-01-20T21:08:40+08:00</updated>
+  <updated>2014-01-30T13:20:27+08:00</updated>
   <id>http://xguox.github.com/</id>
   <author>
     <name><![CDATA[XguoX]]></name>
@@ -164,7 +164,7 @@ An error occurred in the application and your page could not be served. Please t
 
 <p>这东西也纠结了我老久,Logs显示
 <code>ERROR: Invalid value, check page, pages, limit and total are numbers</code><br/>
-没找着原因,后来在官方的Forum上看到的解决办法,是把<code>content/themes/casper/index.hbs</code>里头的 {% raw %} {{pagination}} {% endraw %}注释掉.</p>
+没找着原因,后来在官方的Forum上看到的解决办法,是把<code>content/themes/casper/index.hbs</code>里头的  {{pagination}} 注释掉.</p>
 
 <p>然后,就没然后了, 部署完毕,打开你的项目链接玩儿Ghost吧.</p>
 
