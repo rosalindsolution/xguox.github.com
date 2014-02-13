@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Sublime | XguoX]]></title>
   <link href="http://xguox.github.com/blog/categories/sublime/atom.xml" rel="self"/>
   <link href="http://xguox.github.com/"/>
-  <updated>2014-01-30T13:24:13+08:00</updated>
+  <updated>2014-02-13T14:19:40+08:00</updated>
   <id>http://xguox.github.com/</id>
   <author>
     <name><![CDATA[XguoX]]></name>
@@ -33,6 +33,9 @@
 &ndash;> 文件和文件夹 的 查找 Finder 项目 , 查找 <code>/Users/xguox/Dropbox/IFTTT/Daylight</code> 是否有文件拓展名为 txt 的.  &ndash;> 添加 <strong>运行 Shell 脚本</strong></p></li>
 <li><p>在 textarea 中添加这段 shell script , 存储-搞定!</p></li>
 </ol>
+
+
+<!-- more -->
 
 
 <p>```python

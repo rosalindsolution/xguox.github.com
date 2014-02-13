@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Rails | XguoX]]></title>
   <link href="http://xguox.github.com/blog/categories/rails/atom.xml" rel="self"/>
   <link href="http://xguox.github.com/"/>
-  <updated>2014-01-30T13:24:13+08:00</updated>
+  <updated>2014-02-13T14:19:40+08:00</updated>
   <id>http://xguox.github.com/</id>
   <author>
     <name><![CDATA[XguoX]]></name>
@@ -79,6 +79,9 @@ and then 是一坨的提示，照着撸完，之后<br/>
   <code>resources :users, only: [:index, :show]</code></p>
 
 <p>然后是添加其他字段, add username migration 之后</p>
+
+<!-- more -->
+
 
 <p>```ruby
 class ApplicationController &lt; ActionController::Base

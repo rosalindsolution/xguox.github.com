@@ -380,7 +380,7 @@
     </url>
     <url>
         <loc>http://xguox.github.com/blog/2013/12/09/hello-22/</loc>
-        <lastmod>2014-01-04T16:56:42+08:00</lastmod>
+        <lastmod>2014-02-13T14:16:46+08:00</lastmod>
     </url>
     <url>
         <loc>http://xguox.github.com/blog/2013/12/11/sabo-and-koala-and-one-piece/</loc>
@@ -388,15 +388,15 @@
     </url>
     <url>
         <loc>http://xguox.github.com/blog/2013/12/20/rails4-devise-strong-parameters/</loc>
-        <lastmod>2014-01-04T16:56:42+08:00</lastmod>
+        <lastmod>2014-02-13T14:16:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://xguox.github.com/blog/2013/12/24/automator-ifttt-dropbox-sublime-theme/</loc>
-        <lastmod>2014-01-04T16:56:42+08:00</lastmod>
+        <lastmod>2014-02-13T14:16:43+08:00</lastmod>
     </url>
     <url>
         <loc>http://xguox.github.com/blog/2013/12/31/2013-2014/</loc>
-        <lastmod>2014-01-04T16:56:42+08:00</lastmod>
+        <lastmod>2014-02-13T14:16:41+08:00</lastmod>
     </url>
     <url>
         <loc>http://xguox.github.com/blog/2014/01/04/heroku-rails-do4fun-theme/</loc>
@@ -410,7 +410,11 @@
     </url>
     <url>
         <loc>http://xguox.github.com/blog/2014/01/30/new-relic-t-shirt-unbox/</loc>
-        <lastmod>2014-01-30T13:24:06+08:00</lastmod>
+        <lastmod>2014-02-13T14:17:20+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://xguox.github.com/blog/2014/02/13/css3-column-star/</loc>
+        <lastmod>2014-02-13T14:18:58+08:00</lastmod>
     </url>
     <url>
         <loc>http://xguox.github.com/about/</loc>
@@ -418,19 +422,19 @@
     </url>
     <url>
         <loc>http://xguox.github.com/archives/</loc>
-        <lastmod>2014-01-30T13:24:06+08:00</lastmod>
+        <lastmod>2014-02-13T14:18:58+08:00</lastmod>
     </url>
     <url>
         <loc>http://xguox.github.com/blog/archives/</loc>
-        <lastmod>2014-01-30T13:24:06+08:00</lastmod>
+        <lastmod>2014-02-13T14:18:58+08:00</lastmod>
     </url>
     <url>
         <loc>http://xguox.github.com/blog/</loc>
-        <lastmod>2014-01-30T13:24:06+08:00</lastmod>
+        <lastmod>2014-02-13T14:18:58+08:00</lastmod>
     </url>
     <url>
         <loc>http://xguox.github.com/</loc>
-        <lastmod>2014-01-30T13:24:06+08:00</lastmod>
+        <lastmod>2014-02-13T14:18:58+08:00</lastmod>
     </url>
     <url>
         <loc>http://xguox.github.com/robots.txt</loc>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: CSS | XguoX]]></title>
   <link href="http://xguox.github.com/blog/categories/css/atom.xml" rel="self"/>
   <link href="http://xguox.github.com/"/>
-  <updated>2014-01-30T13:24:13+08:00</updated>
+  <updated>2014-02-13T14:19:40+08:00</updated>
   <id>http://xguox.github.com/</id>
   <author>
     <name><![CDATA[XguoX]]></name>
@@ -12,6 +12,62 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[css3 之 column-*]]></title>
+    <link href="http://xguox.github.com/blog/2014/02/13/css3-column-star/"/>
+    <updated>2014-02-13T14:10:56+08:00</updated>
+    <id>http://xguox.github.com/blog/2014/02/13/css3-column-star</id>
+    <content type="html"><![CDATA[<p>原本想要使用CSS3 中的多栏属性实现类似报纸那样的排版, 或者 pinterest 那样的瀑布流,  但结果跟预想相去较远.   <br/>
+原以为用 column-count 或 column-width 来将 HTML 元素变成多栏, 再 column-gap 定义为 0 让所有元素能贴在一起,  但是才发现没有真正理解多栏的含义,  使用多栏的话是从上到下的排序, 而如果按时间顺序列出所有 posts 的话,  那结果只是</p>
+
+<table>
+    <tr>
+      <td>1</td>
+      <td>4</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>5</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>6</td>
+      <td>9</td>
+    </tr>
+</table>
+
+
+<p>而不是</p>
+
+<table>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>5</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>8</td>
+      <td>9</td>
+    </tr>
+</table>
+
+
+<p>基于这样的排序, 于是就想着将计就计,  把页面整体做成横向滚动, 为此还使用了 <a href="">jquery.mousewheel.min.js</a> 来把鼠标滚动设置成<a href="http://handhack.com/explore">横向</a>.  想来绝大部分的网页都是上下滚动, 搞搞非主流.   最后发现,  整体这么设置的话, 会造成用户观看的时候视线变成了频繁的正弦曲线, 很糟糕.  现在(14.2.14)还是这个样子, 因为没有想到其他 nice 的方案, 暂时没做修改.</p>
+
+<p>主流浏览器对 column-*的支持各不相同,<br/>
+又比如, <code>moz-column-count</code> can not work properly with  <code>-moz-column-fill: auto</code>, 见 <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=733808;">https://bugzilla.mozilla.org/show_bug.cgi?id=733808;</a>
+所以像这样整体的过度使用暂时还是放弃为好.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[5 Use Cases for Icon Fonts]]></title>

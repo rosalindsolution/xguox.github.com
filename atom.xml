@@ -4,7 +4,7 @@
   <title><![CDATA[XguoX]]></title>
   <link href="http://xguox.github.com/atom.xml" rel="self"/>
   <link href="http://xguox.github.com/"/>
-  <updated>2014-01-30T13:24:13+08:00</updated>
+  <updated>2014-02-13T14:19:40+08:00</updated>
   <id>http://xguox.github.com/</id>
   <author>
     <name><![CDATA[XguoX]]></name>
@@ -12,6 +12,62 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[css3 之 column-*]]></title>
+    <link href="http://xguox.github.com/blog/2014/02/13/css3-column-star/"/>
+    <updated>2014-02-13T14:10:56+08:00</updated>
+    <id>http://xguox.github.com/blog/2014/02/13/css3-column-star</id>
+    <content type="html"><![CDATA[<p>原本想要使用CSS3 中的多栏属性实现类似报纸那样的排版, 或者 pinterest 那样的瀑布流,  但结果跟预想相去较远.   <br/>
+原以为用 column-count 或 column-width 来将 HTML 元素变成多栏, 再 column-gap 定义为 0 让所有元素能贴在一起,  但是才发现没有真正理解多栏的含义,  使用多栏的话是从上到下的排序, 而如果按时间顺序列出所有 posts 的话,  那结果只是</p>
+
+<table>
+    <tr>
+      <td>1</td>
+      <td>4</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>5</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>6</td>
+      <td>9</td>
+    </tr>
+</table>
+
+
+<p>而不是</p>
+
+<table>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>5</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>8</td>
+      <td>9</td>
+    </tr>
+</table>
+
+
+<p>基于这样的排序, 于是就想着将计就计,  把页面整体做成横向滚动, 为此还使用了 <a href="">jquery.mousewheel.min.js</a> 来把鼠标滚动设置成<a href="http://handhack.com/explore">横向</a>.  想来绝大部分的网页都是上下滚动, 搞搞非主流.   最后发现,  整体这么设置的话, 会造成用户观看的时候视线变成了频繁的正弦曲线, 很糟糕.  现在(14.2.14)还是这个样子, 因为没有想到其他 nice 的方案, 暂时没做修改.</p>
+
+<p>主流浏览器对 column-*的支持各不相同,<br/>
+又比如, <code>moz-column-count</code> can not work properly with  <code>-moz-column-fill: auto</code>, 见 <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=733808;">https://bugzilla.mozilla.org/show_bug.cgi?id=733808;</a>
+所以像这样整体的过度使用暂时还是放弃为好.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[New Relic T' 开箱!]]></title>
@@ -26,6 +82,9 @@
 <blockquote><p>最近感觉没衣服穿了,想起NewRelic那有T-shirt送,不过要成功部署一个应用,刚好最近NewRelic也开始支持Node. 于是果断把放在OpenShift的Ghost给部署一个 =.= 然后,有比我这还钓丝的么? 结果发现,这是夏装T,等寄到我手上我都要穿棉袄了. 尴尬到&hellip;</p></blockquote>
 
 <p><img src="http://ww1.sinaimg.cn/bmiddle/62fdd4d5gw1ea1zvhckgjj20ls0dowg1.jpg" alt="" /></p>
+
+<!-- more -->
+
 
 <p>and then, 今个儿终于拿到手了.  刚好就当过年新衣服好了.  最近天气也热了不少. BLABLABLA</p>
 
@@ -60,7 +119,7 @@
 <p>没事找乐子,<br/>
 that&rsquo;s all.</p>
 
-<p>新年快乐, 马年吉祥!</p>
+<p><strong>新年快乐, 马年吉祥!</strong></p>
 ]]></content>
   </entry>
   
@@ -157,6 +216,9 @@ that&rsquo;s all.</p>
 
 <p>2013, 必须是最难忘的一年, 也是看似最平淡的一年!</p>
 
+<!-- more -->
+
+
 <p>挨了两刀! 在家猫了整年, 走医院当吃饭般平常, 吃药比吃饭还频繁.</p>
 
 <p>1月份和7月份不谈,  2-5月基本淡定的玩儿代码, 拿了毕业证后略微不淡定, 5-10月份不务正业的几乎把 coding 荒废! 更可耻是甚至曾经想要放弃!!!  纯粹心理原因!</p>
@@ -209,6 +271,11 @@ that&rsquo;s all.</p>
 &ndash;> 文件和文件夹 的 查找 Finder 项目 , 查找 <code>/Users/xguox/Dropbox/IFTTT/Daylight</code> 是否有文件拓展名为 txt 的.  &ndash;> 添加 <strong>运行 Shell 脚本</strong></p></li>
 <li><p>在 textarea 中添加这段 shell script , 存储-搞定!</p></li>
 </ol>
+
+
+<!-- more -->
+
+
 
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -281,6 +348,11 @@ and then 是一坨的提示，照着撸完，之后<br/>
   <code>resources :users, only: [:index, :show]</code></p>
 
 <p>然后是添加其他字段, add username migration 之后</p>
+
+<!-- more -->
+
+
+
 
 <figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -2602,42 +2674,6 @@ Liquid::Template.register_tag(&#39;audio&#39;, Jekyll::AudioTag)</code></pre></n
 <p>如果你喜欢的workflow没有在这列出,可以在下边的评论当中跟我们分享. 如果你觉得上边提到的那些赞到爆的话,也可以告诉我们哦!</p>
 
 <p>文章翻译自 <a href="http://coding.smashingmagazine.com/2013/10/25/hidden-productivity-secrets-with-alfred/">Hidden Productivity Secrets With Alfred</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Wedding, Photography]]></title>
-    <link href="http://xguox.github.com/blog/2013/10/20/diary-about-wedding-about-photography/"/>
-    <updated>2013-10-20T23:37:00+08:00</updated>
-    <id>http://xguox.github.com/blog/2013/10/20/diary-about-wedding-about-photography</id>
-    <content type="html"><![CDATA[<p>随着年龄的成长,现在跟朋友在一起聊的话题似乎从以往的各种扯淡转变成了 婚姻 &amp; 工作.毕业后这些日子更明显了.这不又一对老同学结成连理了.往后还陆续有来叻！</p>
-
-<p>昨天说到牛总明年的婚事,我和甫表示各种强烈赞成建议他抛弃那些个什么Benz,BMW,四个圈之类的去迎亲,改用超豪华得大巴更拉风  XD</p>
-
-<p>另外,有趣的是,相较之下,初中的同学更多是谈到婚姻,而高中的则更多是谈到工作.不知道有没什么必然联系 =.=</p>
-
-<p><img src="http://farm4.staticflickr.com/3831/10457108984_9b8950c033_z.jpg" alt="" /></p>
-
-<p>帮牛总的婚庆工作室拍了两场婚礼,纯客串的当个没入门摄影师.总结下来,跟专业的必须有差距,无论是器材,技法,引导,后期等等</p>
-
-<p>这其中,差距最大的还是引导这一块.</p>
-
-<p>器材上,其实主要是缺一枚灯.这个差距最好弥补.几百块一个永诺的闪灯要能玩得转对我而言就足够了,不过略有原厂情结,刚开始还准备一步到位上 600ex 的说,反正迟迟没买,直到现在6D套摆上架&hellip;&hellip;</p>
-
-<p>技术,后期等因素比较客观,不扯淡.</p>
-
-<p>其实我主要是想说,我跟那天那个影楼的摄影师的最大差距在于指挥能力.人家专业的好家伙让你怎么摆就怎么摆,说集中就得集中.而我,顶多吆喝一句让人看着镜头,然后,就没然后了.其余只会跟着流程,跟着队伍瞎跑,动作好不好,站位好不好,怎么才好都没有更多的指示.几次的大合照最明显不过.另外,自己的站位,跑位也经常出现蛋疼的失误.</p>
-
-<p>还有一个,其实还跟上面相关,交流问题.尽管是专业的,也即使是专业的,他也未必百发能百中,但是,我时常看他回看之后觉得拍不好或者动作不是摆得很到位会很自然的让被摄者再来一次,直到片子成功为止.相反的,我是经常按了快门就算了,主要是略不好意思让被摄者重复或者keep住某个动作或表情.(哪有那么多内敛,艹,你拿相机你才是老大！)</p>
-
-<p>最后是多机的问题.其实这个问题早在之前拍各种毕业照时候就有,拍大合照之类的时候,如果面对着2台或者以上的相机(包括手机),如果不做出明确的喊话指定眼神看哪台机子,出来的照片就会很蛋疼的眼神往各个方向飘.遇上这问题,要不就霸气点喊着全场看过来,要不就商量好各台机器各司其职.</p>
-
-<p>最后的最后,不得不感叹一下后期.</p>
-
-<blockquote><p>数码不后期,就是大傻逼.</p></blockquote>
-
-<p>反正绝大部分片子不后期几下都不太好意思交功课了.尽管我的后期渣一般,
-但好几张完全惨不忍睹的照片被我用Photoshop,Lightroom救了回来.</p>
 ]]></content>
   </entry>
   

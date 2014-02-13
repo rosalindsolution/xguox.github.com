@@ -6,8 +6,7 @@
 	<title>XguoX</title>
     <meta name="author" content="XguoX">
     
-	<meta name="description" content="Published on: Mar 25th, 2013 Tags: CSS, Translation Icon fonts非常的强大: You can CSS the crap out of them and they don&rsquo;t mind.
-在任何的显示器和分辨率上看起来都很不错 &hellip;">
+	<meta name="description" content="Published on: Apr 6th, 2013 Tags: Heroku, Jabber, Meteor 貌似有好一段时间没有在这儿小发一些闷骚或者情感泛滥什么的, 都是用自己蹩脚的英语水平翻译些英文post. 这些天想部署个Meteor app玩一玩, 结果一玩就各种出事了. &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -113,6 +112,57 @@
 <!-- begin toload --> 
     <div id="content" class="inner">
         
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2013/04/06/deploy-meteor-on-heroku/">
+		
+			最近在折腾 &#8211; Deploy Meteor on Heroku</a>
+	</h2>
+    <div class="entry-content">
+    <div class="meta">
+      <div class="date">Published on: 
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-06T23:42:00+08:00" pubdate data-updated="true">Apr 6<span>th</span>, 2013</time></div>
+      <div class="tags">Tags: 
+
+
+	<a class='category' href='/blog/categories/heroku/'>Heroku</a>, <a class='category' href='/blog/categories/jabber/'>Jabber</a>, <a class='category' href='/blog/categories/meteor/'>Meteor</a>
+
+
+</div>
+    </div>
+		<p>貌似有好一段时间没有在这儿小发一些闷骚或者情感泛滥什么的, 都是用自己蹩脚的英语水平翻译些英文post. 这些天想部署个Meteor app玩一玩, 结果一玩就各种出事了.</p>
+
+<p>vps退货, godaddy的莫名失单, 部署各种卡壳&hellip;</p>
+
+<p>因为最近比较多的关注前端的东西,  同时在自己local耍着<a href="https://github.com/SachaG/Telescope">SachaG / Telescope</a>这个基于Meteor的项目. 于是也就顺手搭了<a href="http://frontn.com">FrontN</a>这么个类似HN, Reddit的玩意. 原本是准备直接把HN,Reddit clone 成中文版的, 不过<a href="http://news.dbanotes.net/">Fenng</a>貌似已经这么干了, 所以, 我也就不再造这个轮子了.另外原本也想专门作为<a href="http://jianshu.io">简书</a>的评论系统. 不过想想也不是很妥, 就&hellip;</p>
+
+<p>Meteor的系统是超级alpha的, 所以很多问题遇上了也没人帮忙, 解决. 比如之前在<a href="http://stackoverflow.com/questions/15654637/same-helper-for-different-template">Stack Overflow</a>. 而部署这一块, 是我比较陌生的. 包括以前搞Rails那会, 也没真正意义的整一整部署. 绝大部分时间都在本地跑啊跑. 所以, 在Meteor, 也是这一块最让我头疼.</p>
+
+
+		
+		<a href="/blog/2013/04/06/deploy-meteor-on-heroku/" class="more-link">Read on &rarr;</a>
+	</div>
+
+<div class="meta">
+	
+		<span class="comments"><a href="/blog/2013/04/06/deploy-meteor-on-heroku//blog/page/6/index.html#disqus_thread">Comments</a></span>
+	
+</div>
+</article>
 
 
     <article class="post">
@@ -444,71 +494,6 @@ Meteor目前使用的模板引擎只能是 <a href="http://handlebarsjs.com/">ha
 <div class="meta">
 	
 		<span class="comments"><a href="/blog/2013/03/06/a-look-at-a-meteor-template//blog/page/6/index.html#disqus_thread">Comments</a></span>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2013/03/05/getting-started-with-meteor/">
-		
-			Getting Started With Meteor</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-03-05T23:02:00+08:00" pubdate data-updated="true">Mar 5<span>th</span>, 2013</time></div>
-      <div class="tags">Tags: 
-
-
-	<a class='category' href='/blog/categories/meteor/'>Meteor</a>, <a class='category' href='/blog/categories/translation/'>Translation</a>
-
-
-</div>
-    </div>
-		<h5>LEVEL: BEGINNER</h5>
-
-<p>当你看到这,也就说明你听说了<a href="http://Meteor.com/">Meteor</a>这东西, 并对它产生一些好奇.<br/>
-那就让我们创建一个最基本的应用来耍一耍吧. 希望能以此学习到一两样东西.</p>
-
-<h2>准备工作: 安装Meteor</h2>
-
-<p>要安装Meteor那就再简单不过了. 只需要执行下面这条命令<br/>
-<code>curl https://install.Meteor.com | /bin/sh</code></p>
-
-<p>只要你是在<a href="https://github.com/Meteor/Meteor/wiki/Supported-Platforms">支持的平台</a>上运行,跟着步骤来就基本没什么问题.</p>
-
-<p>接下来让我们创建一个简单的app来确定是否安装成功.<br/>
-<code>Meteor create forum</code>
-如果安装成功, 那执行下面的步骤就可以把这个app跑起来了</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>cd forum
-</span><span class='line'>Meteor</span></code></pre></td></tr></table></div></figure>
-
-
-
-		
-		<a href="/blog/2013/03/05/getting-started-with-meteor/" class="more-link">Read on &rarr;</a>
-	</div>
-
-<div class="meta">
-	
-		<span class="comments"><a href="/blog/2013/03/05/getting-started-with-meteor//blog/page/6/index.html#disqus_thread">Comments</a></span>
 	
 </div>
 </article>

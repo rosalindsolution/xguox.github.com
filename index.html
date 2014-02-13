@@ -6,7 +6,7 @@
 	<title>XguoX</title>
     <meta name="author" content="XguoX">
     
-	<meta name="description" content="Published on: Jan 30th, 2014 Tags: Jabber 一件 T&#8217; 而已, 我是不是很无聊? 而且明明就没箱子 = . = 其实是因为之前忘了在哪看到的, 有一篇牙签盒什么的开箱. 更鸡碎的东西 = . = 不要吐槽没事找渣儿玩的 2货. 大过年刚才拿到 &hellip;">
+	<meta name="description" content="Published on: Feb 13th, 2014 Tags: CSS 原本想要使用CSS3 中的多栏属性实现类似报纸那样的排版, 或者 pinterest 那样的瀑布流, 但结果跟预想相去较远. 原以为用 column-count 或 column-width 来将 HTML &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -117,6 +117,97 @@
     <article class="post">
 	<h2 class="title">
 		
+		<a href="/blog/2014/02/13/css3-column-star/">
+		
+			Css3 之 Column-*</a>
+	</h2>
+    <div class="entry-content">
+    <div class="meta">
+      <div class="date">Published on: 
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-02-13T14:10:56+08:00" pubdate data-updated="true">Feb 13<span>th</span>, 2014</time></div>
+      <div class="tags">Tags: 
+
+
+	<a class='category' href='/blog/categories/css/'>CSS</a>
+
+
+</div>
+    </div>
+		<p>原本想要使用CSS3 中的多栏属性实现类似报纸那样的排版, 或者 pinterest 那样的瀑布流,  但结果跟预想相去较远.   <br/>
+原以为用 column-count 或 column-width 来将 HTML 元素变成多栏, 再 column-gap 定义为 0 让所有元素能贴在一起,  但是才发现没有真正理解多栏的含义,  使用多栏的话是从上到下的排序, 而如果按时间顺序列出所有 posts 的话,  那结果只是</p>
+
+<table>
+    <tr>
+      <td>1</td>
+      <td>4</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>5</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>6</td>
+      <td>9</td>
+    </tr>
+</table>
+
+
+<p>而不是</p>
+
+<table>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>5</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>8</td>
+      <td>9</td>
+    </tr>
+</table>
+
+
+<p>基于这样的排序, 于是就想着将计就计,  把页面整体做成横向滚动, 为此还使用了 <a href="">jquery.mousewheel.min.js</a> 来把鼠标滚动设置成<a href="http://handhack.com/explore">横向</a>.  想来绝大部分的网页都是上下滚动, 搞搞非主流.   最后发现,  整体这么设置的话, 会造成用户观看的时候视线变成了频繁的正弦曲线, 很糟糕.  现在(14.2.14)还是这个样子, 因为没有想到其他 nice 的方案, 暂时没做修改.</p>
+
+<p>主流浏览器对 column-*的支持各不相同,<br/>
+又比如, <code>moz-column-count</code> can not work properly with  <code>-moz-column-fill: auto</code>, 见 <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=733808;">https://bugzilla.mozilla.org/show_bug.cgi?id=733808;</a>
+所以像这样整体的过度使用暂时还是放弃为好.</p>
+
+		
+		
+	</div>
+
+<div class="meta">
+	
+		<span class="comments"><a href="/blog/2014/02/13/css3-column-star//index.html#disqus_thread">Comments</a></span>
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
 		<a href="/blog/2014/01/30/new-relic-t-shirt-unbox/">
 		
 			New Relic T&#8217; 开箱!</a>
@@ -153,43 +244,9 @@
 
 <p><img src="http://ww1.sinaimg.cn/bmiddle/62fdd4d5gw1ea1zvhckgjj20ls0dowg1.jpg" alt="" /></p>
 
-<p>and then, 今个儿终于拿到手了.  刚好就当过年新衣服好了.  最近天气也热了不少. BLABLABLA</p>
-
-<p><img src="http://ww4.sinaimg.cn/mw690/62fdd4d5gw1ed1hjmgf0vj21jk0van5z.jpg" alt="" /></p>
-
-<p>看这戳 1月6 号就到了, 不过是寄到朋友家, 拖了好些天才拿回来.</p>
-
-<p><img src="http://ww1.sinaimg.cn/mw690/62fdd4d5gw1ed1hjrtc6oj21kw11ktkx.jpg" alt="" /></p>
-
-<p>英文的地址好像很流弊的样子, 又装到了</p>
-
-<p>拆开来, 等登灯灯&hellip;好一个 NERD , 说的就是咱!</p>
-
-<p><img src="http://ww4.sinaimg.cn/mw690/62fdd4d5gw1ed1hjyjfo1j21jk0vawte.jpg" alt="" /></p>
-
-<p>挂外面展开</p>
-
-<p><img src="http://ww3.sinaimg.cn/mw690/62fdd4d5gw1ed1hkcnno8j21jk1qw7wh.jpg" alt="" /></p>
-
-<p><img src="http://ww1.sinaimg.cn/mw690/62fdd4d5gw1ed1hkowkmsj21jk0vaazv.jpg" alt="" /></p>
-
-<p>后面这个 logo 的地方不太好, thanks  <a href="http://newrelic.com/">New Relic</a></p>
-
-<p>奇葩的是 made in USA 为嘛上面有好些个中文字</p>
-
-<p><img src="http://ww1.sinaimg.cn/mw690/62fdd4d5gw1ed1hl2ohy4j21kw0y4h8a.jpg" alt="" /></p>
-
-<p>上身对着镜子撸一张</p>
-
-<p><img src="http://ww1.sinaimg.cn/mw690/62fdd4d5gw1ed1hlh28gzj21jk0vah1t.jpg" alt="" /></p>
-
-<p>没事找乐子,<br/>
-that&rsquo;s all.</p>
-
-<p>新年快乐, 马年吉祥!</p>
 
 		
-		
+		<a href="/blog/2014/01/30/new-relic-t-shirt-unbox/" class="more-link">Read on &rarr;</a>
 	</div>
 
 <div class="meta">
@@ -388,38 +445,9 @@ that&rsquo;s all.</p>
 
 <p>2013, 必须是最难忘的一年, 也是看似最平淡的一年!</p>
 
-<p>挨了两刀! 在家猫了整年, 走医院当吃饭般平常, 吃药比吃饭还频繁.</p>
-
-<p>1月份和7月份不谈,  2-5月基本淡定的玩儿代码, 拿了毕业证后略微不淡定, 5-10月份不务正业的几乎把 coding 荒废! 更可耻是甚至曾经想要放弃!!!  纯粹心理原因!</p>
-
-<p>11月开始重新再学习 Ruby, 12月开始 Rails ,  12月14 自己启动代号 <a href="http://127.0.0.1:3000/about">do4fun</a> 项目,  直至今天基本功能基本页面基本实现.</p>
-
-<p>有意思的是, 我的Github 上的 Contributions 基本可以看出来了这些个规律
-<img src="http://ww3.sinaimg.cn/mw690/62fdd4d5gw1ec38sl8unnj20l508o3zl.jpg" alt="" /></p>
-
-<p>总结是, 我的心理能力属性为弱, 但是正在增强!</p>
-
-<p>透过这10多天搞出来的东西,   既在<strong>学习</strong>也在<strong>回顾</strong>.</p>
-
-<p>主要在<strong>回顾</strong>吧</p>
-
-<p>想来当初 <a href="https://twitter.com/linlis">@简叔</a>和<a href="https://twitter.com/larryzhao">@萌波</a> 要找的实习生其实现在的我才符合要求,  那会的我, 好吧, 越想越不可思议.  <br/>
-回想起来, 12年7月份的我 简书的 UI 几乎是在 简叔 的强力帮助下搞出来的!   后台起先程序小不打紧还能干的来, 但到后来程序起来了又是要萌波力挽狂澜! 尤其 JS  那块. 自己看着都蛋疼!</p>
-
-<p>抛开 JS 不谈, 就算 HTML 和 CSS , 也直到现今完成了 <a href="do4fun.herokuapp.com">do4fun</a> 之后才敢说熟悉,  原来我一直对盒模型 布局方面就模模糊糊, 甚至连 margin 和 padding  都老弄混淆!  回想起当初简叔教我关于 Bootstrap 的, 好吧, 我又是现今才熟练了! 现在虽然依赖于 Bootstrap, 但是, 也算是有能力调成了不像 Bootstrap.</p>
-
-<p>当然没有那段白板一样的经历, 也不可能有现在可以快速回血的存在.  感谢 简叔 &amp; 萌波!</p>
-
-<p>Anyway, 接下来可以干的也不少, 尤其 JS 这块硬骨头!  不能再拖的玩啊!<br/>
-准备尝试用 Backbone 或者 Angular  把前端加强! 希望能顺利吧.<br/>
-另外测试, Rspec 写一会不写一会的! 习惯没有养成, 堆着堆着就是一堆突如其来的 Bug.</p>
-
-<p>真心希望年后可以复出!  不过真若可以, 到时候我能找到什么工作呢?  前几天, 无意间听到 老爸, 大伯他们还想把我弄去当些村官类职责.  不禁想,  不考虑意愿, 如果真那样了, 是不是我要拿着我的 Mac 在那些办公室 码代码叻!</p>
-
-<p>不管是生日愿望, 还是新年愿望, 都无比希望自己能健健康康的, 去做自己喜欢的事!</p>
 
 		
-		
+		<a href="/blog/2013/12/31/2013-2014/" class="more-link">Read on &rarr;</a>
 	</div>
 
 <div class="meta">
@@ -477,45 +505,9 @@ that&rsquo;s all.</p>
 </ol>
 
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">DAYLIGHTDIR</span><span class="o">=</span><span class="s">&quot;/Users/xguox/Dropbox/IFTTT/Daylight&quot;</span>
-</span><span class='line'><span class="n">SUNSETFILE</span><span class="o">=</span><span class="s">&quot;sunset.txt&quot;</span>
-</span><span class='line'><span class="n">SUNRISEFILE</span><span class="o">=</span><span class="s">&quot;sunrise.txt&quot;</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">if</span> <span class="p">[</span> <span class="o">-</span><span class="n">f</span> <span class="s">&quot;$DAYLIGHTDIR&quot;</span><span class="o">/</span><span class="s">&quot;$SUNRISEFILE&quot;</span> <span class="p">]</span> <span class="o">||</span> <span class="p">[[</span> <span class="o">-</span><span class="n">f</span> <span class="s">&quot;$DAYLIGHTDIR&quot;</span><span class="o">/</span><span class="s">&quot;$SUNSETFILE&quot;</span> <span class="p">]]</span> <span class="p">;</span>
-</span><span class='line'><span class="n">then</span>
-</span><span class='line'>   <span class="n">CURRENTSETTING</span><span class="o">=</span><span class="sb">`grep tmTheme ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/Preferences.sublime-settings | awk -F&#39;[.|.]&#39; &#39;{print $2}&#39;`</span>
-</span><span class='line'>   <span class="n">DAYLIGHTFILE</span><span class="o">=</span><span class="sb">`ls &quot;$DAYLIGHTDIR&quot;`</span>
-</span><span class='line'>   <span class="n">NEXTSETTING</span><span class="o">=</span><span class="sb">`cat &quot;$DAYLIGHTDIR&quot;/&quot;$DAYLIGHTFILE&quot;`</span>
-</span><span class='line'>   <span class="n">sed</span> <span class="o">-</span><span class="n">i</span> <span class="s">&#39;.bak&#39;</span> <span class="s">&#39;s/&#39;</span><span class="err">$</span><span class="n">CURRENTSETTING</span><span class="s">&#39;.tmTheme/&#39;</span><span class="err">$</span><span class="n">NEXTSETTING</span><span class="s">&#39;.tmTheme/&#39;</span> <span class="s">&#39;/Users/xguox/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings&#39;</span>
-</span><span class='line'>   <span class="n">rm</span> <span class="o">-</span><span class="n">f</span> <span class="s">&quot;$DAYLIGHTDIR&quot;</span><span class="o">/</span><span class="s">&quot;$DAYLIGHTFILE&quot;</span>
-</span><span class='line'><span class="n">fi</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>重复一次建一个 sunset 的recipe, 调好时间把 <strong>content</strong> 的 light 改为 dark 就是了.</p>
-
-<p>关于 Shell 好吧, 尴尬我没认真学习过, 只能大概看懂然后做些修改( xguox 的配色来自 <a href="http://chriskempson.github.io/base16/#default">Base16</a> 不是自带的 ).  其实我是在终端先把脚本测试运行了一通滴!比如 awk 那里就没看懂, 直接运行了那一行才把原本的<code>[(|)]</code>改成了<code>[.|.]</code>, 理论上其实可以无限更换, 只是太花哨频繁了也不甚好.</p>
-
-<p>IFTTT (Dropbox)+ Automator(Shell) 这个组合赞死了! Google 之发现很早就有人这么干了, 看来还是 out 了.</p>
-
-<p>参考自<a href="http://www.sublimetext.com/forum/viewtopic.php?f=4&amp;t=13662">Sublime Forum</a></p>
-
-<p>题外话扯淡,  本来说试试用简书的富文本, 发现貌似从原本的 wysihtml5 换成了 redactor. 靠!林总果然是土豪啊! 一个编辑器也要花上 $199 . 不过单看这一般功能看不出比一些开源的货有啥流弊之处。</p>
 
 		
-		
+		<a href="/blog/2013/12/24/automator-ifttt-dropbox-sublime-theme/" class="more-link">Read on &rarr;</a>
 	</div>
 
 <div class="meta">
@@ -583,184 +575,14 @@ and then 是一坨的提示，照着撸完，之后<br/>
 
 <p>然后是添加其他字段, add username migration 之后</p>
 
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">ApplicationController</span> <span class="o">&lt;</span> <span class="ss">ActionController</span><span class="p">:</span><span class="ss">:Base</span>
-</span><span class='line'>  <span class="n">before_action</span> <span class="ss">:configure_permitted_parameters</span><span class="p">,</span> <span class="k">if</span><span class="p">:</span> <span class="ss">:devise_controller?</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="kp">protected</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="k">def</span> <span class="nf">configure_permitted_parameters</span>
-</span><span class='line'>    <span class="n">devise_parameter_sanitizer</span><span class="o">.</span><span class="n">for</span><span class="p">(</span><span class="ss">:sign_up</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="ss">:username</span>
-</span><span class='line'>  <span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>strong parameter</h3>
-
-<p>印象中 rails3 下如
-<code>Post.new(params[:post])</code> 是可以正常运作的,</p>
-
-<p>但是, 在 rails4 当中就报错</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="ss">ActiveModel</span><span class="p">:</span><span class="ss">:ForbiddenAttributesError</span> <span class="k">in</span> <span class="no">PostsController</span><span class="c1">#create</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>在 Rails4 以后要改成</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="no">Post</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">params</span><span class="o">.</span><span class="n">require</span><span class="p">(</span><span class="ss">:post</span><span class="p">)</span><span class="o">.</span><span class="n">permit</span><span class="p">(</span><span class="ss">:title</span><span class="p">,</span> <span class="ss">:content</span><span class="p">))</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p> 相当于以往的 <strong>attr_accessible</strong><br/>
-把工作从 model 转移到 controller 了, 规避了以前的 mass assignment 问题, 又想起以前 github 中招 XD</p>
-
-<p>摘抄官方 guides</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">class</span> <span class="nc">PeopleController</span> <span class="o">&lt;</span> <span class="ss">ActionController</span><span class="p">:</span><span class="ss">:Base</span>
-</span><span class='line'>  <span class="c1"># This will raise an ActiveModel::ForbiddenAttributes exception</span>
-</span><span class='line'>  <span class="c1"># because it&#39;s using mass assignment without an explicit permit</span>
-</span><span class='line'>  <span class="c1"># step.</span>
-</span><span class='line'>  <span class="k">def</span> <span class="nf">create</span>
-</span><span class='line'>    <span class="no">Person</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">params</span><span class="o">[</span><span class="ss">:person</span><span class="o">]</span><span class="p">)</span>
-</span><span class='line'>  <span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="c1"># This will pass with flying colors as long as there&#39;s a person key</span>
-</span><span class='line'>  <span class="c1"># in the parameters, otherwise it&#39;ll raise a</span>
-</span><span class='line'>  <span class="c1"># ActionController::ParameterMissing exception, which will get</span>
-</span><span class='line'>  <span class="c1"># caught by ActionController::Base and turned into that 400 Bad</span>
-</span><span class='line'>  <span class="c1"># Request reply.</span>
-</span><span class='line'>  <span class="k">def</span> <span class="nf">update</span>
-</span><span class='line'>    <span class="n">person</span> <span class="o">=</span> <span class="n">current_account</span><span class="o">.</span><span class="n">people</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">params</span><span class="o">[</span><span class="ss">:id</span><span class="o">]</span><span class="p">)</span>
-</span><span class='line'>    <span class="n">person</span><span class="o">.</span><span class="n">update_attributes!</span><span class="p">(</span><span class="n">person_params</span><span class="p">)</span>
-</span><span class='line'>    <span class="n">redirect_to</span> <span class="n">person</span>
-</span><span class='line'>  <span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="kp">private</span>
-</span><span class='line'>    <span class="c1"># Using a private method to encapsulate the permissible parameters</span>
-</span><span class='line'>    <span class="c1"># is just a good pattern since you&#39;ll be able to reuse the same</span>
-</span><span class='line'>    <span class="c1"># permit list between create and update. Also, you can specialize</span>
-</span><span class='line'>    <span class="c1"># this method with per-user checking of permissible attributes.</span>
-</span><span class='line'>    <span class="k">def</span> <span class="nf">person_params</span>
-</span><span class='line'>      <span class="n">params</span><span class="o">.</span><span class="n">require</span><span class="p">(</span><span class="ss">:person</span><span class="p">)</span><span class="o">.</span><span class="n">permit</span><span class="p">(</span><span class="ss">:name</span><span class="p">,</span> <span class="ss">:age</span><span class="p">)</span>
-</span><span class='line'>    <span class="k">end</span>
-</span><span class='line'><span class="k">end</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>所以上边要先把 username 在 params 给 permit 了.</p>
-
-<p>暂时是这些先 MARK</p>
 
 		
-		
+		<a href="/blog/2013/12/20/rails4-devise-strong-parameters/" class="more-link">Read on &rarr;</a>
 	</div>
 
 <div class="meta">
 	
 		<span class="comments"><a href="/blog/2013/12/20/rails4-devise-strong-parameters//index.html#disqus_thread">Comments</a></span>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/blog/2013/12/11/sabo-and-koala-and-one-piece/">
-		
-			One Piece Chapter 731</a>
-	</h2>
-    <div class="entry-content">
-    <div class="meta">
-      <div class="date">Published on: 
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-12-11T23:51:00+08:00" pubdate data-updated="true">Dec 11<span>th</span>, 2013</time></div>
-      <div class="tags">Tags: 
-
-
-	<a class='category' href='/blog/categories/onepiece/'>OnePiece</a>
-
-
-</div>
-    </div>
-		<p>尾田大神一下子,  「唔声唔声吓你一惊」</p>
-
-<p>其实德雷斯罗萨已经很激动了, 连毕古麻姆都来了!!!</p>
-
-<p>只是这激动归激动, 但都是各种不利草帽的因素!!</p>
-
-<p>整个德雷斯罗萨的剧情又是一波高潮!!!萨博的出现固然激动, 但是因为老早知道他没死,出现是迟早的问题, 所以, 其实赞点还是给了克尔拉(其实我第一眼木有认出来, 只觉得面熟),  原本以为只是个一笔带过的小龙套, 第二笔就给盘活了!!! 忍不住扒了存在移动硬盘的里的全部OP动画漫画, 特地回看了那几集!!!(顺便整理下文件和文件夹的命名. Mac下的Automator好用极了!)</p>
-
-<p>and then,</p>
-
-<p>克尔拉的帽子莫不是跟萨博小时候来情侣装?</p>
-
-<p>而且克尔拉的手和腿都是黑色的, 不是黑手套和黑丝吧? (黑丝的腿会反光的么=.  =) 完全跟鞋子也一个色, 感觉很流弊的样子!!!</p>
-
-<p>(≧▽≦)/ 期待下一期, 下下期,下下下期&hellip;&hellip;</p>
-
-<p><img src="http://ww2.sinaimg.cn/mw690/62fdd4d5gw1ebg7w0twqoj20hi0owdm0.jpg" alt="" /></p>
-
-
-		
-		<a href="/blog/2013/12/11/sabo-and-koala-and-one-piece/" class="more-link">Read on &rarr;</a>
-	</div>
-
-<div class="meta">
-	
-		<span class="comments"><a href="/blog/2013/12/11/sabo-and-koala-and-one-piece//index.html#disqus_thread">Comments</a></span>
 	
 </div>
 </article>
