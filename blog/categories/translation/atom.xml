@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Translation | XguoX]]></title>
   <link href="http://xguox.github.com/blog/categories/translation/atom.xml" rel="self"/>
   <link href="http://xguox.github.com/"/>
-  <updated>2014-02-13T14:19:40+08:00</updated>
+  <updated>2014-02-17T15:39:40+08:00</updated>
   <id>http://xguox.github.com/</id>
   <author>
     <name><![CDATA[XguoX]]></name>
@@ -12,6 +12,276 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Hidden Productivity Secrets With Alfred]]></title>
+    <link href="http://xguox.github.com/blog/2013/10/28/hidden-productivity-secrets-with-alfred/"/>
+    <updated>2013-10-28T15:07:00+08:00</updated>
+    <id>http://xguox.github.com/blog/2013/10/28/hidden-productivity-secrets-with-alfred</id>
+    <content type="html"><![CDATA[<p>好的开发人员总是在寻找可以让自己的工作流程更快速,更自动化的方法.<br/>
+这次,我们带来的是<strong>Alfred的一系列workflows</strong>,它们可以极大的提高你的开发效率,相信你会为之震惊.</p>
+
+<h3>What is Alfred?</h3>
+
+<p>对于大多数了解不深的人来说,<a href="http://www.alfredapp.com/">Alfred</a>只是一个备受赞誉的Mac OS X app, 它可以快速地帮助你查找在线或者本地的文件. 最新的版本 <strong>Alfred 2</strong>更是带来了大量的改进,尤其是其中的<a href="http://www.alfredapp.com/powerpack/">Powerpack</a>,可以让你创建自己的workflows(工作流程).</p>
+
+<p>下面你将会看到这些精心挑选出来的,能够改变你的工作方式的workflows.</p>
+
+<h2>Open With Sublime Text</h2>
+
+<p>强大的文件,目录搜索能力是Alfred所最让人喜爱的功能之一. 那如果我们想要利用它使用自己喜爱的编辑器(比如说Sublime Text 3)打开文件或者目录呢?</p>
+
+<ul>
+<li><a href="https://github.com/franzheidl/alfred-workflows/tree/master/open-with-sublime-text">Open With Sublime Text (v3)</a>, developed by <a href="https://github.com/franzheidl/">@franzheidl</a></li>
+<li><a href="http://zno.io/RcAe">下载</a></li>
+<li>触发: <code>subl</code>,<code>subl*</code></li>
+</ul>
+
+
+<p>想要其他编辑器的话请猛击 <a href="https://github.com/zenorocha/alfred-workflows/wiki/Extras#code-editors">Extras</a></p>
+
+<p><img src="https://7nnqba.dm1.livefilestore.com/y2pGNECa5OJFUT2KVW5fKdahDKuCsRFn-r7el4QbFLC7ijAiYxRNxBI_COOWUq8W8-oKBvrS0eU7UyCFn129AtLp9eBjydEPpJzJwHMK8hIqMA/alfred-subl-opt.png?psid=1" alt="" /></p>
+
+<p>XguoX: 可能更多人还是选择在终端直接用命令敲开.</p>
+
+<h2>Can I Use&hellip; Workflow</h2>
+
+<p>在HTML5时代,当使用某一个CSS属性或者JavaScript APIs之前,你需要检查知道浏览器是否支持. 当然,你可以打开浏览器,直接浏览<a href="http://caniuse.com/">Can I Use&hellip;</a>这个网站, 然后搜索某个关键字从而看看浏览器的支持情况.除此外,你还可以使用这个Alfred Workflow.</p>
+
+<ul>
+<li><a href="https://github.com/willfarrell/alfred-caniuse-workflow">Can I Use&hellip; Workflow</a>,developed by <a href="https://github.com/willfarrell/">@willfarrell</a></li>
+<li><a href="http://zno.io/Rcex">下载</a></li>
+<li>触发: <code>caniuse</code></li>
+</ul>
+
+
+<p><img src="https://7nnqba.dm2301.livefilestore.com/y2pLGL9Yh8RK9E6UUkjLPqhxSoA_Wofc3tyJuq-9DOmdK1fjtDTfmvBdegAJmCsO45T_Pf02opsLZ2YJXmhoXWy5HXUTmCw-3u-oJfUH9UERVU/alfred-caniuse-opt.png?psid=1" alt="" /></p>
+
+<p>XguoX:搜索速度还行</p>
+
+<h2>Dash Workflow</h2>
+
+<p>没有人会知道某一门语言或者某一个框架的所有.我们时常会需要查找某个特定的method如何使用.最近,发现了一个非常惊艳的app,<a href="http://kapeli.com/dash">Dash</a>,在本地查找各类APIs文档,完全离线的说. 这还不算啥,通过这个workflow,你可以通过过滤各个语言(框架)关键字来查找相关文档.这个流弊的app可是免费的哦,所以,在使用这个workflow前请先安装好Dash.</p>
+
+<ul>
+<li><a href="https://github.com/willfarrell/alfred-dash-workflow">Dash Workflow</a>,developed by <a href="https://github.com/willfarrell/">@willfarrell</a></li>
+<li><a href="http://zno.io/Rc3p">下载</a></li>
+<li>触发:<code>dash</code> <code>html</code> <code>css</code> <code>gem</code> <code>angularjs</code> <code>Rails</code> 基本上常用的语言框架库都有了</li>
+</ul>
+
+
+<p><img src="https://7nnqba.dm1.livefilestore.com/y2p8jXte6unkiz4tr4VJFW9zTtwY5LHw6TPj8Bhx6IOm_bI2eU-6GyzBMx8DdEbI6jsLcPz7ttB9S1FqNDA9q8rU4JsouoEspKKgbjj2k-EQLA/alfred-dash-bs-opt.png?psid=1" alt="" />
+<img src="https://7nnqba.dm2302.livefilestore.com/y2pxzqD2DRpB4rhywnWViFn5zJMrjn59dI_lKaX4wCj9HTSO40hX1NSuRoCJGObJMCHdRB-bkmuYE9OPQePbPjXcaVli3J3dETsLtKIPWx-aHU/alfred-dash-js-opt.png?psid=1" alt="" /></p>
+
+<p>XguoX:Dash 真心很流弊!巨赞!!!</p>
+
+<h2>Terminal Finder</h2>
+
+<p>一些操作我们可能会希望在终端完成,而另一些则希望在Finder完成.这个workflow可以流畅地在这两者之间转换.在终端(iTerm)中打开当前的Finder窗口,反之亦然.</p>
+
+<ul>
+<li><a href="https://github.com/LeEnno/alfred-terminalfinder">TerminalFinder</a>, developed by <a href="https://github.com/LeEnno/">@LeEnno</a></li>
+<li><a href="http://zno.io/RkU2">下载</a></li>
+<li>触发: <code>ft</code> <code>tf</code> <code>fi</code> <code>if</code></li>
+</ul>
+
+
+<p><img src="https://7nnqba.dm2302.livefilestore.com/y2plpdCbBvSP7J7seYaCrTIdd0MPtXmqhhqDa-GPRjiO3nBza38J4jpFTetxVTAWfkafkiiTrqaikp-v3_Q-n2bTiBZj7rc3RvdO8OXgjJIhZU/alfred-fi-opt.png?psid=1" alt="" />
+<img src="https://7nnqba.dm1.livefilestore.com/y2pKTdNdqK9KacL8BTdEMxozuH9vtTAC0qZTdO7wMa3VFtS0rjV_EXpOMKyYx_eqMAGvs6auzVGPw50UN-qYMJyeUVwZNihpyq8TbyYeyqUFyw/alfred-tf-opt.png?psid=1" alt="" /></p>
+
+<p>XguoX:又是一个巨实用的workflow</p>
+
+<h2>Package Managers Workflow</h2>
+
+<p>代码复用是软件开发的一个重要组成部分,现如今我们有很多的方案来构建我们的代码以及搜索使用第三方软件包. 想要使用某个Node.js module? Grunt task?通过这个workflow,你可以快速简便地在一个地方通过你想要的包管理器查找到你想要的插件或者组件.</p>
+
+<ul>
+<li><a href="https://github.com/willfarrell/alfred-pkgman-workflow">Package Managers Workflow</a>, developed by <a href="https://github.com/willfarrell/">@willfarrell</a></li>
+<li><a href="https://github.com/willfarrell/">下载</a></li>
+<li>触发: <code>bower</code> <code>grunt</code> <code>npm</code> <code>composer</code> <code>gems</code> <code>pear</code> <code>pypi</code> <code>cocoa</code> <code>brew</code> <code>alcatraz</code> <code>rpm</code> <code>maven</code> <code>docker</code></li>
+</ul>
+
+
+<p><img src="https://7nnqba.dm1.livefilestore.com/y2ppAHAT45dOTn6bKbLSb4zC8iyK4bl8qlXjz7dsYx3h3lceulR1kHbZdz1wS5XiA5V6pzdJGxrpjKI-gwF6IpD1YNBNZCfYrQjp8YCi1R5fC8/alfred-pkg-npm-opt.png?psid=1" alt="" />
+<img src="https://7nnqba.dm2302.livefilestore.com/y2pWCd9J95EnTh62aMYZ9zHDatkpfUg4qKScGsMpA-Fhy4FBtFBsJ8PkT-flubEWPpzY36rvmSRkv874m_pllj_80s9B0GaEu5XxWonxf6V02o/alfred-pkg-bower-opt.png?psid=1" alt="" />
+<img src="https://7nnqba.dm1.livefilestore.com/y2pQTFJVwQuk4cV5yWHSoFYQCOanTC6JCB5UnfAqtUNouF6M38QLKC-k1d97hzFQi5HOGcI44owdzMcMJJUvmhJS-eLWBgwQjKEe4FDjwh6TWo/alfred-pkg-grunt-opt.png?psid=1" alt="" /></p>
+
+<h2>Colors</h2>
+
+<p>不用再每次想要转换某个颜色格式的时候打开Photoshop了.通过这个workflow可以很轻易在HEX, RGB, HSL这些个颜色格式之间转换.</p>
+
+<ul>
+<li><a href="https://github.com/TylerEich/Alfred-Extras/tree/master/Source/Colors">Colors</a>, developed by <a href="https://github.com/TylerEich/">@TylerEich</a></li>
+<li><a href="http://zno.io/RcFz">下载</a></li>
+<li>触发: <code>#</code> <code>rgb</code> <code>hsl</code> <code>c</code></li>
+</ul>
+
+
+<p><img src="https://7nnqba.dm2301.livefilestore.com/y2p57G91c-OHhp8vWr5mZDL3mvkawhRy64cCzIWzNEBlqL_EVbapnnvDeZUcVdCVtDJ4ow6hfm0cE1yB5AUViUp2A81StX_YpA7T_5mR_B7Rqk/alfred-colors-opt.png?psid=1" alt="" /></p>
+
+<h2>Jenkins Workflow</h2>
+
+<p>做单元测试固然是好,但是每更改一行代码就手动跑一次测试的话会让人抓狂的. 为了得到更好的代码质量,我们需要跑跟更多的测试,或者至少的自动运行那些我们已经在跑的测试. 这就是为嘛<strong>持续集成系统</strong>那么重要.通过这个workflow,你可以列出<a href="http://jenkins-ci.org/">Jenkins</a>的所有工作以及它们的状态.</p>
+
+<ul>
+<li><a href="https://github.com/jeroenseegers/alfred-jenkins-workflow">Jenkins Workflow for Alfred v2</a>, developed by <a href="https://github.com/jeroenseegers/">@jeroenseegers</a></li>
+<li><a href="https://github.com/jeroenseegers/alfred-jenkins-workflow/raw/master/Jenkins.alfredworkflow">下载</a></li>
+<li>触发: <code>jenkins status</code></li>
+</ul>
+
+
+<p><img src="https://7nnqba.dm2302.livefilestore.com/y2p1OLZbpkCxnoR1-ucaW61I99PIVPvOO_136IItknkfT8GvIGdr9lMaF8P78koNZB9q4_Wxld8CzdfdYegwtcTkOMkdbAtb1A3kPK-8WOlsHw/alfred-jenkins-opt.png?psid=1" alt="" /></p>
+
+<p>XguoX:好吧,这玩意没接触过</p>
+
+<h2>Open in FileZilla</h2>
+
+<p>目前来说传输文件到Web服务器的最流行方式还是使用FTP. 而这个workflow可以帮助你快速地通过<a href="https://filezilla-project.org/">FileZilla</a>连接到远程服务器端. FileZilla也是一个免费的应用,所以,在用这个workflow之前请记得先安装之.</p>
+
+<ul>
+<li><a href="https://github.com/jeffmagill/alfred-open-in-filezilla">Open in FileZilla</a>, developed by <a href="https://github.com/jeffmagill/">@jeffmagill</a></li>
+<li><a href="http://zno.io/RnTx">下载</a></li>
+<li>触发: <code>fz</code></li>
+</ul>
+
+
+<p>在用其他FTP客户端吗?请猛击 <a href="https://github.com/zenorocha/alfred-workflows/wiki/Extras#ftp">Extras</a></p>
+
+<p><img src="https://7nnqba.dm1.livefilestore.com/y2pb9b3kwcHV5UkchYzjh4f-Jw_YMi0uHVYkNeM_0A4g4859bfjcc49jLLQcyTpsOu2f-hOlh2D7sDSGAt65humZvmCuy3QFlH9tJHMAhlgLp4/alfred-fz-opt.png?psid=1" alt="" /></p>
+
+<h2>Domainr Workflow</h2>
+
+<p>不想错过一些帅气的域名的话,可以通过<a href="https://domai.nr/">Domainr</a> APIs快速查找.</p>
+
+<ul>
+<li><a href="https://github.com/dingyi/Alfred-Workflows/tree/master/Domainr">Domainr Workflow</a>, developed by <a href="https://github.com/dingyi/">@dingyi</a></li>
+<li><a href="http://zno.io/RctP">下载</a></li>
+<li>触发: <code>domainr</code></li>
+</ul>
+
+
+<p><img src="https://7nnqba.dm2301.livefilestore.com/y2pQl13GHOojZONNNtZnsAeO2IKT6fe1AMAt0uR-SSL5MJQgw-wJ66ZqFNHXS4t7S5X4Osl31-d0jAJ65uishVIPvmNU7L09CfJ19v_Gxi1f7A/alfred-domain-opt.png?psid=1" alt="" /></p>
+
+<h2>Encode / Decode</h2>
+
+<p>有时候, 我们需要把一些UTF-8字符转换成HTML编码,或是解码某个URL. 使用 Encode / Decode , 这些杂碎的事情将不再需要浪费那么多的时间了.</p>
+
+<ul>
+<li><a href="https://github.com/willfarrell/alfred-encode-decode-workflow">Encode / Decode</a>, developed by <a href="https://github.com/willfarrell/">@willfarrell</a></li>
+<li><a href="http://zno.io/RcCX">下载</a></li>
+<li>触发: <code>encode</code> <code>decode</code></li>
+</ul>
+
+
+<p><img src="https://7nnqba.dm2302.livefilestore.com/y2pKvZ6_kJuc6jkwn90DdrOihAOhM5W7fKS7-AoHkhTC41bHpKjagM54XHIYXBYOSPuxivPJ58mAmETym0mdNXAip6qJBJCkxap46HOKzj8W_E/687474703a2f2f662e636c2e6c792f6974656d732f324a336d3147314-e34363035304930453077336e2f616c667265642d656e636f64652e706e67-opt.png?psid=1" alt="" /></p>
+
+<h2>Font Awesome Workflow</h2>
+
+<p>Font icons很好很强大, 只需简单地输入类似的<code>&lt;i class="my-icon-name"&gt;&lt;/i&gt;</code>. 但问题是,我们经常没能准确地记住我们需要的某个icon的类名,以至于老需要去翻看文档. 现在的话通过这个workflow我们可以很轻易地查找到<a href="http://fortawesome.github.io/Font-Awesome/">Font Awesome</a>的icon集.</p>
+
+<ul>
+<li><a href="https://github.com/ruedap/alfred2-font-awesome-workflow">Font Awesome Workflow for Alfred 2</a>, developed by <a href="https://github.com/ruedap/">@ruedap</a></li>
+<li><a href="http://zno.io/RcJ3">下载</a></li>
+<li>触发: <code>fonta</code></li>
+</ul>
+
+
+<p><img src="https://7nnqba.dm2301.livefilestore.com/y2pHAy4Zg3y3qg293hawHzh1DKDkB1ZUd7Ktbw9BtrL7QxRzvJPGIR-B_OUF-fjyx3wq1sn4OrZ72XCQdlHOys6gHOqyjGGbFnwiElSVCkMNxU/alfred-fonta-opt.png?psid=1" alt="" /></p>
+
+<p>XguoX:赞!</p>
+
+<h2>Source Tree Workflow</h2>
+
+<p>有人习惯在终端使用Git命令, 也有喜欢使用GUI工具. 如果你属于后者,那么<a href="http://www.sourcetreeapp.com/">Source Tree</a> workflow 可以帮你列出,查找,打开Git仓库. Source Tree 也是需要在使用这个workflow之前先<a href="http://www.sourcetreeapp.com/">下载</a>安装的应用.</p>
+
+<ul>
+<li><a href="https://github.com/zhaocai/alfred2-sourcetree-workflow">Source Tree</a>, developed by <a href="https://github.com/zhaocai/">@zhaocai</a></li>
+<li><a href="http://zno.io/Ro6V">下载</a></li>
+<li>触发: <code>st</code>  <code>stbookmark</code></li>
+</ul>
+
+
+<p>使用其他的Git客户端吗?请猛击 <a href="https://github.com/zenorocha/alfred-workflows/wiki/Extras#git-client">Extras</a></p>
+
+<p><img src="https://7nnqba.dm2302.livefilestore.com/y2peE5UpatyaBm2USKGJSTP6O-ATHnG5dIkbF_cgAXjVLyUZIJfAjCi-FdRs2E44Me5gKsYygNc6ojyzuCmFfnUnAePfelKmZpB1OmgngYUh1M/alfred-st1-opt.png?psid=1" alt="" /></p>
+
+<h2>GitHub Workflow</h2>
+
+<p>如果你最喜欢的社交网站是Github,那你一定会想要看看这个.简单快速地查找并在浏览器打开Github上的仓库.</p>
+
+<ul>
+<li><a href="https://github.com/gharlan/alfred-github-workflow">GitHub Workflow</a>, developed by <a href="https://github.com/gharlan/">@gharlan</a></li>
+<li><a href="http://zno.io/RcPe">下载</a></li>
+<li>触发: <code>gh</code></li>
+</ul>
+
+
+<p><img src="https://7nnqba.dm2302.livefilestore.com/y2p8Kw5ylIUxXvwnWm1HOp4xQcI2AH9fPU0is_zRQvkLws07H-KINpP86ZbEvywJ8F-IbF4umwGc802UCYyAJwHbXsrQjTD5jR9eni4Hn8v-3Y/alfred-gh-1-opt.png?psid=1" alt="" />
+<img src="https://7nnqba.dm2302.livefilestore.com/y2pAHDVk52bx4FuN7ArITttR0iKhUmXlAenZxif_r6XKjlY7zIdeL57L86L8wTu4a6dHOptenChQ6hdGK12mz4ia1Awc7F1kf42-nF4rKzkbrg/alfred-gh-2-opt.png?psid=1" alt="" />
+<img src="https://7nnqba.dm2301.livefilestore.com/y2pca8u5ITeeKV3q7PAYkeJ26fM5wfHUmFvSjhjS3vfxHWTx8zXT5PQgeZagvY_b6gIUFTMYMdO3B5n-DnWzI-g3Gdxd7A4Tf-BQh75CSKr4UA/alfred-gh-3-opt.png?psid=1" alt="" /></p>
+
+<h2>StackOverflow Workflow</h2>
+
+<p>在<a href="http://stackoverflow.com/">StackOverflow</a>搜寻各类编程问题的答案</p>
+
+<ul>
+<li><a href="https://github.com/xhinking/Alfred">StackOverflow Workflow</a>, developed by <a href="https://github.com/xhinking/">@xhinking</a></li>
+<li><a href="http://zno.io/RceO">下载</a></li>
+<li>触发: <code>st</code></li>
+</ul>
+
+
+<p><img src="https://7nnqba.dm2302.livefilestore.com/y2pmY5gf1twVGB0cDn-C51fasEXdMo79AFhftB4mJqKzQwshL_a0djKiDcoVu6-NP1QMQ360iBdpNf8Pp7cJ5qxc_XZbcoC_C427S0ty9cdMmI/alfred-st-opt.png?psid=1" alt="" /></p>
+
+<h2>TimeZones Workflow</h2>
+
+<p>现如今,很多的团队的成员纷纷来自全球各地. 那么,我们不会希望在同事的下班时间去打搅人家.所以,在这之前,我们总会先查看一下对方的当地时间.这个workflow可以巨方便地列出世界各地不同城市的当前时间.</p>
+
+<ul>
+<li><a href="http://www.alfredforum.com/topic/491-timezones-a-world-clock-script-filter-updated-to-v161/">TimeZones Workflow</a>, developed by <a href="http://www.alfredforum.com/topic/491-timezones-a-world-clock-script-filter-updated-to-v161/">@CarlosNZ</a></li>
+<li><a href="http://zno.io/Rce5">下载</a></li>
+<li>触发: <code>tz</code></li>
+</ul>
+
+
+<p><img src="https://7nnqba.dm2302.livefilestore.com/y2pEw7Fm3pjrusK0c-ihMHdrPo-1oCLOyC6kjipiDXwTsn7OJS3is0zRPDYu6Sy-M80x29f0lVww1ACceNo2LtgksPzQHW-yf0HQ4ZtgilKZVs/alfred-tz-opt.png?psid=1" alt="" /></p>
+
+<h2>VirtualBox Control</h2>
+
+<p>很不幸地,跨浏览器兼容的仍然是开发人员所面临的一大问题. 测试你的网站在不同浏览器 &amp; 不同操作系统 是否运行正常是件无法逃避的事. 使用虚拟机(比如<a href="https://www.virtualbox.org/">VirtualBox</a>)是当下流行的,可以完成这事的一种方式. 好吧,在用这个workflow之前老规矩,先装上VirtualBox.</p>
+
+<ul>
+<li><a href="https://github.com/aiyodk/Alfred-Extensions/tree/master/AlfredApp_2.x/VirtualBox-Control">VirtualBox Control</a>, developed by <a href="https://github.com/aiyodk">@aiyodk</a></li>
+<li><a href="http://zno.io/RyOE">下载</a></li>
+<li>触发: <code>vm</code></li>
+</ul>
+
+
+<p>在用其他的虚拟机客户端吗?请猛击 <a href="https://github.com/zenorocha/alfred-workflows/wiki/Extras#virtual-machines">Extras</a></p>
+
+<p><img src="https://7nnqba.dm2301.livefilestore.com/y2psvNKnOmlDIHPBDdt55ZjXGXipYEXF1vywXnx7K0QWXLTlFzs34ntkNcga99mClSZGNzkG2ANop67cWYvEwkJzHDDualJDf7xIPTcKdVy3Og/alfred-vb-1-opt.png?psid=1" alt="" />
+<img src="https://7nnqba.dm2302.livefilestore.com/y2pUUCXsiAOITeTEiZtDeQSoIQdmNUV0CayHgImh1MpczVHPlU-NUC0rIdVZqkztQ3bUBM7EWiu4SAkbl1eL3EMKFSsd2NFTJpjq8kDoCEJfOE/alfred-vb-2-opt.png?psid=1" alt="" /></p>
+
+<h2>Create Your Own!</h2>
+
+<p>所有的这些workflows都非常的赞并对于大多数人来说很有帮助. 但是,每个人的工作方式不尽相同. 所以我们需要创建真正属于自己的workflow. 其实这个也很是简单. 以下的这个例子仅需不到10秒,就可以创建一个workflow来自动搜寻Smashing Magazine.</p>
+
+<p><img src="https://7nnqba.dm2301.livefilestore.com/y2p2GeFzQuRTl9E0-rFjNQrAw7qS_a5RAlZpfNQh9tT-P45-le3UY_fNKu7n1K5mIIq9JNdp83flsG9hvRzDHzcfXGuB56sspc6CnmRyDh2ikE/custom-alfred.gif?psid=1" alt="" /></p>
+
+<h2>Want More?</h2>
+
+<p><a href="https://github.com/zenorocha/alfred-workflows/">这是作者收集的一些</a><br/>
+此外,Alfred的<a href="http://www.alfredforum.com/forum/3-share-your-workflows/">官方论坛</a>上也有海量的workflows.</p>
+
+<h2>The End?</h2>
+
+<p>一堆帮助你自动化工作流程的技巧,很赞对吧!希望能够对你有所帮助.可能这些会激发你的一些灵感,从而创造,分享你的隐藏技能.</p>
+
+<p>如果你喜欢的workflow没有在这列出,可以在下边的评论当中跟我们分享. 如果你觉得上边提到的那些赞到爆的话,也可以告诉我们哦!</p>
+
+<p>文章翻译自 <a href="http://coding.smashingmagazine.com/2013/10/25/hidden-productivity-secrets-with-alfred/">Hidden Productivity Secrets With Alfred</a></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[如何在一年里周游世界]]></title>
@@ -1208,90 +1478,6 @@ sky与ground都用的是同样的<code>background-position</code>动画, 只是�
 <script async src="http://codepen.io:/assets/embed/ei.js"></script></p>
 
 <p>原文来自 Tim Pietrusky <a href="http://css-tricks.com/five-use-cases-for-icon-fonts/">5 Use Cases for Icon Fonts</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[5 Meteor Misconceptions]]></title>
-    <link href="http://xguox.github.com/blog/2013/03/14/5-meteor-misconceptions/"/>
-    <updated>2013-03-14T16:52:00+08:00</updated>
-    <id>http://xguox.github.com/blog/2013/03/14/5-meteor-misconceptions</id>
-    <content type="html"><![CDATA[<p>由于某些原因,关于Meteor一直都有着各种各样的误解.或许是因为Meteor刚正式推出的时候, 缺失很多重要的功能.而很多不知道的是,这些缺陷在后来早就被修复了.</p>
-
-<p>为了给Meteor正名,下面列举的是5个最常见的误解.</p>
-
-<h2>误解#1:&ldquo;Meteor的数据不安全&rdquo;</h2>
-
-<p>在Meteor的第一个Demo推出之时, 数据安全和用户权限这些东西是没有的.任何客户端的用户都能够访问,修改数据库的数据然后发送返回到服务端.</p>
-
-<p>但这第一个版本只是作为一个提示告诉大家Meteor来了, 并不意味着它可以被用来打造一个真实的应用产品. 打那之后, 现在的Meteor已经有了一个内置的身份认证包(authentication package).</p>
-
-<!-- more -->
-
-
-<p><strong>造成误解的另一个原因是, 许多新手为了更容易地快速上手常常在创建Meteor应用的时候, 遵循默认的把所有的数据发布给客户端.</strong></p>
-
-<p>正如Meteor的开发者之一 <strong>Avital Oliver</strong>在<a href="http://stackoverflow.com/questions/10099843/how-secure-is-Meteor">StackOverflow上的回答</a>那样</p>
-
-<blockquote><p>当你使用Meteor的命令行工具创建一个应用的时候, 默认的会包含有两个packages:<strong>AUTOPUBLISH</strong>和<strong>INSECURE</strong>. 这两个packages能使得每个客户端都拥有所有的服务器数据库读写权限效果.这是非常好的原型工具(目的只为了开发),但通常这不适合用于应用的生产环境.当你需要发布到生产环境的时候,请去掉这两个packages</p></blockquote>
-
-<p>类似地,也因为Meteor可以共享服务端和客户端的代码,但实际上,这并不意味着所有的代码都可用于客户端.</p>
-
-<p>所有放在<code>server/</code>目录下的东西都是只能在<a href="http://docs.Meteor.com/#structuringyourapp">服务端</a>执行使用的, 同时Meteor也让你可以定义<a href="http://docs.Meteor.com/#methods_header">服务端安全方法</a>,这些方法可以在客户端调用.</p>
-
-<h2>误解#2:&ldquo;Meteor对SEO不友好&rdquo;</h2>
-
-<p>与传统的网页应用不一样,Meteor不会在服务端搭建HTML页面.取而代之, 服务端只发送数据, 然后在客户端决定如何渲染之(这就是Meteor的"data on the wire"原则)</p>
-
-<p>这种做法的缺点就是, 当JavaScript被禁用的话, 你的网站几乎跟一个空白页面无异.</p>
-
-<p>你或许会觉得这会迷惑搜索引擎.但幸运地是, Meteor有解决的方案,那就是使用<a href="http://docs.Meteor.com/#spiderable">Spiderable</a> Package.</p>
-
-<p><img src="http://theMeteorbook.com/images/phantomjs.png" alt="" /></p>
-
-<p>这个package使用的是<a href="http://phantomjs.org/">PhantomJS </a>在服务端预渲染后提供给网络爬虫.实际上网络爬虫得到的网页跟你看到的是一样的.</p>
-
-<h2>误解#3:&ldquo;Meteor不支持第三方packages&rdquo;</h2>
-
-<p>有很多的讨论是关于Meteor所用的不是Node的标准包管理&mdash;NPM. 而事实上, Meteor压根就没有不允许使用第三方程序包.</p>
-
-<p>And it&rsquo;s true that the vanilla install of Meteor does not come with a package manager. 但庆幸的是, <a href="http://theMeteorbook.com/">本书</a>的合著者之一Tom Coleman, 同时也是Meteor包管理器<a href="https://github.com/oortcloud/Meteorite">Meteorite</a>和packages资源库<a href="http://atmosphere.Meteor.com/">Atmosphere</a>的开发者.</p>
-
-<p>尽管当下Meteorite 和 Atmosphere还不是Meteor的官方部分, 但它们已经得到广泛的使用并将会在未来被合并到Meteor的核心部分.事实上,这方面的工作已经在Meteor的核心代码的<a href="https://github.com/Meteor/Meteor/tree/engine">engine</a>分支中开展,预期会被很快解决.</p>
-
-<h2>误解#4:&ldquo;Meteor是完全封闭的(walled garden)&rdquo;</h2>
-
-<p>一个密切相关的异议是,Meteor可以支持第三方packages,但这些第三方packages却严格地限制于流星的生态系统.</p>
-
-<p>为什么有成千上万的Node packages 在那还要使用自定义的package呢?这又是否与开源精神相悖呢?</p>
-
-<p>首先,需要意识到一点很重要的就是, 在Meteor中可以任意的使用node packages.尽管在当下这么做可能还会有一些棱角使得接口不那么顺利,但这种情况在<code>engine</code>分支添加<a href="https://groups.google.com/forum/?fromgroups=#!topic/Meteor-talk/b6zQrgk8lYo">Node support</a>
-并发布后将得到很大改善.</p>
-
-<p><img src="http://theMeteorbook.com/images/npm.png" alt="" />
-其次,Meteor不仅仅是Node.js的一个框架, 更是一种全新的网站应用开发方式和构想.</p>
-
-<p>换句话说,想知道为什么Meteor不使用NPM无异于问为什么它不能使用Ruby Gems. 有很多人建议所有的JavaScript代码应该都用NPM来管理, 但这么做的话会有一些细节上的问题, 正如核心开发者<a href="https://github.com/Meteor/Meteor/pull/516#issuecomment-12919473">解释说</a>.</p>
-
-<h2>误解#5:&ldquo;Meteor只适用于原型&rdquo;</h2>
-
-<p>&ldquo;Meteor非常适用于小规模快速原型的项目,但它不适合用于大规模的应用.&rdquo;</p>
-
-<p>在某种程度上, 这很难争个谁对谁错.毕竟Meteor的主页的版本号还是以<code>0</code>开头.</p>
-
-<p>但事实是Meteor还没准备到一个黄金时间,比起内在的局限性,在如此青涩的时期(不到一岁)Meteor还有许多需要做的.</p>
-
-<p>再说, 即使是现在, 有时牺牲一点稳定性来做交换得到Meteor带来的轻松且快速的开发还是值得的.如果你希望看到一些具体的Meteor案例,我可以推荐看看<a href="http://telesc.pe/">Telescope</a>吗?</p>
-
-<p>So,我坚信,在Meteor这样快速发展之下,今天的技术原型将会是明天thousand-user 的应用.</p>
-
-<h3>总结</h3>
-
-<p>现在,即使我们正在写这本关于Meteor的书, 但我们首先依旧会承认一点, 如同其他的技术那样,Meteor同样也有着自己的缺陷.</p>
-
-<p>But I do believe Meteor has enough potential to make it worth evaluating it on its own merits. 所以如果你犹豫不决是否使用Meteor, 希望我的建议能说服你你选择它.</p>
-
-<p>原文来自 Sacha Greif  <a href="http://theMeteorbook.com/2013/03/12/5-Meteor-misconceptions/">5 Meteor Misconceptions</a></p>
 ]]></content>
   </entry>
   
